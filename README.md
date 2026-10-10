@@ -4,7 +4,9 @@
 
 **唯一持续维护的总计划：[RESEARCH_PLAN.md](RESEARCH_PLAN.md)。** 每次执行前先看§0；错误、方案变更及依据写入变更表。旧计划和旧稿作为历史快照保留。
 
-目前完成阶段1：8种预设化合物、627个开发和180个主外验唯一模型/生物组。预测模型尚未拟合；没有新的效能数字、公开论文或模型检查点。结果允许REO不优于强基线。
+阶段1已冻结8种化合物、627个开发和180个主外验模型/生物组。阶段2已完成MIRA-1/PLX-4720的开发专用嵌套试跑（REO80、表达EN和组织基线）：462次拟合、约135秒、采样峰值RSS约0.66 GiB。分数仅为探索性内部结果；正式REO200、RF、5×3重复CV和CTRP评估尚未执行。结果允许REO不优于强基线。
+
+最新进度与问题见[阶段2试跑报告](reports/阶段2_开发集嵌套试跑.md)。资格复核发现少量非癌对照；当前v1/pilot保留原样，正式队列修订见总计划与metadata审查记录。
 
 ## 快速查看
 
@@ -50,6 +52,16 @@ python scripts/run_curation.py --download --lock
 ```
 
 已有锁时，该入口只执行验证。冻结的是队列及数据整理实现；模型/统计配置需开发专用试跑后另行冻结。干净环境全流程源数据重放和模型复现仍为发布待验项；CI通过不等于预测有效。
+
+开发试跑依赖另列，保留冻结的阶段1依赖文件：
+
+```sh
+python -m pip install --index-url https://pypi.org/simple -r requirements-modeling.txt
+python -m unittest discover -s tests -p test_pilot_integrity.py -v
+python src/run_development_pilot.py --run-dir runs/my-development-pilot
+```
+
+不要覆盖已有run。原执行代码提交为`629b8f5`，后续异常资源释放/检查点修复不改变已记录的数值结果；具体执行源哈希随报告发布。
 
 CTRP曾用于历史项目；当前是回顾性重新隔离的已知身份验证。两库共享CCLE表达且剂量区间不同，结论限于跨筛选、跨细胞系的排序迁移，未证明跨表达平台、相同绝对AUC终点或患者效用。
 

@@ -10,7 +10,9 @@ This acceptance suite uses synthetic expression and response values. It does not
 4. **Group separation.** Models sharing one biological group remain together in every outer and inner split. This remains true when one group has several models or samples. Random row splitting is not accepted.
 5. **Inner refitting.** Every inner training partition must fit its own feature builder. One outer-training or full-data builder reused in all inner partitions is a failure even if no outer-test rows were seen.
 6. **Outer-label isolation.** Perturbing only the test labels of one fixed outer fold must leave that fold's hyperparameter choice and predictions unchanged. Its evaluation scores may change. This separates evaluation from selection.
-7. **Development-only data access.** The runner may load GDSC responses for the frozen development rows, the frozen development manifest and baseline-expression matrices/identities. It must not open historical or current CTRP response tables during the pilot. Merely validating a CTRP file's existing provenance hash is distinct from loading its response values.
+7. **Development-only data access.** The runner may load GDSC responses for the frozen development rows, the frozen development manifest and baseline-expression matrices/identities. It must not open historical or current CTRP response tables during the pilot. The runner's development preflight checks the lock and actually used development files without opening the external-response descriptors.
+8. **Frozen assignment integrity.** Altering a development assignment or the locked cohort description must fail before model fitting. Selected GDSC rows must match the frozen drug ID, curve ID and exact concentration interval. Unselected response rows cannot enter the extracted pilot response table.
+9. **Failed-fit state and audit columns.** An invalid refit must clear an earlier fold's fitted feature state. Changing audit-only sample IDs cannot affect hyperparameter selection or predictions.
 
 ## Why these are substantive tests
 
@@ -28,4 +30,46 @@ From the repository root, run the repository Python environment:
 .\.venv\Scripts\python.exe -m unittest discover -s tests -p test_pilot_integrity.py -v
 ```
 
-The test execution result and any remaining issues will be recorded here after the pilot interfaces are finalized.
+## Verified execution (2026-10-10)
+
+`24 tests` passed in the repository environment; the latest complete execution took `2.208 seconds` of unittest time (process startup is excluded). These tests fit only synthetic models and use temporary mock workbooks/files. Their fits are not counted as fits in the real two-drug pilot.
+
+| Test family | Tests | What was checked |
+|---|---:|---|
+| Fold feature construction | 9 | Exact three-value REO, canonical direction, column-order invariance, training-only gene/pair filters, label independence, invalid-input handling, failed-refit state |
+| Nested-CV boundaries | 7 | Group isolation/coverage/reproducibility, actual inner-fit memberships, outer-label and outer-expression perturbations, audit-ID independence, unseen-tissue handling |
+| External-response access guard | 1 | Six prohibited mock read attempts rejected, including byte-path `os.open`; three development mock inputs readable |
+| Frozen response-row extraction | 4 | Only selected rows extracted; wrong drug/curve/concentration, duplicate/missing rows and invalid AUC rejected |
+| Frozen input verification | 2 | Changed assignment/lock refused; used development hashes verified without reading the deliberately absent external-response file |
+| Failure evidence and resource shutdown | 1 | Simulated runtime failure and interruption recorded as failed; resources saved, monitor thread stopped and partial checkpoint preserved |
+
+The unseen-tissue baseline returns the current training target mean. The expression model assigns unseen tissues zero tissue effect while retaining its fitted gene component. The tests verify that changing one unseen tissue code to another changes neither prediction nor fitted category state.
+
+## Source-path review
+
+The inspected runner loads the frozen development manifest and panel, GDSC2 source responses, protein-coding annotation and baseline TPM. Its metadata-based global splits are intersected with drug-specific observations; inner indices are relative to the local outer-training rows. Target scaling, feature filters, REO construction, feature scaling, tissue encoding and tissue adjustment are refitted on each training partition. Outer-test labels are used for metrics after tuning and prediction.
+
+The current guard rejects the raw CTRP directory, historical CTRP response table and three known processed response-index files. Behavioral acceptance checks those paths. This is protection against accidental access to the current files; it is not a claim that every possible future external-response file name is automatically forbidden. Any new loader requires renewed review.
+
+The mean predictor has no sample-specific ranking within an outer fold. The runner records pooled mean-baseline Spearman as unavailable rather than interpreting differences among fold means as ranking performance.
+
+## Problems identified and repaired before the real pilot
+
+- The initial runner recorded the cohort lock but did not independently verify the development assignment and expression-input hashes. It now verifies the lock and eight actually used development files, so an edited expression-row assignment cannot silently pass the curve-ID checks.
+- Validation failures in the workbook response reader initially left the input workbook/iterator open on Windows. The failure fixtures detected file-handle retention through `WinError 32`. The reader now closes both in a `finally` block; all rejection fixtures and their cleanup pass.
+
+No unresolved leakage or file-access failure was found in the tested cases. Run failures, convergence problems, performance estimates and resource measurements from the actual pilot are reported separately in its run artifacts and master research plan.
+
+## Independent audit of the actual pilot artifacts
+
+Run:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/validate_pilot_run.py --run-dir runs/gdsc2-mira1-plx4720-development-nested-en-reo80 --source-revision 629b8f5
+```
+
+The validator passed all recorded boundaries: `462` actual model fits, including `342` gene-feature fits; each actual training sample-ID set matched its intended inner-training partition or final outer-training refit. Current validation/test identities and known biological groups were absent from those fit sets. Every drug/model/identity had exactly one outer OOF prediction: `626` for MIRA-1 and `623` for PLX-4720, across five models, giving `6,245` OOF records.
+
+The audit independently reconstructed target means/scales from the corresponding training observations in run artifacts, checked fixed-grid selections against logged inner scores, and reconstructed pooled outer RMSE, MAE, R² and Spearman. All four recorded configuration/source hashes matched immutable execution revision `629b8f5`; the later workbook-failure/resource-cleanup changes are explicitly distinguishable from the executed source. No original GDSC response workbook, CTRP response table or expression matrix was reopened by this validator.
+
+The result is `pilot_validation.json` inside the run directory. Its paths are repository-relative and its counts are aggregate. This audit verifies the recorded fit memberships; the synthetic acceptance suite separately inspects actual builder inputs and perturbs held-out information. Inner OOF predictions were not exported, so the validator checks hyperparameter choice against recorded inner scores rather than independently reconstructing those inner scores.

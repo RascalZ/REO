@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1",
+  "status": "draft_not_applied",
+  "created_utc": "2026-10-10T10:49:46.171375+00:00",
+  "scope": "Metadata-only malignancy eligibility proposal for future formal cohort v2; engineering pilot remains on frozen v1.",
+  "frozen_cohort_version": "v1",
+  "frozen_manifests_modified": false,
+  "pilot_recomputed_or_relabelled": false,
+  "response_or_performance_used_for_this_review": false,
+  "CTRP_response_read": false,
+  "timing_disclosure": "Review discovered after the development pilot had started, before opening CTRP responses; this is a documented metadata-driven amendment, not a claim of pre-pilot preregistration.",
+  "metadata_source": "data_raw/cell_metadata/DepMap_24Q4_v1_Model.csv",
+  "metadata_field": "OncotreePrimaryDisease",
+  "rules": {
+    "explicit_non_cancerous": "Exact OncotreePrimaryDisease == Non-Cancerous. No response or performance filter.",
+    "disease_unknown": "ModelID absent from current Broad Model metadata, or primary-disease annotation empty; not evidence that model is non-cancerous.",
+    "other_annotated": "Disease field nonempty and not exactly Non-Cancerous; must preserve source term, not infer additional histology.",
+    "candidate_A": "Exclude explicit Non-Cancerous from cancer-focused primary analysis; retain unknown annotation with flag pending authoritative review.",
+    "candidate_B": "Exclude explicit Non-Cancerous and quarantine unknown annotation from cancer-focused primary analysis pending authoritative resolution.",
+    "related_models": "Count by known biological group; eligibility must not change fold separation or create identity overlap.",
+    "non_cancer_controls": "Retain source data and explicit identities for separately labelled optional controls/sensitivity, not pooled cancer primary inference.",
+    "unknown_resolution": "Check authoritative cell-line provenance, e.g. Sanger/Cellosaurus/2018 annotations, using identity metadata only; document evidence before formal cohort v2 freeze.",
+    "panel": "Preserve frozen drug panel and rank. Do not replace drugs based on coverage after inspecting outcomes or model performance."
+  },
+  "next_gate": "Choose and document primary malignancy rule, resolve disease-unknown model if possible, create auditable formal cohort v2 overlay and new freeze before formal full analysis; preserve v1 and this pilot."
+}

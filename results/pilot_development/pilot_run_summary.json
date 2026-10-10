@@ -1,0 +1,119 @@
+{
+  "pilot_version": "v0.1",
+  "scientific_status": "engineering pilot; exploratory development OOF only",
+  "cohort_version": "v1",
+  "code_execution_commit": "629b8f5",
+  "successful_execution_code_hashes": {
+    "config\\pilot_v0.1.json": "e839ecfa82162a01984158cca7e3de6889bb1cbd3e3b908a417c8eab666082dc",
+    "src\\run_development_pilot.py": "d9d32da34022e3b974fcc3037c111beee58d2b606916e18cceabd2886cc305a3",
+    "src\\modeling\\features.py": "a96fd23879bed2af1ce9ad184120c24e22f788640633e6550316439ff370c91a",
+    "src\\modeling\\nested_cv.py": "0b9e6770c0f490c15af48487ebd5ff9c62f762e5cbf372c7e3d66d7c2cfcaf54"
+  },
+  "config_sha256": "e839ecfa82162a01984158cca7e3de6889bb1cbd3e3b908a417c8eab666082dc",
+  "cohort_freeze_sha256": "898c4724cd27a4cf60ecd188bbeac46e2a167fc8646ec603957abfa60d827473",
+  "n_fits": 462,
+  "n_oof_predictions": 6245,
+  "resources": {
+    "wall_seconds": 135.3522731999983,
+    "cpu_seconds": 132.078125,
+    "sampled_peak_rss_bytes": 711655424,
+    "windows_peak_working_set_bytes": 745078784,
+    "memory_scope": "whole single pilot process including input preparation and libraries; not isolated model memory",
+    "sample_interval_seconds": 0.1
+  },
+  "external_response_accessed": false,
+  "external_response_access_attempts": 0,
+  "split_warnings": [
+    "The least populated class in y has only 1 members, which is less than n_splits=3.",
+    "The least populated class in y has only 1 members, which is less than n_splits=3.",
+    "The least populated class in y has only 1 members, which is less than n_splits=3.",
+    "The least populated class in y has only 1 members, which is less than n_splits=3."
+  ],
+  "runtime_threads": "single process inside threadpool_limits(1); saved threadpool_info was obtained after context exit and may show restored defaults",
+  "code_patch_after_successful_run": "source-row validation exception cleanup only; numerical model outputs are from recorded execution commit",
+  "integrity_validation": {
+    "status": "passed",
+    "validated_utc": "2026-10-10T10:54:07.327063+00:00",
+    "run_name": "gdsc2-mira1-plx4720-development-nested-en-reo80",
+    "run_directory": "runs/gdsc2-mira1-plx4720-development-nested-en-reo80",
+    "validation_scope": "Recorded actual fit memberships, fold/group boundaries, OOF completeness, train-only target scaling, fixed-grid choice, OOF metric reconstruction and immutable source provenance",
+    "inputs_read": [
+      "run artifacts",
+      "frozen development identity manifest",
+      "cohort-lock metadata",
+      "Git source blobs"
+    ],
+    "original_GDSC_or_CTRP_response_read_by_validator": false,
+    "source_revision": "629b8f5b122ea60aadf8399dc75ea2aa314b8c65",
+    "source_checks": [
+      {
+        "path": "config/pilot_v0.1.json",
+        "recorded_sha256": "e839ecfa82162a01984158cca7e3de6889bb1cbd3e3b908a417c8eab666082dc",
+        "revision_matches": true,
+        "current_working_copy_matches": true
+      },
+      {
+        "path": "src/run_development_pilot.py",
+        "recorded_sha256": "d9d32da34022e3b974fcc3037c111beee58d2b606916e18cceabd2886cc305a3",
+        "revision_matches": true,
+        "current_working_copy_matches": false
+      },
+      {
+        "path": "src/modeling/features.py",
+        "recorded_sha256": "a96fd23879bed2af1ce9ad184120c24e22f788640633e6550316439ff370c91a",
+        "revision_matches": true,
+        "current_working_copy_matches": true
+      },
+      {
+        "path": "src/modeling/nested_cv.py",
+        "recorded_sha256": "0b9e6770c0f490c15af48487ebd5ff9c62f762e5cbf372c7e3d66d7c2cfcaf54",
+        "revision_matches": true,
+        "current_working_copy_matches": true
+      }
+    ],
+    "counts": {
+      "development_pool_identities": 627,
+      "drug_model_oof_counts": {
+        "1036": {
+          "expression": 623,
+          "expression_matched": 623,
+          "mean": 623,
+          "reo": 623,
+          "tissue": 623
+        },
+        "1931": {
+          "expression": 626,
+          "expression_matched": 626,
+          "mean": 626,
+          "reo": 626,
+          "tissue": 626
+        }
+      },
+      "actual_fits": 462,
+      "expected_fits": 462,
+      "feature_builder_fits_with_training_membership_verified": 342,
+      "oof_predictions": 6245,
+      "outer_folds": 3,
+      "inner_folds": 3
+    },
+    "checks": {
+      "cohort_lock_and_development_identity_hash": true,
+      "all_group_and_fold_boundaries": true,
+      "actual_inner_fit_membership_and_exactly_once_refits": true,
+      "outer_test_not_used_for_fitting": true,
+      "each_identity_exactly_one_oof_prediction_per_drug_model": true,
+      "target_scaling_from_actual_training_responses": true,
+      "fixed_grid_and_logged_inner_rmse_selection": true,
+      "oof_metrics_reconstructed": true,
+      "mean_baseline_ranking_not_interpreted": true,
+      "recorded_sources_match_immutable_run_revision": true,
+      "run_external_access_log_clear": true
+    },
+    "limitations": [
+      "Fit-boundary verification depends on actual-fit audit records; synthetic tests independently inspect builder inputs and perturb held-out labels/distributions.",
+      "Inner OOF predictions were not exported; parameter choice is checked against logged candidate scores, while pooled outer metrics are reconstructed from individual OOF records.",
+      "External access checks inspect the run's access log and guard tests; the validator does not reopen external responses."
+    ]
+  },
+  "final_confirmatory_results": false
+}

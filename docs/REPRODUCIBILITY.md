@@ -3,7 +3,8 @@
 ## Verified versus pending
 
 - Implemented: original input hashes; expression audit; authoritative identity/relatedness graph; compound support and conflicts; observation indices; prespecified coverage panel; group-isolated external manifests; independent source-row validation and immutable local lock.
-- Pending: leakage-free feature/model engine, nested grouped CV, continuous response parsing/direction checks, baselines, statistical uncertainty, final external predictions and manuscript results. There are no trained-model checkpoints or valid new performance numbers to reproduce yet.
+- Implemented in stage 2: training-only feature/scaling/tissue/target states, grouped 3-outer/3-inner development CV, exact GDSC source-row/dose/response checks, two-drug EN/tissue/mean comparisons and resource audit. See the stage-2 report; these are exploratory engineering outputs, not confirmatory performance estimates.
+- Pending: primary cancer-model eligibility revision, full REO200/RF/5x3 repeated analysis, expanded regularization path, uncertainty/permutation inference, final external predictions and manuscript results. There are no final trained-model checkpoints or external results yet.
 - Local environment: Python 3.12.14, NumPy 2.3.5, pandas 3.0.1, openpyxl 3.1.5, RDKit 2026.9.1. Expression mmap files are two float64 arrays of 1,019 × 57,820, about 471 MB each. No GPU is needed for phase 1. Model runtime/RAM must be measured in the next development pilot.
 
 ## Quick inspection without original data
@@ -41,6 +42,18 @@ python src/freeze_cohorts.py
 The second command verifies recorded dependencies and exits without rewriting a locked cohort. Changes to frozen curation code, mappings, rules or inputs require a new cohort version and an entry in the total research plan. Adding independent model scripts does not authorize changes to cohort v1.
 
 ## Outputs and scientific boundaries
+
+Development pilot entry points:
+
+```sh
+python -m pip install --index-url https://pypi.org/simple -r requirements-modeling.txt
+python -m unittest discover -s tests -p test_pilot_integrity.py -v
+python src/run_development_pilot.py --run-dir runs/new-development-pilot
+python scripts/validate_pilot_run.py --run-dir runs/new-development-pilot
+python src/report_development_pilot.py --run-dir runs/new-development-pilot
+```
+
+Execution commit `629b8f5` produced the recorded v0.1 results. The current reader includes a subsequent validation-failure handle cleanup, and the launcher now records failure/resource state and partial outer-fold checkpoints. These repairs do not change the successful v0.1 numerical execution. Full run inputs, individual predictions and fit-membership traces stay local; aggregate evidence is under `results/pilot_development/`.
 
 The authoritative phase-1 outputs are the local `config/cohort_freeze_v1.json`, `.lock.json`, `reports/validation_summary.json`, `results/*sample_manifest.csv` and aggregate `main_drugs.csv`. Selection does not use response magnitudes. External response values are evaluated only after development/model/statistical protocol freeze.
 

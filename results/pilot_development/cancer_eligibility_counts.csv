@@ -1,0 +1,9 @@
+﻿primary_drug_rank,gdsc_drug_id,gdsc_drug_name,ctrp_compound_id,development_original_unique_models,development_explicit_non_cancerous_models,development_unknown_disease_models,development_candidate_A_exclude_only_non_cancerous,development_candidate_B_quarantine_non_cancerous_and_unknown,external_primary_original_unique_models,external_primary_explicit_non_cancerous_models,external_primary_unknown_disease_models,external_primary_candidate_A_exclude_only_non_cancerous,external_primary_candidate_B_quarantine_non_cancerous_and_unknown
+1,1931,MIRA-1,580922,626,1,0,625,625,113,5,0,108,108
+2,1036,PLX-4720,606256,623,1,0,622,622,172,5,1,167,166
+3,1191,Bortezomib,411737,621,1,0,620,620,173,4,1,169,168
+4,1930,Telomerase Inhibitor IX,411865,621,1,0,620,620,173,5,1,168,167
+5,1199,Tamoxifen,26972,621,1,0,620,620,170,5,1,165,164
+6,1091,BMS-536924,411859,621,1,0,620,620,169,4,1,165,164
+7,1010,Gefitinib,52926,621,1,0,620,620,165,4,1,161,160
+8,1922,Cediranib,606136,621,1,0,620,620,87,5,0,82,82

@@ -26,6 +26,7 @@ sys.path.insert(0, str(REPO / "src"))
 from modeling.features import FoldFeatureBuilder
 from modeling.nested_cv import TrainOnlyRegressor, evaluate_outer_fold, make_grouped_splits
 from run_development_pilot import read_selected_responses
+import run_development_pilot as pilot_runner
 
 
 class FoldFeatureIntegrityTests(unittest.TestCase):
@@ -398,6 +399,86 @@ class FrozenResponseRowTests(unittest.TestCase):
             self.write_fixture(source, selected_response=1.5)
             with self.assertRaises(AssertionError):
                 read_selected_responses(self.frozen_row(), source, Path(temp) / "development.csv")
+
+
+class FrozenInputVerificationTests(unittest.TestCase):
+    @staticmethod
+    def make_locked_fixture(root):
+        required = ["results/development_sample_manifest.csv", "results/main_drugs.csv",
+                    "data_processed/expression_tpm.npy", "data_processed/expression_genes.tsv",
+                    "data_processed/expression_samples.tsv", "data_processed/cell_line_dictionary.csv",
+                    "data_manifest/original_source_sha256.csv", "src/project_paths.py"]
+        entries = []
+        for name in required:
+            path = root / name
+            path.parent.mkdir(parents=True, exist_ok=True)
+            path.write_bytes(("Synthetic fixed input: " + name).encode())
+            entries.append({"path": name, "scope": "rebuild_v2", "sha256": pilot_runner.sha(path)})
+        # This frozen external descriptor is intentionally absent on disk.
+        # Development preflight must not try to inspect its response content.
+        entries.append({"path": "data_raw/ctrp/curves_post_qc.txt", "scope": "rebuild_v2",
+                        "sha256": "not_an_access_permission"})
+        config = root / "config"
+        config.mkdir()
+        freeze = config / "cohort_freeze_v1.json"
+        freeze.write_text(json.dumps({"files": entries}), encoding="utf-8")
+        (config / "cohort_freeze_v1.lock.json").write_text(
+            json.dumps({"freeze_sha256": pilot_runner.sha(freeze)}), encoding="utf-8")
+
+    def test_preflight_checks_development_hashes_without_external_response_reads(self):
+        with tempfile.TemporaryDirectory(prefix="reo_locked_input_fixture_") as temp:
+            root = Path(temp)
+            self.make_locked_fixture(root)
+            with patch.object(pilot_runner, "ROOT", root), patch.object(pilot_runner, "sha", wraps=pilot_runner.sha) as spy:
+                result = pilot_runner.verify_development_inputs()
+            self.assertFalse(result["CTRP_response_files_opened"])
+            self.assertTrue(all("ctrp" not in str(call.args[0]).lower() for call in spy.call_args_list))
+            self.assertIn("results/development_sample_manifest.csv", result["verified_development_files"])
+
+    def test_changed_development_assignment_or_changed_freeze_is_rejected(self):
+        for changed_file in ("results/development_sample_manifest.csv", "config/cohort_freeze_v1.json"):
+            with self.subTest(changed_file=changed_file):
+                with tempfile.TemporaryDirectory(prefix="reo_changed_input_fixture_") as temp:
+                    root = Path(temp)
+                    self.make_locked_fixture(root)
+                    path = root / changed_file
+                    path.write_bytes(path.read_bytes() + b" changed")
+                    with patch.object(pilot_runner, "ROOT", root):
+                        with self.assertRaises(ValueError):
+                            pilot_runner.verify_development_inputs()
+
+
+class FailedRunEvidenceTests(unittest.TestCase):
+    def test_failed_run_preserves_partial_outputs_and_stops_resource_thread(self):
+        for error in (RuntimeError("synthetic pilot failure"), KeyboardInterrupt("synthetic interruption")):
+            with self.subTest(error_type=type(error).__name__):
+                with tempfile.TemporaryDirectory(prefix="reo_failure_evidence_fixture_") as temp:
+                    output = Path(temp)
+                    partial = output / "oof_predictions.partial.csv"
+                    partial.write_text("synthetic preserved checkpoint\n", encoding="utf-8")
+                    state = {}
+
+                    def failed_main():
+                        monitor = pilot_runner.ResourceMonitor(output / "resource_samples.csv", 0.01).start()
+                        state.update({"out": output, "monitor": monitor,
+                                      "config": {"run_name": "synthetic failure test"},
+                                      "access": set(), "blocked": []})
+                        raise error
+
+                    with patch.object(pilot_runner, "ACTIVE_RUN", state), patch.object(pilot_runner, "main", failed_main):
+                        with self.assertRaises(type(error)):
+                            pilot_runner.run_with_failure_recording()
+                    report = json.loads((output / "run_manifest.json").read_text(encoding="utf-8"))
+                    self.assertEqual(report["status"], "failed")
+                    self.assertEqual(report["failure_type"], type(error).__name__)
+                    self.assertTrue(report["partial_outputs_retained"])
+                    self.assertFalse(report["external_response_accessed"])
+                    self.assertFalse(state["monitor"].thread.is_alive())
+                    self.assertTrue(state["monitor"].stop.is_set())
+                    self.assertGreaterEqual(report["resources"]["wall_seconds"], 0.0)
+                    self.assertGreater(report["resources"]["sampled_peak_rss_bytes"], 0)
+                    self.assertGreaterEqual(len(pd.read_csv(output / "resource_samples.csv")), 1)
+                    self.assertEqual(partial.read_text(encoding="utf-8"), "synthetic preserved checkpoint\n")
 
 
 if __name__ == "__main__":

@@ -1,0 +1,26 @@
+[
+  {
+    "gdsc_drug_id": 1931,
+    "n": 626,
+    "response_min": 0.762338,
+    "response_max": 0.997251,
+    "response_sd": 0.02411451679851224,
+    "n_unique_response": 620,
+    "dose_window": [
+      0.010005,
+      10.0
+    ]
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "n": 623,
+    "response_min": 0.394033,
+    "response_max": 0.997766,
+    "response_sd": 0.06606352917701087,
+    "n_unique_response": 623,
+    "dose_window": [
+      0.010005,
+      10.0
+    ]
+  }
+]

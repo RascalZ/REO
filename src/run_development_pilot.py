@@ -16,6 +16,7 @@ from modeling.nested_cv import make_grouped_splits,evaluate_outer_fold,metrics
 from project_paths import REPOSITORY,original_input
 
 ROOT=REPOSITORY
+ACTIVE_RUN={}
 
 def sha(path):
     h=hashlib.sha256()
@@ -56,7 +57,7 @@ def install_data_guard():
     return access,blocked
 
 class ResourceMonitor:
-    def __init__(self,path,interval):self.path=path;self.interval=interval;self.stop=threading.Event();self.rows=[];self.process=psutil.Process()
+    def __init__(self,path,interval):self.path=path;self.interval=interval;self.stop=threading.Event();self.rows=[];self.process=psutil.Process();self.result=None
     def start(self):
         self.started=time.perf_counter();self.cpu_start=self.process.cpu_times()
         def sample():
@@ -66,32 +67,39 @@ class ResourceMonitor:
                 self.stop.wait(self.interval)
         self.thread=threading.Thread(target=sample,daemon=True);self.thread.start();return self
     def close(self):
+        if self.result is not None:return self.result
         self.stop.set();self.thread.join();info=self.process.memory_info()
         self.rows.append({'elapsed_seconds':time.perf_counter()-self.started,'rss_bytes':info.rss,'windows_peak_working_set_bytes':getattr(info,'peak_wset',None)})
         pd.DataFrame(self.rows).to_csv(self.path,index=False)
         cpu=self.process.cpu_times()
-        return {'wall_seconds':time.perf_counter()-self.started,'cpu_seconds':cpu.user+cpu.system-self.cpu_start.user-self.cpu_start.system,
+        self.result={'wall_seconds':time.perf_counter()-self.started,'cpu_seconds':cpu.user+cpu.system-self.cpu_start.user-self.cpu_start.system,
                 'sampled_peak_rss_bytes':max(r['rss_bytes'] for r in self.rows),
                 'windows_peak_working_set_bytes':getattr(info,'peak_wset',None),'memory_scope':'whole single pilot process including input preparation and libraries; not isolated model memory','sample_interval_seconds':self.interval}
+        return self.result
 
 def read_selected_responses(manifest,source,output):
     lookup={int(r['gdsc_source_row_number']):r for r in manifest.to_dict('records')}
     assert len(lookup)==len(manifest)
-    records=[];wb=load_workbook(source,read_only=True,data_only=True)
-    iterator=wb.worksheets[0].iter_rows(values_only=True);header=next(iterator);col={k:i for i,k in enumerate(header)}
-    for source_row,values in enumerate(iterator,2):
-        if source_row not in lookup:continue
-        r=lookup[source_row]
-        assert str(values[col['DRUG_ID']])==str(r['gdsc_drug_id'])
-        assert str(values[col['NLME_CURVE_ID']])==str(r['nlme_curve_id'])
-        assert float(values[col['MIN_CONC']])==float(r['min_conc']) and float(values[col['MAX_CONC']])==float(r['max_conc'])
-        y=float(values[col['AUC']]);assert np.isfinite(y) and 0<=y<=1
-        records.append({**r,'response_auc':y})
-    wb.close();assert len(records)==len(lookup)
+    records=[];wb=load_workbook(source,read_only=True,data_only=True);iterator=None
+    try:
+        iterator=wb.worksheets[0].iter_rows(values_only=True);header=next(iterator);col={k:i for i,k in enumerate(header)}
+        for source_row,values in enumerate(iterator,2):
+            if source_row not in lookup:continue
+            r=lookup[source_row]
+            assert str(values[col['DRUG_ID']])==str(r['gdsc_drug_id'])
+            assert str(values[col['NLME_CURVE_ID']])==str(r['nlme_curve_id'])
+            assert float(values[col['MIN_CONC']])==float(r['min_conc']) and float(values[col['MAX_CONC']])==float(r['max_conc'])
+            y=float(values[col['AUC']]);assert np.isfinite(y) and 0<=y<=1
+            records.append({**r,'response_auc':y})
+    finally:
+        if iterator is not None:iterator.close()
+        wb.close()
+    assert len(records)==len(lookup)
     response=pd.DataFrame(records).sort_values(['gdsc_drug_id','canonical_model_id'])
     response.to_csv(output,index=False,encoding='utf-8-sig');return response
 
 def main():
+    ACTIVE_RUN.clear()
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--config',type=Path,default=ROOT/'config/pilot_v0.1.json')
     ap.add_argument('--run-dir',type=Path,default=None)
@@ -101,6 +109,7 @@ def main():
     out.mkdir(parents=True);(out/'features').mkdir()
     start=time.perf_counter();access,blocked=install_data_guard()
     monitor=ResourceMonitor(out/'resource_samples.csv',config['resources']['rss_sampling_interval_seconds']).start()
+    ACTIVE_RUN.update({'out':out,'monitor':monitor,'config':config,'access':access,'blocked':blocked})
     packages=['numpy','pandas','scikit-learn','scipy','psutil','joblib','threadpoolctl','cloudpickle']
     run_meta={'config_sha256':sha(args.config),'cohort_lock':json.loads((ROOT/'config/cohort_freeze_v1.lock.json').read_text(encoding='utf-8')),
               'development_input_verification':verify_development_inputs(),
@@ -109,6 +118,7 @@ def main():
               'configuration':config,'status':'running','external_response_accessed':False,
               'source_hashes':{str(p.relative_to(ROOT)):sha(p) for p in [args.config,ROOT/'src/run_development_pilot.py',ROOT/'src/modeling/features.py',ROOT/'src/modeling/nested_cv.py']}}
     dump(out/'run_manifest.json',run_meta)
+    ACTIVE_RUN['metadata']=run_meta
     global_manifest=pd.read_csv(ROOT/'results/development_sample_manifest.csv',dtype=str,keep_default_na=False)
     selected=global_manifest[global_manifest.gdsc_drug_id.isin([str(d) for d in config['drug_ids']])].copy()
     assert set(selected.role)=={'development'}
@@ -145,6 +155,7 @@ def main():
         fit_events.append(event);fit_log.write(json.dumps(event,ensure_ascii=False,allow_nan=False)+'\n');fit_log.flush()
     try:
         with threadpool_limits(limits=config['resources']['blas_threads']):
+            run_meta['runtime_threadpools']=threadpool_info()
             for drug in config['drug_ids']:
                 data=response[response.gdsc_drug_id.eq(str(drug))].sort_values('canonical_model_id').reset_index(drop=True)
                 rows=data.expression_row_index.astype(int).to_numpy()
@@ -171,6 +182,8 @@ def main():
                         for n,pred in zip(test,result['predictions']):
                             r=data.iloc[n];preds.append({**context,'canonical_model_id':r.canonical_model_id,'biological_group_id':r.biological_group_id,'expression_row_index':int(r.expression_row_index),'tissue':r.tissue,'observed_auc':float(y[n]),'predicted_auc':float(pred)})
                         pd.DataFrame(fold_metrics).to_csv(out/'fold_metrics.csv',index=False)
+                        pd.DataFrame(preds).to_csv(out/'oof_predictions.partial.csv',index=False,encoding='utf-8-sig')
+                        dump(out/'chosen_parameters.partial.json',choices)
                         print(json.dumps({'event':'outer_model_complete',**context,'n_train':len(train),'n_test':len(test),'wall_seconds':round(elapsed,2),'rmse':result['metrics']['rmse'],'spearman':result['metrics']['spearman']},ensure_ascii=False),flush=True)
                     if oi==0:
                         # Formal feature-budget timing only; no labels, tuning or performance used.
@@ -196,4 +209,18 @@ def main():
     assert not blocked
     print(json.dumps({'event':'pilot_complete','run_dir':str(out),'n_fits':len(fit_events),'resources':run_meta['resources']},ensure_ascii=False),flush=True)
 
-if __name__=='__main__':main()
+def run_with_failure_recording():
+    """Preserve failure/resource evidence and completed outer checkpoints."""
+    try:main()
+    except BaseException as exc:
+        if ACTIVE_RUN:
+            meta=ACTIVE_RUN.get('metadata',{'configuration':ACTIVE_RUN['config']})
+            meta.update({'status':'failed','failure_type':type(exc).__name__,'failure':str(exc),
+                         'resources':ACTIVE_RUN['monitor'].close(),
+                         'input_files_accessed':sorted(ACTIVE_RUN['access']),
+                         'blocked_external_access_attempts':ACTIVE_RUN['blocked'],'external_response_accessed':False,
+                         'partial_outputs_retained':True})
+            dump(ACTIVE_RUN['out']/'run_manifest.json',meta)
+        raise
+
+if __name__=='__main__':run_with_failure_recording()

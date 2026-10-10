@@ -1,0 +1,216 @@
+{
+  "schema_version": "0.1",
+  "status": "draft_metadata_review_not_applied",
+  "created_utc": "2026-10-10T10:49:46.171375+00:00",
+  "reviewer_activity": "Read identity and disease metadata only; no response values or model performance analyzed.",
+  "response_files_read": [],
+  "counts_unit": "Unique canonical models per drug, equal to known biological groups in the frozen selected manifests; never summed across drugs as independent cells.",
+  "frozen_drug_panel_modified": false,
+  "frozen_sample_manifests_modified": false,
+  "pilot_scope": "Actual engineering pilot uses frozen cohort v1 including these models; candidate counts are proposals only.",
+  "proposal_config": "config/pilot_cancer_eligibility_review.json",
+  "counts_table": "results/pilot_development/cancer_eligibility_counts.csv",
+  "metadata_source_version": "DepMap Public 24Q4 Model v1",
+  "source_columns_used": [
+    "ModelID",
+    "CellLineName",
+    "OncotreePrimaryDisease",
+    "OncotreeSubtype",
+    "DepmapModelType"
+  ],
+  "input_sha256": [
+    {
+      "path": "data_raw/cell_metadata/DepMap_24Q4_v1_Model.csv",
+      "sha256": "b7a0c1385e6cef30132b56aff61f1261d11e3f490490b355c430d32ee0dbdcfa"
+    },
+    {
+      "path": "results/main_drugs.csv",
+      "sha256": "fff63fd95da9981eb2a9bfa2ca206172f79b2f43b5c60e7bf55939c4f72a8c26"
+    },
+    {
+      "path": "results/development_sample_manifest.csv",
+      "sha256": "e995839ef4142651cf110bdf1d77545024aa7c91fb28a6c928c676a2dcdd4853"
+    },
+    {
+      "path": "results/external_primary_sample_manifest.csv",
+      "sha256": "db6820e740532edbb900d2feffee0d9d06e516bd5c0a37fbb964bcc1b9cdde99"
+    }
+  ],
+  "proposal_config_sha256": "3b699e0d7b1332f30f1a93dc1f4364618a327fea345385d3a7e3ea19534ac72c",
+  "global_summary": {
+    "development": {
+      "original_unique_models": 627,
+      "explicit_non_cancerous_unique_models": 1,
+      "unknown_disease_unique_models": 0,
+      "other_disease_annotated_unique_models": 626,
+      "candidate_A_unique_models": 626,
+      "candidate_B_unique_models": 626
+    },
+    "external_primary": {
+      "original_unique_models": 180,
+      "explicit_non_cancerous_unique_models": 5,
+      "unknown_disease_unique_models": 1,
+      "other_disease_annotated_unique_models": 174,
+      "candidate_A_unique_models": 175,
+      "candidate_B_unique_models": 174
+    }
+  },
+  "flagged_model_records": [
+    {
+      "cohort_role": "development",
+      "canonical_model_id": "ACH-000135",
+      "biological_group_id": "BIOGROUP_ACH-000135",
+      "ccle_id": "HS940T_FIBROBLAST",
+      "tissue_in_frozen_manifest": "Fibroblast",
+      "eligibility_status": "explicit_non_cancerous",
+      "primary_disease_annotation": "Non-Cancerous",
+      "subtype_annotation": "Fibroblast, Skin",
+      "model_type_annotation": "ZFIBSKI",
+      "unknown_reason": "",
+      "included_gdsc_drug_ids": [
+        "1010",
+        "1036",
+        "1091",
+        "1191",
+        "1199",
+        "1922",
+        "1930",
+        "1931"
+      ]
+    },
+    {
+      "cohort_role": "external_primary",
+      "canonical_model_id": "ACH-000043",
+      "biological_group_id": "BIOGROUP_ACH-000043",
+      "ccle_id": "HS895T_FIBROBLAST",
+      "tissue_in_frozen_manifest": "Fibroblast",
+      "eligibility_status": "explicit_non_cancerous",
+      "primary_disease_annotation": "Non-Cancerous",
+      "subtype_annotation": "Fibroblast, Skin",
+      "model_type_annotation": "ZFIBSKI",
+      "unknown_reason": "",
+      "included_gdsc_drug_ids": [
+        "1010",
+        "1036",
+        "1091",
+        "1191",
+        "1199",
+        "1922",
+        "1930",
+        "1931"
+      ]
+    },
+    {
+      "cohort_role": "external_primary",
+      "canonical_model_id": "ACH-000133",
+      "biological_group_id": "BIOGROUP_ACH-000133",
+      "ccle_id": "HS729_SOFT_TISSUE",
+      "tissue_in_frozen_manifest": "Fibroblast",
+      "eligibility_status": "explicit_non_cancerous",
+      "primary_disease_annotation": "Non-Cancerous",
+      "subtype_annotation": "Fibroblast",
+      "model_type_annotation": "ZFIB",
+      "unknown_reason": "",
+      "included_gdsc_drug_ids": [
+        "1010",
+        "1036",
+        "1091",
+        "1191",
+        "1199",
+        "1922",
+        "1930",
+        "1931"
+      ]
+    },
+    {
+      "cohort_role": "external_primary",
+      "canonical_model_id": "ACH-000180",
+      "biological_group_id": "BIOGROUP_ACH-000180",
+      "ccle_id": "HS839T_FIBROBLAST",
+      "tissue_in_frozen_manifest": "Fibroblast",
+      "eligibility_status": "explicit_non_cancerous",
+      "primary_disease_annotation": "Non-Cancerous",
+      "subtype_annotation": "Fibroblast, Skin",
+      "model_type_annotation": "ZFIBSKI",
+      "unknown_reason": "",
+      "included_gdsc_drug_ids": [
+        "1010",
+        "1036",
+        "1091",
+        "1191",
+        "1199",
+        "1922",
+        "1930",
+        "1931"
+      ]
+    },
+    {
+      "cohort_role": "external_primary",
+      "canonical_model_id": "ACH-000194",
+      "biological_group_id": "BIOGROUP_ACH-000194",
+      "ccle_id": "HS934T_FIBROBLAST",
+      "tissue_in_frozen_manifest": "Fibroblast",
+      "eligibility_status": "explicit_non_cancerous",
+      "primary_disease_annotation": "Non-Cancerous",
+      "subtype_annotation": "Fibroblast, Skin",
+      "model_type_annotation": "ZFIBSKI",
+      "unknown_reason": "",
+      "included_gdsc_drug_ids": [
+        "1036",
+        "1199",
+        "1922",
+        "1930",
+        "1931"
+      ]
+    },
+    {
+      "cohort_role": "external_primary",
+      "canonical_model_id": "ACH-000229",
+      "biological_group_id": "BIOGROUP_ACH-000229",
+      "ccle_id": "HS822T_FIBROBLAST",
+      "tissue_in_frozen_manifest": "Fibroblast",
+      "eligibility_status": "explicit_non_cancerous",
+      "primary_disease_annotation": "Non-Cancerous",
+      "subtype_annotation": "Fibroblast, Bone",
+      "model_type_annotation": "ZFIBBON",
+      "unknown_reason": "",
+      "included_gdsc_drug_ids": [
+        "1010",
+        "1036",
+        "1091",
+        "1191",
+        "1199",
+        "1922",
+        "1930",
+        "1931"
+      ]
+    },
+    {
+      "cohort_role": "external_primary",
+      "canonical_model_id": "ACH-001078",
+      "biological_group_id": "BIOGROUP_ACH-001078",
+      "ccle_id": "HCC1588_LUNG",
+      "tissue_in_frozen_manifest": "lung",
+      "eligibility_status": "disease_unknown",
+      "primary_disease_annotation": "",
+      "subtype_annotation": "",
+      "model_type_annotation": "",
+      "unknown_reason": "model_absent_from_current_Broad_Model_metadata",
+      "included_gdsc_drug_ids": [
+        "1010",
+        "1036",
+        "1091",
+        "1191",
+        "1199",
+        "1930"
+      ]
+    }
+  ],
+  "candidate_external_minimum_across_eight_drugs": {
+    "original": 87,
+    "candidate_A_exclude_only_non_cancerous": 82,
+    "candidate_B_quarantine_non_cancerous_and_unknown": 82
+  },
+  "scientific_reason": "Primary question is cancer-cell response prediction; explicitly non-cancerous models should not silently be described as cancer models. Eligibility proposal uses source disease metadata before external outcome access, with timing disclosure because development pilot had already started.",
+  "next_action": "Formal cohort v2 eligibility overlay and lock required before applying exclusion. Do not silently rewrite pilot or v1."
+}

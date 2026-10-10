@@ -1,0 +1,22 @@
+[
+  {
+    "gdsc_drug_id": 1931,
+    "outer_fold": 0,
+    "requested_genes": 200,
+    "actual_genes": 200,
+    "retained_pairs": 19900,
+    "fit_transform_wall_seconds": 0.568994000001112,
+    "matrix_bytes": 8298300,
+    "model_fit_performed": false
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "outer_fold": 0,
+    "requested_genes": 200,
+    "actual_genes": 200,
+    "retained_pairs": 19900,
+    "fit_transform_wall_seconds": 0.6483906999928877,
+    "matrix_bytes": 8278400,
+    "model_fit_performed": false
+  }
+]
