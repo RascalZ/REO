@@ -16,6 +16,8 @@ python scripts/verify_public_snapshot.py
 
 This verifies published aggregate hashes/counts only, not individual identity or prediction performance.
 
+This quick inspection and syntax compilation were tested on 2026-10-10 in a fresh Git clone using isolated Python standard-library execution (`-I -S`). Full source replay and a newly installed dependency environment have not yet been verified.
+
 ## Full local phase-1 reconstruction
 
 Use Python 3.12 and a fresh checkout/workspace; do not overwrite a locked workspace. Prepare the original versioned inputs listed in DATA_AVAILABILITY. Set `REO_ORIGINAL_ROOT` to the parent original-data directory or copy `config/input_paths.example.json` to `config/input_paths.local.json` and edit the file paths. Only the latter is machine-specific and Git-ignored.
