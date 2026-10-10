@@ -1,0 +1,193 @@
+﻿gdsc_drug_id,drug_name,tissue,n_models,n_groups
+1010,Gefitinib,Biliary Tract,1,1
+1010,Gefitinib,Bladder/Urinary Tract,16,16
+1010,Gefitinib,Bone,13,13
+1010,Gefitinib,Bowel,39,39
+1010,Gefitinib,Breast,44,44
+1010,Gefitinib,CNS/Brain,34,34
+1010,Gefitinib,Cervix,2,2
+1010,Gefitinib,Esophagus/Stomach,45,45
+1010,Gefitinib,Fibroblast,1,1
+1010,Gefitinib,Head and Neck,16,16
+1010,Gefitinib,Kidney,18,18
+1010,Gefitinib,Liver,13,13
+1010,Gefitinib,Lung,131,131
+1010,Gefitinib,Lymphoid,75,75
+1010,Gefitinib,Myeloid,29,29
+1010,Gefitinib,Ovary/Fallopian Tube,29,29
+1010,Gefitinib,Pancreas,28,28
+1010,Gefitinib,Peripheral Nervous System,12,12
+1010,Gefitinib,Pleura,7,7
+1010,Gefitinib,Prostate,6,6
+1010,Gefitinib,Skin,33,33
+1010,Gefitinib,Soft Tissue,8,8
+1010,Gefitinib,Thyroid,9,9
+1010,Gefitinib,Uterus,12,12
+1036,PLX-4720,Biliary Tract,1,1
+1036,PLX-4720,Bladder/Urinary Tract,16,16
+1036,PLX-4720,Bone,13,13
+1036,PLX-4720,Bowel,41,41
+1036,PLX-4720,Breast,44,44
+1036,PLX-4720,CNS/Brain,34,34
+1036,PLX-4720,Cervix,2,2
+1036,PLX-4720,Esophagus/Stomach,46,46
+1036,PLX-4720,Fibroblast,1,1
+1036,PLX-4720,Head and Neck,16,16
+1036,PLX-4720,Kidney,18,18
+1036,PLX-4720,Liver,13,13
+1036,PLX-4720,Lung,131,131
+1036,PLX-4720,Lymphoid,74,74
+1036,PLX-4720,Myeloid,31,31
+1036,PLX-4720,Ovary/Fallopian Tube,27,27
+1036,PLX-4720,Pancreas,28,28
+1036,PLX-4720,Peripheral Nervous System,12,12
+1036,PLX-4720,Pleura,7,7
+1036,PLX-4720,Prostate,6,6
+1036,PLX-4720,Skin,33,33
+1036,PLX-4720,Soft Tissue,8,8
+1036,PLX-4720,Thyroid,9,9
+1036,PLX-4720,Uterus,12,12
+1091,BMS-536924,Biliary Tract,1,1
+1091,BMS-536924,Bladder/Urinary Tract,16,16
+1091,BMS-536924,Bone,13,13
+1091,BMS-536924,Bowel,39,39
+1091,BMS-536924,Breast,44,44
+1091,BMS-536924,CNS/Brain,34,34
+1091,BMS-536924,Cervix,2,2
+1091,BMS-536924,Esophagus/Stomach,45,45
+1091,BMS-536924,Fibroblast,1,1
+1091,BMS-536924,Head and Neck,16,16
+1091,BMS-536924,Kidney,18,18
+1091,BMS-536924,Liver,13,13
+1091,BMS-536924,Lung,131,131
+1091,BMS-536924,Lymphoid,75,75
+1091,BMS-536924,Myeloid,29,29
+1091,BMS-536924,Ovary/Fallopian Tube,29,29
+1091,BMS-536924,Pancreas,28,28
+1091,BMS-536924,Peripheral Nervous System,12,12
+1091,BMS-536924,Pleura,7,7
+1091,BMS-536924,Prostate,6,6
+1091,BMS-536924,Skin,33,33
+1091,BMS-536924,Soft Tissue,8,8
+1091,BMS-536924,Thyroid,9,9
+1091,BMS-536924,Uterus,12,12
+1191,Bortezomib,Biliary Tract,1,1
+1191,Bortezomib,Bladder/Urinary Tract,16,16
+1191,Bortezomib,Bone,13,13
+1191,Bortezomib,Bowel,39,39
+1191,Bortezomib,Breast,44,44
+1191,Bortezomib,CNS/Brain,34,34
+1191,Bortezomib,Cervix,2,2
+1191,Bortezomib,Esophagus/Stomach,45,45
+1191,Bortezomib,Fibroblast,1,1
+1191,Bortezomib,Head and Neck,16,16
+1191,Bortezomib,Kidney,18,18
+1191,Bortezomib,Liver,13,13
+1191,Bortezomib,Lung,131,131
+1191,Bortezomib,Lymphoid,75,75
+1191,Bortezomib,Myeloid,29,29
+1191,Bortezomib,Ovary/Fallopian Tube,29,29
+1191,Bortezomib,Pancreas,28,28
+1191,Bortezomib,Peripheral Nervous System,12,12
+1191,Bortezomib,Pleura,7,7
+1191,Bortezomib,Prostate,6,6
+1191,Bortezomib,Skin,33,33
+1191,Bortezomib,Soft Tissue,8,8
+1191,Bortezomib,Thyroid,9,9
+1191,Bortezomib,Uterus,12,12
+1199,Tamoxifen,Biliary Tract,1,1
+1199,Tamoxifen,Bladder/Urinary Tract,16,16
+1199,Tamoxifen,Bone,13,13
+1199,Tamoxifen,Bowel,39,39
+1199,Tamoxifen,Breast,44,44
+1199,Tamoxifen,CNS/Brain,34,34
+1199,Tamoxifen,Cervix,2,2
+1199,Tamoxifen,Esophagus/Stomach,45,45
+1199,Tamoxifen,Fibroblast,1,1
+1199,Tamoxifen,Head and Neck,16,16
+1199,Tamoxifen,Kidney,18,18
+1199,Tamoxifen,Liver,13,13
+1199,Tamoxifen,Lung,131,131
+1199,Tamoxifen,Lymphoid,75,75
+1199,Tamoxifen,Myeloid,29,29
+1199,Tamoxifen,Ovary/Fallopian Tube,29,29
+1199,Tamoxifen,Pancreas,28,28
+1199,Tamoxifen,Peripheral Nervous System,12,12
+1199,Tamoxifen,Pleura,7,7
+1199,Tamoxifen,Prostate,6,6
+1199,Tamoxifen,Skin,33,33
+1199,Tamoxifen,Soft Tissue,8,8
+1199,Tamoxifen,Thyroid,9,9
+1199,Tamoxifen,Uterus,12,12
+1922,Cediranib,Biliary Tract,1,1
+1922,Cediranib,Bladder/Urinary Tract,16,16
+1922,Cediranib,Bone,13,13
+1922,Cediranib,Bowel,39,39
+1922,Cediranib,Breast,44,44
+1922,Cediranib,CNS/Brain,34,34
+1922,Cediranib,Cervix,2,2
+1922,Cediranib,Esophagus/Stomach,45,45
+1922,Cediranib,Fibroblast,1,1
+1922,Cediranib,Head and Neck,16,16
+1922,Cediranib,Kidney,18,18
+1922,Cediranib,Liver,13,13
+1922,Cediranib,Lung,131,131
+1922,Cediranib,Lymphoid,75,75
+1922,Cediranib,Myeloid,29,29
+1922,Cediranib,Ovary/Fallopian Tube,29,29
+1922,Cediranib,Pancreas,28,28
+1922,Cediranib,Peripheral Nervous System,12,12
+1922,Cediranib,Pleura,7,7
+1922,Cediranib,Prostate,6,6
+1922,Cediranib,Skin,33,33
+1922,Cediranib,Soft Tissue,8,8
+1922,Cediranib,Thyroid,9,9
+1922,Cediranib,Uterus,12,12
+1930,Telomerase Inhibitor IX,Biliary Tract,1,1
+1930,Telomerase Inhibitor IX,Bladder/Urinary Tract,16,16
+1930,Telomerase Inhibitor IX,Bone,13,13
+1930,Telomerase Inhibitor IX,Bowel,39,39
+1930,Telomerase Inhibitor IX,Breast,44,44
+1930,Telomerase Inhibitor IX,CNS/Brain,34,34
+1930,Telomerase Inhibitor IX,Cervix,2,2
+1930,Telomerase Inhibitor IX,Esophagus/Stomach,45,45
+1930,Telomerase Inhibitor IX,Fibroblast,1,1
+1930,Telomerase Inhibitor IX,Head and Neck,16,16
+1930,Telomerase Inhibitor IX,Kidney,18,18
+1930,Telomerase Inhibitor IX,Liver,13,13
+1930,Telomerase Inhibitor IX,Lung,131,131
+1930,Telomerase Inhibitor IX,Lymphoid,75,75
+1930,Telomerase Inhibitor IX,Myeloid,29,29
+1930,Telomerase Inhibitor IX,Ovary/Fallopian Tube,29,29
+1930,Telomerase Inhibitor IX,Pancreas,28,28
+1930,Telomerase Inhibitor IX,Peripheral Nervous System,12,12
+1930,Telomerase Inhibitor IX,Pleura,7,7
+1930,Telomerase Inhibitor IX,Prostate,6,6
+1930,Telomerase Inhibitor IX,Skin,33,33
+1930,Telomerase Inhibitor IX,Soft Tissue,8,8
+1930,Telomerase Inhibitor IX,Thyroid,9,9
+1930,Telomerase Inhibitor IX,Uterus,12,12
+1931,MIRA-1,Biliary Tract,1,1
+1931,MIRA-1,Bladder/Urinary Tract,16,16
+1931,MIRA-1,Bone,13,13
+1931,MIRA-1,Bowel,40,40
+1931,MIRA-1,Breast,44,44
+1931,MIRA-1,CNS/Brain,34,34
+1931,MIRA-1,Cervix,2,2
+1931,MIRA-1,Esophagus/Stomach,46,46
+1931,MIRA-1,Fibroblast,1,1
+1931,MIRA-1,Head and Neck,16,16
+1931,MIRA-1,Kidney,18,18
+1931,MIRA-1,Liver,13,13
+1931,MIRA-1,Lung,132,132
+1931,MIRA-1,Lymphoid,75,75
+1931,MIRA-1,Myeloid,31,31
+1931,MIRA-1,Ovary/Fallopian Tube,29,29
+1931,MIRA-1,Pancreas,28,28
+1931,MIRA-1,Peripheral Nervous System,12,12
+1931,MIRA-1,Pleura,7,7
+1931,MIRA-1,Prostate,6,6
+1931,MIRA-1,Skin,33,33
+1931,MIRA-1,Soft Tissue,8,8
+1931,MIRA-1,Thyroid,9,9
+1931,MIRA-1,Uterus,12,12

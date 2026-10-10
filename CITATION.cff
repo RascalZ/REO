@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "Cite the software repository for this reconstruction. A paper citation will be added after publication."
+type: software
+title: "REO: Auditable drug-response research reconstruction"
+authors:
+  - name: "REO research contributors"
+repository-code: "https://github.com/RascalZ/REO"
+version: "0.1.0"
+date-released: "2026-10-10"
+license: MIT

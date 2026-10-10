@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "cohort_version": "v1",
+  "created_local_date": "2026-10-10",
+  "local_identity_validation_status": "passed",
+  "local_validation_assertions": 1607707,
+  "local_cohort_freeze_sha256": "898c4724cd27a4cf60ecd188bbeac46e2a167fc8646ec603957abfa60d827473",
+  "limitations": [
+    "Aggregate tables only; full source-row verification requires local versioned data.",
+    "CTRP historically used; retrospective redesign.",
+    "Known GDSC2 identity/lineage isolation, not proof of unknown genealogy or all GDSC1.",
+    "Shared CCLE expression and different dose windows; no prediction models fitted."
+  ],
+  "files": [
+    {
+      "path": "results/main_drugs.csv",
+      "sha256_lf": "b6f411dbb8c49c9b17db5f24b80daccaa4b3a95824a646e04b27938bb049b8ce"
+    },
+    {
+      "path": "results/cohort_summary.json",
+      "sha256_lf": "9f08b4ecf11d78e94d87f50eacdf6ab25e2033c95c8c056721a69933c28916e7"
+    },
+    {
+      "path": "config/cohort_rules.json",
+      "sha256_lf": "f97c9b869ac9baccfc5512bcb23754a3ce3de3f550714dfca6e35b81aa9bfd65"
+    }
+  ]
+}

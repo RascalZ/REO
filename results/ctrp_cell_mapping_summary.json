@@ -1,0 +1,13 @@
+{
+  "official_ctrp_models": 1107,
+  "mapping_status_counts": {
+    "resolved_exact_normalized_name_accession": 1041,
+    "unmapped": 46,
+    "ambiguous": 19,
+    "legacy_only_unconfirmed": 1
+  },
+  "expression_available_master_ccl_ids": 965,
+  "expression_available_canonical_models": 965,
+  "expression_available_biological_groups": 949,
+  "name_matching_note": "Only exact names after case/punctuation normalization and corroborated named accessions; primary site checked when both sources provide it. Missing site metadata is recorded, not treated as a match. No fuzzy matching."
+}

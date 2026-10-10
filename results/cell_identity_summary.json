@@ -1,0 +1,19 @@
+{
+  "expression_samples": 1019,
+  "eligible_expression_samples": 1018,
+  "expression_mapping_status_counts": {
+    "resolved_exact_accession": 1018,
+    "ambiguous": 1
+  },
+  "expression_biological_groups": 995,
+  "groups_with_multiple_expression_models": 23,
+  "gdsc_unique_identity_rows": 969,
+  "gdsc_unique_sanger_models": 969,
+  "gdsc_mapping_status_counts": {
+    "resolved_exact_ID": 963,
+    "conflicting_IDs": 6
+  },
+  "gdsc_expression_matched_models": 629,
+  "relationships_known_only": true,
+  "note": "Unknown biological relationships may remain. Broad PatientID is same tissue sample, augmented by Sanger patient/parent links."
+}
