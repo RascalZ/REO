@@ -8,7 +8,6 @@ import json
 from pathlib import Path
 import subprocess
 import sys
-import time
 from datetime import datetime,timezone
 
 ROOT=Path(__file__).resolve().parents[1]
@@ -23,14 +22,13 @@ def save(state):
     temp=state_path.with_suffix('.json.tmp')
     temp.write_text(json.dumps(state,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     temp.replace(state_path)
-state={'status':'waiting_for_all_fits','completed_steps':[],'external_response_accessed':False}
+state={'status':'checking_completed_fit_process','completed_steps':[],'external_response_accessed':False}
 save(state)
 try:
-    while True:
-        meta=json.loads((run/'formal_metadata.json').read_text(encoding='utf-8'))
-        if meta['status']=='failed':raise RuntimeError('Training failed; preserve failures and stop postprocessing')
-        if meta['completed'] is True:break
-        time.sleep(10)
+    # The sequential launcher calls this only after the training child exits.
+    # No live metadata polling is permitted on this Windows filesystem.
+    meta=json.loads((run/'formal_metadata.json').read_text(encoding='utf-8'))
+    if meta['completed'] is not True:raise RuntimeError('All fits and a successful training-process exit are required')
     directory=ROOT/'results/formal_development'
     commands=[('full_run_validation',['scripts/validate_formal_run.py','--run-dir',str(run)]),
               ('frozen_paired_statistics',['src/analyze_formal_results.py','--run-dir',str(run)]),

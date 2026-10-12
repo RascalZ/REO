@@ -101,3 +101,21 @@ Paired bootstrap intervals are conditional on recorded OOF outcomes/predictions,
 without train-refit uncertainty. Individual records, complete features, bootstrap
 group IDs and count matrices stay local. Aggregate tables and reports can be
 versioned. CTRP response access remains forbidden throughout this work package.
+
+Windows execution repair: the first formal session stopped after 673 successful
+tasks when atomic metadata replacement raised WinError5. All 673 checkpoint
+checksums and actual fit memberships passed independent recovery audit; no model
+failure was discarded. Live readers can block replacement on this filesystem,
+even with a shared-delete handle. Do not read live formal_metadata.json or run
+partial validation while fits are running. Progress reads append-only logs and
+resource CSV. The sequential launcher waits for a successful training-process
+exit before reading metadata for QA/statistics/reporting:
+
+```sh
+python scripts/run_formal_stage.py --resume --execution-commit db31a35
+python scripts/formal_progress.py
+```
+
+This repair leaves frozen numerical sources and the formal scientific lock
+unchanged. Original failed-session/controller/postprocess records and the 673
+checkpoint SHA recovery snapshot remain local, alongside the resumed session.
