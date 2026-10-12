@@ -1,0 +1,32 @@
+{
+  "schema_version": "2.0",
+  "cohort_version": "v2",
+  "parent_cohort": "v1",
+  "purpose": "Metadata-only cancer-model eligibility overlay for formal analysis; preserve historical cohort v1 and pilot.",
+  "selection_uses_response_values": false,
+  "selection_uses_model_performance": false,
+  "timing_disclosure": "Amendment identified after development-only pilot, before CTRP response access; not a claim of pre-pilot preregistration.",
+  "explicit_non_cancerous": "Exclude exact Broad OncotreePrimaryDisease=Non-Cancerous from cancer-focused analysis; retain in excluded-control manifest.",
+  "unknown_disease": "Quarantine absent/empty/Unknown primary-disease annotation unless an authoritative exact-ID cancer classification is verified and cached.",
+  "other_broad_disease_annotation": "Retain nonempty disease annotations other than explicit Non-Cancerous/Unknown; preserve exact source term without inferring further histology.",
+  "authoritative_override": {
+    "canonical_model_id": "ACH-001078",
+    "ccle_id": "HCC1588_LUNG",
+    "category": "Cancer cell line",
+    "disease": "Lung squamous cell carcinoma",
+    "disease_id": "NCIt:C3493",
+    "cellosaurus_id": "CVCL_A351",
+    "sanger_model_id": "SIDM01820",
+    "kclb_id": "71588",
+    "evidence_manifest": "data_raw/cancer_metadata/evidence_manifest.json"
+  },
+  "identity": "Unresolved/ambiguous canonical identity remains excluded; eligibility does not repair identity conflicts.",
+  "related_groups": "Preserve v1 biological-group IDs and exclusion against all known GDSC groups, including conflicting identity candidates.",
+  "panel": "Keep exactly the eight v1 drugs in the original frozen rank, with unchanged GDSC/CTRP IDs, structures, and exact dose windows. No reranking/replacement.",
+  "tissue_rule": "Exact casefold equivalence to authoritative Broad OncotreeLineage vocabulary, then Sanger tissue vocabulary; only capitalization canonicalization, no fuzzy/name/histology merges. Preserve v1_tissue on every copied sample/global manifest.",
+  "primary_external_qc": "Preserve v1 SNP-matched-reference requirement and all source records/aggregation; no external response or expression distribution read.",
+  "sensitivity": "Cancer-eligible v1 external identity-QC sensitivity list retained separately; explicit non-cancerous/unknown excluded rather than pooled as cancer sensitivity.",
+  "minimum_development_groups": 200,
+  "minimum_external_primary_groups": 80,
+  "formal_model_config": "Not frozen by this cohort snapshot; independent model/statistical/resource gates remain."
+}

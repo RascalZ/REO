@@ -1,0 +1,13 @@
+{
+  "source_url": "https://cellbank.snu.ac.kr/cellline/search?q=71588&sc=y",
+  "resolved_url": "https://cellbank.snu.ac.kr/cellline/search?q=71588&sc=y",
+  "retrieved_utc": "2026-10-12T03:09:46.729741+00:00",
+  "source_body_sha256": "393f76a1501a95a26159ffe4779b150e8995fd7571948408c504f500f48ed357",
+  "direct_http_snapshot_status": "retrieved",
+  "cell_line_name": "HCC-1588",
+  "kclb_catalog_id": "71588",
+  "origin": "lung",
+  "histopathology": "squamous cell carcinoma",
+  "cache_kind": "minimal source facts, not redistribution of full copyrighted page",
+  "rights_note": "KCLB page states all rights reserved; no open-data license inferred."
+}

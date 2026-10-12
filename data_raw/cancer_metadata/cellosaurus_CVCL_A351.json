@@ -1,0 +1,110 @@
+{
+  "Cellosaurus": {
+    "cell-line-list": [
+      {
+        "accession-list": [
+          {
+            "type": "primary",
+            "value": "CVCL_A351"
+          }
+        ],
+        "category": "Cancer cell line",
+        "disease-list": [
+          {
+            "accession": "C3493",
+            "category": "Medical resources",
+            "database": "NCIt",
+            "iri": "http://purl.obolibrary.org/obo/NCIT_C3493",
+            "label": "Lung squamous cell carcinoma",
+            "url": "https://evsexplore.semantics.cancer.gov/evsexplore/concept/ncit/C3493"
+          }
+        ],
+        "name-list": [
+          {
+            "type": "identifier",
+            "value": "HCC1588"
+          }
+        ],
+        "xref-list": [
+          {
+            "accession": "E-MTAB-2770",
+            "category": "Gene expression databases",
+            "database": "ArrayExpress",
+            "url": "https://www.ebi.ac.uk/biostudies/ArrayExpress/studies/E-MTAB-2770"
+          },
+          {
+            "accession": "SAMN03473071",
+            "category": "Biological sample resources",
+            "database": "BioSample",
+            "url": "https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN03473071"
+          },
+          {
+            "accession": "SAMN10987742",
+            "category": "Biological sample resources",
+            "database": "BioSample",
+            "url": "https://www.ncbi.nlm.nih.gov/biosample/?term=SAMN10987742"
+          },
+          {
+            "accession": "CVCL_A351",
+            "category": "Cell line databases/resources",
+            "database": "cancercelllines",
+            "url": "https://cancercelllines.org/cellline/?id=cellosaurus:CVCL_A351"
+          },
+          {
+            "accession": "SIDM01820",
+            "category": "Cell line databases/resources",
+            "database": "Cell_Model_Passport",
+            "url": "https://cellmodelpassports.sanger.ac.uk/passports/SIDM01820"
+          },
+          {
+            "accession": "903638",
+            "category": "Polymorphism and mutation databases",
+            "database": "Cosmic",
+            "url": "https://cancer.sanger.ac.uk/cosmic/sample/overview?id=903638"
+          },
+          {
+            "accession": "ACH-001078",
+            "category": "Cell line databases/resources",
+            "database": "DepMap",
+            "url": "https://depmap.org/portal/cell_line/ACH-001078"
+          },
+          {
+            "accession": "GSM1374503",
+            "category": "Gene expression databases",
+            "database": "GEO",
+            "url": "https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM1374503"
+          },
+          {
+            "accession": "11451",
+            "category": "Polymorphism and mutation databases",
+            "database": "IARC_TP53"
+          },
+          {
+            "accession": "71588",
+            "category": "Cell line collections (Providers)",
+            "database": "KCLB",
+            "url": "https://cellbank.snu.ac.kr/cellline/search?sc=y&q=71588"
+          },
+          {
+            "accession": "CCLE_148",
+            "category": "Polymorphism and mutation databases",
+            "database": "LiGeA",
+            "url": "http://hpc-bioinformatics.cineca.it/fusion/cell_line/CCLE_148"
+          },
+          {
+            "accession": "HCC1588_451_2019",
+            "category": "Chemistry resources",
+            "database": "PharmacoDB",
+            "url": "https://pharmacodb.ca/cell_lines/HCC1588_451_2019"
+          },
+          {
+            "accession": "Q54881590",
+            "category": "Encyclopedic resources",
+            "database": "Wikidata",
+            "url": "https://www.wikidata.org/wiki/Q54881590"
+          }
+        ]
+      }
+    ]
+  }
+}

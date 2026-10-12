@@ -5,6 +5,7 @@ accidentally attempts access. Cohort-v1 frozen artifacts are never rewritten.
 """
 from __future__ import annotations
 import argparse,csv,hashlib,importlib.metadata,json,os,platform,sys,threading,time,warnings
+from datetime import datetime,timezone
 from pathlib import Path
 import numpy as np
 import pandas as pd
@@ -13,6 +14,7 @@ from openpyxl import load_workbook
 from threadpoolctl import threadpool_limits,threadpool_info
 from modeling.features import FoldFeatureBuilder
 from modeling.nested_cv import make_grouped_splits,evaluate_outer_fold,metrics
+from modeling.nested_cv import TrainOnlyRegressor
 from project_paths import REPOSITORY,original_input
 
 ROOT=REPOSITORY
@@ -27,19 +29,31 @@ def sha(path):
 def dump(path,obj):
     path.write_text(json.dumps(obj,ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf-8')
 
-def verify_development_inputs():
+def cohort_results(version):
+    return ROOT/'results' if version=='v1' else ROOT/'results/cohort_v2'
+
+def verify_development_inputs(cohort_version='v1'):
     """Verify the locked, actually used development inputs without opening CTRP."""
-    lock=json.loads((ROOT/'config/cohort_freeze_v1.lock.json').read_text(encoding='utf-8'))
-    freeze_path=ROOT/'config/cohort_freeze_v1.json'
+    lock=json.loads((ROOT/f'config/cohort_freeze_{cohort_version}.lock.json').read_text(encoding='utf-8'))
+    freeze_path=ROOT/f'config/cohort_freeze_{cohort_version}.json'
     if sha(freeze_path)!=lock['freeze_sha256']:raise ValueError('Cohort freeze no longer matches its lock')
     freeze=json.loads(freeze_path.read_text(encoding='utf-8'))
+    parent=json.loads((ROOT/'config/cohort_freeze_v1.json').read_text(encoding='utf-8'))
+    parent_lock=json.loads((ROOT/'config/cohort_freeze_v1.lock.json').read_text(encoding='utf-8'))
+    if sha(ROOT/'config/cohort_freeze_v1.json')!=parent_lock['freeze_sha256']:raise ValueError('Parent cohort-v1 changed')
+    if cohort_version!='v1':
+        recorded_parent=freeze.get('parent_cohort_freeze_sha256',freeze.get('parent_freeze_sha256'))
+        if recorded_parent is None or recorded_parent!=parent_lock['freeze_sha256']:raise ValueError('Cohort-v2 does not bind the validated parent-v1 freeze')
+    inherited={str(Path(r['path'])):r['sha256'] for r in parent['files'] if r.get('scope')!='original_read_only'}
     recorded={str(Path(r['path'])):r['sha256'] for r in freeze['files'] if r.get('scope')!='original_read_only'}
-    required=['results/development_sample_manifest.csv','results/main_drugs.csv','data_processed/expression_tpm.npy',
+    recorded={**inherited,**recorded}
+    prefix='results' if cohort_version=='v1' else 'results/cohort_v2'
+    required=[prefix+'/development_sample_manifest.csv',prefix+'/main_drugs.csv','data_processed/expression_tpm.npy',
               'data_processed/expression_genes.tsv','data_processed/expression_samples.tsv',
               'data_processed/cell_line_dictionary.csv','data_manifest/original_source_sha256.csv','src/project_paths.py']
     for name in required:
         if str(Path(name)) not in recorded or sha(ROOT/name)!=recorded[str(Path(name))]:raise ValueError('Frozen development input changed: '+name)
-    return {'freeze_sha256':lock['freeze_sha256'],'verified_development_files':required,'CTRP_response_files_opened':False}
+    return {'cohort_version':cohort_version,'freeze_sha256':lock['freeze_sha256'],'verified_development_files':required,'CTRP_response_files_opened':False}
 
 def install_data_guard():
     """Fail before any pilot read of an external response or response index."""
@@ -103,6 +117,7 @@ def main():
     ap=argparse.ArgumentParser(description=__doc__)
     ap.add_argument('--config',type=Path,default=ROOT/'config/pilot_v0.1.json')
     ap.add_argument('--run-dir',type=Path,default=None)
+    ap.add_argument('--timing-only',action='store_true',help='Train-only worst-budget probes, no validation/test scores or model selection')
     args=ap.parse_args();config=json.loads(args.config.read_text(encoding='utf-8'))
     out=args.run_dir or ROOT/'runs'/config['run_name']
     assert not out.exists(),f'Preserve previous run; choose a new run directory: {out}'
@@ -111,18 +126,21 @@ def main():
     monitor=ResourceMonitor(out/'resource_samples.csv',config['resources']['rss_sampling_interval_seconds']).start()
     ACTIVE_RUN.update({'out':out,'monitor':monitor,'config':config,'access':access,'blocked':blocked})
     packages=['numpy','pandas','scikit-learn','scipy','psutil','joblib','threadpoolctl','cloudpickle']
-    run_meta={'config_sha256':sha(args.config),'cohort_lock':json.loads((ROOT/'config/cohort_freeze_v1.lock.json').read_text(encoding='utf-8')),
-              'development_input_verification':verify_development_inputs(),
+    version=config.get('cohort_version','v1');cohort_dir=cohort_results(version)
+    run_meta={'config_sha256':sha(args.config),'cohort_lock':json.loads((ROOT/f'config/cohort_freeze_{version}.lock.json').read_text(encoding='utf-8')),
+              'created_utc':datetime.now(timezone.utc).isoformat(),'declared_analysis_date':config.get('declared_analysis_date'),
+              'development_input_verification':verify_development_inputs(version),
+              'code_execution_commit':os.environ.get('REO_EXECUTION_COMMIT',''),
               'python':platform.python_version(),'platform':platform.platform(),'packages':{p:importlib.metadata.version(p) for p in packages},
               'logical_cpus':psutil.cpu_count(),'total_ram_bytes':psutil.virtual_memory().total,
               'configuration':config,'status':'running','external_response_accessed':False,
-              'source_hashes':{str(p.relative_to(ROOT)):sha(p) for p in [args.config,ROOT/'src/run_development_pilot.py',ROOT/'src/modeling/features.py',ROOT/'src/modeling/nested_cv.py']}}
+              'source_hashes':{str(p.relative_to(ROOT)):sha(p) for p in sorted(set([args.config,ROOT/'src/run_development_pilot.py',*(ROOT/'src/modeling').glob('*.py')]))}}
     dump(out/'run_manifest.json',run_meta)
     ACTIVE_RUN['metadata']=run_meta
-    global_manifest=pd.read_csv(ROOT/'results/development_sample_manifest.csv',dtype=str,keep_default_na=False)
+    global_manifest=pd.read_csv(cohort_dir/'development_sample_manifest.csv',dtype=str,keep_default_na=False)
     selected=global_manifest[global_manifest.gdsc_drug_id.isin([str(d) for d in config['drug_ids']])].copy()
     assert set(selected.role)=={'development'}
-    panel=pd.read_csv(ROOT/'results/main_drugs.csv',dtype=str)
+    panel=pd.read_csv(cohort_dir/'main_drugs.csv',dtype=str)
     assert panel.iloc[:len(config['drug_ids'])].gdsc_drug_id.tolist()==[str(d) for d in config['drug_ids']]
     # Identity metadata only; no external response or expression distributions used.
     global_ids=global_manifest.drop_duplicates('canonical_model_id').sort_values('canonical_model_id').reset_index(drop=True)
@@ -171,17 +189,30 @@ def main():
                     outer_pos=positions[train];local_inner=[]
                     for it,iv in inner[oi]:
                         local_inner.append((np.flatnonzero(np.isin(outer_pos,gtrain[it])),np.flatnonzero(np.isin(outer_pos,gtrain[iv]))))
+                    if args.timing_only:
+                        if oi!=0:continue
+                        probe_rows=train[local_inner[0][0]]
+                        for kind in ['expression','reo','expression_rf','reo_rf']:
+                            if kind not in config['models']:continue
+                            params={'alpha_ratio':min(config['elastic_net']['alpha_ratios']),'l1_ratio':min(config['elastic_net']['l1_ratios'])} if not kind.endswith('_rf') else {'max_features':0.1,'min_samples_leaf':1}
+                            tick=time.perf_counter();probe=TrainOnlyRegressor(kind,config,stable,**params).fit(x[probe_rows],y[probe_rows]);elapsed=time.perf_counter()-tick
+                            context={'gdsc_drug_id':drug,'model':kind,'outer_fold':oi}
+                            record({**context,**probe.audit(),'stage':'training_only_timing_probe','candidate':-1,'inner_fold':0,'params':params})
+                            timings.append({**context,'wall_seconds':elapsed,'fits':1,'fit_seconds_sum':probe.fit_seconds_})
+                            print(json.dumps({'event':'timing_probe_complete',**context,'wall_seconds':elapsed,'audit':{k:v for k,v in probe.audit().items() if k!='fit_sample_ids'}},ensure_ascii=False),flush=True)
+                        continue
                     for kind in config['models']:
                         tick=time.perf_counter();context={'gdsc_drug_id':drug,'model':kind,'outer_fold':oi}
                         result=evaluate_outer_fold(x,y,groups,train,test,local_inner,kind,config,stable,audit_sink=lambda event,c=context:record({**c,**event}))
                         elapsed=time.perf_counter()-tick
                         fold_metrics.append({**context,**result['metrics'],'wall_seconds':elapsed,'unknown_tissue_samples':result['outer_unknown_tissue_samples'],'fallback_reason':result['outer_fit_audit']['fallback_reason']})
-                        choices.append({**context,'chosen_params':result['chosen_params'],'best_inner_rmse':result['best_inner_rmse'],'grid_boundary':result['chosen_grid_boundary'],'inner_scores':result['inner_scores']})
+                        choices.append({**context,'chosen_params':result['chosen_params'],'best_inner_rmse':result['best_inner_rmse'],'grid_boundary':result['chosen_grid_boundary'],'grid_boundary_details':result.get('chosen_grid_boundary_details',{}),'inner_scores':result['inner_scores']})
                         if result['feature_audit'] is not None:dump(out/'features'/f'{drug}_{kind}_outer{oi}.json',result['feature_audit'])
                         timings.append({**context,'wall_seconds':elapsed,'fits':len(result['fit_events']),'fit_seconds_sum':sum(e['fit_seconds'] for e in result['fit_events'])})
                         for n,pred in zip(test,result['predictions']):
                             r=data.iloc[n];preds.append({**context,'canonical_model_id':r.canonical_model_id,'biological_group_id':r.biological_group_id,'expression_row_index':int(r.expression_row_index),'tissue':r.tissue,'observed_auc':float(y[n]),'predicted_auc':float(pred)})
                         pd.DataFrame(fold_metrics).to_csv(out/'fold_metrics.csv',index=False)
+                        dump(out/'outer_fit_audits.partial.json',[e for e in fit_events if e['stage']=='outer_training_refit'])
                         pd.DataFrame(preds).to_csv(out/'oof_predictions.partial.csv',index=False,encoding='utf-8-sig')
                         dump(out/'chosen_parameters.partial.json',choices)
                         print(json.dumps({'event':'outer_model_complete',**context,'n_train':len(train),'n_test':len(test),'wall_seconds':round(elapsed,2),'rmse':result['metrics']['rmse'],'spearman':result['metrics']['spearman']},ensure_ascii=False),flush=True)
@@ -193,6 +224,10 @@ def main():
                         del z,b
                 del x
     finally:fit_log.close()
+    if args.timing_only:
+        pd.DataFrame(timings).to_csv(out/'timing_probe_results.csv',index=False)
+        run_meta.update({'status':'completed_timing_only','n_fits':len(fit_events),'n_oof_predictions':0,'resources':monitor.close(),'split_warnings':split_warnings,'input_files_accessed':sorted(access),'blocked_external_access_attempts':blocked,'external_response_accessed':False})
+        dump(out/'run_manifest.json',run_meta);return
     p=pd.DataFrame(preds);assert not p.duplicated(['gdsc_drug_id','model','canonical_model_id']).any()
     p.to_csv(out/'oof_predictions.csv',index=False,encoding='utf-8-sig')
     summary=[]
@@ -202,6 +237,14 @@ def main():
         events=[e for e in fit_events if e['gdsc_drug_id']==drug and e['model']==kind]
         summary.append({'gdsc_drug_id':drug,'model':kind,**m,'fits':len(events),'convergence_warning_fits':sum(bool(e['warnings']) for e in events),'fallback_fits':sum(bool(e['fallback_reason']) for e in events),'wall_seconds':sum(t['wall_seconds'] for t in timings if t['gdsc_drug_id']==drug and t['model']==kind)})
     pd.DataFrame(summary).to_csv(out/'summary_metrics.csv',index=False,encoding='utf-8-sig')
+    tissue_metrics=[]
+    for (drug,kind,tissue),sub in p.groupby(['gdsc_drug_id','model','tissue'],sort=False):
+        if len(sub)<20:continue
+        m=metrics(sub.observed_auc,sub.predicted_auc)
+        if kind in ['mean','tissue']:m['spearman']=None;m['spearman_unavailable_reason']='baseline_no_within_tissue_individual_ranking'
+        tissue_metrics.append({'gdsc_drug_id':drug,'model':kind,'tissue':tissue,**m,'interpretation':'descriptive OOF only; tissue n>=20; no independent within-tissue generalization or p-value'})
+    pd.DataFrame(tissue_metrics).to_csv(out/'within_tissue_metrics.csv',index=False,encoding='utf-8-sig')
+    dump(out/'outer_fit_audits.json',[e for e in fit_events if e['stage']=='outer_training_refit'])
     dump(out/'chosen_parameters.json',choices);dump(out/'feature200_benchmarks.json',feature_benchmarks);dump(out/'endpoint_audit.json',endpoint_audit)
     run_meta.update({'status':'completed','wall_seconds':time.perf_counter()-start,'resources':monitor.close(),'n_fits':len(fit_events),'n_oof_predictions':len(p),
                      'split_warnings':split_warnings,'threadpools':threadpool_info(),'input_files_accessed':sorted(access),'blocked_external_access_attempts':blocked,'external_response_accessed':False})

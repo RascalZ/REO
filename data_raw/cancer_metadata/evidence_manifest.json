@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "retrieved_utc": "2026-10-12T03:09:46.729741+00:00",
+  "scope": "Malignancy eligibility and exact identity only; no response values or expression distributions.",
+  "cellosaurus_api_url": "https://api.cellosaurus.org/cell-line/CVCL_A351?fields=id,ac,ca,di,dr&format=json",
+  "cellosaurus_page_url": "https://www.cellosaurus.org/CVCL_A351",
+  "cellosaurus_resolved_api_url": "https://api.cellosaurus.org/cell-line/CVCL_A351?fields=id,ac,ca,di,dr&format=json",
+  "sources": [
+    {
+      "path": "data_raw/cancer_metadata/cellosaurus_CVCL_A351.json",
+      "sha256": "dd6fbde1606bd68596007f831be0667a5b86a91dac6bb2b5f8cfc27baa70e9eb"
+    },
+    {
+      "path": "data_raw/cancer_metadata/cellosaurus_license.json",
+      "sha256": "d9436eaf186fbb3801a534a903c3e8ace18944e2273f281f4f3f4d1e2d4968a5"
+    },
+    {
+      "path": "data_raw/cancer_metadata/kclb_71588_eligibility_facts.json",
+      "sha256": "4c29443801f850d49a1750039943a59b9e3734be2869c54bd750e1af49210082"
+    },
+    {
+      "path": "data_raw/cancer_metadata/sanger_SIDM01820_identity_evidence.json",
+      "sha256": "1200378ed3eb400138fc8e8d7de49f8f4f46f5e67b4f5faf46dca00256bc81f8"
+    }
+  ],
+  "resolved_identity": {
+    "canonical_model_id": "ACH-001078",
+    "ccle_id": "HCC1588_LUNG",
+    "cellosaurus_id": "CVCL_A351",
+    "sanger_model_id": "SIDM01820",
+    "kclb_catalog_id": "71588"
+  },
+  "eligibility_resolution": "Cancer cell line; lung squamous cell carcinoma, directly linked by exact DepMap/Sanger/KCLB accessions.",
+  "license_attribution": "Cellosaurus, SIB Swiss Institute of Bioinformatics, CC BY 4.0; official API eligibility record retained without modification."
+}

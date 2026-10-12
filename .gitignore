@@ -9,7 +9,8 @@ config/input_paths.local.json
 config/cohort_freeze_v*.json
 config/cohort_freeze_v*.lock.json
 config/curation_environment.json
-data_raw/
+data_raw/*
+!data_raw/cancer_metadata/
 data_processed/
 data_manifest/original_file_inventory.csv
 data_manifest/original_source_sha256.csv
@@ -19,6 +20,9 @@ reports/*.xlsx
 reports/*.png
 logs/
 results/*sample_manifest.csv
+results/**/*sample_manifest.csv
+results/**/global_split_manifest.csv
+results/**/eligibility_decisions.csv
 results/global_split_manifest.csv
 results/initial_inventory_summary.json
 legacy/

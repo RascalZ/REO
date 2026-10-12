@@ -1,0 +1,31 @@
+{
+  "source_url": "https://cellmodelpassports.sanger.ac.uk/passports/SIDM01820",
+  "source_snapshot": "data_raw/sanger_metadata/cell_model_passports_2026-10-10.json",
+  "derived_inputs": [
+    "data_processed/sanger_models.csv",
+    "data_processed/sanger_identifiers.csv"
+  ],
+  "sanger_model_id": "SIDM01820",
+  "names": "HCC1588",
+  "tissue": "Lung",
+  "identifiers": [
+    {
+      "identifier_source": "KCLB",
+      "identifier": "71588"
+    },
+    {
+      "identifier_source": "BROAD_ID",
+      "identifier": "ACH-001078"
+    },
+    {
+      "identifier_source": "CCLE_ID",
+      "identifier": "HCC1588_LUNG"
+    },
+    {
+      "identifier_source": "Cellosaurus (RRID)",
+      "identifier": "CVCL_A351"
+    }
+  ],
+  "license_source": "https://depmap.sanger.ac.uk/documentation/data-usage-policy/",
+  "license_note": "Official API permits individual non-commercial research use; no unrestricted redistribution license inferred."
+}
