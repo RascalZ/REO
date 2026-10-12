@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "protocol_version": "formal_statistics_v1",
+  "declared_analysis_date": "2026-10-12",
+  "status": "ready_for_pre_formal_run_lock",
+  "scope": "Fixed eight-drug development analysis; no CTRP response use. Freeze protocol/config before formal outcomes, preserving previously observed pilot results.",
+  "prior_development_pilot_results_seen": true,
+  "cohort_version": "v2",
+  "drug_ids_in_frozen_rank": [1931, 1036, 1191, 1930, 1199, 1091, 1010, 1922],
+  "models": ["mean", "tissue", "expression", "expression_matched", "reo", "expression_rf", "reo_rf"],
+  "outer_folds": 5,
+  "outer_repeats": 3,
+  "inner_folds": 3,
+  "model_selection_objective": "Minimum pooled inner OOF RMSE in original GDSC drug-response AUC units; unchanged across molecular models.",
+  "primary_estimand": "For each drug, arithmetic mean of three complete-OOF Spearman correlations for REO200 EN minus corresponding mean for expression2000 EN; equal-weight eight-drug macro mean of those differences.",
+  "repeat_aggregation": "Calculate each metric separately in each complete repeat, then arithmetic mean of the three metrics. Do not concatenate repeat rows as independent samples; do not average repeat predictions before calculating Spearman.",
+  "primary_comparison": {"candidate": "reo", "reference": "expression"},
+  "secondary_comparison": {"candidate": "reo_rf", "reference": "expression_rf"},
+  "auxiliary_comparisons": [
+    {"name": "matched_gene_EN_ablation", "candidate": "reo", "reference": "expression_matched"},
+    {"name": "REO_EN_vs_tissue", "candidate": "reo", "reference": "tissue"},
+    {"name": "expression_EN_vs_tissue", "candidate": "expression", "reference": "tissue"},
+    {"name": "REO_RF_vs_tissue", "candidate": "reo_rf", "reference": "tissue"},
+    {"name": "expression_RF_vs_tissue", "candidate": "expression_rf", "reference": "tissue"}
+  ],
+  "point_metrics": ["spearman", "rmse", "mae", "r2"],
+  "paired_effect_directions": {
+    "spearman": "candidate minus reference; positive favors candidate",
+    "rmse": "reference minus candidate; positive favors candidate",
+    "mae": "reference minus candidate; positive favors candidate",
+    "r2": "candidate minus reference; positive favors candidate",
+    "relative_rmse_improvement": "Within each repeat, (reference RMSE-candidate RMSE)/reference RMSE; average the three ratios; denominator zero yields NA."
+  },
+  "macro_rule": "Equal-weight all eight fixed drugs, after repeat-level averaging. Any undefined constituent gives primary/secondary macro NA; never silently nanmean or replace/remove tasks.",
+  "bootstrap": {
+    "draws": 10000,
+    "seed": 2026101201,
+    "unit": "Frozen global v2 biological_group_id",
+    "global_group_order": "Lexicographic sorted unique biological_group_id in the full eight-drug v2 development manifest",
+    "resampling": "Draw N_global groups with replacement from N_global groups, retaining every source model/observation in each sampled group with that group's multiplicity. Generate one shared count matrix and reuse each draw across all drugs, models and repeats.",
+    "group_count_algorithm": "numpy Generator(PCG64).multinomial(N_global, uniform group probabilities, size=B); equivalent to ID sampling with replacement. Save seed, group-order/hash, count-matrix hash and generation versions.",
+    "drug_missingness": "Keep the frozen drug-specific observation set; absent drug observations stay absent. The number of sampled rows per drug may vary across shared global draws.",
+    "spearman": "Recompute bootstrap ranks with exact ties. Multiplicity-weighted mid-ranks are permitted only if verified equal to explicit duplicated-observation Spearman; resampling precomputed original ranks and correlating them is not the same statistic.",
+    "interval_method": "Percentile using numpy.quantile(method=linear)",
+    "unadjusted_level": 0.95,
+    "minimum_valid_draw_fraction": 0.99,
+    "invalid_draw_policy": "Report requested/valid/invalid draws and reason. Withhold interval if point estimand undefined or valid fraction<0.99. If adequate, quantile valid draws while explicitly reporting invalid counts; retain every planned drug/estimand.",
+    "interval_scope": "Conditional resampling intervals for the observed outcome/OOF-prediction records. No training or tuning is refitted; intervals do not cover full training-algorithm uncertainty or guarantee coverage for nested-CV generalization performance.",
+    "computational_block_draws": 250
+  },
+  "multiplicity": {
+    "family_alpha": 0.05,
+    "primary_family": "Nine Spearman-difference estimands: eight prespecified drugs plus one equal-drug macro for REO EN versus expression EN.",
+    "primary_family_size": 9,
+    "secondary_family": "Separate nine-estimand Spearman-difference family for REO RF versus expression RF; exploratory secondary, not a second route to declare the main EN successful.",
+    "secondary_family_size": 9,
+    "adjustment": "Bonferroni percentile endpoints alpha/(2*9) and 1-alpha/(2*9); also report marginal 95% intervals.",
+    "interpretation": "Nominal family-adjusted conditional bootstrap intervals, not exact simultaneous coverage of algorithmic performance. Primary and secondary families are distinct; no combined guarantee across both families.",
+    "auxiliary_metrics": "Unadjusted 95% conditional intervals, labelled descriptive; no multiplicity-unadjusted confirmatory claims."
+  },
+  "repeat_stability": "Three complete-repeat metric/effect values, min/max/range and sample SD(ddof=1); descriptive variation only, not a three-independent-study standard error or confidence interval.",
+  "undefined_policy": {
+    "training_mean_spearman": "Always NA as an individual-ranking baseline, even if concatenated fold means differ.",
+    "constant_response_or_prediction": "Spearman NA with reason; R2 NA for constant response; preserve RMSE/MAE and task records.",
+    "missing_prediction_or_incomplete_repeat": "Retain and flag task as incomplete. Do not calculate primary mean/CI from a subset of its three repeats or silently reduce N.",
+    "zero_molecular_coefficients": "Preserve global prediction metrics but identify tissue-only EN components; global Spearman is not molecular evidence."
+  },
+  "no_confirmatory_p_values_from_bootstrap": true,
+  "no_equivalence_claim_from_non_significance": true,
+  "minimum_meaningful_effect": "Not established. Report effect sizes/precision and practical scale without inventing a post-hoc success/equivalence threshold.",
+  "corrected_repeat_cv_mse_ci": "Not included. A correction of fold-level MSE does not validate Spearman/bootstrap algorithmic intervals; dependence/stability assumptions are not established for these tuned pipelines.",
+  "formal_inference_limit": "Development-only evidence cannot establish independent-screen transfer, clinical utility, or universal REO superiority. Frozen CTRP evaluation and full analysis are separate gates.",
+  "literature": [
+    {"authors": "Bates S, Hastie T, Tibshirani R", "year": 2024, "title": "Cross-Validation: What Does It Estimate and How Well Does It Do It?", "journal": "Journal of the American Statistical Association", "doi": "10.1080/01621459.2023.2197686", "source": "https://doi.org/10.1080/01621459.2023.2197686"}
+  ]
+}

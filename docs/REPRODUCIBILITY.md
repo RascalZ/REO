@@ -72,3 +72,32 @@ python src/report_reo200_rf_pilot.py --run-dir runs/new-cancer-v2-pilot
 Commit scientific source/configuration changes before fitting. The launcher automatically records and checks Git HEAD (or an explicitly provided REO_EXECUTION_COMMIT) so immutable source validation does not rely on a forgotten environment variable. The completed 906-fit execution uses `5d05349`. Later exact-constant tissue-target maintenance applies only to a degenerate case absent in every actual training fit, and does not overwrite historical predictions. Full independent audit and aggregate results are under the local run directory and `results/pilot_reo200_rf/`; the source cache for cancer eligibility is versioned under `data_raw/cancer_metadata/`.
 
 Both primary REO EN drug models selected a zero molecular endpoint in all three outer folds. This pilot supports no claim of reliable REO molecular advantage; full eight-drug repeated analysis/statistics and sealed CTRP evaluation remain pending.
+
+## Fixed eight-drug formal development evaluation
+
+The formal v1 lock binds scientific model/statistics configuration, protocol,
+execution and analysis code, and cancer-v2 identity inputs. Prior pilots were seen;
+this is a pre-formal-run lock, not prospective registration of the entire study.
+
+```sh
+python -m unittest discover -s tests -p "test_formal*.py" -v
+python scripts/freeze_formal_analysis.py --verify-only
+python src/run_formal_evaluation.py
+python scripts/validate_formal_run.py --run-dir runs/gdsc2-cancer-v2-fixed8-nested5x3-inner3-formal-v1
+python src/analyze_formal_results.py --run-dir runs/gdsc2-cancer-v2-fixed8-nested5x3-inner3-formal-v1
+```
+
+Use `--resume` explicitly after interruption, with `REO_EXECUTION_COMMIT` set to
+the run's recorded commit if HEAD has advanced. Completed checkpoint checksums,
+registered file hashes, bound prepared inputs and frozen scientific versions must
+match. Previous failed attempts are archived; they are never silently erased.
+The resource scheduler caps two workers, with one BLAS/RF thread each, and admits
+a second task only with at least 3 GiB available RAM. Dispatch does not change
+folds, seeds, candidates or estimands.
+
+840 outer tasks produce 18,120 fits and 104,307 development OOF rows. Three repeats
+retain 626 independent development groups; rows are not independent extra N.
+Paired bootstrap intervals are conditional on recorded OOF outcomes/predictions,
+without train-refit uncertainty. Individual records, complete features, bootstrap
+group IDs and count matrices stay local. Aggregate tables and reports can be
+versioned. CTRP response access remains forbidden throughout this work package.

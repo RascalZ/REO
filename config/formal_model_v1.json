@@ -1,0 +1,113 @@
+{
+  "schema_version": "1.0",
+  "declared_analysis_date": "2026-10-12",
+  "run_name": "gdsc2-cancer-v2-fixed8-nested5x3-inner3-formal-v1",
+  "scope": "formal fixed-panel development evaluation; CTRP sealed",
+  "drug_ids": [
+    1931,
+    1036,
+    1191,
+    1930,
+    1199,
+    1091,
+    1010,
+    1922
+  ],
+  "drug_selection_rule": "all eight drugs in the original coverage-frozen panel, preserving exact rank/IDs and dose windows; no performance selection or replacement",
+  "cohort_version": "v2",
+  "seed": 20261010,
+  "outer_folds": 5,
+  "outer_repeats": 3,
+  "inner_folds": 3,
+  "global_fold_rule": "tissue-stratified known biological groups; same global outer/inner partitions for all drugs and models within repeat",
+  "endpoint": "GDSC2 drug-response AUC within frozen exact drug-specific dose interval; higher = lower sensitivity",
+  "tuning_objective": "minimum pooled inner OOF RMSE on original GDSC AUC; deterministic first-candidate tie break",
+  "models": [
+    "mean",
+    "tissue",
+    "expression",
+    "expression_matched",
+    "reo",
+    "expression_rf",
+    "reo_rf"
+  ],
+  "feature": {
+    "annotation_rule": "exact-annotation protein_coding only, no full-development or external distribution filter",
+    "expression_genes": 2000,
+    "matched_expression_genes": 200,
+    "reo_genes": 200,
+    "formal_reo_genes_transform_benchmark": 200,
+    "min_tpm": 1.0,
+    "min_detection_fraction": 0.1,
+    "max_pair_tie_fraction": 0.9,
+    "rank": "training log2TPM MAD descending, stable gene-ID tie break",
+    "reo_encoding": "raw-TPM exact order +1/-1, ties=0; missing is never a tie",
+    "missing_rule": "finite complete TPM only; fail and record unsupported missing inputs",
+    "empty_feature_fallback": "training mean, preserving failure and all test samples"
+  },
+  "elastic_net": {
+    "regularization_mode": "alpha_max_relative",
+    "alpha_ratios": [
+      1.0,
+      0.3,
+      0.1,
+      0.03,
+      0.01
+    ],
+    "l1_ratios": [
+      0.5,
+      1.0
+    ],
+    "max_iter": 4000,
+    "tol": 0.001,
+    "selection": "cyclic",
+    "path_rule": "each fit computes alpha_max from its own training-standardized, tissue-projected X and y, divided by n*l1_ratio; never use outer training or held-out labels to supply an inner path",
+    "standardization": "train-only feature mean/SD and target mean/population SD",
+    "tissue_handling": "unpenalized FWL tissue effects after gene/REO construction; unseen tissue effect=0, retaining molecular prediction"
+  },
+  "random_forest": {
+    "n_estimators": 300,
+    "max_features": [
+      "sqrt",
+      0.1
+    ],
+    "min_samples_leaf": [
+      1,
+      5,
+      10
+    ],
+    "n_jobs": 1,
+    "seed": 20261010,
+    "reo_max_pairs": 500,
+    "association": "within_tissue_pearson",
+    "pair_filter_rule": "train-only absolute within-tissue association with continuous response, stable feature-name tie break; apply frozen selected columns to validation/test",
+    "tissue_handling": "append full train-fit one-hot tissue to raw logTPM or raw REO features; unseen category all-zero; no raw-TPM gene residualization"
+  },
+  "ridge_alphas": [
+    0.0,
+    0.1,
+    1.0,
+    10.0,
+    100.0,
+    1000.0
+  ],
+  "prediction_clipping": false,
+  "resources": {
+    "parallel_jobs": 2,
+    "blas_threads": 1,
+    "rss_sampling_interval_seconds": 0.1,
+    "second_worker_min_available_bytes": 3221225472
+  },
+  "timing_preflight": "completed v0.2 two-drug engineering pilot; not an additional outcome-driven search",
+  "external_response_access": "forbidden; CTRP response, curve index and old response table remain sealed",
+  "primary_comparison": "REO EN200 versus strong expression EN2000 on identical OOF identities; RF within-family comparison is secondary",
+  "statistical_inference": "config/formal_statistics_v1.json and docs/FORMAL_ANALYSIS_PROTOCOL.md; paired global biological-group conditional bootstrap",
+  "cross_run_interpretation": "Formal v1 uses cancer cohort v2 and the same v0.2 models/path; outer folds and repeats differ, so pilot-to-formal changes are not evidence of a model improvement",
+  "planned_full_analysis": "current fixed8 formal; CTRP remains sealed",
+  "repeat_seeds": [
+    20261010,
+    20261011,
+    20261012
+  ],
+  "failure_policy": "Preserve existing recorded mean/zero molecular fallback; finite solver warnings remain eligible and flagged. Record all unhandled exceptions as failed task and stop; do not drop tasks or invent successful predictions. Resume explicitly with the same frozen inputs."
+}

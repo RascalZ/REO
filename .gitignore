@@ -37,6 +37,7 @@ legacy/
 *.docx
 *.pdf
 checkpoints/
+results/formal_development/bootstrap_group_manifest.csv
 .env
 .env.*
 !.env.example
