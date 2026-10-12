@@ -118,8 +118,8 @@ def main():
     ap.add_argument('--config',type=Path,default=ROOT/'config/pilot_v0.1.json')
     ap.add_argument('--run-dir',type=Path,default=None)
     ap.add_argument('--timing-only',action='store_true',help='Train-only worst-budget probes, no validation/test scores or model selection')
-    args=ap.parse_args();config=json.loads(args.config.read_text(encoding='utf-8'))
-    out=args.run_dir or ROOT/'runs'/config['run_name']
+    args=ap.parse_args();args.config=args.config.resolve();config=json.loads(args.config.read_text(encoding='utf-8'))
+    out=(args.run_dir or ROOT/'runs'/config['run_name']).resolve()
     assert not out.exists(),f'Preserve previous run; choose a new run directory: {out}'
     out.mkdir(parents=True);(out/'features').mkdir()
     start=time.perf_counter();access,blocked=install_data_guard()
