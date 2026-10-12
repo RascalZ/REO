@@ -306,10 +306,15 @@ def main():
     aux_rows["gdsc_drug_id"] = aux_rows.gdsc_drug_id.map(name)
     aux_table = aux_rows[["gdsc_drug_id", "comparison", "point", "conditional_95_lower", "conditional_95_upper", "ci_status"]]
     generated = datetime.now(timezone.utc).isoformat()
+    primary_macro=effects[effects.comparison.eq('primary_EN') & effects.metric.eq('spearman') & effects.gdsc_drug_id.astype(str).eq(MACRO)].iloc[0]
+    secondary_macro=effects[effects.comparison.eq('secondary_RF') & effects.metric.eq('spearman') & effects.gdsc_drug_id.astype(str).eq(MACRO)].iloc[0]
+    run_wall=sum(session['wall_seconds'] for session in meta['sessions'])
+    failed_sessions=sum(session['status']=='failed' for session in meta['sessions'])
     commit = subprocess.run(["git", "rev-parse", "HEAD"], cwd=ROOT, capture_output=True, text=True, check=False).stdout.strip()
     blocks = [("h1", "阶段4：固定八药重复嵌套开发评价"),
         ("p", f"报告生成UTC：{generated}；正式执行提交：{meta['execution_commit']}；报告生成提交：{commit}。完整正式run和独立validator均通过后生成；此脚本仅读聚合统计、任务审计和metadata，未读取个体OOF、原响应、CTRP或表达矩阵。"),
         ("h2", "完整性与当前证据"),
+        ("p", f"固定8药宏平均配对ΔSpearman：主EN {primary_macro.point:.6f}，家族9条件区间[{primary_macro.family_adjusted_conditional_lower:.6f}, {primary_macro.family_adjusted_conditional_upper:.6f}]；辅助RF {secondary_macro.point:.6f}，家族9条件区间[{secondary_macro.family_adjusted_conditional_lower:.6f}, {secondary_macro.family_adjusted_conditional_upper:.6f}]。本次固定流程的方向不支持REO优于强表达；结论限当前面板与算法，区间不是完整训练算法泛化保证。研究价值、创新与下一诊断建议详见docs/FORMAL_SCIENTIFIC_ASSESSMENT.md及唯一总计划v2.5。"),
         ("p", f"固定8药、7模型、外层{config['outer_folds']}折×{config['outer_repeats']}次、内层{config['inner_folds']}折已完成{meta['completed_tasks']}/{meta['expected_tasks']}个外层任务。主REO EN相对表达2000 EN的逐药平均ΔSpearman点方向：正{positive}项、负{negative}项、恰为0有{equal}项、无定义{undefined}项；这些方向计数本身不是确证性检验。主REO EN有{zero_count}/{outer_count}个外层重拟合为零分子系数解，须结合组织贡献解释，不能将其全局相关归为分子REO信息。"),
         ("p", f"全局独立生物组N为{provenance['n_global_biological_groups']}；每个repeat为完整的一次OOF，不把3个repeat叠成三倍N。bootstrap为{provenance['bootstrap_draws']}次同一global BIOGROUP抽样，跨药物、模型和repeat共用权重。CTRP响应访问False，访问防护尝试数0；独立药敏来源迁移和临床作用仍未验证。"),
         ("h2", "主要配对结果：REO200 EN与表达2000 EN"), ("table", effect_table("primary_EN")),
@@ -328,7 +333,8 @@ def main():
         ("figure", ("图4：训练MAD候选基因及REO RF监督筛出的pair的Jaccard；共享训练数据会影响稳定性，候选基因稳定不等于非零EN特征或生物标志物稳定。", "descriptive_feature_jaccard")),
         ("p", "feature_stability.csv报告不同外层训练集合的pairwise Jaccard及比较数。EN审计仅保存候选gene/pair名单和非零数，未保存非零系数对应的feature列表，故本报告不伪造EN active-feature Jaccard。REO RF的pair成员稳定性包含监督筛选步骤。高成员稳定性不能替代预测增量、独立验证或机制证据。"),
         ("h2", "运行资源、选参与来源绑定"), ("table", session_table), ("table", resource_table),
-        ("p", "会话墙钟与进程树采样RSS是整体调度/运行口径；逐模型task时间含内层搜索、外层重拟合、输入缓存及预测，sum不可当并行时的总墙钟。worker RSS含库、映射页面和当前/历史缓存；Windows lifetime peak可早于当前任务，不能把它当某模型独占或新增内存。不同进程RSS求和还可能重复计入共享页面。"),
+        ("p", f"两会话计算墙钟合计{run_wall:.1f}秒（{run_wall/3600:.2f}小时），不含中断空档、首轮输入准备及后处理。保留{failed_sessions}次控制器失败会话；模型failed为{meta['output_counts']['failed']}，全拟合solver warnings为{validation['diagnostics']['warning_fits_retained']}，记录的回退为{validation['diagnostics']['documented_fallback_fits_retained']}。673任务后Windows元数据替换WinError5已保存，非冻结监控改用追加日志、串行后处理，原数值源码未改。原673检查点逐个SHA保持的独立恢复证据见results/formal_development/recovery_and_execution_summary.json。"),
+        ("p", "会话墙钟及进程树RSS采样从任务调度阶段开始，未覆盖此前输入准备，亦不包含后处理。逐模型task时间含内层搜索、外层重拟合、输入缓存及预测，sum不可当并行时的总墙钟。worker RSS含库、映射页面和当前/历史缓存；Windows lifetime peak可早于当前任务，不能把它当某模型独占或新增内存。不同进程RSS求和还可能重复计入共享页面。"),
         ("p", "chosen_parameter_summary.csv保留每个外层任务的参数、alpha/alpha_max、相对路径、理论null状态、dual gap与边界。ratio=1可以是合理null选择；最弱端点常被选则提示搜索边界。预设网格及有限迭代算法保持，不能据本结果或外验事后换网格追求REO获胜。不同候选次数及维数不能直接解释为同等调参充分度。"),
         ("p", f"正式统计协议SHA256：{provenance['statistics_protocol_sha256']}；统计配置SHA256：{provenance['statistics_config_sha256']}；formal lock SHA256：{provenance['formal_analysis_lock_sha256']}；bootstrap count matrix SHA256：{provenance['bootstrap_count_matrix_sha256']}。validator来源：{validation_path.relative_to(ROOT).as_posix()}，SHA256：{sha(validation_path)}。"),
         ("h2", "证据的实际边界与下一决定"),

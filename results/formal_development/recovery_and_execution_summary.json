@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0",
+  "status": "completed_and_independently_verified",
+  "validated_utc": "2026-10-12T13:43:55.514010+00:00",
+  "execution_commit": "db31a3508722adc996e2f5da3a9f924fb70444aa",
+  "formal_lock_sha256": "95dff1cc4cedda60cffd58c6a3c4119a3c8018dd7ad54910726f2a1a25c8c3dc",
+  "cohort_freeze_sha256": "fe1b725aa6acced46e1e5574930bb4c816c4414fc21c08d46cdb553d1fdc2d98",
+  "verification": {
+    "formal_validator_status": "passed",
+    "statistics_validation_status": "verified",
+    "frozen_execution_files_match_lock_and_execution_git": true,
+    "final_output_hashes_verified": true,
+    "individual_raw_response_or_expression_inputs_read_for_this_audit": false
+  },
+  "counts": {
+    "completed_outer_model_tasks": 840,
+    "oof_prediction_records": 104307,
+    "unique_biological_groups": 626,
+    "fixed_drugs": 8,
+    "models": 7,
+    "outer_folds": 5,
+    "repeats": 3,
+    "inner_folds": 3,
+    "conditional_bootstrap_draws": 10000,
+    "repeats_or_folds_not_added_to_biological_N": true,
+    "recorded_training_fits_in_completed_checkpoints": 18120,
+    "fit_count_scope": "Counts retained fit events in completed checkpoints; computation attempted inside unfinished interrupted tasks is not reconstructed."
+  },
+  "recovery": {
+    "controller_failures": 1,
+    "model_checkpoint_failures": 0,
+    "postprocess_waiter_failures": 1,
+    "failure_stage": "Atomic replacement of controller metadata; PermissionError (Windows error 5).",
+    "first_session_completed_checkpoints": 673,
+    "original_completed_checkpoints_unchanged": true,
+    "original_completed_checkpoint_hashes_verified": 673,
+    "pre_resume_validation_snapshot_sha256": "dff83d728007dbfced68018f9696142167f56c6464bb0fac0e44fc7d4b5fbd9b",
+    "late_unregistered_completed_checkpoints_before_resume": 0,
+    "resumed_session_completed_checkpoints": 167,
+    "failed_session_history_retained": true,
+    "recovery_scope": "Unfrozen monitoring and orchestration changed to avoid live metadata reads during fitting; frozen modeling and statistics code were preserved."
+  },
+  "fit_diagnostics": {
+    "solver_warning_fits": 0,
+    "documented_fallback_fits": 0
+  },
+  "data_guard": {
+    "external_response_accessed": false,
+    "blocked_attempts": 0,
+    "all_840_checkpoint_guards_verified": true
+  },
+  "execution_sessions": [
+    {
+      "session": 1,
+      "status": "failed",
+      "completed_tasks": 673,
+      "wall_seconds": 18243.221484799986,
+      "maximum_inflight_tasks_observed": 2,
+      "sampled_controller_and_workers_peak_rss_bytes": 1451376640,
+      "minimum_available_ram_bytes": 43479040
+    },
+    {
+      "session": 2,
+      "status": "completed",
+      "completed_tasks": 167,
+      "wall_seconds": 3974.4905599999474,
+      "maximum_inflight_tasks_observed": 1,
+      "sampled_controller_and_workers_peak_rss_bytes": 1141112832,
+      "minimum_available_ram_bytes": 1309995008
+    }
+  ],
+  "resources": {
+    "training_session_wall_seconds_sum": 22217.712044799933,
+    "session_wall_scope": "Elapsed controller-session time including the interrupted first session; excludes the interruption gap and statistical/report postprocessing.",
+    "sampled_controller_and_workers_peak_rss_bytes_max": 1451376640,
+    "controller_rss_scope": "Sum of parent and child RSS at sampled times; shared mapped pages can be counted more than once. This is not exclusive allocated memory or a guaranteed true peak.",
+    "worker_task_sampled_peak_rss_bytes_max": 1049513984,
+    "worker_os_lifetime_peak_working_set_bytes_max": 1058934784,
+    "worker_rss_scope": "Worker RSS includes libraries, mapped TPM pages and current-drug cache. The OS lifetime peak can precede the corresponding task. Peaks are maxima, not sums across tasks.",
+    "outer_task_wall_seconds_sum": 22139.899362100172,
+    "outer_task_cpu_seconds_sum": 21553.750000000004,
+    "task_wall_scope": "Sum across completed outer-model tasks; concurrent task times overlap and this does not equal elapsed training time."
+  },
+  "publication_scope": {
+    "aggregate_only": true,
+    "new_public_text_and_csv_artifacts_checked_for_individual_ids_and_machine_paths": true,
+    "private_individual_oof_and_prepared_responses_ignored_by_git": true,
+    "private_bootstrap_group_ids_and_count_weights_ignored_by_git": true,
+    "bootstrap_scope": "Conditional resampling of fixed OOF records; no refitting of training or tuning.",
+    "summary_itself_checked_for_ids_machine_paths_and_lf": true,
+    "public_candidate_files_checked_including_this_summary": 20
+  },
+  "output_sha256": {
+    "oof_predictions.csv": "27589551d504285e91472bfa215ac7b61b195849089f52cc263328c49debb8e5",
+    "fit_events.jsonl": "1e88e6fedd3e453f675a93e473f69e8b242cff77534ac5bccfc42deb472e7f74",
+    "outer_fit_audits.jsonl": "49f55f3eac50c714575f1956dabcde5694ae5d1987e3568cb136079ed31fff0b"
+  }
+}

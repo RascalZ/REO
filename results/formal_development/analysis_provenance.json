@@ -1,0 +1,49 @@
+{
+  "status": "completed",
+  "statistics_protocol_version": "formal_statistics_v1",
+  "created_utc": "2026-10-12T13:32:13.669891+00:00",
+  "wall_seconds": 62.06212780001806,
+  "source_run": "runs/gdsc2-cancer-v2-fixed8-nested5x3-inner3-formal-v1",
+  "code_execution_commit": "db31a3508722adc996e2f5da3a9f924fb70444aa",
+  "analyzer_sha256": "8ca39b7d4bfad9c13822d32fb404f7b833bc2922cb87b676144b2755f9f57c6a",
+  "statistics_config_sha256": "1936f62a92a5510bcfc6f4ff979898996bb09eae5972ed28fcc7f5cb8caf65b8",
+  "statistics_protocol_sha256": "4e4393810b6637434f32bac0eb48e285fc4cb2ec87465abe2e8d0be01c2d939d",
+  "formal_analysis_lock_sha256": "95dff1cc4cedda60cffd58c6a3c4119a3c8018dd7ad54910726f2a1a25c8c3dc",
+  "cohort_freeze_sha256": "fe1b725aa6acced46e1e5574930bb4c816c4414fc21c08d46cdb553d1fdc2d98",
+  "OOF_source_sha256": "27589551d504285e91472bfa215ac7b61b195849089f52cc263328c49debb8e5",
+  "development_manifest_sha256": "21efc28d5ee21603f2466b740c4aa29eb24fbfd6be4fec15f6392aadb661e608",
+  "outer_fit_audits_source_sha256": "49f55f3eac50c714575f1956dabcde5694ae5d1987e3568cb136079ed31fff0b",
+  "n_global_biological_groups": 626,
+  "bootstrap_draws": 10000,
+  "bootstrap_seed": 2026101201,
+  "bootstrap_generator": "PCG64.multinomial",
+  "bootstrap_count_matrix_sha256": "aabb36a1077b7347b5b3d9101956798b7a89a94f8ef3fa385e99d8f652ea9811",
+  "bootstrap_group_order_sha256": "dd8b5d85b7f84f251d5a9c5baed97736d07732c03b5abaea852146c08f37190a",
+  "numpy_version": "2.3.5",
+  "pandas_version": "3.0.1",
+  "no_repeat_N_inflation": true,
+  "bootstrap_shared_across_models_repeats_drugs": true,
+  "undefined_repeat_reasons": {
+    "training_mean_has_no_individual_ranking": 24
+  },
+  "external_response_accessed": false,
+  "blocked_source_access_attempts": [],
+  "interval_scope": "Conditional resampling intervals for the observed outcome/OOF-prediction records. No training or tuning is refitted; intervals do not cover full training-algorithm uncertainty or guarantee coverage for nested-CV generalization performance.",
+  "multiplicity": {
+    "family_alpha": 0.05,
+    "primary_family": "Nine Spearman-difference estimands: eight prespecified drugs plus one equal-drug macro for REO EN versus expression EN.",
+    "primary_family_size": 9,
+    "secondary_family": "Separate nine-estimand Spearman-difference family for REO RF versus expression RF; exploratory secondary, not a second route to declare the main EN successful.",
+    "secondary_family_size": 9,
+    "adjustment": "Bonferroni percentile endpoints alpha/(2*9) and 1-alpha/(2*9); also report marginal 95% intervals.",
+    "interpretation": "Nominal family-adjusted conditional bootstrap intervals, not exact simultaneous coverage of algorithmic performance. Primary and secondary families are distinct; no combined guarantee across both families.",
+    "auxiliary_metrics": "Unadjusted 95% conditional intervals, labelled descriptive; no multiplicity-unadjusted confirmatory claims."
+  },
+  "failure_task_policy": {
+    "training_mean_spearman": "Always NA as an individual-ranking baseline, even if concatenated fold means differ.",
+    "constant_response_or_prediction": "Spearman NA with reason; R2 NA for constant response; preserve RMSE/MAE and task records.",
+    "missing_prediction_or_incomplete_repeat": "Retain and flag task as incomplete. Do not calculate primary mean/CI from a subset of its three repeats or silently reduce N.",
+    "zero_molecular_coefficients": "Preserve global prediction metrics but identify tissue-only EN components; global Spearman is not molecular evidence."
+  },
+  "no_confirmatory_P_or_equivalence_claims": true
+}
