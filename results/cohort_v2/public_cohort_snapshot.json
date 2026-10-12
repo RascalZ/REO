@@ -1,0 +1,21 @@
+{
+  "cohort_version": "v2",
+  "status": "validated_and_locked",
+  "client_analysis_date": "2026-10-12",
+  "freeze_sha256": "fe1b725aa6acced46e1e5574930bb4c816c4414fc21c08d46cdb553d1fdc2d98",
+  "validation_report_sha256": "baba7a2d102090ab5cb0ce6364a2eec360f8a1bd7b875e8b79e2b9109d9e34c6",
+  "parent_cohort_freeze_sha256": "898c4724cd27a4cf60ecd188bbeac46e2a167fc8646ec603957abfa60d827473",
+  "cohort_counts": {
+    "development_unique_models": 626,
+    "development_unique_groups": 626,
+    "external_unique_models": 175,
+    "external_unique_groups": 175,
+    "development_drug_model_observations": 4967,
+    "external_drug_model_observations": 1185,
+    "external_sensitivity_unique_models": 206,
+    "external_sensitivity_drug_model_observations": 1391
+  },
+  "qualification_uses_response_values": false,
+  "external_response_accessed": false,
+  "locked_manifests_scope": "local versioned identity/source-row manifests; aggregate counts and public source facts in repository"
+}

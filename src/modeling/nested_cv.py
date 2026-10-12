@@ -84,6 +84,7 @@ class TrainOnlyRegressor(RegressorMixin,BaseEstimator):
         self.pair_selector_=None;self.predict_seconds_=0.0;self.last_predict_seconds_=0.0;self.prediction_calls_=0
         self.actual_alpha_=None;self.alpha_max_=None;self.path_ratio_=None;self.dual_gap_=None
         self.null_endpoint_=False;self.solver_reason_='not_applicable'
+        self.exact_tissue_constant_target_=None
         self.n_nonzero_molecular_coeffs_=None;self.n_molecular_features_used_=None
         self.rf_molecular_feature_names_=();self.rf_tissue_policy_=None
         if self.target_sd_==0:self.target_sd_=1.0;self.fallback_reason_='constant_training_response'
@@ -124,6 +125,12 @@ class TrainOnlyRegressor(RegressorMixin,BaseEstimator):
         self.feature_tissue_means_=(d.T@z)/counts[:,None]
         self.target_tissue_means_=(d.T@ys)/counts
         zr=z-d@self.feature_tissue_means_;yr=ys-d@self.target_tissue_means_
+        # Repeated exact group values can acquire tiny residuals when their
+        # floating-point sum is divided by the group count. Detect the exact
+        # degenerate case from observations, not an arbitrary residual epsilon.
+        # For every nondegenerate target, leave the existing arithmetic intact.
+        self.exact_tissue_constant_target_=bool(all(np.ptp(ys[d[:,j]==1.0])==0.0 for j in range(d.shape[1])))
+        if self.exact_tissue_constant_target_:yr=np.zeros_like(ys)
         e=self.config['elastic_net'];mode=e.get('regularization_mode','absolute')
         if mode=='alpha_max_relative':
             if not 0<float(self.l1_ratio)<=1:
@@ -161,6 +168,7 @@ class TrainOnlyRegressor(RegressorMixin,BaseEstimator):
         if self.model_kind=='reo_rf':
             self.pair_selector_=TrainOnlyReoPairSelector(max_pairs=rf.get('reo_max_pairs',500),association=rf.get('association','within_tissue_pearson'))
             self.pair_selector_.fit(z,ys,tissue_design=d,feature_names=names)
+            self.exact_tissue_constant_target_=self.pair_selector_.exact_tissue_constant_target_
             z=self.pair_selector_.transform(z)
             names=self.pair_selector_.selected_feature_names_
             if self.pair_selector_.fallback_reason_:
@@ -217,6 +225,7 @@ class TrainOnlyRegressor(RegressorMixin,BaseEstimator):
                 'n_iter':self.n_iter_,'warnings':self.warning_messages_,
                 'actual_alpha':self.actual_alpha_,'alpha_max':self.alpha_max_,'path_ratio':self.path_ratio_,
                 'null_endpoint':self.null_endpoint_,'solver_reason':self.solver_reason_,
+                'exact_tissue_constant_target':self.exact_tissue_constant_target_,
                 'n_nonzero_molecular_coeffs':self.n_nonzero_molecular_coeffs_,'dual_gap':self.dual_gap_,
                 'n_selected_genes':None if self.builder_ is None or not hasattr(self.builder_,'gene_indices_') else len(self.builder_.gene_indices_),
                 'n_features':n_features,'n_candidate_molecular_features':built_features,

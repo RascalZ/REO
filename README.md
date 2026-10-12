@@ -8,6 +8,8 @@
 
 最新进度与问题见[阶段2试跑报告](reports/阶段2_开发集嵌套试跑.md)。资格复核发现少量非癌对照；当前v1/pilot保留原样，正式队列修订见总计划与metadata审查记录。
 
+**最新：癌模型队列v2已锁定626开发/175外验。** [阶段3 REO200/RF报告](reports/阶段3_癌队列v2与REO200_RF试跑.md)记录906次主拟合、约18.8分钟、0.84GiB采样峰值RSS。两药主REO EN均未保留分子系数，REO RF点成绩也未优于强表达RF；尚无可靠优势证据。CTRP响应继续封存，正式8药重复评价及统计推断未执行。
+
 ## 快速查看
 
 ```sh
@@ -62,6 +64,20 @@ python src/run_development_pilot.py --run-dir runs/my-development-pilot
 ```
 
 不要覆盖已有run。原执行代码提交为`629b8f5`，后续异常资源释放/检查点修复不改变已记录的数值结果；具体执行源哈希随报告发布。
+
+队列v2/REO200/RF入口（需要本地已冻结v1/v2及原输入）：
+
+```sh
+python scripts/validate_cancer_cohort.py
+python -m unittest discover -s tests -p "test_pilot*_integrity.py" -v
+python src/run_development_pilot.py --config config/pilot_v0.2.json --run-dir runs/my-cancer-v2-pilot
+python scripts/validate_pilot_run.py --run-dir runs/my-cancer-v2-pilot
+python src/report_reo200_rf_pilot.py --run-dir runs/my-cancer-v2-pilot
+```
+
+阶段3成功运行提交为`5d05349`；随后修复的纯组织响应舍入边界未在真实906个fit中触发，实际运行保留，聚合和审计在`results/pilot_reo200_rf/`。完整freeze/个体manifest与预测留本地；公开癌资格来源事实缓存位于`data_raw/cancer_metadata/`并保留来源许可。
+
+启动器自动记录Git HEAD，并在拟合前校验科学代码/配置与该提交一致。先提交新的科学配置或实现再启动；未提交改动会在拟合前被拒绝，失败证据保留。文档/报告的未提交改动不影响科学源快照。
 
 CTRP曾用于历史项目；当前是回顾性重新隔离的已知身份验证。两库共享CCLE表达且剂量区间不同，结论限于跨筛选、跨细胞系的排序迁移，未证明跨表达平台、相同绝对AUC终点或患者效用。
 

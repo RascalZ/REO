@@ -1,0 +1,245 @@
+{
+  "schema_version": "1.0",
+  "report_generated_utc": "2026-10-12T03:57:48.406732+00:00",
+  "source_run": "runs/gdsc2-cancer-v2-mira1-plx4720-nested-reo200-en-rf",
+  "source_run_status": "completed",
+  "source_run_created_utc": "2026-10-12T03:28:39.588917+00:00",
+  "declared_analysis_date": "2026-10-12",
+  "code_execution_commit": "5d053490f4a4b025245eee3c880fb42827154e2f",
+  "report_generation_commit": "5d053490f4a4b025245eee3c880fb42827154e2f",
+  "working_tree_status_at_report_generation": "dirty",
+  "source_hashes": {
+    "config\\pilot_v0.2.json": "f31a585dd46359f70acc7052c2b82032dd397c6acdf540468b2d4a65f4f0f667",
+    "src\\modeling\\__init__.py": "cfdeb017cbb6cd301a6f2adf517f1888e3027410b0fd9b446755fcaf318c13c4",
+    "src\\modeling\\features.py": "a96fd23879bed2af1ce9ad184120c24e22f788640633e6550316439ff370c91a",
+    "src\\modeling\\nested_cv.py": "c2b73a79fd4bb000d3da1d8a224012d966528f7da2756154c2ae86f2441dece4",
+    "src\\modeling\\reo_rf.py": "8fba7d4b902e5c33863b0aa933e89f04d9120e2e78fa73878256663454a74be5",
+    "src\\run_development_pilot.py": "23a85627e355624108c8e5f542d894398ba3aa1d0c02ddf89187d568ac6e5ac8"
+  },
+  "config_sha256": "f31a585dd46359f70acc7052c2b82032dd397c6acdf540468b2d4a65f4f0f667",
+  "cohort_version": "v2",
+  "cohort_freeze_sha256": "fe1b725aa6acced46e1e5574930bb4c816c4414fc21c08d46cdb553d1fdc2d98",
+  "cohort_validation_report_sha256": "baba7a2d102090ab5cb0ce6364a2eec360f8a1bd7b875e8b79e2b9109d9e34c6",
+  "actual_run_validation": {
+    "status": "passed",
+    "source_revision": "5d053490f4a4b025245eee3c880fb42827154e2f",
+    "counts": {
+      "development_pool_identities": 626,
+      "drug_model_oof_counts": {
+        "1036": {
+          "expression": 622,
+          "expression_matched": 622,
+          "expression_rf": 622,
+          "mean": 622,
+          "reo": 622,
+          "reo_rf": 622,
+          "tissue": 622
+        },
+        "1931": {
+          "expression": 625,
+          "expression_matched": 625,
+          "expression_rf": 625,
+          "mean": 625,
+          "reo": 625,
+          "reo_rf": 625,
+          "tissue": 625
+        }
+      },
+      "actual_fits": 906,
+      "expected_fits": 906,
+      "feature_builder_fits_with_training_membership_verified": 786,
+      "oof_predictions": 8729,
+      "outer_folds": 3,
+      "inner_folds": 3
+    },
+    "within_tissue_response_variation": {
+      "fits_checked": 906,
+      "fits_with_all_tissues_exactly_constant": 0,
+      "minimum_positive_fit_residual_rms": 0.020150089735918943,
+      "minimum_positive_tissue_group_residual_rms": 0.0007486445529532931,
+      "minimum_positive_within_tissue_response_range": 0.0015760000000000218,
+      "exact_constant_edge_activated_in_this_run": false
+    },
+    "checks": {
+      "cohort_lock_and_development_identity_hash": true,
+      "all_group_and_fold_boundaries": true,
+      "actual_inner_fit_membership_and_exactly_once_refits": true,
+      "outer_test_not_used_for_fitting": true,
+      "each_identity_exactly_one_oof_prediction_per_drug_model": true,
+      "target_scaling_from_actual_training_responses": true,
+      "fixed_grid_and_logged_inner_rmse_selection": true,
+      "oof_metrics_reconstructed": true,
+      "mean_baseline_ranking_not_interpreted": true,
+      "recorded_sources_match_immutable_run_revision": true,
+      "run_external_access_log_clear": true,
+      "relative_path_and_rf_schema_checks": true
+    },
+    "limitations": [
+      "Fit-boundary verification depends on actual-fit audit records; synthetic tests independently inspect builder inputs and perturb held-out labels/distributions.",
+      "Inner OOF predictions were not exported; parameter choice is checked against logged candidate scores, while pooled outer metrics are reconstructed from individual OOF records.",
+      "External access checks inspect the run's access log and guard tests; the validator does not reopen external responses."
+    ]
+  },
+  "python": "3.12.14",
+  "packages": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit-learn": "1.7.2",
+    "scipy": "1.16.2",
+    "psutil": "7.1.0",
+    "joblib": "1.6.0",
+    "threadpoolctl": "3.7.0",
+    "cloudpickle": "3.1.2"
+  },
+  "logical_cpus": 16,
+  "total_ram_bytes": 16876888064,
+  "configuration": {
+    "schema_version": "0.2",
+    "declared_analysis_date": "2026-10-12",
+    "run_name": "gdsc2-cancer-v2-mira1-plx4720-nested-reo200-en-rf",
+    "scope": "expanded development engineering pilot; exploratory internal comparisons, not final eight-drug repeated-CV or external validation",
+    "drug_ids": [
+      1931,
+      1036
+    ],
+    "drug_selection_rule": "same two coverage-prespecified drugs as v0.1; no performance selection or panel replacement",
+    "cohort_version": "v2",
+    "seed": 20261010,
+    "outer_folds": 3,
+    "outer_repeats": 1,
+    "inner_folds": 3,
+    "global_fold_rule": "tissue-stratified known biological groups on the cancer-v2 development pool; identical global folds for all models and both drugs",
+    "endpoint": "GDSC2 drug-response AUC within frozen exact drug-specific dose interval; higher = lower sensitivity",
+    "tuning_objective": "minimum pooled inner OOF RMSE on original GDSC AUC; deterministic first-candidate tie break",
+    "models": [
+      "mean",
+      "tissue",
+      "expression",
+      "expression_matched",
+      "reo",
+      "expression_rf",
+      "reo_rf"
+    ],
+    "feature": {
+      "annotation_rule": "exact-annotation protein_coding only, no full-development or external distribution filter",
+      "expression_genes": 2000,
+      "matched_expression_genes": 200,
+      "reo_genes": 200,
+      "formal_reo_genes_transform_benchmark": 200,
+      "min_tpm": 1.0,
+      "min_detection_fraction": 0.1,
+      "max_pair_tie_fraction": 0.9,
+      "rank": "training log2TPM MAD descending, stable gene-ID tie break",
+      "reo_encoding": "raw-TPM exact order +1/-1, ties=0; missing is never a tie",
+      "missing_rule": "finite complete TPM only; fail and record unsupported missing inputs",
+      "empty_feature_fallback": "training mean, preserving failure and all test samples"
+    },
+    "elastic_net": {
+      "regularization_mode": "alpha_max_relative",
+      "alpha_ratios": [
+        1.0,
+        0.3,
+        0.1,
+        0.03,
+        0.01
+      ],
+      "l1_ratios": [
+        0.5,
+        1.0
+      ],
+      "max_iter": 4000,
+      "tol": 0.001,
+      "selection": "cyclic",
+      "path_rule": "each fit computes alpha_max from its own training-standardized, tissue-projected X and y, divided by n*l1_ratio; never use outer training or held-out labels to supply an inner path",
+      "standardization": "train-only feature mean/SD and target mean/population SD",
+      "tissue_handling": "unpenalized FWL tissue effects after gene/REO construction; unseen tissue effect=0, retaining molecular prediction"
+    },
+    "random_forest": {
+      "n_estimators": 300,
+      "max_features": [
+        "sqrt",
+        0.1
+      ],
+      "min_samples_leaf": [
+        1,
+        5,
+        10
+      ],
+      "n_jobs": 1,
+      "seed": 20261010,
+      "reo_max_pairs": 500,
+      "association": "within_tissue_pearson",
+      "pair_filter_rule": "train-only absolute within-tissue association with continuous response, stable feature-name tie break; apply frozen selected columns to validation/test",
+      "tissue_handling": "append full train-fit one-hot tissue to raw logTPM or raw REO features; unseen category all-zero; no raw-TPM gene residualization"
+    },
+    "ridge_alphas": [
+      0.0,
+      0.1,
+      1.0,
+      10.0,
+      100.0,
+      1000.0
+    ],
+    "prediction_clipping": false,
+    "resources": {
+      "parallel_jobs": 1,
+      "blas_threads": 1,
+      "rss_sampling_interval_seconds": 0.1
+    },
+    "timing_preflight": "training-only weakest EN path and largest RF feature/leaf budget, no held-out score or hyperparameter selection",
+    "external_response_access": "forbidden; CTRP response, curve index and old response table remain sealed",
+    "primary_comparison": "REO EN200 versus strong expression EN2000 on identical OOF identities; RF within-family comparison is secondary",
+    "statistical_inference": "pilot OOF points and per-fold stability only; no claim of reliable superiority, no confirmatory p-value or equivalence",
+    "cross_run_interpretation": "v0.1 and v0.2 differ in cohort, folds, gene budget and path; changes cannot be attributed to gene budget alone",
+    "planned_full_analysis": "fixed eight-drug 5 outer folds x 3 repeats, inner3, prior statistical freeze and then CTRP once"
+  },
+  "resources": {
+    "wall_seconds": 1125.759337800031,
+    "cpu_seconds": 1081.453125,
+    "sampled_peak_rss_bytes": 901988352,
+    "windows_peak_working_set_bytes": 944521216,
+    "memory_scope": "whole single pilot process including input preparation and libraries; not isolated model memory",
+    "sample_interval_seconds": 0.1
+  },
+  "n_fits": 906,
+  "n_oof_predictions": 8729,
+  "external_response_accessed": false,
+  "blocked_external_access_attempt_count": 0,
+  "within_tissue_minimum_n": 20,
+  "within_tissue_undefined_correlation_rows": 70,
+  "interpretation": "Expanded engineering/development pilot only. Formal eight-drug repeated nested CV, uncertainty/permutation procedures and frozen external validation remain pending.",
+  "report_inputs_sha256": [
+    {
+      "path": "runs/gdsc2-cancer-v2-mira1-plx4720-nested-reo200-en-rf/run_manifest.json",
+      "sha256": "3396d646808476a577daf3ed908819e87cd2c4887d7e521ed0aebd5c5ae9939e"
+    },
+    {
+      "path": "runs/gdsc2-cancer-v2-mira1-plx4720-nested-reo200-en-rf/summary_metrics.csv",
+      "sha256": "fd738876cac26ac1de1c0bad2fa056d2ac3e63eeb2586ed78e6114b2d6252cb0"
+    },
+    {
+      "path": "runs/gdsc2-cancer-v2-mira1-plx4720-nested-reo200-en-rf/fold_metrics.csv",
+      "sha256": "24f0e6560002dbdc88147573e02acda508d465992fafe4f8f005b9425b130b10"
+    },
+    {
+      "path": "runs/gdsc2-cancer-v2-mira1-plx4720-nested-reo200-en-rf/outer_fit_audits.json",
+      "sha256": "2e60c41162b17d1ef8d6821bb38259fab822e9c0c7c7efb571a468e9c146987b"
+    },
+    {
+      "path": "runs/gdsc2-cancer-v2-mira1-plx4720-nested-reo200-en-rf/chosen_parameters.json",
+      "sha256": "587d28e60a52b6e4117385a29a4b3e09595b4b7ff2b3c1a3fba4f6721ad4a6d1"
+    },
+    {
+      "path": "runs/gdsc2-cancer-v2-mira1-plx4720-nested-reo200-en-rf/within_tissue_metrics.csv",
+      "sha256": "eac0f3623491b459556f80fce332d72b295135ad32ed41ddab102703f1bb0537"
+    },
+    {
+      "path": "results/cohort_v2/main_drugs.csv",
+      "sha256": "5704749a9b416b920f5028703e2b578aedf3dbe07a0ab8d500f4ff9f2fbbc1b6"
+    },
+    {
+      "path": "reports/cancer_cohort_v2_validation.json",
+      "sha256": "baba7a2d102090ab5cb0ce6364a2eec360f8a1bd7b875e8b79e2b9109d9e34c6"
+    }
+  ]
+}

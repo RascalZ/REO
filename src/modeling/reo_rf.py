@@ -61,6 +61,14 @@ class TrainOnlyReoPairSelector(TransformerMixin, BaseEstimator):
             raise ValueError("Training tissue design cannot contain an empty tissue column.")
 
         yr = y - D @ ((D.T @ y) / counts)
+        # An exactly repeated target within every tissue has no information
+        # for within-tissue association, even if sum/count introduces roundoff.
+        # The ordinary nonconstant-target path is left bitwise unchanged.
+        self.exact_tissue_constant_target_ = bool(
+            all(np.ptp(y[D[:, j] == 1.0]) == 0.0 for j in range(D.shape[1]))
+        )
+        if self.exact_tissue_constant_target_:
+            yr = np.zeros_like(y)
         y_norm = float(np.linalg.norm(yr))
         correlation = np.zeros(Z.shape[1], dtype=np.float64)
         eligible = np.zeros(Z.shape[1], dtype=bool)
@@ -102,6 +110,7 @@ class TrainOnlyReoPairSelector(TransformerMixin, BaseEstimator):
             "selected_feature_names": list(self.selected_feature_names_),
             "selected_signed_associations": self.signed_associations_.tolist(),
             "fallback_reason": reason,
+            "exact_tissue_constant_target": self.exact_tissue_constant_target_,
             "tree_feature_values": "original REO codes; no residualization",
         }
         return self

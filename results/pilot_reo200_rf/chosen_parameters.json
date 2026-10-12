@@ -1,0 +1,3638 @@
+[
+  {
+    "gdsc_drug_id": 1931,
+    "model": "mean",
+    "outer_fold": 0,
+    "chosen_params": {},
+    "best_inner_rmse": null,
+    "grid_boundary": false,
+    "grid_boundary_details": {},
+    "inner_scores": []
+  },
+  {
+    "gdsc_drug_id": 1931,
+    "model": "tissue",
+    "outer_fold": 0,
+    "chosen_params": {
+      "alpha": 10.0
+    },
+    "best_inner_rmse": 0.021848842253644075,
+    "grid_boundary": false,
+    "grid_boundary_details": {
+      "alpha": {
+        "chosen": 10.0,
+        "minimum": 0.0,
+        "maximum": 1000.0,
+        "at_boundary": false,
+        "search_extent_diagnostic": true
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha": 0.0
+        },
+        "pooled_inner_rmse": 0.021938316497643863,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha": 0.1
+        },
+        "pooled_inner_rmse": 0.02192884946760197,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha": 1.0
+        },
+        "pooled_inner_rmse": 0.02187066859006485,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha": 10.0
+        },
+        "pooled_inner_rmse": 0.021848842253644075,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha": 100.0
+        },
+        "pooled_inner_rmse": 0.02298872677395645,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha": 1000.0
+        },
+        "pooled_inner_rmse": 0.023865793722161632,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1931,
+    "model": "expression",
+    "outer_fold": 0,
+    "chosen_params": {
+      "alpha_ratio": 0.3,
+      "l1_ratio": 0.5
+    },
+    "best_inner_rmse": 0.021228875109287282,
+    "grid_boundary": false,
+    "grid_boundary_details": {
+      "alpha_ratio": {
+        "chosen": 0.3,
+        "minimum": 0.01,
+        "maximum": 1.0,
+        "at_boundary": false,
+        "search_extent_diagnostic": true
+      },
+      "l1_ratio": {
+        "chosen": 0.5,
+        "minimum": 0.5,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": false
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.021938316497643863,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.021938316497643863,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.021228875109287282,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.021261648046860628,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.022739406625145935,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.02299611885870158,
+        "fallbacks": []
+      },
+      {
+        "candidate": 6,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.024786046606779574,
+        "fallbacks": []
+      },
+      {
+        "candidate": 7,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.0252732329745375,
+        "fallbacks": []
+      },
+      {
+        "candidate": 8,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.025850133869401472,
+        "fallbacks": []
+      },
+      {
+        "candidate": 9,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.026283228351847668,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1931,
+    "model": "expression_matched",
+    "outer_fold": 0,
+    "chosen_params": {
+      "alpha_ratio": 1.0,
+      "l1_ratio": 0.5
+    },
+    "best_inner_rmse": 0.021938316497643863,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "alpha_ratio": {
+        "chosen": 1.0,
+        "minimum": 0.01,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      },
+      "l1_ratio": {
+        "chosen": 0.5,
+        "minimum": 0.5,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": false
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.021938316497643863,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.021938316497643863,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.022537206776752344,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.022683235096700494,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.024134763423951714,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.024484894136743512,
+        "fallbacks": []
+      },
+      {
+        "candidate": 6,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.027827385627292135,
+        "fallbacks": []
+      },
+      {
+        "candidate": 7,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.028537549345596887,
+        "fallbacks": []
+      },
+      {
+        "candidate": 8,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.03509740616116279,
+        "fallbacks": []
+      },
+      {
+        "candidate": 9,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.036544041936666126,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1931,
+    "model": "reo",
+    "outer_fold": 0,
+    "chosen_params": {
+      "alpha_ratio": 1.0,
+      "l1_ratio": 0.5
+    },
+    "best_inner_rmse": 0.021938316497643863,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "alpha_ratio": {
+        "chosen": 1.0,
+        "minimum": 0.01,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      },
+      "l1_ratio": {
+        "chosen": 0.5,
+        "minimum": 0.5,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": false
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.021938316497643863,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.021938316497643863,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.022519099389884566,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.02266120487907964,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.023788667312380826,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.02401579041308366,
+        "fallbacks": []
+      },
+      {
+        "candidate": 6,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.02438495159627723,
+        "fallbacks": []
+      },
+      {
+        "candidate": 7,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.02475243612382912,
+        "fallbacks": []
+      },
+      {
+        "candidate": 8,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.024510228963797075,
+        "fallbacks": []
+      },
+      {
+        "candidate": 9,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.024862640511625015,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1931,
+    "model": "expression_rf",
+    "outer_fold": 0,
+    "chosen_params": {
+      "max_features": "sqrt",
+      "min_samples_leaf": 5
+    },
+    "best_inner_rmse": 0.021903251423154274,
+    "grid_boundary": false,
+    "grid_boundary_details": {
+      "max_features": {
+        "chosen": "sqrt",
+        "choices": [
+          "sqrt",
+          0.1
+        ],
+        "at_boundary": false,
+        "search_extent_diagnostic": false
+      },
+      "min_samples_leaf": {
+        "chosen": 5,
+        "minimum": 1,
+        "maximum": 10,
+        "at_boundary": false,
+        "search_extent_diagnostic": true
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.022311434716930246,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.021903251423154274,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.02209341479586599,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.021979189281856087,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.021997609090310555,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.02210537190117844,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1931,
+    "model": "reo_rf",
+    "outer_fold": 0,
+    "chosen_params": {
+      "max_features": 0.1,
+      "min_samples_leaf": 5
+    },
+    "best_inner_rmse": 0.02254637245084556,
+    "grid_boundary": false,
+    "grid_boundary_details": {
+      "max_features": {
+        "chosen": 0.1,
+        "choices": [
+          "sqrt",
+          0.1
+        ],
+        "at_boundary": false,
+        "search_extent_diagnostic": false
+      },
+      "min_samples_leaf": {
+        "chosen": 5,
+        "minimum": 1,
+        "maximum": 10,
+        "at_boundary": false,
+        "search_extent_diagnostic": true
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.022647001320861254,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.022724238625959074,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.022824770669626022,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.02256796003180289,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.02254637245084556,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.02258383681161013,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1931,
+    "model": "mean",
+    "outer_fold": 1,
+    "chosen_params": {},
+    "best_inner_rmse": null,
+    "grid_boundary": false,
+    "grid_boundary_details": {},
+    "inner_scores": []
+  },
+  {
+    "gdsc_drug_id": 1931,
+    "model": "tissue",
+    "outer_fold": 1,
+    "chosen_params": {
+      "alpha": 10.0
+    },
+    "best_inner_rmse": 0.022109310354726092,
+    "grid_boundary": false,
+    "grid_boundary_details": {
+      "alpha": {
+        "chosen": 10.0,
+        "minimum": 0.0,
+        "maximum": 1000.0,
+        "at_boundary": false,
+        "search_extent_diagnostic": true
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha": 0.0
+        },
+        "pooled_inner_rmse": 0.022335593640439255,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha": 0.1
+        },
+        "pooled_inner_rmse": 0.022326232798936963,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha": 1.0
+        },
+        "pooled_inner_rmse": 0.02226250818167637,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha": 10.0
+        },
+        "pooled_inner_rmse": 0.022109310354726092,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha": 100.0
+        },
+        "pooled_inner_rmse": 0.022436017526055244,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha": 1000.0
+        },
+        "pooled_inner_rmse": 0.02273656882580457,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1931,
+    "model": "expression",
+    "outer_fold": 1,
+    "chosen_params": {
+      "alpha_ratio": 1.0,
+      "l1_ratio": 0.5
+    },
+    "best_inner_rmse": 0.022335593640439255,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "alpha_ratio": {
+        "chosen": 1.0,
+        "minimum": 0.01,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      },
+      "l1_ratio": {
+        "chosen": 0.5,
+        "minimum": 0.5,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": false
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.022335593640439255,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.022335593640439255,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.02465257450325739,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.02490272653751472,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.027289844398932433,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.02780254824392698,
+        "fallbacks": []
+      },
+      {
+        "candidate": 6,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.028645872404538107,
+        "fallbacks": []
+      },
+      {
+        "candidate": 7,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.029277993963088104,
+        "fallbacks": []
+      },
+      {
+        "candidate": 8,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.0290702609895882,
+        "fallbacks": []
+      },
+      {
+        "candidate": 9,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.029459124281486282,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1931,
+    "model": "expression_matched",
+    "outer_fold": 1,
+    "chosen_params": {
+      "alpha_ratio": 1.0,
+      "l1_ratio": 0.5
+    },
+    "best_inner_rmse": 0.022335593640439255,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "alpha_ratio": {
+        "chosen": 1.0,
+        "minimum": 0.01,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      },
+      "l1_ratio": {
+        "chosen": 0.5,
+        "minimum": 0.5,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": false
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.022335593640439255,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.022335593640439255,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.02317180222825038,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.023270978650908575,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.025471208223814254,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.025900344449182953,
+        "fallbacks": []
+      },
+      {
+        "candidate": 6,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.031054531197621364,
+        "fallbacks": []
+      },
+      {
+        "candidate": 7,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.032416750648642065,
+        "fallbacks": []
+      },
+      {
+        "candidate": 8,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.0403447560660763,
+        "fallbacks": []
+      },
+      {
+        "candidate": 9,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.042649397415275375,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1931,
+    "model": "reo",
+    "outer_fold": 1,
+    "chosen_params": {
+      "alpha_ratio": 1.0,
+      "l1_ratio": 0.5
+    },
+    "best_inner_rmse": 0.022335593640439255,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "alpha_ratio": {
+        "chosen": 1.0,
+        "minimum": 0.01,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      },
+      "l1_ratio": {
+        "chosen": 0.5,
+        "minimum": 0.5,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": false
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.022335593640439255,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.022335593640439255,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.024340618161530936,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.02452823325707136,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.026648289282784475,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.027102132943170393,
+        "fallbacks": []
+      },
+      {
+        "candidate": 6,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.027590064669411867,
+        "fallbacks": []
+      },
+      {
+        "candidate": 7,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.028094562173333993,
+        "fallbacks": []
+      },
+      {
+        "candidate": 8,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.027770685426326575,
+        "fallbacks": []
+      },
+      {
+        "candidate": 9,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.02825479871082196,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1931,
+    "model": "expression_rf",
+    "outer_fold": 1,
+    "chosen_params": {
+      "max_features": "sqrt",
+      "min_samples_leaf": 10
+    },
+    "best_inner_rmse": 0.022557408360415816,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "max_features": {
+        "chosen": "sqrt",
+        "choices": [
+          "sqrt",
+          0.1
+        ],
+        "at_boundary": false,
+        "search_extent_diagnostic": false
+      },
+      "min_samples_leaf": {
+        "chosen": 10,
+        "minimum": 1,
+        "maximum": 10,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.02327722610871173,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.02279337988491765,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.022557408360415816,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.023105252020717594,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.022867151964800284,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.022594203212404865,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1931,
+    "model": "reo_rf",
+    "outer_fold": 1,
+    "chosen_params": {
+      "max_features": 0.1,
+      "min_samples_leaf": 10
+    },
+    "best_inner_rmse": 0.023072993806545518,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "max_features": {
+        "chosen": 0.1,
+        "choices": [
+          "sqrt",
+          0.1
+        ],
+        "at_boundary": false,
+        "search_extent_diagnostic": false
+      },
+      "min_samples_leaf": {
+        "chosen": 10,
+        "minimum": 1,
+        "maximum": 10,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.02386387887309009,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.023375963198571215,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.023130741243455363,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.023964881986845397,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.023433714804913117,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.023072993806545518,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1931,
+    "model": "mean",
+    "outer_fold": 2,
+    "chosen_params": {},
+    "best_inner_rmse": null,
+    "grid_boundary": false,
+    "grid_boundary_details": {},
+    "inner_scores": []
+  },
+  {
+    "gdsc_drug_id": 1931,
+    "model": "tissue",
+    "outer_fold": 2,
+    "chosen_params": {
+      "alpha": 1.0
+    },
+    "best_inner_rmse": 0.02337583428370858,
+    "grid_boundary": false,
+    "grid_boundary_details": {
+      "alpha": {
+        "chosen": 1.0,
+        "minimum": 0.0,
+        "maximum": 1000.0,
+        "at_boundary": false,
+        "search_extent_diagnostic": true
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha": 0.0
+        },
+        "pooled_inner_rmse": 0.02344125714069232,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha": 0.1
+        },
+        "pooled_inner_rmse": 0.023428710331647853,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha": 1.0
+        },
+        "pooled_inner_rmse": 0.02337583428370858,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha": 10.0
+        },
+        "pooled_inner_rmse": 0.023483323428395646,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha": 100.0
+        },
+        "pooled_inner_rmse": 0.024592076623820878,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha": 1000.0
+        },
+        "pooled_inner_rmse": 0.025298855470046414,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1931,
+    "model": "expression",
+    "outer_fold": 2,
+    "chosen_params": {
+      "alpha_ratio": 1.0,
+      "l1_ratio": 0.5
+    },
+    "best_inner_rmse": 0.02344125714069232,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "alpha_ratio": {
+        "chosen": 1.0,
+        "minimum": 0.01,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      },
+      "l1_ratio": {
+        "chosen": 0.5,
+        "minimum": 0.5,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": false
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.02344125714069232,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.02344125714069232,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.023671068079251296,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.023717840258988192,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.025472686378255806,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.02573875256174661,
+        "fallbacks": []
+      },
+      {
+        "candidate": 6,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.026893370240615937,
+        "fallbacks": []
+      },
+      {
+        "candidate": 7,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.027391197601847533,
+        "fallbacks": []
+      },
+      {
+        "candidate": 8,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.027806581107951464,
+        "fallbacks": []
+      },
+      {
+        "candidate": 9,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.028296865872871835,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1931,
+    "model": "expression_matched",
+    "outer_fold": 2,
+    "chosen_params": {
+      "alpha_ratio": 0.3,
+      "l1_ratio": 0.5
+    },
+    "best_inner_rmse": 0.023333312072460588,
+    "grid_boundary": false,
+    "grid_boundary_details": {
+      "alpha_ratio": {
+        "chosen": 0.3,
+        "minimum": 0.01,
+        "maximum": 1.0,
+        "at_boundary": false,
+        "search_extent_diagnostic": true
+      },
+      "l1_ratio": {
+        "chosen": 0.5,
+        "minimum": 0.5,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": false
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.02344125714069232,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.02344125714069232,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.023333312072460588,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.023404761526260424,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.024511393162956138,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.024783423530426656,
+        "fallbacks": []
+      },
+      {
+        "candidate": 6,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.029749836280151445,
+        "fallbacks": []
+      },
+      {
+        "candidate": 7,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.030829370768287425,
+        "fallbacks": []
+      },
+      {
+        "candidate": 8,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.03859460850888849,
+        "fallbacks": []
+      },
+      {
+        "candidate": 9,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.040523718741131295,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1931,
+    "model": "reo",
+    "outer_fold": 2,
+    "chosen_params": {
+      "alpha_ratio": 1.0,
+      "l1_ratio": 0.5
+    },
+    "best_inner_rmse": 0.02344125714069232,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "alpha_ratio": {
+        "chosen": 1.0,
+        "minimum": 0.01,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      },
+      "l1_ratio": {
+        "chosen": 0.5,
+        "minimum": 0.5,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": false
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.02344125714069232,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.02344125714069232,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.02373824247219896,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.023924577437758075,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.025559670446752895,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.02589164484613656,
+        "fallbacks": []
+      },
+      {
+        "candidate": 6,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.026364650708358583,
+        "fallbacks": []
+      },
+      {
+        "candidate": 7,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.026678663745928165,
+        "fallbacks": []
+      },
+      {
+        "candidate": 8,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.026867443610029202,
+        "fallbacks": []
+      },
+      {
+        "candidate": 9,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.027027756372238698,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1931,
+    "model": "expression_rf",
+    "outer_fold": 2,
+    "chosen_params": {
+      "max_features": 0.1,
+      "min_samples_leaf": 5
+    },
+    "best_inner_rmse": 0.022837020054828152,
+    "grid_boundary": false,
+    "grid_boundary_details": {
+      "max_features": {
+        "chosen": 0.1,
+        "choices": [
+          "sqrt",
+          0.1
+        ],
+        "at_boundary": false,
+        "search_extent_diagnostic": false
+      },
+      "min_samples_leaf": {
+        "chosen": 5,
+        "minimum": 1,
+        "maximum": 10,
+        "at_boundary": false,
+        "search_extent_diagnostic": true
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.02306876557680984,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.022878938639884664,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.023103775221490822,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.023250843030326936,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.022837020054828152,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.02295526870136501,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1931,
+    "model": "reo_rf",
+    "outer_fold": 2,
+    "chosen_params": {
+      "max_features": 0.1,
+      "min_samples_leaf": 10
+    },
+    "best_inner_rmse": 0.023503974383661377,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "max_features": {
+        "chosen": 0.1,
+        "choices": [
+          "sqrt",
+          0.1
+        ],
+        "at_boundary": false,
+        "search_extent_diagnostic": false
+      },
+      "min_samples_leaf": {
+        "chosen": 10,
+        "minimum": 1,
+        "maximum": 10,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.02406327421569927,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.02381674773118705,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.023596269099075938,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.024316091141302905,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.023581918306825378,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.023503974383661377,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "model": "mean",
+    "outer_fold": 0,
+    "chosen_params": {},
+    "best_inner_rmse": null,
+    "grid_boundary": false,
+    "grid_boundary_details": {},
+    "inner_scores": []
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "model": "tissue",
+    "outer_fold": 0,
+    "chosen_params": {
+      "alpha": 1.0
+    },
+    "best_inner_rmse": 0.05007529278076502,
+    "grid_boundary": false,
+    "grid_boundary_details": {
+      "alpha": {
+        "chosen": 1.0,
+        "minimum": 0.0,
+        "maximum": 1000.0,
+        "at_boundary": false,
+        "search_extent_diagnostic": true
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha": 0.0
+        },
+        "pooled_inner_rmse": 0.05036888130075163,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha": 0.1
+        },
+        "pooled_inner_rmse": 0.05032144150908998,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha": 1.0
+        },
+        "pooled_inner_rmse": 0.05007529278076502,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha": 10.0
+        },
+        "pooled_inner_rmse": 0.05175508112207179,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha": 100.0
+        },
+        "pooled_inner_rmse": 0.0591615632370622,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha": 1000.0
+        },
+        "pooled_inner_rmse": 0.06156286262545135,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "model": "expression",
+    "outer_fold": 0,
+    "chosen_params": {
+      "alpha_ratio": 0.3,
+      "l1_ratio": 0.5
+    },
+    "best_inner_rmse": 0.05026407434538862,
+    "grid_boundary": false,
+    "grid_boundary_details": {
+      "alpha_ratio": {
+        "chosen": 0.3,
+        "minimum": 0.01,
+        "maximum": 1.0,
+        "at_boundary": false,
+        "search_extent_diagnostic": true
+      },
+      "l1_ratio": {
+        "chosen": 0.5,
+        "minimum": 0.5,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": false
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.05036888130075163,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.05036888130075163,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.05026407434538862,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.050598853385472674,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.053728579697537235,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.054714485954301006,
+        "fallbacks": []
+      },
+      {
+        "candidate": 6,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.0582262212622175,
+        "fallbacks": []
+      },
+      {
+        "candidate": 7,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.059828483556877865,
+        "fallbacks": []
+      },
+      {
+        "candidate": 8,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.059610955194054904,
+        "fallbacks": []
+      },
+      {
+        "candidate": 9,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.06105527273332343,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "model": "expression_matched",
+    "outer_fold": 0,
+    "chosen_params": {
+      "alpha_ratio": 1.0,
+      "l1_ratio": 0.5
+    },
+    "best_inner_rmse": 0.05036888130075163,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "alpha_ratio": {
+        "chosen": 1.0,
+        "minimum": 0.01,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      },
+      "l1_ratio": {
+        "chosen": 0.5,
+        "minimum": 0.5,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": false
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.05036888130075163,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.05036888130075163,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.05048186598532415,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.05056486322459864,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.05612997166226095,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.05689525070882716,
+        "fallbacks": []
+      },
+      {
+        "candidate": 6,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.06939773372028077,
+        "fallbacks": []
+      },
+      {
+        "candidate": 7,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.07145631079184932,
+        "fallbacks": []
+      },
+      {
+        "candidate": 8,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.08837351082333665,
+        "fallbacks": []
+      },
+      {
+        "candidate": 9,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.09270938052809476,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "model": "reo",
+    "outer_fold": 0,
+    "chosen_params": {
+      "alpha_ratio": 1.0,
+      "l1_ratio": 0.5
+    },
+    "best_inner_rmse": 0.05036888130075163,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "alpha_ratio": {
+        "chosen": 1.0,
+        "minimum": 0.01,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      },
+      "l1_ratio": {
+        "chosen": 0.5,
+        "minimum": 0.5,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": false
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.05036888130075163,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.05036888130075163,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.05265246208423778,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.05299839338093591,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.056194442125998015,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.05687747137308788,
+        "fallbacks": []
+      },
+      {
+        "candidate": 6,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.05850540088337618,
+        "fallbacks": []
+      },
+      {
+        "candidate": 7,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.05945030207667325,
+        "fallbacks": []
+      },
+      {
+        "candidate": 8,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.059218622907795594,
+        "fallbacks": []
+      },
+      {
+        "candidate": 9,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.06018073789689863,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "model": "expression_rf",
+    "outer_fold": 0,
+    "chosen_params": {
+      "max_features": 0.1,
+      "min_samples_leaf": 1
+    },
+    "best_inner_rmse": 0.05010816413848832,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "max_features": {
+        "chosen": 0.1,
+        "choices": [
+          "sqrt",
+          0.1
+        ],
+        "at_boundary": false,
+        "search_extent_diagnostic": false
+      },
+      "min_samples_leaf": {
+        "chosen": 1,
+        "minimum": 1,
+        "maximum": 10,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.051577363529840915,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.053102272950541464,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.05443391207882064,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.05010816413848832,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.051561802930330865,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.053657403637059266,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "model": "reo_rf",
+    "outer_fold": 0,
+    "chosen_params": {
+      "max_features": 0.1,
+      "min_samples_leaf": 1
+    },
+    "best_inner_rmse": 0.052258945932736126,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "max_features": {
+        "chosen": 0.1,
+        "choices": [
+          "sqrt",
+          0.1
+        ],
+        "at_boundary": false,
+        "search_extent_diagnostic": false
+      },
+      "min_samples_leaf": {
+        "chosen": 1,
+        "minimum": 1,
+        "maximum": 10,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.05315641366650497,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.05421254347568192,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.056765168149329095,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.052258945932736126,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.053186474596808996,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.05563585740539096,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "model": "mean",
+    "outer_fold": 1,
+    "chosen_params": {},
+    "best_inner_rmse": null,
+    "grid_boundary": false,
+    "grid_boundary_details": {},
+    "inner_scores": []
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "model": "tissue",
+    "outer_fold": 1,
+    "chosen_params": {
+      "alpha": 1.0
+    },
+    "best_inner_rmse": 0.0575810787812367,
+    "grid_boundary": false,
+    "grid_boundary_details": {
+      "alpha": {
+        "chosen": 1.0,
+        "minimum": 0.0,
+        "maximum": 1000.0,
+        "at_boundary": false,
+        "search_extent_diagnostic": true
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha": 0.0
+        },
+        "pooled_inner_rmse": 0.05814990895365816,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha": 0.1
+        },
+        "pooled_inner_rmse": 0.057979989638731376,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha": 1.0
+        },
+        "pooled_inner_rmse": 0.0575810787812367,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha": 10.0
+        },
+        "pooled_inner_rmse": 0.06086713662480225,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha": 100.0
+        },
+        "pooled_inner_rmse": 0.07013486376585304,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha": 1000.0
+        },
+        "pooled_inner_rmse": 0.07324074723280659,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "model": "expression",
+    "outer_fold": 1,
+    "chosen_params": {
+      "alpha_ratio": 1.0,
+      "l1_ratio": 0.5
+    },
+    "best_inner_rmse": 0.05814990895365816,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "alpha_ratio": {
+        "chosen": 1.0,
+        "minimum": 0.01,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      },
+      "l1_ratio": {
+        "chosen": 0.5,
+        "minimum": 0.5,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": false
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.05814990895365816,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.05814990895365816,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.061305879379839376,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.06170428986128479,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.0692265331110204,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.07026802936014608,
+        "fallbacks": []
+      },
+      {
+        "candidate": 6,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.07526844606912342,
+        "fallbacks": []
+      },
+      {
+        "candidate": 7,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.07661238999232536,
+        "fallbacks": []
+      },
+      {
+        "candidate": 8,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.07703326482801776,
+        "fallbacks": []
+      },
+      {
+        "candidate": 9,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.07812337068299789,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "model": "expression_matched",
+    "outer_fold": 1,
+    "chosen_params": {
+      "alpha_ratio": 1.0,
+      "l1_ratio": 0.5
+    },
+    "best_inner_rmse": 0.05814990895365816,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "alpha_ratio": {
+        "chosen": 1.0,
+        "minimum": 0.01,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      },
+      "l1_ratio": {
+        "chosen": 0.5,
+        "minimum": 0.5,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": false
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.05814990895365816,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.05814990895365816,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.06012846991307696,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.06048091927655642,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.07012731915767925,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.07141744213070965,
+        "fallbacks": []
+      },
+      {
+        "candidate": 6,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.08482560953373865,
+        "fallbacks": []
+      },
+      {
+        "candidate": 7,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.08670016669439225,
+        "fallbacks": []
+      },
+      {
+        "candidate": 8,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.10313547504645919,
+        "fallbacks": []
+      },
+      {
+        "candidate": 9,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.1059464038271924,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "model": "reo",
+    "outer_fold": 1,
+    "chosen_params": {
+      "alpha_ratio": 1.0,
+      "l1_ratio": 0.5
+    },
+    "best_inner_rmse": 0.05814990895365816,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "alpha_ratio": {
+        "chosen": 1.0,
+        "minimum": 0.01,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      },
+      "l1_ratio": {
+        "chosen": 0.5,
+        "minimum": 0.5,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": false
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.05814990895365816,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.05814990895365816,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.06466093244343112,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.06524428996075743,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.07113653942235716,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.07190255128420092,
+        "fallbacks": []
+      },
+      {
+        "candidate": 6,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.07412975946022446,
+        "fallbacks": []
+      },
+      {
+        "candidate": 7,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.07485018315485323,
+        "fallbacks": []
+      },
+      {
+        "candidate": 8,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.07496846048653172,
+        "fallbacks": []
+      },
+      {
+        "candidate": 9,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.07603977755133288,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "model": "expression_rf",
+    "outer_fold": 1,
+    "chosen_params": {
+      "max_features": 0.1,
+      "min_samples_leaf": 5
+    },
+    "best_inner_rmse": 0.059710216015978465,
+    "grid_boundary": false,
+    "grid_boundary_details": {
+      "max_features": {
+        "chosen": 0.1,
+        "choices": [
+          "sqrt",
+          0.1
+        ],
+        "at_boundary": false,
+        "search_extent_diagnostic": false
+      },
+      "min_samples_leaf": {
+        "chosen": 5,
+        "minimum": 1,
+        "maximum": 10,
+        "at_boundary": false,
+        "search_extent_diagnostic": true
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.059855119608474554,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.06110615755097726,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.06369741061901685,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.05980097365280611,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.059710216015978465,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.06253413855855922,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "model": "reo_rf",
+    "outer_fold": 1,
+    "chosen_params": {
+      "max_features": 0.1,
+      "min_samples_leaf": 1
+    },
+    "best_inner_rmse": 0.062273172149590515,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "max_features": {
+        "chosen": 0.1,
+        "choices": [
+          "sqrt",
+          0.1
+        ],
+        "at_boundary": false,
+        "search_extent_diagnostic": false
+      },
+      "min_samples_leaf": {
+        "chosen": 1,
+        "minimum": 1,
+        "maximum": 10,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.06313792253319232,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.0634845699786231,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.0656114767667936,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.062273172149590515,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.0623032646101452,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.06498166012114867,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "model": "mean",
+    "outer_fold": 2,
+    "chosen_params": {},
+    "best_inner_rmse": null,
+    "grid_boundary": false,
+    "grid_boundary_details": {},
+    "inner_scores": []
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "model": "tissue",
+    "outer_fold": 2,
+    "chosen_params": {
+      "alpha": 1.0
+    },
+    "best_inner_rmse": 0.05229478908983881,
+    "grid_boundary": false,
+    "grid_boundary_details": {
+      "alpha": {
+        "chosen": 1.0,
+        "minimum": 0.0,
+        "maximum": 1000.0,
+        "at_boundary": false,
+        "search_extent_diagnostic": true
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha": 0.0
+        },
+        "pooled_inner_rmse": 0.05267302676547175,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha": 0.1
+        },
+        "pooled_inner_rmse": 0.05261009098930234,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha": 1.0
+        },
+        "pooled_inner_rmse": 0.05229478908983881,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha": 10.0
+        },
+        "pooled_inner_rmse": 0.05361106227405911,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha": 100.0
+        },
+        "pooled_inner_rmse": 0.05984350269022965,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha": 1000.0
+        },
+        "pooled_inner_rmse": 0.06202529722246558,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "model": "expression",
+    "outer_fold": 2,
+    "chosen_params": {
+      "alpha_ratio": 1.0,
+      "l1_ratio": 0.5
+    },
+    "best_inner_rmse": 0.052673026765471746,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "alpha_ratio": {
+        "chosen": 1.0,
+        "minimum": 0.01,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      },
+      "l1_ratio": {
+        "chosen": 0.5,
+        "minimum": 0.5,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": false
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.052673026765471746,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.052673026765471746,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.054064713664845936,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.054388776272336806,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.05765987662464113,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.058394326181764225,
+        "fallbacks": []
+      },
+      {
+        "candidate": 6,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.06205592288754842,
+        "fallbacks": []
+      },
+      {
+        "candidate": 7,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.06307540988513316,
+        "fallbacks": []
+      },
+      {
+        "candidate": 8,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.06327402220501592,
+        "fallbacks": []
+      },
+      {
+        "candidate": 9,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.06468228744980349,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "model": "expression_matched",
+    "outer_fold": 2,
+    "chosen_params": {
+      "alpha_ratio": 1.0,
+      "l1_ratio": 0.5
+    },
+    "best_inner_rmse": 0.052673026765471746,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "alpha_ratio": {
+        "chosen": 1.0,
+        "minimum": 0.01,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      },
+      "l1_ratio": {
+        "chosen": 0.5,
+        "minimum": 0.5,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": false
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.052673026765471746,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.052673026765471746,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.053459835348793665,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.05356816099327772,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.05901346937217618,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.059774890784429595,
+        "fallbacks": []
+      },
+      {
+        "candidate": 6,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.0750988376251252,
+        "fallbacks": []
+      },
+      {
+        "candidate": 7,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.07747070554801343,
+        "fallbacks": []
+      },
+      {
+        "candidate": 8,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.09458595674697616,
+        "fallbacks": []
+      },
+      {
+        "candidate": 9,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.09787512840135103,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "model": "reo",
+    "outer_fold": 2,
+    "chosen_params": {
+      "alpha_ratio": 1.0,
+      "l1_ratio": 0.5
+    },
+    "best_inner_rmse": 0.052673026765471746,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "alpha_ratio": {
+        "chosen": 1.0,
+        "minimum": 0.01,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      },
+      "l1_ratio": {
+        "chosen": 0.5,
+        "minimum": 0.5,
+        "maximum": 1.0,
+        "at_boundary": true,
+        "search_extent_diagnostic": false
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.052673026765471746,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "alpha_ratio": 1.0,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.052673026765471746,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.05601670890762114,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "alpha_ratio": 0.3,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.056536043562749286,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.059412888698086946,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "alpha_ratio": 0.1,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.0601214528289068,
+        "fallbacks": []
+      },
+      {
+        "candidate": 6,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.06049307159985207,
+        "fallbacks": []
+      },
+      {
+        "candidate": 7,
+        "params": {
+          "alpha_ratio": 0.03,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.06123404757082798,
+        "fallbacks": []
+      },
+      {
+        "candidate": 8,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 0.5
+        },
+        "pooled_inner_rmse": 0.06110828644534662,
+        "fallbacks": []
+      },
+      {
+        "candidate": 9,
+        "params": {
+          "alpha_ratio": 0.01,
+          "l1_ratio": 1.0
+        },
+        "pooled_inner_rmse": 0.061526127195032865,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "model": "expression_rf",
+    "outer_fold": 2,
+    "chosen_params": {
+      "max_features": 0.1,
+      "min_samples_leaf": 1
+    },
+    "best_inner_rmse": 0.0510339605795142,
+    "grid_boundary": true,
+    "grid_boundary_details": {
+      "max_features": {
+        "chosen": 0.1,
+        "choices": [
+          "sqrt",
+          0.1
+        ],
+        "at_boundary": false,
+        "search_extent_diagnostic": false
+      },
+      "min_samples_leaf": {
+        "chosen": 1,
+        "minimum": 1,
+        "maximum": 10,
+        "at_boundary": true,
+        "search_extent_diagnostic": true
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.051201462894329856,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.05219984249276293,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.05439134592027496,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.0510339605795142,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.05130925424568107,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.05332213160957509,
+        "fallbacks": []
+      }
+    ]
+  },
+  {
+    "gdsc_drug_id": 1036,
+    "model": "reo_rf",
+    "outer_fold": 2,
+    "chosen_params": {
+      "max_features": 0.1,
+      "min_samples_leaf": 5
+    },
+    "best_inner_rmse": 0.05286570184900149,
+    "grid_boundary": false,
+    "grid_boundary_details": {
+      "max_features": {
+        "chosen": 0.1,
+        "choices": [
+          "sqrt",
+          0.1
+        ],
+        "at_boundary": false,
+        "search_extent_diagnostic": false
+      },
+      "min_samples_leaf": {
+        "chosen": 5,
+        "minimum": 1,
+        "maximum": 10,
+        "at_boundary": false,
+        "search_extent_diagnostic": true
+      }
+    },
+    "inner_scores": [
+      {
+        "candidate": 0,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.05334178285568079,
+        "fallbacks": []
+      },
+      {
+        "candidate": 1,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.05402479575526965,
+        "fallbacks": []
+      },
+      {
+        "candidate": 2,
+        "params": {
+          "max_features": "sqrt",
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.05591380714644517,
+        "fallbacks": []
+      },
+      {
+        "candidate": 3,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 1
+        },
+        "pooled_inner_rmse": 0.0534418868746637,
+        "fallbacks": []
+      },
+      {
+        "candidate": 4,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 5
+        },
+        "pooled_inner_rmse": 0.05286570184900149,
+        "fallbacks": []
+      },
+      {
+        "candidate": 5,
+        "params": {
+          "max_features": 0.1,
+          "min_samples_leaf": 10
+        },
+        "pooled_inner_rmse": 0.05458570500066947,
+        "fallbacks": []
+      }
+    ]
+  }
+]

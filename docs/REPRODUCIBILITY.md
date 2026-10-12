@@ -57,4 +57,18 @@ Execution commit `629b8f5` produced the recorded v0.1 results. The current reade
 
 The authoritative phase-1 outputs are the local `config/cohort_freeze_v1.json`, `.lock.json`, `reports/validation_summary.json`, `results/*sample_manifest.csv` and aggregate `main_drugs.csv`. Selection does not use response magnitudes. External response values are evaluated only after development/model/statistical protocol freeze.
 
-The 180 external models are separated from all **GDSC2** identities and known related groups, including conflicting identity candidates. Unknown genealogy remains a limitation. CTRP was used historically, so this is a retrospective redesign. GDSC2 and CTRP share the CCLE expression source and differ in dose windows: the planned external question concerns cross-screen drug-response rank transportability, not cross-expression-platform performance or equal absolute AUC calibration.
+The historical v1 external pool had 180 models. Cancer-focused v2 excludes five explicit non-cancerous controls and verifies HCC1588 through exact authoritative IDs, leaving 175. It preserves separation from all **GDSC2** identities and known related groups, including conflicting identity candidates. Unknown genealogy remains a limitation. CTRP was used historically, so this is a retrospective redesign. GDSC2 and CTRP share the CCLE expression source and differ in dose windows: the planned external question concerns cross-screen drug-response rank transportability, not cross-expression-platform performance or equal absolute AUC calibration.
+
+## Cancer-v2 / REO200 and RF pilot
+
+```sh
+python scripts/validate_cancer_cohort.py
+python -m unittest discover -s tests -p "test_pilot*_integrity.py" -v
+python src/run_development_pilot.py --config config/pilot_v0.2.json --run-dir runs/new-cancer-v2-pilot
+python scripts/validate_pilot_run.py --run-dir runs/new-cancer-v2-pilot
+python src/report_reo200_rf_pilot.py --run-dir runs/new-cancer-v2-pilot
+```
+
+Commit scientific source/configuration changes before fitting. The launcher automatically records and checks Git HEAD (or an explicitly provided REO_EXECUTION_COMMIT) so immutable source validation does not rely on a forgotten environment variable. The completed 906-fit execution uses `5d05349`. Later exact-constant tissue-target maintenance applies only to a degenerate case absent in every actual training fit, and does not overwrite historical predictions. Full independent audit and aggregate results are under the local run directory and `results/pilot_reo200_rf/`; the source cache for cancer eligibility is versioned under `data_raw/cancer_metadata/`.
+
+Both primary REO EN drug models selected a zero molecular endpoint in all three outer folds. This pilot supports no claim of reliable REO molecular advantage; full eight-drug repeated analysis/statistics and sealed CTRP evaluation remain pending.

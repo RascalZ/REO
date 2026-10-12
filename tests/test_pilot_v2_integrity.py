@@ -257,5 +257,42 @@ class SupervisedPairSelectionTests(unittest.TestCase):
         np.testing.assert_array_equal(first.transform(self.z), second.transform(self.z[:, order]))
 
 
+class ExactWithinTissueConstantRegression(unittest.TestCase):
+    def test_affine_response_standardization_cannot_create_pair_information(self):
+        rng = np.random.default_rng(903)
+        for counts in ((16, 16, 16), (11, 13, 17), (7, 9, 13)):
+            with self.subTest(counts=counts):
+                tissue = np.repeat(np.arange(3), counts)
+                design = np.eye(3)[tissue]
+                codes = rng.integers(-1, 2, size=(len(tissue), 8)).astype(np.int8)
+                names = tuple(f"REO:A{i}>B{i}" for i in range(8))
+                original = tissue.astype(float) / 2.0
+                standardized = (original - original.mean()) / original.std()
+                for response in (original, standardized):
+                    selector = TrainOnlyReoPairSelector(3).fit(codes, response, tissue_design=design, feature_names=names)
+                    self.assertEqual(len(selector.selected_indices_), 0)
+                    self.assertTrue(selector.audit_metadata_["exact_tissue_constant_target"])
+
+    def test_tissue_only_response_has_exact_zero_alpha_max_in_en(self):
+        rng = np.random.default_rng(902)
+        for counts in ((16, 16, 16), (7, 9, 13)):
+            tissue = np.repeat(np.arange(3), counts)
+            genes = rng.lognormal(1.0, 1.0, (len(tissue), 6)).astype(np.float64)
+            x = np.column_stack((genes, tissue, np.arange(len(tissue)))).astype(np.float64)
+            response = tissue.astype(float) / 2.0
+            config = {"feature": {"expression_genes": 6, "reo_genes": 6, "min_tpm": 1., "min_detection_fraction": 0.1, "max_pair_tie_fraction": 0.9},
+                      "elastic_net": {"regularization_mode": "alpha_max_relative", "alpha_ratios": [1., 0.1], "l1_ratios": [0.5, 1.], "max_iter": 1000, "tol": 0.001}}
+            for kind in ("expression", "reo"):
+                with self.subTest(counts=counts, kind=kind):
+                    model = TrainOnlyRegressor(kind, config, tuple(f"G{i}" for i in range(6)), alpha_ratio=0.1, l1_ratio=0.5).fit(x, response)
+                    self.assertEqual(model.audit()["alpha_max"], 0.0)
+                    self.assertTrue(model.audit()["exact_tissue_constant_target"])
+                    np.testing.assert_array_equal(model.regressor_.coef_, np.zeros_like(model.regressor_.coef_))
+                    predictions = model.predict(x)
+                    for category in np.unique(tissue):
+                        values = predictions[tissue == category]
+                        np.testing.assert_array_equal(values, np.full(len(values), values[0]))
+
+
 if __name__ == "__main__":
     unittest.main()

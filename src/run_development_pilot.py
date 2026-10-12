@@ -4,7 +4,7 @@ Never opens CTRP response files. A read-only guard blocks them if future code
 accidentally attempts access. Cohort-v1 frozen artifacts are never rewritten.
 """
 from __future__ import annotations
-import argparse,csv,hashlib,importlib.metadata,json,os,platform,sys,threading,time,warnings
+import argparse,csv,hashlib,importlib.metadata,json,os,platform,sys,threading,time,warnings,subprocess
 from datetime import datetime,timezone
 from pathlib import Path
 import numpy as np
@@ -28,6 +28,20 @@ def sha(path):
 
 def dump(path,obj):
     path.write_text(json.dumps(obj,ensure_ascii=False,indent=2,allow_nan=False)+'\n',encoding='utf-8')
+
+def execution_source_snapshot(files):
+    """Bind scientific code/config to an immutable Git revision before fitting."""
+    revision=os.environ.get('REO_EXECUTION_COMMIT') or subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
+    revision=subprocess.check_output(['git','rev-parse',revision],cwd=ROOT,text=True).strip()
+    hashes={}
+    for p in files:
+        label=p.relative_to(ROOT).as_posix()
+        blob=subprocess.check_output(['git','show',revision+':'+label],cwd=ROOT)
+        current=sha(p)
+        if hashlib.sha256(blob).hexdigest()!=current:
+            raise ValueError('Pilot code/config differs from execution revision: '+label+'. Commit scientific inputs before fitting.')
+        hashes[label]=current
+    return revision,hashes
 
 def cohort_results(version):
     return ROOT/'results' if version=='v1' else ROOT/'results/cohort_v2'
@@ -127,14 +141,15 @@ def main():
     ACTIVE_RUN.update({'out':out,'monitor':monitor,'config':config,'access':access,'blocked':blocked})
     packages=['numpy','pandas','scikit-learn','scipy','psutil','joblib','threadpoolctl','cloudpickle']
     version=config.get('cohort_version','v1');cohort_dir=cohort_results(version)
+    revision,source_hashes=execution_source_snapshot(sorted(set([args.config,ROOT/'src/run_development_pilot.py',*(ROOT/'src/modeling').glob('*.py')])))
     run_meta={'config_sha256':sha(args.config),'cohort_lock':json.loads((ROOT/f'config/cohort_freeze_{version}.lock.json').read_text(encoding='utf-8')),
               'created_utc':datetime.now(timezone.utc).isoformat(),'declared_analysis_date':config.get('declared_analysis_date'),
               'development_input_verification':verify_development_inputs(version),
-              'code_execution_commit':os.environ.get('REO_EXECUTION_COMMIT',''),
+              'code_execution_commit':revision,
               'python':platform.python_version(),'platform':platform.platform(),'packages':{p:importlib.metadata.version(p) for p in packages},
               'logical_cpus':psutil.cpu_count(),'total_ram_bytes':psutil.virtual_memory().total,
               'configuration':config,'status':'running','external_response_accessed':False,
-              'source_hashes':{str(p.relative_to(ROOT)):sha(p) for p in sorted(set([args.config,ROOT/'src/run_development_pilot.py',*(ROOT/'src/modeling').glob('*.py')]))}}
+              'source_hashes':source_hashes}
     dump(out/'run_manifest.json',run_meta)
     ACTIVE_RUN['metadata']=run_meta
     global_manifest=pd.read_csv(cohort_dir/'development_sample_manifest.csv',dtype=str,keep_default_na=False)
