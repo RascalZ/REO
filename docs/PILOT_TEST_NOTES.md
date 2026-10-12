@@ -73,3 +73,23 @@ The validator passed all recorded boundaries: `462` actual model fits, including
 The audit independently reconstructed target means/scales from the corresponding training observations in run artifacts, checked fixed-grid selections against logged inner scores, and reconstructed pooled outer RMSE, MAE, R² and Spearman. All four recorded configuration/source hashes matched immutable execution revision `629b8f5`; the later workbook-failure/resource-cleanup changes are explicitly distinguishable from the executed source. No original GDSC response workbook, CTRP response table or expression matrix was reopened by this validator.
 
 The result is `pilot_validation.json` inside the run directory. Its paths are repository-relative and its counts are aggregate. This audit verifies the recorded fit memberships; the synthetic acceptance suite separately inspects actual builder inputs and perturbs held-out information. Inner OOF predictions were not exported, so the validator checks hyperparameter choice against recorded inner scores rather than independently reconstructing those inner scores.
+
+## Cancer-cohort and expanded-model acceptance (2026-10-12)
+
+The v2 suite adds `11` synthetic tests to the original `24`, giving `35 tests`, all passing in `3.071 seconds` of unittest time. The added cases independently reconstruct each training fit's EN `alpha_max` from standardized, within-tissue residuals; inspect actual RF selector inputs; change outer-test labels and expression; verify stable within-tissue Pearson pair ranks; and check that the forest receives original molecular values plus training-fitted one-hot tissue. Tissue and audit-ID columns are excluded from gene/pair construction. A zero molecular EN `alpha_max` preserves training tissue effects. Zero within-tissue response association gives RF zero molecular pairs with an explicit tissue-only status.
+
+```powershell
+.\.venv\Scripts\python.exe -m unittest discover -s tests -p "test_pilot*_integrity.py" -v
+```
+
+The independent metadata validator is:
+
+```powershell
+.\.venv\Scripts\python.exe scripts/validate_cancer_cohort.py --lock
+```
+
+It locked cohort v2 after verifying metadata-only filtering of all three v1 sample lists, unchanged drug rank/IDs/structures/dose windows and biological identities, every retained/excluded source row, frozen-v1 metadata hashes, and separation from **all known GDSC identity-candidate groups**, including ambiguous candidates. The resulting main cohort contains `626` development and `175` primary-external identities/groups, with `4,967` and `1,185` drug/model observations. Every drug retains at least `200` development and `80` external groups; the smallest external count is `82`.
+
+HCC1588 cancer eligibility is corroborated by the exact `ACH-001078` / `CVCL_A351` / `SIDM01820` / `KCLB 71588` chain and cached official cancer classification. The other unverified disease annotation remains excluded. Only capitalization-equivalent tissue changes are accepted, and every original tissue value remains recorded.
+
+This validation opens metadata/manifests/code only. It rejects attempts to open the raw CTRP directory, known response indices and expression arrays. Inherited expression-input hashes are compared with the locked v1 descriptors; their large-file bytes are deliberately deferred to the development runner's input verification. A successful recheck preserves the exact v2 lock and validation-report bytes; it does not rewrite the historical snapshot. The v2 amendment was made after the development pilot and before external-response access, as disclosed in the research plan.

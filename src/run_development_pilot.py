@@ -235,13 +235,17 @@ def main():
         m=metrics(sub.observed_auc,sub.predicted_auc)
         if kind=='mean':m['spearman']=None;m['spearman_unavailable_reason']='fold_constant_training_mean_not_an_individual_ranking_model'
         events=[e for e in fit_events if e['gdsc_drug_id']==drug and e['model']==kind]
-        summary.append({'gdsc_drug_id':drug,'model':kind,**m,'fits':len(events),'convergence_warning_fits':sum(bool(e['warnings']) for e in events),'fallback_fits':sum(bool(e['fallback_reason']) for e in events),'wall_seconds':sum(t['wall_seconds'] for t in timings if t['gdsc_drug_id']==drug and t['model']==kind)})
+        outer_events=[e for e in events if e['stage']=='outer_training_refit']
+        no_molecular=sum(e.get('n_nonzero_molecular_coeffs')==0 or e.get('n_molecular_features_used')==0 or e['fitted_kind'] in ['mean','tissue'] for e in outer_events)
+        summary.append({'gdsc_drug_id':drug,'model':kind,**m,'fits':len(events),'convergence_warning_fits':sum(bool(e['warnings']) for e in events),'fallback_fits':sum(bool(e['fallback_reason']) for e in events),'outer_folds_without_molecular_component':no_molecular,'prediction_seconds':sum(e.get('predict_seconds',0) for e in outer_events),'wall_seconds':sum(t['wall_seconds'] for t in timings if t['gdsc_drug_id']==drug and t['model']==kind)})
     pd.DataFrame(summary).to_csv(out/'summary_metrics.csv',index=False,encoding='utf-8-sig')
     tissue_metrics=[]
     for (drug,kind,tissue),sub in p.groupby(['gdsc_drug_id','model','tissue'],sort=False):
         if len(sub)<20:continue
         m=metrics(sub.observed_auc,sub.predicted_auc)
-        if kind in ['mean','tissue']:m['spearman']=None;m['spearman_unavailable_reason']='baseline_no_within_tissue_individual_ranking'
+        oe=[e for e in fit_events if e['gdsc_drug_id']==drug and e['model']==kind and e['stage']=='outer_training_refit']
+        no_molecular=all(e.get('n_nonzero_molecular_coeffs')==0 or e.get('n_molecular_features_used')==0 or e['fitted_kind'] in ['mean','tissue'] for e in oe)
+        if kind in ['mean','tissue'] or no_molecular:m['spearman']=None;m['spearman_unavailable_reason']='baseline_or_null_molecular_model_has_no_within_tissue_individual_ranking'
         tissue_metrics.append({'gdsc_drug_id':drug,'model':kind,'tissue':tissue,**m,'interpretation':'descriptive OOF only; tissue n>=20; no independent within-tissue generalization or p-value'})
     pd.DataFrame(tissue_metrics).to_csv(out/'within_tissue_metrics.csv',index=False,encoding='utf-8-sig')
     dump(out/'outer_fit_audits.json',[e for e in fit_events if e['stage']=='outer_training_refit'])

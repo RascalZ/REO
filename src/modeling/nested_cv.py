@@ -52,6 +52,9 @@ class TrainOnlyRegressor(RegressorMixin,BaseEstimator):
     ``alpha_max_relative``, the current training residuals alone set
     ``alpha_max=max(abs(Zr.T @ yr))/(n*l1_ratio)``; ``alpha_ratio`` selects a
     fraction of that value. Legacy configs retain their absolute-alpha path.
+    At ratio exactly one, the analytically valid zero molecular solution is
+    used explicitly: solver roundoff must not break ties within a tissue and
+    create a spurious molecular ranking. We do not round weaker-path solutions.
 
     RF instead receives original log-expression or original three-value REO
     columns plus the same training-fitted tissue one-hot design. REO RF selects
@@ -80,6 +83,7 @@ class TrainOnlyRegressor(RegressorMixin,BaseEstimator):
         self.fallback_reason_='';self.warning_messages_=[];self.builder_=None;self.n_iter_=0
         self.pair_selector_=None;self.predict_seconds_=0.0;self.last_predict_seconds_=0.0;self.prediction_calls_=0
         self.actual_alpha_=None;self.alpha_max_=None;self.path_ratio_=None;self.dual_gap_=None
+        self.null_endpoint_=False;self.solver_reason_='not_applicable'
         self.n_nonzero_molecular_coeffs_=None;self.n_molecular_features_used_=None
         self.rf_molecular_feature_names_=();self.rf_tissue_policy_=None
         if self.target_sd_==0:self.target_sd_=1.0;self.fallback_reason_='constant_training_response'
@@ -114,6 +118,7 @@ class TrainOnlyRegressor(RegressorMixin,BaseEstimator):
         return self
 
     def _fit_elastic_net(self,z,d,ys):
+        self.solver_reason_='elastic_net_coordinate_descent'
         self.scaler_=StandardScaler().fit(z);z=self.scaler_.transform(z)
         counts=d.sum(axis=0)
         self.feature_tissue_means_=(d.T@z)/counts[:,None]
@@ -132,9 +137,15 @@ class TrainOnlyRegressor(RegressorMixin,BaseEstimator):
             if self.alpha_max_==0.0:
                 self.regressor_=_ZeroMolecularRegressor(zr.shape[1])
                 self.fallback_reason_='zero_training_alpha_max_molecular_coefficients_zero'
+                self.solver_reason_='zero_training_alpha_max'
+                self.null_endpoint_=(ratio==1.0)
+            elif ratio==1.0:
+                self.regressor_=_ZeroMolecularRegressor(zr.shape[1])
+                self.null_endpoint_=True
+                self.solver_reason_='theoretical_alpha_max_null_endpoint'
         elif mode=='absolute':self.actual_alpha_=float(self.alpha)
         else:raise ValueError('Unknown elastic_net regularization_mode: '+str(mode))
-        if self.alpha_max_!=0.0:
+        if self.alpha_max_!=0.0 and not self.null_endpoint_:
             self.regressor_=ElasticNet(alpha=self.actual_alpha_,l1_ratio=self.l1_ratio,fit_intercept=False,max_iter=e['max_iter'],tol=e['tol'],selection=e.get('selection','cyclic'))
             with warnings.catch_warnings(record=True) as caught:
                 warnings.simplefilter('always',ConvergenceWarning);self.regressor_.fit(zr,yr)
@@ -205,6 +216,7 @@ class TrainOnlyRegressor(RegressorMixin,BaseEstimator):
                 'fit_seconds':self.fit_seconds_,'predict_seconds':self.predict_seconds_,'last_predict_seconds':self.last_predict_seconds_,'prediction_calls':self.prediction_calls_,
                 'n_iter':self.n_iter_,'warnings':self.warning_messages_,
                 'actual_alpha':self.actual_alpha_,'alpha_max':self.alpha_max_,'path_ratio':self.path_ratio_,
+                'null_endpoint':self.null_endpoint_,'solver_reason':self.solver_reason_,
                 'n_nonzero_molecular_coeffs':self.n_nonzero_molecular_coeffs_,'dual_gap':self.dual_gap_,
                 'n_selected_genes':None if self.builder_ is None or not hasattr(self.builder_,'gene_indices_') else len(self.builder_.gene_indices_),
                 'n_features':n_features,'n_candidate_molecular_features':built_features,

@@ -111,6 +111,25 @@ class RelativePathTrainingBoundaryTests(unittest.TestCase):
         unknown[:, -2] = 99
         np.testing.assert_allclose(model.predict(unknown), y.mean(), atol=1e-12, rtol=0)
 
+    def test_alpha_max_endpoint_has_exact_zero_coefficients_and_tissue_constant_predictions(self):
+        for kind in ("expression", "reo"):
+            for l1 in (0.5, 1.0):
+                with self.subTest(kind=kind, l1_ratio=l1):
+                    model = TrainOnlyRegressor(kind, self.config, self.ids, alpha_ratio=1.0, l1_ratio=l1)
+                    model.fit(self.x[self.train], self.y[self.train])
+                    audit = model.audit()
+                    self.assertTrue(audit["null_endpoint"])
+                    self.assertEqual(audit["solver_reason"], "theoretical_alpha_max_null_endpoint")
+                    self.assertEqual(audit["fallback_reason"], "")
+                    np.testing.assert_array_equal(model.regressor_.coef_, np.zeros_like(model.regressor_.coef_))
+                    prediction = model.predict(self.x[self.test])
+                    for category in np.unique(self.tissue[self.test]):
+                        values = prediction[self.tissue[self.test] == category]
+                        np.testing.assert_array_equal(values, np.full(len(values), values[0]))
+                    probe = self.x[self.test].copy()
+                    probe[:, :-2] = np.array([1e12, 0., 1e9, 1e5, 1., 100.])
+                    np.testing.assert_array_equal(model.predict(probe), prediction)
+
     def test_rf_gene_builder_never_receives_tissue_or_audit_columns(self):
         original_fit = FoldFeatureBuilder.fit
         actual_rows = []
