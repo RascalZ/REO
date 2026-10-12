@@ -1,0 +1,2 @@
+# Optional aggregate scientific-figure rendering; model dependencies unchanged.
+matplotlib==3.10.7
