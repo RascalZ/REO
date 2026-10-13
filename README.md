@@ -12,6 +12,8 @@
 
 **当前：总计划v2.6进入表示诊断。** [已有OOF分解](docs/OOF_DECOMPOSITION.md)已补齐候选范围和表示/拟合两步配对区间；[新版协议](docs/ORDINAL_DIAGNOSTIC_V1_PROTOCOL.md)固定两种候选规则×表达/样本内秩/完整pair三种表示、同政策组织参照和9次全流程工程置换。四药试跑是结果启发的开发诊断，不按成绩改规则；CTRP继续封存，不宣称跨表达平台验证。
 
+诊断科学源固定于`e9b576d`。首次内存中断与按原版本恢复见[执行记录](docs/ORDINAL_MEMORY_RECOVERY.md)；只读追加日志的进度入口为`python scripts/ordinal_progress.py`，完整性须等待训练退出后的独立验证。
+
 ## 快速查看
 
 ```sh

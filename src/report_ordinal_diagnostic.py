@@ -98,8 +98,8 @@ def figures(frames, config, names, directory):
     x = np.arange(len(config["models"]))
     axes[0].bar(x, observed.seconds / 60, label="Observed labels", color="#315f9a")
     axes[0].bar(x, null / 60, bottom=observed.seconds / 60, label="All nine null runs", color="#a6bcd8")
-    axes[0].set_ylabel("Sum of full outer-task wall time (minutes)")
-    axes[0].set_title("Cost includes inner selection and outer refits")
+    axes[0].set_ylabel("Successful outer-task wall-time sum (minutes)")
+    axes[0].set_title("Successful checkpoints: inner selection + outer refit")
     axes[0].legend(frameon=False)
     axes[1].bar(x, observed.peak / 2**30, color="#258a81")
     axes[1].set_ylabel("Maximum sampled worker RSS (GiB)")
@@ -127,6 +127,15 @@ def main():
     if sha(metadata_path) != provenance["metadata_sha256"]:
         raise RuntimeError("Completed run metadata changed since statistical analysis")
     run_metadata = json.loads(metadata_path.read_text(encoding="utf-8"))
+    validation_path = ROOT / provenance["source_run"] / "ordinal_validation.json"
+    validation = json.loads(validation_path.read_text(encoding="utf-8"))
+    if validation.get("status") != "passed" or validation.get("diagnostic_lock_sha256") != provenance["lock_sha256"]:
+        raise RuntimeError("Independent final validation of the same frozen run is required")
+    overhead = validation.get("operational_overhead")
+    if not isinstance(overhead, dict):
+        raise RuntimeError("Operational overhead audit required before reporting total resource use")
+    if overhead["successful_pipeline_fits"] != provenance["actual_fit_events"]:
+        raise RuntimeError("Successful scientific fit budget differs from operational audit")
     frames = {}
     for filename, checksum in provenance["output_sha256"].items():
         path = directory / filename
@@ -154,7 +163,7 @@ def main():
 
     heading("阶段5：候选规则、秩向量与完整基因对的诊断试跑", 1)
     paragraph("两种候选规则×三种表示，同政策组织均值参照，三种诊断药加Tamoxifen，以及九套全流程组织内置换标签。协议先于本轮拟合冻结，属于见过正式v1结果后的探索性研究。原正式v1结果保留，CTRP继续封存。")
-    paragraph(f"完整执行{provenance['expected_outer_tasks']}个外层任务、{provenance['actual_fit_events']:,}次真实拟合，保存{provenance['oof_rows']:,}条OOF记录。真实独立观察为四药各620个模型，不是OOF行数。仅3折外层×1次、3折内层；没有重复CV稳定性证据。")
+    paragraph(f"最终成功的{provenance['expected_outer_tasks']}个外层任务包含{provenance['actual_fit_events']:,}次完整拟合，保存{provenance['oof_rows']:,}条OOF记录。该拟合数是最终纳入既定评价的预算，不含历史失败尝试中的已完成拟合及独立资源排障probe；额外开销在后文单列。真实独立观察为四药各620个模型，不是OOF行数。仅3折外层×1次、3折内层；没有重复CV稳定性证据。")
     heading("预设问题与解释边界")
     paragraph("在同一个训练划分内，MAD或组织调整响应关联规则各选最多200个基因；该规则的表达、样本内平均秩及完整三值pair臂共享基因。完整pair与平均秩有相同排序信息，但线性rank只对应受约束的pair权重，EN惩罚不同。因此两者的性能差不是纯维度损失；表达与rank差也不是可识别的纯幅度信息损失。")
     paragraph("同政策组织参照使用训练组织响应均值，训练未见组织用训练总体均值；这是分子系数为零时的同政策比较。Tamoxifen是历史弱信号案例，不能当作已知真阴性，出现增益本身不证明泄漏。三个主诊断案例由旧结果启发，四药均值不替代固定八药正式结论。")
@@ -205,8 +214,10 @@ def main():
     heading("资源、完整性和失败记录")
     resources = frames["resource_summary"]
     events = frames["all_fit_events_summary"]
-    paragraph(f"所有任务累计墙钟时间{resources.task_wall_seconds_sum.sum()/3600:.2f}小时；真实标签任务{resources[resources.permutation_id.eq(0)].task_wall_seconds_sum.sum()/60:.1f}分钟；九套控制任务{resources[resources.permutation_id.gt(0)].task_wall_seconds_sum.sum()/3600:.2f}小时。每任务包含内层调参与外层重拟合；完整控制运行绝不是对已拟合模型改标签评分。")
-    paragraph(f"单worker任务采样RSS最大{resources.sampled_peak_rss_bytes_max.max()/2**30:.3f}GiB，含库、表达映射页与缓存；生命周期峰值可能早于当前任务，不等于某个模型独占内存。全部拟合中的警告事件{int(events.all_fit_warning_events.sum())}、回退事件{int(events.all_fit_fallback_events.sum())}，均保留在审计文件。只读统计耗时{provenance['wall_seconds']:.1f}秒。")
+    if not np.isclose(overhead["successful_task_wall_seconds_sum"], resources.task_wall_seconds_sum.sum(), atol=1e-5, rtol=1e-12):
+        raise RuntimeError("Successful task-time total differs between statistical and operational audits")
+    paragraph(f"最终成功checkpoint内的任务墙钟时间之和为{resources.task_wall_seconds_sum.sum()/3600:.2f}小时；其中真实标签任务{resources[resources.permutation_id.eq(0)].task_wall_seconds_sum.sum()/60:.1f}分钟，九套控制任务{resources[resources.permutation_id.gt(0)].task_wall_seconds_sum.sum()/3600:.2f}小时。每任务包含内层调参与外层重拟合；这些和数不含失败任务、排障probe、控制器准备时间或停机间隔，不能当作从首次启动到全部结束的总历时。")
+    paragraph(f"成功任务内的单worker采样RSS最大{resources.sampled_peak_rss_bytes_max.max()/2**30:.3f}GiB，含库、表达映射页与缓存；生命周期峰值可能早于当前任务，不等于某个模型独占内存。最终纳入评价的拟合中，警告事件{int(events.all_fit_warning_events.sum())}、回退事件{int(events.all_fit_fallback_events.sum())}，均保留在审计文件。只读统计耗时{provenance['wall_seconds']:.1f}秒；历史失败事件另行核计。")
     sessions = run_metadata.get("sessions", [])
     if sessions:
         session_rows = [{"运行会话": i + 1, "状态": session.get("status", "unknown"),
@@ -215,12 +226,42 @@ def main():
             for i, session in enumerate(sessions)]
         table(pd.DataFrame(session_rows))
     paragraph(f"运行元数据记录的历史失败尝试归档数为{run_metadata.get('preserved_failed_attempts', '未单列，请参阅运行元数据')}；未将历史失败默认为成功或从审计中移除。CTRP响应访问为False，阻止访问尝试为{run_metadata.get('data_guard', {}).get('blocked_attempts', '未记录')}。")
-    figure("runtime_and_memory", "图3：各模型完整任务的耗时与实际采样RSS。资源比较属于整条管线，不是表示本身的固有成本。")
+    table(pd.DataFrame([
+        {"拟合计数类别": "最终成功评价任务中的完整fits", "数量": overhead["successful_pipeline_fits"], "统计用途": "构成冻结嵌套评价与OOF"},
+        {"拟合计数类别": "失败任务中在报错前已完成的额外fits", "数量": overhead["failed_attempt_completed_fit_events"], "统计用途": "保留操作审计，不重复纳入OOF"},
+        {"拟合计数类别": "独立资源排障probe的完整fits", "数量": overhead["resource_probe_fit_events"], "统计用途": "验证原失败调用的资源恢复，不是nested评价或额外外层折"},
+        {"拟合计数类别": "已完成fit事件总数", "数量": overhead["completed_fit_events_total"], "统计用途": "前三项之和，包括额外运行开销"},
+        {"拟合计数类别": "确认进入但未完成的失败fit调用", "数量": overhead["failed_incomplete_fit_attempts"], "统计用途": "单列，不伪装成完成事件"},
+        {"拟合计数类别": "尝试fit调用数下限", "数量": overhead["attempted_fit_total_lower_bound"], "统计用途": "已完成事件加确认进入的未完成调用；是下限"},
+    ]))
+    def duration(value):
+        return "未可靠计量" if value is None else f"{float(value):.1f}秒（{float(value)/3600:.3f}小时）"
+    table(pd.DataFrame([
+        {"耗时口径": "成功评价任务墙钟之和", "记录": duration(overhead["successful_task_wall_seconds_sum"]), "范围及重叠": "模型比较用，含内层调参与外层refit"},
+        {"耗时口径": "失败任务墙钟之和", "记录": duration(overhead["failed_attempt_wall_seconds_sum"]), "范围及重叠": "属于训练会话内开销，未重复计入成功任务"},
+        {"耗时口径": "资源排障probe", "记录": duration(overhead["resource_probe_wall_seconds"]), "范围及重叠": "独立排障开销，可能落在训练会话间隔内"},
+        {"耗时口径": "训练控制器各会话墙钟之和", "记录": duration(overhead["controller_session_wall_seconds_sum"]), "范围及重叠": "包含成功/失败任务及调度、监控等；不与前两行再相加"},
+        {"耗时口径": "首次会话启动至最后会话结束总历时", "记录": duration(overhead["elapsed_first_start_to_final_finish_seconds"]), "范围及重叠": "包括会话及会话之间的全部间隔，不等于持续计算时间"},
+        {"耗时口径": "会话之间的间隔", "记录": duration(overhead["inter_session_gap_seconds"]), "范围及重叠": "含故障调查、probe、环境准备及其他等待，不能称为纯暂停或休眠"},
+    ]))
+    paragraph("额外fits与时间依据完成后的独立operational_overhead审计报告填写，不使用预测预算或进度快照替代实际计数。排障probe不产生新的评价折、不增加独立样本量，也不作为效果确认。资源恢复只应改变运行条件；模型、候选规则、参数网格和冻结源哈希是否保持不变由独立验证记录证明。")
+    figure("runtime_and_memory", "图3：各模型最终成功任务的耗时与实际采样RSS，额外失败/probe不在图内。资源比较属于整条管线，不是表示本身的固有成本。")
     heading("本轮可以支持什么")
     for model in [m for m in config["models"] if m != "tissue_null"]:
         row = effects[effects.gdsc_drug_id.eq(MACRO) & effects.candidate.eq(model) & effects.reference.eq("tissue_null") & effects.metric.eq("spearman")].iloc[0]
         paragraph(f"{LABELS[model]}：四案例平均组织以上Δρ {ci_text(row)}。这只是本轮案例摘要，须与逐药效应、RMSE、零解和全流程null一起解释。")
     paragraph("既有v1差值分解见docs/OOF_DECOMPOSITION.md。新版采用不同外层划分和统一stable-ID特征列序，并且fullpair保留旧版删除的列，不能把新旧分数相减当作纯候选或编码效应。协议规定本轮不按成绩改变候选规则、基因数、调参网格或药物面板；下一步若做固定八药评价，应另行冻结完整版本，仍不得称为独立确认。CTRP继续封存。")
+    heading("旧OOF与新诊断如何共同约束论文主张")
+    paragraph("旧正式八药OOF回答已冻结v1管线的平均预测比较。路径差值分解只描述从表达2000到表达200再到REO200的两步性能变化，不能分配因果损失百分比。新四案例2×3设计回答预设表示/候选规则变化的诊断问题，不能用新三折结果覆盖旧五折×三次结论。")
+    table(pd.DataFrame([
+        {"可能观察到的模式": "同一候选集内rank较好、fullpair较弱", "可支持的线索": "相同序信息的模型约束与正则化方式可能影响泛化", "不能推出": "已定量证明维度或共线性造成多少损失"},
+        {"可能观察到的模式": "连续表达较好，rank和fullpair均较弱", "可支持的线索": "当前序表示与EN组合可能未保留可利用的预测信息", "不能推出": "所有排序算法的上限均低于连续表达"},
+        {"可能观察到的模式": "响应关联候选在多个表示中提高组织以上增量", "可支持的线索": "原MAD候选范围可能限制了当前管线", "不能推出": "训练内筛选相关性是独立机制证据"},
+        {"可能观察到的模式": "非零系数增加，但外层增量不稳定或接近null范围", "可支持的线索": "更多分子项并未自动带来有用泛化", "不能推出": "仅凭非零系数增加就值得宣称预测创新"},
+        {"可能观察到的模式": "某案例改善，其他案例弱或反向", "可支持的线索": "表示适用边界存在异质性，须保留全部案例", "不能推出": "删除不利药物后形成普遍优势结论"},
+    ]))
+    paragraph("响应关联规则使用连续log表达与组织调整药敏的关联进行选基因，本身不是对所有表示完全中立的筛选目标。共享候选集解决了三个表示输入基因不一致的问题，却不能使选择规则与表示的相互作用消失。若观察到表达臂获益更多，需要连同此设计特点解释，不能只归功于连续幅度。")
+    paragraph("工程完整性和科学价值分别评价。信息流、身份、共同基因、零分子组织参照一致性和全流程null重新拟合必须通过审计；成绩是否理想不决定这些检查是否通过。真实效应高于九个null点最多只是诊断线索，不转成置换显著性。当前最有可能承载论文价值的问题是‘候选规则、表示约束和组织来源如何共同影响药敏预测’，实际创新性仍需完成固定八药受控评价及锁定外验后判断。")
     heading("可复现文件")
     paragraph("唯一总计划：RESEARCH_PLAN.md；本轮科学协议：docs/ORDINAL_DIAGNOSTIC_V1_PROTOCOL.md；配置及锁：config/ordinal_diagnostic_v1.json与.lock.json。输出聚合表位于results/ordinal_diagnostic/。个体OOF、标签donor映射、完整活跃系数及bootstrap组权重留在本地runs，未混入公共报告。")
     paragraph("统计表哈希、代码哈希、共同抽样哈希、来源运行和访问审计均见analysis_provenance.json。本报告生成于UTC " + datetime.now(timezone.utc).isoformat() + "。")

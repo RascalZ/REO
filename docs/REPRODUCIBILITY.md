@@ -119,3 +119,45 @@ python scripts/formal_progress.py
 This repair leaves frozen numerical sources and the formal scientific lock
 unchanged. Original failed-session/controller/postprocess records and the 673
 checkpoint SHA recovery snapshot remain local, alongside the resumed session.
+
+
+## Four-drug candidate-rule and ordinal-representation diagnostic
+
+The additive diagnostic is frozen at scientific execution commit `e9b576d`.
+It does not replace formal v1. See `ORDINAL_DIAGNOSTIC_V1_PROTOCOL.md` for
+3 outer folds × 1 repeat, 3 inner folds, both selectors, three molecular
+representations, the identical-policy tissue reference and 9 full-pipeline nulls.
+The 840 successful tasks require 22,440 fits and 173,600 OOF predictions.
+These four outcome-informed cases and nine nulls are exploratory engineering
+controls; the null count does not support a conventional 0.05 significance test.
+
+```sh
+python scripts/freeze_ordinal_diagnostic.py --verify-only
+python -m unittest discover -s tests -p "test_ordinal*.py" -v
+python scripts/run_ordinal_stage.py --execution-commit e9b576d
+# Explicitly resume the SAME scientific version after an interruption:
+python scripts/run_ordinal_stage.py --execution-commit e9b576d --resume
+```
+
+The launcher applies six numerical-library single-thread environment variables
+BEFORE child-process imports as well as the frozen runtime thread limit. On this
+Windows host, setting runtime limits alone left substantial startup commit
+reservations. The first allocation failure, its four completed fit events, all
+six successful checkpoints, the exact failed-fit resource probe and the resumed
+session are retained locally. Probe/failed-attempt fits are additional work and
+must be reported separately from the successful scientific budget. Do not inspect
+live `ordinal_metadata.json` or run the validator concurrently with training.
+The launcher waits for training exit before independent validation, frozen
+statistics and report rendering, logging each stage separately.
+
+```sh
+python scripts/validate_ordinal_diagnostic.py
+python src/analyze_ordinal_diagnostic.py
+python src/report_ordinal_diagnostic.py
+```
+
+The analyzer refuses an incomplete or unverifiable run and existing outputs.
+Public summaries contain no sample-level responses, predictions or permutation
+donor IDs. Private audit files and bootstrap weights remain under ignored `runs/`.
+CTRP access stays forbidden. Aggregate-only old-OOF decomposition is available in
+`results/oof_decomposition/`; paired intervals share the original group resamples.
