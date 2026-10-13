@@ -18,3 +18,7 @@ jobs:
         run: python -m unittest discover -s tests -p "test_pilot*_integrity.py" -v
       - name: Formal resume, repeated-fold and paired-bootstrap contracts
         run: python -m unittest discover -s tests -p "test_formal*.py" -v
+      - name: Ordinal representation and full-pipeline null-control contracts
+        run: python -m unittest discover -s tests -p "test_ordinal*.py" -v
+      - name: Existing OOF paired path decomposition
+        run: python -m unittest discover -s tests -p "test_oof_decomposition.py" -v

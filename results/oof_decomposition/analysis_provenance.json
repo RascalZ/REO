@@ -1,0 +1,50 @@
+{
+  "status": "completed",
+  "analysis": "post_hoc_oof_path_decomposition_v1",
+  "created_utc": "2026-10-13T03:52:59.397552+00:00",
+  "wall_seconds": 31.47450300003402,
+  "process_rss_at_completion_bytes": 111288320,
+  "process_lifetime_peak_rss_bytes": 150118400,
+  "analyzer_sha256": "d01c3bd522b490294455de1655ae42cb69ac122b7adb81c3b5b6babde794f47f",
+  "frozen_metric_helper_sha256": "8ca39b7d4bfad9c13822d32fb404f7b833bc2922cb87b676144b2755f9f57c6a",
+  "source_run": "runs/gdsc2-cancer-v2-fixed8-nested5x3-inner3-formal-v1",
+  "formal_analysis_lock_sha256": "95dff1cc4cedda60cffd58c6a3c4119a3c8018dd7ad54910726f2a1a25c8c3dc",
+  "v1_statistics_config_sha256": "1936f62a92a5510bcfc6f4ff979898996bb09eae5972ed28fcc7f5cb8caf65b8",
+  "v1_statistics_provenance_sha256": "5e8aff5ba33b96357dd55d1a413b4df2dca92f532d9fdc2c76fc49eed479ce1f",
+  "OOF_source_sha256": "27589551d504285e91472bfa215ac7b61b195849089f52cc263328c49debb8e5",
+  "development_manifest_sha256": "21efc28d5ee21603f2466b740c4aa29eb24fbfd6be4fec15f6392aadb661e608",
+  "bootstrap_count_matrix_sha256": "aabb36a1077b7347b5b3d9101956798b7a89a94f8ef3fa385e99d8f652ea9811",
+  "bootstrap_group_order_sha256": "dd8b5d85b7f84f251d5a9c5baed97736d07732c03b5abaea852146c08f37190a",
+  "saved_weights_reproduced_exactly": true,
+  "bootstrap_draws": 10000,
+  "n_global_biological_groups": 626,
+  "fixed_drug_count": 8,
+  "outer_repeats": 3,
+  "no_repeat_N_inflation": true,
+  "maximum_previous_paired_statistic_difference": 9.71445146547012e-17,
+  "identity_checks": 68,
+  "maximum_identity_error": 4.163336342344337e-17,
+  "minimum_valid_bootstrap_draw_fraction": 1.0,
+  "intervals": "Unadjusted descriptive 95% conditional percentile intervals; not causal allocation or full-train-refit uncertainty",
+  "new_model_fits": 0,
+  "external_response_accessed": false,
+  "blocked_source_access_attempts": [],
+  "numpy_version": "2.3.5",
+  "pandas_version": "3.0.1",
+  "output_sha256": {
+    "paired_decomposition_intervals.csv": "21ed1c92f054d7eb896f3b8b6dfb5b7d61c07f80b351ca24c8f79a0d659e7c2c",
+    "repeat_stability.csv": "3520146d0b3652bf933271343f0d353b99e000969e1c613f3f70a9caa6030062",
+    "identity_audit.csv": "dc8934bcf9b6f1b769a73e5524b958ba25ba929e59fd37b4a31cfc4c711eeda2"
+  },
+  "serialization_normalization": {
+    "applied_utc": "2026-10-13T04:04:32.780412+00:00",
+    "source_csv_sha256": {
+      "paired_decomposition_intervals.csv": "0e560fcf62befb09578327ba2afcd89566bbcb4299b15a50163a6a1d83c680df",
+      "repeat_stability.csv": "0a4094ff3224f391a933f6d9c2a270a692abf60341218828ad21ccca2d6df124",
+      "identity_audit.csv": "9a47b5f94a22477a316775c48f496b82979a110b940ec0e943dd942e07350f5d"
+    },
+    "analyzer_sha256_at_original_execution": "5419b50a8867aefc0e0a1a885e6bf9488248d7bdc69e29f3f6292977b2ae308c",
+    "method": "Only CRLF to LF bytes; UTF-8 BOM and every value preserved. Prior artifacts copied to ignored runs/oof_decomposition_pre_lf_20261013.",
+    "no_refit_or_rebootstrap": true
+  }
+}
