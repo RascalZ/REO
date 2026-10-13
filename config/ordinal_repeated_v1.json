@@ -1,0 +1,176 @@
+{
+  "schema_version": "1.0",
+  "declared_analysis_date": "2026-10-13",
+  "run_name": "gdsc2-cancer-v2-fixed8-mad-association-expression-rank-pair-nested5x3-inner3-repeated-v1",
+  "scope": "Outcome-informed fixed-eight development repeated evaluation, additive to unchanged formal v1 and four-case diagnostic; CTRP sealed; no confirmatory independence claim",
+  "cohort_version": "v2",
+  "drug_ids": [
+    1931,
+    1036,
+    1191,
+    1930,
+    1199,
+    1091,
+    1010,
+    1922
+  ],
+  "case_selection": "All eight drugs from the original identity/coverage/dose-frozen panel; no outcome-based exclusion or substitution. Candidate/representation hypotheses are informed by historical formal-v1 and four-case diagnostic results.",
+  "selection_rules": [
+    "mad",
+    "response_association"
+  ],
+  "representations": [
+    "expression",
+    "rank",
+    "pair_full"
+  ],
+  "models": [
+    "tissue_null",
+    "expression_strong",
+    "mad_expression",
+    "mad_rank",
+    "mad_pair_full",
+    "response_association_expression",
+    "response_association_rank",
+    "response_association_pair_full"
+  ],
+  "outer_folds": 5,
+  "outer_repeats": 3,
+  "inner_folds": 3,
+  "repeat_seeds": [
+    20261013,
+    20261014,
+    20261015
+  ],
+  "seed": 20261013,
+  "split_rule": "626 frozen global biological groups, tissue-stratified folds, complete per-drug coverage intersection; all eight arms share the new five-fold splits in each repeat. Older result scores are historical, not direct paired controls.",
+  "feature": {
+    "n_genes": 200,
+    "min_tpm": 1.0,
+    "min_detection_fraction": 0.1,
+    "annotation_rule": "Frozen unique protein_coding stable Ensembl IDs",
+    "mad": "Training log2(TPM+1) MAD>0, descending MAD then stable gene ID",
+    "response_association": "Training-only log2(TPM+1) and continuous AUC centered within training tissue; rank absolute Pearson residual correlation among detected genes with positive within-tissue expression residual sum of squares; exact zero target residual scores all zero; stable gene-ID tie break",
+    "gene_column_order": "stable gene ID ascending in all three representations; may differ numerically from v1 expression cyclic-coordinate order",
+    "rank": "Ascending average midrank within each sample and exactly the selected gene set; raw float64 exact ties; no all-transcriptome ranks or gene-wise normalization before ranking",
+    "pair_full": "Every unordered selected-gene pair, raw float64 sign -1/0/+1; no high-tie or training-constant pair deletion; retain zero-variance columns with deterministic scaler and zero fitted weights",
+    "shortfall": "Use all eligible genes up to the configured 200 or 2000 budget; record shortfall without changing selector or using heldout data",
+    "empty_feature_fallback": "Same-policy tissue_null (training tissue mean; unseen tissue training global mean), retain reason, samples and all outputs; distinct from historical v1 global-mean empty-feature fallback",
+    "missing_rule": "Only complete finite nonnegative float64 TPM; fail on unsupported input",
+    "strong_expression_genes": 2000,
+    "strong_expression_selector": "Current-training detected positive logTPM-MAD genes, descending MAD with stable ID ties; 2000 budget; same stable-ID output order and same-policy EN/FWL as six molecular arms"
+  },
+  "elastic_net": {
+    "regularization_mode": "alpha_max_relative",
+    "alpha_ratios": [
+      1.0,
+      0.3,
+      0.1,
+      0.03,
+      0.01
+    ],
+    "l1_ratios": [
+      0.5,
+      1.0
+    ],
+    "max_iter": 4000,
+    "tol": 0.001,
+    "selection": "cyclic",
+    "standardization": "Training-only feature/target mean and population SD; build representations before unpenalized tissue FWL projection",
+    "tissue_handling": "Same unpenalized tissue FWL as formal v1; unseen tissue effect zero and molecular term retained",
+    "path_rule": "Current fit residual X,y determine alpha_max; analytical zero molecular endpoint at ratio1; never borrow path across folds, drugs or permutations"
+  },
+  "tissue_null": "Training tissue response mean; unseen tissue uses current training overall response mean; one fit per outer context, no HPO",
+  "tuning_objective": "Minimum pooled inner OOF RMSE on assigned continuous response; first exact grid tie; all 10 candidates retained including null endpoint",
+  "prediction_clipping": false,
+  "permutation": {
+    "count": 0,
+    "seed": 2026101301,
+    "id_zero": "Observed response",
+    "unit": "Unique frozen biological group; current cohort has exactly one model per group per drug, otherwise stop",
+    "algorithm": "For each drug and permutation use numpy PCG64 SeedSequence([seed,drug_id,permutation_id]); sorted tissue then canonical IDs; permute response donors within tissue; mapping applies once to full drug data before all splits",
+    "shared_mapping": "Same assigned y for every arm, outer fold and inner fit of that drug/permutation; both training and scoring use assigned y",
+    "singleton": "Keep singleton tissues unchanged and report unpermutable groups, identity-donor and identical-response counts",
+    "scope": "Observed labels only in this repeated run. Completed nine four-case full-pipeline null controls remain historical engineering evidence; no new permutation significance or eight-drug null claim.",
+    "control_metric": "Molecular increment over same-policy tissue_null; tissue association may remain after restricted permutation",
+    "refit": "Repeat response-aware gene screening, all inner model selection and outer refit for every permutation; no selected-gene or model reuse from observed labels"
+  },
+  "statistics": {
+    "point_metrics": [
+      "spearman",
+      "rmse",
+      "mae",
+      "r2"
+    ],
+    "contrasts": "22 pairwise contrasts: six within-rule representation contrasts, three association-MAD contrasts, all seven molecular arms versus tissue_null, and all six 200-gene arms versus expression_strong. Three candidate-rule by representation difference-of-differences contrasts; each uses the same draw and complete repeat.",
+    "paired_direction": "Spearman and R2 candidate-reference; RMSE and MAE reference-candidate so positive favors candidate",
+    "bootstrap_draws": 10000,
+    "bootstrap_seed": 2026101602,
+    "bootstrap_unit": "All 626 frozen development biological groups; shared multiplicities across drugs/arms; exact reranked Spearman",
+    "confidence_scope": "Outcome-informed development evaluation. Conditional OOF intervals with no feature-selection/tuning/train-refit uncertainty or guaranteed algorithmic CV coverage. Primary family9 and representation family18 adjustments have separate nominal family coverage, not whole-study coverage. Other metrics and contrasts descriptive unadjusted.",
+    "minimum_valid_fraction": 0.99,
+    "macro": "Equal weights over the fixed eight drugs; if any drug/repeat point metric is undefined, retain NA and cause rather than nanmean or delete that drug/repeat",
+    "null_summary": "No new null runs in this version; retain completed diagnostic null evidence without promoting nine draws to conventional significance",
+    "success": "No winner, minimum-molecular-coefficient or drug-exclusion performance gate. Report effects, intervals, repeat variation, zero solutions, tissue increments and stability, with no score-driven redesign.",
+    "family_alpha": 0.05,
+    "primary_family_size": 9,
+    "representation_family_size": 18,
+    "point_aggregation": "Within each drug and arm, calculate metrics from each complete OOF repeat separately and take arithmetic mean of all three; never average predictions before ranking and never concatenate repeats to inflate N",
+    "primary_comparison": {
+      "candidate": "response_association_pair_full",
+      "reference": "expression_strong",
+      "metric": "spearman",
+      "units": "eight individual drugs plus equal-eight-drug macro",
+      "family_size": 9,
+      "adjustment": "Bonferroni nominal conditional percentile intervals at family alpha 0.05"
+    },
+    "representation_family": {
+      "contrasts": [
+        "mad:pair_full-expression",
+        "response_association:pair_full-expression"
+      ],
+      "metric": "spearman",
+      "units": "two contrasts times eight individual drugs plus equal-eight-drug macro",
+      "family_size": 18,
+      "adjustment": "Bonferroni nominal conditional percentile intervals at family alpha 0.05"
+    },
+    "interactions": [
+      "(association rank-expression)-(MAD rank-expression)",
+      "(association pair-rank)-(MAD pair-rank)",
+      "(association pair-expression)-(MAD pair-expression)"
+    ],
+    "interaction_scope": "Descriptive pairwise-difference interactions; algebraically related, not independent tests and not causal shares of amplitude, dimension, collinearity or penalty",
+    "noninferiority": {
+      "status": "pending_independent_justification",
+      "margin": null,
+      "tests_enabled": false,
+      "interpretation": "No noninferiority, equivalence or complete information-preservation verdict. A future performance-retention question must predefine reference, justified margin, estimand, multiplicity and validated interval method."
+    }
+  },
+  "resources": {
+    "parallel_jobs": 1,
+    "blas_threads": 1,
+    "rss_sampling_interval_seconds": 0.1,
+    "task_process_isolation": true,
+    "minimum_available_ram_bytes": 536870912,
+    "minimum_commit_free_bytes": 1073741824,
+    "pressure_poll_seconds": 5,
+    "pressure_max_wait_seconds": 300,
+    "pressure_action": "Before a task, wait boundedly; if insufficient resources persist exit resource_paused (75), preserving checkpoints and session provenance. Do not launch/kill a task based on its predictive score or alter model settings. RSS/private/system-commit sampled as operational observations, not isolated efficiency benchmarks."
+  },
+  "failure_policy": "Save failed checkpoint with traceback and partial audit then stop; resume only same frozen version after preserving failure; never omit failed task, zero solution, warning or weak drug",
+  "external_response_access": "forbidden",
+  "data_source": "Completed historical formal-v1 prepared GDSC development responses, verified against immutable original-input metadata, then all fixed eight drugs; no CTRP response/index read. Original files and both historical run versions retained.",
+  "decision_rule": "Full original eight-drug panel and all arms retained. Six-arm factorial estimates characterize candidate/representation interactions and learning constraints. No new minimum-useful-effect threshold or noninferiority margin is set. Final model/feature and external statistics freeze required before any CTRP access.",
+  "expected_contract": {
+    "tasks": 960,
+    "fits": 26160,
+    "oof_predictions": 119208,
+    "drug_model_observations": 4967,
+    "global_development_groups": 626,
+    "molecular_outer_fits": 840,
+    "tissue_outer_fits": 120,
+    "observed_tasks": 960,
+    "permutation_tasks": 0
+  }
+}

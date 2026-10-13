@@ -210,3 +210,33 @@ Feature stability remains limited, and no mechanistic biomarker claim follows.
 See [the stage-5 report](../reports/阶段5_秩与基因对诊断试跑.md),
 [scientific assessment](ORDINAL_DIAGNOSTIC_ASSESSMENT.md), and the sole maintained
 [research plan](../RESEARCH_PLAN.md) for interpretation and the next decision.
+
+
+## Fixed-eight repeated candidate/representation evaluation
+
+The newly authorized run uses `config/ordinal_repeated_v1.json` and
+`docs/ORDINAL_REPEATED_V1_PROTOCOL.md`, preserving both historical scientific
+locks. It compares the six 200-gene rule/representation arms, same-policy tissue
+means and MAD2000 expression EN on shared 5-outer × 3-repeat / 3-inner splits.
+The expected observed-label contract is 960 tasks, 26,160 fits and 119,208 OOF
+rows from 626 global biological groups and 4,967 drug-model observations.
+There are no new permutation fits in this version; the completed four-case nine
+null controls remain engineering evidence. CTRP response/index access is forbidden.
+
+Single-task child processes exit after each outer task. Numerical thread limits
+are set before imports. The controller checks available physical RAM (512 MiB)
+and commit (1 GiB), polling every five seconds for up to 300 seconds before a
+checkpoint-preserving `resource_paused` exit 75. Repeating a stopped run requires
+explicit same-lock resume; no score-dependent arm or feature changes are allowed.
+Resource observations include preparation/process startup/waits and must not be
+interpreted as isolated representation efficiency benchmarks.
+
+The primary Spearman comparison is response-associated pair versus strong
+expression EN, with eight drugs plus equal-drug macro as a nominal family of nine.
+Within-rule pair versus expression200 comparisons form a separate nominal family
+of eighteen. Conditional OOF group-bootstrap intervals do not cover complete
+train-refit uncertainty. Noninferiority/equivalence remains a pending scientific
+question: no numerical margin, including −0.02, is adopted, and no verdict is made.
+
+Implementation, synthetic boundary checks and freeze are being completed before
+real fitting. This paragraph is execution preparation, not a completed-run claim.
