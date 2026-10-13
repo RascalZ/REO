@@ -10,9 +10,11 @@
 
 **固定8药正式评价完成。** [阶段4报告](reports/阶段4_固定八药重复嵌套评价.md)与[科学评估](docs/FORMAL_SCIENTIFIC_ASSESSMENT.md)记录840任务、18,120fits、104,307 OOF及10,000次配对bootstrap。主EN宏ΔSpearman −0.028458，RF −0.036612，当前REO流程未显示强表达对照的优势；85/120主REO外层为零分子解。原673检查点SHA保持，Windows控制器失败记录保留，数值源码和正式lock未改。
 
-**当前：总计划v2.6进入表示诊断。** [已有OOF分解](docs/OOF_DECOMPOSITION.md)已补齐候选范围和表示/拟合两步配对区间；[新版协议](docs/ORDINAL_DIAGNOSTIC_V1_PROTOCOL.md)固定两种候选规则×表达/样本内秩/完整pair三种表示、同政策组织参照和9次全流程工程置换。四药试跑是结果启发的开发诊断，不按成绩改规则；CTRP继续封存，不宣称跨表达平台验证。
+**当前：四药表示诊断完成，总计划更新至v2.7。** [已有OOF分解](docs/OOF_DECOMPOSITION.md)保留旧结果；[冻结协议](docs/ORDINAL_DIAGNOSTIC_V1_PROTOCOL.md)的两种候选规则×表达/样本内秩/完整pair三种表示、同政策组织参照及9次全流程工程置换已全部执行。独立核验通过：840个成功外层任务、22,440次设计拟合、173,600条OOF记录，其中真实标签为84任务、2,244次拟合和17,360条OOF；其余属于置换控制。详见[阶段5报告](reports/阶段5_秩与基因对诊断试跑.md)与[科学评估及下一步](docs/ORDINAL_DIAGNOSTIC_ASSESSMENT.md)。
 
-诊断科学源固定于`e9b576d`。首次内存中断与按原版本恢复见[执行记录](docs/ORDINAL_MEMORY_RECOVERY.md)；只读追加日志的进度入口为`python scripts/ordinal_progress.py`，完整性须等待训练退出后的独立验证。
+在这四个诊断案例中，组织内响应关联选基因相对MAD的宏Δρ分别为表达+0.020439、秩+0.032689、pair+0.041295，三者的探索性配对95%区间均高于0。但响应关联规则下pair相对表达的宏Δρ仅+0.002021（95% CI −0.010449至+0.014278），尚不支持REO具有可靠预测优势，也不证明等效。真实标签72个分子外层拟合中26个为零分子解；Tamoxifen在响应关联规则下三种表示均退回组织参照。四药由先前结果启发选择，区间以已有OOF为条件且未校正多重比较；9次置换是工程控制，不能用于常规0.05显著性结论。旧八药正式结果保持有效，CTRP继续封存。
+
+诊断科学源固定于`e9b576d`。两次内存中断的失败记录、601个唯一成功检查点SHA及原版本恢复证据保留，见[执行记录](docs/ORDINAL_MEMORY_RECOVERY.md)。包含失败尝试的31次完整拟合事件及1次不预测/不评分的资源探针，总计22,472次完整拟合事件，另有2次中断拟合；控制器各会话合计约2小时59分，首启至完成约3小时10分。这些是本机实际执行资源记录，不是隔离的算法速度基准。
 
 ## 快速查看
 
@@ -20,12 +22,14 @@
 git clone https://github.com/RascalZ/REO.git
 cd REO
 python scripts/verify_public_snapshot.py
+python scripts/verify_public_ordinal.py
 ```
 
-该入口仅用Python标准库核验公开汇总。完整身份核验需要版本化原始输入，见[数据与许可](docs/DATA_AVAILABILITY.md)、[复现命令及边界](docs/REPRODUCIBILITY.md)。
+这些入口仅用Python标准库核验公开汇总的哈希、结构及计数，不重新拟合模型或核验个体预测。完整身份与拟合审计需要版本化原始输入，见[数据与许可](docs/DATA_AVAILABILITY.md)、[复现命令及边界](docs/REPRODUCIBILITY.md)。
 
 ## 当前材料
 
+- [阶段5报告](reports/阶段5_秩与基因对诊断试跑.md)、[四药诊断科学评估](docs/ORDINAL_DIAGNOSTIC_ASSESSMENT.md)、[公开聚合结果](results/ordinal_diagnostic/)。
 - [阶段1报告](reports/阶段1_数据核验与队列锁定.md)：药物ID/样本量/浓度、排除记录、外验限制。
 - [主面板](results/main_drugs.csv)、[295药物样本量](results/all_295_GDSC_drug_sample_counts.csv)、[结构支持候选](results/all_structure_supported_drug_coverage.csv)。
 - [下载登记](data_manifest/download_register.csv)、[旧代码处置](reports/现有代码处置清单.md)。
@@ -57,7 +61,7 @@ python -m pip install -r requirements.txt
 python scripts/run_curation.py --download --lock
 ```
 
-已有锁时，该入口只执行验证。冻结的是队列及数据整理实现；模型/统计配置需开发专用试跑后另行冻结。干净环境全流程源数据重放和模型复现仍为发布待验项；CI通过不等于预测有效。
+已有锁时，该入口只执行验证。该锁冻结队列及数据整理实现；正式八药与四药诊断各有独立的模型/统计锁及已完成运行。干净环境全流程源数据重放和模型复现仍为发布待验项；CI通过不等于预测有效。
 
 开发试跑依赖另列，保留冻结的阶段1依赖文件：
 

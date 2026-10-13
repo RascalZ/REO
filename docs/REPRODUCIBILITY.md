@@ -4,8 +4,10 @@
 
 - Implemented: original input hashes; expression audit; authoritative identity/relatedness graph; compound support and conflicts; observation indices; prespecified coverage panel; group-isolated external manifests; independent source-row validation and immutable local lock.
 - Implemented in stage 2: training-only feature/scaling/tissue/target states, grouped 3-outer/3-inner development CV, exact GDSC source-row/dose/response checks, two-drug EN/tissue/mean comparisons and resource audit. See the stage-2 report; these are exploratory engineering outputs, not confirmatory performance estimates.
-- Pending: primary cancer-model eligibility revision, full REO200/RF/5x3 repeated analysis, expanded regularization path, uncertainty/permutation inference, final external predictions and manuscript results. There are no final trained-model checkpoints or external results yet.
-- Local environment: Python 3.12.14, NumPy 2.3.5, pandas 3.0.1, openpyxl 3.1.5, RDKit 2026.9.1. Expression mmap files are two float64 arrays of 1,019 × 57,820, about 471 MB each. No GPU is needed for phase 1. Model runtime/RAM must be measured in the next development pilot.
+- Completed: cancer-model eligibility v2 (626 development groups and 175 sealed external groups), expanded regularization path and REO200/RF pilot, fixed eight-drug 5-outer × 3-repeat / 3-inner evaluation, and conditional paired-bootstrap analysis. Formal v1 remains unchanged.
+- Completed: four-drug 3-outer × 1-repeat / 3-inner diagnostic with two candidate rules, three molecular representations, the same-policy tissue reference and nine full-pipeline within-tissue permutations. Independent validation, frozen statistics and reporting passed. The successful design contains 840 outer tasks, 22,440 fits and 173,600 OOF rows; operational overhead is counted separately below.
+- Pending: broader validation of the outcome-informed candidate/representation findings, sealed external predictions, final manuscript results and a clean-environment full source/model replay. Local outer-fit audit checkpoints exist; these are not final deployment models or external validation results.
+- Local environment: Python 3.12.14, NumPy 2.3.5, pandas 3.0.1, openpyxl 3.1.5, RDKit 2026.9.1. Expression mmap files are two float64 arrays of 1,019 × 57,820, about 471 MB each. No GPU is needed for phase 1. Pilot/formal/diagnostic runtime and sampled memory measurements are reported with their execution boundaries; they are not isolated algorithm benchmarks.
 
 ## Quick inspection without original data
 
@@ -13,11 +15,13 @@
 git clone https://github.com/RascalZ/REO.git
 cd REO
 python scripts/verify_public_snapshot.py
+python scripts/verify_public_ordinal.py
+python -m unittest discover -s tests -p "test_public_ordinal_snapshot.py" -v
 ```
 
-This verifies published aggregate hashes/counts only, not individual identity or prediction performance.
+These standard-library checks verify published aggregate hashes, schemas and counts only. They do not read private response/OOF/checkpoint files, fit models, or independently establish predictive validity. CI also runs synthetic integrity contracts after installing modeling dependencies; it does not launch the private full-run audit.
 
-This quick inspection and syntax compilation were tested on 2026-10-10 in a fresh Git clone using isolated Python standard-library execution (`-I -S`). Full source replay and a newly installed dependency environment have not yet been verified.
+The original cohort quick inspection and syntax compilation were tested on 2026-10-10 in a fresh Git clone using isolated Python standard-library execution (`-I -S`). The later ordinal aggregate verifier and its four tests passed locally; this is not a claim of a new clean-clone model reproduction. Full source replay and a newly installed dependency environment have not yet been verified.
 
 ## Full local phase-1 reconstruction
 
@@ -71,7 +75,7 @@ python src/report_reo200_rf_pilot.py --run-dir runs/new-cancer-v2-pilot
 
 Commit scientific source/configuration changes before fitting. The launcher automatically records and checks Git HEAD (or an explicitly provided REO_EXECUTION_COMMIT) so immutable source validation does not rely on a forgotten environment variable. The completed 906-fit execution uses `5d05349`. Later exact-constant tissue-target maintenance applies only to a degenerate case absent in every actual training fit, and does not overwrite historical predictions. Full independent audit and aggregate results are under the local run directory and `results/pilot_reo200_rf/`; the source cache for cancer eligibility is versioned under `data_raw/cancer_metadata/`.
 
-Both primary REO EN drug models selected a zero molecular endpoint in all three outer folds. This pilot supports no claim of reliable REO molecular advantage; full eight-drug repeated analysis/statistics and sealed CTRP evaluation remain pending.
+Both primary REO EN drug models selected a zero molecular endpoint in all three outer folds of this historical pilot. It supports no claim of reliable REO molecular advantage. The subsequent fixed eight-drug repeated analysis and statistics are complete as described below; CTRP evaluation remains sealed and pending.
 
 ## Fixed eight-drug formal development evaluation
 
@@ -123,13 +127,20 @@ checkpoint SHA recovery snapshot remain local, alongside the resumed session.
 
 ## Four-drug candidate-rule and ordinal-representation diagnostic
 
-The additive diagnostic is frozen at scientific execution commit `e9b576d`.
-It does not replace formal v1. See `ORDINAL_DIAGNOSTIC_V1_PROTOCOL.md` for
+The completed additive diagnostic is frozen at scientific execution commit
+`e9b576d060f8ff59fed7f0946b7f48d5ec94fa9a`. It does not replace formal v1.
+See [the frozen protocol](ORDINAL_DIAGNOSTIC_V1_PROTOCOL.md) for
 3 outer folds × 1 repeat, 3 inner folds, both selectors, three molecular
 representations, the identical-policy tissue reference and 9 full-pipeline nulls.
-The 840 successful tasks require 22,440 fits and 173,600 OOF predictions.
+Independent validation confirmed 840 successful tasks, 22,440 fits and 173,600
+OOF predictions. True-label evaluation accounts for 84 tasks, 2,244 fits and
+17,360 OOF rows; the nine permuted-label evaluations account for the remainder.
 These four outcome-informed cases and nine nulls are exploratory engineering
 controls; the null count does not support a conventional 0.05 significance test.
+The 10,000 paired group-bootstrap draws condition on recorded OOF predictions,
+do not include train-refit uncertainty, and yield unadjusted exploratory intervals.
+The four-case macro-average must not be reported as a repeat of the original
+fixed eight-drug study.
 
 ```sh
 python scripts/freeze_ordinal_diagnostic.py --verify-only
@@ -139,13 +150,36 @@ python scripts/run_ordinal_stage.py --execution-commit e9b576d
 python scripts/run_ordinal_stage.py --execution-commit e9b576d --resume
 ```
 
+These are the recorded execution commands, not instructions to overwrite the
+completed run. Use `--resume` only for an interrupted run with exactly matching
+scientific source, inputs and checkpoints. An independent replay needs a separate
+output location and its own provenance; never delete completed output to bypass
+the existing-run protections.
+
 The launcher applies six numerical-library single-thread environment variables
 BEFORE child-process imports as well as the frozen runtime thread limit. On this
 Windows host, setting runtime limits alone left substantial startup commit
-reservations. The first allocation failure, its four completed fit events, all
-six successful checkpoints, the exact failed-fit resource probe and the resumed
-session are retained locally. Probe/failed-attempt fits are additional work and
-must be reported separately from the successful scientific budget. Do not inspect
+reservations. Two allocation failures and their original checkpoint hashes are
+retained locally. Their completed fit events total 31 (4 + 27); one resource probe
+adds one completed fit without prediction or scoring. Thus the 22,440 successful
+pipeline fits correspond to 22,472 completed fit events overall, with two further
+aborted fits making the attempted-fit lower bound 22,474. Recovery verified
+unchanged hashes for 601 unique successful checkpoints; overlapping recovery
+snapshots must not be added as independent checkpoints. Scientific source and
+the scientific lock remained unchanged. See [the recovery record](ORDINAL_MEMORY_RECOVERY.md).
+
+Successful-task wall time sums to 10,614.268 seconds, failed-attempt wall time to
+34.041 seconds, and probe time to 6.050 seconds. Controller sessions sum to
+10,762.477 seconds; first start to final completion spans 11,419.146 seconds,
+including 656.657 seconds between sessions for investigation, the probe and
+recovery. These are different measurement boundaries, not additive estimates of
+isolated compute cost. The largest sampled worker RSS was 854,458,368 bytes and
+process-tree RSS 1,024,815,104 bytes; shared pages can be counted more than once
+in process sums. The audit records these values and their provenance in local
+`operational_overhead.json` and `ordinal_validation.json`; public aggregates and
+the report expose the relevant summaries.
+
+Do not inspect
 live `ordinal_metadata.json` or run the validator concurrently with training.
 The launcher waits for training exit before independent validation, frozen
 statistics and report rendering, logging each stage separately.
@@ -161,3 +195,18 @@ Public summaries contain no sample-level responses, predictions or permutation
 donor IDs. Private audit files and bootstrap weights remain under ignored `runs/`.
 CTRP access stays forbidden. Aggregate-only old-OOF decomposition is available in
 `results/oof_decomposition/`; paired intervals share the original group resamples.
+
+In the completed four-case diagnostic, response-association selection improved
+macro Spearman relative to MAD for expression (+0.020439), rank (+0.032689) and
+pair (+0.041295), with all three exploratory paired intervals above zero. Under
+that rule, pair versus expression was +0.002021 (95% CI −0.010449 to +0.014278),
+so neither reliable pair superiority nor equivalence is established. There were
+26 zero molecular solutions among 72 true-label molecular outer fits, versus
+637 among 648 permuted-label molecular fits. The combined count of 663 excludes
+tissue-only fits and must not be presented as a true-label result. Tamoxifen's
+three response-associated representations all equaled the tissue reference;
+it is a prespecified diagnostic comparator, not proof that leakage is impossible.
+Feature stability remains limited, and no mechanistic biomarker claim follows.
+See [the stage-5 report](../reports/阶段5_秩与基因对诊断试跑.md),
+[scientific assessment](ORDINAL_DIAGNOSTIC_ASSESSMENT.md), and the sole maintained
+[research plan](../RESEARCH_PLAN.md) for interpretation and the next decision.

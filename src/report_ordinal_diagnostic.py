@@ -50,7 +50,10 @@ def figures(frames, config, names, directory):
     saved = []
     def save(fig, name):
         for extension in ("png", "svg"):
-            fig.savefig(directory / (name + "." + extension), dpi=190, bbox_inches="tight")
+            path = directory / (name + "." + extension)
+            fig.savefig(path, dpi=190, bbox_inches="tight")
+            if extension == "svg":
+                path.write_text("\n".join(line.rstrip() for line in path.read_text(encoding="utf-8").splitlines()) + "\n", encoding="utf-8", newline="\n")
         plt.close(fig)
         saved.append(name)
     fig, axes = plt.subplots(2, 2, figsize=(13.8, 8.5), sharex=True)
@@ -143,7 +146,7 @@ def main():
             raise RuntimeError("Statistical output changed: " + filename)
         frames[Path(filename).stem] = pd.read_csv(path, dtype={"gdsc_drug_id": str}, float_precision="round_trip")
     panel = pd.read_csv(ROOT / "results/cohort_v2/main_drugs.csv", dtype={"gdsc_drug_id": str})
-    names = dict(zip(panel.gdsc_drug_id, panel.drug_name))
+    names = dict(zip(panel.gdsc_drug_id, panel.gdsc_drug_name))
     names[MACRO] = "四诊断案例等权均值"
     report_directory = ROOT / "reports"
     stems = figures(frames, config, names, report_directory / "figures_ordinal")
@@ -164,6 +167,10 @@ def main():
     heading("阶段5：候选规则、秩向量与完整基因对的诊断试跑", 1)
     paragraph("两种候选规则×三种表示，同政策组织均值参照，三种诊断药加Tamoxifen，以及九套全流程组织内置换标签。协议先于本轮拟合冻结，属于见过正式v1结果后的探索性研究。原正式v1结果保留，CTRP继续封存。")
     paragraph(f"最终成功的{provenance['expected_outer_tasks']}个外层任务包含{provenance['actual_fit_events']:,}次完整拟合，保存{provenance['oof_rows']:,}条OOF记录。该拟合数是最终纳入既定评价的预算，不含历史失败尝试中的已完成拟合及独立资源排障probe；额外开销在后文单列。真实独立观察为四药各620个模型，不是OOF行数。仅3折外层×1次、3折内层；没有重复CV稳定性证据。")
+    effects = frames["paired_effect_intervals"]
+    macro_pair_expression = effects[effects.gdsc_drug_id.eq(MACRO) & effects.contrast.eq("response_association:pair_full-expression") & effects.metric.eq("spearman")].iloc[0]
+    paragraph("当前判读：训练内响应关联候选改善了三种表示的四案例平均预测；但该规则下pair相对表达200的宏ΔSpearman为" + ci_text(macro_pair_expression, 6) + "，仍不能证明REO可靠优势或等价。值得继续固定八药评价，研究候选规则与表示约束的适用边界；不能以本轮案例替代旧正式v1结论。")
+    paragraph("新规则的活跃基因对仍不稳定，预测增量不能直接写成机制性耐药签名。完整科学解读见docs/ORDINAL_DIAGNOSTIC_ASSESSMENT.md，下一工作包和唯一维护计划见RESEARCH_PLAN.md。以下保留所有药物、表示、指标、零解与失败。")
     heading("预设问题与解释边界")
     paragraph("在同一个训练划分内，MAD或组织调整响应关联规则各选最多200个基因；该规则的表达、样本内平均秩及完整三值pair臂共享基因。完整pair与平均秩有相同排序信息，但线性rank只对应受约束的pair权重，EN惩罚不同。因此两者的性能差不是纯维度损失；表达与rank差也不是可识别的纯幅度信息损失。")
     paragraph("同政策组织参照使用训练组织响应均值，训练未见组织用训练总体均值；这是分子系数为零时的同政策比较。Tamoxifen是历史弱信号案例，不能当作已知真阴性，出现增益本身不证明泄漏。三个主诊断案例由旧结果启发，四药均值不替代固定八药正式结论。")
@@ -245,6 +252,7 @@ def main():
         {"耗时口径": "会话之间的间隔", "记录": duration(overhead["inter_session_gap_seconds"]), "范围及重叠": "含故障调查、probe、环境准备及其他等待，不能称为纯暂停或休眠"},
     ]))
     paragraph("额外fits与时间依据完成后的独立operational_overhead审计报告填写，不使用预测预算或进度快照替代实际计数。排障probe不产生新的评价折、不增加独立样本量，也不作为效果确认。资源恢复只应改变运行条件；模型、候选规则、参数网格和冻结源哈希是否保持不变由独立验证记录证明。")
+    paragraph("耗时和内存是本机真实运行条件下的观察记录，不是隔离计算环境中的效率基准。任务顺序、表达页和库的缓存、其他应用的系统内存占用及故障后进程重启均可能影响数值；未随机化任务顺序或重复进行资源基准测量。因此这些记录用于复现预算与解释故障，不能独立证明某种表示具有普遍计算效率优势。")
     figure("runtime_and_memory", "图3：各模型最终成功任务的耗时与实际采样RSS，额外失败/probe不在图内。资源比较属于整条管线，不是表示本身的固有成本。")
     heading("本轮可以支持什么")
     for model in [m for m in config["models"] if m != "tissue_null"]:

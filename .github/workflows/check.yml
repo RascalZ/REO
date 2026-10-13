@@ -12,6 +12,10 @@ jobs:
         run: python -m compileall -q src scripts
       - name: Verify public aggregate cohort snapshot
         run: python scripts/verify_public_snapshot.py
+      - name: Verify public ordinal diagnostic snapshot
+        run: python scripts/verify_public_ordinal.py
+      - name: Public ordinal snapshot tamper and boundary tests
+        run: python -m unittest discover -s tests -p "test_public_ordinal_snapshot.py" -v
       - name: Install modeling test dependencies
         run: python -m pip install --index-url https://pypi.org/simple -r requirements-modeling.txt
       - name: Counterfactual leakage and input-boundary tests
