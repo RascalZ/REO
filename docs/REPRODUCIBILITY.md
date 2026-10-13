@@ -238,8 +238,9 @@ of eighteen. Conditional OOF group-bootstrap intervals do not cover complete
 train-refit uncertainty. Noninferiority/equivalence remains a pending scientific
 question: no numerical margin, including −0.02, is adopted, and no verdict is made.
 
-Implementation, synthetic boundary checks and freeze are being completed before
-real fitting. This paragraph is execution preparation, not a completed-run claim.
+Implementation and freeze are complete. Execution began on 2026-10-13 at
+18:14 Asia/Shanghai using scientific commit `5e54a693fe3a047c53b3d9e2dfeb7638ff1b9b43`.
+This is an active run; no completed-run or scientific-effect claim is made yet.
 
 Pre-fit acceptance on 2026-10-13 passed 19 synthetic integrity and six statistical
 contracts, all entry points compiled, and both historical locks verified unchanged.
@@ -249,9 +250,9 @@ round-trip response parsing. Recorded commands for this separate run are:
 
 ```sh
 python scripts/freeze_ordinal_repeated.py --verify-only
-python scripts/run_ordinal_repeated_stage.py --execution-commit <recorded-scientific-commit>
+python scripts/run_ordinal_repeated_stage.py --execution-commit 5e54a693fe3a047c53b3d9e2dfeb7638ff1b9b43
 # Only if an interrupted run has stopped:
-python scripts/run_ordinal_repeated_stage.py --execution-commit <same-recorded-scientific-commit> --resume
+python scripts/run_ordinal_repeated_stage.py --execution-commit 5e54a693fe3a047c53b3d9e2dfeb7638ff1b9b43 --resume
 ```
 
 Progress reads append-only logs with `python scripts/ordinal_repeated_progress.py`.
