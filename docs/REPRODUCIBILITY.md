@@ -240,3 +240,20 @@ question: no numerical margin, including −0.02, is adopted, and no verdict is 
 
 Implementation, synthetic boundary checks and freeze are being completed before
 real fitting. This paragraph is execution preparation, not a completed-run claim.
+
+Pre-fit acceptance on 2026-10-13 passed 19 synthetic integrity and six statistical
+contracts, all entry points compiled, and both historical locks verified unchanged.
+The new repeated lock SHA256 is `ef8f588b99c42cb54db73b495127bc41882fa3e5b450e62167c6b46c53d583e7`.
+Each fresh worker binds source/config/protocol hashes before fitting and uses
+round-trip response parsing. Recorded commands for this separate run are:
+
+```sh
+python scripts/freeze_ordinal_repeated.py --verify-only
+python scripts/run_ordinal_repeated_stage.py --execution-commit <recorded-scientific-commit>
+# Only if an interrupted run has stopped:
+python scripts/run_ordinal_repeated_stage.py --execution-commit <same-recorded-scientific-commit> --resume
+```
+
+Progress reads append-only logs with `python scripts/ordinal_repeated_progress.py`.
+Do not audit live metadata. Actual scientific completion requires the post-exit
+validator and statistics; a preflight test pass is not a prediction result.
