@@ -9,12 +9,14 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter, defaultdict
+import csv
 from datetime import datetime, timezone
 import hashlib
 import itertools
 import json
 from pathlib import Path
 import subprocess
+import struct
 import sys
 
 import numpy as np
@@ -48,6 +50,50 @@ def names_sha(values):
 
 def y_sha(values):
     return hashlib.sha256(np.asarray(values, dtype='<f8').tobytes(order='C')).hexdigest()
+
+
+def aggregate_oof_stream(path):
+    """Yield one CSV row at a time, releasing it after checkpoint comparison."""
+    with Path(path).open('r', encoding='utf-8-sig', newline='') as handle:
+        reader = csv.DictReader(handle)
+        require(reader.fieldnames is not None and len(reader.fieldnames) == len(set(reader.fieldnames)),
+                'Aggregate OOF header is missing or has duplicate fields')
+        yield from reader
+
+
+def compare_oof_block(stream, expected_rows):
+    """Compare every typed field exactly, including float64 round-trip bits."""
+    for expected in expected_rows:
+        actual = next(stream, None)
+        require(actual is not None and set(actual) == set(expected), 'Aggregate OOF missing row or changed column schema')
+        for key, value in expected.items():
+            require(isinstance(actual[key], str), 'Aggregate CSV field missing or repeated')
+            if isinstance(value, bool):
+                raise ValueError('Unexpected boolean in numeric/string OOF schema')
+            if isinstance(value, int):
+                require(int(actual[key]) == value, 'Aggregate OOF integer context/identity differs from checkpoint: '+key)
+            elif isinstance(value, float):
+                parsed = float(actual[key])
+                require(np.isfinite(parsed) and struct.pack('<d', parsed) == struct.pack('<d', value),
+                        'Aggregate OOF float64 value differs from checkpoint: '+key)
+            elif isinstance(value, str):
+                require(actual[key] == value, 'Aggregate OOF string context/identity differs from checkpoint: '+key)
+            else:
+                raise ValueError('Unsupported checkpoint OOF field type: '+key)
+
+
+def prediction_sha(rows):
+    """Hash canonical IDs and exact binary float64 predictions, in ID order."""
+    ordered = sorted(rows, key=lambda r: r['canonical_model_id'])
+    require(len({r['canonical_model_id'] for r in ordered}) == len(ordered), 'Duplicate identity in zero-prediction fingerprint')
+    digest = hashlib.sha256()
+    for row in ordered:
+        value = float(row['predicted_auc'])
+        require(np.isfinite(value), 'Nonfinite zero-prediction fingerprint value')
+        digest.update(row['canonical_model_id'].encode('utf-8'))
+        digest.update(b'\0')
+        digest.update(struct.pack('<d', value))
+    return digest.hexdigest()
 
 
 def tasks_for(cfg):
@@ -374,15 +420,24 @@ def validate(run, allow_partial=False):
     require(set(registered) <= set(tasks), 'Registered unknown checkpoint')
     counts = Counter()
     successful_task_wall_seconds_sum = 0.0
-    completed_rows, shared_genes, mad_genes = [], defaultdict(set), defaultdict(set)
+    shared_genes, mad_genes = defaultdict(set), defaultdict(set)
     matched_null, zero_predictions = {}, []
-    for path in sorted((run/'checkpoints').glob('*.json')):
-        require(path.name in tasks, 'Unexpected checkpoint filename')
+    existing_names = {p.name for p in (run/'checkpoints').glob('*.json')}
+    require(existing_names <= set(tasks), 'Unexpected checkpoint filename')
+    if not allow_partial:
+        require(existing_names == set(tasks), 'Complete diagnostic checkpoint set is missing tasks')
+    aggregate_stream = None if allow_partial else aggregate_oof_stream(run/'oof_predictions.csv')
+    # The frozen writer concatenates checkpoints in this Cartesian task order.
+    # Streaming follows the same order, so no 173,600-row Python object list or
+    # duplicate full-table sorting is needed to verify exact aggregate content.
+    for task in expected_tasks:
+        path = run/'checkpoints'/filename(task)
+        if path.name not in existing_names:
+            continue
         if path.name in registered:
             require(sha(path) == registered[path.name], 'Registered checkpoint changed: '+path.name)
         else:
             require(allow_partial, 'Unregistered checkpoint in completed run')
-        task = tasks[path.name]
         obj = check_payload(path)
         require(obj['task'] == task and obj['freeze_sha256'] == meta['freeze_sha256'], 'Checkpoint task/freeze mismatch')
         if obj['status'] != 'completed':
@@ -485,21 +540,24 @@ def validate(run, allow_partial=False):
         if task['model'] == 'tissue_null' or outer_event['n_nonzero_molecular_coeffs'] == 0:
             expected_null = null_predictions(data, sorted(train), [r['canonical_model_id'] for r in rows], assignment)
             require(np.allclose(prediction, expected_null, atol=2e-14, rtol=0), 'Zero-molecular predictions differ from training-only tissue means')
-            values = {r['canonical_model_id']: r['predicted_auc'] for r in rows}
+            digest = prediction_sha(rows)
             if task['model'] == 'tissue_null':
-                matched_null[null_key] = values
+                matched_null[null_key] = digest
             else:
-                zero_predictions.append((null_key, values))
+                zero_predictions.append((null_key, digest))
                 counts['zero_molecular_outer_fits'] += 1
-        completed_rows.extend(rows)
+        if aggregate_stream is not None:
+            compare_oof_block(aggregate_stream, rows)
         counts['completed_tasks'] += 1; counts['actual_fits'] += len(obj['fit_events']); counts['oof_rows'] += len(rows)
+        # Full pair schemas and completed inner-fit events are task-local.
+        del obj, result, outer_event, event, rows
     require(all(len(v) == 1 for v in shared_genes.values()), 'Same training partition/rule selects different genes across representations or HPO candidates')
     require(all(len(v) == 1 for v in mad_genes.values()), 'Unsupervised MAD gene selection changes with permuted outcomes')
-    for context, values in zero_predictions:
+    for context, digest in zero_predictions:
         if context not in matched_null:
             require(allow_partial, 'Zero-molecular fit lacks matched tissue-null arm')
         else:
-            require(values == matched_null[context], 'Zero-molecular prediction not bitwise identical to its same-policy tissue null')
+            require(digest == matched_null[context], 'Zero-molecular prediction not bitwise identical to its same-policy tissue null')
     archives = list((run/'failed_attempts').glob('*.json'))
     for path in archives:
         failed = check_payload(path)
@@ -512,16 +570,11 @@ def validate(run, allow_partial=False):
         require(set(registered) == set(tasks), 'Completed run registry lacks complete task coverage')
         for name, expected in meta['output_hashes'].items():
             require(sha(run/name) == expected, 'Aggregated output changed: '+name)
-        saved = pd.read_csv(run/'oof_predictions.csv', keep_default_na=False, float_precision='round_trip')
-        expected_frame = pd.DataFrame(completed_rows)
-        order = ['drug_id', 'permutation_id', 'repeat', 'model', 'canonical_model_id']
-        pd.testing.assert_frame_equal(saved[expected_frame.columns].sort_values(order).reset_index(drop=True),
-                                      expected_frame.sort_values(order).reset_index(drop=True), check_dtype=False,
-                                      check_exact=False, rtol=0, atol=1e-14)
-        require(not saved.duplicated(order).any(), 'An identity has more than one OOF prediction per arm/permutation/repeat')
-        for (drug, p, repeat, model), block in saved.groupby(['drug_id', 'permutation_id', 'repeat', 'model']):
-            intended = set(response[response.gdsc_drug_id.astype(int).eq(drug)].canonical_model_id)
-            require(set(block.canonical_model_id) == intended and len(block) == len(intended), 'Per-arm complete OOF coverage missing')
+        require(next(aggregate_stream, None) is None, 'Aggregate OOF contains extra or duplicate rows after full checkpoint coverage')
+        # Complete Cartesian task coverage plus exact per-task test-ID sets and
+        # independently reconstructed disjoint outer folds proves exactly one
+        # OOF row per frozen drug identity/arm/permutation/repeat. Every CSV row
+        # was compared to those checkpoints above, including every typed field.
         require(meta.get('preserved_failed_attempts') == len(archives), 'Historical failure count omitted from metadata')
         require(meta['output_counts'] == {'tasks': counts['completed_tasks'], 'fit_events': counts['actual_fits'],
                                          'oof_predictions': counts['oof_rows'], 'failed': 0}, 'Aggregate completion summary disagrees with independently counted checkpoints')
@@ -531,6 +584,7 @@ def validate(run, allow_partial=False):
                 counts=dict(counts), shared_gene_contexts_checked=len(shared_genes), mad_label_invariance_contexts_checked=len(mad_genes),
                 permutation_maps_verified=len(assignments), biological_groups=len(global_ids),
                 operational_overhead=overhead,
+                memory_policy='One checkpoint and its OOF block at a time; aggregate CSV streamed in frozen task order; zero-molecular prediction sets retained only as exact binary-float hashes',
                 original_or_external_response_or_expression_array_read=False,
                 scope='Independent frozen-source, task, RNG mapping, actual training/prediction identity and label, same-gene, active-coefficient, zero-molecular tissue-null and aggregate coverage checks',
                 limitations=['Actual inner pooled RMSE is checked for candidate selection consistency; individual inner OOF predictions are not exported for independent score reconstruction.',

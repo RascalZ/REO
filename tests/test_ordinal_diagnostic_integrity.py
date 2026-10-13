@@ -7,6 +7,7 @@ and changed held-out outcomes rather than mirroring the model implementation.
 from __future__ import annotations
 
 import copy
+import csv
 import hashlib
 import json
 from pathlib import Path
@@ -462,6 +463,81 @@ class OrdinalOperationalOverheadTests(unittest.TestCase):
             path.write_bytes(b'changed')
             with self.assertRaisesRegex(ValueError, 'replaced or changed'):
                 independent_validator.operational_overhead(folder, meta, 22440, 100., [task])
+
+
+class OrdinalStreamingAuditTests(unittest.TestCase):
+    def rows(self):
+        return [dict(drug_id=1, permutation_id=0, repeat=0, outer_fold=0, model='rank',
+                     canonical_model_id='S0', biological_group_id='G0', tissue='A',
+                     observed_auc=.1, predicted_auc=float(np.nextafter(.1, 1.))),
+                dict(drug_id=1, permutation_id=0, repeat=0, outer_fold=0, model='rank',
+                     canonical_model_id='S1', biological_group_id='G1', tissue='B',
+                     observed_auc=.2, predicted_auc=.3)]
+
+    def write(self, path, rows):
+        with Path(path).open('w', encoding='utf-8-sig', newline='') as handle:
+            writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+            writer.writeheader()
+            writer.writerows(rows)
+
+    def test_streaming_preserves_exact_float64_roundtrip_and_entire_row_schema(self):
+        rows = self.rows()
+        with tempfile.TemporaryDirectory(prefix='reo_stream_fixture_') as folder:
+            path = Path(folder)/'oof.csv'
+            self.write(path, rows)
+            stream = independent_validator.aggregate_oof_stream(path)
+            independent_validator.compare_oof_block(stream, rows[:1])
+            independent_validator.compare_oof_block(stream, rows[1:])
+            self.assertIsNone(next(stream, None))
+
+    def test_stream_rejects_one_ulp_prediction_change_or_context_reordering(self):
+        rows = self.rows()
+        examples = []
+        changed = copy.deepcopy(rows)
+        changed[0]['predicted_auc'] = .1
+        examples.append(changed)
+        examples.append(list(reversed(rows)))
+        changed = copy.deepcopy(rows)
+        changed[0]['drug_id'] = 2
+        examples.append(changed)
+        with tempfile.TemporaryDirectory(prefix='reo_stream_tamper_') as folder:
+            path = Path(folder)/'oof.csv'
+            for example in examples:
+                self.write(path, example)
+                stream = independent_validator.aggregate_oof_stream(path)
+                try:
+                    with self.assertRaises(ValueError):
+                        independent_validator.compare_oof_block(stream, rows)
+                finally:
+                    stream.close()
+
+    def test_stream_rejects_missing_rows_and_exposes_extra_rows(self):
+        rows = self.rows()
+        with tempfile.TemporaryDirectory(prefix='reo_stream_coverage_') as folder:
+            path = Path(folder)/'oof.csv'
+            self.write(path, rows[:1])
+            stream = independent_validator.aggregate_oof_stream(path)
+            with self.assertRaisesRegex(ValueError, 'missing row'):
+                independent_validator.compare_oof_block(stream, rows)
+            self.write(path, rows+[rows[0]])
+            stream = independent_validator.aggregate_oof_stream(path)
+            independent_validator.compare_oof_block(stream, rows)
+            self.assertIsNotNone(next(stream, None))
+            stream.close()
+
+    def test_zero_prediction_hash_is_id_order_independent_and_float_bit_exact(self):
+        rows = self.rows()
+        digest = independent_validator.prediction_sha(rows)
+        self.assertEqual(digest, independent_validator.prediction_sha(list(reversed(rows))))
+        changed = copy.deepcopy(rows)
+        changed[0]['predicted_auc'] = .1
+        self.assertNotEqual(digest, independent_validator.prediction_sha(changed))
+        changed[0]['predicted_auc'] = 0.
+        positive_zero = independent_validator.prediction_sha(changed)
+        changed[0]['predicted_auc'] = -0.
+        self.assertNotEqual(positive_zero, independent_validator.prediction_sha(changed))
+        with self.assertRaisesRegex(ValueError, 'Duplicate identity'):
+            independent_validator.prediction_sha(rows+[rows[0]])
 
 
 if __name__ == "__main__":
