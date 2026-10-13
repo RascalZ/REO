@@ -4,7 +4,7 @@
 
 **唯一持续维护的总计划：[RESEARCH_PLAN.md](RESEARCH_PLAN.md)。** 每次执行前先看§0；错误、方案变更及依据写入变更表。旧计划和旧稿作为历史快照保留。
 
-**当前执行：总计划v2.8。** 用户已授权新版固定八药5折外层×3重复、3折内层；两候选规则×三种表示、同政策组织参照及表达2000 EN共八臂。模型/统计已冻结、25项合成验收通过，2026-10-13 18:14已启动（执行`5e54a69`）；预算960任务、26,160 fits、119,208 OOF；详见[新版协议](docs/ORDINAL_REPEATED_V1_PROTOCOL.md)和[配置](config/ordinal_repeated_v1.json)。每外层任务独立进程并检查内存余量；原v1与四药诊断原样保留，CTRP封存。非劣性仅列待论证，未设−0.02或其他界值。
+**当前完成：总计划v2.9。** 新版固定八药5外层×3重复/3内层的六分子臂、同政策组织参照和表达2000 EN已完成960任务、26,160 fits、119,208 OOF。独立审计、统计、报告和14个公开产物校验通过，0失败/资源暂停/solver警告/回退。主关联REO−强表达宏Δρ为−0.005882，family9条件区间[−0.018714,+0.006614]；优势未建立，RMSE描述性证据还指向误差稍高。候选政策改善序表示排序，未证明完整pair优于秩或表达；原v1和四药结果保留，CTRP封存、非劣性待论证。见[阶段6报告](reports/阶段6_固定八药表示与候选规则重复评价.md)、[科学解读](docs/ORDINAL_REPEATED_ASSESSMENT.md)和[公开汇总](results/ordinal_repeated/)。
 
 历史阶段1冻结8种化合物、627个开发和180个主外验模型/生物组；后续癌队列v2修订为626/175。阶段2完成MIRA-1/PLX-4720的开发专用嵌套试跑（REO80、表达EN和组织基线）：462次拟合、约135秒、采样峰值RSS约0.66 GiB。历史pilot与当前正式结果均保留。
 
@@ -25,6 +25,7 @@ git clone https://github.com/RascalZ/REO.git
 cd REO
 python scripts/verify_public_snapshot.py
 python scripts/verify_public_ordinal.py
+python scripts/verify_public_ordinal_repeated.py
 ```
 
 这些入口仅用Python标准库核验公开汇总的哈希、结构及计数，不重新拟合模型或核验个体预测。完整身份与拟合审计需要版本化原始输入，见[数据与许可](docs/DATA_AVAILABILITY.md)、[复现命令及边界](docs/REPRODUCIBILITY.md)。

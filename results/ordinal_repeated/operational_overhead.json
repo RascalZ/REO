@@ -1,0 +1,46 @@
+{
+  "successful_pipeline_fits": 26160,
+  "failed_attempt_completed_fit_events": 0,
+  "resource_probe_fit_events": 0,
+  "completed_fit_events_total": 26160,
+  "failed_incomplete_fit_attempts": 0,
+  "attempted_fit_total_lower_bound": 26160,
+  "successful_task_wall_seconds_sum": 14340.372443900967,
+  "failed_attempt_wall_seconds_sum": 0.0,
+  "resource_probe_wall_seconds": 0.0,
+  "controller_session_wall_seconds_sum": 16431.15159179998,
+  "elapsed_first_start_to_final_finish_seconds": 16431.154261,
+  "inter_session_gap_seconds": 0,
+  "resource_paused_session_count": 0,
+  "failed_session_count": 0,
+  "failed_attempts": [],
+  "probes": [],
+  "recovery_snapshots": [],
+  "sessions": [
+    {
+      "session": 1,
+      "started_utc": "2026-10-13T10:14:55.678475+00:00",
+      "pending_at_start": 960,
+      "completed_tasks_this_session": 960,
+      "status": "completed",
+      "max_inflight_observed": 1,
+      "task_process_isolation": true,
+      "resource_wait_seconds": 8.84477529884316,
+      "child_wall_seconds_sum": 16312.904528599756,
+      "wall_seconds": 16431.15159179998,
+      "finished_utc": "2026-10-13T14:48:46.832736+00:00",
+      "sampled_process_tree_peak_rss_bytes": 1253429248,
+      "sampled_process_tree_peak_private_bytes": 1114628096,
+      "minimum_available_ram_bytes": 560119808,
+      "minimum_commit_free_bytes": 3858419712,
+      "rss_scope": "Sum parent/child RSS may double-count shared pages; sampled private/system commit recorded separately"
+    }
+  ],
+  "successful_checkpoint_hashes_preserved": 0,
+  "failed_checkpoint_hashes_preserved": 0,
+  "interpretation": [
+    "Safe pauses start no extra scientific fit and do not omit pending tasks.",
+    "Failed-attempt completed events are extra operational work, not independent observations.",
+    "Controller wall time already includes task work; inter-session gaps include investigation/recovery, not only idle time."
+  ]
+}

@@ -14,6 +14,8 @@ jobs:
         run: python scripts/verify_public_snapshot.py
       - name: Verify public ordinal diagnostic snapshot
         run: python scripts/verify_public_ordinal.py
+      - name: Verify public fixed-eight repeated snapshot
+        run: python scripts/verify_public_ordinal_repeated.py
       - name: Public ordinal snapshot tamper and boundary tests
         run: python -m unittest discover -s tests -p "test_public_ordinal_snapshot.py" -v
       - name: Public repeated-evaluation snapshot tamper and boundary tests

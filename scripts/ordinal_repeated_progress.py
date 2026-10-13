@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import csv
+import hashlib
 import json
 from pathlib import Path
 
@@ -65,6 +66,20 @@ def main():
     latest = logs[-1]
     output = dict(log=str(latest), **progress_from_log(latest, expected))
     run = args.run_dir if args.run_dir else ROOT/'runs'/cfg['run_name']
+    # Public provenance appears only after stopped-run QA and frozen statistics.
+    # Never consult live metadata to distinguish the completed postprocessing.
+    provenance_path = ROOT/'results/ordinal_repeated/analysis_provenance.json'
+    report_path = ROOT/'reports/阶段6_固定八药表示与候选规则重复评价.html'
+    if output['completed_tasks'] == expected and provenance_path.exists() and report_path.exists():
+        try:
+            provenance = json.loads(provenance_path.read_text(encoding='utf-8'))
+            if (provenance.get('status') == 'completed' and provenance.get('source_run') == run.resolve().relative_to(ROOT).as_posix()
+                    and provenance.get('config_sha256') == hashlib.sha256(args.config.read_bytes()).hexdigest()
+                    and provenance.get('validation_sha256')):
+                output.update(status='completed_with_post_exit_audit_statistics_and_report',
+                    analysis_provenance=str(provenance_path))
+        except (OSError, ValueError, KeyError):
+            pass
     resources = sorted(run.glob('resource_samples_session*.csv'),
                        key=lambda p: int(p.stem.split('session')[-1]))
     if resources:

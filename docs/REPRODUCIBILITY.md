@@ -6,7 +6,7 @@
 - Implemented in stage 2: training-only feature/scaling/tissue/target states, grouped 3-outer/3-inner development CV, exact GDSC source-row/dose/response checks, two-drug EN/tissue/mean comparisons and resource audit. See the stage-2 report; these are exploratory engineering outputs, not confirmatory performance estimates.
 - Completed: cancer-model eligibility v2 (626 development groups and 175 sealed external groups), expanded regularization path and REO200/RF pilot, fixed eight-drug 5-outer × 3-repeat / 3-inner evaluation, and conditional paired-bootstrap analysis. Formal v1 remains unchanged.
 - Completed: four-drug 3-outer × 1-repeat / 3-inner diagnostic with two candidate rules, three molecular representations, the same-policy tissue reference and nine full-pipeline within-tissue permutations. Independent validation, frozen statistics and reporting passed. The successful design contains 840 outer tasks, 22,440 fits and 173,600 OOF rows; operational overhead is counted separately below.
-- Pending: broader validation of the outcome-informed candidate/representation findings, sealed external predictions, final manuscript results and a clean-environment full source/model replay. Local outer-fit audit checkpoints exist; these are not final deployment models or external validation results.
+- Pending: final all-development models and sealed external predictions, final manuscript results and a clean-environment full source/model replay. The fixed-eight repeated candidate/representation evaluation is now complete. Local outer-fit audit checkpoints exist; these are not final deployment models or external validation results.
 - Local environment: Python 3.12.14, NumPy 2.3.5, pandas 3.0.1, openpyxl 3.1.5, RDKit 2026.9.1. Expression mmap files are two float64 arrays of 1,019 × 57,820, about 471 MB each. No GPU is needed for phase 1. Pilot/formal/diagnostic runtime and sampled memory measurements are reported with their execution boundaries; they are not isolated algorithm benchmarks.
 
 ## Quick inspection without original data
@@ -240,7 +240,7 @@ question: no numerical margin, including −0.02, is adopted, and no verdict is 
 
 Implementation and freeze are complete. Execution began on 2026-10-13 at
 18:14 Asia/Shanghai using scientific commit `5e54a693fe3a047c53b3d9e2dfeb7638ff1b9b43`.
-This is an active run; no completed-run or scientific-effect claim is made yet.
+Training completed on 2026-10-13 at 22:48 Asia/Shanghai. Independent QA, statistics and reporting then passed; numerical conclusions and limits are recorded below.
 
 Pre-fit acceptance on 2026-10-13 passed 19 synthetic integrity and six statistical
 contracts, all entry points compiled, and both historical locks verified unchanged.
@@ -258,3 +258,34 @@ python scripts/run_ordinal_repeated_stage.py --execution-commit 5e54a693fe3a047c
 Progress reads append-only logs with `python scripts/ordinal_repeated_progress.py`.
 Do not audit live metadata. Actual scientific completion requires the post-exit
 validator and statistics; a preflight test pass is not a prediction result.
+
+
+The completed repeated run has 960 successful tasks, 26,160 fits and 119,208 OOF
+rows. Independent QA verified 960 fresh process identities, 1,440 shared-gene
+contexts, the original/source float labels and exact aggregate outputs; warning
+and fallback fits are zero. There were no failed/paused sessions or extra probes.
+Controller wall time was 16,431.152 seconds, successful task wall sum 14,340.372
+seconds, and child wall sum 16,312.905 seconds. These overlapping timings cannot
+be added. The process-tree sampled peak RSS was 1,253,429,248 bytes; private peak
+was 1,114,628,096 bytes. Task samples exclude interpreter/import startup, include
+worker initialization, and are operational observations rather than an isolated
+complexity benchmark. Resource-policy check/wait timing includes immediate
+checks, not only actual pressure-induced waiting.
+
+Aggregate-only verification is now available without original inputs:
+
+```sh
+python scripts/verify_public_ordinal_repeated.py
+python -m unittest discover -s tests -p "test_public_ordinal_repeated_snapshot.py" -v
+```
+
+Fourteen products (thirteen CSVs plus operational_overhead.json) passed hashes
+and coverage/algebra checks. The paired table has 900 effects from 25 contrasts
+and four metrics, with separate Spearman families of nine and eighteen. Main
+association-pair versus strong-expression macro difference is -0.005882 with
+family-nine nominal conditional interval [-0.018714, 0.006614]; it does not
+establish superiority, noninferiority, equivalence or full information retention.
+The corresponding RMSE improvement is negative. Full results and methodological
+limits are in the stage-6 report and ORDINAL_REPEATED_ASSESSMENT.md. No new null
+fits were performed; four-case historical nulls retain their engineering scope.
+CTRP remains sealed and final models have not yet been trained.

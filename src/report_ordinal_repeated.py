@@ -24,12 +24,34 @@ LABELS = {"tissue_null": "Tissue means", "expression_strong": "Expression 2000 /
     "response_association_pair_full": "Full pair / Association"}
 
 
+def signed_number(value):
+    """Compact display without rounding a nonzero interval endpoint to zero."""
+    if not np.isfinite(value):
+        return "NA"
+    if value != 0 and abs(value) < 0.000005:
+        return f"{value:+.2e}"
+    return f"{value:+.5f}"
+
+
+def repeat_numbers(value):
+    values = json.loads(value) if isinstance(value, str) else value
+    return " / ".join("NA" if item is None else signed_number(item) for item in values)
+
+
 def interval(row, adjusted=False):
     prefix = "family_adjusted_conditional_" if adjusted else "conditional_95_"
     lower, upper = getattr(row, prefix + "lower"), getattr(row, prefix + "upper")
     if not all(np.isfinite(value) for value in (row.point, lower, upper)):
         return "NA（" + row.ci_status + "）"
-    return f"{row.point:+.5f} [{lower:+.5f}, {upper:+.5f}]"
+    return f"{signed_number(row.point)} [{signed_number(lower)}, {signed_number(upper)}]"
+
+
+def save_figure(fig, output, stem):
+    for extension in ("png", "svg"):
+        path = output / (stem + "." + extension)
+        fig.savefig(path, dpi=190, bbox_inches="tight")
+        if extension == "svg":
+            path.write_bytes(("\n".join(line.rstrip() for line in path.read_text(encoding="utf-8").splitlines()) + "\n").encode("utf-8"))
 
 
 def make_figures(frames, config, names, output):
@@ -57,8 +79,7 @@ def make_figures(frames, config, names, output):
     ax.set_title("Primary: association full pair - strong expression (MAD 2000)")
     fig.text(.5, .01, "Dark: 95% conditional interval. Pale: separate family-9 nominal interval. No retraining coverage guarantee.", ha="center", fontsize=8)
     fig.tight_layout(rect=(0, .04, 1, 1))
-    for extension in ("png", "svg"):
-        fig.savefig(output / ("primary_paired_effects." + extension), dpi=190, bbox_inches="tight")
+    save_figure(fig, output, "primary_paired_effects")
     plt.close(fig)
     audit = frames["molecular_and_failure_summary"]
     models = [model for model in config["models"] if model != "tissue_null"]
@@ -76,8 +97,7 @@ def make_figures(frames, config, names, output):
     ax.set_title("Zero molecular coefficients across five outer folds x three repeats")
     fig.colorbar(im, ax=ax, label="Zero-molecular outer fits")
     fig.tight_layout()
-    for extension in ("png", "svg"):
-        fig.savefig(output / ("zero_molecular_fits." + extension), dpi=190, bbox_inches="tight")
+    save_figure(fig, output, "zero_molecular_fits")
     plt.close(fig)
 
 
@@ -149,6 +169,9 @@ def main():
     else:
         conclusion = "主宏比较的名义条件区间跨零，现有证据不足以认定REO优于强表达基线；也不能认定非劣或等价。"
     paragraph(conclusion + " 主宏ΔSpearman及family9区间：" + interval(macro, adjusted=True))
+    macro_error = effects[effects.gdsc_drug_id.eq(MACRO) & effects.contrast.eq(PRIMARY) & effects.metric.eq("rmse")].iloc[0]
+    macro_tissue = effects[effects.gdsc_drug_id.eq(MACRO) & effects.contrast.eq("response_association_pair_full-tissue_null") & effects.metric.eq("spearman")].iloc[0]
+    paragraph("同一主比较的宏RMSE改善量（强表达RMSE减REO RMSE，正值有利于REO）及未校正95%条件区间：" + interval(macro_error) + "。排序和误差指标需要同时报告；不能用排序区间跨零来宣称性能相当。REO相对同政策组织参照的宏Δρ及未校正95%条件区间为" + interval(macro_tissue) + "；这回答组织均值以外的增量，不能单独建立对表达模型的优势。")
     paragraph(f"固定八药×8臂×5外层×3重复、3内层已完成：{provenance['expected_outer_tasks']}个成功任务、{provenance['actual_fit_events']:,}次成功评价拟合、{provenance['oof_rows']:,}条OOF。独立生物组{provenance['n_observed_biological_groups']}个；重复与模型记录不能扩大独立N。既有v1和四案例结果保留，CTRP继续封存，本轮没有新增置换。")
     heading("指标、配对与推断范围")
     paragraph("每种药物、每个模型先分别计算三份完整OOF的指标，再平均三个指标；不先平均预测再求相关，不将15个相关外折当独立试验。所有药物、模型和重复共享626组的10,000次bootstrap，Spearman按每次抽样的重复数重新计算精确并列秩。任何组成无定义则保留NA，不能删除药物或重复后重新定义宏平均。")
@@ -162,7 +185,7 @@ def main():
         s = stability[stability.gdsc_drug_id.eq(drug) & stability.comparison.eq(PRIMARY) & stability.metric.eq("spearman")].iloc[0]
         error = effects[effects.gdsc_drug_id.eq(drug) & effects.contrast.eq(PRIMARY) & effects.metric.eq("rmse")].iloc[0]
         rows.append({"药物": names[drug], "Δρ及family9区间": interval(row, True), "边际95%区间": interval(row),
-            "三个重复Δρ": s.repeat_values, "RMSE改善量及95%CI": interval(error)})
+            "三个重复Δρ（按顺序）": repeat_numbers(s.repeat_values), "RMSE改善量及95%CI": interval(error)})
     table(pd.DataFrame(rows))
     heading("匹配200基因的表示比较与候选规则作用")
     rows = []
@@ -188,13 +211,18 @@ def main():
         "failed_incomplete_fit_attempts", "attempted_fit_total_lower_bound", "successful_task_wall_seconds_sum", "failed_attempt_wall_seconds_sum",
         "resource_probe_wall_seconds", "controller_session_wall_seconds_sum", "elapsed_first_start_to_final_finish_seconds", "inter_session_gap_seconds",
         "resource_paused_session_count", "failed_session_count")
-    table(pd.DataFrame([{"操作审计项目": key, "实际值": overhead.get(key, "未单列")} for key in keys]))
+    def operation_value(key):
+        value = overhead.get(key, "未单列")
+        if isinstance(value, (int, float)):
+            return f"{value:,.2f}" if "seconds" in key else f"{value:,d}" if isinstance(value, int) else f"{value:,.0f}"
+        return str(value)
+    table(pd.DataFrame([{"操作审计项目": key, "实际值": operation_value(key)} for key in keys]))
     paragraph("成功任务、失败尝试、资源probe和未完成调用分别计数。任务wall从execute_task入口计时，包括worker初始化、数据准备及嵌套评价，但不包括此前子进程启动和数值库导入；不能将它称为fresh-child完整端到端耗时。若会话审计另列child_wall_seconds_sum，则包含子进程启动与等待。控制器会话时间包含任务时间，不能重复累加；首末历时还包含会话间隔，间隔可能含资源等待、调查和人工暂停，不等于纯休眠。资源不足的安全暂停不算模型失败，未完成运行不得生成最终成绩报告。")
     heading("下一步边界与可复现材料")
     paragraph("是否继续外验应同时考虑逐药与宏效应、误差指标、组织以上增量、重复波动和特征稳定性，不能只挑排序点估计或表现好的药物。当前评价不证明临床转化，也未检验RNA-seq至芯片迁移。最终全开发模型与外验统计方案另行冻结后，才能执行既定CTRP跨药敏筛选评价。")
     paragraph("统计来源与代码哈希见results/ordinal_repeated/analysis_provenance.json；候选/活跃特征、参数边界、零解、资源及覆盖有独立聚合表。个体OOF、训练成员和bootstrap组权重仍留在本地runs；本报告只读取完成后的元数据、独立审计和聚合结果。唯一总计划为RESEARCH_PLAN.md。")
     stem = "阶段6_固定八药表示与候选规则重复评价"
-    (output / (stem + ".md")).write_bytes(("\n".join(md) + "\n").encode("utf-8"))
+    (output / (stem + ".md")).write_bytes(("\n".join(md).rstrip() + "\n").encode("utf-8"))
     style = "body{font-family:system-ui,'Microsoft YaHei',sans-serif;max-width:1450px;margin:36px auto;padding:0 24px;color:#22313f;line-height:1.7}h2{margin-top:34px;border-bottom:1px solid #ccd6df}table{border-collapse:collapse;font-size:13px;min-width:750px}th,td{padding:8px 10px;border-bottom:1px solid #dce4ec;text-align:left;white-space:nowrap}th{background:#eaf0f6}tbody tr:nth-child(even){background:#f6f8fa}.table-wrap{overflow:auto;max-height:740px;margin:20px 0}img{width:100%}figure{margin:24px 0}figcaption{font-size:14px;color:#526171}"
     page = '<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>' + stem + '</title><style>' + style + '</style><body>' + "\n".join(markup) + '</body></html>'
     (output / (stem + ".html")).write_bytes(page.encode("utf-8"))
