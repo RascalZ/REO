@@ -289,3 +289,12 @@ The corresponding RMSE improvement is negative. Full results and methodological
 limits are in the stage-6 report and ORDINAL_REPEATED_ASSESSMENT.md. No new null
 fits were performed; four-case historical nulls retain their engineering scope.
 CTRP remains sealed and final models have not yet been trained.
+
+
+On 2026-10-13, a fresh local Git clone of public commit
+`bd5dcaa10c7b8b648e660fa0c7024919d218b781` passed all three standard-library
+public verifiers (cohort, four-case diagnostic and fixed-eight repeated snapshot)
+using isolated Python `-I -S`. All source and script files compiled in that clone.
+It contained no private raw data, manifests, checkpoints or OOF. This validates
+the public inspection path and published bytes; it is not a clean-environment
+retraining, dependency-installation or original-data reconstruction claim.
