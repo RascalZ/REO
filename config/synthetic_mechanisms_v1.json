@@ -1,0 +1,71 @@
+{
+  "schema_version": "1.0",
+  "declared_analysis_date": "2026-10-14",
+  "protocol": "docs/TISSUE_SENSITIVITY_LOTO_PROTOCOL_V1.md",
+  "source_config": "config/ordinal_repeated_v1.json",
+  "run_name": "fixed8_synthetic_mechanism_controls_v1",
+  "scenario_order": [
+    "tissue_only",
+    "weak_molecular",
+    "common_sample_amplitude",
+    "predefined_pair_order"
+  ],
+  "scenario_indices": {
+    "tissue_only": 0,
+    "weak_molecular": 1,
+    "common_sample_amplitude": 2,
+    "predefined_pair_order": 3
+  },
+  "replicates_per_scenario": 10,
+  "n_samples": 240,
+  "n_tissues": 8,
+  "samples_per_tissue": 30,
+  "n_genes": 220,
+  "gene_ids": "SIMGENE_0001 through SIMGENE_0220",
+  "cohort_seed_formula": "2026101400 + 100*scenario_index + replicate_index",
+  "split_seed_formula": "cohort_seed + 1000 + outer_fold",
+  "outer_folds": 3,
+  "inner_folds": 3,
+  "models": [
+    "tissue_null",
+    "expression_strong",
+    "mad_expression",
+    "mad_rank",
+    "mad_pair_full",
+    "response_association_expression",
+    "response_association_rank",
+    "response_association_pair_full"
+  ],
+  "elastic_net": {
+    "reuse_source_grid": true,
+    "alpha_ratios": [
+      1.0,
+      0.3,
+      0.1,
+      0.03,
+      0.01
+    ],
+    "l1_ratios": [
+      0.5,
+      1.0
+    ],
+    "objective": "Pooled inner RMSE",
+    "feature_budget": 200,
+    "expression_strong_budget": 2000,
+    "eligible_gene_shortfall": "retain and report; no substitution"
+  },
+  "response_range": [
+    0.01,
+    0.99
+  ],
+  "external_response_access": "forbidden",
+  "expected_contract": {
+    "cohorts": 40,
+    "tasks": 960,
+    "fits": 26160,
+    "per_sample_model_oof_predictions": 76800,
+    "new_real_development_model_fits": 0,
+    "synthetic_model_fits": 26160
+  },
+  "interpretation": "Finite-sample mechanism controls under explicit synthetic assumptions; not biological mechanism validation or new evidence of REO superiority"
+}
