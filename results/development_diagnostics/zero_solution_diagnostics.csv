@@ -1,0 +1,57 @@
+﻿gdsc_drug_id,drug_name,model,outer_fits,zero_molecular_fits,nonzero_molecular_fits,alpha_ratio_1_selected_fits,warning_outer_fits,fallback_outer_fits,inner_nonzero_better_contexts,median_best_nonzero_minus_zero_rmse,scope
+1931,MIRA-1,expression_strong,15,11,4,11,0,0,4,0.0003892403671064415,15_overlapping_outer_training_contexts_descriptive
+1931,MIRA-1,mad_expression,15,11,4,11,0,0,4,0.00018990665967556775,15_overlapping_outer_training_contexts_descriptive
+1931,MIRA-1,mad_rank,15,13,2,13,0,0,2,0.0004624995356657495,15_overlapping_outer_training_contexts_descriptive
+1931,MIRA-1,mad_pair_full,15,15,0,15,0,0,0,0.000904410319669733,15_overlapping_outer_training_contexts_descriptive
+1931,MIRA-1,response_association_expression,15,8,7,8,0,0,7,2.3914526542465758e-05,15_overlapping_outer_training_contexts_descriptive
+1931,MIRA-1,response_association_rank,15,5,10,5,0,0,10,-0.0002669199397209304,15_overlapping_outer_training_contexts_descriptive
+1931,MIRA-1,response_association_pair_full,15,7,8,7,0,0,8,-0.00025342086878877776,15_overlapping_outer_training_contexts_descriptive
+1036,PLX-4720,expression_strong,15,14,1,14,0,0,1,0.0013471848343871162,15_overlapping_outer_training_contexts_descriptive
+1036,PLX-4720,mad_expression,15,12,3,12,0,0,3,0.0004938234583205525,15_overlapping_outer_training_contexts_descriptive
+1036,PLX-4720,mad_rank,15,15,0,15,0,0,0,0.0014537667507058191,15_overlapping_outer_training_contexts_descriptive
+1036,PLX-4720,mad_pair_full,15,15,0,15,0,0,0,0.00371785990756697,15_overlapping_outer_training_contexts_descriptive
+1036,PLX-4720,response_association_expression,15,13,2,13,0,0,2,0.0016705666679061246,15_overlapping_outer_training_contexts_descriptive
+1036,PLX-4720,response_association_rank,15,13,2,13,0,0,2,0.001283901624076926,15_overlapping_outer_training_contexts_descriptive
+1036,PLX-4720,response_association_pair_full,15,13,2,13,0,0,2,0.0018276307486504717,15_overlapping_outer_training_contexts_descriptive
+1191,Bortezomib,expression_strong,15,9,6,9,0,0,6,0.0005636930507883636,15_overlapping_outer_training_contexts_descriptive
+1191,Bortezomib,mad_expression,15,7,8,7,0,0,8,-0.00022128599111345681,15_overlapping_outer_training_contexts_descriptive
+1191,Bortezomib,mad_rank,15,8,7,8,0,0,7,7.136153314002414e-05,15_overlapping_outer_training_contexts_descriptive
+1191,Bortezomib,mad_pair_full,15,15,0,15,0,0,0,0.0016767061813748318,15_overlapping_outer_training_contexts_descriptive
+1191,Bortezomib,response_association_expression,15,10,5,10,0,0,5,0.0006243214334536867,15_overlapping_outer_training_contexts_descriptive
+1191,Bortezomib,response_association_rank,15,7,8,7,0,0,8,-0.000301666645106502,15_overlapping_outer_training_contexts_descriptive
+1191,Bortezomib,response_association_pair_full,15,11,4,11,0,0,4,0.0011725451234672196,15_overlapping_outer_training_contexts_descriptive
+1930,Telomerase Inhibitor IX,expression_strong,15,0,15,0,0,0,15,-0.008864458797494437,15_overlapping_outer_training_contexts_descriptive
+1930,Telomerase Inhibitor IX,mad_expression,15,0,15,0,0,0,15,-0.006610882694925935,15_overlapping_outer_training_contexts_descriptive
+1930,Telomerase Inhibitor IX,mad_rank,15,0,15,0,0,0,15,-0.005098992044803616,15_overlapping_outer_training_contexts_descriptive
+1930,Telomerase Inhibitor IX,mad_pair_full,15,0,15,0,0,0,15,-0.005785936827172045,15_overlapping_outer_training_contexts_descriptive
+1930,Telomerase Inhibitor IX,response_association_expression,15,0,15,0,0,0,15,-0.008731569793051494,15_overlapping_outer_training_contexts_descriptive
+1930,Telomerase Inhibitor IX,response_association_rank,15,0,15,0,0,0,15,-0.007828803573900117,15_overlapping_outer_training_contexts_descriptive
+1930,Telomerase Inhibitor IX,response_association_pair_full,15,0,15,0,0,0,15,-0.008071672791183898,15_overlapping_outer_training_contexts_descriptive
+1199,Tamoxifen,expression_strong,15,15,0,15,0,0,0,0.001134357922804842,15_overlapping_outer_training_contexts_descriptive
+1199,Tamoxifen,mad_expression,15,12,3,12,0,0,3,0.00048776103088116196,15_overlapping_outer_training_contexts_descriptive
+1199,Tamoxifen,mad_rank,15,14,1,14,0,0,1,0.00061483522304457,15_overlapping_outer_training_contexts_descriptive
+1199,Tamoxifen,mad_pair_full,15,15,0,15,0,0,0,0.0019459531127438007,15_overlapping_outer_training_contexts_descriptive
+1199,Tamoxifen,response_association_expression,15,14,1,14,0,0,1,0.0015854359410686567,15_overlapping_outer_training_contexts_descriptive
+1199,Tamoxifen,response_association_rank,15,15,0,15,0,0,0,0.0011609423798793553,15_overlapping_outer_training_contexts_descriptive
+1199,Tamoxifen,response_association_pair_full,15,14,1,14,0,0,1,0.001660772990643343,15_overlapping_outer_training_contexts_descriptive
+1091,BMS-536924,expression_strong,15,0,15,0,0,0,15,-0.0037573037743138665,15_overlapping_outer_training_contexts_descriptive
+1091,BMS-536924,mad_expression,15,0,15,0,0,0,15,-0.0015484691621190927,15_overlapping_outer_training_contexts_descriptive
+1091,BMS-536924,mad_rank,15,1,14,1,0,0,14,-0.0019255601507507936,15_overlapping_outer_training_contexts_descriptive
+1091,BMS-536924,mad_pair_full,15,8,7,8,0,0,7,0.0002357397076623441,15_overlapping_outer_training_contexts_descriptive
+1091,BMS-536924,response_association_expression,15,0,15,0,0,0,15,-0.0037023957219366327,15_overlapping_outer_training_contexts_descriptive
+1091,BMS-536924,response_association_rank,15,0,15,0,0,0,15,-0.0028242165544449804,15_overlapping_outer_training_contexts_descriptive
+1091,BMS-536924,response_association_pair_full,15,1,14,1,0,0,14,-0.0025699341100956646,15_overlapping_outer_training_contexts_descriptive
+1010,Gefitinib,expression_strong,15,0,15,0,0,0,15,-0.001351625318253634,15_overlapping_outer_training_contexts_descriptive
+1010,Gefitinib,mad_expression,15,0,15,0,0,0,15,-0.0015291446617605106,15_overlapping_outer_training_contexts_descriptive
+1010,Gefitinib,mad_rank,15,0,15,0,0,0,15,-0.00146310324587072,15_overlapping_outer_training_contexts_descriptive
+1010,Gefitinib,mad_pair_full,15,3,12,3,0,0,12,-0.00055122500056657,15_overlapping_outer_training_contexts_descriptive
+1010,Gefitinib,response_association_expression,15,1,14,1,0,0,14,-0.001902579235303986,15_overlapping_outer_training_contexts_descriptive
+1010,Gefitinib,response_association_rank,15,0,15,0,0,0,15,-0.0015517191597738608,15_overlapping_outer_training_contexts_descriptive
+1010,Gefitinib,response_association_pair_full,15,1,14,1,0,0,14,-0.0018716191409045985,15_overlapping_outer_training_contexts_descriptive
+1922,Cediranib,expression_strong,15,11,4,11,0,0,4,0.0013638801087519775,15_overlapping_outer_training_contexts_descriptive
+1922,Cediranib,mad_expression,15,10,5,10,0,0,5,0.000515842894139168,15_overlapping_outer_training_contexts_descriptive
+1922,Cediranib,mad_rank,15,12,3,12,0,0,3,0.0007253528414041532,15_overlapping_outer_training_contexts_descriptive
+1922,Cediranib,mad_pair_full,15,14,1,14,0,0,1,0.0026898037856867563,15_overlapping_outer_training_contexts_descriptive
+1922,Cediranib,response_association_expression,15,15,0,15,0,0,0,0.002295046563972905,15_overlapping_outer_training_contexts_descriptive
+1922,Cediranib,response_association_rank,15,15,0,15,0,0,0,0.00316999220186108,15_overlapping_outer_training_contexts_descriptive
+1922,Cediranib,response_association_pair_full,15,7,8,7,0,0,8,-9.699425063179612e-05,15_overlapping_outer_training_contexts_descriptive

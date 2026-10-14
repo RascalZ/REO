@@ -1,0 +1,69 @@
+{
+  "status": "completed",
+  "analysis_name": "fixed_eight_development_zero_solution_and_drug_heterogeneity",
+  "analysis_protocol": "docs/DEVELOPMENT_DIAGNOSTICS_PROTOCOL_V1.md",
+  "analysis_protocol_version": "v1",
+  "analysis_script": "src/analyze_development_diagnostics.py",
+  "analysis_script_sha256": "02f75a029729f2a6e0fa7e1641e12f7c33406c779b814eacccafc68eeb675d9e",
+  "execution_commit": "749b7f52716dd296a8460d11081c639e64416fcf",
+  "source_run": "gdsc2-cancer-v2-fixed8-mad-association-expression-rank-pair-nested5x3-inner3-repeated-v1",
+  "source_execution_commit": "5e54a693fe3a047c53b3d9e2dfeb7638ff1b9b43",
+  "source_lock_sha256": "ef8f588b99c42cb54db73b495127bc41882fa3e5b450e62167c6b46c53d583e7",
+  "source_metadata_sha256": "bffdad31b98c5d17b798de5afa713980dc8b90005a31524c40c42deb57749f2e",
+  "source_validation_sha256": "af1c69c28da8f3cd3d30b17ded00755ec338b6954d14a418dd3e8f169e24fcc4",
+  "source_oof_sha256": "b2ffeeb13083340fdc2602a1d40f228615d175bf173f20a42a20c6b611e73a9e",
+  "development_groups": 626,
+  "molecular_outer_fits": 840,
+  "zero_molecular_outer_fits": 430,
+  "alpha_ratio_1_selected_outer_fits": 430,
+  "warning_outer_fits": 0,
+  "fallback_outer_fits": 0,
+  "external_response_accessed": false,
+  "new_model_fits": 0,
+  "input_sha256": {
+    "config_lock": "ef8f588b99c42cb54db73b495127bc41882fa3e5b450e62167c6b46c53d583e7",
+    "analysis_config": "7c2e8f137ad809c8533bc5c24e24a82970686e7b7f5c84795ee13f30e71cc3f7",
+    "analysis_provenance": "8c9f0289d9773c61eb7356592f11cb84d626f77599c9ab9a5d79195f2a3a2307",
+    "repeat_metrics": "15dff8e3d84a2e24400301f17918c043353be7739fca6cc828a35b16756daf79",
+    "paired_effects": "9b36a9ffb874e5f0a8903d72ad12a4cef51049ebdd137f6d6cc4be3ace4c8f8d",
+    "zero_summary": "8ee5a3f49b640e4e7ca868ff918fab17b60a93fe9cf1069ed9cdb81739206512",
+    "chosen_parameters": "5ef238dc7fff896e49ec61f55b4210f5ffbe9d2bd3a2fb083b954fde0be6854e",
+    "feature_stability": "12ef158935249dfff78f70330b99ca0f88e71f56867ef919633d560b848e9fd8",
+    "prediction_deviation": "99e6bc5a1048fd867eefcd02df8ca71b2de416c95a37dba4a8f6aa449fba4f5a",
+    "outer_fit_audits": "265578e6def71e83dbccf1446e833d2d47da0a2908882ee0d11979d57d2fb324",
+    "development_responses": "f943374708d1534aff1425a5dd20599fca3d1cec2ecc0f6241b7e56f955534c1"
+  },
+  "output_sha256": {
+    "zero_solution_diagnostics.csv": "dd00205230405d84d287772fd2682a259205cd09267d67209e74c0f8ecf74cf7",
+    "inner_path_competition.csv": "6f58daaa74f49fa7d6a89f5c35d6512671ede249c8743ee87020f82cb5768bb7",
+    "zero_solution_by_repeat.csv": "71b8a719f570891eaf6e7cda53d094f96dae5b0fccecf056f21de9006951b352",
+    "response_decomposition.csv": "a47ea1f94bc4b5b098f507115493d07c98948e9c8215abacd214df3d18e26e23",
+    "drug_heterogeneity.csv": "9c2a7578047ffd455da52512901c9a728c3c355f704e7c2ec328f11f72e98675"
+  },
+  "output_rows": {
+    "zero_solution_diagnostics.csv": 56,
+    "inner_path_competition.csv": 56,
+    "zero_solution_by_repeat.csv": 168,
+    "response_decomposition.csv": 8,
+    "drug_heterogeneity.csv": 8
+  },
+  "elapsed_seconds": 2.317658499989193,
+  "peak_rss_bytes": 43442176,
+  "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "created_utc": "2026-10-14T07:44:27.519187+00:00",
+  "scope": "post_hoc_development_descriptive_diagnostic; no new inference family",
+  "script_integration_history": {
+    "stopped_attempts_before_complete_report": 5,
+    "issues": [
+      "Input cardinality assertion initially excluded tissue and expression reference arms.",
+      "Drug-level prediction-deviation table also contains a macro row.",
+      "Repeat-specific rows were initially passed to a helper expecting three repeats.",
+      "Zero endpoint closure initially excluded the 2000-gene expression reference arm.",
+      "Report field name initially differed from the serialized model-specific profile key."
+    ],
+    "new_model_fits_during_attempts": 0,
+    "external_response_accessed": false,
+    "final_run_overwrote_all_preliminary_aggregates": true
+  }
+}

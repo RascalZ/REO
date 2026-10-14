@@ -1,0 +1,169 @@
+﻿gdsc_drug_id,drug_name,model,repeat,outer_fits,zero_molecular_fits,nonzero_molecular_fits,alpha_ratio_1_selected_fits,nonzero_better_inner_contexts,warning_outer_fits,fallback_outer_fits
+1931,MIRA-1,expression_strong,0,5,4,1,4,1,0,0
+1931,MIRA-1,expression_strong,1,5,3,2,3,2,0,0
+1931,MIRA-1,expression_strong,2,5,4,1,4,1,0,0
+1931,MIRA-1,mad_expression,0,5,5,0,5,0,0,0
+1931,MIRA-1,mad_expression,1,5,3,2,3,2,0,0
+1931,MIRA-1,mad_expression,2,5,3,2,3,2,0,0
+1931,MIRA-1,mad_rank,0,5,5,0,5,0,0,0
+1931,MIRA-1,mad_rank,1,5,4,1,4,1,0,0
+1931,MIRA-1,mad_rank,2,5,4,1,4,1,0,0
+1931,MIRA-1,mad_pair_full,0,5,5,0,5,0,0,0
+1931,MIRA-1,mad_pair_full,1,5,5,0,5,0,0,0
+1931,MIRA-1,mad_pair_full,2,5,5,0,5,0,0,0
+1931,MIRA-1,response_association_expression,0,5,4,1,4,1,0,0
+1931,MIRA-1,response_association_expression,1,5,3,2,3,2,0,0
+1931,MIRA-1,response_association_expression,2,5,1,4,1,4,0,0
+1931,MIRA-1,response_association_rank,0,5,2,3,2,3,0,0
+1931,MIRA-1,response_association_rank,1,5,1,4,1,4,0,0
+1931,MIRA-1,response_association_rank,2,5,2,3,2,3,0,0
+1931,MIRA-1,response_association_pair_full,0,5,3,2,3,2,0,0
+1931,MIRA-1,response_association_pair_full,1,5,2,3,2,3,0,0
+1931,MIRA-1,response_association_pair_full,2,5,2,3,2,3,0,0
+1036,PLX-4720,expression_strong,0,5,4,1,4,1,0,0
+1036,PLX-4720,expression_strong,1,5,5,0,5,0,0,0
+1036,PLX-4720,expression_strong,2,5,5,0,5,0,0,0
+1036,PLX-4720,mad_expression,0,5,3,2,3,2,0,0
+1036,PLX-4720,mad_expression,1,5,4,1,4,1,0,0
+1036,PLX-4720,mad_expression,2,5,5,0,5,0,0,0
+1036,PLX-4720,mad_rank,0,5,5,0,5,0,0,0
+1036,PLX-4720,mad_rank,1,5,5,0,5,0,0,0
+1036,PLX-4720,mad_rank,2,5,5,0,5,0,0,0
+1036,PLX-4720,mad_pair_full,0,5,5,0,5,0,0,0
+1036,PLX-4720,mad_pair_full,1,5,5,0,5,0,0,0
+1036,PLX-4720,mad_pair_full,2,5,5,0,5,0,0,0
+1036,PLX-4720,response_association_expression,0,5,4,1,4,1,0,0
+1036,PLX-4720,response_association_expression,1,5,5,0,5,0,0,0
+1036,PLX-4720,response_association_expression,2,5,4,1,4,1,0,0
+1036,PLX-4720,response_association_rank,0,5,4,1,4,1,0,0
+1036,PLX-4720,response_association_rank,1,5,5,0,5,0,0,0
+1036,PLX-4720,response_association_rank,2,5,4,1,4,1,0,0
+1036,PLX-4720,response_association_pair_full,0,5,5,0,5,0,0,0
+1036,PLX-4720,response_association_pair_full,1,5,5,0,5,0,0,0
+1036,PLX-4720,response_association_pair_full,2,5,3,2,3,2,0,0
+1191,Bortezomib,expression_strong,0,5,4,1,4,1,0,0
+1191,Bortezomib,expression_strong,1,5,2,3,2,3,0,0
+1191,Bortezomib,expression_strong,2,5,3,2,3,2,0,0
+1191,Bortezomib,mad_expression,0,5,2,3,2,3,0,0
+1191,Bortezomib,mad_expression,1,5,2,3,2,3,0,0
+1191,Bortezomib,mad_expression,2,5,3,2,3,2,0,0
+1191,Bortezomib,mad_rank,0,5,2,3,2,3,0,0
+1191,Bortezomib,mad_rank,1,5,2,3,2,3,0,0
+1191,Bortezomib,mad_rank,2,5,4,1,4,1,0,0
+1191,Bortezomib,mad_pair_full,0,5,5,0,5,0,0,0
+1191,Bortezomib,mad_pair_full,1,5,5,0,5,0,0,0
+1191,Bortezomib,mad_pair_full,2,5,5,0,5,0,0,0
+1191,Bortezomib,response_association_expression,0,5,3,2,3,2,0,0
+1191,Bortezomib,response_association_expression,1,5,3,2,3,2,0,0
+1191,Bortezomib,response_association_expression,2,5,4,1,4,1,0,0
+1191,Bortezomib,response_association_rank,0,5,1,4,1,4,0,0
+1191,Bortezomib,response_association_rank,1,5,2,3,2,3,0,0
+1191,Bortezomib,response_association_rank,2,5,4,1,4,1,0,0
+1191,Bortezomib,response_association_pair_full,0,5,4,1,4,1,0,0
+1191,Bortezomib,response_association_pair_full,1,5,2,3,2,3,0,0
+1191,Bortezomib,response_association_pair_full,2,5,5,0,5,0,0,0
+1930,Telomerase Inhibitor IX,expression_strong,0,5,0,5,0,5,0,0
+1930,Telomerase Inhibitor IX,expression_strong,1,5,0,5,0,5,0,0
+1930,Telomerase Inhibitor IX,expression_strong,2,5,0,5,0,5,0,0
+1930,Telomerase Inhibitor IX,mad_expression,0,5,0,5,0,5,0,0
+1930,Telomerase Inhibitor IX,mad_expression,1,5,0,5,0,5,0,0
+1930,Telomerase Inhibitor IX,mad_expression,2,5,0,5,0,5,0,0
+1930,Telomerase Inhibitor IX,mad_rank,0,5,0,5,0,5,0,0
+1930,Telomerase Inhibitor IX,mad_rank,1,5,0,5,0,5,0,0
+1930,Telomerase Inhibitor IX,mad_rank,2,5,0,5,0,5,0,0
+1930,Telomerase Inhibitor IX,mad_pair_full,0,5,0,5,0,5,0,0
+1930,Telomerase Inhibitor IX,mad_pair_full,1,5,0,5,0,5,0,0
+1930,Telomerase Inhibitor IX,mad_pair_full,2,5,0,5,0,5,0,0
+1930,Telomerase Inhibitor IX,response_association_expression,0,5,0,5,0,5,0,0
+1930,Telomerase Inhibitor IX,response_association_expression,1,5,0,5,0,5,0,0
+1930,Telomerase Inhibitor IX,response_association_expression,2,5,0,5,0,5,0,0
+1930,Telomerase Inhibitor IX,response_association_rank,0,5,0,5,0,5,0,0
+1930,Telomerase Inhibitor IX,response_association_rank,1,5,0,5,0,5,0,0
+1930,Telomerase Inhibitor IX,response_association_rank,2,5,0,5,0,5,0,0
+1930,Telomerase Inhibitor IX,response_association_pair_full,0,5,0,5,0,5,0,0
+1930,Telomerase Inhibitor IX,response_association_pair_full,1,5,0,5,0,5,0,0
+1930,Telomerase Inhibitor IX,response_association_pair_full,2,5,0,5,0,5,0,0
+1199,Tamoxifen,expression_strong,0,5,5,0,5,0,0,0
+1199,Tamoxifen,expression_strong,1,5,5,0,5,0,0,0
+1199,Tamoxifen,expression_strong,2,5,5,0,5,0,0,0
+1199,Tamoxifen,mad_expression,0,5,4,1,4,1,0,0
+1199,Tamoxifen,mad_expression,1,5,4,1,4,1,0,0
+1199,Tamoxifen,mad_expression,2,5,4,1,4,1,0,0
+1199,Tamoxifen,mad_rank,0,5,4,1,4,1,0,0
+1199,Tamoxifen,mad_rank,1,5,5,0,5,0,0,0
+1199,Tamoxifen,mad_rank,2,5,5,0,5,0,0,0
+1199,Tamoxifen,mad_pair_full,0,5,5,0,5,0,0,0
+1199,Tamoxifen,mad_pair_full,1,5,5,0,5,0,0,0
+1199,Tamoxifen,mad_pair_full,2,5,5,0,5,0,0,0
+1199,Tamoxifen,response_association_expression,0,5,5,0,5,0,0,0
+1199,Tamoxifen,response_association_expression,1,5,5,0,5,0,0,0
+1199,Tamoxifen,response_association_expression,2,5,4,1,4,1,0,0
+1199,Tamoxifen,response_association_rank,0,5,5,0,5,0,0,0
+1199,Tamoxifen,response_association_rank,1,5,5,0,5,0,0,0
+1199,Tamoxifen,response_association_rank,2,5,5,0,5,0,0,0
+1199,Tamoxifen,response_association_pair_full,0,5,5,0,5,0,0,0
+1199,Tamoxifen,response_association_pair_full,1,5,5,0,5,0,0,0
+1199,Tamoxifen,response_association_pair_full,2,5,4,1,4,1,0,0
+1091,BMS-536924,expression_strong,0,5,0,5,0,5,0,0
+1091,BMS-536924,expression_strong,1,5,0,5,0,5,0,0
+1091,BMS-536924,expression_strong,2,5,0,5,0,5,0,0
+1091,BMS-536924,mad_expression,0,5,0,5,0,5,0,0
+1091,BMS-536924,mad_expression,1,5,0,5,0,5,0,0
+1091,BMS-536924,mad_expression,2,5,0,5,0,5,0,0
+1091,BMS-536924,mad_rank,0,5,0,5,0,5,0,0
+1091,BMS-536924,mad_rank,1,5,1,4,1,4,0,0
+1091,BMS-536924,mad_rank,2,5,0,5,0,5,0,0
+1091,BMS-536924,mad_pair_full,0,5,2,3,2,3,0,0
+1091,BMS-536924,mad_pair_full,1,5,3,2,3,2,0,0
+1091,BMS-536924,mad_pair_full,2,5,3,2,3,2,0,0
+1091,BMS-536924,response_association_expression,0,5,0,5,0,5,0,0
+1091,BMS-536924,response_association_expression,1,5,0,5,0,5,0,0
+1091,BMS-536924,response_association_expression,2,5,0,5,0,5,0,0
+1091,BMS-536924,response_association_rank,0,5,0,5,0,5,0,0
+1091,BMS-536924,response_association_rank,1,5,0,5,0,5,0,0
+1091,BMS-536924,response_association_rank,2,5,0,5,0,5,0,0
+1091,BMS-536924,response_association_pair_full,0,5,1,4,1,4,0,0
+1091,BMS-536924,response_association_pair_full,1,5,0,5,0,5,0,0
+1091,BMS-536924,response_association_pair_full,2,5,0,5,0,5,0,0
+1010,Gefitinib,expression_strong,0,5,0,5,0,5,0,0
+1010,Gefitinib,expression_strong,1,5,0,5,0,5,0,0
+1010,Gefitinib,expression_strong,2,5,0,5,0,5,0,0
+1010,Gefitinib,mad_expression,0,5,0,5,0,5,0,0
+1010,Gefitinib,mad_expression,1,5,0,5,0,5,0,0
+1010,Gefitinib,mad_expression,2,5,0,5,0,5,0,0
+1010,Gefitinib,mad_rank,0,5,0,5,0,5,0,0
+1010,Gefitinib,mad_rank,1,5,0,5,0,5,0,0
+1010,Gefitinib,mad_rank,2,5,0,5,0,5,0,0
+1010,Gefitinib,mad_pair_full,0,5,0,5,0,5,0,0
+1010,Gefitinib,mad_pair_full,1,5,1,4,1,4,0,0
+1010,Gefitinib,mad_pair_full,2,5,2,3,2,3,0,0
+1010,Gefitinib,response_association_expression,0,5,0,5,0,5,0,0
+1010,Gefitinib,response_association_expression,1,5,1,4,1,4,0,0
+1010,Gefitinib,response_association_expression,2,5,0,5,0,5,0,0
+1010,Gefitinib,response_association_rank,0,5,0,5,0,5,0,0
+1010,Gefitinib,response_association_rank,1,5,0,5,0,5,0,0
+1010,Gefitinib,response_association_rank,2,5,0,5,0,5,0,0
+1010,Gefitinib,response_association_pair_full,0,5,0,5,0,5,0,0
+1010,Gefitinib,response_association_pair_full,1,5,0,5,0,5,0,0
+1010,Gefitinib,response_association_pair_full,2,5,1,4,1,4,0,0
+1922,Cediranib,expression_strong,0,5,3,2,3,2,0,0
+1922,Cediranib,expression_strong,1,5,4,1,4,1,0,0
+1922,Cediranib,expression_strong,2,5,4,1,4,1,0,0
+1922,Cediranib,mad_expression,0,5,4,1,4,1,0,0
+1922,Cediranib,mad_expression,1,5,3,2,3,2,0,0
+1922,Cediranib,mad_expression,2,5,3,2,3,2,0,0
+1922,Cediranib,mad_rank,0,5,4,1,4,1,0,0
+1922,Cediranib,mad_rank,1,5,5,0,5,0,0,0
+1922,Cediranib,mad_rank,2,5,3,2,3,2,0,0
+1922,Cediranib,mad_pair_full,0,5,5,0,5,0,0,0
+1922,Cediranib,mad_pair_full,1,5,5,0,5,0,0,0
+1922,Cediranib,mad_pair_full,2,5,4,1,4,1,0,0
+1922,Cediranib,response_association_expression,0,5,5,0,5,0,0,0
+1922,Cediranib,response_association_expression,1,5,5,0,5,0,0,0
+1922,Cediranib,response_association_expression,2,5,5,0,5,0,0,0
+1922,Cediranib,response_association_rank,0,5,5,0,5,0,0,0
+1922,Cediranib,response_association_rank,1,5,5,0,5,0,0,0
+1922,Cediranib,response_association_rank,2,5,5,0,5,0,0,0
+1922,Cediranib,response_association_pair_full,0,5,2,3,2,3,0,0
+1922,Cediranib,response_association_pair_full,1,5,3,2,3,2,0,0
+1922,Cediranib,response_association_pair_full,2,5,2,3,2,3,0,0
