@@ -256,7 +256,7 @@ def run() -> dict:
 
     zero_by_key = {(int(r["gdsc_drug_id"]), r["model"], int(r["repeat"])): r for r in zero_source}
     selected_by_key = {(int(r["gdsc_drug_id"]), r["model"], int(r["repeat"]), int(r["outer_fold"])): r for r in params_source}
-    if len(zero_by_key) != 8 * 7 * 3 or len(selected_by_key) != 840:
+    if len(zero_by_key) != 8 * 8 * 3 or len(selected_by_key) != 960:
         raise ValueError("The pre-existing zero/parameter summaries do not cover the frozen design")
 
     context_rows: list[dict] = []
