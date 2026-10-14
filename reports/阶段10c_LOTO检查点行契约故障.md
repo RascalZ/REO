@@ -14,4 +14,6 @@
 
 ## v1.3正式冻结与无拟合预检
 
-v1.3修复代码提交为`fedc745940374b6870cb6c4bcb66ec8f731ded27`，执行锁SHA-256为`709a5499f87fdd75d4fd202041c9200a08d068938c7190e3a915dbf65edb954e`。正式preflight manifest SHA-256为`2b672cad5bdf284c960099c6a7ca5d1e7b442a453e3e1816788c945e9fbb08a1`；task plan为`9862bb25d06e32a1759792ed248a82ce4ef167d23c95e046608561be62b1a484`；内层manifest为`0ef218bfec2cc9d0e3012f1f4bd3aab61867d2b3c10fa93385ad032ad35e96b8`。独立验证返回`preflight_validated_no_model_fits`：1,472任务/40,112拟合/39,736预测的契约通过，184个外层切分均隔离、109,274条内层分配覆盖完整；176个单组组织上下文和8个双组组织上下文的三折警告保留。CTRP没有访问。v1.3具备启动LOTO全量任务的条件，模型拟合尚未开始。
+v1.3修复代码提交为`fedc745940374b6870cb6c4bcb66ec8f731ded27`，执行锁SHA-256为`709a5499f87fdd75d4fd202041c9200a08d068938c7190e3a915dbf65edb954e`。正式preflight manifest SHA-256为`2b672cad5bdf284c960099c6a7ca5d1e7b442a453e3e1816788c945e9fbb08a1`；task plan为`9862bb25d06e32a1759792ed248a82ce4ef167d23c95e046608561be62b1a484`；内层manifest为`0ef218bfec2cc9d0e3012f1f4bd3aab61867d2b3c10fa93385ad032ad35e96b8`。独立验证返回`preflight_validated_no_model_fits`：1,472任务/40,112拟合/39,736预测的契约通过，184个外层切分均隔离、109,274条内层分配覆盖完整；176个单组组织上下文和8个双组组织上下文的三折警告保留。CTRP没有访问。
+
+在启动完整控制器前，按锁定task plan顺序单独完成并校验第0项资格任务（药物1931、Biliary Tract、`tissue_null`）：1个基线fit event、1条OOF预测、检查点验证通过，预测行`inner_seed`=`2026101401`与任务/配置一致。该组织留出样本数为1，Spearman按规则未定义。此为正式1,472项任务中的第1项，不增加预算、不涉及分子臂。任务wall time 0.647秒、峰值RSS 0.525 GiB、峰值private 0.360 GiB，期间最低可用物理内存1.596 GiB、commit余量2.393 GiB；数据守卫未记录外部访问或拦截。控制器尚未接管剩余任务；下一步由`--run`识别并复用此通过校验的检查点，再串行执行余下任务。
