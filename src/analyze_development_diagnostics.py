@@ -439,7 +439,11 @@ def run() -> dict:
     stability_map: dict[tuple[int, str], list[dict]] = defaultdict(list)
     for row in stability_source:
         stability_map[(int(row["gdsc_drug_id"]), row["model"])].append(row)
-    deviation_map = {(int(row["gdsc_drug_id"]), row["model"]): row for row in deviation_source}
+    deviation_map = {
+        (int(row["gdsc_drug_id"]), row["model"]): row
+        for row in deviation_source
+        if row["gdsc_drug_id"].isdigit()
+    }
     zero_count = {(int(row["gdsc_drug_id"]), row["model"]): int(row["zero_molecular_fits"]) for row in zero_source if int(row["repeat"]) == 0}
     profiles = []
     comparison_specs = [
