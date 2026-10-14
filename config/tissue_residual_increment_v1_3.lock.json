@@ -1,0 +1,66 @@
+{
+  "schema_version": "1.0",
+  "status": "frozen_before_residual_increment_scoring_v1_3",
+  "created_utc": "2026-10-14T08:12:33.540316+00:00",
+  "parent_method_lock_sha256": "bc6c591216b5d13218b93cbf0f149ae9c8d7f483341371d97b5e8c86eff47dd8",
+  "parent_runner_lock_sha256": "8514a695a02d4e9d835d3cbfdd8e7003964da9d97fb35109e8f280b6c6bc6ac5",
+  "protocol_lock_sha256": "deb15cd16258b85c86f1605a3099b85319b33a69f086c8ffe912ba12543e0e1b",
+  "configuration_sha256": "1186c4a21aa2550606936baa23e04f5de3647b54471c225697b694f224285549",
+  "protocol_addendum_sha256": "3e34f031d037a59c2973a4b41bfbccb9f9f33ea8c07b203e31404ddeabb085d4",
+  "source_tissue_metrics_sha256": "b15f99fd2de7d1c3acf0a5471e2d3a66773e7f438ebb34cb2bab53f61c5526a7",
+  "inputs": {
+    "scripts/freeze_p5e_tissue_residual_increment_v1_3.py": "22939b82b9e067bb53ac47d803a90ca156f11ef90ed198403fa244171982235d",
+    "src/analyze_tissue_residual_increment_v1_3.py": "ef8b9dcec07401ba4e3d9a4c3dcf60137eb6c5e604cfe9bb014f55eb43064e85",
+    "scripts/freeze_p5e_tissue_residual_increment_v1_2.py": "14a4c31255fafc6bce89158763f10666ad5bb9442bf5d3122b296bce7da9052f",
+    "src/analyze_tissue_residual_increment_v1_2.py": "abc868e2bf760af2b9d3587cc630f3931762479876ce6f4c95328de5437875e8",
+    "src/analyze_tissue_residual_increment.py": "6881d687dae91faa2ce7842316ac296608d4fdf5e9a5145568b9aee8a9b5c499",
+    "docs/P5E_TISSUE_RHO_CLARIFICATION_V1_1.md": "3e34f031d037a59c2973a4b41bfbccb9f9f33ea8c07b203e31404ddeabb085d4",
+    "config/tissue_oof_residual_increment_v1_1.json": "1186c4a21aa2550606936baa23e04f5de3647b54471c225697b694f224285549",
+    "config/tissue_residual_increment_v1_1.lock.json": "bc6c591216b5d13218b93cbf0f149ae9c8d7f483341371d97b5e8c86eff47dd8",
+    "config/tissue_residual_increment_v1_2.lock.json": "8514a695a02d4e9d835d3cbfdd8e7003964da9d97fb35109e8f280b6c6bc6ac5",
+    "config/p5e_protocol_v1.lock.json": "deb15cd16258b85c86f1605a3099b85319b33a69f086c8ffe912ba12543e0e1b",
+    "config/tissue_oof_analysis_v1.lock.json": "d46ff7b926a6768df31736476f7e39f2cca6b69a1b49deb037142eb9bad0c362",
+    "results/tissue_sensitivity/oof_tissue_metrics.csv": "b15f99fd2de7d1c3acf0a5471e2d3a66773e7f438ebb34cb2bab53f61c5526a7",
+    "results/tissue_sensitivity/tissue_macro_by_repeat.csv": "1f2efe944ee89136b4b121911ac4682d70c51bbdb32038511be88b10ebaf7863",
+    "results/tissue_sensitivity/tissue_sensitivity_manifest.json": "547812569217fcf3842f4e3557371f81a052d5c42e9322ff524f5410832b97ed",
+    "runs/gdsc2-cancer-v2-fixed8-mad-association-expression-rank-pair-nested5x3-inner3-repeated-v1/ordinal_repeated_metadata.json": "bffdad31b98c5d17b798de5afa713980dc8b90005a31524c40c42deb57749f2e",
+    "runs/gdsc2-cancer-v2-fixed8-mad-association-expression-rank-pair-nested5x3-inner3-repeated-v1/oof_predictions.csv": "b2ffeeb13083340fdc2602a1d40f228615d175bf173f20a42a20c6b611e73a9e"
+  },
+  "expected_contract": {
+    "tissue_rows": 2208,
+    "drug_macro_rows": 96,
+    "fixed8_macro_rows": 12,
+    "n_drugs": 8,
+    "n_repeats": 3,
+    "n_tissues": 23,
+    "primary_tissues": [
+      "Bowel",
+      "Breast",
+      "CNS/Brain",
+      "Esophagus/Stomach",
+      "Lung",
+      "Lymphoid",
+      "Myeloid",
+      "Ovary/Fallopian Tube",
+      "Pancreas",
+      "Skin"
+    ]
+  },
+  "new_model_fits": 0,
+  "external_response_accessed": false,
+  "correction_scope": "Report field and available-cell denominator correction plus frozen-status binding; no scientific metric/formula changes",
+  "preserved_implementation_attempts": [
+    {
+      "version": "v1.1",
+      "failure": "Report generation stopped after aggregate CSV writes due to nonexistent report field",
+      "model_fits": 0,
+      "external_access": false
+    },
+    {
+      "version": "v1.2",
+      "failure": "Stopped at pre-score lock-status check because the runner and lock used different status strings",
+      "model_fits": 0,
+      "external_access": false
+    }
+  ]
+}
