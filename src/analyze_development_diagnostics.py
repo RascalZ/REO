@@ -43,7 +43,7 @@ MODEL_ORDER = [
     "response_association_rank",
     "response_association_pair_full",
 ]
-MOLECULAR_ORDER = [m for m in MODEL_ORDER if m != "expression_strong"]
+MOLECULAR_ORDER = MODEL_ORDER
 MODEL_LABELS = {
     "tissue_null": "组织参照",
     "expression_strong": "强表达2000",
@@ -499,19 +499,6 @@ def run() -> dict:
         item["association_pair_prediction_rms_deviation_from_tissue"] = fnum(dev["repeat_mean"])
         profiles.append(item)
 
-    # Write immutable-source summaries first; hashes are attached after all products exist.
-    OUT_DIR.mkdir(parents=True, exist_ok=True)
-    zero_columns = list(zero_rows[0])
-    inner_columns = list(inner_rows[0])
-    repeat_columns = list(repeat_rows[0])
-    decomp_columns = list(decomp_rows[0])
-    profile_columns = list(profiles[0])
-    write_csv(OUT_DIR / "zero_solution_diagnostics.csv", zero_rows, zero_columns)
-    write_csv(OUT_DIR / "inner_path_competition.csv", inner_rows, inner_columns)
-    write_csv(OUT_DIR / "zero_solution_by_repeat.csv", repeat_rows, repeat_columns)
-    write_csv(OUT_DIR / "response_decomposition.csv", decomp_rows, decomp_columns)
-    write_csv(OUT_DIR / "drug_heterogeneity.csv", profiles, profile_columns)
-
     molecular_total = sum(int(row["outer_fits"]) for row in zero_rows)
     zero_total = sum(int(row["zero_molecular_fits"]) for row in zero_rows)
     alpha1_total = sum(int(row["alpha_ratio_1_selected_fits"]) for row in zero_rows)
@@ -524,6 +511,19 @@ def run() -> dict:
     expected_dev_observations = int(provenance["oof_rows"]) // (int(provenance["outer_repeats"]) * len(config["models"]))
     if sum(int(row["n_observations"]) for row in decomp_rows) != expected_dev_observations:
         raise ValueError("Development response panel total disagrees with the completed run provenance")
+
+    # Write public aggregates only after all source/task/partition checks pass.
+    OUT_DIR.mkdir(parents=True, exist_ok=True)
+    zero_columns = list(zero_rows[0])
+    inner_columns = list(inner_rows[0])
+    repeat_columns = list(repeat_rows[0])
+    decomp_columns = list(decomp_rows[0])
+    profile_columns = list(profiles[0])
+    write_csv(OUT_DIR / "zero_solution_diagnostics.csv", zero_rows, zero_columns)
+    write_csv(OUT_DIR / "inner_path_competition.csv", inner_rows, inner_columns)
+    write_csv(OUT_DIR / "zero_solution_by_repeat.csv", repeat_rows, repeat_columns)
+    write_csv(OUT_DIR / "response_decomposition.csv", decomp_rows, decomp_columns)
+    write_csv(OUT_DIR / "drug_heterogeneity.csv", profiles, profile_columns)
 
     elapsed = time.perf_counter() - started
     peak_bytes = peak.stop()
