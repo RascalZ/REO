@@ -1,0 +1,119 @@
+{
+  "schema_version": "1.0",
+  "status": "frozen_before_loto_model_fits",
+  "created_utc": "2026-10-14T09:59:42.512545+00:00",
+  "protocol_version": "P5e-LOTO-v1.2",
+  "execution_commit": "a286df384fa666250963ecf26d5fcfbf4cae5b3f",
+  "source_snapshot": {
+    "git_commit": "a286df384fa666250963ecf26d5fcfbf4cae5b3f",
+    "source_hashes": {
+      "src/run_tissue_loto_v1_2.py": "445f09d7deb841536e63dff9d14364549ea6960182178966bc5fd8cd65f54b0e",
+      "src/validate_tissue_loto_v1_2.py": "f1d67c49998c4ae22865e8fb4a8684b5fed76816b695b6d67163c8c5ef353450",
+      "src/analyze_tissue_loto_v1_2.py": "0b01935729d82daffc8e6f7af39438d99c5adbda438bb3ef260479dcd498b388",
+      "src/run_formal_evaluation.py": "8f9154017c15d65e6496e08aeda2b8c48f249c660e6d84d26d4246cbc24ed712",
+      "src/run_development_pilot.py": "b03382b85caaba8be38091a7cf027053cefea10c9301e566aa4362b046577e59",
+      "src/project_paths.py": "4fdd19a41b9a3488160d08e3d2ce7649400ed4a2f81275361d81f0936fc48f0e",
+      "src/ordinal_repeated_runtime.py": "ffe41710851c56b30da72573c652daee3eac7863a2ca8821474406cf90266662",
+      "src/ordinal_repeated_models.py": "2a5a13cae3a0894c7e02f691ed2f02f06575057d9ceeae0e01f22ca0b5491310",
+      "src/ordinal_diagnostic_models.py": "0bd7cab3a9a9cfb68b912a3ebdc86a5aa0c7ae10b3d790037595d7c67fdacac2",
+      "src/modeling/nested_cv.py": "5ce84047aac7791690db5e7b87bdf20e957ff2cd08f822e8bfa842f221cdae07",
+      "src/modeling/features.py": "a96fd23879bed2af1ce9ad184120c24e22f788640633e6550316439ff370c91a",
+      "src/modeling/reo_rf.py": "9e62f24709d791e6af2b123fdf5596de449df1bf512a79f8aaac2232b3e48e2f"
+    }
+  },
+  "configuration_sha256": "7ca1819ce8fad22e9e4588c3b0d7eef050b69a650fb51ba38445d1997d600f6e",
+  "model_config_sha256": "7c2e8f137ad809c8533bc5c24e24a82970686e7b7f5c84795ee13f30e71cc3f7",
+  "p5e_lock_sha256": "deb15cd16258b85c86f1605a3099b85319b33a69f086c8ffe912ba12543e0e1b",
+  "source_model_lock_sha256": "ef8f588b99c42cb54db73b495127bc41882fa3e5b450e62167c6b46c53d583e7",
+  "locked_file_hashes": {
+    "docs/LOTO_EXECUTION_AMENDMENT_V1_2.md": "a4546388391d4015445c3ca68571ae34b163667a6dff43d25d40bf7a4bd167a7",
+    "docs/TISSUE_SENSITIVITY_LOTO_PROTOCOL_V1.md": "9694239702337c303aa62228c70e1e5dd4ffe3f326c423f0bfa67db6d4a799dd",
+    "config/loto_execution_v1_2.json": "7ca1819ce8fad22e9e4588c3b0d7eef050b69a650fb51ba38445d1997d600f6e",
+    "config/tissue_sensitivity_loto_v1.json": "0dbf941be1d43c9ccd1de9cd8344fd7c85b5afe0eadd9a8c2dbcd3b067eaf28a",
+    "config/p5e_protocol_v1.lock.json": "deb15cd16258b85c86f1605a3099b85319b33a69f086c8ffe912ba12543e0e1b",
+    "config/ordinal_repeated_v1.json": "7c2e8f137ad809c8533bc5c24e24a82970686e7b7f5c84795ee13f30e71cc3f7",
+    "config/ordinal_repeated_v1.lock.json": "ef8f588b99c42cb54db73b495127bc41882fa3e5b450e62167c6b46c53d583e7",
+    "config/synthetic_mechanism_execution_v1_1.lock.json": "c149bb2d41d3d1a13c874e99ac73c087b25f12d4d5684c32582ff54d461043fd",
+    "config/synthetic_mechanisms_v1_1.json": "fc448e59bdc6e5d73a4bb181a29b5605c67c5c9812adee963319f249acd3cb1d",
+    "docs/SYNTHETIC_MECHANISM_EXECUTION_V1_1.md": "67f46a23b5c320d8158b68c04005e9db4f8b11744872592ca5b81530d8956f09",
+    "scripts/freeze_loto_execution_v1_2.py": "50757d5d85e6bd7d1681f23323419c0d01cf428ebdc41e3c4d7e6d873c5e2bc2",
+    "scripts/audit_synthetic_selection_consistency.py": "891fccc0e4229dfdd8245c4c5dbd41d25ff4a54c22b34de9c4b312a30a17ad44",
+    "src/run_tissue_loto_v1_2.py": "445f09d7deb841536e63dff9d14364549ea6960182178966bc5fd8cd65f54b0e",
+    "src/validate_tissue_loto_v1_2.py": "f1d67c49998c4ae22865e8fb4a8684b5fed76816b695b6d67163c8c5ef353450",
+    "src/analyze_tissue_loto_v1_2.py": "0b01935729d82daffc8e6f7af39438d99c5adbda438bb3ef260479dcd498b388",
+    "reports/阶段9_合成机制控制.md": "ed5d6bc1d511eacc059606c194ffa6537812cbf9161ef17f84a8fa03b18987e3",
+    "reports/阶段9b_候选基因集一致性审计.md": "74b833b46783e9b6c603153890cb287e97d644bdb2afe63c05572fa48dbe4409",
+    "results/synthetic_mechanisms/synthetic_mechanism_manifest.json": "7644da74ece273de3522465bdb1985a74993ad7ddc3932d14659c9f699ccd617",
+    "results/synthetic_mechanisms/representation_gene_set_audit.csv": "3829fc706e3b5b10517001faf2e7951ea429b78071b90dfad020a96445387ea6"
+  },
+  "prerequisite_hashes": {
+    "source_run_metadata_sha256": "bffdad31b98c5d17b798de5afa713980dc8b90005a31524c40c42deb57749f2e",
+    "source_development_responses_sha256": "f943374708d1534aff1425a5dd20599fca3d1cec2ecc0f6241b7e56f955534c1",
+    "source_oof_sha256": "b2ffeeb13083340fdc2602a1d40f228615d175bf173f20a42a20c6b611e73a9e",
+    "source_development_manifest_sha256": "21efc28d5ee21603f2466b740c4aa29eb24fbfd6be4fec15f6392aadb661e608",
+    "development_input_freeze_sha256": "fe1b725aa6acced46e1e5574930bb4c816c4414fc21c08d46cdb553d1fdc2d98",
+    "development_freeze_lock_sha256": "c1d3bff489d485da2b881eae331a16e9941e84db4dd3d806af46fe1099c2d609"
+  },
+  "development_input_verification": {
+    "cohort_version": "v2",
+    "freeze_sha256": "fe1b725aa6acced46e1e5574930bb4c816c4414fc21c08d46cdb553d1fdc2d98",
+    "verified_development_files": [
+      "results/cohort_v2/development_sample_manifest.csv",
+      "results/cohort_v2/main_drugs.csv",
+      "data_processed/expression_tpm.npy",
+      "data_processed/expression_genes.tsv",
+      "data_processed/expression_samples.tsv",
+      "data_processed/cell_line_dictionary.csv",
+      "data_manifest/original_source_sha256.csv",
+      "src/project_paths.py"
+    ],
+    "CTRP_response_files_opened": false
+  },
+  "seed_resolution": {
+    "original_prose_base": 2026101801,
+    "frozen_machine_config_base": 2026101401,
+    "chosen_base": 2026101401,
+    "reason": "The v1.2 execution inherits v1.1's pre-fit clarification: follow the frozen executable config field; preserve the original protocol and lock.",
+    "seed_by_tissue": {
+      "Biliary Tract": 2026101401,
+      "Bladder/Urinary Tract": 2026101402,
+      "Bone": 2026101403,
+      "Bowel": 2026101404,
+      "Breast": 2026101405,
+      "CNS/Brain": 2026101406,
+      "Cervix": 2026101407,
+      "Esophagus/Stomach": 2026101408,
+      "Head and Neck": 2026101409,
+      "Kidney": 2026101410,
+      "Liver": 2026101411,
+      "Lung": 2026101412,
+      "Lymphoid": 2026101413,
+      "Myeloid": 2026101414,
+      "Ovary/Fallopian Tube": 2026101415,
+      "Pancreas": 2026101416,
+      "Peripheral Nervous System": 2026101417,
+      "Pleura": 2026101418,
+      "Prostate": 2026101419,
+      "Skin": 2026101420,
+      "Soft Tissue": 2026101421,
+      "Thyroid": 2026101422,
+      "Uterus": 2026101423
+    }
+  },
+  "synthetic_predecessor": {
+    "manifest_sha256": "7644da74ece273de3522465bdb1985a74993ad7ddc3932d14659c9f699ccd617",
+    "candidate_audit_sha256": "3829fc706e3b5b10517001faf2e7951ea429b78071b90dfad020a96445387ea6",
+    "tasks": 960,
+    "fits": 26160,
+    "oof_predictions": 76800
+  },
+  "expected_contract": {
+    "tasks": 1472,
+    "fits": 40112,
+    "oof_predictions": 39736,
+    "unknown_tissue_samples_equal_test_samples": true,
+    "training_includes_heldout_tissue": false
+  },
+  "external_response_accessed": false,
+  "ctrp_accessed": false
+}
