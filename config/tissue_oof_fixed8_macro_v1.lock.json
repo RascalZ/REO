@@ -1,0 +1,30 @@
+{
+  "schema_version": "1.0",
+  "status": "frozen_before_fixed8_macro_aggregation",
+  "created_utc": "2026-10-14T08:02:35.061825+00:00",
+  "protocol_lock_sha256": "deb15cd16258b85c86f1605a3099b85319b33a69f086c8ffe912ba12543e0e1b",
+  "source_analysis_lock_sha256": "d46ff7b926a6768df31736476f7e39f2cca6b69a1b49deb037142eb9bad0c362",
+  "inputs": {
+    "scripts/freeze_tissue_oof_fixed8_macro.py": "015646446528c7e8472af19ab4e3e58fe9a5efb5fd67d57d810ca4fe7b64372a",
+    "src/summarize_tissue_oof_fixed8.py": "e960e66d177b752df78d14cc21918b8dafaa904452717c96629e7c18623d91f7",
+    "config/p5e_protocol_v1.lock.json": "deb15cd16258b85c86f1605a3099b85319b33a69f086c8ffe912ba12543e0e1b",
+    "config/tissue_oof_analysis_v1.lock.json": "d46ff7b926a6768df31736476f7e39f2cca6b69a1b49deb037142eb9bad0c362",
+    "results/tissue_sensitivity/oof_tissue_metrics.csv": "b15f99fd2de7d1c3acf0a5471e2d3a66773e7f438ebb34cb2bab53f61c5526a7",
+    "results/tissue_sensitivity/tissue_macro_by_repeat.csv": "1f2efe944ee89136b4b121911ac4682d70c51bbdb32038511be88b10ebaf7863",
+    "results/tissue_sensitivity/tissue_sensitivity_manifest.json": "547812569217fcf3842f4e3557371f81a052d5c42e9322ff524f5410832b97ed"
+  },
+  "expected_contract": {
+    "rows": 24,
+    "repeats": [
+      0,
+      1,
+      2
+    ],
+    "models": 8,
+    "drugs": 8,
+    "tissues_per_drug": 10
+  },
+  "aggregation_rule": "Equal-weight the eight precomputed per-drug means after equal-weighting the fixed ten primary tissues within drug and repeat; strict metrics require all eight drugs and all ten tissues; report available denominator without replacing strict NA",
+  "repeat_rule": "Keep repeat values separate; any three-repeat mean/range is descriptive and not an inferential interval",
+  "external_response_access": "forbidden"
+}

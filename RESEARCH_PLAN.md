@@ -21,7 +21,7 @@
 |P5b 表示与候选规则诊断|完成；拟合、来源、区间及公开聚合校验通过|[阶段5报告](reports/阶段5_秩与基因对诊断试跑.md)、[科学解读](docs/ORDINAL_DIAGNOSTIC_ASSESSMENT.md)、[OOF差值分解](docs/OOF_DECOMPOSITION.md)；35项诊断测试+4项公开结果测试通过，两次内存中断完整保留|
 |P5c 固定八药新版重复评价|完成；完整审计、统计、报告及公开校验通过|[阶段6报告](reports/阶段6_固定八药表示与候选规则重复评价.md)、[科学解读](docs/ORDINAL_REPEATED_ASSESSMENT.md)；960独立任务进程、26,160 fits、119,208 OOF，无失败/暂停/solver警告/回退|
 |P5d 零解与药物异质性诊断|完成|[阶段7报告](reports/阶段7_零解与药物异质性诊断.md)、[五张聚合表](results/development_diagnostics/)、[诊断方案v1](docs/DEVELOPMENT_DIAGNOSTICS_PROTOCOL_V1.md)；430/840均选择解析零端点，0求解警告/回退；无新模型拟合|
-|P5e 合成机制与组织敏感性/LOTO|方案冻结；分析进行中|[P5e协议v1](docs/TISSUE_SENSITIVITY_LOTO_PROTOCOL_V1.md)、[协议lock](config/p5e_protocol_v1.lock.json)、[OOF计算lock](config/tissue_oof_analysis_v1.lock.json)；先复用既有OOF，再做40个合成队列，最后跑23组织LOTO；CTRP禁读|
+|P5e 合成机制与组织敏感性/LOTO|方案冻结；分析进行中|[P5e协议v1](docs/TISSUE_SENSITIVITY_LOTO_PROTOCOL_V1.md)、[协议lock](config/p5e_protocol_v1.lock.json)、[OOF计算lock](config/tissue_oof_analysis_v1.lock.json)、[固定八药宏汇总lock](config/tissue_oof_fixed8_macro_v1.lock.json)；先复用既有OOF，再做40个合成队列，最后跑23组织LOTO；CTRP禁读|
 |P6 外验/最终模型冻结|未开始|实现missing/abstain、未知组织、常数预测、共同覆盖等规则并验收；完成最终拟合/模型重载后才准入CTRP|
 |P7 图表/正文/投稿|未开始|结果决定结论；不承诺旧高准确率或接收|
 
@@ -130,7 +130,7 @@ REO不增加测量信息，不等于不可能改善预测；潜在收益可来�
 
 ### v3.2 P5e冻结协议与执行顺序（2026-10-14）
 
-P5e统计范围、有限合成DGP、LOTO任务、主展示组织、恒定null的NA、缺失严格处理、资源政策和外验禁读规则已在查看新增组织切片/开始新模型拟合前写入[协议v1](docs/TISSUE_SENSITIVITY_LOTO_PROTOCOL_V1.md)及配置。锁文件`config/p5e_protocol_v1.lock.json`绑定协议/配置字节、固定八药完整OOF与开发响应源哈希、原八药模型lock、及基于开发样本元数据计算出的共同覆盖组织集合。协议lock SHA为`deb15cd16258b85c86f1605a3099b85319b33a69f086c8ffe912ba12543e0e1b`；既有OOF源SHA为`b2ffeeb13083340fdc2602a1d40f228615d175bf173f20a42a20c6b611e73a9e`。预设展示的10个组织在每药均至少有20个独立组；另外13个仍全部保留。既有OOF组织切片程序[analyze_tissue_sensitivity.py](src/analyze_tissue_sensitivity.py)及其计算lock已另外固定（lock SHA `d46ff7b926a6768df31736476f7e39f2cca6b69a1b49deb037142eb9bad0c362`）：4,416个药物×组织×repeat×模型聚合格，0个新模型fit，无新增P值/CI。
+P5e统计范围、有限合成DGP、LOTO任务、主展示组织、恒定null的NA、缺失严格处理、资源政策和外验禁读规则已在查看新增组织切片/开始新模型拟合前写入[协议v1](docs/TISSUE_SENSITIVITY_LOTO_PROTOCOL_V1.md)及配置。锁文件`config/p5e_protocol_v1.lock.json`绑定协议/配置字节、固定八药完整OOF与开发响应源哈希、原八药模型lock、及基于开发样本元数据计算出的共同覆盖组织集合。协议lock SHA为`deb15cd16258b85c86f1605a3099b85319b33a69f086c8ffe912ba12543e0e1b`；既有OOF源SHA为`b2ffeeb13083340fdc2602a1d40f228615d175bf173f20a42a20c6b611e73a9e`。预设展示的10个组织在每药均至少有20个独立组；另外13个仍全部保留。既有OOF组织切片程序[analyze_tissue_sensitivity.py](src/analyze_tissue_sensitivity.py)及其计算lock已另外固定（lock SHA `d46ff7b926a6768df31736476f7e39f2cca6b69a1b49deb037142eb9bad0c362`）：4,416个药物×组织×repeat×模型聚合格，0个新模型fit，无新增P值/CI。复核发现协议要求的固定8药等权宏值需与逐药汇总分开保存；[只汇总既有组织宏表的补充程序](src/summarize_tissue_oof_fixed8.py)已冻结（lock SHA `bb56d1b1bdd4aadc1058ff4f75d6b6976b246f0efec80e7c8249c57aded6fd60`），不改任何得分定义，只生成预设等权汇总。
 
 执行次序固定为：①对八药重复OOF按组织×repeat报告组织以上残差排序、相对组织参照RMSE增益与共享样本模型差值；复用既有OOF，不新拟合、不新增确认性检验或CI。②四类DGP各10队列、每队列240独立样本×220基因，按冻结模型代码和3×3嵌套分割执行，预算40队列、960任务、26,160次**合成模型拟合**；这些结果检查预设有限生成机制，绝不是针对真实药物的机制证据。③23组织逐一整体留出，8药×8臂共1,472任务、40,112 fits，保存39,736个外层预测；内层继续沿用已冻结的训练组织分层RMSE选择，不把此分析改成另一种nested-LOTO算法。严格NA/覆盖规则不随新结果变化。
 
@@ -260,6 +260,7 @@ P5e进入下一步，按协议冻结有限统计机制模拟及组织内OOF/LOTO
 ### 计划变更记录
 
 2026-10-14，v3.2：在查看新增组织切片和模拟/LOTO拟合前冻结P5e协议、DGP、严格NA/缺失和任务预算，SHA绑定固定开发OOF/响应、旧分析lock、配置与覆盖组织；先既有OOF描述切片，再40个合成队列，最后23组织LOTO。明确区分0个真实开发重拟合与26,160次合成模型拟合。CTRP继续禁读。
+同日执行记录：既有OOF逐药组织切片已完成；为完整满足冻结方案的固定8药等权宏值规定，另外冻结一个只从阶段8聚合表计算等权摘要的补充程序（lock SHA `bb56d1b1bdd4aadc1058ff4f75d6b6976b246f0efec80e7c8249c57aded6fd60`），不改任何模型分数、模型或原置信区间。
 
 2026-10-13，v2.9：固定八药新版5×3/3内层全量完成、独立与公开审计通过。候选政策影响序表示排序，但主REO−强表达未建立优势，误差及成本需并列；保存全部原v1、四药、零解与结果。下一步仅准备最终模型/外验冻结gate，CTRP继续封存，无非劣界值。
 2026-10-14，v3.0：按用户确认扩展下一阶段。现有响应关联规则真实拟合已完成；把零解竞争、组织内/间响应差异和药物异质性作为第一交付；新增候选规则改为有明确假设时才启动的探索支线。预设有限合成检验和LOTO政策，修正留出组织常数null的相关NA处理；先执行内部敏感性，随后冻结外验缺失/覆盖政策与最终全开发模型，CTRP仍封存。
