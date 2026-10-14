@@ -1,0 +1,69 @@
+{
+  "schema_version": "1.0",
+  "declared_analysis_date": "2026-10-14",
+  "protocol_addendum": "docs/P5E_TISSUE_RHO_CLARIFICATION_V1_1.md",
+  "p5e_protocol_lock": "config/p5e_protocol_v1.lock.json",
+  "source_analysis_lock": "config/tissue_oof_analysis_v1.lock.json",
+  "source_oof_metrics": "results/tissue_sensitivity/oof_tissue_metrics.csv",
+  "source_per_drug_macro": "results/tissue_sensitivity/tissue_macro_by_repeat.csv",
+  "source_oof_run": "gdsc2-cancer-v2-fixed8-mad-association-expression-rank-pair-nested5x3-inner3-repeated-v1",
+  "drug_ids": [1931, 1036, 1191, 1930, 1199, 1091, 1010, 1922],
+  "models": [
+    "tissue_null",
+    "expression_strong",
+    "mad_expression",
+    "mad_rank",
+    "mad_pair_full",
+    "response_association_expression",
+    "response_association_rank",
+    "response_association_pair_full"
+  ],
+  "repeats": [0, 1, 2],
+  "tissue_sets": {
+    "primary10": [
+      "Bowel", "Breast", "CNS/Brain", "Esophagus/Stomach", "Lung", "Lymphoid",
+      "Myeloid", "Ovary/Fallopian Tube", "Pancreas", "Skin"
+    ],
+    "all23": "All tissue values retained in source; supplementary summaries may include them"
+  },
+  "primary_contrasts": [
+    {
+      "name": "response_association_pair_full_minus_expression_strong",
+      "candidate": "response_association_pair_full",
+      "reference": "expression_strong"
+    },
+    {
+      "name": "response_association_pair_full_minus_response_association_expression",
+      "candidate": "response_association_pair_full",
+      "reference": "response_association_expression"
+    },
+    {
+      "name": "response_association_pair_full_minus_response_association_rank",
+      "candidate": "response_association_pair_full",
+      "reference": "response_association_rank"
+    },
+    {
+      "name": "response_association_pair_full_minus_mad_pair_full",
+      "candidate": "response_association_pair_full",
+      "reference": "mad_pair_full"
+    }
+  ],
+  "metrics": {
+    "baseline_residual": "observed_auc - tissue_null_prediction",
+    "molecular_component": "model_prediction - tissue_null_prediction",
+    "incremental_rank_association": "Spearman(baseline_residual, molecular_component)",
+    "paired_delta": "incremental_rank_association(candidate) - incremental_rank_association(reference), same OOF rows",
+    "paired_rmse_gain": "RMSE(reference) - RMSE(candidate)",
+    "undefined_rho": "NA if n<2, either vector constant, values nonfinite, or either arm is otherwise undefined",
+    "absolute_rho": "Retain stage8 absolute Spearman(y,prediction) and its differences as fold-baseline-sensitive diagnostics only"
+  },
+  "aggregation": {
+    "within_drug": "Equal-weight frozen tissue cells; report defined denominator; strict macro NA unless all prespecified cells are defined",
+    "across_drug": "Equal-weight fixed eight drugs after per-drug tissue aggregation; strict macro NA unless all eight drug values are defined",
+    "repeat": "Retain all three repeat-specific estimates; any mean/range is descriptive, never an inferential interval",
+    "new_confidence_intervals": false,
+    "new_p_values": false,
+    "new_model_fits": 0
+  },
+  "external_response_access": "forbidden"
+}

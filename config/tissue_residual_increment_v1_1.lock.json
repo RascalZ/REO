@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "status": "frozen_before_residual_increment_scoring",
+  "created_utc": "2026-10-14T08:06:42.979077+00:00",
+  "protocol_addendum_sha256": "3e34f031d037a59c2973a4b41bfbccb9f9f33ea8c07b203e31404ddeabb085d4",
+  "configuration_sha256": "1186c4a21aa2550606936baa23e04f5de3647b54471c225697b694f224285549",
+  "analysis_script_sha256": "6881d687dae91faa2ce7842316ac296608d4fdf5e9a5145568b9aee8a9b5c499",
+  "protocol_lock_sha256": "deb15cd16258b85c86f1605a3099b85319b33a69f086c8ffe912ba12543e0e1b",
+  "source_analysis_lock_sha256": "d46ff7b926a6768df31736476f7e39f2cca6b69a1b49deb037142eb9bad0c362",
+  "source_tissue_metrics_sha256": "b15f99fd2de7d1c3acf0a5471e2d3a66773e7f438ebb34cb2bab53f61c5526a7",
+  "source_stage8_manifest_sha256": "547812569217fcf3842f4e3557371f81a052d5c42e9322ff524f5410832b97ed",
+  "inputs": {
+    "scripts/freeze_p5e_tissue_residual_increment.py": "3254d9ddac8fba13a54cf2d9e92ad9ad336432ba1b53216024d915c005101759",
+    "src/analyze_tissue_residual_increment.py": "6881d687dae91faa2ce7842316ac296608d4fdf5e9a5145568b9aee8a9b5c499",
+    "docs/P5E_TISSUE_RHO_CLARIFICATION_V1_1.md": "3e34f031d037a59c2973a4b41bfbccb9f9f33ea8c07b203e31404ddeabb085d4",
+    "config/tissue_oof_residual_increment_v1_1.json": "1186c4a21aa2550606936baa23e04f5de3647b54471c225697b694f224285549",
+    "config/p5e_protocol_v1.lock.json": "deb15cd16258b85c86f1605a3099b85319b33a69f086c8ffe912ba12543e0e1b",
+    "config/tissue_oof_analysis_v1.lock.json": "d46ff7b926a6768df31736476f7e39f2cca6b69a1b49deb037142eb9bad0c362",
+    "config/tissue_oof_fixed8_macro_v1.lock.json": "bb56d1b1bdd4aadc1058ff4f75d6b6976b246f0efec80e7c8249c57aded6fd60",
+    "results/tissue_sensitivity/oof_tissue_metrics.csv": "b15f99fd2de7d1c3acf0a5471e2d3a66773e7f438ebb34cb2bab53f61c5526a7",
+    "results/tissue_sensitivity/tissue_macro_by_repeat.csv": "1f2efe944ee89136b4b121911ac4682d70c51bbdb32038511be88b10ebaf7863",
+    "results/tissue_sensitivity/tissue_sensitivity_manifest.json": "547812569217fcf3842f4e3557371f81a052d5c42e9322ff524f5410832b97ed",
+    "runs/gdsc2-cancer-v2-fixed8-mad-association-expression-rank-pair-nested5x3-inner3-repeated-v1/ordinal_repeated_metadata.json": "bffdad31b98c5d17b798de5afa713980dc8b90005a31524c40c42deb57749f2e",
+    "runs/gdsc2-cancer-v2-fixed8-mad-association-expression-rank-pair-nested5x3-inner3-repeated-v1/oof_predictions.csv": "b2ffeeb13083340fdc2602a1d40f228615d175bf173f20a42a20c6b611e73a9e"
+  },
+  "expected_contract": {
+    "tissue_rows": 2208,
+    "drug_macro_rows": 96,
+    "fixed8_macro_rows": 12,
+    "n_drugs": 8,
+    "n_repeats": 3,
+    "n_tissues": 23,
+    "primary_tissues": [
+      "Bowel",
+      "Breast",
+      "CNS/Brain",
+      "Esophagus/Stomach",
+      "Lung",
+      "Lymphoid",
+      "Myeloid",
+      "Ovary/Fallopian Tube",
+      "Pancreas",
+      "Skin"
+    ]
+  },
+  "new_model_fits": 0,
+  "external_response_accessed": false,
+  "method_correction": "Use tissue-null residual-scale rho for molecular increment; retain prior absolute-rho deltas as diagnostics",
+  "ci_or_p_value_added": false
+}
