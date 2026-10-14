@@ -1,0 +1,59 @@
+{
+  "schema_version": "1.0",
+  "status": "frozen_before_tissue_oof_scoring",
+  "created_utc": "2026-10-14T08:00:00.112018+00:00",
+  "protocol_lock_sha256": "deb15cd16258b85c86f1605a3099b85319b33a69f086c8ffe912ba12543e0e1b",
+  "analysis_script_sha256": "4d641b6013657bfebdc0972dfa8915e43dc990568defd7e32a751301c5784d1b",
+  "inputs": {
+    "scripts/freeze_tissue_oof_analysis.py": "02c72f5a978088033bd2d433a1b15d6b7b0760865b20b8fe8621c0f50965d235",
+    "src/analyze_tissue_sensitivity.py": "4d641b6013657bfebdc0972dfa8915e43dc990568defd7e32a751301c5784d1b",
+    "config/p5e_protocol_v1.lock.json": "deb15cd16258b85c86f1605a3099b85319b33a69f086c8ffe912ba12543e0e1b",
+    "config/tissue_sensitivity_loto_v1.json": "0dbf941be1d43c9ccd1de9cd8344fd7c85b5afe0eadd9a8c2dbcd3b067eaf28a",
+    "config/ordinal_repeated_v1.lock.json": "ef8f588b99c42cb54db73b495127bc41882fa3e5b450e62167c6b46c53d583e7",
+    "runs/gdsc2-cancer-v2-fixed8-mad-association-expression-rank-pair-nested5x3-inner3-repeated-v1/ordinal_repeated_metadata.json": "bffdad31b98c5d17b798de5afa713980dc8b90005a31524c40c42deb57749f2e",
+    "runs/gdsc2-cancer-v2-fixed8-mad-association-expression-rank-pair-nested5x3-inner3-repeated-v1/oof_predictions.csv": "b2ffeeb13083340fdc2602a1d40f228615d175bf173f20a42a20c6b611e73a9e"
+  },
+  "expected_contract": {
+    "oof_rows": 119208,
+    "metric_rows": 4416,
+    "macro_rows": 192,
+    "drug_ids": [
+      1931,
+      1036,
+      1191,
+      1930,
+      1199,
+      1091,
+      1010,
+      1922
+    ],
+    "repeats": [
+      0,
+      1,
+      2
+    ],
+    "models": 8,
+    "tissues": 23,
+    "display_tissues": [
+      "Bowel",
+      "Breast",
+      "CNS/Brain",
+      "Esophagus/Stomach",
+      "Lung",
+      "Lymphoid",
+      "Myeloid",
+      "Ovary/Fallopian Tube",
+      "Pancreas",
+      "Skin"
+    ],
+    "new_model_fits": 0
+  },
+  "scoring_rules": {
+    "within_tissue_residual_rho": "Spearman(observed - tissue_null, model_prediction - tissue_null); NA for constant/undefined values",
+    "rmse_gain": "reference RMSE minus candidate RMSE; paired on identical frozen OOF rows",
+    "model_delta_rho": "candidate absolute within-tissue Spearman minus expression_strong on shared OOF rows",
+    "repeat_handling": "score each repeat separately; never pool OOF repeats or treat as new samples",
+    "uncertainty": "no new confidence intervals or p-values; descriptive only",
+    "external_response_access": "forbidden"
+  }
+}
