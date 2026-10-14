@@ -1,0 +1,56 @@
+{
+  "schema_version": "1.0",
+  "status": "locked_before_synthetic_fits",
+  "protocol_version": "P5e-synthetic-v1.1",
+  "created_utc": "2026-10-14T08:32:46.998719+00:00",
+  "upstream_p5e_lock_sha256": "deb15cd16258b85c86f1605a3099b85319b33a69f086c8ffe912ba12543e0e1b",
+  "upstream_model_lock_sha256": "ef8f588b99c42cb54db73b495127bc41882fa3e5b450e62167c6b46c53d583e7",
+  "original_synthetic_config_sha256": "010de324edd403f93778859d9d11d20f98ad0a2a2ac638707da2391525f72853",
+  "amendment_reason": "The original DGP allowed negative raw TPM under rare Gaussian tails and left fold-seed scope ambiguous; v1.1 freezes rejection-truncated normal draws and outer/inner seed formulas without changing the task budget or substantive scenarios.",
+  "inputs": {
+    "docs/SYNTHETIC_MECHANISM_EXECUTION_V1_1.md": "67f46a23b5c320d8158b68c04005e9db4f8b11744872592ca5b81530d8956f09",
+    "config/synthetic_mechanisms_v1_1.json": "fc448e59bdc6e5d73a4bb181a29b5605c67c5c9812adee963319f249acd3cb1d",
+    "config/synthetic_mechanisms_v1.json": "010de324edd403f93778859d9d11d20f98ad0a2a2ac638707da2391525f72853",
+    "config/p5e_protocol_v1.lock.json": "deb15cd16258b85c86f1605a3099b85319b33a69f086c8ffe912ba12543e0e1b",
+    "config/ordinal_repeated_v1.json": "7c2e8f137ad809c8533bc5c24e24a82970686e7b7f5c84795ee13f30e71cc3f7",
+    "config/ordinal_repeated_v1.lock.json": "ef8f588b99c42cb54db73b495127bc41882fa3e5b450e62167c6b46c53d583e7",
+    "src/run_synthetic_mechanisms.py": "ffd509cb454c5ad06aa469f5ed3e1f5b9f3568ff86067b50efd15055ffd013bf",
+    "src/analyze_synthetic_mechanisms.py": "fb9c7ed38cdc3c2855f5f7906a50e1b593f022fe11530173c886c09b0a22535e",
+    "src/synthetic_mechanisms.py": "48a5a46c5a7a34d2119c218c936a3562697227696a00d48984202d05c863513a",
+    "src/ordinal_repeated_models.py": "2a5a13cae3a0894c7e02f691ed2f02f06575057d9ceeae0e01f22ca0b5491310",
+    "src/ordinal_diagnostic_models.py": "0bd7cab3a9a9cfb68b912a3ebdc86a5aa0c7ae10b3d790037595d7c67fdacac2",
+    "src/modeling/nested_cv.py": "5ce84047aac7791690db5e7b87bdf20e957ff2cd08f822e8bfa842f221cdae07",
+    "src/modeling/features.py": "a96fd23879bed2af1ce9ad184120c24e22f788640633e6550316439ff370c91a",
+    "src/modeling/reo_rf.py": "9e62f24709d791e6af2b123fdf5596de449df1bf512a79f8aaac2232b3e48e2f"
+  },
+  "execution_contract": {
+    "cohorts": 40,
+    "tasks": 960,
+    "fits": 26160,
+    "per_sample_model_oof_predictions": 76800,
+    "new_real_development_model_fits": 0,
+    "synthetic_model_fits": 26160
+  },
+  "scenario_order": [
+    "tissue_only",
+    "weak_molecular",
+    "common_sample_amplitude",
+    "predefined_pair_order"
+  ],
+  "rng": "numpy.random.Generator(PCG64(seed)); standard-normal draws are generated in C row-major order; values outside [-3,3] are rejected and redrawn in ascending flattened-index order until all are within bounds",
+  "noise_support": "Every standard-normal variate used in the four DGPs is sampled from a standard normal truncated by rejection to [-3,3]. This is a negligible-tail numerical support correction that guarantees positive log2(TPM) for the frozen equations; it is not outcome-dependent.",
+  "outer_split": {
+    "method": "StratifiedGroupKFold(shuffle=True)",
+    "n_splits": 3,
+    "seed_formula": "cohort_seed + 1000",
+    "groups": "one unique synthetic biological group per sample",
+    "stratification": "eight tissue labels, 30 samples each"
+  },
+  "inner_split": {
+    "method": "StratifiedGroupKFold(shuffle=True)",
+    "n_splits": 3,
+    "seed_formula": "cohort_seed + 1100 + zero_based_outer_fold",
+    "groups": "synthetic biological groups restricted to outer training rows"
+  },
+  "external_response_access": "forbidden"
+}
