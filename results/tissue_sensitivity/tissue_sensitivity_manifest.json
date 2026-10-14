@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "status": "completed_descriptive_oof_tissue_stratification",
+  "created_utc": "2026-10-14T08:00:43.744047+00:00",
+  "protocol_lock_sha256": "deb15cd16258b85c86f1605a3099b85319b33a69f086c8ffe912ba12543e0e1b",
+  "analysis_lock_sha256": "d46ff7b926a6768df31736476f7e39f2cca6b69a1b49deb037142eb9bad0c362",
+  "source_run_freeze_sha256": "ef8f588b99c42cb54db73b495127bc41882fa3e5b450e62167c6b46c53d583e7",
+  "source_oof_sha256": "b2ffeeb13083340fdc2602a1d40f228615d175bf173f20a42a20c6b611e73a9e",
+  "analysis_script_sha256": "4d641b6013657bfebdc0972dfa8915e43dc990568defd7e32a751301c5784d1b",
+  "external_response_accessed": false,
+  "new_model_fits": 0,
+  "wall_seconds": 5.065992499992717,
+  "cpu_seconds": 4.875,
+  "sampled_peak_rss_bytes": 170848256,
+  "memory_scope": "Single analysis process; RSS sampled every 50ms and is an observed rather than guaranteed upper bound",
+  "coverage": {
+    "oof_rows": 119208,
+    "n_groups": 626,
+    "n_tissues": 23,
+    "metric_rows": 4416,
+    "macro_rows": 192,
+    "undefined_rho_y_pred_cells": 230,
+    "undefined_rho_residual_cells": 1795,
+    "undefined_delta_rho_vs_expression_strong_cells": 230,
+    "primary_display_tissues": [
+      "Bowel",
+      "Breast",
+      "CNS/Brain",
+      "Esophagus/Stomach",
+      "Lung",
+      "Lymphoid",
+      "Myeloid",
+      "Ovary/Fallopian Tube",
+      "Pancreas",
+      "Skin"
+    ],
+    "all_other_tissues_retained": [
+      "Biliary Tract",
+      "Bladder/Urinary Tract",
+      "Bone",
+      "Cervix",
+      "Head and Neck",
+      "Kidney",
+      "Liver",
+      "Peripheral Nervous System",
+      "Pleura",
+      "Prostate",
+      "Soft Tissue",
+      "Thyroid",
+      "Uterus"
+    ]
+  },
+  "output_hashes": {
+    "results/tissue_sensitivity/oof_tissue_metrics.csv": "b15f99fd2de7d1c3acf0a5471e2d3a66773e7f438ebb34cb2bab53f61c5526a7",
+    "results/tissue_sensitivity/tissue_macro_by_repeat.csv": "1f2efe944ee89136b4b121911ac4682d70c51bbdb32038511be88b10ebaf7863",
+    "reports/阶段8_组织分层OOF诊断.md": "2a90cd4f46a3fdedcc7b7a4c07b79a47cc41cb8fb96943faafe16cb527dce25e"
+  }
+}

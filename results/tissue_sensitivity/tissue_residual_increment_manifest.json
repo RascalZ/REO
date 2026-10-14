@@ -1,0 +1,90 @@
+{
+  "schema_version": "1.0",
+  "status": "completed_residual_increment_summary",
+  "created_utc": "2026-10-14T08:15:36.692574+00:00",
+  "protocol_lock_sha256": "deb15cd16258b85c86f1605a3099b85319b33a69f086c8ffe912ba12543e0e1b",
+  "analysis_lock_sha256": "b199e7959732d27936d485a9842ffb4121317312e51cbb7202fee13484265938",
+  "source_tissue_metrics_sha256": "b15f99fd2de7d1c3acf0a5471e2d3a66773e7f438ebb34cb2bab53f61c5526a7",
+  "source_per_drug_macro_sha256": "1f2efe944ee89136b4b121911ac4682d70c51bbdb32038511be88b10ebaf7863",
+  "source_stage8_manifest_sha256": "547812569217fcf3842f4e3557371f81a052d5c42e9322ff524f5410832b97ed",
+  "analysis_script_sha256": "47aeeabf7e0f43825994a095e40aa66c68f0fd325ec7935a84f87ceb3050895a",
+  "external_response_accessed": false,
+  "new_model_fits": 0,
+  "coverage": {
+    "tissue_rows": 2208,
+    "drug_macro_rows": 96,
+    "fixed8_macro_rows": 12,
+    "n_drugs": 8,
+    "n_repeats": 3,
+    "n_tissues": 23,
+    "primary_tissues": [
+      "Bowel",
+      "Breast",
+      "CNS/Brain",
+      "Esophagus/Stomach",
+      "Lung",
+      "Lymphoid",
+      "Myeloid",
+      "Ovary/Fallopian Tube",
+      "Pancreas",
+      "Skin"
+    ],
+    "undefined_residual_contrasts_primary10": 380,
+    "undefined_fixed8_strict_repeat_contrasts": 12
+  },
+  "wall_seconds": 2.129557099950034,
+  "output_hashes": {
+    "results/tissue_sensitivity/tissue_residual_contrasts_by_repeat.csv": "6143d3c3c86870f846138d15a7ed71f1f41e200c823be6caa7af01b6b6566943",
+    "results/tissue_sensitivity/tissue_residual_macro_by_drug.csv": "69f3ca708f88eadf943b9e51608226baa1b39c181973dd9f4e2d4949f46bed81",
+    "results/tissue_sensitivity/tissue_residual_fixed8_macro_by_repeat.csv": "1f164a55ad2b775bb93aff1bc2b1c9a70e3be58404738ece2678a46ffa1065f7",
+    "reports/阶段8b_组织残差增量澄清.md": "37481e2fce4f62a4b273c7cda0b1bd32d0e57b7efe71aa03a7bd2b645af44033"
+  },
+  "implementation_attempts": [
+    {
+      "version": "v1.1",
+      "outcome": "report generation failed after aggregate CSV writes",
+      "reason": "report referenced a nonexistent available-case field",
+      "scientific_results_changed": false,
+      "model_fits": 0,
+      "external_access": false
+    },
+    {
+      "version": "v1.2",
+      "outcome": "report field corrected; explicit available tissue-cell mean added",
+      "scientific_results_changed": false,
+      "model_fits": 0,
+      "external_access": false
+    },
+    {
+      "version": "v1.2 runner attempt",
+      "outcome": "stopped at pre-score frozen-status check",
+      "reason": "runner expected an older lock status string than the lock contained",
+      "scientific_results_changed": false,
+      "model_fits": 0,
+      "external_access": false
+    },
+    {
+      "version": "v1.3",
+      "outcome": "frozen status check aligned",
+      "scientific_results_changed": false,
+      "model_fits": 0,
+      "external_access": false
+    },
+    {
+      "version": "v1.3 runner attempt",
+      "outcome": "report generation failed after aggregate CSV writes",
+      "reason": "Pandas Series.repeat method shadowed the repeat data column in report formatting",
+      "scientific_results_changed": false,
+      "model_fits": 0,
+      "external_access": false
+    },
+    {
+      "version": "v1.4",
+      "outcome": "report uses explicit indexing for the repeat column",
+      "scientific_results_changed": false,
+      "model_fits": 0,
+      "external_access": false
+    }
+  ],
+  "interpretation": "Prespecified residual-scale descriptive contrasts; no inference or model refitting"
+}

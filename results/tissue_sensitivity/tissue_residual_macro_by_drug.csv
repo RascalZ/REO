@@ -1,0 +1,97 @@
+﻿drug_id,drug_name,repeat,tissue_set,contrast,expected_tissues,delta_rho_defined_tissues,delta_rho_available_case_mean,delta_rho_strict_tissue_mean,rmse_gain,n_samples_min,n_samples_max
+1010,Gefitinib,0,primary10,response_association_pair_full_minus_expression_strong,10,10,0.0464786326265,0.0464786326265,-0.000161523934332,28,131
+1010,Gefitinib,0,primary10,response_association_pair_full_minus_mad_pair_full,10,10,0.0122279977604,0.0122279977604,0.00135981789983,28,131
+1010,Gefitinib,0,primary10,response_association_pair_full_minus_response_association_expression,10,10,-0.0466136215523,-0.0466136215523,4.1949559538e-05,28,131
+1010,Gefitinib,0,primary10,response_association_pair_full_minus_response_association_rank,10,10,-0.110158087363,-0.110158087363,-0.000675392675769,28,131
+1010,Gefitinib,1,primary10,response_association_pair_full_minus_expression_strong,10,10,0.0418669884169,0.0418669884169,-0.000624141144933,28,131
+1010,Gefitinib,1,primary10,response_association_pair_full_minus_mad_pair_full,10,10,0.0487699838413,0.0487699838413,0.00117526486305,28,131
+1010,Gefitinib,1,primary10,response_association_pair_full_minus_response_association_expression,10,10,-0.0868748330408,-0.0868748330408,8.7125013377e-05,28,131
+1010,Gefitinib,1,primary10,response_association_pair_full_minus_response_association_rank,10,10,-0.072597139509,-0.072597139509,-0.000725389637344,28,131
+1010,Gefitinib,2,primary10,response_association_pair_full_minus_expression_strong,10,10,0.020924359673,0.020924359673,-0.00120140467624,28,131
+1010,Gefitinib,2,primary10,response_association_pair_full_minus_mad_pair_full,10,10,0.155292409364,0.155292409364,0.00078289615014,28,131
+1010,Gefitinib,2,primary10,response_association_pair_full_minus_response_association_expression,10,10,-0.018722588423,-0.018722588423,-0.00051073191266,28,131
+1010,Gefitinib,2,primary10,response_association_pair_full_minus_response_association_rank,10,10,-0.113906029005,-0.113906029005,-0.00153683777073,28,131
+1036,PLX-4720,0,primary10,response_association_pair_full_minus_expression_strong,10,0,,,0.00065959941638,27,131
+1036,PLX-4720,0,primary10,response_association_pair_full_minus_mad_pair_full,10,0,,,0,27,131
+1036,PLX-4720,0,primary10,response_association_pair_full_minus_response_association_expression,10,0,,,0.00056733848757,27,131
+1036,PLX-4720,0,primary10,response_association_pair_full_minus_response_association_rank,10,0,,,0.00059150140165,27,131
+1036,PLX-4720,1,primary10,response_association_pair_full_minus_expression_strong,10,0,,,0,27,131
+1036,PLX-4720,1,primary10,response_association_pair_full_minus_mad_pair_full,10,0,,,0,27,131
+1036,PLX-4720,1,primary10,response_association_pair_full_minus_response_association_expression,10,0,,,0,27,131
+1036,PLX-4720,1,primary10,response_association_pair_full_minus_response_association_rank,10,0,,,0,27,131
+1036,PLX-4720,2,primary10,response_association_pair_full_minus_expression_strong,10,0,,,-0.00211585922408,27,131
+1036,PLX-4720,2,primary10,response_association_pair_full_minus_mad_pair_full,10,0,,,-0.00211585922408,27,131
+1036,PLX-4720,2,primary10,response_association_pair_full_minus_response_association_expression,10,10,-0.130924531985,-0.130924531985,-0.00071050133207,27,131
+1036,PLX-4720,2,primary10,response_association_pair_full_minus_response_association_rank,10,10,-0.146626757581,-0.146626757581,-0.00128135613677,27,131
+1091,BMS-536924,0,primary10,response_association_pair_full_minus_expression_strong,10,10,-0.0507122034158,-0.0507122034158,-0.00192947616344,28,131
+1091,BMS-536924,0,primary10,response_association_pair_full_minus_mad_pair_full,10,10,0.0262704742085,0.0262704742085,0.00051023313675,28,131
+1091,BMS-536924,0,primary10,response_association_pair_full_minus_response_association_expression,10,10,-0.032728595423,-0.032728595423,-0.00194518216675,28,131
+1091,BMS-536924,0,primary10,response_association_pair_full_minus_response_association_rank,10,10,-0.00549146542893,-0.00549146542893,-0.00117936600839,28,131
+1091,BMS-536924,1,primary10,response_association_pair_full_minus_expression_strong,10,10,-0.102625318554,-0.102625318554,-0.00455841676182,28,131
+1091,BMS-536924,1,primary10,response_association_pair_full_minus_mad_pair_full,10,10,0.0220159008696,0.0220159008696,-0.00061055441171,28,131
+1091,BMS-536924,1,primary10,response_association_pair_full_minus_response_association_expression,10,10,-0.0147546100525,-0.0147546100525,-0.00154123116241,28,131
+1091,BMS-536924,1,primary10,response_association_pair_full_minus_response_association_rank,10,10,-0.0161262035333,-0.0161262035333,-0.00136449608866,28,131
+1091,BMS-536924,2,primary10,response_association_pair_full_minus_expression_strong,10,10,-0.0227726306122,-0.0227726306122,-0.00182882756652,28,131
+1091,BMS-536924,2,primary10,response_association_pair_full_minus_mad_pair_full,10,10,0.0436357698933,0.0436357698933,0.00104037462725,28,131
+1091,BMS-536924,2,primary10,response_association_pair_full_minus_response_association_expression,10,10,-0.00520078765743,-0.00520078765743,-0.0020000609953,28,131
+1091,BMS-536924,2,primary10,response_association_pair_full_minus_response_association_rank,10,10,-0.01816441295,-0.01816441295,-0.00194537440604,28,131
+1191,Bortezomib,0,primary10,response_association_pair_full_minus_expression_strong,10,10,-0.0477330951431,-0.0477330951431,-0.00083816147875,28,131
+1191,Bortezomib,0,primary10,response_association_pair_full_minus_mad_pair_full,10,0,,,-0.00096487656776,28,131
+1191,Bortezomib,0,primary10,response_association_pair_full_minus_response_association_expression,10,10,-0.028706947431,-0.028706947431,-0.00010135477071,28,131
+1191,Bortezomib,0,primary10,response_association_pair_full_minus_response_association_rank,10,10,-0.117912911685,-0.117912911685,-0.00102449316696,28,131
+1191,Bortezomib,1,primary10,response_association_pair_full_minus_expression_strong,10,10,0.0268291959888,0.0268291959888,-0.00154674108137,28,131
+1191,Bortezomib,1,primary10,response_association_pair_full_minus_mad_pair_full,10,0,,,-0.00224012175668,28,131
+1191,Bortezomib,1,primary10,response_association_pair_full_minus_response_association_expression,10,10,-0.0585355904475,-0.0585355904475,-0.00168177586437,28,131
+1191,Bortezomib,1,primary10,response_association_pair_full_minus_response_association_rank,10,10,-0.0159014551044,-0.0159014551044,-0.0014991618095,28,131
+1191,Bortezomib,2,primary10,response_association_pair_full_minus_expression_strong,10,0,,,0.00011987290012,28,131
+1191,Bortezomib,2,primary10,response_association_pair_full_minus_mad_pair_full,10,0,,,0,28,131
+1191,Bortezomib,2,primary10,response_association_pair_full_minus_response_association_expression,10,0,,,0.00025861946091,28,131
+1191,Bortezomib,2,primary10,response_association_pair_full_minus_response_association_rank,10,0,,,-2.795620554e-05,28,131
+1199,Tamoxifen,0,primary10,response_association_pair_full_minus_expression_strong,10,0,,,0,28,131
+1199,Tamoxifen,0,primary10,response_association_pair_full_minus_mad_pair_full,10,0,,,0,28,131
+1199,Tamoxifen,0,primary10,response_association_pair_full_minus_response_association_expression,10,0,,,0,28,131
+1199,Tamoxifen,0,primary10,response_association_pair_full_minus_response_association_rank,10,0,,,0,28,131
+1199,Tamoxifen,1,primary10,response_association_pair_full_minus_expression_strong,10,0,,,0,28,131
+1199,Tamoxifen,1,primary10,response_association_pair_full_minus_mad_pair_full,10,0,,,0,28,131
+1199,Tamoxifen,1,primary10,response_association_pair_full_minus_response_association_expression,10,0,,,0,28,131
+1199,Tamoxifen,1,primary10,response_association_pair_full_minus_response_association_rank,10,0,,,0,28,131
+1199,Tamoxifen,2,primary10,response_association_pair_full_minus_expression_strong,10,0,,,-0.00043257280653,28,131
+1199,Tamoxifen,2,primary10,response_association_pair_full_minus_mad_pair_full,10,0,,,-0.00043257280653,28,131
+1199,Tamoxifen,2,primary10,response_association_pair_full_minus_response_association_expression,10,10,0.0169749203507,0.0169749203507,-3.59003869e-05,28,131
+1199,Tamoxifen,2,primary10,response_association_pair_full_minus_response_association_rank,10,0,,,-0.00043257280653,28,131
+1922,Cediranib,0,primary10,response_association_pair_full_minus_expression_strong,10,10,-0.0527224273887,-0.0527224273887,-0.00376923694068,28,131
+1922,Cediranib,0,primary10,response_association_pair_full_minus_mad_pair_full,10,0,,,-0.00301727163947,28,131
+1922,Cediranib,0,primary10,response_association_pair_full_minus_response_association_expression,10,0,,,-0.00301727163947,28,131
+1922,Cediranib,0,primary10,response_association_pair_full_minus_response_association_rank,10,0,,,-0.00301727163947,28,131
+1922,Cediranib,1,primary10,response_association_pair_full_minus_expression_strong,10,10,0.0335093522688,0.0335093522688,-0.0002853246905,28,131
+1922,Cediranib,1,primary10,response_association_pair_full_minus_mad_pair_full,10,0,,,-0.00146382852044,28,131
+1922,Cediranib,1,primary10,response_association_pair_full_minus_response_association_expression,10,0,,,-0.00146382852044,28,131
+1922,Cediranib,1,primary10,response_association_pair_full_minus_response_association_rank,10,0,,,-0.00146382852044,28,131
+1922,Cediranib,2,primary10,response_association_pair_full_minus_expression_strong,10,10,0.0183537676082,0.0183537676082,0.00103719687345,28,131
+1922,Cediranib,2,primary10,response_association_pair_full_minus_mad_pair_full,10,10,0.117030797483,0.117030797483,0.00192104800976,28,131
+1922,Cediranib,2,primary10,response_association_pair_full_minus_response_association_expression,10,0,,,0.00108208176202,28,131
+1922,Cediranib,2,primary10,response_association_pair_full_minus_response_association_rank,10,0,,,0.00108208176202,28,131
+1930,Telomerase Inhibitor IX,0,primary10,response_association_pair_full_minus_expression_strong,10,10,-0.00902228641774,-0.00902228641774,0.00014824037627,28,131
+1930,Telomerase Inhibitor IX,0,primary10,response_association_pair_full_minus_mad_pair_full,10,10,0.0678084195753,0.0678084195753,0.00368452639137,28,131
+1930,Telomerase Inhibitor IX,0,primary10,response_association_pair_full_minus_response_association_expression,10,10,-0.0202369359605,-0.0202369359605,0.00080791565208,28,131
+1930,Telomerase Inhibitor IX,0,primary10,response_association_pair_full_minus_response_association_rank,10,10,-0.012530915239,-0.012530915239,0.00094158276441,28,131
+1930,Telomerase Inhibitor IX,1,primary10,response_association_pair_full_minus_expression_strong,10,10,0.00548067546071,0.00548067546071,0.00147426077107,28,131
+1930,Telomerase Inhibitor IX,1,primary10,response_association_pair_full_minus_mad_pair_full,10,10,0.00544618601471,0.00544618601471,0.00206157276117,28,131
+1930,Telomerase Inhibitor IX,1,primary10,response_association_pair_full_minus_response_association_expression,10,10,-0.0279124498427,-0.0279124498427,-0.00040634486809,28,131
+1930,Telomerase Inhibitor IX,1,primary10,response_association_pair_full_minus_response_association_rank,10,10,-0.011490444206,-0.011490444206,-0.00038485574609,28,131
+1930,Telomerase Inhibitor IX,2,primary10,response_association_pair_full_minus_expression_strong,10,10,0.015500031521,0.015500031521,0.00096952813125,28,131
+1930,Telomerase Inhibitor IX,2,primary10,response_association_pair_full_minus_mad_pair_full,10,10,0.110086082707,0.110086082707,0.00534021052921,28,131
+1930,Telomerase Inhibitor IX,2,primary10,response_association_pair_full_minus_response_association_expression,10,10,-0.0154944959855,-0.0154944959855,0.00044183002079,28,131
+1930,Telomerase Inhibitor IX,2,primary10,response_association_pair_full_minus_response_association_rank,10,10,-0.006234686244,-0.006234686244,0.00160759268008,28,131
+1931,MIRA-1,0,primary10,response_association_pair_full_minus_expression_strong,10,10,0.0768910347767,0.0768910347767,0.00021434423619,28,132
+1931,MIRA-1,0,primary10,response_association_pair_full_minus_mad_pair_full,10,0,,,-5.8649442221e-05,28,132
+1931,MIRA-1,0,primary10,response_association_pair_full_minus_response_association_expression,10,10,0.0270951943082,0.0270951943082,-8.1080449328e-05,28,132
+1931,MIRA-1,0,primary10,response_association_pair_full_minus_response_association_rank,10,10,0.0178179013509,0.0178179013509,-5.648498089e-06,28,132
+1931,MIRA-1,1,primary10,response_association_pair_full_minus_expression_strong,10,10,0.0352791956752,0.0352791956752,0.000409220956564,28,132
+1931,MIRA-1,1,primary10,response_association_pair_full_minus_mad_pair_full,10,0,,,-8.0614840526e-05,28,132
+1931,MIRA-1,1,primary10,response_association_pair_full_minus_response_association_expression,10,10,0.0402419263389,0.0402419263389,0.000383476085468,28,132
+1931,MIRA-1,1,primary10,response_association_pair_full_minus_response_association_rank,10,10,-0.0297151776105,-0.0297151776105,-6.564547407e-05,28,132
+1931,MIRA-1,2,primary10,response_association_pair_full_minus_expression_strong,10,10,-0.00645149344302,-0.00645149344302,-0.000135602484326,28,132
+1931,MIRA-1,2,primary10,response_association_pair_full_minus_mad_pair_full,10,0,,,-0.000197242254093,28,132
+1931,MIRA-1,2,primary10,response_association_pair_full_minus_response_association_expression,10,10,-0.0455195211346,-0.0455195211346,-8.758950889e-05,28,132
+1931,MIRA-1,2,primary10,response_association_pair_full_minus_response_association_rank,10,10,0.0481276975575,0.0481276975575,-0.000258208707369,28,132

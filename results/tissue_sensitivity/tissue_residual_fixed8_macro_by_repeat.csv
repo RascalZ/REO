@@ -1,0 +1,13 @@
+﻿repeat,tissue_set,contrast,expected_drugs,expected_tissue_cells,delta_rho_defined_drugs,delta_rho_defined_tissue_cells,delta_rho_available_case_equal_drug_mean,delta_rho_available_drugs,delta_rho_available_tissue_cell_mean,delta_rho_strict_equal_drug_macro,rmse_gain_defined_drugs,rmse_gain_strict_equal_drug_macro
+0,primary10,response_association_pair_full_minus_expression_strong,8,80,6,60,-0.00613672416036,6,-0.00613672416036,,8,-0.000709526811045
+0,primary10,response_association_pair_full_minus_mad_pair_full,8,80,3,30,0.0354356305147,3,0.0354356305147,,8,0.000189222472312
+0,primary10,response_association_pair_full_minus_response_association_expression,8,80,5,50,-0.0202381812117,5,-0.0202381812117,,8,-0.000465960665884
+0,primary10,response_association_pair_full_minus_response_association_rank,8,80,5,50,-0.045655095673,5,-0.045655095673,,8,-0.000546135977827
+1,primary10,response_association_pair_full_minus_expression_strong,8,80,6,60,0.00672334820944,6,0.00672334820944,,8,-0.000641392743874
+1,primary10,response_association_pair_full_minus_mad_pair_full,8,80,3,30,0.0254106902419,3,0.0254106902419,,8,-0.000144785238142
+1,primary10,response_association_pair_full_minus_response_association_expression,8,80,5,50,-0.0295671114089,5,-0.0295671114089,,8,-0.000577822414558
+1,primary10,response_association_pair_full_minus_response_association_rank,8,80,5,50,-0.0291660839926,5,-0.0291660839926,,8,-0.000687922159513
+2,primary10,response_association_pair_full_minus_expression_strong,8,80,5,50,0.00511080694939,5,0.00511080694939,,8,-0.00044845860661
+2,primary10,response_association_pair_full_minus_mad_pair_full,8,80,4,40,0.106511264862,4,0.106511264862,,8,0.000792356878957
+2,primary10,response_association_pair_full_minus_response_association_expression,8,80,6,60,-0.0331478341392,6,-0.0331478341392,,8,-0.000195281611513
+2,primary10,response_association_pair_full_minus_response_association_rank,8,80,5,50,-0.0473608376444,5,-0.0473608376444,,8,-0.00034907894886

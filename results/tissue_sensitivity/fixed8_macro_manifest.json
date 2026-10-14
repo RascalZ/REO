@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0",
+  "status": "completed_fixed8_tissue_macro_summary",
+  "created_utc": "2026-10-14T08:03:09.631965+00:00",
+  "analysis_lock_sha256": "bb56d1b1bdd4aadc1058ff4f75d6b6976b246f0efec80e7c8249c57aded6fd60",
+  "protocol_lock_sha256": "deb15cd16258b85c86f1605a3099b85319b33a69f086c8ffe912ba12543e0e1b",
+  "source_macro_sha256": "1f2efe944ee89136b4b121911ac4682d70c51bbdb32038511be88b10ebaf7863",
+  "script_sha256": "e960e66d177b752df78d14cc21918b8dafaa904452717c96629e7c18623d91f7",
+  "external_response_accessed": false,
+  "new_model_fits": 0,
+  "wall_seconds": 0.03789179999148473,
+  "output_hashes": {
+    "results/tissue_sensitivity/fixed8_macro_by_repeat.csv": "560cab5b6a29968d85577c7f3f973ac3b755722c9e334e207c12ee1b2cef325d",
+    "reports/阶段8a_固定八药组织宏汇总.md": "a891fcd415c458738f7a0c2ab2f69a23a589e847af0cd9573840a0162acf1d2f"
+  },
+  "interpretation": "Descriptive equal-drug summary over frozen ten-tissue macros; repeats are not independent inferential replicates"
+}
