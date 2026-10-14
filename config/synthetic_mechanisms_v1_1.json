@@ -1,0 +1,86 @@
+{
+  "schema_version": "1.1",
+  "declared_analysis_date": "2026-10-14",
+  "status": "execution_amendment_frozen_before_any_synthetic_model_fit",
+  "supersedes_for_execution": "config/synthetic_mechanisms_v1.json",
+  "original_protocol_preserved": "config/p5e_protocol_v1.lock.json",
+  "protocol": "docs/SYNTHETIC_MECHANISM_EXECUTION_V1_1.md",
+  "source_model_config": "config/ordinal_repeated_v1.json",
+  "run_name": "fixed8_synthetic_mechanism_controls_v1_1",
+  "scenario_order": [
+    "tissue_only",
+    "weak_molecular",
+    "common_sample_amplitude",
+    "predefined_pair_order"
+  ],
+  "scenario_indices": {
+    "tissue_only": 0,
+    "weak_molecular": 1,
+    "common_sample_amplitude": 2,
+    "predefined_pair_order": 3
+  },
+  "replicates_per_scenario": 10,
+  "n_samples": 240,
+  "n_tissues": 8,
+  "samples_per_tissue": 30,
+  "n_genes": 220,
+  "gene_ids": "SIMGENE_0001 through SIMGENE_0220",
+  "cohort_seed_formula": "2026101400 + 100*scenario_index + replicate_index",
+  "rng": "numpy.random.Generator(PCG64(seed)); standard-normal draws are generated in C row-major order; values outside [-3,3] are rejected and redrawn in ascending flattened-index order until all are within bounds",
+  "outer_split": {
+    "method": "StratifiedGroupKFold(shuffle=True)",
+    "n_splits": 3,
+    "seed_formula": "cohort_seed + 1000",
+    "groups": "one unique synthetic biological group per sample",
+    "stratification": "eight tissue labels, 30 samples each"
+  },
+  "inner_split": {
+    "method": "StratifiedGroupKFold(shuffle=True)",
+    "n_splits": 3,
+    "seed_formula": "cohort_seed + 1100 + zero_based_outer_fold",
+    "groups": "synthetic biological groups restricted to outer training rows"
+  },
+  "scenario_noise_support": "Every standard-normal variate used in the four DGPs is sampled from a standard normal truncated by rejection to [-3,3]. This is a negligible-tail numerical support correction that guarantees positive log2(TPM) for the frozen equations; it is not outcome-dependent.",
+  "models": [
+    "tissue_null",
+    "expression_strong",
+    "mad_expression",
+    "mad_rank",
+    "mad_pair_full",
+    "response_association_expression",
+    "response_association_rank",
+    "response_association_pair_full"
+  ],
+  "elastic_net": {
+    "reuse_source_grid": true,
+    "alpha_ratios": [1.0, 0.3, 0.1, 0.03, 0.01],
+    "l1_ratios": [0.5, 1.0],
+    "objective": "Pooled inner RMSE",
+    "feature_budget": 200,
+    "expression_strong_budget": 2000,
+    "eligible_gene_shortfall": "retain all eligible genes up to the budget and report; no substitution"
+  },
+  "response_range": [0.01, 0.99],
+  "gene_expression_conversion": "TPM = exp2(log2TPM) - 1; reject any nonfinite or negative value; no downstream clipping",
+  "resources": {
+    "parallel_jobs": 1,
+    "blas_threads": 1,
+    "rss_sampling_interval_seconds": 0.1,
+    "task_process_isolation": true,
+    "minimum_available_ram_bytes": 536870912,
+    "minimum_commit_free_bytes": 1073741824,
+    "pressure_poll_seconds": 5,
+    "pressure_max_wait_seconds": 300,
+    "pressure_action": "Before each task, wait boundedly; if pressure persists, stop with preserved checkpoints and resource_paused status; never omit tasks or alter model settings"
+  },
+  "external_response_access": "forbidden",
+  "expected_contract": {
+    "cohorts": 40,
+    "tasks": 960,
+    "fits": 26160,
+    "per_sample_model_oof_predictions": 76800,
+    "new_real_development_model_fits": 0,
+    "synthetic_model_fits": 26160
+  },
+  "interpretation": "Finite-sample mechanism controls under explicit synthetic assumptions; not biological mechanism validation or new evidence of REO superiority; no p-values or inferential confidence intervals"
+}
