@@ -216,6 +216,10 @@ def render_report(
         "",
         "下一步按总计划进入有限合成统计机制检验与组织敏感性/LOTO。响应关联候选规则的八药真实拟合已经完成；只有出现明确可区分的新假设才另行提议第三规则。留出单个组织时组织null为常数，其组织内Spearman为NA；该NA不编码为0。外验继续封存。",
         "",
+        "## 执行记录",
+        "",
+        "诊断脚本在最终汇总前经历5次停止，分别暴露输入汇总行数包含额外模型臂、药物表含macro行、repeat子集读取数量不符、零解闭合核对遗漏强表达基线以及报告列名不匹配。修复均为读取/展示完整性问题，没有触发新模型拟合或CTRP访问；临时聚合在最终成功运行中被覆盖。细节列于manifest。",
+        "",
         "## 运行与来源",
         "",
         f"分析程序SHA256：`{manifest['analysis_script_sha256']}`；执行Git提交：`{manifest['execution_commit']}`；处理器峰值RSS（100ms进程采样）：{manifest['peak_rss_bytes']:,} bytes；运行{manifest['elapsed_seconds']:.2f}秒。SHA/行数清单见[`diagnostics_manifest.json`](../results/development_diagnostics/diagnostics_manifest.json)。输入校验与总计必须闭合：零分子外层fit {totals['zero']}，选择零端点 {totals['alpha1']}，响应拆分覆盖8药。",
@@ -575,6 +579,19 @@ def run() -> dict:
         "platform": platform.platform(),
         "created_utc": datetime.now(timezone.utc).isoformat(),
         "scope": "post_hoc_development_descriptive_diagnostic; no new inference family",
+        "script_integration_history": {
+            "stopped_attempts_before_complete_report": 5,
+            "issues": [
+                "Input cardinality assertion initially excluded tissue and expression reference arms.",
+                "Drug-level prediction-deviation table also contains a macro row.",
+                "Repeat-specific rows were initially passed to a helper expecting three repeats.",
+                "Zero endpoint closure initially excluded the 2000-gene expression reference arm.",
+                "Report field name initially differed from the serialized model-specific profile key.",
+            ],
+            "new_model_fits_during_attempts": 0,
+            "external_response_accessed": False,
+            "final_run_overwrote_all_preliminary_aggregates": True,
+        },
     }
     manifest_path = OUT_DIR / "diagnostics_manifest.json"
     manifest["output_sha256"] = {path.name: sha256(path) for path in output_paths}
