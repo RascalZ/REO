@@ -110,7 +110,8 @@ def build_lock() -> dict:
     if synthetic["external_response_accessed"] or synthetic["ctrp_accessed"]:
         raise ValueError("Synthetic control accessed external responses")
     for name, expected in synthetic["outputs"].items():
-        if sha(ROOT / name) != expected:
+        path = ROOT / name if name.startswith("reports/") else ROOT / "results/synthetic_mechanisms" / name
+        if sha(path) != expected:
             raise ValueError("Synthetic predecessor output hash mismatch: " + name)
     with (ROOT / "results/synthetic_mechanisms/representation_gene_set_audit.csv").open(encoding="utf-8-sig", newline="") as handle:
         audit_rows = list(csv.DictReader(handle))
