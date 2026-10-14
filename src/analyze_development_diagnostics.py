@@ -133,6 +133,19 @@ def mean_metric(rows: list[dict[str, str]], drug: int, model: str, metric: str) 
     return statistics.fmean(values)
 
 
+def one_metric(rows: list[dict[str, str]], drug: int, model: str, metric: str) -> float:
+    values = [
+        float(row[metric])
+        for row in rows
+        if int(row["gdsc_drug_id"]) == drug
+        and row["model"] == model
+        and row[metric] != ""
+    ]
+    if len(values) != 1:
+        raise ValueError(f"Expected one fixed-repeat value for {drug}/{model}/{metric}, got {len(values)}")
+    return values[0]
+
+
 def render_report(
     profiles: list[dict],
     zero_summary: list[dict],
@@ -472,9 +485,10 @@ def run() -> dict:
                 item[name] = item[f"{candidate}_{metric}"] - item[f"{reference}_{metric}"]
         item["strong_expression_minus_association_pair_rmse"] = item["expression_strong_rmse"] - item["response_association_pair_full_rmse"]
         for repeat in range(3):
+            repeat_metrics = [r for r in metrics if int(r["repeat"]) == repeat]
             item[f"main_delta_rho_repeat_{repeat + 1}"] = (
-                mean_metric([r for r in metrics if int(r["repeat"]) == repeat], drug, "response_association_pair_full", "spearman")
-                - mean_metric([r for r in metrics if int(r["repeat"]) == repeat], drug, "expression_strong", "spearman")
+                one_metric(repeat_metrics, drug, "response_association_pair_full", "spearman")
+                - one_metric(repeat_metrics, drug, "expression_strong", "spearman")
             )
         for model in MOLECULAR_ORDER:
             item[f"{model}_zero_fits"] = zero_count[(drug, model)]
