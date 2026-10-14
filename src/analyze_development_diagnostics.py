@@ -204,7 +204,7 @@ def render_report(
             f"{float(row['main_delta_rho']):+.3f}|{reps}|"
             f"{float(row['association_pair_minus_tissue_rho']):+.3f}|"
             f"{float(row['strong_expression_minus_association_pair_rmse']):+.5f}|"
-            f"{row['association_pair_zero_fits']}/15|"
+            f"{row['response_association_pair_full_zero_fits']}/15|"
         )
     lines += [
         "",
