@@ -1,0 +1,1360 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Metadata-only additions for a bounded Discussion paragraph on adjacent single-cell perturbation evaluation literature. No project analysis performed.",
+  "accessed_on": "2026-10-15",
+  "normalization_policy": "Prefer assigned print issue year when a final volume/page citation exists; retain online date separately. Conference paper remains inproceedings. Do not invent missing ahead-of-print fields.",
+  "records": [
+    {
+      "proposed_reference_number": 27,
+      "citation_key": "AhlmannEltze2025",
+      "doi": "10.1038/s41592-025-02772-6",
+      "accessed_on": "2026-10-15",
+      "crossref": {
+        "DOI": "10.1038/s41592-025-02772-6",
+        "type": "journal-article",
+        "title": [
+          "Deep-learning-based gene perturbation effect prediction does not yet outperform simple linear baselines"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-3762-068X",
+            "authenticated-orcid": false,
+            "given": "Constantin",
+            "family": "Ahlmann-Eltze",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-0474-2218",
+            "authenticated-orcid": false,
+            "given": "Wolfgang",
+            "family": "Huber",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-4868-1805",
+            "authenticated-orcid": false,
+            "given": "Simon",
+            "family": "Anders",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "editor": null,
+        "container-title": [
+          "Nature Methods"
+        ],
+        "volume": "22",
+        "issue": "8",
+        "page": "1657-1661",
+        "article-number": null,
+        "published": {
+          "date-parts": [
+            [
+              2025,
+              8
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              8,
+              4
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2025,
+              8
+            ]
+          ]
+        },
+        "publisher": "Springer Science and Business Media LLC",
+        "ISSN": [
+          "1548-7091",
+          "1548-7105"
+        ],
+        "ISBN": null,
+        "URL": "https://doi.org/10.1038/s41592-025-02772-6"
+      },
+      "sources": [
+        {
+          "kind": "Crossref REST metadata",
+          "url": "https://api.crossref.org/works/10.1038%2Fs41592-025-02772-6",
+          "accessed_on": "2026-10-15"
+        },
+        {
+          "kind": "Publisher or official proceedings page",
+          "url": "https://www.nature.com/articles/s41592-025-02772-6",
+          "accessed_on": "2026-10-15"
+        },
+        {
+          "kind": "PubMed article record",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40759747/",
+          "accessed_on": "2026-10-15"
+        },
+        {
+          "kind": "NCBI EFetch XML (includes NLM abbreviation and publication status)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=40759747,40854979,42823510&retmode=xml",
+          "accessed_on": "2026-10-15"
+        },
+        {
+          "kind": "Crossref original BibTeX export",
+          "url": "https://api.crossref.org/works/10.1038%2Fs41592-025-02772-6/transform/application/x-bibtex",
+          "accessed_on": "2026-10-15"
+        }
+      ],
+      "pubmed_id": "40759747",
+      "pubmed": {
+        "title": "Deep-learning-based gene perturbation effect prediction does not yet outperform simple linear baselines",
+        "authors": [
+          {
+            "family": "Ahlmann-Eltze",
+            "given": "Constantin",
+            "initials": "C",
+            "collective_name": null
+          },
+          {
+            "family": "Huber",
+            "given": "Wolfgang",
+            "initials": "W",
+            "collective_name": null
+          },
+          {
+            "family": "Anders",
+            "given": "Simon",
+            "initials": "S",
+            "collective_name": null
+          }
+        ],
+        "journal": "Nature methods",
+        "nlm_iso_abbreviation": "Nat Methods",
+        "volume": "22",
+        "issue": "8",
+        "pages": "1657-1661",
+        "publication_status": "ppublish",
+        "pub_date": {
+          "Year": "2025",
+          "Month": "Aug"
+        },
+        "electronic_article_dates": [
+          {
+            "Year": "2025",
+            "Month": "08",
+            "Day": "04"
+          }
+        ]
+      },
+      "normalized": {
+        "entry_type": "article",
+        "title": "Deep-learning-based gene perturbation effect prediction does not yet outperform simple linear baselines",
+        "authors": [
+          {
+            "ORCID": "https://orcid.org/0000-0002-3762-068X",
+            "authenticated-orcid": false,
+            "given": "Constantin",
+            "family": "Ahlmann-Eltze",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-0474-2218",
+            "authenticated-orcid": false,
+            "given": "Wolfgang",
+            "family": "Huber",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-4868-1805",
+            "authenticated-orcid": false,
+            "given": "Simon",
+            "family": "Anders",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "journal": "Nature Methods",
+        "nlm_iso_abbreviation": "Nat Methods",
+        "year": 2025,
+        "volume": "22",
+        "issue": "8",
+        "pages": "1657-1661",
+        "article_number": null,
+        "publisher": "Springer Science and Business Media LLC",
+        "publication_status": "Published journal article with assigned volume and pages",
+        "year_basis": "Assigned print issue year (PubMed and Crossref published-print)"
+      },
+      "validation": {
+        "title_crossref_matches_pubmed": true,
+        "author_count_crossref": 3,
+        "author_count_pubmed": 3,
+        "doi_resolves_to_expected_record": true
+      },
+      "raw_crossref_bibtex": " @article{Ahlmann_Eltze_2025, title={Deep-learning-based gene perturbation effect prediction does not yet outperform simple linear baselines}, volume={22}, ISSN={1548-7105}, url={http://dx.doi.org/10.1038/s41592-025-02772-6}, DOI={10.1038/s41592-025-02772-6}, number={8}, journal={Nature Methods}, publisher={Springer Science and Business Media LLC}, author={Ahlmann-Eltze, Constantin and Huber, Wolfgang and Anders, Simon}, year={2025}, month=Aug, pages={1657–1661} }\n"
+    },
+    {
+      "proposed_reference_number": 28,
+      "citation_key": "Wu2025PerturBench",
+      "doi": "10.52202/085713-3225",
+      "accessed_on": "2026-10-15",
+      "crossref": {
+        "DOI": "10.52202/085713-3225",
+        "type": "proceedings-article",
+        "title": [
+          "PerturBench: Benchmarking Machine Learning Models for Cellular Perturbation Analysis"
+        ],
+        "author": [
+          {
+            "given": "Yan",
+            "family": "Wu",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Altos Labs"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Esther",
+            "family": "Wershof",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Memorial Sloan Kettering Cancer Center"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Sebastian",
+            "family": "Schmon",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Altos Labs"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Marcel",
+            "family": "Nassar",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Altos Labs"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Błażej",
+            "family": "Osiński",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Altos Labs"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Ridvan",
+            "family": "Eksi",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Altos Labs"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Zichao",
+            "family": "Yan",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Altos Labs"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Rory",
+            "family": "Stark",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Altos Labs"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Kun",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "CMU &amp; MBZUAI"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Thore",
+            "family": "Graepel",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Altos Labs, Inc."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "editor": null,
+        "container-title": [
+          "Advances in Neural Information Processing Systems 38"
+        ],
+        "volume": null,
+        "issue": null,
+        "page": "106937-106977",
+        "article-number": null,
+        "published": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "published-online": null,
+        "published-print": {
+          "date-parts": [
+            [
+              2025
+            ]
+          ]
+        },
+        "publisher": "Neural Information Processing Systems Foundation, Inc. (NeurIPS)",
+        "ISSN": null,
+        "ISBN": null,
+        "URL": "https://doi.org/10.52202/085713-3225"
+      },
+      "sources": [
+        {
+          "kind": "Crossref REST metadata",
+          "url": "https://api.crossref.org/works/10.52202%2F085713-3225",
+          "accessed_on": "2026-10-15"
+        },
+        {
+          "kind": "Publisher or official proceedings page",
+          "url": "https://papers.nips.cc/paper_files/paper/2025/hash/8aee537279a66ced96319dfca3c00002-Abstract-Datasets_and_Benchmarks_Track.html",
+          "accessed_on": "2026-10-15"
+        },
+        {
+          "kind": "Official NeurIPS BibTeX export",
+          "url": "https://papers.nips.cc/paper_files/paper/32812-/bibtex",
+          "accessed_on": "2026-10-15"
+        },
+        {
+          "kind": "Crossref original BibTeX export",
+          "url": "https://api.crossref.org/works/10.52202%2F085713-3225/transform/application/x-bibtex",
+          "accessed_on": "2026-10-15"
+        }
+      ],
+      "pubmed_id": null,
+      "official_bibtex": "@inproceedings{NEURIPS2025_8aee5372,\n author = {Wu, Yan and Wershof, Esther and Schmon, Sebastian and Nassar, Marcel and Osi\\'{n}ski, B\\l a\\.{z}ej and Eksi, Ridvan and Yan, Zichao and Stark, Rory and Zhang, Kun and Graepel, Thore},\n booktitle = {Advances in Neural Information Processing Systems},\n doi = {10.52202/085713-3225},\n editor = {D. Belgrave and C. Zhang and H. Lin and R. Pascanu and P. Koniusz and M. Ghassemi and N. Chen},\n pages = {},\n publisher = {Curran Associates, Inc.},\n title = {PerturBench: Benchmarking Machine Learning Models for Cellular Perturbation Analysis},\n url = {https://proceedings.neurips.cc/paper_files/paper/2025/file/8aee537279a66ced96319dfca3c00002-Paper-Datasets_and_Benchmarks_Track.pdf},\n volume = {38, Main Conference},\n year = {2025}\n}\n",
+      "normalized": {
+        "entry_type": "inproceedings",
+        "title": "PerturBench: Benchmarking Machine Learning Models for Cellular Perturbation Analysis",
+        "authors": [
+          {
+            "given": "Yan",
+            "family": "Wu",
+            "sequence": "first",
+            "affiliation": [
+              {
+                "name": "Altos Labs"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Esther",
+            "family": "Wershof",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Memorial Sloan Kettering Cancer Center"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Sebastian",
+            "family": "Schmon",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Altos Labs"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Marcel",
+            "family": "Nassar",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Altos Labs"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Błażej",
+            "family": "Osiński",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Altos Labs"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Ridvan",
+            "family": "Eksi",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Altos Labs"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Zichao",
+            "family": "Yan",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Altos Labs"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Rory",
+            "family": "Stark",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Altos Labs"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Kun",
+            "family": "Zhang",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "CMU &amp; MBZUAI"
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Thore",
+            "family": "Graepel",
+            "sequence": "additional",
+            "affiliation": [
+              {
+                "name": "Altos Labs, Inc."
+              }
+            ],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "booktitle": "Advances in Neural Information Processing Systems",
+        "volume": "38",
+        "year": 2025,
+        "pages": "106937-106977",
+        "publisher": "Curran Associates, Inc.",
+        "nlm_iso_abbreviation": null,
+        "publication_status": "Published refereed NeurIPS 2025 Datasets and Benchmarks Track proceedings article",
+        "year_basis": "Official proceedings volume and Crossref published-print 2025",
+        "note": "NeurIPS 2025 Main Conference, Datasets and Benchmarks Track. Page range supplied by Crossref; the official NeurIPS BibTeX export has an empty pages field. No NLM journal abbreviation applies.",
+        "editor": "D. Belgrave and C. Zhang and H. Lin and R. Pascanu and P. Koniusz and M. Ghassemi and N. Chen"
+      },
+      "validation": {
+        "title_crossref_matches_pubmed": null,
+        "author_count_crossref": 10,
+        "author_count_pubmed": null,
+        "doi_resolves_to_expected_record": true
+      },
+      "raw_crossref_bibtex": " @inproceedings{Wu_2025, series={NeurIPS 2025}, title={PerturBench: Benchmarking Machine Learning Models for Cellular Perturbation Analysis}, url={http://dx.doi.org/10.52202/085713-3225}, DOI={10.52202/085713-3225}, booktitle={Advances in Neural Information Processing Systems 38}, publisher={Neural Information Processing Systems Foundation, Inc. (NeurIPS)}, author={Wu, Yan and Wershof, Esther and Schmon, Sebastian and Nassar, Marcel and Osiński, Błażej and Eksi, Ridvan and Yan, Zichao and Stark, Rory and Zhang, Kun and Graepel, Thore}, year={2025}, pages={106937–106977}, collection={NeurIPS 2025} }\n",
+      "normalization_decisions": [
+        "Preserve entry type inproceedings, consistent with both NeurIPS export and Crossref proceedings-article.",
+        "Prefer the official NeurIPS export publisher Curran Associates, Inc.; retain the different Crossref publisher string in the raw metadata.",
+        "Use pages 106937-106977 supplied by Crossref because the official NeurIPS BibTeX page field is empty.",
+        "Normalize official volume 38, Main Conference to volume 38; preserve the original official export.",
+        "Use the complete official editor list from the NeurIPS BibTeX export."
+      ]
+    },
+    {
+      "proposed_reference_number": 29,
+      "citation_key": "VinasTorne2026Systema",
+      "doi": "10.1038/s41587-025-02777-8",
+      "accessed_on": "2026-10-15",
+      "crossref": {
+        "DOI": "10.1038/s41587-025-02777-8",
+        "type": "journal-article",
+        "title": [
+          "Systema: a framework for evaluating genetic perturbation response prediction beyond systematic variation"
+        ],
+        "author": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-2411-4478",
+            "authenticated-orcid": false,
+            "given": "Ramon",
+            "family": "Viñas Torné",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Maciej",
+            "family": "Wiatrak",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-0241-8948",
+            "authenticated-orcid": false,
+            "given": "Zoe",
+            "family": "Piran",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Shuyang",
+            "family": "Fan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Liangze",
+            "family": "Jiang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6294-6366",
+            "authenticated-orcid": false,
+            "given": "Sarah A.",
+            "family": "Teichmann",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-0074-9196",
+            "authenticated-orcid": false,
+            "given": "Mor",
+            "family": "Nitzan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-1120-1778",
+            "authenticated-orcid": false,
+            "given": "Maria",
+            "family": "Brbić",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "editor": null,
+        "container-title": [
+          "Nature Biotechnology"
+        ],
+        "volume": "44",
+        "issue": "6",
+        "page": "1050-1059",
+        "article-number": null,
+        "published": {
+          "date-parts": [
+            [
+              2025,
+              8,
+              25
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2025,
+              8,
+              25
+            ]
+          ]
+        },
+        "published-print": {
+          "date-parts": [
+            [
+              2026,
+              6
+            ]
+          ]
+        },
+        "publisher": "Springer Science and Business Media LLC",
+        "ISSN": [
+          "1087-0156",
+          "1546-1696"
+        ],
+        "ISBN": null,
+        "URL": "https://doi.org/10.1038/s41587-025-02777-8"
+      },
+      "sources": [
+        {
+          "kind": "Crossref REST metadata",
+          "url": "https://api.crossref.org/works/10.1038%2Fs41587-025-02777-8",
+          "accessed_on": "2026-10-15"
+        },
+        {
+          "kind": "Publisher or official proceedings page",
+          "url": "https://www.nature.com/articles/s41587-025-02777-8",
+          "accessed_on": "2026-10-15"
+        },
+        {
+          "kind": "PubMed article record",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/40854979/",
+          "accessed_on": "2026-10-15"
+        },
+        {
+          "kind": "NCBI EFetch XML (includes NLM abbreviation and publication status)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=40759747,40854979,42823510&retmode=xml",
+          "accessed_on": "2026-10-15"
+        },
+        {
+          "kind": "Crossref original BibTeX export",
+          "url": "https://api.crossref.org/works/10.1038%2Fs41587-025-02777-8/transform/application/x-bibtex",
+          "accessed_on": "2026-10-15"
+        }
+      ],
+      "pubmed_id": "40854979",
+      "pubmed": {
+        "title": "Systema: a framework for evaluating genetic perturbation response prediction beyond systematic variation",
+        "authors": [
+          {
+            "family": "Viñas Torné",
+            "given": "Ramon",
+            "initials": "R",
+            "collective_name": null
+          },
+          {
+            "family": "Wiatrak",
+            "given": "Maciej",
+            "initials": "M",
+            "collective_name": null
+          },
+          {
+            "family": "Piran",
+            "given": "Zoe",
+            "initials": "Z",
+            "collective_name": null
+          },
+          {
+            "family": "Fan",
+            "given": "Shuyang",
+            "initials": "S",
+            "collective_name": null
+          },
+          {
+            "family": "Jiang",
+            "given": "Liangze",
+            "initials": "L",
+            "collective_name": null
+          },
+          {
+            "family": "Teichmann",
+            "given": "Sarah A",
+            "initials": "SA",
+            "collective_name": null
+          },
+          {
+            "family": "Nitzan",
+            "given": "Mor",
+            "initials": "M",
+            "collective_name": null
+          },
+          {
+            "family": "Brbić",
+            "given": "Maria",
+            "initials": "M",
+            "collective_name": null
+          }
+        ],
+        "journal": "Nature biotechnology",
+        "nlm_iso_abbreviation": "Nat Biotechnol",
+        "volume": "44",
+        "issue": "6",
+        "pages": "1050-1059",
+        "publication_status": "ppublish",
+        "pub_date": {
+          "Year": "2026",
+          "Month": "Jun"
+        },
+        "electronic_article_dates": [
+          {
+            "Year": "2025",
+            "Month": "08",
+            "Day": "25"
+          }
+        ]
+      },
+      "normalized": {
+        "entry_type": "article",
+        "title": "Systema: a framework for evaluating genetic perturbation response prediction beyond systematic variation",
+        "authors": [
+          {
+            "ORCID": "https://orcid.org/0000-0003-2411-4478",
+            "authenticated-orcid": false,
+            "given": "Ramon",
+            "family": "Viñas Torné",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Maciej",
+            "family": "Wiatrak",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-0241-8948",
+            "authenticated-orcid": false,
+            "given": "Zoe",
+            "family": "Piran",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Shuyang",
+            "family": "Fan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Liangze",
+            "family": "Jiang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-6294-6366",
+            "authenticated-orcid": false,
+            "given": "Sarah A.",
+            "family": "Teichmann",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0003-0074-9196",
+            "authenticated-orcid": false,
+            "given": "Mor",
+            "family": "Nitzan",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-1120-1778",
+            "authenticated-orcid": false,
+            "given": "Maria",
+            "family": "Brbić",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "journal": "Nature Biotechnology",
+        "nlm_iso_abbreviation": "Nat Biotechnol",
+        "year": 2026,
+        "volume": "44",
+        "issue": "6",
+        "pages": "1050-1059",
+        "article_number": null,
+        "publisher": "Springer Science and Business Media LLC",
+        "publication_status": "Published journal article with assigned volume and pages",
+        "year_basis": "Assigned print issue year (PubMed and Crossref published-print)",
+        "note": "Published online 25 August 2025; assigned to Nature Biotechnology 44(6):1050-1059, June 2026. Cite 2026 when using the assigned volume and pages."
+      },
+      "validation": {
+        "title_crossref_matches_pubmed": true,
+        "author_count_crossref": 8,
+        "author_count_pubmed": 8,
+        "doi_resolves_to_expected_record": true
+      },
+      "raw_crossref_bibtex": " @article{Vi_as_Torn__2025, title={Systema: a framework for evaluating genetic perturbation response prediction beyond systematic variation}, volume={44}, ISSN={1546-1696}, url={http://dx.doi.org/10.1038/s41587-025-02777-8}, DOI={10.1038/s41587-025-02777-8}, number={6}, journal={Nature Biotechnology}, publisher={Springer Science and Business Media LLC}, author={Viñas Torné, Ramon and Wiatrak, Maciej and Piran, Zoe and Fan, Shuyang and Jiang, Liangze and Teichmann, Sarah A. and Nitzan, Mor and Brbić, Maria}, year={2025}, month=Aug, pages={1050–1059} }\n"
+    },
+    {
+      "proposed_reference_number": 30,
+      "citation_key": "Miller2026Calibrated",
+      "doi": "10.1038/s41587-026-03307-w",
+      "accessed_on": "2026-10-15",
+      "crossref": {
+        "DOI": "10.1038/s41587-026-03307-w",
+        "type": "journal-article",
+        "title": [
+          "Deep learning perturbation models can outperform baselines on calibrated metrics"
+        ],
+        "author": [
+          {
+            "given": "Henry E.",
+            "family": "Miller",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Gabriel M.",
+            "family": "Mejia",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Francis J. A.",
+            "family": "Leblanc",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-9924-9284",
+            "authenticated-orcid": false,
+            "given": "Brendan",
+            "family": "Swain",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-9620-3413",
+            "authenticated-orcid": false,
+            "given": "Bo",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-8166-0761",
+            "authenticated-orcid": false,
+            "given": "Lucas Paulo",
+            "family": "de Lima Camillo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "editor": null,
+        "container-title": [
+          "Nature Biotechnology"
+        ],
+        "volume": null,
+        "issue": null,
+        "page": null,
+        "article-number": null,
+        "published": {
+          "date-parts": [
+            [
+              2026,
+              10,
+              1
+            ]
+          ]
+        },
+        "published-online": {
+          "date-parts": [
+            [
+              2026,
+              10,
+              1
+            ]
+          ]
+        },
+        "published-print": null,
+        "publisher": "Springer Science and Business Media LLC",
+        "ISSN": [
+          "1087-0156",
+          "1546-1696"
+        ],
+        "ISBN": null,
+        "URL": "https://doi.org/10.1038/s41587-026-03307-w"
+      },
+      "sources": [
+        {
+          "kind": "Crossref REST metadata",
+          "url": "https://api.crossref.org/works/10.1038%2Fs41587-026-03307-w",
+          "accessed_on": "2026-10-15"
+        },
+        {
+          "kind": "Publisher or official proceedings page",
+          "url": "https://www.nature.com/articles/s41587-026-03307-w",
+          "accessed_on": "2026-10-15"
+        },
+        {
+          "kind": "PubMed article record",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/42823510/",
+          "accessed_on": "2026-10-15"
+        },
+        {
+          "kind": "NCBI EFetch XML (includes NLM abbreviation and publication status)",
+          "url": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils/efetch.fcgi?db=pubmed&id=40759747,40854979,42823510&retmode=xml",
+          "accessed_on": "2026-10-15"
+        },
+        {
+          "kind": "Crossref original BibTeX export",
+          "url": "https://api.crossref.org/works/10.1038%2Fs41587-026-03307-w/transform/application/x-bibtex",
+          "accessed_on": "2026-10-15"
+        }
+      ],
+      "pubmed_id": "42823510",
+      "pubmed": {
+        "title": "Deep learning perturbation models can outperform baselines on calibrated metrics",
+        "authors": [
+          {
+            "family": "Miller",
+            "given": "Henry E",
+            "initials": "HE",
+            "collective_name": null
+          },
+          {
+            "family": "Mejia",
+            "given": "Gabriel M",
+            "initials": "GM",
+            "collective_name": null
+          },
+          {
+            "family": "Leblanc",
+            "given": "Francis J A",
+            "initials": "FJA",
+            "collective_name": null
+          },
+          {
+            "family": "Swain",
+            "given": "Brendan",
+            "initials": "B",
+            "collective_name": null
+          },
+          {
+            "family": "Wang",
+            "given": "Bo",
+            "initials": "B",
+            "collective_name": null
+          },
+          {
+            "family": "de Lima Camillo",
+            "given": "Lucas Paulo",
+            "initials": "LP",
+            "collective_name": null
+          }
+        ],
+        "journal": "Nature biotechnology",
+        "nlm_iso_abbreviation": "Nat Biotechnol",
+        "volume": null,
+        "issue": null,
+        "pages": null,
+        "publication_status": "aheadofprint",
+        "pub_date": {
+          "Year": "2026",
+          "Month": "Oct",
+          "Day": "01"
+        },
+        "electronic_article_dates": [
+          {
+            "Year": "2026",
+            "Month": "10",
+            "Day": "01"
+          }
+        ]
+      },
+      "normalized": {
+        "entry_type": "article",
+        "title": "Deep learning perturbation models can outperform baselines on calibrated metrics",
+        "authors": [
+          {
+            "given": "Henry E.",
+            "family": "Miller",
+            "sequence": "first",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Gabriel M.",
+            "family": "Mejia",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "given": "Francis J. A.",
+            "family": "Leblanc",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-9924-9284",
+            "authenticated-orcid": false,
+            "given": "Brendan",
+            "family": "Swain",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0002-9620-3413",
+            "authenticated-orcid": false,
+            "given": "Bo",
+            "family": "Wang",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          },
+          {
+            "ORCID": "https://orcid.org/0000-0001-8166-0761",
+            "authenticated-orcid": false,
+            "given": "Lucas Paulo",
+            "family": "de Lima Camillo",
+            "sequence": "additional",
+            "affiliation": [],
+            "role": [
+              {
+                "vocabulary": "crossref",
+                "role": "author"
+              }
+            ]
+          }
+        ],
+        "journal": "Nature Biotechnology",
+        "nlm_iso_abbreviation": "Nat Biotechnol",
+        "year": 2026,
+        "volume": null,
+        "issue": null,
+        "pages": null,
+        "article_number": null,
+        "publisher": "Springer Science and Business Media LLC",
+        "publication_status": "Published journal article; ahead of print",
+        "year_basis": "Electronic version-of-record publication year",
+        "note": "Published online 1 October 2026 (ahead of print). No volume, issue, page range or article number was assigned in Crossref or PubMed metadata as of 15 October 2026; these fields are intentionally omitted."
+      },
+      "validation": {
+        "title_crossref_matches_pubmed": true,
+        "author_count_crossref": 6,
+        "author_count_pubmed": 6,
+        "doi_resolves_to_expected_record": true
+      },
+      "raw_crossref_bibtex": " @article{Miller_2026, title={Deep learning perturbation models can outperform baselines on calibrated metrics}, ISSN={1546-1696}, url={http://dx.doi.org/10.1038/s41587-026-03307-w}, DOI={10.1038/s41587-026-03307-w}, journal={Nature Biotechnology}, publisher={Springer Science and Business Media LLC}, author={Miller, Henry E. and Mejia, Gabriel M. and Leblanc, Francis J. A. and Swain, Brendan and Wang, Bo and de Lima Camillo, Lucas Paulo}, year={2026}, month=Oct }\n"
+    }
+  ]
+}

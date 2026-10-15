@@ -22,3 +22,6 @@ reference_number,source_journal_title,nlm_iso_abbreviation,doi,metadata_field
 21,Frontiers in Molecular Biosciences,Front Mol Biosci,10.3389/fmolb.2020.00034,PubMed ISOAbbreviation
 22,Cancer Discovery,Cancer Discov,10.1158/2159-8290.CD-15-0235,PubMed ISOAbbreviation
 23,Cell,Cell,10.1016/j.cell.2016.06.017,PubMed ISOAbbreviation
+27,Nature Methods,Nat Methods,10.1038/s41592-025-02772-6,PubMed ISOAbbreviation
+29,Nature Biotechnology,Nat Biotechnol,10.1038/s41587-025-02777-8,PubMed ISOAbbreviation
+30,Nature Biotechnology,Nat Biotechnol,10.1038/s41587-026-03307-w,PubMed ISOAbbreviation

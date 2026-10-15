@@ -1,9 +1,24 @@
 {
-  "filepath": "manuscript_v1\\references.bib",
-  "total_entries": 26,
-  "valid_entries": 26,
+  "filepath": "manuscript_v1/references.bib",
+  "total_entries": 30,
+  "valid_entries": 30,
   "errors": [],
-  "warnings": [],
+  "warnings": [
+    {
+      "type": "missing_recommended_field",
+      "field": "volume",
+      "severity": "medium",
+      "message": "Entry Miller2026Calibrated: Missing recommended field \"volume\"",
+      "entry": "Miller2026Calibrated"
+    },
+    {
+      "type": "missing_recommended_field",
+      "field": "pages",
+      "severity": "medium",
+      "message": "Entry Miller2026Calibrated: Missing recommended field \"pages\"",
+      "entry": "Miller2026Calibrated"
+    }
+  ],
   "duplicates": [],
   "venue_standard_checked": null,
   "min_count_checked": null,

@@ -1,0 +1,61 @@
+{
+  "version": "1.0",
+  "completed_on": "2026-10-16",
+  "metadata_accessed_on": "2026-10-15",
+  "research_plan_version": "3.33",
+  "scope": "Discussion, bibliography, documentation and citation checker only; no model fit, statistical rerun or CTRPv2 response access",
+  "new_paragraph_word_count": 162,
+  "new_reference_numbers": [
+    27,
+    28,
+    29,
+    30
+  ],
+  "numeric_citation_validation": {
+    "evidence_draft": true,
+    "bmc_draft": true,
+    "checks_per_draft": 17,
+    "reference_count": 30,
+    "unique_doi_count": 28,
+    "journal_article_count": 26,
+    "conference_paper_count": 1,
+    "resource_count": 3
+  },
+  "bibliography_validation": {
+    "valid_entries": 30,
+    "errors": 0,
+    "duplicate_entries": 0,
+    "warnings": 2,
+    "warning_reason": "Miller2026Calibrated has no assigned volume/pages as of metadata access date; intentionally omitted."
+  },
+  "nlm_mapping_rows": 26,
+  "docx_editable_table_count": 2,
+  "word_render": {
+    "application": "Microsoft Word 2021",
+    "page_count": 28,
+    "paper": "A4",
+    "visually_checked_pages": [
+      20,
+      21,
+      26,
+      28
+    ],
+    "new_discussion_page": 20,
+    "new_references_page": 26,
+    "status": "pass; complete text, no clipping observed",
+    "figures_embedded": false
+  },
+  "independent_claim_review": "passed; no remaining substantive scientific concerns",
+  "locked_analysis_sources_and_results_modified": false,
+  "artifact_sha256": {
+    "Manuscript_draft.md": "b29097ef827064f2d2b96c81e45f4605a0da68db346e0d9824bc0b55a7e8a88a",
+    "Manuscript_BMC_Genomics_draft.md": "53716682eca2673123766dd1fbccd0b9552d3667cd75605e5294eaac647e8396",
+    "Manuscript_BMC_Genomics_draft.docx": "59741fdb15efa5962b3d0eb71b4f88c9b831cc7fdf61f6a6b2c7a186071d0f08",
+    "references.bib": "d75838ee6d2f9d1deebe3ed37979644a312cc0b18fcfeb3f1473b675dfe5968c",
+    "references_crossref.bib": "1b1ecab337b5cf2402c319a02a3ea7009328b79bcf90763b6c342e105b5314e6",
+    "references_crossref_normalized.bib": "d2100a97ec588d2b72aa75390e4e05b85f84c67ba5699d6900438ca21210caf0",
+    "nlm_journal_abbreviations.csv": "5daae4e392fdf47138f1a9d1fabfca2ecdd56c42b40b7da5aff82e9f29d9ee04",
+    "aivc_reference_metadata.json": "1e848e849d2e7f5978f2f3e603fdaedd127653f83ae932dfed01ffb265222568"
+  },
+  "submission_ready": false
+}
