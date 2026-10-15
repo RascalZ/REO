@@ -1,97 +1,78 @@
-# REO · 药物反应预测研究重构
+# REO drug-response prediction: auditable reconstruction
 
-以可追溯的样本内相对表达顺序（REO）研究癌细胞系药物反应预测。公平比较REO、普通表达模型和组织基线，评估未见细胞系上的跨药敏筛选迁移。首选投稿期刊：**BMC Genomics**。
+This repository contains a leakage-controlled comparison of relative expression ordering (REO), expression, rank, and tissue-only models for continuous drug-response prediction in cancer cell lines. The analysis is complete through its locked external evaluation. Manuscript reconstruction is in progress.
 
-**唯一持续维护的总计划：[RESEARCH_PLAN.md](RESEARCH_PLAN.md)。** 每次执行前先看§0；错误、方案变更及依据写入变更表。旧计划和旧稿作为历史快照保留。
+## Current status
 
-**当前完成：总计划v2.9。** 新版固定八药5外层×3重复/3内层的六分子臂、同政策组织参照和表达2000 EN已完成960任务、26,160 fits、119,208 OOF。独立审计、统计、报告和14个公开产物校验通过，0失败/资源暂停/solver警告/回退。主关联REO−强表达宏Δρ为−0.005882，family9条件区间[−0.018714,+0.006614]；优势未建立，RMSE描述性证据还指向误差稍高。候选政策改善序表示排序，未证明完整pair优于秩或表达；原v1和四药结果保留，CTRP封存、非劣性待论证。见[阶段6报告](reports/阶段6_固定八药表示与候选规则重复评价.md)、[科学解读](docs/ORDINAL_REPEATED_ASSESSMENT.md)和[公开汇总](results/ordinal_repeated/)。
+As of 2026-10-15, the single maintained research plan is [RESEARCH_PLAN.md](RESEARCH_PLAN.md), version 3.27. Read its current-status section before using any older stage notes. The current scientific readouts are:
 
-历史阶段1冻结8种化合物、627个开发和180个主外验模型/生物组；后续癌队列v2修订为626/175。阶段2完成MIRA-1/PLX-4720的开发专用嵌套试跑（REO80、表达EN和组织基线）：462次拟合、约135秒、采样峰值RSS约0.66 GiB。历史pilot与当前正式结果均保留。
+- Fixed eight-drug nested development evaluation: 626 independent development groups, 4,967 drug–model observations, 5 outer folds × 3 repeats and 3 inner folds. The predefined REO-pair minus strong-expression macro ΔSpearman was −0.00588, with family-adjusted conditional interval [−0.01871, +0.00661]. This does not establish REO superiority, equivalence, or non-inferiority.
+- Tissue sensitivity: the strict prespecified leave-one-tissue-out macro was undefined; 34/80 drug–tissue cells had defined correlations.
+- Final model audit: 64/64 models and 1,744 fit events passed independent reload/source audit. Of 56 molecular arms, 29 selected a zero molecular solution.
+- One-time CTRPv2 evaluation: 175 non-overlapping external groups and 1,185 drug–model response units, with 9,480/9,480 predictions covered. The primary equal-drug REO-pair minus strong-expression ΔSpearman was −0.000372, family-9 adjusted conditional interval [−0.042166, +0.043505]. The result is a retrospective cross-screen transfer evaluation using the same CCLE expression source, not cross-expression-platform or clinical validation.
+- The original manuscript’s “pan-cancer REO atlas” claims, binary classification results, pathway/PPI claims, GEO fine-tuning and single-cell predictions are not supported by the rebuilt analysis. See [Stage 15 manuscript reconstruction blueprint](reports/阶段15_投稿稿件重构蓝图.md).
 
-历史问题见[阶段2试跑报告](reports/阶段2_开发集嵌套试跑.md)。资格复核发现少量非癌对照；v1/pilot保留原样，正式队列修订见总计划与metadata审查记录。
+## Research records
 
-**固定8药正式评价完成。** [阶段4报告](reports/阶段4_固定八药重复嵌套评价.md)与[科学评估](docs/FORMAL_SCIENTIFIC_ASSESSMENT.md)记录840任务、18,120fits、104,307 OOF及10,000次配对bootstrap。主EN宏ΔSpearman −0.028458，RF −0.036612，当前REO流程未显示强表达对照的优势；85/120主REO外层为零分子解。原673检查点SHA保持，Windows控制器失败记录保留，数值源码和正式lock未改。
+- [Total research plan](RESEARCH_PLAN.md): sole maintained plan, decision gates, history and change log.
+- [Stage 14 external evaluation and scientific interpretation](reports/阶段14_P6一次性CTRP外验与研究方向判定.md): coverage, effect estimates, intervals and limitations.
+- [Stage 15 manuscript reconstruction blueprint](reports/阶段15_投稿稿件重构蓝图.md): old-claim disposition, proposed research framing, abstract draft and figure/table map.
+- [Nested evaluation protocol](docs/ORDINAL_REPEATED_V1_PROTOCOL.md): frozen development estimands and training-fold rules.
+- [External validation protocol](docs/EXTERNAL_VALIDATION_PROTOCOL_V1_1.md): locked cross-screen evaluation rules.
+- [Data availability and provenance](docs/DATA_AVAILABILITY.md) and [reproducibility status](docs/REPRODUCIBILITY.md).
 
-**已完成：四药表示诊断（v2.7）。** [已有OOF分解](docs/OOF_DECOMPOSITION.md)保留旧结果；[冻结协议](docs/ORDINAL_DIAGNOSTIC_V1_PROTOCOL.md)的两种候选规则×表达/样本内秩/完整pair三种表示、同政策组织参照及9次全流程工程置换已全部执行。独立核验通过：840个成功外层任务、22,440次设计拟合、173,600条OOF记录，其中真实标签为84任务、2,244次拟合和17,360条OOF；其余属于置换控制。详见[阶段5报告](reports/阶段5_秩与基因对诊断试跑.md)与[科学评估及下一步](docs/ORDINAL_DIAGNOSTIC_ASSESSMENT.md)。
+## Key artifacts
 
-在这四个诊断案例中，组织内响应关联选基因相对MAD的宏Δρ分别为表达+0.020439、秩+0.032689、pair+0.041295，三者的探索性配对95%区间均高于0。但响应关联规则下pair相对表达的宏Δρ仅+0.002021（95% CI −0.010449至+0.014278），尚不支持REO具有可靠预测优势，也不证明等效。真实标签72个分子外层拟合中26个为零分子解；Tamoxifen在响应关联规则下三种表示均退回组织参照。四药由先前结果启发选择，区间以已有OOF为条件且未校正多重比较；9次置换是工程控制，不能用于常规0.05显著性结论。旧八药正式结果保持有效，CTRP继续封存。
+| Artifact | Purpose |
+|---|---|
+| `config/external_validation_v1_1.lock.json` | First lock, binding final-model scientific sources and environment |
+| `config/external_execution_v1_1.lock.json` | Second lock, binding final models and response-free external predictions before CTRPv2 response access |
+| `results/formal_development/` | Aggregate results for the original fixed-eight development evaluation |
+| `results/ordinal_repeated/` | Aggregate results for the two candidate rules × three representations evaluation |
+| `results/tissue_loto/` | Aggregate tissue leave-out results, including undefined cells |
+| `results/p6_external/evaluation_summary.json` | Public aggregate result from the unique completed external attempt; contains no individual response values |
+| `results/p6_external/attempt_0001_completed.json` | Completion marker linked to the aggregate summary hash |
+| `reports/` | Stage-by-stage scientific and operational records |
 
-诊断科学源固定于`e9b576d`。两次内存中断的失败记录、601个唯一成功检查点SHA及原版本恢复证据保留，见[执行记录](docs/ORDINAL_MEMORY_RECOVERY.md)。包含失败尝试的31次完整拟合事件及1次不预测/不评分的资源探针，总计22,472次完整拟合事件，另有2次中断拟合；控制器各会话合计约2小时59分，首启至完成约3小时10分。这些是本机实际执行资源记录，不是隔离的算法速度基准。
+The original manuscript and submission packages remain outside the repository and are treated as read-only source material. Raw/processed expression matrices, individual sample-level predictions, fit checkpoints, local paths and response files are not committed. Upstream dataset terms remain in force; the repository license does not relicense those data.
 
-## 快速查看
+## Inspecting public aggregates
+
+With Python 3.12, the aggregate verifiers can be run from the repository root:
 
 ```sh
-git clone https://github.com/RascalZ/REO.git
-cd REO
 python scripts/verify_public_snapshot.py
 python scripts/verify_public_ordinal.py
 python scripts/verify_public_ordinal_repeated.py
 ```
 
-这些入口仅用Python标准库核验公开汇总的哈希、结构及计数，不重新拟合模型或核验个体预测。完整身份与拟合审计需要版本化原始输入，见[数据与许可](docs/DATA_AVAILABILITY.md)、[复现命令及边界](docs/REPRODUCIBILITY.md)。
+These verify published cohort/model aggregate snapshots. They do not refit models or reproduce sample-level predictions. Full locked-model verification depends on the versioned input data and local environment described in the data-availability record.
 
-## 当前材料
+The second-lock check can be run without opening CTRPv2 response values:
 
-- [阶段5报告](reports/阶段5_秩与基因对诊断试跑.md)、[四药诊断科学评估](docs/ORDINAL_DIAGNOSTIC_ASSESSMENT.md)、[公开聚合结果](results/ordinal_diagnostic/)。
-- [阶段1报告](reports/阶段1_数据核验与队列锁定.md)：药物ID/样本量/浓度、排除记录、外验限制。
-- [主面板](results/main_drugs.csv)、[295药物样本量](results/all_295_GDSC_drug_sample_counts.csv)、[结构支持候选](results/all_structure_supported_drug_coverage.csv)。
-- [下载登记](data_manifest/download_register.csv)、[旧代码处置](reports/现有代码处置清单.md)。
-- [表达审计](reports/expression_audit.md)、[化合物审计](reports/drug_identity_audit.md)、[CTRP原包审计](reports/ctrp_provenance_audit.md)。
-- 本地阅读版：`reports/阶段1_数据核验与队列锁定.html`、`reports/阶段1_队列与下载清单.xlsx`。
+```sh
+python scripts/freeze_external_execution_v1.py --verify-only
+```
 
-## 结构
+The CTRPv2 result was executed once under the verified second lock. Do not rerun the external evaluation as a tuning or model-selection step. No source code in this repository should be used to change the locked drug panel, predictions, estimands, or analysis after seeing the external results.
+
+## Statistical interpretation
+
+The external primary interval is conditional on the fitted models and observed external groups. It does not include the uncertainty from repeating feature selection, tuning and model fitting. The internal bootstrap intervals are likewise conditional on the recorded out-of-fold predictions. Repeated folds are not additional independent biological samples. A zero molecular solution means the penalized model retained the tissue component without a molecular coefficient; a correlation from that model does not demonstrate a learned molecular resistance signal. Undefined correlations and strict macro values remain NA.
+
+The cross-screen assessment uses GDSC2 training responses and CTRPv2 evaluation responses, while expression comes from CCLE in both settings. CTRPv2 had been used in the historical manuscript, so the present analysis is not prospective or fully blind. Dose windows and screening protocols differ; the external target is within-drug ranking transportability, not absolute AUC calibration or patient response.
+
+## Project structure
 
 ```text
-RESEARCH_PLAN.md            # 唯一维护的总计划与变更台账
-src/, scripts/             # 整理/验证实现和顺序执行入口
-config/                    # 版本化准入配置；本机路径和完整freeze留本地
-docs/                      # 数据获取/许可、复现状态与命令
-data_manifest/             # 下载登记；个人路径/原文件盘点不提交
-data_raw/, data_processed/ # 本地生成和缓存，Git忽略
-results/                   # 可公开聚合计数；逐样本manifest留本地
-reports/                   # 科学审计；二进制交付和完整验证留本地
-.github/workflows/         # 无大型输入的语法/公开汇总检查
+RESEARCH_PLAN.md            # sole maintained plan and change log
+config/                     # frozen model, analysis and execution configurations
+data_manifest/              # source registry and data versions
+docs/                       # protocols, data availability and reproducibility notes
+reports/                    # scientific audits and stage reports
+results/                    # public aggregate outputs; no sample-level labels
+scripts/, src/              # curation, model, validation and analysis code
+tests/                      # integrity and contract checks
 ```
 
-## 安装与重放
-
-阶段1使用Python 3.12.14及固定依赖。将`config/input_paths.example.json`复制为`input_paths.local.json`并填写原文件路径，或设置`REO_ORIGINAL_ROOT`；原文件只读。
-
-```sh
-python -m venv .venv
-# 按操作系统激活环境
-python -m pip install -r requirements.txt
-python scripts/run_curation.py --download --lock
-```
-
-已有锁时，该入口只执行验证。该锁冻结队列及数据整理实现；正式八药与四药诊断各有独立的模型/统计锁及已完成运行。干净环境全流程源数据重放和模型复现仍为发布待验项；CI通过不等于预测有效。
-
-开发试跑依赖另列，保留冻结的阶段1依赖文件：
-
-```sh
-python -m pip install --index-url https://pypi.org/simple -r requirements-modeling.txt
-python -m unittest discover -s tests -p test_pilot_integrity.py -v
-python src/run_development_pilot.py --run-dir runs/my-development-pilot
-```
-
-不要覆盖已有run。原执行代码提交为`629b8f5`，后续异常资源释放/检查点修复不改变已记录的数值结果；具体执行源哈希随报告发布。
-
-队列v2/REO200/RF入口（需要本地已冻结v1/v2及原输入）：
-
-```sh
-python scripts/validate_cancer_cohort.py
-python -m unittest discover -s tests -p "test_pilot*_integrity.py" -v
-python src/run_development_pilot.py --config config/pilot_v0.2.json --run-dir runs/my-cancer-v2-pilot
-python scripts/validate_pilot_run.py --run-dir runs/my-cancer-v2-pilot
-python src/report_reo200_rf_pilot.py --run-dir runs/my-cancer-v2-pilot
-```
-
-阶段3成功运行提交为`5d05349`；随后修复的纯组织响应舍入边界未在真实906个fit中触发，实际运行保留，聚合和审计在`results/pilot_reo200_rf/`。完整freeze/个体manifest与预测留本地；公开癌资格来源事实缓存位于`data_raw/cancer_metadata/`并保留来源许可。
-
-启动器自动记录Git HEAD，并在拟合前校验科学代码/配置与该提交一致。先提交新的科学配置或实现再启动；未提交改动会在拟合前被拒绝，失败证据保留。文档/报告的未提交改动不影响科学源快照。
-
-CTRP曾用于历史项目；当前是回顾性重新隔离的已知身份验证。两库共享CCLE表达且剂量区间不同，结论限于跨筛选、跨细胞系的排序迁移，未证明跨表达平台、相同绝对AUC终点或患者效用。
-
-## 引用与许可
-
-软件引用见[CITATION.cff](CITATION.cff)。暂未发表的新稿不提供论文DOI。新写重构代码和说明采用[MIT](LICENSE)；上游数据、旧代码和原始稿件保留各自权利和使用条款。
+The next work package is manuscript reconstruction from the locked evidence: review the new claim, build replacement figures and tables, write Methods/Results, then update the journal-fit decision. BMC Genomics remains a candidate for reassessment; publication timing and acceptance cannot be inferred from these results.
