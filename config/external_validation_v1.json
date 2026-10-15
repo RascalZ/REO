@@ -1,0 +1,144 @@
+{
+  "schema_version": "1.0",
+  "declared_analysis_date": "2026-10-15",
+  "protocol_version": "P6-external-v1",
+  "protocol_status": "frozen_pre_final_fit",
+  "protocol_document": "docs/EXTERNAL_VALIDATION_PROTOCOL_V1.md",
+  "pre_fit_lock_path": "config/external_validation_v1.lock.json",
+  "pre_fit_gates_passed": true,
+  "pre_external_execution_lock_path": "config/external_execution_v1.lock.json",
+  "pre_external_execution_lock_status": "frozen_pre_external_response",
+  "external_response_access": "forbidden_until_all_freeze_gates_pass",
+  "scope": "Retrospectively redesigned GDSC2-to-CTRPv2 transfer to previously unseen cancer cell-model biological groups; shared CCLE expression, different response screens, no clinical or cross-expression-platform claim",
+  "cohort_version": "v2",
+  "cohort_lock": "config/cohort_freeze_v2.lock.json",
+  "cohort_snapshot": "results/cohort_v2/public_cohort_snapshot.json",
+  "drug_panel_metadata": "results/cohort_v2/main_drugs.csv",
+  "drug_panel_metadata_sha256": "5704749a9b416b920f5028703e2b578aedf3dbe07a0ab8d500f4ff9f2fbbc1b6",
+  "source_model_config": "config/ordinal_repeated_v1.json",
+  "source_model_lock": "config/ordinal_repeated_v1.lock.json",
+  "drug_ids": [1931, 1036, 1191, 1930, 1199, 1091, 1010, 1922],
+  "drug_names_in_order": [
+    "MIRA-1",
+    "PLX-4720",
+    "Bortezomib",
+    "Telomerase Inhibitor IX",
+    "Tamoxifen",
+    "BMS-536924",
+    "Gefitinib",
+    "Cediranib"
+  ],
+  "models": [
+    "tissue_null",
+    "expression_strong",
+    "mad_expression",
+    "mad_rank",
+    "mad_pair_full",
+    "response_association_expression",
+    "response_association_rank",
+    "response_association_pair_full"
+  ],
+  "final_training": {
+    "development_global_biological_groups": 626,
+    "drug_model_observations": 4967,
+    "input_response": "Original frozen GDSC2 continuous AUC at each drug's locked exact dose window; higher means greater viability/lower sensitivity",
+    "inner_folds": 3,
+    "inner_seed": 2026101501,
+    "inner_splitter": "modeling.nested_cv.make_grouped_splits: tissue-stratified StratifiedGroupKFold over 626 global biological groups, restricted to each drug; one shared split assignment across arms",
+    "inner_fit_boundary": "Every candidate/fold re-fits detection, candidate genes, representation, scaling, FWL tissue state, alpha_max and EN on that inner training subset only",
+    "molecular_grid": "Exactly 10 candidates: alpha_max ratios [1,0.3,0.1,0.03,0.01] x l1 ratios [0.5,1.0], as source_model_config; ratio 1 retains analytic zero solution",
+    "selection_objective": "Pooled inner OOF RMSE in original GDSC2 AUC units; first exact grid tie, no external response or distribution use",
+    "refit": "All qualifying development rows for each drug, once with the inner-selected candidate; tissue_null fits once without HPO",
+    "expected_tasks": 64,
+    "expected_fit_events": 1744,
+    "retain_all_tasks": true,
+    "prediction_clipping": false,
+    "score_based_model_selection": false,
+    "serialization": {
+      "format": "joblib with trusted local loads only; retain one model and one audit record per drug x arm",
+      "required_state": "Selected stable Ensembl gene IDs in ascending output order, raw full-input stable gene column order/hash, representation and oriented pair feature order/hash, training scaler/target/FWL/tissue states, hyperparameters, zero-solution flag, training membership hashes, source/environment hashes",
+      "reload_test": "Fresh process reload on synthetic/development-only sentinel rows; same sample order and predictions within absolute tolerance 1e-12, relative tolerance 0, including known/unknown tissue, ties and a zero-molecular case",
+      "immutable_manifest": "SHA-256 for every artifact, source file, configuration, prepared input and lock before external response access"
+    }
+  },
+  "external_endpoint": {
+    "source": "CTRPv2 post-QC concentration-response curve AUC, using frozen eligible experiments and compound/model identity",
+    "source_field": "area_under_curve",
+    "raw_source_path": "data_raw/ctrp/v20.data.curves_post_qc.txt",
+    "raw_source_sha256_from_prior_curation": "b97bb9004f97ff7d5910c0f66c6d26163a2ce88529eaefc5df0e51624e5ac6a9",
+    "repeat_aggregation": "Median eligible experiment AUC per frozen compound and canonical model, once; experiments do not increase independent N",
+    "direction": "Keep raw source AUC direction. Greater viability-curve area implies greater survival/lower drug sensitivity. Never choose a sign from external associations.",
+    "direction_evidence": [
+      "https://ccgdata.cancer.gov/ctd2-data-project/broad-institute-screening-dependencies-cancer-cell-lines",
+      "https://depmap.sanger.ac.uk/documentation/datasets/drug-sensitivity/"
+    ],
+    "cross_screen_scale": "GDSC2 and CTRPv2 use different dose windows/AUC conventions; no absolute cross-screen calibration, label normalization, quantile mapping or response-dependent recoding",
+    "column_and_dose_contract_status": "verified_pre_fit_without_external_response"
+  },
+  "external_gateway": {
+    "primary_population": "Locked cancer-v2 external primary cohort only; 175 unique biological groups and 1185 drug-model eligibility rows before prediction QC",
+    "identity": "Frozen exact compound and canonical cell-model mappings; zero overlap with any development model/group and known GDSC candidate group; mismatch is a hard gate failure",
+    "expression_input": "The same versioned full raw float64 TPM stable-gene matrix, with exactly all locked gene columns in exact stable-ID order; missing, extra or reordered columns are a hard schema failure",
+    "molecular_abstention": "With a valid complete column schema, any sample-level missing, nonnumeric, nonfinite or negative full raw TPM value makes all seven molecular arms abstain; no imputation, tie substitution, sample dropping without a reason, or score-dependent rescue",
+    "tissue_null_on_molecular_abstention": "Predict if exact identity and nonmissing valid tissue are available; raw TPM is not used in its prediction",
+    "unknown_tissue": "A valid but unseen tissue label maps to trained global response mean in tissue_null; molecular models keep their molecular residual term with zero unseen-tissue adjustment. Record unknown-tissue flag.",
+    "missing_or_invalid_tissue": "No valid prediction for any arm; record reason and retain row in the frozen eligibility denominator",
+    "zero_molecular_coefficients": "Valid prediction, not abstention or failed fit; flag zero-molecular state",
+    "prediction_output": "One row per frozen drug x canonical model x arm with identity, biological group, eligibility denominator membership, gateway status/reason, prediction or NA, unknown-tissue/zero-solution flags and artifact hash",
+    "hard_failures": "Source, input or model hash mismatch; missing, extra or reordered expected gene columns; duplicate/conflicting canonical identity; development/external group overlap; wrong drug compound mapping; unexpected endpoint field or dose-window convention; nonfinite fitted-model prediction",
+    "coverage_reporting": "For each drug, retain frozen eligible N, response-valid N, each arm predicted N, each paired common-ID N, unique biological-group N and all noncoverage reason counts; never silently reduce the fixed eight-drug panel"
+  },
+  "statistics": {
+    "primary_metric": "Spearman rank correlation between frozen fixed-model predictions and original-direction CTRPv2 AUC within each drug",
+    "minimum_independent_common_groups_for_spearman": 3,
+    "undefined_spearman": "NA when fewer than three distinct groups, constant response, constant prediction, missing/nonfinite input or any failed arm; retain exact reason and N",
+    "paired_common_id_rule": "For each drug and contrast, both arms scored on exactly the same canonical models and same single aggregated CTRPv2 label; compute each Spearman on that paired intersection, then candidate minus reference",
+    "primary_comparison": {
+      "candidate": "response_association_pair_full",
+      "reference": "expression_strong",
+      "direction": "candidate Spearman minus reference Spearman; positive favors candidate",
+      "family_size": 9,
+      "family_members": "Eight fixed drug contrasts and their equal-eight-drug macro"
+    },
+    "same_candidate_representation_family": {
+      "contrasts": [
+        {"candidate": "mad_pair_full", "reference": "mad_expression"},
+        {"candidate": "response_association_pair_full", "reference": "response_association_expression"}
+      ],
+      "family_size": 18,
+      "family_members": "Two contrasts x (eight fixed drug contrasts plus each equal-eight-drug macro); interpretation only, separate from primary family"
+    },
+    "macro": "Equal mean over all eight preselected drug effects, never observation-weighted; if any drug point contrast undefined, strict macro is NA with all eight definition flags. A draw with any undefined drug effect has undefined macro.",
+    "low_coverage_flag": "Any paired common-ID count below 80 biological groups is flagged as below original design coverage; show descriptive point if defined but no strong transfer claim",
+    "bootstrap": {
+      "draws": 20000,
+      "seed": 2026101502,
+      "generator": "NumPy PCG64 with a logged SeedSequence and exact version; save group order and multiplicity-matrix SHA-256",
+      "unit": "All 175 frozen external biological groups sampled with replacement on every draw; a single shared multiplicity vector is used across all drugs, models and contrasts",
+      "calculation": "Within each drug and paired common-ID set, apply group multiplicities to both arms and the same label, recompute exact tied midranks and Spearman, then contrasts and strict eight-drug macro",
+      "interval": "Percentile with linear quantile interpolation; unadjusted nominal 95% descriptive intervals and Bonferroni nominal family-0.05 conditional intervals",
+      "minimum_valid_fraction": 0.99,
+      "minimum_valid_draws": 19800,
+      "invalid_draw_rule": "Retain reason counts. If an estimand has fewer than 19800 valid draws, its interval is NA; no re-draws, shrinking family, or silently using a subset of drugs.",
+      "primary_bonferroni_tail_probability": "0.05/(2*9)",
+      "representation_bonferroni_tail_probability": "0.05/(2*18)",
+      "inference_scope": "Conditional on the already-trained fixed models and this retrospective external cohort; no training/refit, model-selection, historical-selection or drug-population uncertainty"
+    },
+    "auxiliary": "Report every arm's rho and coverage, tissue-null comparison on matched molecular coverage, zero-solution/unknown-tissue strata and drug heterogeneity descriptively; no external outcome-driven model choice",
+    "absolute_error": "No RMSE, MAE or R2 cross-screen efficacy claim because original GDSC2 and CTRPv2 AUC scales/dose windows are not calibrated; no test-set recalibration",
+    "noninferiority": "No margin, test or equivalence claim"
+  },
+  "pre_fit_gates": [
+    "Verify exact intended CTRPv2 post-QC AUC source column, direction, repeated-experiment median policy and dose-window metadata using official source documentation plus already-frozen curation metadata/code only; do not open external response or response index",
+    "Verify locked eight compound IDs and GDSC2/CTRPv2 concentration metadata, source/input hashes, and no development/external identity overlap",
+    "Implement and pass response-free synthetic gateway and statistical tests for complete/missing/negative/nonfinite TPM, unknown/missing tissue, exact ties, zero-molecular solution, duplicate identity, constant predictions, paired coverage and shared-group bootstrap",
+    "Complete an independent pre-fit code/protocol review with every blocking issue fixed, and record the synthetic test commands, results and source hashes in the pre-fit acceptance report",
+    "Freeze this protocol/config, all training and scoring/statistical code, development-only prepared inputs and environment in config/external_validation_v1.lock.json with protocol_status=frozen_pre_final_fit before any final full-development fit"
+  ],
+  "pre_external_gates": [
+    "Fit and retain all 64 final models with 1744 expected fit events; verify training-only inner folds, every candidate/feature audit and all artifact hashes without external response access",
+    "Independently reload all 64 artifacts in a fresh process and pass the frozen sentinel prediction agreement tests",
+    "Create immutable config/external_execution_v1.lock.json with status=frozen_pre_external_response, binding the pre-fit lock, every model artifact and exact external scoring code; independently validate the no-response preflight before reading CTRP response or response index"
+  ],
+  "post_fit_gate_pending": "Protocol, source-field/dose contract and synthetic gates are frozen before fitting. Real 64-model/1,744-fit completion, independent reload, response-free preflight and second execution lock remain mandatory before CTRP response access."
+}
