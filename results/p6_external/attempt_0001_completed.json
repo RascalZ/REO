@@ -1,0 +1,7 @@
+{
+  "status": "completed",
+  "started_under_second_lock": "frozen_pre_external_response",
+  "second_lock_sha256": "b68dee554829fa1a3fe28060559e97e20ecf8c4e19f88cd64bf8a2c44a57c317",
+  "evaluation_summary_sha256": "2d3d1803fff9a631643fb0e2abff165d35fa6f88e4c33215f2366d7c7bc11acf",
+  "ended_utc": "2026-10-15T05:05:23.372178+00:00"
+}
