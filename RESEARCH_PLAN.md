@@ -1,12 +1,12 @@
 # 基因对药物反应预测项目重构科研计划
 
-**计划v3.23，更新日期：2026-10-15。唯一维护版本为本文件。工作周期：10月10日至11月8日，11月9日至10日保留投稿检查缓冲。**
+**计划v3.24，更新日期：2026-10-15。唯一维护版本为本文件。工作周期：10月10日至11月8日，11月9日至10日保留投稿检查缓冲。**
 
 本计划以最新投稿稿件、主要分析代码、保存的结果矩阵/模型台账、补充表、图2/图4和公开数据源核查为基础。目标是一个月内完成可审查、可复现、论断与证据相符的新稿并投稿；接收和正式上线还取决于编辑及外审，不能由一个月计划保证。用户已确认Naunyn-Schmiedeberg's Archives of Pharmacology亦已拒稿；按1名主要执行者、与助手协作、现有电脑和公共数据设计，版面费不是主要限制。
 
 ## 0 执行台账与当前版本（每次工作先读此节）
 
-**首选期刊：BMC Genomics。固定八药开发集重复嵌套评价未建立REO普遍或独有预测优势；430/840个分子外层拟合选择解析零端点。23组织LOTO v1.3全部1,472任务/40,112次fit/39,736条OOF完成并通过独立验证；预设八药×10组织主Spearman差仅34/80格有定义，严格宏值NA，不能据此宣称REO优势。P6的原v1首锁已生成并推送GitHub，但第一次真实启动在**0 fit**时被旧守卫误拦纯CTRP元数据；[事故报告](reports/阶段12d_P6_v1首锁后零拟合启动故障.md)和旧锁保留，CTRP响应及索引没有打开。现正独立审查[协议v1.1](docs/EXTERNAL_VALIDATION_PROTOCOL_V1_1.md)的守卫修订和新版双锁，相关合成/契约测试52/52通过；**v1.1首锁尚未生成，真实64模型/1,744 fits未启动，CTRP继续封存。**下一gate依次为v1.1独立审查/提交→新版首锁ready/lock/verify→64模型全开发拟合与独立重载→9,480条无响应预检→新版第二锁→一次性CTRP。非劣性仍待论证、不设−0.02。详见[阶段10 LOTO结果](reports/阶段10_LOTO组织外推敏感性.md)及[系统重启恢复与结果审计](reports/阶段10j_LOTO_v1_3系统重启恢复与结果审计.md)。**
+**首选期刊：BMC Genomics。固定八药开发集重复嵌套评价未建立REO普遍或独有预测优势；430/840个分子外层拟合选择解析零端点。23组织LOTO v1.3全部1,472任务/40,112次fit/39,736条OOF完成并通过独立验证；预设八药×10组织主Spearman差仅34/80格有定义，严格宏值NA，不能据此宣称REO优势。P6原v1首锁的零拟合启动故障与旧锁保留；[v1.1独立审查](reports/阶段12e_P6_v1_1冻结前独立审查.md)及52项合成测试通过，新首锁SHA=`c63edcc1137e4449ea164f1790488a424be7db71d2fff895d6b15adec559e2ca`，已验签并同步GitHub。**固定64个全开发模型目前单worker运行；北京时间约11:59首两项通过fit和新进程重载，后续完成数须读取运行元数据，不以本段静态快照替代。CTRP响应及索引继续封存。**下一gate为完整64模型/1,744 fit→独立验证与资源/零解审计→9,480条无响应预检→v1.1第二锁→一次性CTRP。非劣性仍待论证、不设−0.02。详见[阶段12d事故报告](reports/阶段12d_P6_v1首锁后零拟合启动故障.md)、[v1.1协议](docs/EXTERNAL_VALIDATION_PROTOCOL_V1_1.md)和[阶段10 LOTO结果](reports/阶段10_LOTO组织外推敏感性.md)。**
 
 本文件是唯一持续维护的总计划。原计划是历史快照，阶段报告是证据；发现错误、版本/范围/方法变化，应先更新本节及变更表，再建立对应配置版本。不得因外验成绩不好更换主药、身份规则或测试样本。
 
@@ -22,10 +22,16 @@
 |P5c 固定八药新版重复评价|完成；完整审计、统计、报告及公开校验通过|[阶段6报告](reports/阶段6_固定八药表示与候选规则重复评价.md)、[科学解读](docs/ORDINAL_REPEATED_ASSESSMENT.md)；960独立任务进程、26,160 fits、119,208 OOF，无失败/暂停/solver警告/回退|
 |P5d 零解与药物异质性诊断|完成|[阶段7报告](reports/阶段7_零解与药物异质性诊断.md)、[五张聚合表](results/development_diagnostics/)、[诊断方案v1](docs/DEVELOPMENT_DIAGNOSTICS_PROTOCOL_V1.md)；430/840均选择解析零端点，0求解警告/回退；无新模型拟合|
 |P5e 合成机制与组织敏感性/LOTO|完成；v1.3独立验证与描述性分析通过|[阶段8组织诊断](reports/阶段8_组织分层OOF诊断.md)、[阶段8b残差澄清](reports/阶段8b_组织残差增量澄清.md)、[阶段9合成机制](reports/阶段9_合成机制控制.md)、[阶段10结果](reports/阶段10_LOTO组织外推敏感性.md)、[阶段10j恢复/审计](reports/阶段10j_LOTO_v1_3系统重启恢复与结果审计.md)、[P5e协议](docs/TISSUE_SENSITIVITY_LOTO_PROTOCOL_V1.md)、[v1.3执行锁](config/loto_execution_v1_3.lock.json)、[结果清单](results/tissue_loto/loto_analysis_manifest.json)；1,472/40,112/39,736已核验；严格主宏NA（34/80格有定义）；稀有组织警告与零解保留；CTRP禁读|
-|P6 外验/最终模型冻结|原v1首锁已生成但0-fit启动故障；v1.1守卫修订待独立首锁，真实拟合/CTRP未开始|[事故报告](reports/阶段12d_P6_v1首锁后零拟合启动故障.md)、[v1.1协议](docs/EXTERNAL_VALIDATION_PROTOCOL_V1_1.md)、[v1.1配置](config/external_validation_v1_1.json)：8药×8臂预算64任务/1,744 fits；52项合成/契约测试通过，独立终审后提交新版Git快照和新首锁|
+|P6 外验/最终模型冻结|v1.1首锁已验签并推送；64任务/1,744 fit单worker运行中，CTRP封存|[v1.1首锁](config/external_validation_v1_1.lock.json)、[独立审查](reports/阶段12e_P6_v1_1冻结前独立审查.md)、[v1.1协议](docs/EXTERNAL_VALIDATION_PROTOCOL_V1_1.md)：52项合成/契约测试通过；完整模型拟合后须独立重载、无响应预检及第二锁|
 |P7 图表/正文/投稿|未开始|结果决定结论；不承诺旧高准确率或接收|
 
-### v3.23 当前状态与下一gate
+### v3.24 当前状态与下一gate
+
+- v1.1执行修订经[独立审查](reports/阶段12e_P6_v1_1冻结前独立审查.md)与[首锁前验收](reports/阶段12f_P6_v1_1首锁前验收.md)通过。新科学源码提交`ca0f837ac10665ab8d4d6ab97691e58e5bed4577`；`config/external_validation_v1_1.lock.json`经`--ready`、`--lock`、`--verify-only`验签，SHA-256=`c63edcc1137e4449ea164f1790488a424be7db71d2fff895d6b15adec559e2ca`，提交`a078c9e`已推送GitHub。原v1锁和0-fit失败记录均保留。
+- `runs/gdsc2-cancer-v2-fixed8-full-development-final-v1_1`当前运行固定八药×八臂64任务、1,744预期fit；北京时间约11:59前两项MIRA-1 `tissue_null`和`expression_strong`均完成拟合、checkpoint与新进程重载，未见CTRP禁读异常。运行元数据而非此静态段落为实时完成数来源；零解、失败、资源等待与耗时按runner原样保存。当前不能评估外验性能或REO优势。
+- 下一顺序：①完整任务结束后独立验证全部64 artifact、训练成员/fit事件/新进程哨兵与资源；若失败则保留检查点并按同锁恢复规则处理，不删药/臂；②无CTRP响应预检1,185×8=9,480行及覆盖/弃判；③v1.1第二锁绑定模型与预测；④通过后才一次性读取CTRP原版AUC并报告全部八药与NA。外验仍是回顾性、共享CCLE表达的跨药敏筛选迁移。
+
+### v3.23 当前状态与下一gate（历史）
 
 - 原P6 v1首锁在源码提交`60bdc7a`后创建，SHA-256=`dcb06ab198aa52db6f264c4b33e7b6b352740b97ef15f0c73722ed33b0b46594`，并已推送GitHub。第一次真实启动被旧全CTRP目录禁读守卫阻止读取首锁内纯元数据`v20._COLUMNS.txt`，发生在run目录创建和任何fit之前；检查0个模型、checkpoint和journal。原因与证据见[阶段12d报告](reports/阶段12d_P6_v1首锁后零拟合启动故障.md)，原锁不覆盖、不删改，CTRP响应/索引未读取。
 - v1.1执行修订只把最终runner、独立validator与外验预检的守卫统一为**三份已锁纯元数据可读、raw曲线/processed索引/旧响应仍拒绝**，另建配置、协议、首锁/第二锁与run目录。八药、八臂、模型、端点、样本、候选/表示、统计和弃判规则不因工程失败改变。相关52项合成/契约测试及编译已通过；[v1.1独立审查](reports/阶段12e_P6_v1_1冻结前独立审查.md)与[验收](reports/阶段12f_P6_v1_1首锁前验收.md)尚待最终放行。
@@ -73,6 +79,10 @@
 - 正式无拟合预检和独立验证已通过：184/184个药物×留出组织组合都没有训练/测试组交叉，每个outer-training样本恰好进入一个inner validation fold；4,967行样本表按8模型臂产生39,736条预测。清单SHA、稀有类警告、资源保护阈值和CTRP禁读状态详见[阶段10报告](reports/阶段10_LOTO正式预检.md)。`StratifiedGroupKFold(3)`在176个上下文遇到单组组织、8个上下文遇到双组组织并产生警告，按冻结方案继续且不删组织、不改拆分器。
 - v1.1首次controller启动在资源采样写CSV时失败：`process_tree_memory()`在Windows返回的`system_commit_bytes`与`system_commit_limit_bytes`未列入字段表，首个采样即字段不匹配。v1.1运行目录保留，未启动worker。v1.2补充资源字段，184个划分预检再次通过；首个`tissue_null`任务实际完成1个基线fit事件和1条预测，但OOF行缺少task中的`inner_seed`，因此共享resume验证器拒绝检查点，控制器验收任务数为0。初步猜测缺checksum，经检查确认`payload_sha256`存在且有效；真正缺口是OOF task-context字段。保留v1.2 checkpoint/run且不修补。v1.3添加seed列并以2项无拟合测试核验缺值拒绝/正确值通过/错误值拒绝，另对v1.2 checkpoint临时副本回放通过；2项测试均通过。重新冻结后再运行，所有分析和数据范围不变，详见[阶段10c报告](reports/阶段10c_LOTO检查点行契约故障.md)。
 - v1.1首次controller启动在资源采样写CSV时失败：`process_tree_memory()`在Windows返回的`system_commit_bytes`与`system_commit_limit_bytes`未列入字段表，首个采样即字段不匹配。v1.1运行目录保留，未启动worker。v1.2补充资源字段，184个划分预检再次通过；首个`tissue_null`任务实际完成1个基线fit事件和1条预测，但OOF行缺少task中的`inner_seed`，因此共享resume验证器拒绝检查点，控制器验收任务数为0。初步猜测缺checksum，经检查确认`payload_sha256`存在且有效；真正缺口是OOF task-context字段。保留v1.2 checkpoint/run且不修补。v1.3添加seed列并以2项无拟合测试核验缺值拒绝/正确值通过/错误值拒绝，另对v1.2 checkpoint临时副本回放通过；v1.3重新冻结并完成正式无拟合预检/独立验证。第0项`tissue_null`资格任务随后运行成功、OOF行和检查点验证通过，wall 0.647秒、RSS峰值0.525 GiB。控制器将识别并复用该任务，继续v1.3其余任务；详见[阶段10c报告](reports/阶段10c_LOTO检查点行契约故障.md)。
+
+### v3.24变更记录
+
+2026-10-15：v1.1元数据守卫修订通过独立审查与52项合成/契约测试，源码提交`ca0f837`、新首锁SHA=`c63edcc1137e4449ea164f1790488a424be7db71d2fff895d6b15adec559e2ca`、锁提交`a078c9e`均已推送GitHub。正式全开发运行从原预算启动，首两项完成并重载，未接触CTRP响应/索引；后续按runner元数据追踪，不以静态计划数字替代实时进度。
 
 ### v3.23变更记录
 
