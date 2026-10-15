@@ -37,17 +37,17 @@ from external_validation_v1 import (
 from ordinal_repeated_models import model_spec
 from ordinal_repeated_runtime import sha
 from run_development_pilot import ROOT
-from run_final_model_v1 import (DEFAULT_RUN as FINAL_RUN, read_checkpoint,
-                                task_list, task_stem, verify_freeze)
+from run_final_model_v1 import read_checkpoint, task_list, task_stem, verify_freeze
 
 sys.path.insert(0, str(ROOT/'scripts'))
-from freeze_external_validation_v1 import install_pre_external_guard
+from freeze_external_validation_v1_1 import install_pre_external_guard
 
 
-EXTERNAL_RUN = ROOT / 'runs/gdsc2-cancer-v2-fixed8-external-v1'
-FIRST_LOCK = ROOT / 'config/external_validation_v1.lock.json'
-SECOND_LOCK = ROOT / 'config/external_execution_v1.lock.json'
-EXTERNAL_CONFIG = ROOT / 'config/external_validation_v1.json'
+FINAL_RUN = ROOT / 'runs/gdsc2-cancer-v2-fixed8-full-development-final-v1_1'
+EXTERNAL_RUN = ROOT / 'runs/gdsc2-cancer-v2-fixed8-external-v1_1'
+FIRST_LOCK = ROOT / 'config/external_validation_v1_1.lock.json'
+SECOND_LOCK = ROOT / 'config/external_execution_v1_1.lock.json'
+EXTERNAL_CONFIG = ROOT / 'config/external_validation_v1_1.json'
 ORDINAL_CONFIG = ROOT / 'config/ordinal_repeated_v1.json'
 EXTERNAL_MANIFEST = ROOT / 'results/cohort_v2/external_primary_sample_manifest.csv'
 DEVELOPMENT_MANIFEST = ROOT / 'results/cohort_v2/development_sample_manifest.csv'

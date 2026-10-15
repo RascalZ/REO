@@ -17,6 +17,15 @@ from ordinal_repeated_runtime import sha  # noqa: E402
 
 
 class SecondLockSyntheticTests(unittest.TestCase):
+    def test_active_execution_lock_uses_v1_1_first_and_second_locks(self):
+        self.assertEqual(gate.FIRST_LOCK.name, 'external_validation_v1_1.lock.json')
+        self.assertEqual(gate.SECOND_LOCK.name, 'external_execution_v1_1.lock.json')
+        self.assertEqual(gate.FINAL_RUN.name,
+                         'gdsc2-cancer-v2-fixed8-full-development-final-v1_1')
+        self.assertEqual(gate.EXTERNAL_RUN.name,
+                         'gdsc2-cancer-v2-fixed8-external-v1_1')
+        self.assertEqual(gate.build_lock.__module__, 'freeze_external_validation_v1_1')
+
     def test_exact_64_artifact_inventory_and_fit_budget(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)

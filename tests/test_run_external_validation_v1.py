@@ -118,6 +118,17 @@ def synthetic_frozen_roster():
 
 
 class OrchestratorSyntheticTests(unittest.TestCase):
+    def test_active_protocol_uses_v1_1_locks_and_guard(self):
+        self.assertEqual(runner.FIRST_LOCK.name, 'external_validation_v1_1.lock.json')
+        self.assertEqual(runner.EXTERNAL_CONFIG.name, 'external_validation_v1_1.json')
+        self.assertEqual(runner.SECOND_LOCK.name, 'external_execution_v1_1.lock.json')
+        self.assertEqual(runner.FINAL_RUN.name,
+                         'gdsc2-cancer-v2-fixed8-full-development-final-v1_1')
+        self.assertEqual(runner.EXTERNAL_RUN.name,
+                         'gdsc2-cancer-v2-fixed8-external-v1_1')
+        self.assertEqual(runner.install_pre_external_guard.__module__,
+                         'freeze_external_validation_v1_1')
+
     def test_roster_counts_identity_and_source_pointer_contract(self):
         tables = synthetic_frozen_roster()
         report = runner.validate_frozen_roster(*tables, {'drug_ids': DRUGS, 'models': ARMS})

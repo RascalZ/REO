@@ -57,8 +57,11 @@ class FinalModelSyntheticTests(unittest.TestCase):
         self.cfg = small_configuration()
 
     def test_fixed_real_panel_has_64_tasks_and_1744_fits(self):
+        self.assertEqual(final_runner.DEFAULT_LOCK.name, 'external_validation_v1_1.lock.json')
+        self.assertEqual(final_runner.DEFAULT_EXTERNAL_CONFIG.name, 'external_validation_v1_1.json')
+        self.assertTrue(final_runner.DEFAULT_RUN.name.endswith('-final-v1_1'))
         ordinal = json.loads((ROOT/'config/ordinal_repeated_v1.json').read_text(encoding='utf-8'))
-        external = json.loads((ROOT/'config/external_validation_v1.json').read_text(encoding='utf-8'))
+        external = json.loads(final_runner.DEFAULT_EXTERNAL_CONFIG.read_text(encoding='utf-8'))
         tasks = task_list(external, ordinal)
         self.assertEqual(len(tasks), 64)
         self.assertEqual(len({(t['drug_id'], t['model']) for t in tasks}), 64)
@@ -348,7 +351,7 @@ class FinalModelSyntheticTests(unittest.TestCase):
                         patch.object(sys, 'argv', ['run_final_model_v1.py', '--run-dir', folder,
                                                   flag, '0', '--context-sha', 'synthetic']), \
                         patch.object(final_runner, '_checked_run_dir', return_value=Path(folder)), \
-                        patch.object(final_runner, 'install_data_guard', return_value=(set(), [])), \
+                        patch.object(final_runner, 'install_pre_external_guard', return_value=(set(), [])), \
                         patch.object(final_runner, 'load_context', return_value={'freeze_sha256': 'old'}), \
                         patch.object(final_runner, 'verify_worker_freeze',
                                      side_effect=ValueError('pre-fit lock rejected')) as gate, \
@@ -360,6 +363,39 @@ class FinalModelSyntheticTests(unittest.TestCase):
                     fit.assert_not_called()
                     verify.assert_not_called()
 
+    def test_narrow_prefit_guard_allows_ctrp_metadata_but_blocks_response_and_index(self):
+        with tempfile.TemporaryDirectory() as folder:
+            base = Path(folder)
+            (base/'data_raw/ctrp').mkdir(parents=True)
+            (base/'data_processed').mkdir()
+            (base/'data_raw/ctrp/v20._COLUMNS.txt').write_text('metadata', encoding='utf-8')
+            (base/'data_raw/ctrp/v20.data.curves_post_qc.txt').write_text('response', encoding='utf-8')
+            (base/'data_processed/ctrp_curve_index.csv').write_text('index', encoding='utf-8')
+            code = '''import json,sys
+from pathlib import Path
+sys.path.insert(0,sys.argv[2])
+import freeze_external_validation_v1_1 as freeze
+freeze.ROOT=Path(sys.argv[1])
+access,blocked=freeze.install_pre_external_guard()
+base=freeze.ROOT
+metadata=(base/'data_raw/ctrp/v20._COLUMNS.txt').read_text(encoding='utf-8')
+result={}
+for key,path in [('response',base/'data_raw/ctrp/v20.data.curves_post_qc.txt'),
+                 ('index',base/'data_processed/ctrp_curve_index.csv')]:
+    try:
+        path.read_text(encoding='utf-8')
+        result[key]='allowed'
+    except PermissionError:
+        result[key]='blocked'
+print(json.dumps(dict(metadata=metadata,result=result,access=sorted(access),blocked=blocked)))'''
+            child = subprocess.run([sys.executable, '-c', code, str(base), str(ROOT/'scripts')],
+                cwd=ROOT, check=True, capture_output=True, text=True)
+            outcome = json.loads(child.stdout.strip())
+            self.assertEqual(outcome['metadata'], 'metadata')
+            self.assertEqual(outcome['result'], {'response': 'blocked', 'index': 'blocked'})
+            self.assertEqual(len(outcome['blocked']), 2)
+            self.assertIn(str(base/'data_raw/ctrp/v20._COLUMNS.txt'), outcome['access'])
+
     def test_cli_rejects_custom_protocol_paths_before_worker_or_controller(self):
         with tempfile.TemporaryDirectory() as folder:
             for flag in ('--config', '--ordinal-config', '--lock'):
@@ -369,7 +405,7 @@ class FinalModelSyntheticTests(unittest.TestCase):
                                 '--run-dir', folder, flag, str(Path(folder)/'custom.json'),
                                 *action]), \
                             patch.object(final_runner, '_checked_run_dir') as checked_run, \
-                            patch.object(final_runner, 'install_data_guard') as guard, \
+                            patch.object(final_runner, 'install_pre_external_guard') as guard, \
                             patch.object(final_runner, 'verify_freeze') as freeze, \
                             patch.object(final_runner, 'execute_fit_task') as fit, \
                             patch.object(final_runner, 'execute_verify_task') as verify:
@@ -399,7 +435,7 @@ class FinalModelSyntheticTests(unittest.TestCase):
 
     def test_checkpoint_only_aggregate_is_atomic_and_preserves_stale_partial(self):
         ordinal = json.loads((ROOT/'config/ordinal_repeated_v1.json').read_text(encoding='utf-8'))
-        external = json.loads((ROOT/'config/external_validation_v1.json').read_text(encoding='utf-8'))
+        external = json.loads(final_runner.DEFAULT_EXTERNAL_CONFIG.read_text(encoding='utf-8'))
         tasks = task_list(external, ordinal)
         with tempfile.TemporaryDirectory() as folder:
             out = Path(folder)

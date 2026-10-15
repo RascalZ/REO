@@ -18,14 +18,14 @@ sys.path.insert(0, str(ROOT / "src"))
 sys.path.insert(0, str(ROOT / "scripts"))
 
 from ordinal_repeated_runtime import sha  # noqa: E402
-from freeze_external_validation_v1 import (  # noqa: E402
+from freeze_external_validation_v1_1 import (  # noqa: E402
     EXPECTED_DRUGS, EXPECTED_MODELS, build_lock, install_pre_external_guard,
 )
 
-FIRST_LOCK = ROOT / "config/external_validation_v1.lock.json"
-SECOND_LOCK = ROOT / "config/external_execution_v1.lock.json"
-FINAL_RUN = ROOT / "runs/gdsc2-cancer-v2-fixed8-full-development-final-v1"
-EXTERNAL_RUN = ROOT / "runs/gdsc2-cancer-v2-fixed8-external-v1"
+FIRST_LOCK = ROOT / "config/external_validation_v1_1.lock.json"
+SECOND_LOCK = ROOT / "config/external_execution_v1_1.lock.json"
+FINAL_RUN = ROOT / "runs/gdsc2-cancer-v2-fixed8-full-development-final-v1_1"
+EXTERNAL_RUN = ROOT / "runs/gdsc2-cancer-v2-fixed8-external-v1_1"
 RAW_RESPONSE_NAME = "data_raw/ctrp/v20.data.curves_post_qc.txt"
 SOURCE_FIELD = "area_under_curve"
 

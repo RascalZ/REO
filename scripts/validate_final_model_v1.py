@@ -32,11 +32,13 @@ import psutil
 from sklearn.model_selection import StratifiedGroupKFold
 
 from external_validation_v1 import names_sha256, validate_model_contract
-from run_development_pilot import install_data_guard, verify_development_inputs
+from run_development_pilot import verify_development_inputs
+from freeze_external_validation_v1_1 import install_pre_external_guard
 from ordinal_repeated_runtime import sha
 
-DEFAULT_RUN = ROOT/'runs/gdsc2-cancer-v2-fixed8-full-development-final-v1'
-DEFAULT_LOCK = ROOT/'config/external_validation_v1.lock.json'
+DEFAULT_RUN = ROOT/'runs/gdsc2-cancer-v2-fixed8-full-development-final-v1_1'
+DEFAULT_LOCK = ROOT/'config/external_validation_v1_1.lock.json'
+DEFAULT_EXTERNAL_CONFIG = ROOT/'config/external_validation_v1_1.json'
 DEFAULT_AUDIT_NAME = 'final_model_independent_audit.json'
 
 
@@ -384,11 +386,11 @@ def main():
     parser.add_argument('--context-sha')
     args = parser.parse_args()
     run = _as_run(args.run_dir)
-    access, blocked = install_data_guard()
+    access, blocked = install_pre_external_guard()
     started = time.perf_counter()
     lock_path = args.lock.resolve()
     lock_sha = sha(lock_path)
-    external = json.loads((ROOT/'config/external_validation_v1.json').read_text(encoding='utf-8'))
+    external = json.loads(DEFAULT_EXTERNAL_CONFIG.read_text(encoding='utf-8'))
     ordinal = json.loads((ROOT/'config/ordinal_repeated_v1.json').read_text(encoding='utf-8'))
     tasks, grid = expected_tasks(external, ordinal)
     if args.artifact_task is not None:

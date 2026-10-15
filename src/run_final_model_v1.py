@@ -1,7 +1,8 @@
 """Frozen, response-free final-model training on GDSC development data only.
 
 This program must not run before the external-validation protocol, config,
-source and lock have been committed.  It never opens CTRP data.  Each of the
+source and lock have been committed.  It never opens CTRP response data or
+response indexes; only three locked source-metadata files are readable. Each of the
 fixed 64 drug/arm artifacts is fitted in one fresh process, then reloaded and
 checked in another fresh process.  Interrupted aggregation is rebuilt solely
 from hashed completed checkpoints; no completed model is refitted.
@@ -38,14 +39,17 @@ from final_model_v1 import (fit_full_development_model, local_inner_splits,
 from ordinal_repeated_models import model_spec
 from ordinal_repeated_runtime import (atomic_json, pressure_reasons,
                                       process_tree_memory, sha, system_memory)
-from run_development_pilot import ROOT, install_data_guard, verify_development_inputs
+from run_development_pilot import ROOT, verify_development_inputs
+
+sys.path.insert(0, str(ROOT/'scripts'))
+from freeze_external_validation_v1_1 import install_pre_external_guard
 
 
 SOURCE_RUN = ROOT/'runs/gdsc2-cancer-v2-fixed8-nested5x3-inner3-formal-v1'
-DEFAULT_RUN = ROOT/'runs/gdsc2-cancer-v2-fixed8-full-development-final-v1'
-DEFAULT_EXTERNAL_CONFIG = ROOT/'config/external_validation_v1.json'
+DEFAULT_RUN = ROOT/'runs/gdsc2-cancer-v2-fixed8-full-development-final-v1_1'
+DEFAULT_EXTERNAL_CONFIG = ROOT/'config/external_validation_v1_1.json'
 DEFAULT_ORDINAL_CONFIG = ROOT/'config/ordinal_repeated_v1.json'
-DEFAULT_LOCK = ROOT/'config/external_validation_v1.lock.json'
+DEFAULT_LOCK = ROOT/'config/external_validation_v1_1.lock.json'
 PREPARED_NAMES = ('development_responses.csv', 'global_inner_fold_manifest.csv', 'worker_context.json')
 
 
@@ -638,7 +642,7 @@ def main():
         if supplied.resolve() != frozen.resolve():
             raise ValueError(f'{label} must use the fixed pre-fit protocol path: {frozen}')
     out = _checked_run_dir(args.run_dir)
-    access, blocked = install_data_guard()
+    access, blocked = install_pre_external_guard()
     if args.worker_task is not None or args.verify_task is not None:
         context = load_context(out, args.context_sha)
         verify_worker_freeze(context)
