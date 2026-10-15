@@ -1,0 +1,24 @@
+reference_number,source_journal_title,nlm_iso_abbreviation,doi,metadata_field
+1,Nature,Nature,10.1038/s41586-019-1186-3,PubMed ISOAbbreviation
+2,Nucleic Acids Research,Nucleic Acids Res,10.1093/nar/gkab1084,PubMed ISOAbbreviation
+3,Briefings in Bioinformatics,Brief Bioinform,10.1093/bib/bbab356,PubMed ISOAbbreviation
+4,Nature Communications,Nat Commun,10.1038/s41467-023-43696-z,PubMed ISOAbbreviation
+5,Nature Communications,Nat Commun,10.1038/s41467-026-72903-w,PubMed ISOAbbreviation
+6,Journal of Cheminformatics,J Cheminform,10.1186/s13321-025-00972-y,PubMed ISOAbbreviation
+7,Patterns,Patterns (N Y),10.1016/j.patter.2023.100804,PubMed ISOAbbreviation
+8,Nature Methods,Nat Methods,10.1038/s41592-024-02362-y,PubMed ISOAbbreviation
+9,PLOS ONE,PLoS One,10.1371/journal.pone.0224365,PubMed ISOAbbreviation
+10,Bioinformatics Advances,Bioinform Adv,10.1093/bioadv/vbad048,PubMed ISOAbbreviation
+11,Nature Methods,Nat Methods,10.1038/s41592-021-01256-7,PubMed ISOAbbreviation
+12,Briefings in Bioinformatics,Brief Bioinform,10.1093/bib/bbab260,PubMed ISOAbbreviation
+13,Cancer Science,Cancer Sci,10.1111/cas.14263,PubMed ISOAbbreviation
+14,PLOS One,PLoS One,10.1371/journal.pone.0343422,PubMed ISOAbbreviation
+15,International Journal of Biological Sciences,Int J Biol Sci,10.7150/ijbs.24548,PubMed ISOAbbreviation
+16,BMC Genomics,BMC Genomics,10.1186/s12864-019-5502-y,PubMed ISOAbbreviation
+17,Molecular Oncology,Mol Oncol,10.1002/1878-0261.13279,PubMed ISOAbbreviation
+18,Briefings in Bioinformatics,Brief Bioinform,10.1093/bib/bbae242,PubMed ISOAbbreviation
+19,Briefings in Bioinformatics,Brief Bioinform,10.1093/bib/bbac605,PubMed ISOAbbreviation
+20,Briefings in Functional Genomics,Brief Funct Genomics,10.1093/bfgp/elae045,PubMed ISOAbbreviation
+21,Frontiers in Molecular Biosciences,Front Mol Biosci,10.3389/fmolb.2020.00034,PubMed ISOAbbreviation
+22,Cancer Discovery,Cancer Discov,10.1158/2159-8290.CD-15-0235,PubMed ISOAbbreviation
+23,Cell,Cell,10.1016/j.cell.2016.06.017,PubMed ISOAbbreviation

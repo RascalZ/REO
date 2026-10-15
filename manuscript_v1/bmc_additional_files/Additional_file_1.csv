@@ -1,0 +1,81 @@
+GDSC2_compound_ID,Compound,Held_out_tissue,N_groups,REO_pair_rho,Strong_expression_rho,REO_pair_minus_strong_expression_delta_rho,Delta_rho_defined,REO_pair_zero_molecular_solution
+1010,Gefitinib,Bowel,39,0.2953026989,0.2983805668,-0.003077867896,True,False
+1010,Gefitinib,Breast,44,0.1629431254,0.08174770965,0.08119541571,True,False
+1010,Gefitinib,CNS/Brain,34,-0.000932905999,-0.04812834225,0.04719543625,True,False
+1010,Gefitinib,Esophagus/Stomach,45,NA,0.2378129117,NA,False,True
+1010,Gefitinib,Lung,131,0.3010457403,NA,NA,False,False
+1010,Gefitinib,Lymphoid,75,-0.004153686397,-0.1552773826,0.1511236962,True,False
+1010,Gefitinib,Myeloid,29,0.1812069763,-0.03596059113,0.2171675675,True,False
+1010,Gefitinib,Ovary/Fallopian Tube,29,0.3273888467,0.5477832512,-0.2203944045,True,False
+1010,Gefitinib,Pancreas,28,0.4987681545,0.3535851122,0.1451830423,True,False
+1010,Gefitinib,Skin,33,-0.08076436532,-0.3589572193,0.2781928539,True,False
+1036,PLX-4720,Bowel,41,-0.04730328147,NA,NA,False,False
+1036,PLX-4720,Breast,44,NA,NA,NA,False,True
+1036,PLX-4720,CNS/Brain,34,NA,NA,NA,False,True
+1036,PLX-4720,Esophagus/Stomach,46,NA,NA,NA,False,True
+1036,PLX-4720,Lung,131,NA,NA,NA,False,True
+1036,PLX-4720,Lymphoid,74,NA,NA,NA,False,True
+1036,PLX-4720,Myeloid,31,NA,NA,NA,False,True
+1036,PLX-4720,Ovary/Fallopian Tube,27,NA,NA,NA,False,True
+1036,PLX-4720,Pancreas,28,NA,NA,NA,False,True
+1036,PLX-4720,Skin,33,NA,NA,NA,False,True
+1091,BMS-536924,Bowel,39,-0.02165991903,-0.1734817814,0.1518218623,True,False
+1091,BMS-536924,Breast,44,-0.2239605356,0.02043692741,-0.244397463,True,False
+1091,BMS-536924,CNS/Brain,34,0.1119938885,0.02429335371,0.08770053476,True,False
+1091,BMS-536924,Esophagus/Stomach,45,0.1384716733,0.09552042161,0.04295125165,True,False
+1091,BMS-536924,Lung,131,0.03148988416,0.2996583569,-0.2681684727,True,False
+1091,BMS-536924,Lymphoid,75,0.0800284495,0.1651209104,-0.08509246088,True,False
+1091,BMS-536924,Myeloid,29,0.221182266,0.1556650246,0.06551724138,True,False
+1091,BMS-536924,Ovary/Fallopian Tube,29,-0.04433497537,0.3743842365,-0.4187192118,True,False
+1091,BMS-536924,Pancreas,28,0.1642036125,0.1521620142,0.01204159825,True,False
+1091,BMS-536924,Skin,33,0.3101604278,0.1794786096,0.1306818182,True,False
+1191,Bortezomib,Bowel,39,NA,0.3251012146,NA,False,True
+1191,Bortezomib,Breast,44,NA,NA,NA,False,True
+1191,Bortezomib,CNS/Brain,34,NA,0.08907563025,NA,False,True
+1191,Bortezomib,Esophagus/Stomach,45,NA,NA,NA,False,True
+1191,Bortezomib,Lung,131,NA,NA,NA,False,True
+1191,Bortezomib,Lymphoid,75,NA,0.1383783784,NA,False,True
+1191,Bortezomib,Myeloid,29,NA,NA,NA,False,True
+1191,Bortezomib,Ovary/Fallopian Tube,29,NA,NA,NA,False,True
+1191,Bortezomib,Pancreas,28,-0.1160372195,-0.08757525999,-0.0284619595,True,False
+1191,Bortezomib,Skin,33,NA,NA,NA,False,True
+1199,Tamoxifen,Bowel,39,NA,NA,NA,False,True
+1199,Tamoxifen,Breast,44,NA,NA,NA,False,True
+1199,Tamoxifen,CNS/Brain,34,NA,NA,NA,False,True
+1199,Tamoxifen,Esophagus/Stomach,45,NA,NA,NA,False,True
+1199,Tamoxifen,Lung,131,NA,NA,NA,False,True
+1199,Tamoxifen,Lymphoid,75,NA,NA,NA,False,True
+1199,Tamoxifen,Myeloid,29,NA,NA,NA,False,True
+1199,Tamoxifen,Ovary/Fallopian Tube,29,NA,NA,NA,False,True
+1199,Tamoxifen,Pancreas,28,NA,NA,NA,False,True
+1199,Tamoxifen,Skin,33,NA,NA,NA,False,True
+1922,Cediranib,Bowel,39,0.3127530364,NA,NA,False,False
+1922,Cediranib,Breast,44,NA,-0.4164904863,NA,False,True
+1922,Cediranib,CNS/Brain,34,-0.03896103896,0.3497326203,-0.3886936593,True,False
+1922,Cediranib,Esophagus/Stomach,45,NA,0.1855072464,NA,False,True
+1922,Cediranib,Lung,131,NA,NA,NA,False,True
+1922,Cediranib,Lymphoid,75,NA,0.04731152205,NA,False,True
+1922,Cediranib,Myeloid,29,-0.2330049261,-0.1684729064,-0.0645320197,True,False
+1922,Cediranib,Ovary/Fallopian Tube,29,0.4615763547,NA,NA,False,False
+1922,Cediranib,Pancreas,28,0.03995621237,NA,NA,False,False
+1922,Cediranib,Skin,33,-0.03308823529,NA,NA,False,False
+1930,Telomerase Inhibitor IX,Bowel,39,0.5722672065,0.5769230769,-0.004655870445,True,False
+1930,Telomerase Inhibitor IX,Breast,44,0.3275546159,0.3704016913,-0.04284707541,True,False
+1930,Telomerase Inhibitor IX,CNS/Brain,34,-0.08143621085,-0.1648586707,0.08342245989,True,False
+1930,Telomerase Inhibitor IX,Esophagus/Stomach,45,0.3936758893,0.4239789196,-0.0303030303,True,False
+1930,Telomerase Inhibitor IX,Lung,131,0.3880211392,0.4069236107,-0.01890247157,True,False
+1930,Telomerase Inhibitor IX,Lymphoid,75,0.0706116643,0.1520341394,-0.08142247511,True,False
+1930,Telomerase Inhibitor IX,Myeloid,29,0.2330049261,0.5733990148,-0.3403940887,True,False
+1930,Telomerase Inhibitor IX,Ovary/Fallopian Tube,29,0.5014778325,0.4206896552,0.08078817734,True,False
+1930,Telomerase Inhibitor IX,Pancreas,28,0.5873015873,0.6343732895,-0.04707170224,True,False
+1930,Telomerase Inhibitor IX,Skin,33,0.4749331551,0.1971925134,0.2777406417,True,False
+1931,MIRA-1,Bowel,40,NA,NA,NA,False,True
+1931,MIRA-1,Breast,44,NA,NA,NA,False,True
+1931,MIRA-1,CNS/Brain,34,NA,NA,NA,False,True
+1931,MIRA-1,Esophagus/Stomach,46,0.1279346661,0.3238359544,-0.1959012883,True,False
+1931,MIRA-1,Lung,132,NA,-0.09659645296,NA,False,True
+1931,MIRA-1,Lymphoid,75,NA,NA,NA,False,True
+1931,MIRA-1,Myeloid,31,0.001411574943,NA,NA,False,False
+1931,MIRA-1,Ovary/Fallopian Tube,29,0.01036366466,NA,NA,False,False
+1931,MIRA-1,Pancreas,28,-0.06290345685,0.08866995074,-0.1515734076,True,False
+1931,MIRA-1,Skin,33,-0.1919691054,-0.03843582888,-0.1535332765,True,False

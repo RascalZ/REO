@@ -4,13 +4,14 @@ This repository contains a leakage-controlled comparison of relative expression 
 
 ## Current status
 
-As of 2026-10-15, the single maintained research plan is [RESEARCH_PLAN.md](RESEARCH_PLAN.md), version 3.29. Read its current-status section before using any older stage notes. The current scientific readouts are:
+As of 2026-10-15, the single maintained research plan is [RESEARCH_PLAN.md](RESEARCH_PLAN.md), version 3.32. Read its current-status section before using any older stage notes. The current scientific readouts are:
 
-- Fixed eight-drug nested development evaluation: 626 independent development groups, 4,967 drug–model observations, 5 outer folds × 3 repeats and 3 inner folds. The predefined REO-pair minus strong-expression macro ΔSpearman was −0.00588, with family-adjusted conditional interval [−0.01871, +0.00661]. This does not establish REO superiority, equivalence, or non-inferiority.
+- Fixed eight-drug nested development evaluation: 626 unique development biological groups, 4,967 drug–model observations, 5 outer folds × 3 repeats and 3 inner folds. The predefined REO-pair minus strong-expression macro ΔSpearman was −0.00588, with family-adjusted conditional interval [−0.01871, +0.00661]. This does not establish REO superiority, equivalence, or non-inferiority.
 - Tissue sensitivity: the strict prespecified leave-one-tissue-out macro was undefined; 34/80 drug–tissue cells had defined correlations.
 - Final model audit: 64/64 models and 1,744 fit events passed independent reload/source audit. Of 56 molecular arms, 29 selected a zero molecular solution.
 - One-time CTRPv2 evaluation: 175 non-overlapping external groups and 1,185 drug–model response units, with 9,480/9,480 predictions covered. The primary equal-drug REO-pair minus strong-expression ΔSpearman was −0.000372, family-9 adjusted conditional interval [−0.042166, +0.043505]. The result is a retrospective cross-screen transfer evaluation using the same CCLE expression source, not cross-expression-platform or clinical validation.
 - The original manuscript’s “pan-cancer REO atlas” claims, binary classification results, pathway/PPI claims, GEO fine-tuning and single-cell predictions are not supported by the rebuilt analysis. See [Stage 15 manuscript reconstruction blueprint](reports/阶段15_投稿稿件重构蓝图.md).
+- The English [evidence manuscript](manuscript_v1/Manuscript_draft.md) is preserved, with a separate [BMC Genomics structured draft](manuscript_v1/Manuscript_BMC_Genomics_draft.md) and editable [Word copy](manuscript_v1/Manuscript_BMC_Genomics_draft.docx). The bibliography has 26 cited entries, including 23 journal articles (21 published from 2018 onward), a dataset DOI, and two official resource records; numbered citation coverage and DOI metadata checks pass. Journal titles in the manuscript reference list now use PubMed/NLM ISO abbreviations. The Word file rendered to 27 A4 pages and received a visual check of its title page, tables, supplementary file list, Conclusions section and complete figure legends. It remains a working draft: author/declaration facts, final reference-style review, repository/archive DOI and license checks are pending. See [Stage 19](reports/阶段19_全文主张代码与期刊规范二次核验.md) and [Stage 20](reports/阶段20_BMC结构稿与文件包审计.md). The current eight-drug repeated evaluation did not include a new full-pipeline label permutation analysis; this remains an explicit limitation. CTRPv2 must not be rerun or unsealed.
 
 ## Research records
 
@@ -20,6 +21,13 @@ As of 2026-10-15, the single maintained research plan is [RESEARCH_PLAN.md](RESE
 - [Stage 16 captions and evidence ledger](reports/阶段16_图注与稿件证据台账.md): English draft captions/table notes and claim-level evidence boundaries.
 - [First-draft Figures 1–4](figures/manuscript_v1/): editable SVG and 600 dpi PNG; inputs, outputs and software versions are recorded in `figure_manifest.json`. Figure 4 includes the LOTO defined-cell panel and locked CTRPv2 comparison.
 - [First-draft Tables 1–2 and S1–S8](tables/manuscript_v1/): 10 CSVs generated from frozen aggregates, with source/output hashes and row counts in `table_manifest.json`.
+- [Manuscript working draft](manuscript_v1/Manuscript_draft.md): first-pass English text grounded in frozen protocols, implementation and aggregate results.
+- Rebuild the BMC Word draft with `cd manuscript_v1 && npm ci && npm run build` (Node.js/npm required); the build script makes the two main-text tables editable Word table objects.
+- [Bibliography and citation audit](manuscript_v1/references.bib): formatted reference metadata. Run `python src/validate_numeric_references.py` to validate numbered citation coverage against the manuscript and Crossref export.
+- [NLM ISO journal-abbreviation map](manuscript_v1/nlm_journal_abbreviations.csv): source title, abbreviation, DOI, and field used for all 23 journal-article references.
+- [Stage 18 literature and claim audit](reports/阶段18_引文元数据与主张核验.md): reference provenance, year/article-number reconciliation, and evidence boundaries.
+- [Stage 19 full manuscript and guideline audit](reports/阶段19_全文主张代码与期刊规范二次核验.md) and [Stage 20 BMC structure/file package audit](reports/阶段20_BMC结构稿与文件包审计.md): evidence alignment, journal requirements, and submission gates.
+- [BMC Genomics submission draft (Markdown)](manuscript_v1/Manuscript_BMC_Genomics_draft.md), [editable Word draft](manuscript_v1/Manuscript_BMC_Genomics_draft.docx), and [Additional files 1–8](manuscript_v1/bmc_additional_files/). These author-input-required working files are not a final submission package.
 - [Nested evaluation protocol](docs/ORDINAL_REPEATED_V1_PROTOCOL.md): frozen development estimands and training-fold rules.
 - [External validation protocol](docs/EXTERNAL_VALIDATION_PROTOCOL_V1_1.md): locked cross-screen evaluation rules.
 - [Data availability and provenance](docs/DATA_AVAILABILITY.md) and [reproducibility status](docs/REPRODUCIBILITY.md).

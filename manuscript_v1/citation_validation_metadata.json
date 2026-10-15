@@ -1,0 +1,17 @@
+{
+  "filepath": "manuscript_v1\\references.bib",
+  "total_entries": 26,
+  "valid_entries": 26,
+  "errors": [],
+  "warnings": [],
+  "duplicates": [],
+  "venue_standard_checked": null,
+  "min_count_checked": null,
+  "manuscript_results": {
+    "checked": false,
+    "manuscript_filepath": null,
+    "cited_keys": [],
+    "missing_keys": [],
+    "unused_keys": []
+  }
+}

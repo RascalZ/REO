@@ -1,0 +1,12 @@
+{
+  "name": "reo-bmc-manuscript-build",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Reproducible DOCX generation for the BMC Genomics manuscript draft",
+  "scripts": {
+    "build": "node build_bmc_docx.js"
+  },
+  "devDependencies": {
+    "docx": "9.11.0"
+  }
+}

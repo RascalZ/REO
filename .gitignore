@@ -1,5 +1,6 @@
 # Original research material is outside this repository and must remain read-only.
 .venv/
+**/node_modules/
 _qa_checkout/
 runs/
 __pycache__/
@@ -36,6 +37,9 @@ legacy/
 *.bin
 *.docx
 *.pdf
+!manuscript_v1/Manuscript_BMC_Genomics_draft.docx
+manuscript_v1/qa_preview_fullwidth_170mm_300dpi/
+manuscript_v1/citation_validation_tool_output.json
 checkpoints/
 results/formal_development/bootstrap_group_manifest.csv
 .env
