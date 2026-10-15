@@ -1,0 +1,65 @@
+﻿drug_id,drug_name,model,n_samples,concatenated_cross_tissue_spearman,unavailable_reason,interpretation
+1010,Gefitinib,expression_strong,620,0.4883660535392912,,cross-tissue calibration-sensitive; not a within-tissue effect
+1010,Gefitinib,mad_expression,620,0.4796728842320792,,cross-tissue calibration-sensitive; not a within-tissue effect
+1010,Gefitinib,mad_pair_full,620,0.38080765551048473,,cross-tissue calibration-sensitive; not a within-tissue effect
+1010,Gefitinib,mad_rank,620,0.3663435833353394,,cross-tissue calibration-sensitive; not a within-tissue effect
+1010,Gefitinib,response_association_expression,620,0.4829932116155831,,cross-tissue calibration-sensitive; not a within-tissue effect
+1010,Gefitinib,response_association_pair_full,620,0.4235794653913312,,cross-tissue calibration-sensitive; not a within-tissue effect
+1010,Gefitinib,response_association_rank,620,0.5437142829521793,,cross-tissue calibration-sensitive; not a within-tissue effect
+1010,Gefitinib,tissue_null,620,-0.41954499351201163,,cross-tissue calibration-sensitive; not a within-tissue effect
+1036,PLX-4720,expression_strong,622,-0.256990916385941,,cross-tissue calibration-sensitive; not a within-tissue effect
+1036,PLX-4720,mad_expression,622,-0.056895684750276496,,cross-tissue calibration-sensitive; not a within-tissue effect
+1036,PLX-4720,mad_pair_full,622,-0.256990916385941,,cross-tissue calibration-sensitive; not a within-tissue effect
+1036,PLX-4720,mad_rank,622,-0.256990916385941,,cross-tissue calibration-sensitive; not a within-tissue effect
+1036,PLX-4720,response_association_expression,622,-0.20897729243154256,,cross-tissue calibration-sensitive; not a within-tissue effect
+1036,PLX-4720,response_association_pair_full,622,-0.24569007275335975,,cross-tissue calibration-sensitive; not a within-tissue effect
+1036,PLX-4720,response_association_rank,622,-0.22637884470689407,,cross-tissue calibration-sensitive; not a within-tissue effect
+1036,PLX-4720,tissue_null,622,-0.256990916385941,,cross-tissue calibration-sensitive; not a within-tissue effect
+1091,BMS-536924,expression_strong,620,0.04129791705712227,,cross-tissue calibration-sensitive; not a within-tissue effect
+1091,BMS-536924,mad_expression,620,-0.059942876720609925,,cross-tissue calibration-sensitive; not a within-tissue effect
+1091,BMS-536924,mad_pair_full,620,-0.07623687997276114,,cross-tissue calibration-sensitive; not a within-tissue effect
+1091,BMS-536924,mad_rank,620,-0.09918980606031952,,cross-tissue calibration-sensitive; not a within-tissue effect
+1091,BMS-536924,response_association_expression,620,-0.019080200402160283,,cross-tissue calibration-sensitive; not a within-tissue effect
+1091,BMS-536924,response_association_pair_full,620,-0.010774515697569632,,cross-tissue calibration-sensitive; not a within-tissue effect
+1091,BMS-536924,response_association_rank,620,-0.008661766339880457,,cross-tissue calibration-sensitive; not a within-tissue effect
+1091,BMS-536924,tissue_null,620,-0.2702659120610393,,cross-tissue calibration-sensitive; not a within-tissue effect
+1191,Bortezomib,expression_strong,620,-0.24552449106806506,,cross-tissue calibration-sensitive; not a within-tissue effect
+1191,Bortezomib,mad_expression,620,-0.3367890154127686,,cross-tissue calibration-sensitive; not a within-tissue effect
+1191,Bortezomib,mad_pair_full,620,-0.4394294952390893,,cross-tissue calibration-sensitive; not a within-tissue effect
+1191,Bortezomib,mad_rank,620,-0.06169895753207075,,cross-tissue calibration-sensitive; not a within-tissue effect
+1191,Bortezomib,response_association_expression,620,-0.1642122186911365,,cross-tissue calibration-sensitive; not a within-tissue effect
+1191,Bortezomib,response_association_pair_full,620,-0.4114260820751713,,cross-tissue calibration-sensitive; not a within-tissue effect
+1191,Bortezomib,response_association_rank,620,-0.04831531196751119,,cross-tissue calibration-sensitive; not a within-tissue effect
+1191,Bortezomib,tissue_null,620,-0.4549516380277871,,cross-tissue calibration-sensitive; not a within-tissue effect
+1199,Tamoxifen,expression_strong,620,-0.179584954985862,,cross-tissue calibration-sensitive; not a within-tissue effect
+1199,Tamoxifen,mad_expression,620,-0.18621009329053584,,cross-tissue calibration-sensitive; not a within-tissue effect
+1199,Tamoxifen,mad_pair_full,620,-0.179584954985862,,cross-tissue calibration-sensitive; not a within-tissue effect
+1199,Tamoxifen,mad_rank,620,-0.179584954985862,,cross-tissue calibration-sensitive; not a within-tissue effect
+1199,Tamoxifen,response_association_expression,620,-0.179584954985862,,cross-tissue calibration-sensitive; not a within-tissue effect
+1199,Tamoxifen,response_association_pair_full,620,-0.179584954985862,,cross-tissue calibration-sensitive; not a within-tissue effect
+1199,Tamoxifen,response_association_rank,620,-0.14578593251255173,,cross-tissue calibration-sensitive; not a within-tissue effect
+1199,Tamoxifen,tissue_null,620,-0.179584954985862,,cross-tissue calibration-sensitive; not a within-tissue effect
+1922,Cediranib,expression_strong,620,-0.020427821654338867,,cross-tissue calibration-sensitive; not a within-tissue effect
+1922,Cediranib,mad_expression,620,0.046109052384211126,,cross-tissue calibration-sensitive; not a within-tissue effect
+1922,Cediranib,mad_pair_full,620,-0.21877198920169516,,cross-tissue calibration-sensitive; not a within-tissue effect
+1922,Cediranib,mad_rank,620,-0.002592247240807456,,cross-tissue calibration-sensitive; not a within-tissue effect
+1922,Cediranib,response_association_expression,620,-0.1514810279078552,,cross-tissue calibration-sensitive; not a within-tissue effect
+1922,Cediranib,response_association_pair_full,620,-0.07234957394477497,,cross-tissue calibration-sensitive; not a within-tissue effect
+1922,Cediranib,response_association_rank,620,-0.18846740241157175,,cross-tissue calibration-sensitive; not a within-tissue effect
+1922,Cediranib,tissue_null,620,-0.21877198920169516,,cross-tissue calibration-sensitive; not a within-tissue effect
+1930,Telomerase Inhibitor IX,expression_strong,620,0.47259581932125233,,cross-tissue calibration-sensitive; not a within-tissue effect
+1930,Telomerase Inhibitor IX,mad_expression,620,0.41004533860161607,,cross-tissue calibration-sensitive; not a within-tissue effect
+1930,Telomerase Inhibitor IX,mad_pair_full,620,0.37842740995718677,,cross-tissue calibration-sensitive; not a within-tissue effect
+1930,Telomerase Inhibitor IX,mad_rank,620,0.3529964750965224,,cross-tissue calibration-sensitive; not a within-tissue effect
+1930,Telomerase Inhibitor IX,response_association_expression,620,0.4454811752491197,,cross-tissue calibration-sensitive; not a within-tissue effect
+1930,Telomerase Inhibitor IX,response_association_pair_full,620,0.4434833518937273,,cross-tissue calibration-sensitive; not a within-tissue effect
+1930,Telomerase Inhibitor IX,response_association_rank,620,0.4674251334541394,,cross-tissue calibration-sensitive; not a within-tissue effect
+1930,Telomerase Inhibitor IX,tissue_null,620,-0.3250003268875239,,cross-tissue calibration-sensitive; not a within-tissue effect
+1931,MIRA-1,expression_strong,625,-0.10341015238030364,,cross-tissue calibration-sensitive; not a within-tissue effect
+1931,MIRA-1,mad_expression,625,-0.11107532110596406,,cross-tissue calibration-sensitive; not a within-tissue effect
+1931,MIRA-1,mad_pair_full,625,-0.135898536482982,,cross-tissue calibration-sensitive; not a within-tissue effect
+1931,MIRA-1,mad_rank,625,-0.135898536482982,,cross-tissue calibration-sensitive; not a within-tissue effect
+1931,MIRA-1,response_association_expression,625,-0.022720233357024576,,cross-tissue calibration-sensitive; not a within-tissue effect
+1931,MIRA-1,response_association_pair_full,625,-0.06452186225691146,,cross-tissue calibration-sensitive; not a within-tissue effect
+1931,MIRA-1,response_association_rank,625,-0.031216718566224426,,cross-tissue calibration-sensitive; not a within-tissue effect
+1931,MIRA-1,tissue_null,625,-0.135898536482982,,cross-tissue calibration-sensitive; not a within-tissue effect

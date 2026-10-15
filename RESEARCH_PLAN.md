@@ -1,12 +1,12 @@
 # 基因对药物反应预测项目重构科研计划
 
-**计划v3.18，更新日期：2026-10-14。唯一维护版本为本文件。工作周期：10月10日至11月8日，11月9日至10日保留投稿检查缓冲。**
+**计划v3.19，更新日期：2026-10-15。唯一维护版本为本文件。工作周期：10月10日至11月8日，11月9日至10日保留投稿检查缓冲。**
 
 本计划以最新投稿稿件、主要分析代码、保存的结果矩阵/模型台账、补充表、图2/图4和公开数据源核查为基础。目标是一个月内完成可审查、可复现、论断与证据相符的新稿并投稿；接收和正式上线还取决于编辑及外审，不能由一个月计划保证。用户已确认Naunyn-Schmiedeberg's Archives of Pharmacology亦已拒稿；按1名主要执行者、与助手协作、现有电脑和公共数据设计，版面费不是主要限制。
 
 ## 0 执行台账与当前版本（每次工作先读此节）
 
-**首选期刊：BMC Genomics。固定八药5外层×3重复×3内层主分析仍不支持普遍REO优势；430/840分子外层拟合选择解析零端点。P5e既有OOF组织分层和残差尺度汇总已完成：严格8药×10组织Δρ格在12/12个预设比较/重复中均因至少一格无定义而保留NA；可用格中association pair−strong Δρ约−0.006至+0.007，pair相对strong的RMSE改善三次均负；pair也未胜过同候选表达或rank。有限合成机制控制已按执行修订v1.1完成并通过检查点/输出哈希完整性校验：40队列、960任务、26,160 fits、76,800条OOF，运行3333.7秒，worker峰值RSS 0.250 GiB；240/240组候选规则×上下文的三表示均选中相同200基因。模拟只解释预设机制边界，不支持真实药物上的REO一般优势。LOTO v1.1启动在worker前因资源CSV缺列而停止（0拟合）；v1.2通过预检但首个组织均值基线任务完成1次拟合/预测后，因OOF记录漏掉锁定`inner_seed`而未通过检查点验收；该任务与失败run均保留，未开始分子臂。v1.3已补齐任务标识，两项无拟合回归测试和保留检查点副本回放通过，重新冻结且预检/独立验证通过。截至本计划快照，v1.3已完成768/1,472任务、20,928 fit events和23,856条OOF；Biliary Tract、Bladder/Urinary Tract、Bone、Bowel、Breast、CNS/Brain、Cervix、Esophagus/Stomach、Head and Neck、Kidney、Liver及Lung十二个组织区块均完成各64项，Lymphoid进行中（控制台随后进至至少780/1,472）。768个已审计检查点均为completed且资源字段齐全；任务最大RSS/私有内存1.101/0.877 GiB，最低任务内可用RAM/commit余量0.494/0.306 GiB，低于下一任务启动门槛0.500/1.000 GiB，据此作为运行资源风险继续监控，保持既有单worker/预任务门控，不改变冻结模型与统计方案。未查看或解释模型表现，CTRP未访问；data guard external_response_accessed=false；非劣性待论证、不设−0.02。详见[阶段10d进度报告](reports/阶段10d_LOTO_v1_3执行进度.md)、[阶段10e进度报告](reports/阶段10e_LOTO_v1_3执行进度.md)、[阶段10f进度报告](reports/阶段10f_LOTO_v1_3执行进度.md)、[阶段10g进度报告](reports/阶段10g_LOTO_v1_3执行进度.md)、[阶段10h进度报告](reports/阶段10h_LOTO_v1_3执行进度.md)和[阶段10i进度报告](reports/阶段10i_LOTO_v1_3执行进度.md)。**
+**首选期刊：BMC Genomics。固定八药开发集重复嵌套评价未建立REO普遍或独有预测优势；430/840个分子外层拟合选择解析零端点。P5e既有OOF组织切片、残差指标和40队列有限合成控制均已完成。23组织LOTO v1.3全部1,472任务/40,112次fit/39,736条OOF完成，并通过全部1,472检查点哈希及独立来源/覆盖验证。Windows于2026-10-15 02:29:13计划重启，截断最终汇总写出；原文件已备份，从0待拟合任务的检查点恢复汇总，未重拟合。LOTO预设八药×10组织主Spearman差仅34/80格有定义，严格八药宏值为NA；仅有10/10定义格的两药pair−强表达分别为−0.0124和−0.0526。pair相对强表达的八药等权RMSE改善约−0.000018，不能据此宣称REO优势。组织null在留出组织内恒定，相关记NA。P5e为开发集适用边界分析，并非外部或临床验证；CTRP响应仍封存（external_response_accessed=false）。下一gate先冻结最终全开发模型、missing/abstain/共同覆盖及一次性CTRP统计协议，再验证重载/哈希，过闸后才读CTRP。非劣性仍待论证、不设−0.02。详见[阶段10 LOTO结果](reports/阶段10_LOTO组织外推敏感性.md)、[系统重启恢复与结果审计](reports/阶段10j_LOTO_v1_3系统重启恢复与结果审计.md)及[分析清单](results/tissue_loto/loto_analysis_manifest.json)。**
 
 本文件是唯一持续维护的总计划。原计划是历史快照，阶段报告是证据；发现错误、版本/范围/方法变化，应先更新本节及变更表，再建立对应配置版本。不得因外验成绩不好更换主药、身份规则或测试样本。
 
@@ -21,9 +21,16 @@
 |P5b 表示与候选规则诊断|完成；拟合、来源、区间及公开聚合校验通过|[阶段5报告](reports/阶段5_秩与基因对诊断试跑.md)、[科学解读](docs/ORDINAL_DIAGNOSTIC_ASSESSMENT.md)、[OOF差值分解](docs/OOF_DECOMPOSITION.md)；35项诊断测试+4项公开结果测试通过，两次内存中断完整保留|
 |P5c 固定八药新版重复评价|完成；完整审计、统计、报告及公开校验通过|[阶段6报告](reports/阶段6_固定八药表示与候选规则重复评价.md)、[科学解读](docs/ORDINAL_REPEATED_ASSESSMENT.md)；960独立任务进程、26,160 fits、119,208 OOF，无失败/暂停/solver警告/回退|
 |P5d 零解与药物异质性诊断|完成|[阶段7报告](reports/阶段7_零解与药物异质性诊断.md)、[五张聚合表](results/development_diagnostics/)、[诊断方案v1](docs/DEVELOPMENT_DIAGNOSTICS_PROTOCOL_V1.md)；430/840均选择解析零端点，0求解警告/回退；无新模型拟合|
-|P5e 合成机制与组织敏感性/LOTO|合成控制完成；LOTO v1.3运行中，768/1,472个任务已由控制器验收|[阶段8报告](reports/阶段8_组织分层OOF诊断.md)、[阶段8b报告](reports/阶段8b_组织残差增量澄清.md)、[合成机制报告](reports/阶段9_合成机制控制.md)、[候选集独立审计](reports/阶段9b_候选基因集一致性审计.md)、[LOTO正式预检报告](reports/阶段10_LOTO正式预检.md)、[v1.1启动故障及v1.2预检](reports/阶段10b_LOTO启动器故障处置.md)、[v1.2契约故障及v1.3预检/首任务](reports/阶段10c_LOTO检查点行契约故障.md)、[阶段10d进度](reports/阶段10d_LOTO_v1_3执行进度.md)、[阶段10e进度](reports/阶段10e_LOTO_v1_3执行进度.md)、[阶段10f进度](reports/阶段10f_LOTO_v1_3执行进度.md)、[阶段10g进度](reports/阶段10g_LOTO_v1_3执行进度.md)、[阶段10h进度](reports/阶段10h_LOTO_v1_3执行进度.md)、[阶段10i进度](reports/阶段10i_LOTO_v1_3执行进度.md)、[P5e总协议](docs/TISSUE_SENSITIVITY_LOTO_PROTOCOL_V1.md)、[LOTO执行修订v1.1](docs/LOTO_EXECUTION_AMENDMENT_V1_1.md)、[LOTO执行修订v1.2](docs/LOTO_EXECUTION_AMENDMENT_V1_2.md)、[LOTO执行修订v1.3](docs/LOTO_EXECUTION_AMENDMENT_V1_3.md)、[v1.3执行锁](config/loto_execution_v1_3.lock.json)；稀有组织警告保留；CTRP禁读|
+|P5e 合成机制与组织敏感性/LOTO|完成；v1.3独立验证与描述性分析通过|[阶段8组织诊断](reports/阶段8_组织分层OOF诊断.md)、[阶段8b残差澄清](reports/阶段8b_组织残差增量澄清.md)、[阶段9合成机制](reports/阶段9_合成机制控制.md)、[阶段10结果](reports/阶段10_LOTO组织外推敏感性.md)、[阶段10j恢复/审计](reports/阶段10j_LOTO_v1_3系统重启恢复与结果审计.md)、[P5e协议](docs/TISSUE_SENSITIVITY_LOTO_PROTOCOL_V1.md)、[v1.3执行锁](config/loto_execution_v1_3.lock.json)、[结果清单](results/tissue_loto/loto_analysis_manifest.json)；1,472/40,112/39,736已核验；严格主宏NA（34/80格有定义）；稀有组织警告与零解保留；CTRP禁读|
 |P6 外验/最终模型冻结|未开始|实现missing/abstain、未知组织、常数预测、共同覆盖等规则并验收；完成最终拟合/模型重载后才准入CTRP|
 |P7 图表/正文/投稿|未开始|结果决定结论；不承诺旧高准确率或接收|
+
+### v3.19 当前结论与执行顺序
+
+- P5e LOTO v1.3拟合任务全部完成。Windows计划重启只截断最后的aggregate；在核验全部检查点且0待执行任务后，原冻结runner仅重建汇总，未启动worker。独立验证、冻结分析、五份公开输出哈希及报告/表格一致性审计均通过。首会话时长为资源采样下界，报告的8.22小时应读作“至少约8.22小时”；详见阶段10j，原始备份保留本地。
+- 严格固定八药×10主组织pair−强表达Spearman宏值为NA（34/80格有定义）。唯二10/10完整药物的差均为负；零分子解和常数预测使大量格无定义。该结果不能证明REO优势或等效；可讨论组织来源、表示学习和外推边界，但须与外部证据分开。不能从可用格选择性汇总或从描述性RMSE小差推断临床价值。
+- 下一工作包P6按顺序：①在读取CTRP响应前另版冻结八药全部药物的最终模型、训练/特征/表达版本和模型重载契约；②明确并实现外验身份、药物映射、未知组织、缺失/弃判、常数预测、共同覆盖分母、指标NA、药物与宏汇总、区间/失败处理及一次性分析锁；③无外部响应条件下验证输入/代码/模型/协议哈希与自检；④通过全部gate后才一次性执行CTRP，并原样报告全部预定药物及失败。CTRP历史曾被旧稿使用，仍须披露为回顾性重新设计的跨药敏筛选迁移评价。
+- 投稿定位需待一次性外验及图表/稿件审计后再定。如果外验亦无增量，则按边界与表示诊断研究评估其能否达到BMC Genomics的实质贡献门槛，不用新增事后规则或删药重塑优势叙事。
 
 ### v3.18 当前结论与执行顺序
 
@@ -40,6 +47,10 @@
 - 正式无拟合预检和独立验证已通过：184/184个药物×留出组织组合都没有训练/测试组交叉，每个outer-training样本恰好进入一个inner validation fold；4,967行样本表按8模型臂产生39,736条预测。清单SHA、稀有类警告、资源保护阈值和CTRP禁读状态详见[阶段10报告](reports/阶段10_LOTO正式预检.md)。`StratifiedGroupKFold(3)`在176个上下文遇到单组组织、8个上下文遇到双组组织并产生警告，按冻结方案继续且不删组织、不改拆分器。
 - v1.1首次controller启动在资源采样写CSV时失败：`process_tree_memory()`在Windows返回的`system_commit_bytes`与`system_commit_limit_bytes`未列入字段表，首个采样即字段不匹配。v1.1运行目录保留，未启动worker。v1.2补充资源字段，184个划分预检再次通过；首个`tissue_null`任务实际完成1个基线fit事件和1条预测，但OOF行缺少task中的`inner_seed`，因此共享resume验证器拒绝检查点，控制器验收任务数为0。初步猜测缺checksum，经检查确认`payload_sha256`存在且有效；真正缺口是OOF task-context字段。保留v1.2 checkpoint/run且不修补。v1.3添加seed列并以2项无拟合测试核验缺值拒绝/正确值通过/错误值拒绝，另对v1.2 checkpoint临时副本回放通过；2项测试均通过。重新冻结后再运行，所有分析和数据范围不变，详见[阶段10c报告](reports/阶段10c_LOTO检查点行契约故障.md)。
 - v1.1首次controller启动在资源采样写CSV时失败：`process_tree_memory()`在Windows返回的`system_commit_bytes`与`system_commit_limit_bytes`未列入字段表，首个采样即字段不匹配。v1.1运行目录保留，未启动worker。v1.2补充资源字段，184个划分预检再次通过；首个`tissue_null`任务实际完成1个基线fit事件和1条预测，但OOF行缺少task中的`inner_seed`，因此共享resume验证器拒绝检查点，控制器验收任务数为0。初步猜测缺checksum，经检查确认`payload_sha256`存在且有效；真正缺口是OOF task-context字段。保留v1.2 checkpoint/run且不修补。v1.3添加seed列并以2项无拟合测试核验缺值拒绝/正确值通过/错误值拒绝，另对v1.2 checkpoint临时副本回放通过；v1.3重新冻结并完成正式无拟合预检/独立验证。第0项`tissue_null`资格任务随后运行成功、OOF行和检查点验证通过，wall 0.647秒、RSS峰值0.525 GiB。控制器将识别并复用该任务，继续v1.3其余任务；详见[阶段10c报告](reports/阶段10c_LOTO检查点行契约故障.md)。
+
+### v3.19变更记录
+
+2026-10-15：LOTO v1.3完成1,472/1,472任务。02:29:13 Windows计划重启致最终汇总文件截断；保存原文件及哈希后以0待任务续跑，仅重建汇总，未重拟合。独立验证1,472检查点、40,112 fits、39,736 OOF、来源与留出组织隔离通过；分析清单与五输出哈希一致。严格8药×10组织pair−强表达ρ宏值NA（34/80格定义）；仅完整两药Δρ为−0.0124/−0.0526；外部响应访问false。P5e完成，P6尚未开始。下一个gate为预先冻结最终模型与一次性CTRP外验规则，不按LOTO成绩调整候选/表示。详见阶段10及阶段10j报告。
 
 ### v3.18变更记录
 

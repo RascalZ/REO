@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "status": "completed_descriptive_loto_sensitivity",
+  "created_utc": "2026-10-15T03:07:37.277817+00:00",
+  "execution_lock_sha256": "709a5499f87fdd75d4fd202041c9200a08d068938c7190e3a915dbf65edb954e",
+  "execution_commit": "fedc745940374b6870cb6c4bcb66ec8f731ded27",
+  "run_metadata_sha256": "a9a81f0cf14bed935a46ee853c7f0c4058076a1f72642a0810d794d51d4d8f80",
+  "preflight_manifest_sha256": "2b672cad5bdf284c960099c6a7ca5d1e7b442a453e3e1816788c945e9fbb08a1",
+  "validation": {
+    "status": "completed_contract_validated",
+    "tasks": 1472,
+    "fits": 40112,
+    "oof_predictions": 39736,
+    "shared_drug_tissue_sample_sets": 4967,
+    "unknown_tissue_samples_equal_test_samples": true,
+    "training_includes_heldout_tissue": false,
+    "checkpoint_hashes_verified": 1472,
+    "zero_molecular_outer_fits_by_model": {
+      "mad_rank": 97,
+      "mad_pair_full": 120,
+      "response_association_expression": 95,
+      "response_association_pair_full": 94,
+      "expression_strong": 93,
+      "mad_expression": 80,
+      "response_association_rank": 76
+    },
+    "fit_warning_events": 0,
+    "fit_fallback_events": 0,
+    "external_response_accessed": false,
+    "blocked_external_access_attempts": 0
+  },
+  "counts": {
+    "tasks": 1472,
+    "fit_events": 40112,
+    "oof_predictions": 39736
+  },
+  "output_hashes": {
+    "metrics_by_drug_tissue_model.csv": "62a5badab8791d1cb6fee05ad0de7ac522c2603209365667685bb7a7eafdadab",
+    "contrasts_by_drug_tissue.csv": "df05a1a90006725c342b32c53212dfb8c61641dd48f1d2c9ebdf92e299c75672",
+    "drug_macro.csv": "29735499d7561b504fcfc9cad201bece092a8fa8cf8dc0e732ac9981b6338c21",
+    "concatenated_oof_diagnostics.csv": "520e8b3a2961986ffd3431d4d646b3087461ae32cc93e8922347a0d72e5a1894",
+    "reports/阶段10_LOTO组织外推敏感性.md": "aed2acd07ae579522495871907be7eb2e1f861dea3fe5c8664e2c676efbd984a"
+  },
+  "external_response_accessed": false,
+  "ctrp_accessed": false,
+  "inferential_tests_performed": false,
+  "confidence_intervals_reported": false,
+  "interpretation_limit": "Development-set leave-one-tissue-out sensitivity analysis; no independent platform validation or clinical inference"
+}

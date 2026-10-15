@@ -6,3 +6,5 @@
 *.csv text eol=lf
 *.yml text eol=lf
 *.txt text eol=lf
+# Keep analyzer output bytes identical to its frozen SHA-256 manifest.
+results/tissue_loto/*.csv -text !eol
