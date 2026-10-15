@@ -4,7 +4,7 @@ This repository contains a leakage-controlled comparison of relative expression 
 
 ## Current status
 
-As of 2026-10-15, the single maintained research plan is [RESEARCH_PLAN.md](RESEARCH_PLAN.md), version 3.27. Read its current-status section before using any older stage notes. The current scientific readouts are:
+As of 2026-10-15, the single maintained research plan is [RESEARCH_PLAN.md](RESEARCH_PLAN.md), version 3.29. Read its current-status section before using any older stage notes. The current scientific readouts are:
 
 - Fixed eight-drug nested development evaluation: 626 independent development groups, 4,967 drug–model observations, 5 outer folds × 3 repeats and 3 inner folds. The predefined REO-pair minus strong-expression macro ΔSpearman was −0.00588, with family-adjusted conditional interval [−0.01871, +0.00661]. This does not establish REO superiority, equivalence, or non-inferiority.
 - Tissue sensitivity: the strict prespecified leave-one-tissue-out macro was undefined; 34/80 drug–tissue cells had defined correlations.
@@ -17,6 +17,9 @@ As of 2026-10-15, the single maintained research plan is [RESEARCH_PLAN.md](RESE
 - [Total research plan](RESEARCH_PLAN.md): sole maintained plan, decision gates, history and change log.
 - [Stage 14 external evaluation and scientific interpretation](reports/阶段14_P6一次性CTRP外验与研究方向判定.md): coverage, effect estimates, intervals and limitations.
 - [Stage 15 manuscript reconstruction blueprint](reports/阶段15_投稿稿件重构蓝图.md): old-claim disposition, proposed research framing, abstract draft and figure/table map.
+- [Stage 16 captions and evidence ledger](reports/阶段16_图注与稿件证据台账.md): English draft captions/table notes and claim-level evidence boundaries.
+- [First-draft Figures 1–4](figures/manuscript_v1/): editable SVG and 600 dpi PNG; inputs, outputs and software versions are recorded in `figure_manifest.json`. Figure 4 includes the LOTO defined-cell panel and locked CTRPv2 comparison.
+- [First-draft Tables 1–2 and S1–S8](tables/manuscript_v1/): 10 CSVs generated from frozen aggregates, with source/output hashes and row counts in `table_manifest.json`.
 - [Nested evaluation protocol](docs/ORDINAL_REPEATED_V1_PROTOCOL.md): frozen development estimands and training-fold rules.
 - [External validation protocol](docs/EXTERNAL_VALIDATION_PROTOCOL_V1_1.md): locked cross-screen evaluation rules.
 - [Data availability and provenance](docs/DATA_AVAILABILITY.md) and [reproducibility status](docs/REPRODUCIBILITY.md).
@@ -75,4 +78,4 @@ scripts/, src/              # curation, model, validation and analysis code
 tests/                      # integrity and contract checks
 ```
 
-The next work package is manuscript reconstruction from the locked evidence: review the new claim, build replacement figures and tables, write Methods/Results, then update the journal-fit decision. BMC Genomics remains a candidate for reassessment; publication timing and acceptance cannot be inferred from these results.
+The next work package is manuscript reconstruction from the locked evidence: manually audit the first-draft figures and tables, write Methods/Results with evidence links, then update the journal-fit decision. BMC Genomics remains a candidate for reassessment; publication timing and acceptance cannot be inferred from these results.

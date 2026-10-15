@@ -1,0 +1,47 @@
+{
+  "schema_version": "1.0",
+  "status": "first_draft_tables_from_aggregate_outputs",
+  "generated_utc": "2026-10-15T06:39:44.005041+00:00",
+  "script": "src/build_manuscript_tables_v1.py",
+  "python": "3.12.14",
+  "pandas": "3.0.1",
+  "individual_response_values_read": false,
+  "sample_level_predictions_read": false,
+  "source_sha256": {
+    "results/cohort_v2/main_drugs.csv": "5704749a9b416b920f5028703e2b578aedf3dbe07a0ab8d500f4ff9f2fbbc1b6",
+    "results/cohort_v2/public_cohort_snapshot.json": "38f760e88864bc1fbf95d5496bf9eddd698507b1934110382819bd5701c34fc9",
+    "results/ordinal_repeated/paired_effect_intervals.csv": "9b36a9ffb874e5f0a8903d72ad12a4cef51049ebdd137f6d6cc4be3ace4c8f8d",
+    "results/p6_preflight/final_model_manifest.jsonl": "0491c6faca2b79c74f5c056981ddec0263683600cbc3bb5d24c0f0bd160a86ad",
+    "results/p6_external/evaluation_summary.json": "2d3d1803fff9a631643fb0e2abff165d35fa6f88e4c33215f2366d7c7bc11acf",
+    "results/tissue_loto/contrasts_by_drug_tissue.csv": "df05a1a90006725c342b32c53212dfb8c61641dd48f1d2c9ebdf92e299c75672",
+    "config/tissue_sensitivity_loto_v1.json": "0dbf941be1d43c9ccd1de9cd8344fd7c85b5afe0eadd9a8c2dbcd3b067eaf28a",
+    "results/ordinal_repeated/model_intervals.csv": "6cd8c249a2774f751b5b0843ae78085966979b4841c88dd266e520df0e85853e",
+    "results/ordinal_repeated/repeat_stability.csv": "aee5502a137636ab921b3e1b4b41c1e3ffa04cb8c06a8d8d33e9d54a979da908",
+    "results/ordinal_repeated/molecular_and_failure_summary.csv": "8ee5a3f49b640e4e7ca868ff918fab17b60a93fe9cf1069ed9cdb81739206512"
+  },
+  "script_sha256": "345b66d12ef2e6a1aa205bdcc9c7db66d94207dba644ee715288205d7925328c",
+  "output_sha256": {
+    "Table1_cohort_by_drug.csv": "7b469a0fdecb1759f0ecf363b56a09636468e50368fbbcb6ecafe4497ec59664",
+    "Table2_primary_effects.csv": "23047a81165e90c484291fe3fc3ebbef312a756354f4be63c1143edefbe34d51",
+    "TableS1_loto_defined_cells.csv": "bbcd0b65e688f05bb42a090f491c8ef29525d3b9b1a77183c93ea1e6404ccf33",
+    "TableS2_external_27_estimands.csv": "7655589f93cd47f357b8c3444f76afb250c316d6de317f5a9948d0f9ebaacc01",
+    "TableS3_development_27_estimands.csv": "9d3768fce57863d6d733ea7792cb9ed69806ef84cc8dcd5187874675dda571e6",
+    "TableS4_development_model_performance.csv": "512e2212d22c83dfbf9c54f5c5829b02818e19610f710b6a4bad2cc6aa3769b7",
+    "TableS5_repeat_stability.csv": "03600116a5086d824740256a079cad7534cf80b2236cef5ecd19dee4e8043f8f",
+    "TableS6_zero_solution_audit.csv": "d89e01aef179deba12b2e5e6e8bcf991baf207a3076c7cd5e6d3c8f4539422e4",
+    "TableS7_loto_all_23_tissues.csv": "8e00902f736fec22081083435d7a4cb22562f45c5f5db7a1d499af1f4ce676df",
+    "TableS8_compound_identity_mapping.csv": "a3526e3a339bb535cd37f1255dbe9ab79d0f4c7b279d1454b3e0c13fe988feef"
+  },
+  "table_rows": {
+    "Table1_cohort_by_drug.csv": 9,
+    "Table2_primary_effects.csv": 9,
+    "TableS1_loto_defined_cells.csv": 80,
+    "TableS2_external_27_estimands.csv": 27,
+    "TableS3_development_27_estimands.csv": 27,
+    "TableS4_development_model_performance.csv": 288,
+    "TableS5_repeat_stability.csv": 1188,
+    "TableS6_zero_solution_audit.csv": 64,
+    "TableS7_loto_all_23_tissues.csv": 184,
+    "TableS8_compound_identity_mapping.csv": 8
+  }
+}

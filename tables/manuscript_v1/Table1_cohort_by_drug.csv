@@ -1,0 +1,10 @@
+GDSC2_compound_ID,Compound,CTRPv2_compound_ID,GDSC2_independent_groups,GDSC2_drug_model_responses,CTRPv2_shared_groups,CTRPv2_valid_drug_model_responses,CTRPv2_eligible_curve_records
+1931,MIRA-1,580922,625,625,108,108,109
+1036,PLX-4720,606256,622,622,167,167,169
+1191,Bortezomib,411737,620,620,169,169,172
+1930,Telomerase Inhibitor IX,411865,620,620,168,168,170
+1199,Tamoxifen,26972,620,620,165,165,167
+1091,BMS-536924,411859,620,620,165,165,168
+1010,Gefitinib,52926,620,620,161,161,163
+1922,Cediranib,606136,620,620,82,82,83
+,All eight compounds,,626,4967,175,1185,1201

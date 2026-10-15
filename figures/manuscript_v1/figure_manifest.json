@@ -1,0 +1,33 @@
+{
+  "schema_version": "1.0",
+  "status": "first_draft_rendered_from_aggregate_outputs",
+  "generated_utc": "2026-10-15T06:40:24.112272+00:00",
+  "script": "src/plot_manuscript_figures_v1.py",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "pandas": "3.0.1",
+  "matplotlib": "3.10.7",
+  "individual_response_values_read": false,
+  "script_sha256": "763f5e8a48d3b727b9d8ca08f5f8a871d08f5d30e1209429a7827b11dc0b57ce",
+  "source_sha256": {
+    "results/cohort_v2/public_cohort_snapshot.json": "38f760e88864bc1fbf95d5496bf9eddd698507b1934110382819bd5701c34fc9",
+    "results/ordinal_repeated/paired_effect_intervals.csv": "9b36a9ffb874e5f0a8903d72ad12a4cef51049ebdd137f6d6cc4be3ace4c8f8d",
+    "results/p6_preflight/final_model_manifest.jsonl": "0491c6faca2b79c74f5c056981ddec0263683600cbc3bb5d24c0f0bd160a86ad",
+    "results/p6_external/evaluation_summary.json": "2d3d1803fff9a631643fb0e2abff165d35fa6f88e4c33215f2366d7c7bc11acf",
+    "docs/ORDINAL_REPEATED_V1_PROTOCOL.md": "952f211b276ffb4bd3ef37bb1ecf826f70c025f5a2c56c1d640b34c5d0e099ae",
+    "docs/EXTERNAL_VALIDATION_PROTOCOL_V1_1.md": "38e6daa290e04c748d1e544865f696de33fe411b0721d7a84868c6b0de818f44",
+    "results/tissue_loto/contrasts_by_drug_tissue.csv": "df05a1a90006725c342b32c53212dfb8c61641dd48f1d2c9ebdf92e299c75672",
+    "config/tissue_sensitivity_loto_v1.json": "0dbf941be1d43c9ccd1de9cd8344fd7c85b5afe0eadd9a8c2dbcd3b067eaf28a",
+    "docs/TISSUE_SENSITIVITY_LOTO_PROTOCOL_V1.md": "9694239702337c303aa62228c70e1e5dd4ffe3f326c423f0bfa67db6d4a799dd"
+  },
+  "output_sha256": {
+    "Figure1_study_design.png": "1775a8e6dbf6897c6c1d774f16b6cacab912984b59a5e946518c6e7aa52ef003",
+    "Figure1_study_design.svg": "6b2a74d67373174828a241d6181b9575f64fe4131edaafeea9a8df812b74a4d3",
+    "Figure2_development_primary.png": "150d016b2c8a66944012e1cf79998718133a8a07c4c21090b663d3333ff5ff96",
+    "Figure2_development_primary.svg": "c57b445af9c5c045a6b04e1166532122b331999e6bbb56eea70bcfb586c7ec34",
+    "Figure3_representation_and_zero_solutions.png": "0031c135b5db53e2a4b7c9360d705e02070705253947c6dfc9d47b956e00674c",
+    "Figure3_representation_and_zero_solutions.svg": "1fb990849d31dc7ae91937fba8b49703d390d9ba734557089dcbee7a79cf8fa5",
+    "Figure4_loto_and_external.png": "2d3c2e322b3a281be48bddcdf28f5c6b31a00e29e33706f880b1ab6d76fdf4ad",
+    "Figure4_loto_and_external.svg": "32989de743a62997f06316359b4ed8ffa69d92a2a5a771e33f7f2edf1c097e24"
+  }
+}
