@@ -181,4 +181,3 @@ Do not publish sample-level inference outputs from genuine CTRP rows as an examp
 - `src/run_final_model_v1.py:392`: historical reload sentinels.
 - `src/run_final_model_v1.py:463`: original serialized artifact dictionary.
 - `config/external_validation_v1_1.json:external_gateway`: complete schema, molecular abstention, tissue and zero-state policies.
-
