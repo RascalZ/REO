@@ -1,0 +1,10 @@
+# Optional M08 editorial graphics/render QA runtime; Python 3.12.14.
+# These are current editorial versions, not a claim about historical model runs.
+numpy==2.3.5
+pandas==3.0.1
+matplotlib==3.10.7
+Pillow==12.3.0
+pdfplumber==0.11.9
+reportlab==4.4.9
+# Word export additionally needs Windows, Microsoft Word, PowerShell and Poppler.
+# DOCX generation uses Node.js and manuscript_v1/package-lock.json.

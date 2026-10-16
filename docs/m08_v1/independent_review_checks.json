@@ -1,0 +1,182 @@
+{
+  "status": "all_passed",
+  "scope": "Independent deterministic M08 style/content/package audit; no study fitting, resampling, scoring, individual responses or individual predictions",
+  "checked_files_sha256": {
+    "manuscript_MD": "50bb97e8531fc9e373ed361803f81d88c837603aca306fa3c34ce0280b77d9b9",
+    "manuscript_DOCX": "ff42b4a87faca6a7bd8ffacb969a9a57cd68fecf11495cfbe74b2968ce22b667",
+    "figure_manifest": "7b346da880892d7bf31447ba245d2510e8841e79e2237696d2566678b7af9c83",
+    "reference_author_audit": "f828c617d3ea47547f460b5135f4302d333619a886162c3f433ba5ea8a0e4154"
+  },
+  "checks": [
+    {
+      "check": "scientific_body_unchanged_except_explicit_status",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "additional_descriptions_and_captions_verbatim",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "reference_numbers_and_count",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "reference_non_author_tails_unchanged",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "reference_DOIs_identical_in_same_order",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "selected_six_author_policy_consistent",
+      "passed": true,
+      "details": {
+        "reference_count": 30,
+        "personal_author_references": 27,
+        "corporate_author_references": 3,
+        "author_prefixes_changed": 19,
+        "et_al_references_after_formatting": 14,
+        "unresolved_author_metadata": 0,
+        "new_scientific_results": 0
+      }
+    },
+    {
+      "check": "four_titles_and_legends_within_limits",
+      "passed": true,
+      "details": [
+        {
+          "number": "1",
+          "title_words": 5,
+          "legend_words": 102
+        },
+        {
+          "number": "2",
+          "title_words": 10,
+          "legend_words": 73
+        },
+        {
+          "number": "3",
+          "title_words": 7,
+          "legend_words": 103
+        },
+        {
+          "number": "4",
+          "title_words": 8,
+          "legend_words": 141
+        }
+      ]
+    },
+    {
+      "check": "all_recorded_original_files_preserved",
+      "passed": true,
+      "details": {
+        "files": 37,
+        "changed": []
+      }
+    },
+    {
+      "check": "all_fourteen_additional_files_byte_identical",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Word_two_editable_tables_match_original",
+      "passed": true,
+      "details": {
+        "tables": [
+          {
+            "rows": 10,
+            "columns": 5
+          },
+          {
+            "rows": 10,
+            "columns": 5
+          }
+        ],
+        "table_title_legend_layout_and_row_protection": [
+          {
+            "title_above_matches": true,
+            "legend_below_matches": true,
+            "all_rows_cantSplit": true,
+            "all_cell_paragraphs_keepNext": true,
+            "row_count": 10,
+            "cell_paragraph_count": 50
+          },
+          {
+            "title_above_matches": true,
+            "legend_below_matches": true,
+            "all_rows_cantSplit": true,
+            "all_cell_paragraphs_keepNext": true,
+            "row_count": 10,
+            "cell_paragraph_count": 50
+          }
+        ]
+      }
+    },
+    {
+      "check": "Word_table_cells_match_Markdown",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "Word_all_Markdown_paragraphs_and_captions_exact_once",
+      "passed": true,
+      "details": {
+        "missing_from_Word": [],
+        "extra_in_Word": [],
+        "paragraph_count": 164,
+        "format_only_exception": "Each verbatim Table caption is split into title-above and legend-below paragraphs; no words changed."
+      }
+    },
+    {
+      "check": "Word_four_embedded_PNGs_match_current_M08_graphics",
+      "passed": true,
+      "details": {
+        "embedded_count": 4,
+        "asset_count": 4
+      }
+    },
+    {
+      "check": "figure_aggregate_source_hashes_same_as_original",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "figure_original_source_hash_bindings_current",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "figure_generator_and_manifest_current",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "figure_numerical_artist_identity_and_font_target",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "figure3B_final_matrix_29_zero_of_56",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "figure4A_LOTO_34_defined_of_80",
+      "passed": true,
+      "details": null
+    },
+    {
+      "check": "figure4B_three_exactly_zero_estimates",
+      "passed": true,
+      "details": null
+    }
+  ],
+  "note": "Final Word layout: titles above, verbatim legends below, rows protected from splitting and all table-cell paragraphs keepNext to keep each short table with its legend. Root actual Word render is recorded separately."
+}

@@ -1,0 +1,65 @@
+GDSC2_compound_ID,Compound,Model_arm,repeats,outer_fits,zero_molecular_fits,nonzero_molecular_fits,warning_outer_fits,fallback_outer_fits,active_feature_min,active_feature_max,unknown_tissue_outer_samples,full_development_nonzero_coefficients
+1010,Gefitinib,expression_strong,3,15,0,15,0,0,31,59,5,43
+1010,Gefitinib,mad_expression,3,15,0,15,0,0,20,36,5,28
+1010,Gefitinib,mad_pair_full,3,15,3,12,0,0,0,156,5,133
+1010,Gefitinib,mad_rank,3,15,0,15,0,0,27,34,5,30
+1010,Gefitinib,response_association_expression,3,15,1,14,0,0,0,43,5,27
+1010,Gefitinib,response_association_pair_full,3,15,1,14,0,0,0,214,5,42
+1010,Gefitinib,response_association_rank,3,15,0,15,0,0,10,33,5,17
+1010,Gefitinib,tissue_null,3,15,0,0,0,0,NA,NA,5,NA
+1036,PLX-4720,expression_strong,3,15,14,1,0,0,0,104,5,0
+1036,PLX-4720,mad_expression,3,15,12,3,0,0,0,24,5,0
+1036,PLX-4720,mad_pair_full,3,15,15,0,0,0,0,0,5,0
+1036,PLX-4720,mad_rank,3,15,15,0,0,0,0,0,5,0
+1036,PLX-4720,response_association_expression,3,15,13,2,0,0,0,53,5,0
+1036,PLX-4720,response_association_pair_full,3,15,13,2,0,0,0,155,5,0
+1036,PLX-4720,response_association_rank,3,15,13,2,0,0,0,51,5,0
+1036,PLX-4720,tissue_null,3,15,0,0,0,0,NA,NA,5,NA
+1091,BMS-536924,expression_strong,3,15,0,15,0,0,43,66,5,47
+1091,BMS-536924,mad_expression,3,15,0,15,0,0,20,46,5,26
+1091,BMS-536924,mad_pair_full,3,15,8,7,0,0,0,144,5,172
+1091,BMS-536924,mad_rank,3,15,1,14,0,0,0,39,5,36
+1091,BMS-536924,response_association_expression,3,15,0,15,0,0,36,43,5,42
+1091,BMS-536924,response_association_pair_full,3,15,1,14,0,0,0,108,5,109
+1091,BMS-536924,response_association_rank,3,15,0,15,0,0,18,36,5,24
+1091,BMS-536924,tissue_null,3,15,0,0,0,0,NA,NA,5,NA
+1191,Bortezomib,expression_strong,3,15,9,6,0,0,0,88,5,63
+1191,Bortezomib,mad_expression,3,15,7,8,0,0,0,45,5,35
+1191,Bortezomib,mad_pair_full,3,15,15,0,0,0,0,0,5,0
+1191,Bortezomib,mad_rank,3,15,8,7,0,0,0,54,5,44
+1191,Bortezomib,response_association_expression,3,15,10,5,0,0,0,55,5,0
+1191,Bortezomib,response_association_pair_full,3,15,11,4,0,0,0,122,5,0
+1191,Bortezomib,response_association_rank,3,15,7,8,0,0,0,29,5,22
+1191,Bortezomib,tissue_null,3,15,0,0,0,0,NA,NA,5,NA
+1199,Tamoxifen,expression_strong,3,15,15,0,0,0,0,0,5,0
+1199,Tamoxifen,mad_expression,3,15,12,3,0,0,0,56,5,0
+1199,Tamoxifen,mad_pair_full,3,15,15,0,0,0,0,0,5,0
+1199,Tamoxifen,mad_rank,3,15,14,1,0,0,0,40,5,0
+1199,Tamoxifen,response_association_expression,3,15,14,1,0,0,0,92,5,0
+1199,Tamoxifen,response_association_pair_full,3,15,14,1,0,0,0,174,5,0
+1199,Tamoxifen,response_association_rank,3,15,15,0,0,0,0,0,5,0
+1199,Tamoxifen,tissue_null,3,15,0,0,0,0,NA,NA,5,NA
+1922,Cediranib,expression_strong,3,15,11,4,0,0,0,109,5,113
+1922,Cediranib,mad_expression,3,15,10,5,0,0,0,42,5,0
+1922,Cediranib,mad_pair_full,3,15,14,1,0,0,0,148,5,0
+1922,Cediranib,mad_rank,3,15,12,3,0,0,0,36,5,27
+1922,Cediranib,response_association_expression,3,15,15,0,0,0,0,0,5,0
+1922,Cediranib,response_association_pair_full,3,15,7,8,0,0,0,136,5,0
+1922,Cediranib,response_association_rank,3,15,15,0,0,0,0,0,5,0
+1922,Cediranib,tissue_null,3,15,0,0,0,0,NA,NA,5,NA
+1930,Telomerase Inhibitor IX,expression_strong,3,15,0,15,0,0,44,70,5,59
+1930,Telomerase Inhibitor IX,mad_expression,3,15,0,15,0,0,15,69,5,20
+1930,Telomerase Inhibitor IX,mad_pair_full,3,15,0,15,0,0,51,141,5,145
+1930,Telomerase Inhibitor IX,mad_rank,3,15,0,15,0,0,9,90,5,25
+1930,Telomerase Inhibitor IX,response_association_expression,3,15,0,15,0,0,40,55,5,44
+1930,Telomerase Inhibitor IX,response_association_pair_full,3,15,0,15,0,0,74,120,5,85
+1930,Telomerase Inhibitor IX,response_association_rank,3,15,0,15,0,0,16,60,5,56
+1930,Telomerase Inhibitor IX,tissue_null,3,15,0,0,0,0,NA,NA,5,NA
+1931,MIRA-1,expression_strong,3,15,11,4,0,0,0,75,5,0
+1931,MIRA-1,mad_expression,3,15,11,4,0,0,0,38,5,0
+1931,MIRA-1,mad_pair_full,3,15,15,0,0,0,0,0,5,0
+1931,MIRA-1,mad_rank,3,15,13,2,0,0,0,49,5,0
+1931,MIRA-1,response_association_expression,3,15,8,7,0,0,0,56,5,0
+1931,MIRA-1,response_association_pair_full,3,15,7,8,0,0,0,63,5,0
+1931,MIRA-1,response_association_rank,3,15,5,10,0,0,0,29,5,0
+1931,MIRA-1,tissue_null,3,15,0,0,0,0,NA,NA,5,NA

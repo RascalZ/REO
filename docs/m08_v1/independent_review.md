@@ -1,0 +1,23 @@
+# M08 independent consistency review
+
+Date: 16 October 2026. Scope: an independent, coverage-bounded check of the R1 M08 editorial derivative against the preserved scientific R1, existing plotting source and aggregate figure inputs. This is a verification of formatting/content identity, not an independent replication or a new model evaluation. The `paper-verification` skill informed the claim, direction, denominator and source checks.
+
+## Current outcome
+
+Final deterministic result: all 20 checks pass after the final graphic rebuild, Word rebuild and table-layout amendment. The four embedded PNG parts exactly match the current M08 graphics. No scientific-text, numerical, table-cell, reference-identity or package-file discrepancy was found. Details and exact checked source bindings are in `independent_review_checks.json`.
+
+## Coverage and evidence
+
+- The scientific body before References is verbatim, excluding the explicit draft-status paragraph. All Additional-file descriptions and four figure captions are verbatim. The two editable 10-row-by-5-column Word tables match both R1 Word cells and M08 Markdown cells.
+- Thirty reference identities, sequence, DOI order, titles, journals, years, volume/pages and other non-author tails are unchanged. Nineteen author prefixes change. The selected policy consistently names all authors up to six and otherwise the first six plus `et al.`; corporate authors are preserved. This is the chosen Vancouver implementation illustrated by the journal, not a claim that its prose uniquely mandates the cutoff. The separately documented McDonald suffix correction does not change the cited work.
+- Word contains all Markdown non-table text exactly once, represented by 164 paragraphs after the two table captions are split into title-above and legend-below paragraphs. Both table titles are immediately above their native tables, both original legends are immediately below, all 20 table rows have `cantSplit` protection, and all 100 cell paragraphs have `keepNext` to keep each short table together with its following legend. No caption words or table cells change. Every figure caption appears exactly once and the visible non-submission status remains; four picture parts and two native editable tables are present. Image-byte identity is checked independently rather than inferred from filenames.
+- All 37 protected source files retain their recorded hashes. Additional files 1–14 in the new package are byte-identical to the scientific-R1 package, including the supplementary Word file.
+- The nine saved aggregate input hashes match the old figure manifest and current files. Review of the artist-capture logic confirms that old/new forest point and interval endpoints and heatmap entries are compared exactly in the same drug/policy order, allowing only layout coordinates to change. The figure generator does not fit models, bootstrap, score, load checkpoints, or read individual responses/predictions.
+- Figure 2 remains pair minus strong expression, with family-9 conditional intervals. Figure 3A remains same-200-gene pair minus expression under MAD/response-associated rules, with family-18 intervals. Figure 3B is final-fit coefficient status (29 zeros of 56 molecular fits), not an outer-fold zero frequency. Figure 4A encodes definedness only (34 of 80; strict macro NA), not effect direction. Figure 4B preserves three exact zero contrasts, family-9 intervals and the same eight shared external-group counts.
+- All four caption titles contain at most 15 words and all legends at most 300 words. The source figure minimum is 9.5 pt at 170 mm and approximately 8.72 pt at the Word embedding width, above the project 8 pt target. This font threshold is a project criterion rather than a quoted journal rule.
+
+## Visual inspection and remaining limits
+
+The new Figure 1, Figure 3 and Figure 4 raster proofs were actually inspected. Labels, panel identifiers, keys and interval bars were readable without evident clipping or overlap. The root agent separately reports actual Microsoft Word rendering (main 38 pages, supplementary 18 pages), with Figure 3 on page 22, Figure 4 on page 24 and Table 2 together with its legend on page 26, followed by image inspection. Those render claims are attributed to the root agent; this independent audit verifies the final DOCX source bytes, content and structural styles. The render evidence should be read together with this deterministic audit.
+
+No new scientific analysis or CTRPv2-label access was performed in this review. Author declarations, actual public access, upstream permissions and immutable archiving remain deferred; this review cannot declare the manuscript submission-ready.

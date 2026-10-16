@@ -51,3 +51,8 @@ results/formal_development/bootstrap_group_manifest.csv
 !.env.example
 # Complete local reproduction assets are prepared before rights/access release.
 reproducibility_v1/local_assets/
+
+# M08 editorial copies; render previews stay local.
+!manuscript_v1/Manuscript_BMC_Genomics_M08_v1.docx
+!manuscript_v1/bmc_additional_files_M08_v1/Additional_file_14.docx
+manuscript_v1/qa_m08_v1/

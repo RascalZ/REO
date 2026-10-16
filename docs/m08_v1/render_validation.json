@@ -1,0 +1,127 @@
+{
+  "scope": "Microsoft Word render and layout QA, not new scientific evaluation",
+  "render_engine": "Microsoft Word 2021 COM ExportAsFixedFormat",
+  "editorial_runtime_only": {
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "matplotlib": "3.10.7",
+    "Pillow": "12.3.0",
+    "pdfplumber": "0.11.9",
+    "reportlab": "4.4.9"
+  },
+  "render_script_sha256": "2de065a78412f381eff3a6552ae620540150ed03c6fec8dcbc45604e335ecc8c",
+  "audit_script_sha256": "609a140f6990ae0bea04a945b37dfcf2e66c65329c926306d5e442f81e421e28",
+  "manual_visual_inspection_confirmed": true,
+  "local_full_width_proof": "manuscript_v1/qa_m08_v1/figure_caption_170mm_proof.pdf",
+  "full_width_proof_sha256": "ccd5b9509c33e7f277eddd88c17ae3ac3c7eac57c1fec19ac171286aa098db83",
+  "full_width_proof": {
+    "proof_width_mm": 170,
+    "dimensions": [
+      {
+        "figure": 1,
+        "image_height_mm": 165.1307596513076,
+        "caption_height_mm": 39.68749999999999,
+        "gap_mm": 3,
+        "combined_height_mm": 207.81825965130759,
+        "within_225mm": true,
+        "caption_font_pt": 10,
+        "caption_leading_pt": 12.5
+      },
+      {
+        "figure": 2,
+        "image_height_mm": 114.32129514321294,
+        "caption_height_mm": 26.458333333333332,
+        "gap_mm": 3,
+        "combined_height_mm": 143.77962847654626,
+        "within_225mm": true,
+        "caption_font_pt": 10,
+        "caption_leading_pt": 12.5
+      },
+      {
+        "figure": 3,
+        "image_height_mm": 172.7521793275218,
+        "caption_height_mm": 35.27777777777777,
+        "gap_mm": 3,
+        "combined_height_mm": 211.02995710529953,
+        "within_225mm": true,
+        "caption_font_pt": 10,
+        "caption_leading_pt": 12.5
+      },
+      {
+        "figure": 4,
+        "image_height_mm": 177.83312577833127,
+        "caption_height_mm": 44.097222222222214,
+        "gap_mm": 3,
+        "combined_height_mm": 224.93034800055344,
+        "within_225mm": true,
+        "caption_font_pt": 10,
+        "caption_leading_pt": 12.5
+      }
+    ],
+    "all_within_225mm": true,
+    "scope": "Exact proof layout only; publisher re-typesetting may require further adjustment"
+  },
+  "documents": {
+    "main": {
+      "docx_path": "manuscript_v1/Manuscript_BMC_Genomics_M08_v1.docx",
+      "docx_sha256": "ff42b4a87faca6a7bd8ffacb969a9a57cd68fecf11495cfbe74b2968ce22b667",
+      "local_pdf": "manuscript_v1/qa_m08_v1/main_M08.pdf",
+      "pdf_sha256": "d3ad42baead065e757515412ca4da4a0f9086e9831599b74c3ce30db157e2fe9",
+      "pages": 38,
+      "sequential_page_numbers": true,
+      "no_blank_pages": true,
+      "fonts_output": "name                                 type              encoding         emb sub uni object ID\r\n------------------------------------ ----------------- ---------------- --- --- --- ---------\r\nBCDEEE+TimesNewRomanPSMT             TrueType          WinAnsi          yes yes no       5  0\r\nBCDFEE+TimesNewRomanPSMT             CID TrueType      Identity-H       yes yes yes      9  0\r\nBCDGEE+TimesNewRomanPS-BoldMT        TrueType          WinAnsi          yes yes no      14  0\r\nBCDHEE+TimesNewRomanPS-ItalicMT      TrueType          WinAnsi          yes yes no      51  0\r\nBCDIEE+TimesNewRomanPS-BoldMT        CID TrueType      Identity-H       yes yes yes     72  0\r\n",
+      "figure_locations": [
+        {
+          "page": 6,
+          "image_width_mm": 156.10416666666666,
+          "image_height_mm": 151.60625000000002,
+          "combined_height_mm": 197.68512377777776,
+          "within_225mm": true,
+          "image_within_body": true
+        },
+        {
+          "page": 19,
+          "image_width_mm": 156.10416666666666,
+          "image_height_mm": 105.03958333333333,
+          "combined_height_mm": 141.0029071111111,
+          "within_225mm": true,
+          "image_within_body": true
+        },
+        {
+          "page": 22,
+          "image_width_mm": 156.10416666666666,
+          "image_height_mm": 158.75,
+          "combined_height_mm": 199.80179044444444,
+          "within_225mm": true,
+          "image_within_body": true
+        },
+        {
+          "page": 24,
+          "image_width_mm": 156.10416666666666,
+          "image_height_mm": 163.24791666666664,
+          "combined_height_mm": 219.53829599999997,
+          "within_225mm": true,
+          "image_within_body": true
+        }
+      ],
+      "text_outside_page": 0,
+      "all_used_word_pdf_fonts_embedded": true
+    },
+    "supplement": {
+      "docx_path": "manuscript_v1/bmc_additional_files_M08_v1/Additional_file_14.docx",
+      "docx_sha256": "054a00980647a7720fd828ae9483c9dea370a0a407e09dc4cd7c940f7bbc1a60",
+      "local_pdf": "manuscript_v1/qa_m08_v1/supplement_M08.pdf",
+      "pdf_sha256": "b5860f6c6a33ad464b109da3052c6352e43bdfe1b6821e8eddd32ce2d138a2ce",
+      "pages": 18,
+      "sequential_page_numbers": true,
+      "no_blank_pages": true,
+      "fonts_output": "name                                 type              encoding         emb sub uni object ID\r\n------------------------------------ ----------------- ---------------- --- --- --- ---------\r\nBCDEEE+TimesNewRomanPSMT             TrueType          WinAnsi          yes yes no       5  0\r\nBCDFEE+TimesNewRomanPSMT             CID TrueType      Identity-H       yes yes yes      9  0\r\nBCDGEE+TimesNewRomanPS-BoldMT        TrueType          WinAnsi          yes yes no      14  0\r\nBCDHEE+SimSun                        CID TrueType      Identity-H       yes yes yes     34  0\r\n",
+      "figure_locations": [],
+      "text_outside_page": 0,
+      "all_used_word_pdf_fonts_embedded": true
+    }
+  },
+  "mechanical_checks_pass": true
+}

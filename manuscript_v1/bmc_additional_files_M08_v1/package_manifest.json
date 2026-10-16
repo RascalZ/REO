@@ -1,0 +1,147 @@
+{
+  "revision": "scientific_R1_M08_style_v1",
+  "date": "2026-10-16",
+  "status": "content_review_author_access_rights_archive_pending_not_submission_ready",
+  "operation": "editorial_style_and_existing_aggregate_graphics_only",
+  "retrained_or_rescored": false,
+  "individual_external_labels_or_predictions_read": false,
+  "generator": {
+    "path": "src/build_m08_package_v1.py",
+    "sha256": "d69d790bc6763c95519a42feda5e7112566636a201a4fb0f203abb39b58db10d"
+  },
+  "builder": {
+    "path": "manuscript_v1/build_bmc_docx_m08_v1.js",
+    "sha256": "8a3489bb3ded74ce676ea52ed350ebad10ee063451c1f6fc48c73134bf63b88f"
+  },
+  "source_manuscript": {
+    "path": "manuscript_v1/Manuscript_BMC_Genomics_scientific_revision_v1.md",
+    "sha256": "52de7cbc5a582e1412dcdec48336bbc64226046a5d4d9aa836d76792d636bcbe"
+  },
+  "figure_manifest": {
+    "path": "figures/manuscript_m08_v1/figure_manifest.json",
+    "sha256": "7b346da880892d7bf31447ba245d2510e8841e79e2237696d2566678b7af9c83"
+  },
+  "author_replacements": {
+    "path": "docs/m08_v1/reference_author_audit.json",
+    "sha256": "f828c617d3ea47547f460b5135f4302d333619a886162c3f433ba5ea8a0e4154"
+  },
+  "documents": [
+    {
+      "path": "manuscript_v1/Manuscript_BMC_Genomics_M08_v1.md",
+      "sha256": "50bb97e8531fc9e373ed361803f81d88c837603aca306fa3c34ce0280b77d9b9"
+    },
+    {
+      "path": "manuscript_v1/Manuscript_BMC_Genomics_M08_v1.docx",
+      "sha256": "ff42b4a87faca6a7bd8ffacb969a9a57cd68fecf11495cfbe74b2968ce22b667"
+    },
+    {
+      "path": "manuscript_v1/Supplementary_methods_scientific_revision_v1.md",
+      "sha256": "a04fa46f2103d50dbf41bdb6692c7b679a05e1714fe91ea5099e4bc2fae0bbc9"
+    },
+    {
+      "path": "manuscript_v1/Supplementary_methods_scientific_revision_v1.docx",
+      "sha256": "054a00980647a7720fd828ae9483c9dea370a0a407e09dc4cd7c940f7bbc1a60"
+    }
+  ],
+  "files": [
+    {
+      "number": 1,
+      "path": "manuscript_v1/bmc_additional_files_M08_v1/Additional_file_1.csv",
+      "sha256": "bbcd0b65e688f05bb42a090f491c8ef29525d3b9b1a77183c93ea1e6404ccf33",
+      "source": "manuscript_v1/bmc_additional_files_scientific_revision_v1/Additional_file_1.csv",
+      "byte_identical_to_scientific_R1": true
+    },
+    {
+      "number": 2,
+      "path": "manuscript_v1/bmc_additional_files_M08_v1/Additional_file_2.csv",
+      "sha256": "7655589f93cd47f357b8c3444f76afb250c316d6de317f5a9948d0f9ebaacc01",
+      "source": "manuscript_v1/bmc_additional_files_scientific_revision_v1/Additional_file_2.csv",
+      "byte_identical_to_scientific_R1": true
+    },
+    {
+      "number": 3,
+      "path": "manuscript_v1/bmc_additional_files_M08_v1/Additional_file_3.csv",
+      "sha256": "9d3768fce57863d6d733ea7792cb9ed69806ef84cc8dcd5187874675dda571e6",
+      "source": "manuscript_v1/bmc_additional_files_scientific_revision_v1/Additional_file_3.csv",
+      "byte_identical_to_scientific_R1": true
+    },
+    {
+      "number": 4,
+      "path": "manuscript_v1/bmc_additional_files_M08_v1/Additional_file_4.csv",
+      "sha256": "512e2212d22c83dfbf9c54f5c5829b02818e19610f710b6a4bad2cc6aa3769b7",
+      "source": "manuscript_v1/bmc_additional_files_scientific_revision_v1/Additional_file_4.csv",
+      "byte_identical_to_scientific_R1": true
+    },
+    {
+      "number": 5,
+      "path": "manuscript_v1/bmc_additional_files_M08_v1/Additional_file_5.csv",
+      "sha256": "03600116a5086d824740256a079cad7534cf80b2236cef5ecd19dee4e8043f8f",
+      "source": "manuscript_v1/bmc_additional_files_scientific_revision_v1/Additional_file_5.csv",
+      "byte_identical_to_scientific_R1": true
+    },
+    {
+      "number": 6,
+      "path": "manuscript_v1/bmc_additional_files_M08_v1/Additional_file_6.csv",
+      "sha256": "d89e01aef179deba12b2e5e6e8bcf991baf207a3076c7cd5e6d3c8f4539422e4",
+      "source": "manuscript_v1/bmc_additional_files_scientific_revision_v1/Additional_file_6.csv",
+      "byte_identical_to_scientific_R1": true
+    },
+    {
+      "number": 7,
+      "path": "manuscript_v1/bmc_additional_files_M08_v1/Additional_file_7.csv",
+      "sha256": "8e00902f736fec22081083435d7a4cb22562f45c5f5db7a1d499af1f4ce676df",
+      "source": "manuscript_v1/bmc_additional_files_scientific_revision_v1/Additional_file_7.csv",
+      "byte_identical_to_scientific_R1": true
+    },
+    {
+      "number": 8,
+      "path": "manuscript_v1/bmc_additional_files_M08_v1/Additional_file_8.csv",
+      "sha256": "a3526e3a339bb535cd37f1255dbe9ab79d0f4c7b279d1454b3e0c13fe988feef",
+      "source": "manuscript_v1/bmc_additional_files_scientific_revision_v1/Additional_file_8.csv",
+      "byte_identical_to_scientific_R1": true
+    },
+    {
+      "number": 9,
+      "path": "manuscript_v1/bmc_additional_files_M08_v1/Additional_file_9.csv",
+      "sha256": "f0ebd23139f5ef05f7516e8f77c202f7e7431e2aa79751d268929348b5c62706",
+      "source": "manuscript_v1/bmc_additional_files_scientific_revision_v1/Additional_file_9.csv",
+      "byte_identical_to_scientific_R1": true
+    },
+    {
+      "number": 10,
+      "path": "manuscript_v1/bmc_additional_files_M08_v1/Additional_file_10.csv",
+      "sha256": "d44a5fd9d86cba79b70a36aaf70b7d9e9095a29fbde78efd8e516ff23d677a0d",
+      "source": "manuscript_v1/bmc_additional_files_scientific_revision_v1/Additional_file_10.csv",
+      "byte_identical_to_scientific_R1": true
+    },
+    {
+      "number": 11,
+      "path": "manuscript_v1/bmc_additional_files_M08_v1/Additional_file_11.csv",
+      "sha256": "0c149e110e72e354705ba9513ae5ad3f52f36a54e80ff54322e64e5963f93e77",
+      "source": "manuscript_v1/bmc_additional_files_scientific_revision_v1/Additional_file_11.csv",
+      "byte_identical_to_scientific_R1": true
+    },
+    {
+      "number": 12,
+      "path": "manuscript_v1/bmc_additional_files_M08_v1/Additional_file_12.csv",
+      "sha256": "49f6d3c609a9ae93895c12e8f8a2c0b7926d612168a18208ef0b5491f9b7bc4f",
+      "source": "manuscript_v1/bmc_additional_files_scientific_revision_v1/Additional_file_12.csv",
+      "byte_identical_to_scientific_R1": true
+    },
+    {
+      "number": 13,
+      "path": "manuscript_v1/bmc_additional_files_M08_v1/Additional_file_13.csv",
+      "sha256": "ad3ca1edc66b46544d15412cbeed7c6277a24d17d5d6d024d36b0b2255547aa8",
+      "source": "manuscript_v1/bmc_additional_files_scientific_revision_v1/Additional_file_13.csv",
+      "byte_identical_to_scientific_R1": true
+    },
+    {
+      "number": 14,
+      "path": "manuscript_v1/bmc_additional_files_M08_v1/Additional_file_14.docx",
+      "sha256": "054a00980647a7720fd828ae9483c9dea370a0a407e09dc4cd7c940f7bbc1a60",
+      "source": "manuscript_v1/bmc_additional_files_scientific_revision_v1/Additional_file_14.docx",
+      "byte_identical_to_scientific_R1": true
+    }
+  ],
+  "note": "Supplementary content and all Additional files are unchanged byte copies. Zero, negative and NA results retain their original scientific meaning."
+}

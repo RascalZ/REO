@@ -1,0 +1,35 @@
+{
+  "scope": "M08 text, figures and package consistency only; not independent study reproduction or submission readiness",
+  "checks": {
+    "only_status_and_reference_author_prefixes_changed": true,
+    "all_37_preserved_sources_byte_identical": true,
+    "reference_metadata_sources_unchanged": true,
+    "first_citations_are_1_to_30": true,
+    "citation_bibtex_coverage_pass": true,
+    "four_caption_titles_and_legends_within_limits": true,
+    "word_paragraphs_equal_markdown_including_references_and_captions": true,
+    "one_caption_per_figure": true,
+    "two_editable_tables_cells_equal_markdown": true,
+    "four_drawings": true,
+    "word_images_are_exact_new_png_bytes": true,
+    "docx_zip_integrity": true,
+    "current_page_field_present": true,
+    "line_numbering_present": true,
+    "14_additional_files_byte_identical_to_R1": true,
+    "package_document_source_and_builder_hashes_current": true,
+    "figure_source_hashes_current": true,
+    "all_four_numeric_artists_match_original": true,
+    "all_four_word_minimum_fonts_at_least_8pt": true
+  },
+  "pass": true,
+  "failed_checks": [],
+  "details": {
+    "paragraphs": 165,
+    "table_rows": [
+      10,
+      10
+    ],
+    "reference_count": 30,
+    "preserved_files": 37
+  }
+}

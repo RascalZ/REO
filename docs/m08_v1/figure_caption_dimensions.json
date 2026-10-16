@@ -1,0 +1,47 @@
+{
+  "proof_width_mm": 170,
+  "dimensions": [
+    {
+      "figure": 1,
+      "image_height_mm": 165.1307596513076,
+      "caption_height_mm": 39.68749999999999,
+      "gap_mm": 3,
+      "combined_height_mm": 207.81825965130759,
+      "within_225mm": true,
+      "caption_font_pt": 10,
+      "caption_leading_pt": 12.5
+    },
+    {
+      "figure": 2,
+      "image_height_mm": 114.32129514321294,
+      "caption_height_mm": 26.458333333333332,
+      "gap_mm": 3,
+      "combined_height_mm": 143.77962847654626,
+      "within_225mm": true,
+      "caption_font_pt": 10,
+      "caption_leading_pt": 12.5
+    },
+    {
+      "figure": 3,
+      "image_height_mm": 172.7521793275218,
+      "caption_height_mm": 35.27777777777777,
+      "gap_mm": 3,
+      "combined_height_mm": 211.02995710529953,
+      "within_225mm": true,
+      "caption_font_pt": 10,
+      "caption_leading_pt": 12.5
+    },
+    {
+      "figure": 4,
+      "image_height_mm": 177.83312577833127,
+      "caption_height_mm": 44.097222222222214,
+      "gap_mm": 3,
+      "combined_height_mm": 224.93034800055344,
+      "within_225mm": true,
+      "caption_font_pt": 10,
+      "caption_leading_pt": 12.5
+    }
+  ],
+  "all_within_225mm": true,
+  "scope": "Exact proof layout only; publisher re-typesetting may require further adjustment"
+}

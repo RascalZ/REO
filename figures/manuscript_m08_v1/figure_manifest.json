@@ -1,0 +1,475 @@
+{
+  "schema_version": "2.0",
+  "status": "M08_layout_revision_numerical_artists_exactly_preserved",
+  "generated_utc": "2026-10-16T10:36:03.064388+00:00",
+  "script": "src/plot_manuscript_figures_m08_v1.py",
+  "script_sha256": "218ce5cea97d85f5bfa3c54e9c006adc79071ebbd3356b291be4b181403ca347",
+  "source_sha256": {
+    "results/cohort_v2/public_cohort_snapshot.json": "38f760e88864bc1fbf95d5496bf9eddd698507b1934110382819bd5701c34fc9",
+    "results/ordinal_repeated/paired_effect_intervals.csv": "9b36a9ffb874e5f0a8903d72ad12a4cef51049ebdd137f6d6cc4be3ace4c8f8d",
+    "results/p6_preflight/final_model_manifest.jsonl": "0491c6faca2b79c74f5c056981ddec0263683600cbc3bb5d24c0f0bd160a86ad",
+    "results/p6_external/evaluation_summary.json": "2d3d1803fff9a631643fb0e2abff165d35fa6f88e4c33215f2366d7c7bc11acf",
+    "docs/ORDINAL_REPEATED_V1_PROTOCOL.md": "952f211b276ffb4bd3ef37bb1ecf826f70c025f5a2c56c1d640b34c5d0e099ae",
+    "docs/EXTERNAL_VALIDATION_PROTOCOL_V1_1.md": "38e6daa290e04c748d1e544865f696de33fe411b0721d7a84868c6b0de818f44",
+    "results/tissue_loto/contrasts_by_drug_tissue.csv": "df05a1a90006725c342b32c53212dfb8c61641dd48f1d2c9ebdf92e299c75672",
+    "config/tissue_sensitivity_loto_v1.json": "0dbf941be1d43c9ccd1de9cd8344fd7c85b5afe0eadd9a8c2dbcd3b067eaf28a",
+    "docs/TISSUE_SENSITIVITY_LOTO_PROTOCOL_V1.md": "9694239702337c303aa62228c70e1e5dd4ffe3f326c423f0bfa67db6d4a799dd"
+  },
+  "original_script_sha256": "763f5e8a48d3b727b9d8ca08f5f8a871d08f5d30e1209429a7827b11dc0b57ce",
+  "original_assets_manifest_sha256": "8ee047d2063770ef50cd99aa45b2f3392f7c30ee2753804c89e77687efad71fe",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "pandas": "3.0.1",
+  "matplotlib": "3.10.7",
+  "individual_response_values_read": false,
+  "sample_level_predictions_read": false,
+  "models_loaded": false,
+  "training_or_scoring_performed": false,
+  "font_minimum_is_project_legibility_target_not_journal_requirement": true,
+  "layout_policy": "No overall titles inside figures; panel headings only. Figures 3 and 4 use vertical panels.",
+  "na_policy": "LOTO undefined cells remain gray; no missing result converted to zero. Matrix encodes definedness only.",
+  "figures": {
+    "Figure1_study_design": {
+      "title_in_caption_only": "Study design and evaluation boundaries",
+      "width_mm": 170.0,
+      "height_mm": 165.1,
+      "minimum_font_pt_at_170mm": 9.5,
+      "minimum_font_pt_at_word_590px": 8.723468137254901,
+      "word_590px_width_mm": 156.10416666666666,
+      "png_dpi": 600,
+      "same_numerical_artists_as_original": true,
+      "numerical_artists": [],
+      "visible_text_count": 14,
+      "visible_text_outside_canvas": []
+    },
+    "Figure2_development_primary": {
+      "title_in_caption_only": "Primary REO-pair versus strong-expression contrast in repeated nested development evaluation",
+      "width_mm": 170.0,
+      "height_mm": 114.3,
+      "minimum_font_pt_at_170mm": 9.5,
+      "minimum_font_pt_at_word_590px": 8.723468137254901,
+      "word_590px_width_mm": 156.10416666666666,
+      "png_dpi": 600,
+      "same_numerical_artists_as_original": true,
+      "numerical_artists": [
+        {
+          "point_lower_upper": [
+            [
+              0.024988554404798,
+              -0.015224902553941901,
+              0.0635266537845339
+            ],
+            [
+              -0.010534977567021,
+              -0.0334109749848038,
+              0.011770822391941098
+            ],
+            [
+              -0.0170576945588484,
+              -0.040717163533954,
+              0.005528528619661001
+            ],
+            [
+              -0.0038896832234258,
+              -0.040467165844427194,
+              0.0303030228553199
+            ],
+            [
+              0.0013214227373567,
+              -0.0212813618376395,
+              0.0226916884595848
+            ],
+            [
+              -0.0330249439148988,
+              -0.0761504598094557,
+              0.009462533502546902
+            ],
+            [
+              -0.0028121153629798,
+              -0.0480205804723794,
+              0.0434386913609301
+            ],
+            [
+              -0.0060475492454869,
+              -0.0461756575400167,
+              0.0351042799137209
+            ],
+            [
+              -0.0058821233413132,
+              -0.0187142063858654,
+              0.0066141001181841
+            ]
+          ]
+        }
+      ],
+      "visible_text_count": 16,
+      "visible_text_outside_canvas": []
+    },
+    "Figure3_representation_and_zero_solutions": {
+      "title_in_caption_only": "Candidate-set representation contrasts and full-development molecular solutions",
+      "width_mm": 170.0,
+      "height_mm": 172.72,
+      "minimum_font_pt_at_170mm": 9.5,
+      "minimum_font_pt_at_word_590px": 8.723468137254901,
+      "word_590px_width_mm": 156.10416666666666,
+      "png_dpi": 600,
+      "same_numerical_artists_as_original": true,
+      "numerical_artists": [
+        {
+          "point_lower_upper": [
+            [
+              0.0251325228262253,
+              -0.006193473303026303,
+              0.0598922263621698
+            ],
+            [
+              0.0200307080694053,
+              -0.0296880316737879,
+              0.0698292378362987
+            ],
+            [
+              -0.0176461037853481,
+              -0.0506088810063291,
+              0.014428815177859999
+            ],
+            [
+              -0.0069260034082963,
+              -0.0345091084931891,
+              0.0209588685715346
+            ],
+            [
+              -0.0115978648067378,
+              -0.0385474277325493,
+              0.0164759640258069
+            ],
+            [
+              -0.0120023002021098,
+              -0.0304441422444824,
+              0.006195151380741301
+            ],
+            [
+              -0.0247372168242341,
+              -0.0588713177758603,
+              0.0057988295597181
+            ],
+            [
+              -0.0068719843293538,
+              -0.0329793314731471,
+              0.0184833888795515
+            ],
+            [
+              -0.0157862449105636,
+              -0.0473432080795813,
+              0.0136007819629815
+            ],
+            [
+              0.0019154836859187,
+              -0.015207845985998301,
+              0.0189322418490257
+            ],
+            [
+              -0.0444791728624085,
+              -0.0958951085499481,
+              0.004875750213580901
+            ],
+            [
+              -0.0171530867122278,
+              -0.04967891327948501,
+              0.015847593308681397
+            ],
+            [
+              -0.0470159792618106,
+              -0.086904164529115,
+              -0.0077187254098739985
+            ],
+            [
+              -0.0055720453341549,
+              -0.0528906013060742,
+              0.0421536650672055
+            ],
+            [
+              -0.0050319127288702,
+              -0.0386519617455251,
+              0.029118023606929597
+            ],
+            [
+              0.0085600690597979,
+              -0.0425957788719446,
+              0.0565239004937325
+            ],
+            [
+              -0.0176452465442184,
+              -0.0311700135968315,
+              -0.0040638834909777
+            ],
+            [
+              -0.0022523948963775,
+              -0.0143835499871208,
+              0.0094914685247272
+            ]
+          ]
+        },
+        {
+          "matrix": [
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ]
+          ]
+        }
+      ],
+      "visible_text_count": 36,
+      "visible_text_outside_canvas": [],
+      "full_development_molecular_zero_models": 29,
+      "full_development_molecular_models": 56
+    },
+    "Figure4_loto_and_external": {
+      "title_in_caption_only": "Defined leave-one-tissue-out contrasts and locked CTRPv2 cross-screen evaluation",
+      "width_mm": 170.0,
+      "height_mm": 177.79999999999998,
+      "minimum_font_pt_at_170mm": 9.5,
+      "minimum_font_pt_at_word_590px": 8.723468137254901,
+      "word_590px_width_mm": 156.10416666666666,
+      "png_dpi": 600,
+      "same_numerical_artists_as_original": true,
+      "numerical_artists": [
+        {
+          "matrix": [
+            [
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              1,
+              0
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0,
+              0
+            ],
+            [
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              1,
+              1,
+              1,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1,
+              1
+            ],
+            [
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ]
+          ]
+        },
+        {
+          "point_lower_upper": [
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.000596759745717157,
+              -0.09203818647370868,
+              0.10248060723733843
+            ],
+            [
+              -0.02368766549512813,
+              -0.10873007428810422,
+              0.05833100705667954
+            ],
+            [
+              0.0,
+              0.0,
+              0.0
+            ],
+            [
+              0.030331525659177683,
+              -0.09321019892366131,
+              0.16706076087055766
+            ],
+            [
+              -0.037209941410287994,
+              -0.1254003643276316,
+              0.05040864711459697
+            ],
+            [
+              0.02699620431859926,
+              -0.23477122047409912,
+              0.2833336792373629
+            ],
+            [
+              -0.0003716396477402529,
+              -0.04216649005268415,
+              0.04350486364551419
+            ]
+          ]
+        }
+      ],
+      "visible_text_count": 48,
+      "visible_text_outside_canvas": [],
+      "loto_defined_contrasts": 34,
+      "loto_display_contrasts": 80,
+      "strict_loto_macro": "NA"
+    }
+  },
+  "output_sha256": {
+    "Figure1_study_design.png": "d3984c032bd41d52352e8c8b73953646df99cb1934ee8e1724b600bf7d87cdf3",
+    "Figure1_study_design.svg": "0347c93ef3612d335985171478afdce279b3f0eea3634f479efa64c3857290c7",
+    "Figure1_study_design_proof.png": "8e6e2745dcb5296ec53f20321166c5c9dfcb4891bf6df4e25f4f0121fa7b35e7",
+    "Figure2_development_primary.png": "44c5c30b9c6e2254c29692f238ae5e1ae41f3ad61d19160b5eb51c9e8975f3f0",
+    "Figure2_development_primary.svg": "3741086617239252e0644a843a56aeca0160d39702184b50040ea3581bace9f0",
+    "Figure2_development_primary_proof.png": "65d2d5a513a1ee2a801ec2e2d423ff81f6bf0168f0ff8c9d7a0bc1982bd2f985",
+    "Figure3_representation_and_zero_solutions.png": "9d08e9eb543ba4a509c41cbca9fe11ca86f18ba690d47ec2b880ba236ac4bd83",
+    "Figure3_representation_and_zero_solutions.svg": "60a7f327d8c9019e7d4b4c3b539943c05bfbb4ae45d1d47551edd6baf86a9189",
+    "Figure3_representation_and_zero_solutions_proof.png": "ba092d8b6ee9ec0907f3a757a1250ebd0f89ebe2239281ad81150258baf77843",
+    "Figure4_loto_and_external.png": "27f115b6d6ffc52fcaa9d7b49db991c433afbb656c319c7bd25b8b77dd5e1a83",
+    "Figure4_loto_and_external.svg": "cdb9c05205baec8eb8b0e622e97e23777f13c8e11d014d62dbc523e5d9bdc93e",
+    "Figure4_loto_and_external_proof.png": "b068d4fb877b5de040e24ee7c09ff080c3416bfcb0026e5f5b5bebbc04e45d4b"
+  }
+}
