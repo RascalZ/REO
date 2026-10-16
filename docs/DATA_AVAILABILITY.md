@@ -8,6 +8,14 @@ Development, final model fitting and the single retrospective CTRPv2 evaluation 
 
 The current source/model accessibility gaps are recorded in stage 22 and `docs/reviews/bmc_pre_submission_v1/issue_register.csv` (M04/M06). In particular, the legacy compatibility dependencies below have not been silently replaced, and no complete public-input model replay or public availability of all trained models is claimed. A paper release must supply precise source/member/version/hash information and an actual artifact-access route or justified restrictions. The MIT license is already selected for new code; exact upstream release terms remain separate. An archived release needs a real persistent identifier; a DOI is one recommended choice, not a fabricated or universally exclusive requirement.
 
+## Prepared derived assets — stage 24
+
+The [input/identity ledger](reproducibility_assets_v1/INPUTS_AND_IDENTITIES.md) now inventories 69 current and historical dependencies with recorded versions/hashes. Local, Git-ignored technical assets preserve development/external metadata projections (626/175 identities; 4,967/1,185 drug memberships), four original split CSVs, 64 full numeric models and complete candidate/coefficient/tissue tables. No source CTRPv2 label/index or individual external prediction was read, and no model was retrained/scored. Metadata projections were taken only from positively whitelisted response-free manifests.
+
+The [public guide](../reproducibility_v1/README.md), format definition, hand-invented inference fixture and hash/count summaries are available in the repository. Actual fitted model vectors, full derived mappings and original expression/response matrices are not released by this step. Their real access route and applicable terms remain to be confirmed at closing; the repository MIT license does not imply permission to redistribute all upstream material. Existing local file availability does not itself establish public reproducibility.
+
+The final numeric worker uses frozen development responses, expression and fold assignments, without direct legacy-table reads. Original controller verification and source-data curation retain wider metadata/legacy dependencies. Those have not been silently removed, replaced or rerun. Numerical inference readiness is therefore distinct from complete public-data-only historical reconstruction.
+
 ## Inputs used for cohort v1
 
 | Input | Frozen source | Availability and use |

@@ -1,0 +1,535 @@
+{
+  "schema_version": "reo-asset-bundle-1.0",
+  "date": "2026-10-16",
+  "status": "local_technical_preparation_complete_public_access_rights_pending",
+  "complete_local_assets_git_ignored": true,
+  "individual_cell_ids_or_fitted_vectors_in_this_manifest": false,
+  "models": 64,
+  "zero_molecular_models": 29,
+  "files": [
+    {
+      "path": "inference_examples/frozen_pair_generated_input_predictions.json",
+      "sha256": "7335363b3f94fff33068ffd9f72f29e4f215162b99b1d8750cce75bc6603afe1",
+      "bytes": 918,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "inference_examples/toy_predictions.json",
+      "sha256": "7c26b89b49a8312e7eaf9e55cea5c21e0436faca90672f031465fb51fbe540d8",
+      "bytes": 802,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "inference_examples/zero_state/demo_manifest.json",
+      "sha256": "3fa8f2b3196b6b6ddc9c40c3ea08d89beabe614f9f6d04d7cf92d96f751d1f5b",
+      "bytes": 986,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "inference_examples/zero_state/input_generated_only.json",
+      "sha256": "0b854ed7e850cd5513acf8ab111cc4faca7fa7a59dce76bddfbde61e0703c092",
+      "bytes": 1975266,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "inference_examples/zero_state/tissue_reference_output.json",
+      "sha256": "90d7ae142e353005cab933f1a54bcef3459882df29d20464e40c161e0cf35dd0",
+      "bytes": 649,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "inference_examples/zero_state/zero_molecular_output.json",
+      "sha256": "97c9c8d9461cc2881ac27358fa8f2726a91b3e129a573f3156a1e1407e359b2a",
+      "bytes": 693,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "metadata/development_drug_membership.csv",
+      "sha256": "77a82230cc1ceb4fcfca434b7ed3cb108e3d49e9508dc2d8e4a78e8320702ad9",
+      "bytes": 975258,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "metadata/development_identities.csv",
+      "sha256": "397c1667a0e33df92884e8361f6ea0aebcfb1287f994e41e4d417af1abbe4870",
+      "bytes": 95818,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "metadata/development_repeated_global_folds.csv",
+      "sha256": "7b519fc04b713ca69cf013a90e7fe9e31479944ad3f7b355f098e6ece895dcf4",
+      "bytes": 1717394,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "metadata/external_drug_membership.csv",
+      "sha256": "6f62f974b8f28d58f239a9b853dae7f5caf2407d6bf29e71ef477f8c50f29d79",
+      "bytes": 287956,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "metadata/external_identities.csv",
+      "sha256": "7fbc6b4969a76839cd1f59f0dc3ff638777c6c8fc28bc32c0109b0ec703aea8b",
+      "bytes": 36354,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "metadata/final_development_inner_folds.csv",
+      "sha256": "68fa4a7b6274a40ef066f97f0f44d8f75bfd51ecbf940755b7fc2ddbcea5fdc9",
+      "bytes": 94050,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "metadata/loto_drug_inner_assignments.csv",
+      "sha256": "0ef218bfec2cc9d0e3012f1f4bd3aab61867d2b3c10fa93385ad032ad35e96b8",
+      "bytes": 7815133,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "metadata/loto_global_outer_folds.csv",
+      "sha256": "73c6b6aeecfd3d3c9528758d51526abdd3d87cb8002c4abc3ee469a8e99f38db",
+      "bytes": 927647,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "metadata/mapping_schema.json",
+      "sha256": "ef4ddf02dc25bf1a101e7d9a5d0a9d54ef4d49afaa3658aafb8c0c82baa478e0",
+      "bytes": 4975,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "metadata/metadata_export_manifest.json",
+      "sha256": "8d8932a81083fc80806cdd43fd33a62d4fac9bf1d5312c530a2238a210712d83",
+      "bytes": 15086,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "model_export_manifest.json",
+      "sha256": "c2ed6a524d29d86b7bc315b984f71750c826054eedaf8c6b74a34f75f634d5c1",
+      "bytes": 48170,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1010_expression_strong.json.gz",
+      "sha256": "34135a3c9a6d6ebbd300e0b1b7777e1c8b88094cfa8e453ce9321db012e96f87",
+      "bytes": 525892,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1010_mad_expression.json.gz",
+      "sha256": "dea36d1c2da2503bc5e288758d595de095a39635ce76df411a5a54c98c5daa1d",
+      "bytes": 104283,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1010_mad_pair_full.json.gz",
+      "sha256": "c3700c06d45974dabaed0e3f3fc06df872a2bba5a9e9c7d8917658e2c0333be8",
+      "bytes": 4031293,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1010_mad_rank.json.gz",
+      "sha256": "50cd5e11f32c9974ae51a43a3355e2e6ec111896cda60fb5565bd4e2267ad9a8",
+      "bytes": 103849,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1010_response_association_expression.json.gz",
+      "sha256": "98ad6ce60e47dfbb701afd1cf2e77b8ebb7cf3b9af97025b6376457f0ca15d91",
+      "bytes": 104503,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1010_response_association_pair_full.json.gz",
+      "sha256": "0b08b8d1ad5d48aecac3cc21e762fb52f411e41252b0de8bd7d43b07607f36dd",
+      "bytes": 3617974,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1010_response_association_rank.json.gz",
+      "sha256": "c4e9cfb44e23b99d8fefce7360a32346de244ee8a44da754edfb9c42e5aa50dd",
+      "bytes": 103757,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1010_tissue_null.json.gz",
+      "sha256": "1991530c0a9d361a87bcfe768d6dd37397c7a2b057bd19bf557de45b94307d52",
+      "bytes": 54572,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1036_expression_strong.json.gz",
+      "sha256": "684feba9c623733676aa830d54fd24251a25854ddcf20e1f6c2f3e93d5241ea7",
+      "bytes": 525169,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1036_mad_expression.json.gz",
+      "sha256": "c6e2fefc23db7d9fb4cb4bca31bc28bea3b346b1b3b76a71812d74d2b8ab3f4f",
+      "bytes": 103938,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1036_mad_pair_full.json.gz",
+      "sha256": "7c61a371e186674145f0a8853473603d3d0e61d52440fb95a25778670f4a52f2",
+      "bytes": 4030846,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1036_mad_rank.json.gz",
+      "sha256": "914657643edf13a772cae4c911212af44f24f4503b48d809a288eabfaec89095",
+      "bytes": 103738,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1036_response_association_expression.json.gz",
+      "sha256": "bc90c06fbebcffdad8ef5ca60f238ee72b25eb2e9eceb107b9c4dc1d0ee68f44",
+      "bytes": 104328,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1036_response_association_pair_full.json.gz",
+      "sha256": "595725d96308229949f3723db68b0c1bc5dd503c791f6577680b96e84ef3061a",
+      "bytes": 3361712,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1036_response_association_rank.json.gz",
+      "sha256": "901353ba9db1eff6312c09008321dd9a221d64da12a46c0fe52eaf3da62cd448",
+      "bytes": 103986,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1036_tissue_null.json.gz",
+      "sha256": "cbd121ca586b77739ece4fa9073bff0a05b625fde9b74015d29cb002ca2180fc",
+      "bytes": 54575,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1091_expression_strong.json.gz",
+      "sha256": "18a275d0efece6dd00f18723cec813e4a412131f4857b9232f96dd0d9e10e9d7",
+      "bytes": 525913,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1091_mad_expression.json.gz",
+      "sha256": "4a18deb89720f5819384959b6ff6b2753edab7b5cd65dfed5dfb985898070b91",
+      "bytes": 104262,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1091_mad_pair_full.json.gz",
+      "sha256": "9b9cfad323db4f9fec538439ba53948a544713245afb1997bd51cb181d90db0f",
+      "bytes": 4031920,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1091_mad_rank.json.gz",
+      "sha256": "45f66cf4e61ce1234b78006ec10c1417f7f1e85935ccd45e5019c0e50b9cca52",
+      "bytes": 103900,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1091_response_association_expression.json.gz",
+      "sha256": "97c21bfc63ca98ba7c08b1b912f48e27e61a1a0456650a7eef73c9a57e44bff0",
+      "bytes": 104643,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1091_response_association_pair_full.json.gz",
+      "sha256": "621875d8dd002a1bbec0fba929b76ae4aa0da2cf325af17fe211778100b747ef",
+      "bytes": 3395246,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1091_response_association_rank.json.gz",
+      "sha256": "c7ed8889326e54e22cf658b038467786b905e83d0a7536d5beb4532316f7fa5b",
+      "bytes": 104058,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1091_tissue_null.json.gz",
+      "sha256": "d34fa3a9e41194415ed086e6f759a78d48606f28a9efe07531ad1e08f4ecd2b2",
+      "bytes": 54563,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1191_expression_strong.json.gz",
+      "sha256": "2682c226a46ae77697396f165773912d85e55c292ae3cf72139381d9c6839b95",
+      "bytes": 526077,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1191_mad_expression.json.gz",
+      "sha256": "325cca0e03596363af61be143158db1fa2fdda444207599fe87ed35d6040e633",
+      "bytes": 104349,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1191_mad_pair_full.json.gz",
+      "sha256": "535c4926120df51286168c8e32cb09a3cbd9b3fd854d26122dd83b3a0947dabc",
+      "bytes": 4025723,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1191_mad_rank.json.gz",
+      "sha256": "af7822e17096768535ae7fa56c89bcd6352fd26d8fde6daf1766ca4c648cee99",
+      "bytes": 103981,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1191_response_association_expression.json.gz",
+      "sha256": "b7b3cb62a45e859880126813b5d183391ffbd72d82c67893409726053f4145fc",
+      "bytes": 104283,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1191_response_association_pair_full.json.gz",
+      "sha256": "c7f6530f22ca3d72378aa30d8c231404acc1ccba7a67177d60be66a9185e0f76",
+      "bytes": 3044709,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1191_response_association_rank.json.gz",
+      "sha256": "aeb9d4c2aa42fdb03e03909ff562f3385c407da3496d9f1117d0771f95321537",
+      "bytes": 104067,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1191_tissue_null.json.gz",
+      "sha256": "65b5d696fae46a3c8ae78b2fc98297134cff0d8c4d4ebb203ac2d6bce6e59619",
+      "bytes": 54569,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1199_expression_strong.json.gz",
+      "sha256": "5d02d72f34b10c23aa5012b493015d3cb27004cad401946122c602b84e3e571f",
+      "bytes": 524888,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1199_mad_expression.json.gz",
+      "sha256": "e4212a20c620f9a32a9506d9d330ed69a8b07abbdfedf63765c187d806cecee9",
+      "bytes": 103894,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1199_mad_pair_full.json.gz",
+      "sha256": "1ee89b24fd30671450b667e95e95e1b76cb6825b9dc74647dcd63c3c5274b97a",
+      "bytes": 4025719,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1199_mad_rank.json.gz",
+      "sha256": "e8b25d3d818d55cf5a9353c1f649d5201f7ffd693b1641090958fef63b2e5c6a",
+      "bytes": 103436,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1199_response_association_expression.json.gz",
+      "sha256": "1069a4e73af711a159cf16b45d37298e620208285055598bfa3f1f32795c6361",
+      "bytes": 104222,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1199_response_association_pair_full.json.gz",
+      "sha256": "e04087f73e176b890ef5ac34eec1d201c798d0f7f66a6a8e660855c4bae52766",
+      "bytes": 3458011,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1199_response_association_rank.json.gz",
+      "sha256": "5baeea60228ca7122b0f7bc54117dd1f239d848039c45589bd511fbcb8174f8e",
+      "bytes": 103688,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1199_tissue_null.json.gz",
+      "sha256": "832ff79a4724009882f302129fa306f83e15a0dd13f8baa8584be55d97b6e610",
+      "bytes": 54568,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1922_expression_strong.json.gz",
+      "sha256": "61596144a28cb82b221c78959eda7bde091ff901fc5e16d6516b6c57697dfccc",
+      "bytes": 526627,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1922_mad_expression.json.gz",
+      "sha256": "897317c994d6f9a3be1eeb6b34d67f05aa9beb794378e00d9cc350830f067257",
+      "bytes": 103889,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1922_mad_pair_full.json.gz",
+      "sha256": "bb67a23c7ed8eeaa4577d28b5f2e68004db8f75876369ac56447704416e404e7",
+      "bytes": 4025716,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1922_mad_rank.json.gz",
+      "sha256": "5d7adc168c2e62b8c1cd82ee7ca67c97fee00d783878f6136bf9c10ede70a620",
+      "bytes": 103823,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1922_response_association_expression.json.gz",
+      "sha256": "3d8fcad84016b49d6909cc1be2bdc30feff4a17f8c8c0876e3e201ddca826f45",
+      "bytes": 104304,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1922_response_association_pair_full.json.gz",
+      "sha256": "f5c891eff466600baf26f4fc3717430ec2353e52427ac32a5924eebf7791f5b2",
+      "bytes": 3248491,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1922_response_association_rank.json.gz",
+      "sha256": "689c8e13282eb77146fe50a83eebd46a45647cfa1ef7975c5b8f405dc62dd72d",
+      "bytes": 103705,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1922_tissue_null.json.gz",
+      "sha256": "229700eecbb9132aefcc22e0c60c6906bae3fba4243d17c89373827d017d1c99",
+      "bytes": 54571,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1930_expression_strong.json.gz",
+      "sha256": "0b8718ec50f2a1e9ac55e9672df2d0bacb013b1691865ed08804bc05d7569c42",
+      "bytes": 526053,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1930_mad_expression.json.gz",
+      "sha256": "d5aade48090fec4e8be82e3b448185bea7aeb307d70ba477e172d2c521834cbe",
+      "bytes": 104194,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1930_mad_pair_full.json.gz",
+      "sha256": "e555aaecb87422df89655ad0c15436e81686d669877d78ada9e5b2c4bf1a20c1",
+      "bytes": 4031536,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1930_mad_rank.json.gz",
+      "sha256": "1ae5b4f7e9493fec360dec0041bbcc9c53cba72c7c4d641514a0e7cb8ac1935b",
+      "bytes": 103790,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1930_response_association_expression.json.gz",
+      "sha256": "8cd475a03d0625b7834589b4fbd9d31f9cb11ee4fff535340e4dcfdec9494d80",
+      "bytes": 104785,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1930_response_association_pair_full.json.gz",
+      "sha256": "e0946a4fd3a6e4c69682a5e54d80181e4dc910d955adbd46746bb3037adb9115",
+      "bytes": 3274018,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1930_response_association_rank.json.gz",
+      "sha256": "26dce3bb11b922b732a7e83e752c3c6c8a50a81ec39e8852eb2fb4e79d142301",
+      "bytes": 104247,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1930_tissue_null.json.gz",
+      "sha256": "71a5e2ca1390b57e4228da153aa4c5d588bf08566c52fb4e12c1c54ea61af9c4",
+      "bytes": 54566,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1931_expression_strong.json.gz",
+      "sha256": "1fe9cfbb80560e9e0cb72cdb00a1dfac7da79492bb6e687f79374c8c4f638edf",
+      "bytes": 524961,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1931_mad_expression.json.gz",
+      "sha256": "e78aa64093755a83d51ef445ecc13f195492b4e08ea6393de4bd20fce3c1684a",
+      "bytes": 103971,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1931_mad_pair_full.json.gz",
+      "sha256": "b6f6ca4d352ccf27f1235fbe9aea1f8720a8127035e44711eb928fab1e2fca8e",
+      "bytes": 4022585,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1931_mad_rank.json.gz",
+      "sha256": "7d7ae3fa262b37eb65474c46bbb8596a400fbdb70e9202d066274a113aa6f46d",
+      "bytes": 103061,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1931_response_association_expression.json.gz",
+      "sha256": "e94b6fcac85be92618874021fc3b32f7702db8c6de59bfd461d9df62e27e5b50",
+      "bytes": 104334,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1931_response_association_pair_full.json.gz",
+      "sha256": "52c3198158b1ae1b1dcffbeebf055aa2314007e1abf5cc4becbd59075a3852ea",
+      "bytes": 3301822,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1931_response_association_rank.json.gz",
+      "sha256": "ed2bb1482a136ec56c0dd2b10cdcf0acfee513dd4f306fad9fc0b4aa81f77010",
+      "bytes": 103286,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "models/d1931_tissue_null.json.gz",
+      "sha256": "41b6a8518e48ae05dd10d2719a805ca120d7871c7d6a01261b89da6c0a020237",
+      "bytes": 54562,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "schemas/input_gene_ids.json",
+      "sha256": "3880fbbe5b5b87698e1443ee42d279cf75d7dbd01ef2bbe2bf26f70534c71a42",
+      "bytes": 357050,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "schemas/tissue_code.json",
+      "sha256": "40e5f5484f580e0a1935efa63d25cd0c0199b42e38b89a78f423d0b44dd07455",
+      "bytes": 349,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "synthetic_inputs/full_gene_order.synthetic.json",
+      "sha256": "78c8473360e13ce882d10086ecaf36c0626ff99d6437dee63dfa6e66edaf19a6",
+      "bytes": 1582710,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "tables/all_coefficients.csv.gz",
+      "sha256": "3c19cb263a9a80f4410913ba833eae047fd96f8632e6910abf8ed41db4cc0287",
+      "bytes": 5803604,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "tables/candidate_genes.csv",
+      "sha256": "90839e64e3cccfd5b852f11027fe350f5660516852565e90c417ce4a4a9c85e7",
+      "bytes": 1932470,
+      "access": "local_not_publicly_released"
+    },
+    {
+      "path": "tables/tissue_effects.csv",
+      "sha256": "7df6996c028d06545340f371441e46686870c85648279535af9af0b6cc54335c",
+      "bytes": 112391,
+      "access": "local_not_publicly_released"
+    }
+  ],
+  "total_bytes": 90683730,
+  "scope": "Hash inventory of derived local assets; no source labels, original expression observations or new predictive metrics."
+}

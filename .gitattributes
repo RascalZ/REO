@@ -16,3 +16,6 @@ docs/scientific_revision_v1/*.csv -text !eol
 docs/scientific_revision_v1/*.json -text !eol
 manuscript_v1/bmc_additional_files_scientific_revision_v1/* -text !eol
 manuscript_v1/*_scientific_revision_v1.csv -text !eol
+# Derived reproduction inventories bind exact bytes; never normalize their SHA inputs.
+docs/reproducibility_assets_v1/*.json -text !eol
+docs/reproducibility_assets_v1/*.csv -text !eol

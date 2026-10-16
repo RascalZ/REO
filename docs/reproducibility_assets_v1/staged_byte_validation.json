@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-16",
+  "staged_files": 35,
+  "hash_bound_files_checked": 16,
+  "all_code_hashes_match_current_staged_bytes": true,
+  "all_new_summary_CSV_JSON_staged_bytes_match_working": true,
+  "no_actual_local_models_mappings_or_raw_data_staged": true,
+  "no_unrelated_or_original_manuscript_changes_staged": true,
+  "credential_pattern_scan_in_proposed_staged_files": 0,
+  "scope": "only proposed commit; no original raw/sealed files or full Git history scanned",
+  "pass": true
+}

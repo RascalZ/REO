@@ -49,3 +49,5 @@ results/formal_development/bootstrap_group_manifest.csv
 .env
 .env.*
 !.env.example
+# Complete local reproduction assets are prepared before rights/access release.
+reproducibility_v1/local_assets/

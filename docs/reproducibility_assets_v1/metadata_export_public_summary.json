@@ -1,0 +1,87 @@
+{
+  "contains_individual_ids": false,
+  "counts": {
+    "development": {
+      "biological_groups": 626,
+      "drug_membership_counts": {
+        "1010": 620,
+        "1036": 622,
+        "1091": 620,
+        "1191": 620,
+        "1199": 620,
+        "1922": 620,
+        "1930": 620,
+        "1931": 625
+      },
+      "drug_memberships": 4967,
+      "drugs": 8,
+      "identities": 626,
+      "optional_identity_fields_omitted_because_absent_or_variable": [],
+      "status": "exported",
+      "tissues": 23
+    },
+    "development_external_overlap": {
+      "biological_groups": 0,
+      "canonical_models": 0
+    },
+    "external": {
+      "biological_groups": 175,
+      "drug_membership_counts": {
+        "1010": 161,
+        "1036": 167,
+        "1091": 165,
+        "1191": 169,
+        "1199": 165,
+        "1922": 82,
+        "1930": 168,
+        "1931": 108
+      },
+      "drug_memberships": 1185,
+      "drugs": 8,
+      "identities": 175,
+      "optional_identity_fields_omitted_because_absent_or_variable": [],
+      "status": "exported",
+      "tissues": 21
+    }
+  },
+  "exporter": "scripts/export_repro_metadata_v1.py",
+  "gates": {
+    "all_four_fold_source_hash_bindings_match": true,
+    "blocked_access_attempts": 0,
+    "data_read_whitelist_files": 9,
+    "existing_outputs_overwritten": false,
+    "no_ctrp_raw_or_index_read": true,
+    "no_ctrp_response_labels_read": true,
+    "no_individual_predictions_read": true,
+    "no_model_payload_read": true,
+    "no_random_generation_or_fold_regeneration": true,
+    "no_response_tables_read": true,
+    "no_scoring": true,
+    "no_training": true
+  },
+  "manifest_sha256": "8d8932a81083fc80806cdd43fd33a62d4fac9bf1d5312c530a2238a210712d83",
+  "output_hashes": {
+    "development_drug_membership.csv": "77a82230cc1ceb4fcfca434b7ed3cb108e3d49e9508dc2d8e4a78e8320702ad9",
+    "development_identities.csv": "397c1667a0e33df92884e8361f6ea0aebcfb1287f994e41e4d417af1abbe4870",
+    "development_repeated_global_folds.csv": "7b519fc04b713ca69cf013a90e7fe9e31479944ad3f7b355f098e6ece895dcf4",
+    "external_drug_membership.csv": "6f62f974b8f28d58f239a9b853dae7f5caf2407d6bf29e71ef477f8c50f29d79",
+    "external_identities.csv": "7fbc6b4969a76839cd1f59f0dc3ff638777c6c8fc28bc32c0109b0ec703aea8b",
+    "final_development_inner_folds.csv": "68fa4a7b6274a40ef066f97f0f44d8f75bfd51ecbf940755b7fc2ddbcea5fdc9",
+    "loto_drug_inner_assignments.csv": "0ef218bfec2cc9d0e3012f1f4bd3aab61867d2b3c10fa93385ad032ad35e96b8",
+    "loto_global_outer_folds.csv": "73c6b6aeecfd3d3c9528758d51526abdd3d87cb8002c4abc3ee469a8e99f38db",
+    "mapping_schema.json": "ef4ddf02dc25bf1a101e7d9a5d0a9d54ef4d49afaa3658aafb8c0c82baa478e0"
+  },
+  "redistribution_status": "Local metadata assets prepared; public redistribution permissions remain pending",
+  "schema_version": "1.0",
+  "source_hashes": {
+    "results/cohort_v2/development_sample_manifest.csv": "21efc28d5ee21603f2466b740c4aa29eb24fbfd6be4fec15f6392aadb661e608",
+    "results/cohort_v2/external_primary_sample_manifest.csv": "413759ba7279fc88c332511532928fd9e943343320588b1fb6b4becc88b8b657",
+    "runs/gdsc2-cancer-v2-fixed8-full-development-final-v1_1/final_model_metadata.json": "ac0fb4f42d9d46fd4aab5680a21cae2855d8e5e119a091dd1868fc96466f8e43",
+    "runs/gdsc2-cancer-v2-fixed8-full-development-final-v1_1/global_inner_fold_manifest.csv": "68fa4a7b6274a40ef066f97f0f44d8f75bfd51ecbf940755b7fc2ddbcea5fdc9",
+    "runs/gdsc2-cancer-v2-fixed8-mad-association-expression-rank-pair-nested5x3-inner3-repeated-v1/global_fold_manifest.csv": "7b519fc04b713ca69cf013a90e7fe9e31479944ad3f7b355f098e6ece895dcf4",
+    "runs/gdsc2-cancer-v2-fixed8-mad-association-expression-rank-pair-nested5x3-inner3-repeated-v1/ordinal_repeated_metadata.json": "bffdad31b98c5d17b798de5afa713980dc8b90005a31524c40c42deb57749f2e",
+    "runs/gdsc2-cancer-v2-fixed8-tissue-loto-v1_3/global_fold_manifest.csv": "73c6b6aeecfd3d3c9528758d51526abdd3d87cb8002c4abc3ee469a8e99f38db",
+    "runs/gdsc2-cancer-v2-fixed8-tissue-loto-v1_3/loto_inner_fold_manifest.csv": "0ef218bfec2cc9d0e3012f1f4bd3aab61867d2b3c10fa93385ad032ad35e96b8",
+    "runs/gdsc2-cancer-v2-fixed8-tissue-loto-v1_3/loto_metadata.json": "a9a81f0cf14bed935a46ee853c7f0c4058076a1f72642a0810d794d51d4d8f80"
+  }
+}

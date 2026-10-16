@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "scope": "fresh minimal public-file copy; reused installed pinned Python3.12 environment, not a newly installed environment",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "scipy": "1.16.2",
+  "sklearn_imported": false,
+  "joblib_imported": false,
+  "public_expected_output_exact_match": true,
+  "local_full_assets_present": false,
+  "CTRP_files_present": false,
+  "old_pipeline_source_present": false,
+  "case_count": 7,
+  "predicted": 4,
+  "abstained": 3
+}

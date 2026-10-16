@@ -1,0 +1,54 @@
+{
+  "schema_version": "reo-inference-output-1.0",
+  "task": {
+    "drug_id": "TOY_NOT_A_DRUG",
+    "model": "handwritten_rank_demo"
+  },
+  "sample_ids": [
+    "toy_1",
+    "toy_2",
+    "toy_3",
+    "toy_4",
+    "toy_5",
+    "toy_6",
+    "toy_7"
+  ],
+  "predictions": [
+    0.395,
+    0.68,
+    0.5,
+    null,
+    null,
+    null,
+    0.575
+  ],
+  "statuses": [
+    "predicted",
+    "predicted",
+    "predicted",
+    "abstained",
+    "abstained",
+    "abstained",
+    "predicted"
+  ],
+  "reasons": [
+    "",
+    "",
+    "",
+    "missing_molecular_input",
+    "missing_or_invalid_tissue",
+    "negative_molecular_input",
+    ""
+  ],
+  "unknown_tissue": [
+    false,
+    false,
+    true,
+    false,
+    null,
+    false,
+    true
+  ],
+  "zero_molecular_solution": false,
+  "no_response_labels_used": true
+}

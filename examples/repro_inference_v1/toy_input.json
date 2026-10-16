@@ -1,0 +1,8 @@
+{
+  "schema_version": "reo-inference-input-1.0",
+  "sample_ids": ["toy_1", "toy_2", "toy_3", "toy_4", "toy_5", "toy_6", "toy_7"],
+  "biological_group_ids": ["toy_group_1", "toy_group_2", "toy_group_3", "toy_group_4", "toy_group_5", "toy_group_6", "toy_group_7"],
+  "tissues": ["TOY_TISSUE_A", "TOY_TISSUE_B", "TOY_TISSUE_C", "TOY_TISSUE_A", null, "TOY_TISSUE_A", "TOY_NEW_TISSUE"],
+  "gene_ids": ["TOY_GENE_001", "TOY_GENE_002", "TOY_GENE_003", "TOY_GENE_004", "TOY_GENE_005"],
+  "raw_tpm": [[1.0, 1.0, 0.0, 3.0, 100.0], [3.0, 0.0, 0.0, 1.0, 100.0], [1.0, 1.0, 1.0, 1.0, 100.0], null, [1.0, 1.0, 0.0, 3.0, 100.0], [1.0, 1.0, 0.0, 3.0, -1.0], [3.0, 0.0, 0.0, 1.0, 100.0]]
+}

@@ -1,0 +1,19 @@
+{
+  "date": "2026-10-16",
+  "scope": "proposed new code/docs/public examples only; no raw data, sealed sources, secrets files or full Git history scanned",
+  "text_files_checked": 26,
+  "credential_patterns": 0,
+  "hardcoded_host_paths": 0,
+  "public_summaries_contain_real_drug_IDs_but_no_individual_cell_or_group_IDs_or_fitted_vectors": true,
+  "complete_actual_assets_git_ignored": true,
+  "upstream_rights_and_real_model_access_route_pending": true,
+  "dependencies": {
+    "prediction_cli": [
+      "numpy==2.3.5",
+      "scipy==1.16.2"
+    ],
+    "native_export": "exact original first-lock Python/package snapshot, verified before native loading",
+    "fresh_installation_claimed": false
+  },
+  "pass": true
+}

@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-16",
+  "scope": "new reproduction assets and inference only; no scientific efficacy reanalysis",
+  "source_code_sha256": {
+    "src/repro_inference_v1.py": "2815e700ea073deb3a01e0763e6959790fcb1ea356f628bb285a5cf28cb8509b",
+    "scripts/predict_repro_v1.py": "5477a81417cdc2988357f1be8a18e3033b9c8828a84ea538e281dd5615e9c5db",
+    "scripts/export_repro_metadata_v1.py": "c0016a85bc21f92fec09e4c7f35038b064ae4a7de08697ecaedd5cd88b14babe",
+    "scripts/export_repro_models_v1.py": "d94b072e5b81363f57c1e9ff18f93ca107bd03aa3958fdc544245f06f59602a6",
+    "scripts/build_local_repro_demo_v1.py": "02bf6269a1b1dc005c578506fca053c3a9f52d5d484314149192e85009ad54ad",
+    "scripts/verify_repro_assets_v1.py": "2ad618315163780942269b9880eb9ef90f50197c82b17d94bcaffb5ed3e50b65",
+    "tests/test_repro_inference_v1.py": "a301dbfe29deb4c45e46d62024e922eab8a6b76122fb0b0d466da248147bb2f4",
+    "requirements-repro-inference.txt": "33b5c7822cacdc6f02c44fc55f2d0f768dfa14aa6c5fad682ea88b310226f578"
+  },
+  "checks": {
+    "input_inventory_69_recorded_hashes": true,
+    "label_free_metadata_export_complete": true,
+    "four_original_fold_manifests_byte_identical": true,
+    "native_artifact_hashes_64_still_unchanged": true,
+    "portable_numeric_states_64_exported": true,
+    "generated_input_numeric_checks_384_passed": true,
+    "max_absolute_native_portable_difference_zero": true,
+    "all_29_zero_molecular_models_retained": true,
+    "all_340800_coefficients_including_zero_retained": true,
+    "inference_contract_tests_16_passed": true,
+    "public_toy_expected_output_exact_match": true,
+    "public_copy_no_native_joblib_sklearn_or_old_pipeline_needed": true,
+    "existing_export_refused_without_overwrite": true,
+    "original_manuscripts_scientific_sources_locks_results_and_figures_unchanged": true,
+    "no_new_training_scoring_fold_generation_or_external_label_access": true
+  },
+  "local_assets_manifest_sha256": "866412d54b4e32ddcb9ae8b069fa3749296b5fe6434cedceac162d1e52966b6c",
+  "local_asset_files": 87,
+  "local_asset_bytes": 90683730,
+  "public_and_local_model_counts": {
+    "models": 64,
+    "molecular": 56,
+    "zero_molecular": 29,
+    "nonzero_molecular": 27,
+    "true_tissue_reference": 8
+  },
+  "limits": [
+    "Native parameter agreement on generated inputs is not independent scientific replication or predictive performance.",
+    "Fresh public-copy smoke reuses the installed pinned environment; no fresh dependency installation is claimed.",
+    "Full source-data reconstruction and public model/mapping redistribution remain pending rights and access closing."
+  ],
+  "engineering_notes": [
+    "Initial post-export audit attempted locale-dependent subprocess text decoding; switched to byte capture for the expected overwrite-refusal test. Exported assets and originals were unchanged."
+  ],
+  "pass": true
+}

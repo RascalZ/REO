@@ -4,7 +4,7 @@ This repository contains a leakage-controlled comparison of relative expression 
 
 ## Current status
 
-As of 2026-10-16, the single maintained research plan is [RESEARCH_PLAN.md](RESEARCH_PLAN.md), version 3.36. Read its current-status section before using any older stage notes. The current scientific readouts are:
+As of 2026-10-16, the single maintained research plan is [RESEARCH_PLAN.md](RESEARCH_PLAN.md), version 3.37. Read its current-status section before using any older stage notes. The current scientific readouts are:
 
 - Fixed eight-drug nested development evaluation: 626 unique development biological groups, 4,967 drug–model observations, 5 outer folds × 3 repeats and 3 inner folds. The predefined REO-pair minus strong-expression macro ΔSpearman was −0.00588, with family-adjusted conditional interval [−0.01871, +0.00661]. This does not establish REO superiority, equivalence, or non-inferiority.
 - Tissue sensitivity: the strict prespecified leave-one-tissue-out macro was undefined; 34/80 drug–tissue cells had defined correlations.
@@ -14,7 +14,20 @@ As of 2026-10-16, the single maintained research plan is [RESEARCH_PLAN.md](RESE
 - The current content-review copy is [scientific revision R1](manuscript_v1/Manuscript_BMC_Genomics_scientific_revision_v1.md), with an editable [Word copy containing Figures 1–4 and two native tables](manuscript_v1/Manuscript_BMC_Genomics_scientific_revision_v1.docx), [supplementary methods/results](manuscript_v1/Supplementary_methods_scientific_revision_v1.md), and [Additional files 1–14](manuscript_v1/bmc_additional_files_scientific_revision_v1/). The preceding evidence/BMC drafts and old results remain unchanged. The old local `with_figures` derivative is historical and must not be circulated as current.
 - R1 adds all eight drugs' external absolute correlations (strict macros: tissue 0.2284, strong expression 0.2602, response-associated pair 0.2599), and full matched expression200/rank200/pair contrasts from saved aggregates. A near-zero pair-minus-strong difference does not imply disappearance of all predictive association. Uncomputed intervals remain NA; external rank contrasts are descriptive points only. Cross-screen uncalibrated RMSE/R-squared are not evaluated.
 - All four finite synthetic controls are reported, including all 40 cohorts, 615/840 selected molecular zero outer fits, 267 warning occurrences, and undefined statistics. The synthetic strong-expression arm actually uses 220 genes, not 2,000. These constructed illustrations do not identify real-data mechanisms or substitute for eight-drug full-pipeline label permutation, which was not run.
-- The [Stage 23 R1 record](reports/阶段23_科学稿第一轮修订.md) and [revision audit directory](docs/scientific_revision_v1/) document source-to-text reviews, Methods additions, first-appearance reference renumbering and package checks. These are coverage-bounded audits, not independent raw-data/model reproduction. M01–M03 are addressed for R1; M04 reproducibility access remains the next technical task, and final figure/reference style remains partly open. Author declarations, formal archiving and upstream-rights confirmation remain deferred until content is near final. The manuscript is not submission-ready. CTRPv2 sample-level responses remain sealed and must not be rescored.
+- The [Stage 23 R1 record](reports/阶段23_科学稿第一轮修订.md) and [revision audit directory](docs/scientific_revision_v1/) document source-to-text reviews, Methods additions, first-appearance reference renumbering and package checks. These are coverage-bounded audits, not independent raw-data/model reproduction. M01–M03 are addressed for R1; M04 local technical assets and response-free inference are now prepared; actual public model/mapping access remains open until the planned rights/release closing step. Final figure/reference style is the next task. Author declarations, formal archiving and upstream-rights confirmation remain deferred until content is near final. The manuscript is not submission-ready. CTRPv2 sample-level responses remain sealed and must not be rescored.
+
+## Response-free inference and local reproduction assets
+
+The [package guide](reproducibility_v1/README.md) and [numeric formats](reproducibility_v1/FORMAT.md) document minimal inputs, exact identity/fold definitions, full preprocessing, feature coefficients and zero/null policies. The public toy is hand-specified and is not a paper model. With Python 3.12 and the two pinned dependencies:
+
+```sh
+python -m pip install -r requirements-repro-inference.txt
+python scripts/predict_repro_v1.py --model examples/repro_inference_v1/toy_rank_model.json --input examples/repro_inference_v1/toy_input.json --output toy_predictions_new.json
+```
+
+The output path must be new. The public example works without sklearn/joblib, old pipeline sources, local full assets or CTRP files. It produces four predictions and three explicit abstentions from seven invented rows. No label/scoring input is accepted. See the [Stage 24 record](reports/阶段24_最小复现资产与无标签推理.md) and [technical audit](docs/reproducibility_assets_v1/).
+
+Complete local assets preserve 64 fixed numeric models, all 29/56 molecular zero solutions, 25,600 candidate rows, 340,800 coefficient rows, 1,472 tissue rows, 626/175 identities, label-free drug memberships and four original split CSVs. Native/portable outputs agreed on 384 generated cases; this is a numerical implementation check, not predictive efficacy or independent study replication. Actual derived models and mappings remain Git-ignored pending access/rights decisions; GitHub contains code, invented examples and hash/count summaries. CTRPv2 labels remain sealed.
 
 ## Research records
 
