@@ -1,6 +1,12 @@
 # Data availability and provenance
 
-The repository contains newly authored curation code and aggregate cohort tables. Large expression/response matrices, raw downloaded metadata, old manuscripts, individual local paths and original-file inventories are not committed. Source terms continue to apply; the repository MIT license does not relicense upstream data.
+The repository contains newly authored curation, modeling, audit and figure/table code, public aggregate results and manuscript drafts. Large expression/response matrices, raw downloaded metadata, old manuscripts, individual local paths and original-file inventories are not committed. Source terms continue to apply; the repository MIT license does not relicense upstream data.
+
+## Current publication status — 2026-10-16
+
+Development, final model fitting and the single retrospective CTRPv2 evaluation are complete; do not repeat external scoring as part of publication preparation. The source descriptions below preserve the historical cohort-v1 input provenance. The paper uses cancer-model cohort v2 with 626 development and 175 external groups, and 19,836 uniquely mapped protein-coding genes from the GENCODE19-based audit. Keeping unmatched records in the source audit does not mean they were all included in modeling.
+
+The current source/model accessibility gaps are recorded in stage 22 and `docs/reviews/bmc_pre_submission_v1/issue_register.csv` (M04/M06). In particular, the legacy compatibility dependencies below have not been silently replaced, and no complete public-input model replay or public availability of all trained models is claimed. A paper release must supply precise source/member/version/hash information and an actual artifact-access route or justified restrictions. The MIT license is already selected for new code; exact upstream release terms remain separate. An archived release needs a real persistent identifier; a DOI is one recommended choice, not a fabricated or universally exclusive requirement.
 
 ## Inputs used for cohort v1
 
@@ -22,6 +28,6 @@ Detailed local URLs, times, hashes and status are recorded under `data_raw/*/*ma
 
 The current identity audit additionally reads the legacy annotation/CTRP name bridge and legacy four-column CTRP table to audit historical identity coverage. These are original project inputs and are not silently synthesized from another source. Configure exact files using `config/input_paths.local.json`; see the example. A third-party user without these files can inspect aggregate outputs and code, but cannot yet reproduce every historical audit step. A clean public-data-only alternative is a pending task and must preserve/revalidate cohort identity before it is used.
 
-## Remaining optional data work
+## Historical optional data-work discussion
 
-No further download is required for the first development-only timing pilot. Common-dose-window re-integration needs a separate feasibility assessment of fit parameters and possibly dose-level files. Independent expression measurements/PRISM or GEO are optional extensions with separate selection and licensing checks; they are not evidence already produced by this stage. Clinical patient data and full FASTQ reprocessing are outside this month's primary analysis.
+At the early timing-pilot phase no further download was required for that pilot. This paragraph is historical and does not resolve the current publication-access gaps above. Common-dose-window re-integration needs a separate feasibility assessment of fit parameters and possibly dose-level files. Independent expression measurements/PRISM or GEO are optional extensions with separate selection and licensing checks; they are not evidence already produced by this stage. Clinical patient data and full FASTQ reprocessing are outside this month's primary analysis.

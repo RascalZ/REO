@@ -1,0 +1,38 @@
+evidence_id,source,scope
+MANUSCRIPT,manuscript_v1/Manuscript_BMC_Genomics_draft.md,Primary 30-reference author draft; lines anchored before this audit
+SUPPLEMENT-LIST,manuscript_v1/bmc_additional_files/,Eight supplemental CSVs; byte comparison with Tables S1-S8
+COHORT-SNAPSHOT,results/cohort_v2/public_cohort_snapshot.json,Unique groups and compound-group denominators
+COHORT-RULES,config/cancer_cohort_v2_rules.json,"Cancer eligibility, relatedness, SNP QC and minimum group thresholds"
+DEVELOPMENT-CONFIG,config/ordinal_repeated_v1.json,"Candidate/representation factors, splitter seeds and 99% draw threshold"
+METHODS-REPRESENTATIONS,src/ordinal_diagnostic_models.py,"Training-only features, per-inner-fit pipeline and pooled inner RMSE"
+NESTED-CODE,src/modeling/nested_cv.py,"FWL, alpha_max and inverse target scaling"
+STATISTICS-CODE,src/analyze_ordinal_repeated.py;src/analyze_formal_results.py;src/external_validation_v1.py,"Shared-group bootstrap, family adjustment, NA and quantile rules"
+EXTERNAL-LOCK,config/external_validation_v1_1.lock.json,"Frozen scientific source, environment and final-model execution commit"
+LOTO-CONFIG,config/loto_execution_v1_3.json,LOTO seed and rare-tissue settings
+TABLE01,tables/manuscript_v1/Table1_cohort_by_drug.csv,9 cohort table rows
+TABLE02,tables/manuscript_v1/Table2_primary_effects.csv,9 primary comparison rows
+TABLES01,tables/manuscript_v1/TableS1_loto_defined_cells.csv,34/80 defined contrasts
+TABLES02,tables/manuscript_v1/TableS2_external_27_estimands.csv,27 locked external estimates
+TABLES03,tables/manuscript_v1/TableS3_development_27_estimands.csv,27 development inferential estimates
+TABLES04,tables/manuscript_v1/TableS4_development_model_performance.csv,Absolute development metrics
+TABLES05,tables/manuscript_v1/TableS5_repeat_stability.csv,Descriptive repeated-split values
+TABLES06,tables/manuscript_v1/TableS6_zero_solution_audit.csv,840/430 outer and 56/29 final molecular counts
+DEV-EFFECTS,results/ordinal_repeated/paired_effect_intervals.csv,"Saved aggregate primary, RMSE and tissue differences"
+EXTERNAL-SUMMARY,results/p6_external/evaluation_summary.json,Saved external aggregate estimates; no response values
+STAGE09,reports/阶段9_合成机制控制.md,Earlier project-only synthetic work not currently documented in the manuscript package
+DATA-AVAILABILITY,docs/DATA_AVAILABILITY.md,Public-source descriptions and legacy dependencies
+INPUT-PATHS,config/input_paths.example.json,Required legacy inputs in example configuration
+PUBLIC-REPO,README.md;.gitignore,Explicit aggregate-only/model-access limits
+LICENSE,LICENSE;pyproject.toml,MIT for new reconstruction code; excludes upstream data and legacy materials
+CITATION,CITATION.cff,Current old v0.1.0 date and contributor placeholder
+SNAPSHOT-AUDIT,docs/reviews/bmc_pre_submission_v1/snapshot_audit.json,"Hashes, counts, citation first-appearance order and derivative staleness"
+AIVC-AUDIT,manuscript_v1/aivc_integration_audit.json,Previous main Word render and source hashes
+REF05,https://doi.org/10.1038/s41467-026-72903-w,DrEval benchmark overlap; public publisher source
+REF06,https://doi.org/10.1186/s13321-025-00972-y,Evaluation target and drug-wise aggregation overlap
+REF14,https://doi.org/10.1371/journal.pone.0343422,Sparse kTSP classification differs from complete-pair EN regression
+REF27-30,manuscript_v1/aivc_reference_metadata.json,Four formal sources supporting bounded perturbation discussion
+POLICY-RESEARCH,https://link.springer.com/journal/12864/submission-guidelines/research-article,Research article structure and declarations
+POLICY-FORMAT,https://link.springer.com/journal/12864/submission-guidelines,Figure/table and code-version supporting-information guidance
+POLICY-CODE,https://www.springernature.com/gp/open-science/code-policy,Code Availability; stable archived identifiers; DOI not sole allowed identifier
+POLICY-AI,https://link.springer.com/brands/bmc/editorial-policies#artificial-intelligence-ai,"Author accountability, appropriate disclosure and author-side assistance"
+NLM-CITATION-SEQUENCE,https://www.ncbi.nlm.nih.gov/books/NBK7265/,NLM citation-sequence ordering convention; use final journal style

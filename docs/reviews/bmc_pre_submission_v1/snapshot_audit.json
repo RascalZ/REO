@@ -1,0 +1,344 @@
+{
+  "audited_on": "2026-10-16",
+  "scope": "author-requested snapshot audit",
+  "individual_response_values_read": false,
+  "new_model_fits_or_statistics": false,
+  "manuscripts": {
+    "Manuscript_BMC_Genomics_draft.md": {
+      "sha256": "53716682eca2673123766dd1fbccd0b9552d3667cd75605e5294eaac647e8396",
+      "reference_count": 30,
+      "citations_without_reference": [],
+      "first_appearance_order": [
+        1,
+        2,
+        3,
+        22,
+        23,
+        4,
+        5,
+        6,
+        18,
+        19,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        20,
+        21,
+        7,
+        8,
+        9,
+        10,
+        11,
+        25,
+        26,
+        24,
+        27,
+        28,
+        29,
+        30
+      ],
+      "first_appearance_order_is_sequential": false,
+      "author_placeholder_lines": [
+        9,
+        11,
+        13,
+        109,
+        199,
+        203,
+        207,
+        211,
+        215,
+        219,
+        223
+      ],
+      "figure_captions": [
+        {
+          "number": 1,
+          "title_words": 5,
+          "legend_words_including_title": 107
+        },
+        {
+          "number": 2,
+          "title_words": 10,
+          "legend_words_including_title": 83
+        },
+        {
+          "number": 3,
+          "title_words": 7,
+          "legend_words_including_title": 110
+        },
+        {
+          "number": 4,
+          "title_words": 8,
+          "legend_words_including_title": 149
+        }
+      ]
+    },
+    "Manuscript_draft.md": {
+      "sha256": "b29097ef827064f2d2b96c81e45f4605a0da68db346e0d9824bc0b55a7e8a88a",
+      "reference_count": 34,
+      "citations_without_reference": [],
+      "first_appearance_order": [
+        1,
+        2,
+        3,
+        22,
+        23,
+        4,
+        5,
+        6,
+        18,
+        19,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        20,
+        21,
+        7,
+        8,
+        9,
+        10,
+        11,
+        25,
+        26,
+        24,
+        27,
+        28,
+        29,
+        30
+      ],
+      "first_appearance_order_is_sequential": false,
+      "author_placeholder_lines": [],
+      "figure_captions": []
+    },
+    "Manuscript_BMC_Genomics_with_figures.md": {
+      "sha256": "03d1fc67eb368e3199cf6c75d2fd88e414444c75901a93bb44bbde21ad32461d",
+      "reference_count": 26,
+      "citations_without_reference": [
+        27,
+        28,
+        29,
+        30
+      ],
+      "first_appearance_order": [
+        1,
+        2,
+        3,
+        22,
+        23,
+        4,
+        5,
+        6,
+        18,
+        19,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        20,
+        21,
+        7,
+        8,
+        9,
+        10,
+        11,
+        25,
+        26,
+        24,
+        27,
+        28,
+        29,
+        30
+      ],
+      "first_appearance_order_is_sequential": false,
+      "author_placeholder_lines": [
+        9,
+        11,
+        13,
+        113,
+        215,
+        219,
+        223,
+        227,
+        231,
+        235,
+        239
+      ],
+      "figure_captions": [
+        {
+          "number": 1,
+          "title_words": 5,
+          "legend_words_including_title": 107
+        },
+        {
+          "number": 2,
+          "title_words": 10,
+          "legend_words_including_title": 83
+        },
+        {
+          "number": 3,
+          "title_words": 7,
+          "legend_words_including_title": 110
+        },
+        {
+          "number": 4,
+          "title_words": 8,
+          "legend_words_including_title": 149
+        }
+      ]
+    }
+  },
+  "manifest_checks": {
+    "figures": {
+      "source_count": 9,
+      "output_count": 8,
+      "hash_failures": []
+    },
+    "tables": {
+      "source_count": 10,
+      "output_count": 10,
+      "hash_failures": []
+    }
+  },
+  "supplements": [
+    {
+      "number": 1,
+      "rows": 80,
+      "bytes": 5490,
+      "source_matches": true
+    },
+    {
+      "number": 2,
+      "rows": 27,
+      "bytes": 7720,
+      "source_matches": true
+    },
+    {
+      "number": 3,
+      "rows": 27,
+      "bytes": 9015,
+      "source_matches": true
+    },
+    {
+      "number": 4,
+      "rows": 288,
+      "bytes": 61408,
+      "source_matches": true
+    },
+    {
+      "number": 5,
+      "rows": 1188,
+      "bytes": 310653,
+      "source_matches": true
+    },
+    {
+      "number": 6,
+      "rows": 64,
+      "bytes": 4142,
+      "source_matches": true
+    },
+    {
+      "number": 7,
+      "rows": 184,
+      "bytes": 17297,
+      "source_matches": true
+    },
+    {
+      "number": 8,
+      "rows": 8,
+      "bytes": 2679,
+      "source_matches": true
+    }
+  ],
+  "figures": [
+    {
+      "file": "Figure1_study_design.png",
+      "width_pixels": 6198,
+      "height_pixels": 2522,
+      "bytes": 655726
+    },
+    {
+      "file": "Figure2_development_primary.png",
+      "width_pixels": 5005,
+      "height_pixels": 3153,
+      "bytes": 288257
+    },
+    {
+      "file": "Figure3_representation_and_zero_solutions.png",
+      "width_pixels": 7485,
+      "height_pixels": 3496,
+      "bytes": 599880
+    },
+    {
+      "file": "Figure4_loto_and_external.png",
+      "width_pixels": 7921,
+      "height_pixels": 3252,
+      "bytes": 655138
+    }
+  ],
+  "zero_solution_counts": {
+    "outer_molecular_fits": 840,
+    "outer_zero": 430,
+    "final_molecular_arms": 56,
+    "final_zero": 29
+  },
+  "loto_defined": 34,
+  "loto_total": 80,
+  "table2_matches": [
+    {
+      "compound": "MIRA-1",
+      "matches_csv_rounding": true
+    },
+    {
+      "compound": "PLX-4720",
+      "matches_csv_rounding": true
+    },
+    {
+      "compound": "Bortezomib",
+      "matches_csv_rounding": true
+    },
+    {
+      "compound": "Telomerase Inhibitor IX",
+      "matches_csv_rounding": true
+    },
+    {
+      "compound": "Tamoxifen",
+      "matches_csv_rounding": true
+    },
+    {
+      "compound": "BMS-536924",
+      "matches_csv_rounding": true
+    },
+    {
+      "compound": "Gefitinib",
+      "matches_csv_rounding": true
+    },
+    {
+      "compound": "Cediranib",
+      "matches_csv_rounding": true
+    },
+    {
+      "compound": "Equal-drug macro",
+      "matches_csv_rounding": true
+    }
+  ],
+  "docx": {
+    "editable_tables": 2,
+    "manual_page_breaks": 0,
+    "page_break_before": 0,
+    "table_shading_elements": 0
+  },
+  "illustrated_copy_source_current": {
+    "Manuscript_BMC_Genomics_draft.docx": false,
+    "Manuscript_BMC_Genomics_draft.md": false
+  },
+  "notice": "No overall readiness or validity score is calculated. Expected outstanding issues are recorded, not hidden by a single pass flag."
+}

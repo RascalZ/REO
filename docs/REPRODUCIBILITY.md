@@ -1,12 +1,22 @@
 # Reproduction status and commands
 
-## Verified versus pending
+## Current publication audit status — 2026-10-16
+
+The single maintained plan is `RESEARCH_PLAN.md` v3.34. The historical stage descriptions and example training commands below record earlier phases; they are not instructions to rerun completed analyses in the locked workspace.
+
+- Development, 23-tissue LOTO, full-development fitting and the one-time retrospective CTRPv2 evaluation are complete. The final audit covers 64 models / 1,744 fit events; the external evaluation covers 175 independent groups and 1,185 drug–model responses, with 9,480 valid predictions. See stage 13 and stage 14 reports, `config/external_execution_v1_1.lock.json` and `results/p6_external/evaluation_summary.json`.
+- CTRPv2 response values have already been evaluated once. Do not repeat that evaluation, use it for tuning, or treat the historical pending-status sentences as current authorization. Read-only public aggregate checks do not open response values or refit models.
+- Current submission blockers are documented in `reports/阶段22_BMC_Genomics投稿前终审.md`: complete Methods/source-version reporting; a usable input/model-access route; consistent final manuscript versions and citations; author declarations; and an archived release identifier. The new reconstruction code already has an MIT license. That license does not cover upstream data or historical legacy code.
+- Pinned curation, modeling and figure dependencies are separate. `pip install .` installs the curation dependencies; it is not the full modeling environment. For an isolated, authorized reproduction workspace, use Python 3.12 with `python -m pip install -r requirements-modeling.txt -r requirements-figures.txt` as appropriate. This is an installation instruction, not a claim that clean-environment scientific retraining has been completed.
+- Existing standard-library inspection commands are `python scripts/verify_public_snapshot.py`, `python scripts/verify_public_ordinal.py` and `python scripts/verify_public_ordinal_repeated.py`. All three passed again during the 2026-10-16 audit. They verify public bytes/counts and aggregate identities only; full source/model replay and upstream redistribution permissions remain separate questions.
+
+## Historical phase status (through stage 6)
 
 - Implemented: original input hashes; expression audit; authoritative identity/relatedness graph; compound support and conflicts; observation indices; prespecified coverage panel; group-isolated external manifests; independent source-row validation and immutable local lock.
 - Implemented in stage 2: training-only feature/scaling/tissue/target states, grouped 3-outer/3-inner development CV, exact GDSC source-row/dose/response checks, two-drug EN/tissue/mean comparisons and resource audit. See the stage-2 report; these are exploratory engineering outputs, not confirmatory performance estimates.
 - Completed: cancer-model eligibility v2 (626 development groups and 175 sealed external groups), expanded regularization path and REO200/RF pilot, fixed eight-drug 5-outer × 3-repeat / 3-inner evaluation, and conditional paired-bootstrap analysis. Formal v1 remains unchanged.
 - Completed: four-drug 3-outer × 1-repeat / 3-inner diagnostic with two candidate rules, three molecular representations, the same-policy tissue reference and nine full-pipeline within-tissue permutations. Independent validation, frozen statistics and reporting passed. The successful design contains 840 outer tasks, 22,440 fits and 173,600 OOF rows; operational overhead is counted separately below.
-- Pending: final all-development models and sealed external predictions, final manuscript results and a clean-environment full source/model replay. The fixed-eight repeated candidate/representation evaluation is now complete. Local outer-fit audit checkpoints exist; these are not final deployment models or external validation results.
+- Historical pending state at stage 6: final all-development models, sealed external predictions and manuscript results were not yet complete. Stages 13–14 subsequently completed the models and one-time evaluation. A clean-environment full source/model replay remains unverified; do not confuse historical outer-fit checkpoints with the audited final artifacts.
 - Local environment: Python 3.12.14, NumPy 2.3.5, pandas 3.0.1, openpyxl 3.1.5, RDKit 2026.9.1. Expression mmap files are two float64 arrays of 1,019 × 57,820, about 471 MB each. No GPU is needed for phase 1. Pilot/formal/diagnostic runtime and sampled memory measurements are reported with their execution boundaries; they are not isolated algorithm benchmarks.
 
 ## Quick inspection without original data
@@ -75,7 +85,7 @@ python src/report_reo200_rf_pilot.py --run-dir runs/new-cancer-v2-pilot
 
 Commit scientific source/configuration changes before fitting. The launcher automatically records and checks Git HEAD (or an explicitly provided REO_EXECUTION_COMMIT) so immutable source validation does not rely on a forgotten environment variable. The completed 906-fit execution uses `5d05349`. Later exact-constant tissue-target maintenance applies only to a degenerate case absent in every actual training fit, and does not overwrite historical predictions. Full independent audit and aggregate results are under the local run directory and `results/pilot_reo200_rf/`; the source cache for cancer eligibility is versioned under `data_raw/cancer_metadata/`.
 
-Both primary REO EN drug models selected a zero molecular endpoint in all three outer folds of this historical pilot. It supports no claim of reliable REO molecular advantage. The subsequent fixed eight-drug repeated analysis and statistics are complete as described below; CTRP evaluation remains sealed and pending.
+Both primary REO EN drug models selected a zero molecular endpoint in all three outer folds of this historical pilot. It supports no claim of reliable REO molecular advantage. The subsequent fixed eight-drug repeated analysis and statistics are complete as described below. CTRP was sealed and pending at this pilot stage; it was later evaluated once in stage 14 and must not be rerun.
 
 ## Fixed eight-drug formal development evaluation
 
@@ -288,7 +298,7 @@ establish superiority, noninferiority, equivalence or full information retention
 The corresponding RMSE improvement is negative. Full results and methodological
 limits are in the stage-6 report and ORDINAL_REPEATED_ASSESSMENT.md. No new null
 fits were performed; four-case historical nulls retain their engineering scope.
-CTRP remains sealed and final models have not yet been trained.
+At the stage-6 snapshot, CTRP remained sealed and final models had not yet been trained. Both tasks were subsequently completed in stages 13–14; the external evaluation must not be repeated.
 
 
 On 2026-10-13, a fresh local Git clone of public commit

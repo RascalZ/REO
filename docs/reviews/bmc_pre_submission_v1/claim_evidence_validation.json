@@ -1,0 +1,27 @@
+{
+  "alignment_issue_counts": {
+    "none": 17,
+    "other": 2,
+    "scope": 1
+  },
+  "claim_count": 20,
+  "claim_ids_missing_requested_action": [],
+  "claim_ids_requiring_resolution": [
+    "C15",
+    "C16",
+    "C17",
+    "C18",
+    "C19"
+  ],
+  "errors": [],
+  "notice": "This report checks matrix structure and declared claim-evidence alignment only. It does not verify evidence truth, reproduce analyses, or determine manuscript merit. Reports contain identifiers, not claim or manuscript text.",
+  "schema_version": "2.0",
+  "status": "VALID_WITH_ALIGNMENT_GAPS",
+  "support_counts": {
+    "not_assessed": 2,
+    "partly_supported": 3,
+    "supported": 15
+  },
+  "valid": true,
+  "warnings": []
+}

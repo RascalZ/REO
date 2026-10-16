@@ -1,0 +1,14 @@
+{
+  "schema_version": "2.0",
+  "profile_id": "REO-BMC-COMPUTATIONAL-BENCHMARK",
+  "study_types": [
+    "computational_benchmark"
+  ],
+  "report_kind": "results",
+  "features": [
+    "ai_based"
+  ],
+  "domains": [
+    "genomics"
+  ]
+}
