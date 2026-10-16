@@ -1,0 +1,72 @@
+{
+  "schema_version": "1.0",
+  "created_on": "2026-10-16",
+  "source_execution_commit": "d151b668f916fda643e90ba1a26035cd103b9036",
+  "source_execution_lock_sha256": "c149bb2d41d3d1a13c874e99ac73c087b25f12d4d5684c32582ff54d461043fd",
+  "source_manifest_path": "results/synthetic_mechanisms/synthetic_mechanism_manifest.json",
+  "source_manifest_sha256": "7644da74ece273de3522465bdb1985a74993ad7ddc3932d14659c9f699ccd617",
+  "operation": "Exact copies of existing aggregate CSVs only; no rerun or new analysis.",
+  "na_policy": "Original empty fields retained as NA/not applicable, not imputed or removed.",
+  "tables": [
+    {
+      "table": "Table S11",
+      "path": "tables/scientific_revision_v1/TableS11_synthetic_cohort_results.csv",
+      "source_path": "results/synthetic_mechanisms/performance_by_cohort.csv",
+      "rows": 320,
+      "columns": 15,
+      "column_names": [
+        "scenario",
+        "replicate",
+        "model",
+        "n",
+        "spearman",
+        "rmse",
+        "mae",
+        "r2",
+        "residual_rho_pooled",
+        "residual_rho_tissue_defined_count",
+        "residual_rho_tissue_mean_available",
+        "residual_rho_tissue_macro_strict",
+        "residual_rho_tissue_macro_coverage",
+        "rmse_gain_vs_tissue_null",
+        "rmse_gain_tissue_macro"
+      ],
+      "source_sha256": "0c149e110e72e354705ba9513ae5ad3f52f36a54e80ff54322e64e5963f93e77",
+      "output_sha256": "0c149e110e72e354705ba9513ae5ad3f52f36a54e80ff54322e64e5963f93e77",
+      "bytes": 50920,
+      "transformation": "Byte-for-byte copy; original row order, columns, decimal strings, and empty NA fields retained; no filtering, normalization, fitting or metric recomputation."
+    },
+    {
+      "table": "Table S12",
+      "path": "tables/scientific_revision_v1/TableS12_synthetic_generation_checks.csv",
+      "source_path": "results/synthetic_mechanisms/data_generation_checks.csv",
+      "rows": 40,
+      "columns": 19,
+      "column_names": [
+        "cohort",
+        "scenario",
+        "replicate",
+        "seed",
+        "n_samples",
+        "n_genes",
+        "n_tissues",
+        "samples_per_tissue_min",
+        "samples_per_tissue_max",
+        "tpm_min",
+        "tpm_max",
+        "log2_tpm_min",
+        "response_min",
+        "response_max",
+        "within_tissue_response_max_ptp",
+        "common_amplitude_rank_invariant",
+        "common_amplitude_pair_invariant",
+        "cohort_file_sha256",
+        "split_file_sha256"
+      ],
+      "source_sha256": "49f6d3c609a9ae93895c12e8f8a2c0b7926d612168a18208ef0b5491f9b7bc4f",
+      "output_sha256": "49f6d3c609a9ae93895c12e8f8a2c0b7926d612168a18208ef0b5491f9b7bc4f",
+      "bytes": 12723,
+      "transformation": "Byte-for-byte copy; original row order, columns, decimal strings, and empty NA fields retained; no filtering, normalization, fitting or metric recomputation."
+    }
+  ]
+}

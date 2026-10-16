@@ -38,7 +38,11 @@ legacy/
 *.docx
 *.pdf
 !manuscript_v1/Manuscript_BMC_Genomics_draft.docx
+!manuscript_v1/Manuscript_BMC_Genomics_scientific_revision_v1.docx
+!manuscript_v1/Supplementary_methods_scientific_revision_v1.docx
+!manuscript_v1/bmc_additional_files_scientific_revision_v1/Additional_file_14.docx
 manuscript_v1/qa_preview_fullwidth_170mm_300dpi/
+manuscript_v1/qa_scientific_revision_v1/
 manuscript_v1/citation_validation_tool_output.json
 checkpoints/
 results/formal_development/bootstrap_group_manifest.csv

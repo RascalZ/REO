@@ -1,0 +1,58 @@
+{
+  "revision": "scientific_R1",
+  "date": "2026-10-16",
+  "operation": "editorial_transform_only_no_model_evaluation_or_resampling",
+  "baseline": {
+    "path": "manuscript_v1\\Manuscript_BMC_Genomics_draft.md",
+    "sha256": "53716682eca2673123766dd1fbccd0b9552d3667cd75605e5294eaac647e8396",
+    "preserved": true
+  },
+  "generator_sha256": "faf9d6d47c7ee1c173672d0b936fc12ac0645553b152b4a15d538df358021059",
+  "outputs": [
+    {
+      "path": "manuscript_v1\\Manuscript_BMC_Genomics_scientific_revision_v1.md",
+      "sha256": "52de7cbc5a582e1412dcdec48336bbc64226046a5d4d9aa836d76792d636bcbe"
+    },
+    {
+      "path": "manuscript_v1\\reference_number_mapping_scientific_revision_v1.csv",
+      "sha256": "ebeb42ccb7084cfce0b313f7a7d6c1d73ba109dde9a8bbb20554d02716d276b1"
+    },
+    {
+      "path": "manuscript_v1\\nlm_journal_abbreviations_scientific_revision_v1.csv",
+      "sha256": "d2623cc2ba720de7b1593c9ebf6edace0d6ba54998912eeb3d9f959494858a59"
+    }
+  ],
+  "references": 30,
+  "first_appearance_mapping": {
+    "1": 1,
+    "2": 2,
+    "3": 3,
+    "22": 4,
+    "23": 5,
+    "4": 6,
+    "5": 7,
+    "6": 8,
+    "18": 9,
+    "19": 10,
+    "12": 11,
+    "13": 12,
+    "14": 13,
+    "15": 14,
+    "16": 15,
+    "17": 16,
+    "20": 17,
+    "21": 18,
+    "7": 19,
+    "8": 20,
+    "9": 21,
+    "10": 22,
+    "11": 23,
+    "25": 24,
+    "26": 25,
+    "24": 26,
+    "27": 27,
+    "28": 28,
+    "29": 29,
+    "30": 30
+  }
+}

@@ -1,0 +1,925 @@
+{
+  "schema_version": "1.0",
+  "audit_date": "2026-10-16",
+  "purpose": "Scientific revision R1: reportability of existing synthetic DGP controls, without new model fits, resampling, original analyzer execution, or individual prediction access.",
+  "verdict": "reportable_as_bounded_supplementary_implementation_illustration_with_caveats",
+  "execution": {
+    "protocol_version": "P5e-synthetic-v1.1",
+    "lock_created_utc": "2026-10-14T08:32:46.998719+00:00",
+    "execution_lock_path": "config/synthetic_mechanism_execution_v1_1.lock.json",
+    "execution_lock_sha256": "c149bb2d41d3d1a13c874e99ac73c087b25f12d4d5684c32582ff54d461043fd",
+    "execution_commit": "d151b668f916fda643e90ba1a26035cd103b9036",
+    "analysis_time_utc": "2026-10-14T09:30:04.453035+00:00",
+    "original_result_manifest_path": "results/synthetic_mechanisms/synthetic_mechanism_manifest.json",
+    "original_result_manifest_sha256": "7644da74ece273de3522465bdb1985a74993ad7ddc3932d14659c9f699ccd617",
+    "run_metadata_path": "runs/fixed8_synthetic_mechanism_controls_v1_1/synthetic_mechanism_metadata.json",
+    "run_metadata_sha256": "820ecd1b9f30444f38f12a3bca73aadda359a499515b2177ac7c1262ff150000",
+    "sessions": [
+      {
+        "started_utc": "2026-10-14T08:34:20.332103+00:00",
+        "status": "completed",
+        "pending_at_start": 960,
+        "completed_tasks_this_session": 960,
+        "max_inflight_observed": 1,
+        "resource_wait_seconds": 10.159664397244342,
+        "child_wall_seconds_sum": 3279.0455932028126,
+        "wall_seconds": 3333.73129409994,
+        "finished_utc": "2026-10-14T09:29:54.596398+00:00",
+        "sampled_process_tree_peak_rss_bytes": 454250496,
+        "sampled_process_tree_peak_private_bytes": 490225664,
+        "minimum_available_ram_bytes": 2565935104,
+        "minimum_commit_free_bytes": 5208424448
+      }
+    ],
+    "recorded_access_flags": {
+      "external_response_accessed": false,
+      "real_development_data_accessed": false,
+      "ctrp_accessed": false
+    }
+  },
+  "coverage": {
+    "scenarios": [
+      "tissue_only",
+      "weak_molecular",
+      "common_sample_amplitude",
+      "predefined_pair_order"
+    ],
+    "replicates_per_scenario": 10,
+    "seed_formula": "2026101400 + 100*scenario_index + replicate_index",
+    "seed_values_by_scenario": {
+      "tissue_only": [
+        2026101400,
+        2026101401,
+        2026101402,
+        2026101403,
+        2026101404,
+        2026101405,
+        2026101406,
+        2026101407,
+        2026101408,
+        2026101409
+      ],
+      "weak_molecular": [
+        2026101500,
+        2026101501,
+        2026101502,
+        2026101503,
+        2026101504,
+        2026101505,
+        2026101506,
+        2026101507,
+        2026101508,
+        2026101509
+      ],
+      "common_sample_amplitude": [
+        2026101600,
+        2026101601,
+        2026101602,
+        2026101603,
+        2026101604,
+        2026101605,
+        2026101606,
+        2026101607,
+        2026101608,
+        2026101609
+      ],
+      "predefined_pair_order": [
+        2026101700,
+        2026101701,
+        2026101702,
+        2026101703,
+        2026101704,
+        2026101705,
+        2026101706,
+        2026101707,
+        2026101708,
+        2026101709
+      ]
+    },
+    "models": [
+      "tissue_null",
+      "expression_strong",
+      "mad_expression",
+      "mad_rank",
+      "mad_pair_full",
+      "response_association_expression",
+      "response_association_rank",
+      "response_association_pair_full"
+    ],
+    "cohorts": 40,
+    "samples_per_cohort": 240,
+    "tissues_per_cohort": 8,
+    "samples_per_tissue": 30,
+    "genes_per_cohort": 220,
+    "outer_folds": 3,
+    "inner_folds": 3,
+    "outer_tasks": 960,
+    "fit_events": 26160,
+    "molecular_fit_events_including_grid_candidates": 26040,
+    "tissue_fit_events": 120,
+    "oof_predictions_recorded_by_original_run": 76800,
+    "cohort_model_rows": 320,
+    "scenario_model_rows": 32,
+    "candidate_set_comparisons": 240
+  },
+  "checks": {
+    "execution_lock_hash_matches_original_manifest": true,
+    "all_14_bound_inputs_match": true,
+    "all_7_original_manifest_outputs_match": true,
+    "run_metadata_hash_matches_original_manifest": true,
+    "complete_cohort_model_grid": true,
+    "complete_outer_task_grid": true,
+    "all_cohort_n_240": true,
+    "all_outer_test_n_80": true,
+    "all_40_generation_records_complete": true,
+    "all_40_seeds_match_frozen_formula": true,
+    "all_generation_dimensions_match": true,
+    "all_generation_ranges_finite_nonnegative_and_bounded": true,
+    "tissue_only_within_tissue_response_range_exactly_zero": true,
+    "common_amplitude_rank_and_pair_invariants_true_10_of_10": true,
+    "all_240_candidate_set_audits_identical": true,
+    "all_32_summary_rows_cover_10_cohorts": true,
+    "existing_summary_descriptives_reconcile": true,
+    "fit_counts_match_26160": true,
+    "published_checkpoint_hash_map_matches_run_metadata": true,
+    "registered_checkpoint_files_exist_no_contents_opened": true,
+    "completed_metadata_contract": true,
+    "one_completed_session_without_failed_attempt_files": true,
+    "no_recorded_real_or_external_access": true,
+    "no_original_inferential_tests_or_ci": true
+  },
+  "input_hash_checks": {
+    "docs/SYNTHETIC_MECHANISM_EXECUTION_V1_1.md": {
+      "expected_sha256": "67f46a23b5c320d8158b68c04005e9db4f8b11744872592ca5b81530d8956f09",
+      "observed_sha256": "67f46a23b5c320d8158b68c04005e9db4f8b11744872592ca5b81530d8956f09",
+      "match": true
+    },
+    "config/synthetic_mechanisms_v1_1.json": {
+      "expected_sha256": "fc448e59bdc6e5d73a4bb181a29b5605c67c5c9812adee963319f249acd3cb1d",
+      "observed_sha256": "fc448e59bdc6e5d73a4bb181a29b5605c67c5c9812adee963319f249acd3cb1d",
+      "match": true
+    },
+    "config/synthetic_mechanisms_v1.json": {
+      "expected_sha256": "010de324edd403f93778859d9d11d20f98ad0a2a2ac638707da2391525f72853",
+      "observed_sha256": "010de324edd403f93778859d9d11d20f98ad0a2a2ac638707da2391525f72853",
+      "match": true
+    },
+    "config/p5e_protocol_v1.lock.json": {
+      "expected_sha256": "deb15cd16258b85c86f1605a3099b85319b33a69f086c8ffe912ba12543e0e1b",
+      "observed_sha256": "deb15cd16258b85c86f1605a3099b85319b33a69f086c8ffe912ba12543e0e1b",
+      "match": true
+    },
+    "config/ordinal_repeated_v1.json": {
+      "expected_sha256": "7c2e8f137ad809c8533bc5c24e24a82970686e7b7f5c84795ee13f30e71cc3f7",
+      "observed_sha256": "7c2e8f137ad809c8533bc5c24e24a82970686e7b7f5c84795ee13f30e71cc3f7",
+      "match": true
+    },
+    "config/ordinal_repeated_v1.lock.json": {
+      "expected_sha256": "ef8f588b99c42cb54db73b495127bc41882fa3e5b450e62167c6b46c53d583e7",
+      "observed_sha256": "ef8f588b99c42cb54db73b495127bc41882fa3e5b450e62167c6b46c53d583e7",
+      "match": true
+    },
+    "src/run_synthetic_mechanisms.py": {
+      "expected_sha256": "ffd509cb454c5ad06aa469f5ed3e1f5b9f3568ff86067b50efd15055ffd013bf",
+      "observed_sha256": "ffd509cb454c5ad06aa469f5ed3e1f5b9f3568ff86067b50efd15055ffd013bf",
+      "match": true
+    },
+    "src/analyze_synthetic_mechanisms.py": {
+      "expected_sha256": "fb9c7ed38cdc3c2855f5f7906a50e1b593f022fe11530173c886c09b0a22535e",
+      "observed_sha256": "fb9c7ed38cdc3c2855f5f7906a50e1b593f022fe11530173c886c09b0a22535e",
+      "match": true
+    },
+    "src/synthetic_mechanisms.py": {
+      "expected_sha256": "48a5a46c5a7a34d2119c218c936a3562697227696a00d48984202d05c863513a",
+      "observed_sha256": "48a5a46c5a7a34d2119c218c936a3562697227696a00d48984202d05c863513a",
+      "match": true
+    },
+    "src/ordinal_repeated_models.py": {
+      "expected_sha256": "2a5a13cae3a0894c7e02f691ed2f02f06575057d9ceeae0e01f22ca0b5491310",
+      "observed_sha256": "2a5a13cae3a0894c7e02f691ed2f02f06575057d9ceeae0e01f22ca0b5491310",
+      "match": true
+    },
+    "src/ordinal_diagnostic_models.py": {
+      "expected_sha256": "0bd7cab3a9a9cfb68b912a3ebdc86a5aa0c7ae10b3d790037595d7c67fdacac2",
+      "observed_sha256": "0bd7cab3a9a9cfb68b912a3ebdc86a5aa0c7ae10b3d790037595d7c67fdacac2",
+      "match": true
+    },
+    "src/modeling/nested_cv.py": {
+      "expected_sha256": "5ce84047aac7791690db5e7b87bdf20e957ff2cd08f822e8bfa842f221cdae07",
+      "observed_sha256": "5ce84047aac7791690db5e7b87bdf20e957ff2cd08f822e8bfa842f221cdae07",
+      "match": true
+    },
+    "src/modeling/features.py": {
+      "expected_sha256": "a96fd23879bed2af1ce9ad184120c24e22f788640633e6550316439ff370c91a",
+      "observed_sha256": "a96fd23879bed2af1ce9ad184120c24e22f788640633e6550316439ff370c91a",
+      "match": true
+    },
+    "src/modeling/reo_rf.py": {
+      "expected_sha256": "9e62f24709d791e6af2b123fdf5596de449df1bf512a79f8aaac2232b3e48e2f",
+      "observed_sha256": "9e62f24709d791e6af2b123fdf5596de449df1bf512a79f8aaac2232b3e48e2f",
+      "match": true
+    }
+  },
+  "original_manifest_output_hash_checks": {
+    "performance_by_outer_task.csv": {
+      "expected_sha256": "d27b992fe5eaa07c6e50754653d8a29255d3c5570d1c7323a09f1b2e086986c2",
+      "observed_sha256": "d27b992fe5eaa07c6e50754653d8a29255d3c5570d1c7323a09f1b2e086986c2",
+      "match": true
+    },
+    "performance_by_cohort.csv": {
+      "expected_sha256": "0c149e110e72e354705ba9513ae5ad3f52f36a54e80ff54322e64e5963f93e77",
+      "observed_sha256": "0c149e110e72e354705ba9513ae5ad3f52f36a54e80ff54322e64e5963f93e77",
+      "match": true
+    },
+    "scenario_summary.csv": {
+      "expected_sha256": "eb2a0dc630e1460642abc8a47be4cc3db978c66fd6e7e2d7c99aa3a80c82b98e",
+      "observed_sha256": "eb2a0dc630e1460642abc8a47be4cc3db978c66fd6e7e2d7c99aa3a80c82b98e",
+      "match": true
+    },
+    "fit_diagnostics.csv": {
+      "expected_sha256": "a6cf42da30e96022e68c1f6b95c52f7e15f9d9ae198c26672ab56876b902c18e",
+      "observed_sha256": "a6cf42da30e96022e68c1f6b95c52f7e15f9d9ae198c26672ab56876b902c18e",
+      "match": true
+    },
+    "gene_selection_summary.csv": {
+      "expected_sha256": "19379a10f2de8207400d089f540cc5f036b7bacedc6908fa20b601123a7c0f3e",
+      "observed_sha256": "19379a10f2de8207400d089f540cc5f036b7bacedc6908fa20b601123a7c0f3e",
+      "match": true
+    },
+    "data_generation_checks.csv": {
+      "expected_sha256": "49f6d3c609a9ae93895c12e8f8a2c0b7926d612168a18208ef0b5491f9b7bc4f",
+      "observed_sha256": "49f6d3c609a9ae93895c12e8f8a2c0b7926d612168a18208ef0b5491f9b7bc4f",
+      "match": true
+    },
+    "reports/阶段9_合成机制控制.md": {
+      "expected_sha256": "ed5d6bc1d511eacc059606c194ffa6537812cbf9161ef17f84a8fa03b18987e3",
+      "observed_sha256": "ed5d6bc1d511eacc059606c194ffa6537812cbf9161ef17f84a8fa03b18987e3",
+      "match": true
+    }
+  },
+  "aggregate_sources": {
+    "data_generation_checks.csv": {
+      "path": "results/synthetic_mechanisms/data_generation_checks.csv",
+      "sha256": "49f6d3c609a9ae93895c12e8f8a2c0b7926d612168a18208ef0b5491f9b7bc4f",
+      "rows": 40,
+      "columns": 19
+    },
+    "fit_diagnostics.csv": {
+      "path": "results/synthetic_mechanisms/fit_diagnostics.csv",
+      "sha256": "a6cf42da30e96022e68c1f6b95c52f7e15f9d9ae198c26672ab56876b902c18e",
+      "rows": 32,
+      "columns": 15
+    },
+    "gene_selection_summary.csv": {
+      "path": "results/synthetic_mechanisms/gene_selection_summary.csv",
+      "sha256": "19379a10f2de8207400d089f540cc5f036b7bacedc6908fa20b601123a7c0f3e",
+      "rows": 32,
+      "columns": 11
+    },
+    "performance_by_cohort.csv": {
+      "path": "results/synthetic_mechanisms/performance_by_cohort.csv",
+      "sha256": "0c149e110e72e354705ba9513ae5ad3f52f36a54e80ff54322e64e5963f93e77",
+      "rows": 320,
+      "columns": 15
+    },
+    "performance_by_outer_task.csv": {
+      "path": "results/synthetic_mechanisms/performance_by_outer_task.csv",
+      "sha256": "d27b992fe5eaa07c6e50754653d8a29255d3c5570d1c7323a09f1b2e086986c2",
+      "rows": 960,
+      "columns": 21
+    },
+    "representation_gene_set_audit.csv": {
+      "path": "results/synthetic_mechanisms/representation_gene_set_audit.csv",
+      "sha256": "3829fc706e3b5b10517001faf2e7951ea429b78071b90dfad020a96445387ea6",
+      "rows": 240,
+      "columns": 12
+    },
+    "scenario_summary.csv": {
+      "path": "results/synthetic_mechanisms/scenario_summary.csv",
+      "sha256": "eb2a0dc630e1460642abc8a47be4cc3db978c66fd6e7e2d7c99aa3a80c82b98e",
+      "rows": 32,
+      "columns": 48
+    }
+  },
+  "retained_missingness": {
+    "encoding": "Original empty CSV fields represent undefined/not-applicable values; no zero imputation. Table S11 is an exact copy.",
+    "performance_by_cohort_empty_counts": {
+      "scenario": 0,
+      "replicate": 0,
+      "model": 0,
+      "n": 0,
+      "spearman": 0,
+      "rmse": 0,
+      "mae": 0,
+      "r2": 0,
+      "residual_rho_pooled": 235,
+      "residual_rho_tissue_defined_count": 0,
+      "residual_rho_tissue_mean_available": 235,
+      "residual_rho_tissue_macro_strict": 235,
+      "residual_rho_tissue_macro_coverage": 0,
+      "rmse_gain_vs_tissue_null": 0,
+      "rmse_gain_tissue_macro": 0
+    }
+  },
+  "fit_status": {
+    "failed_attempt_file_count": 0,
+    "completed_sessions": 1,
+    "fit_warning_occurrences": 267,
+    "fit_fallbacks": 0,
+    "warnings_by_scenario_model": [
+      {
+        "scenario": "common_sample_amplitude",
+        "model": "expression_strong",
+        "total_fits": "930",
+        "molecular_fits": "930",
+        "zero_molecular_fits": "180",
+        "zero_molecular_fit_fraction": "0.1935483870967742",
+        "nonzero_molecular_fits": "750",
+        "alpha_max_null_fits": "0",
+        "theoretical_null_endpoint_fits": "180",
+        "fit_warning_count": "89",
+        "fit_fallback_count": "0",
+        "fit_nonzero_alpha_ratio_count": "750",
+        "fit_alpha_ratio_1_count": "180",
+        "median_fit_seconds": "0.0023043000255711377",
+        "median_prediction_seconds": "0.0005050000036135316"
+      },
+      {
+        "scenario": "common_sample_amplitude",
+        "model": "mad_expression",
+        "total_fits": "930",
+        "molecular_fits": "930",
+        "zero_molecular_fits": "180",
+        "zero_molecular_fit_fraction": "0.1935483870967742",
+        "nonzero_molecular_fits": "750",
+        "alpha_max_null_fits": "0",
+        "theoretical_null_endpoint_fits": "180",
+        "fit_warning_count": "89",
+        "fit_fallback_count": "0",
+        "fit_nonzero_alpha_ratio_count": "750",
+        "fit_alpha_ratio_1_count": "180",
+        "median_fit_seconds": "0.0022629499435424805",
+        "median_prediction_seconds": "0.0005176000413484871"
+      },
+      {
+        "scenario": "common_sample_amplitude",
+        "model": "response_association_expression",
+        "total_fits": "930",
+        "molecular_fits": "930",
+        "zero_molecular_fits": "180",
+        "zero_molecular_fit_fraction": "0.1935483870967742",
+        "nonzero_molecular_fits": "750",
+        "alpha_max_null_fits": "0",
+        "theoretical_null_endpoint_fits": "180",
+        "fit_warning_count": "89",
+        "fit_fallback_count": "0",
+        "fit_nonzero_alpha_ratio_count": "750",
+        "fit_alpha_ratio_1_count": "180",
+        "median_fit_seconds": "0.0026778000174090266",
+        "median_prediction_seconds": "0.0004844500799663365"
+      }
+    ],
+    "zero_molecular_outer_refits": 615,
+    "molecular_outer_refits": 840,
+    "zero_molecular_grid_and_outer_fits": 13575,
+    "molecular_grid_and_outer_fits": 26040,
+    "denominator_warning": "All-grid zero fractions include deliberately evaluated analytical-null alpha_ratio=1 endpoints and must not be described as selected outer-model zero rates.",
+    "outer_refit_counts_by_scenario_model": [
+      {
+        "scenario": "tissue_only",
+        "model": "tissue_null",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 0,
+        "zero_molecular_outer_refits": null,
+        "nonzero_molecular_outer_refits": null,
+        "selected_gene_counts": [
+          ""
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          ""
+        ]
+      },
+      {
+        "scenario": "tissue_only",
+        "model": "expression_strong",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 30,
+        "nonzero_molecular_outer_refits": 0,
+        "selected_gene_counts": [
+          "220"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "220"
+        ]
+      },
+      {
+        "scenario": "tissue_only",
+        "model": "mad_expression",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 30,
+        "nonzero_molecular_outer_refits": 0,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "200"
+        ]
+      },
+      {
+        "scenario": "tissue_only",
+        "model": "mad_rank",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 30,
+        "nonzero_molecular_outer_refits": 0,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "200"
+        ]
+      },
+      {
+        "scenario": "tissue_only",
+        "model": "mad_pair_full",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 30,
+        "nonzero_molecular_outer_refits": 0,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "19900"
+        ]
+      },
+      {
+        "scenario": "tissue_only",
+        "model": "response_association_expression",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 30,
+        "nonzero_molecular_outer_refits": 0,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "200"
+        ]
+      },
+      {
+        "scenario": "tissue_only",
+        "model": "response_association_rank",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 30,
+        "nonzero_molecular_outer_refits": 0,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "200"
+        ]
+      },
+      {
+        "scenario": "tissue_only",
+        "model": "response_association_pair_full",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 30,
+        "nonzero_molecular_outer_refits": 0,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "19900"
+        ]
+      },
+      {
+        "scenario": "weak_molecular",
+        "model": "tissue_null",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 0,
+        "zero_molecular_outer_refits": null,
+        "nonzero_molecular_outer_refits": null,
+        "selected_gene_counts": [
+          ""
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          ""
+        ]
+      },
+      {
+        "scenario": "weak_molecular",
+        "model": "expression_strong",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 28,
+        "nonzero_molecular_outer_refits": 2,
+        "selected_gene_counts": [
+          "220"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "220"
+        ]
+      },
+      {
+        "scenario": "weak_molecular",
+        "model": "mad_expression",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 28,
+        "nonzero_molecular_outer_refits": 2,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "200"
+        ]
+      },
+      {
+        "scenario": "weak_molecular",
+        "model": "mad_rank",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 27,
+        "nonzero_molecular_outer_refits": 3,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "200"
+        ]
+      },
+      {
+        "scenario": "weak_molecular",
+        "model": "mad_pair_full",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 30,
+        "nonzero_molecular_outer_refits": 0,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "19900"
+        ]
+      },
+      {
+        "scenario": "weak_molecular",
+        "model": "response_association_expression",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 28,
+        "nonzero_molecular_outer_refits": 2,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "200"
+        ]
+      },
+      {
+        "scenario": "weak_molecular",
+        "model": "response_association_rank",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 27,
+        "nonzero_molecular_outer_refits": 3,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "200"
+        ]
+      },
+      {
+        "scenario": "weak_molecular",
+        "model": "response_association_pair_full",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 30,
+        "nonzero_molecular_outer_refits": 0,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "19900"
+        ]
+      },
+      {
+        "scenario": "common_sample_amplitude",
+        "model": "tissue_null",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 0,
+        "zero_molecular_outer_refits": null,
+        "nonzero_molecular_outer_refits": null,
+        "selected_gene_counts": [
+          ""
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          ""
+        ]
+      },
+      {
+        "scenario": "common_sample_amplitude",
+        "model": "expression_strong",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 0,
+        "nonzero_molecular_outer_refits": 30,
+        "selected_gene_counts": [
+          "220"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "220"
+        ]
+      },
+      {
+        "scenario": "common_sample_amplitude",
+        "model": "mad_expression",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 0,
+        "nonzero_molecular_outer_refits": 30,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "200"
+        ]
+      },
+      {
+        "scenario": "common_sample_amplitude",
+        "model": "mad_rank",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 30,
+        "nonzero_molecular_outer_refits": 0,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "200"
+        ]
+      },
+      {
+        "scenario": "common_sample_amplitude",
+        "model": "mad_pair_full",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 30,
+        "nonzero_molecular_outer_refits": 0,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "19900"
+        ]
+      },
+      {
+        "scenario": "common_sample_amplitude",
+        "model": "response_association_expression",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 0,
+        "nonzero_molecular_outer_refits": 30,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "200"
+        ]
+      },
+      {
+        "scenario": "common_sample_amplitude",
+        "model": "response_association_rank",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 30,
+        "nonzero_molecular_outer_refits": 0,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "200"
+        ]
+      },
+      {
+        "scenario": "common_sample_amplitude",
+        "model": "response_association_pair_full",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 30,
+        "nonzero_molecular_outer_refits": 0,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "19900"
+        ]
+      },
+      {
+        "scenario": "predefined_pair_order",
+        "model": "tissue_null",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 0,
+        "zero_molecular_outer_refits": null,
+        "nonzero_molecular_outer_refits": null,
+        "selected_gene_counts": [
+          ""
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          ""
+        ]
+      },
+      {
+        "scenario": "predefined_pair_order",
+        "model": "expression_strong",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 0,
+        "nonzero_molecular_outer_refits": 30,
+        "selected_gene_counts": [
+          "220"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "220"
+        ]
+      },
+      {
+        "scenario": "predefined_pair_order",
+        "model": "mad_expression",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 30,
+        "nonzero_molecular_outer_refits": 0,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "200"
+        ]
+      },
+      {
+        "scenario": "predefined_pair_order",
+        "model": "mad_rank",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 28,
+        "nonzero_molecular_outer_refits": 2,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "200"
+        ]
+      },
+      {
+        "scenario": "predefined_pair_order",
+        "model": "mad_pair_full",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 29,
+        "nonzero_molecular_outer_refits": 1,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "19900"
+        ]
+      },
+      {
+        "scenario": "predefined_pair_order",
+        "model": "response_association_expression",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 0,
+        "nonzero_molecular_outer_refits": 30,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "200"
+        ]
+      },
+      {
+        "scenario": "predefined_pair_order",
+        "model": "response_association_rank",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 0,
+        "nonzero_molecular_outer_refits": 30,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "200"
+        ]
+      },
+      {
+        "scenario": "predefined_pair_order",
+        "model": "response_association_pair_full",
+        "outer_tasks": 30,
+        "molecular_outer_fits": 30,
+        "zero_molecular_outer_refits": 0,
+        "nonzero_molecular_outer_refits": 30,
+        "selected_gene_counts": [
+          "200"
+        ],
+        "encoded_feature_counts_source_field_pair_feature_count": [
+          "19900"
+        ]
+      }
+    ]
+  },
+  "existing_descriptive_summary_audit": {
+    "comparisons": 288,
+    "all_pass": true,
+    "tolerance_relative": 1e-12,
+    "tolerance_absolute": 1e-14,
+    "method": "Reconcile existing cohort-level aggregate values with their already published count/mean/median/min/max summaries using Python standard library; no new scientific estimand or inference."
+  },
+  "source_interpretation_caveats": [
+    "The source variable/column log2_tpm denotes generated L=log2(TPM+1), because X=2^L-1; original source column names are retained.",
+    "The amplitude DGP scales X+1, not exactly X: X_ij+1=2^(b_j)*2^(0.20*a_i). Every within-sample gene ordering is constant across samples by design.",
+    "The strong-expression budget is 2000 but only 220 genes exist; all 30 outer fits per scenario use 220 genes, while matched arms use 200.",
+    "The predefined-pair scenario intentionally places the response in an ordering of two lower-variance genes. MAD excludes both drivers in all 30 outer candidate sets; response-associated selection includes both in all 30. This is a designed selector stress case, not a general causal decomposition.",
+    "The pure-tissue scenario has exact within-tissue outcome constancy; recorded OOF tissue mean predictions have floating-point RMSE up to 1.962615573354719e-17, and Spearman is not exactly one in every cohort. Do not silently round all rank statistics to one.",
+    "267 fit-warning occurrences (89 for each of three continuous-expression arms) occur in the common-amplitude scenario; no fallback or task omission is recorded. Warning types cannot be resolved from aggregates alone and are not asserted here.",
+    "The synthetic execution lock and run metadata do not contain a separate actual-runtime package-version snapshot. Source commit and hashes are verified; pinned repository requirements are not proof of the actual run environment.",
+    "The model configuration inherits descriptive strings about real-drug cohorts and statistics, but the synthetic launcher overrides task construction, synthetic gene identifiers, 3x1 outer design, seeds and DGP inputs. The inherited text is not evidence of real-data access.",
+    "Current audit reads only source/configuration, aggregate CSVs, execution metadata and filenames. It reconciles published checkpoint-hash maps and confirms file existence but does not newly open/revalidate checkpoint payloads or individual predictions. Original analyzer records all 960 checkpoint hashes verified."
+  ],
+  "scientific_boundaries": [
+    "No causal explanation of real drug-response zero solutions.",
+    "No test of all REO models, foundation models, or virtual cells.",
+    "No empirical null or full-pipeline label permutation for the eight real drugs.",
+    "No significance tests, confidence intervals, new model fitting or resampling.",
+    "No score-driven redesign; all 40 cohorts, all arms, warnings and NA retained."
+  ],
+  "supplementary_table_copies": [
+    {
+      "table": "Table S11",
+      "path": "tables/scientific_revision_v1/TableS11_synthetic_cohort_results.csv",
+      "source_path": "results/synthetic_mechanisms/performance_by_cohort.csv",
+      "rows": 320,
+      "columns": 15,
+      "column_names": [
+        "scenario",
+        "replicate",
+        "model",
+        "n",
+        "spearman",
+        "rmse",
+        "mae",
+        "r2",
+        "residual_rho_pooled",
+        "residual_rho_tissue_defined_count",
+        "residual_rho_tissue_mean_available",
+        "residual_rho_tissue_macro_strict",
+        "residual_rho_tissue_macro_coverage",
+        "rmse_gain_vs_tissue_null",
+        "rmse_gain_tissue_macro"
+      ],
+      "source_sha256": "0c149e110e72e354705ba9513ae5ad3f52f36a54e80ff54322e64e5963f93e77",
+      "output_sha256": "0c149e110e72e354705ba9513ae5ad3f52f36a54e80ff54322e64e5963f93e77",
+      "bytes": 50920,
+      "transformation": "Byte-for-byte copy; original row order, columns, decimal strings, and empty NA fields retained; no filtering, normalization, fitting or metric recomputation."
+    },
+    {
+      "table": "Table S12",
+      "path": "tables/scientific_revision_v1/TableS12_synthetic_generation_checks.csv",
+      "source_path": "results/synthetic_mechanisms/data_generation_checks.csv",
+      "rows": 40,
+      "columns": 19,
+      "column_names": [
+        "cohort",
+        "scenario",
+        "replicate",
+        "seed",
+        "n_samples",
+        "n_genes",
+        "n_tissues",
+        "samples_per_tissue_min",
+        "samples_per_tissue_max",
+        "tpm_min",
+        "tpm_max",
+        "log2_tpm_min",
+        "response_min",
+        "response_max",
+        "within_tissue_response_max_ptp",
+        "common_amplitude_rank_invariant",
+        "common_amplitude_pair_invariant",
+        "cohort_file_sha256",
+        "split_file_sha256"
+      ],
+      "source_sha256": "49f6d3c609a9ae93895c12e8f8a2c0b7926d612168a18208ef0b5491f9b7bc4f",
+      "output_sha256": "49f6d3c609a9ae93895c12e8f8a2c0b7926d612168a18208ef0b5491f9b7bc4f",
+      "bytes": 12723,
+      "transformation": "Byte-for-byte copy; original row order, columns, decimal strings, and empty NA fields retained; no filtering, normalization, fitting or metric recomputation."
+    }
+  ]
+}

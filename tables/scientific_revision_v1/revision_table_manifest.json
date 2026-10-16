@@ -1,0 +1,136 @@
+{
+  "schema_version": "scientific_revision_v1",
+  "status": "aggregate_only_tables_validated",
+  "generator": "src/build_scientific_revision_tables_v1.py",
+  "generator_sha256": "62e90341af36fa32936bea53d87d1806244e6fa6ba500297a25a355f036fec60",
+  "sources": {
+    "results/p6_external/evaluation_summary.json": {
+      "sha256": "2d3d1803fff9a631643fb0e2abff165d35fa6f88e4c33215f2366d7c7bc11acf",
+      "bytes": 240851,
+      "scope": "existing_public_aggregate_only"
+    },
+    "results/p6_preflight/final_model_manifest.jsonl": {
+      "sha256": "0491c6faca2b79c74f5c056981ddec0263683600cbc3bb5d24c0f0bd160a86ad",
+      "bytes": 50659,
+      "scope": "existing_public_aggregate_only"
+    },
+    "results/ordinal_repeated/paired_effect_intervals.csv": {
+      "sha256": "9b36a9ffb874e5f0a8903d72ad12a4cef51049ebdd137f6d6cc4be3ace4c8f8d",
+      "bytes": 424243,
+      "scope": "existing_public_aggregate_only"
+    },
+    "results/ordinal_repeated/model_intervals.csv": {
+      "sha256": "6cd8c249a2774f751b5b0843ae78085966979b4841c88dd266e520df0e85853e",
+      "bytes": 65610,
+      "scope": "existing_public_aggregate_only"
+    }
+  },
+  "outputs": {
+    "tables/scientific_revision_v1/TableS9_external_absolute_performance.csv": {
+      "sha256": "f0ebd23139f5ef05f7516e8f77c202f7e7431e2aa79751d268929348b5c62706",
+      "rows": 72,
+      "columns": [
+        "Estimand",
+        "GDSC2_compound_ID",
+        "Compound",
+        "Model_arm",
+        "N_unique_external_groups",
+        "N_drug_group_response_records",
+        "N_compounds",
+        "Spearman_rho",
+        "Conditional95_lower",
+        "Conditional95_upper",
+        "Family_adjusted_lower",
+        "Family_adjusted_upper",
+        "Inference_family",
+        "Family_size",
+        "Bootstrap_requested",
+        "Bootstrap_valid",
+        "CI_status",
+        "Interval_scope",
+        "CI_source",
+        "Undefined_reason",
+        "Final_nonzero_molecular_coefficients",
+        "Final_zero_molecular_solution",
+        "N_final_molecular_zero_drug_models",
+        "Unknown_tissue_drug_group_records",
+        "Zero_status_source",
+        "Point_source",
+        "Point_aggregation"
+      ]
+    },
+    "tables/scientific_revision_v1/TableS10_representation_comparisons.csv": {
+      "sha256": "d44a5fd9d86cba79b70a36aaf70b7d9e9095a29fbde78efd8e516ff23d677a0d",
+      "rows": 108,
+      "columns": [
+        "Evaluation_stage",
+        "Candidate_rule",
+        "Contrast",
+        "Candidate_model",
+        "Reference_model",
+        "GDSC2_compound_ID",
+        "Compound",
+        "N_unique_groups",
+        "N_compounds",
+        "Candidate_rho",
+        "Reference_rho",
+        "Delta_rho_candidate_minus_reference",
+        "Conditional95_lower",
+        "Conditional95_upper",
+        "Family_adjusted_lower",
+        "Family_adjusted_upper",
+        "Inference_family",
+        "Family_size",
+        "Bootstrap_requested",
+        "Bootstrap_valid",
+        "CI_status",
+        "Interval_scope",
+        "CI_source",
+        "Undefined_reason",
+        "Both_final_models_molecular_zero",
+        "Point_source",
+        "Point_aggregation"
+      ]
+    },
+    "docs/scientific_revision_v1/ADDED_RESULTS_DRAFT.md": {
+      "sha256": "1ca9fd0c930e8601b7526fb55bf13870c941c6842336a300db941653aa3fc7f8"
+    }
+  },
+  "contracts": {
+    "fixed_drugs": [
+      1931,
+      1036,
+      1191,
+      1930,
+      1199,
+      1091,
+      1010,
+      1922
+    ],
+    "fixed_models": [
+      "tissue_null",
+      "expression_strong",
+      "mad_expression",
+      "mad_rank",
+      "mad_pair_full",
+      "response_association_expression",
+      "response_association_rank",
+      "response_association_pair_full"
+    ],
+    "S9_rows": 72,
+    "S9_existing_absolute_rho_intervals": 40,
+    "S9_absolute_macro_intervals_not_precomputed": true,
+    "S10_rows": 108,
+    "S10_existing_intervals": 72,
+    "S10_existing_family18_adjusted_intervals": 36,
+    "S10_external_rank_point_only_rows": 36,
+    "strict_macro_requires_all_eight_defined_drugs": true,
+    "old_tables_not_overwritten": true,
+    "sample_data_read": false,
+    "model_artifacts_loaded": false,
+    "new_fits": 0,
+    "new_resampling_draws": 0,
+    "new_confidence_intervals": 0,
+    "new_inferential_families": 0
+  }
+}

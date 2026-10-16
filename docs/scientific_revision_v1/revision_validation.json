@@ -1,0 +1,59 @@
+{
+  "date": "2026-10-16",
+  "scope": "editorial aggregate source checks and package structural validation; not independent raw-data/model reproduction",
+  "no_model_fit_resampling_external_rescoring": true,
+  "checks": {
+    "reference_first_appearance_1_to_30": true,
+    "numeric_citation_and_bibliography_audit": true,
+    "old_manuscripts_unchanged_from_base_HEAD": true,
+    "protected_scientific_files_unchanged_except_documented_git_EOL_storage_repair": true,
+    "methods_ledger_source_hashes": true,
+    "aggregate_table_source_and_output_hashes": true,
+    "synthetic_copies_unchanged": true,
+    "all_14_additional_files_match_sources": true,
+    "package_document_hashes": true,
+    "package_docx_builder_hash": true,
+    "main_additional_file_list_1_to_14": true,
+    "main_docx_zip_integrity": true,
+    "main_footer_has_current_page_field": true,
+    "main_docx_draft_status_visible": true,
+    "main_4_images_2_editable_tables": true,
+    "main_one_caption_per_image": true,
+    "main_30_reference_rows": true,
+    "supplement_docx_zip_integrity": true,
+    "supplement_footer_has_current_page_field": true,
+    "supplement_docx_draft_status_visible": true,
+    "supplement_two_tables_correct_columns": true,
+    "supplement_schema_and_synthetic_sections_present": true,
+    "supplement_no_unrendered_latex_or_reserved_marker": true,
+    "abstract_at_most_350_words": true
+  },
+  "details": {
+    "methods_source_rows": 34,
+    "docx": {
+      "main": {
+        "sha256": "ad1867aad045521d0258d42454acf9411a38fd2755dc7df8ceed3da32269e049",
+        "drawings": 4,
+        "table_columns": [
+          5,
+          5
+        ],
+        "paragraphs": 267,
+        "zip_integrity": true
+      },
+      "supplement": {
+        "sha256": "054a00980647a7720fd828ae9483c9dea370a0a407e09dc4cd7c940f7bbc1a60",
+        "drawings": 0,
+        "table_columns": [
+          2,
+          3
+        ],
+        "paragraphs": 174,
+        "zip_integrity": true
+      }
+    },
+    "abstract_words_whitespace_count": 268
+  },
+  "failed_checks": [],
+  "pass": true
+}

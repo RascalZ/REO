@@ -1,0 +1,167 @@
+{
+  "date": "2026-10-16",
+  "renderer": "Microsoft Word 2021, read-only DOCX open and ExportAsFixedFormat PDF",
+  "status": "completed",
+  "documents": [
+    {
+      "document": "manuscript_v1/Manuscript_BMC_Genomics_scientific_revision_v1.docx",
+      "docx_sha256": "ad1867aad045521d0258d42454acf9411a38fd2755dc7df8ceed3da32269e049",
+      "local_PDF_basename": "REO_scientific_R1_delivery.pdf",
+      "pdf_sha256": "3fe83ff4ed80b8e49012835c007431596ab865d21ca838e5f95f069518ee893a",
+      "page_count": 36,
+      "all_pages_have_sequential_visible_page_numbers": true,
+      "replacement_characters": 0,
+      "pdfinfo": [
+        "Pages:           36",
+        "Encrypted:       no",
+        "Page size:       595.2 x 841.92 pts (A4)",
+        "Page rot:        0",
+        "File size:       676759 bytes",
+        "Optimized:       no",
+        "PDF version:     1.7"
+      ],
+      "QA_scope": "visual sample of affected pages and all-page extracted-text/page-number checks, not every-line independent proofreading"
+    },
+    {
+      "document": "manuscript_v1/Supplementary_methods_scientific_revision_v1.docx",
+      "docx_sha256": "054a00980647a7720fd828ae9483c9dea370a0a407e09dc4cd7c940f7bbc1a60",
+      "local_PDF_basename": "REO_supplement_R1_delivery.pdf",
+      "pdf_sha256": "fca4b6b5e7f4be14260f5691afcdbe293bcf1d8a58995bd6ca135600d87f4d3b",
+      "page_count": 18,
+      "all_pages_have_sequential_visible_page_numbers": true,
+      "replacement_characters": 0,
+      "pdfinfo": [
+        "Pages:           18",
+        "Encrypted:       no",
+        "Page size:       595.2 x 841.92 pts (A4)",
+        "Page rot:        0",
+        "File size:       210734 bytes",
+        "Optimized:       no",
+        "PDF version:     1.7"
+      ],
+      "QA_scope": "visual sample of affected pages and all-page extracted-text/page-number checks, not every-line independent proofreading"
+    }
+  ],
+  "locally_rendered_pages": [
+    {
+      "path": "manuscript_v1/qa_scientific_revision_v1/delivery/contact_sheet.png",
+      "sha256": "f7bc0c04e76caa740c84e69f3c7c9a397e7c2b1736ee8d3c202d4f7022a7e681"
+    },
+    {
+      "path": "manuscript_v1/qa_scientific_revision_v1/delivery/main_1.png",
+      "sha256": "d0d116ca318b576cd6e02b5eb302e80c1ec67a79caa9917c9e11ec76ba957e2c"
+    },
+    {
+      "path": "manuscript_v1/qa_scientific_revision_v1/delivery/main_18.png",
+      "sha256": "5f0f9cd65b2e556957f1fe418f16e854208493a13eeae61d4f42a8e09fd686be"
+    },
+    {
+      "path": "manuscript_v1/qa_scientific_revision_v1/delivery/main_19.png",
+      "sha256": "a814ea83b1bd10f7a1184fa2edcc5c0494e1b18a425cded8d5f22bad5848ef88"
+    },
+    {
+      "path": "manuscript_v1/qa_scientific_revision_v1/delivery/main_22.png",
+      "sha256": "58047671ea3c33e68ce04ed8621c48659250cbf31a7aca4180c0d13fdc01451a"
+    },
+    {
+      "path": "manuscript_v1/qa_scientific_revision_v1/delivery/main_24.png",
+      "sha256": "4eea7c08364ad5e30694f2817baf7c332421a8e22a7ba88e19ce9381d718a853"
+    },
+    {
+      "path": "manuscript_v1/qa_scientific_revision_v1/delivery/main_25.png",
+      "sha256": "e2cb747630854ef2769019f4fd1d55c3039295e645f2442989ce80b70a830696"
+    },
+    {
+      "path": "manuscript_v1/qa_scientific_revision_v1/delivery/main_26.png",
+      "sha256": "69a2d1aa2e16d95623f9d75fac3f6a41f1da8ac354dfba8106dde07cf20eb949"
+    },
+    {
+      "path": "manuscript_v1/qa_scientific_revision_v1/delivery/main_31.png",
+      "sha256": "580227e1b2d7fbf6d9bddd30aaf0b74674afc62561f991120859c063c8026afd"
+    },
+    {
+      "path": "manuscript_v1/qa_scientific_revision_v1/delivery/main_36.png",
+      "sha256": "9d5444bce935c48fd9d8d636d82e02fb708e436bab54702e9acc73e6b01cd300"
+    },
+    {
+      "path": "manuscript_v1/qa_scientific_revision_v1/delivery/main_6.png",
+      "sha256": "a44b2080704fcc7e6d11d832f99501be24eb5374e17fb8f38b9baa512b8daa8d"
+    },
+    {
+      "path": "manuscript_v1/qa_scientific_revision_v1/delivery/supp_1.png",
+      "sha256": "fc9ff8df986da4471af0480e519da9aab6398d9c0bd54b3fc1acd938acacd66c"
+    },
+    {
+      "path": "manuscript_v1/qa_scientific_revision_v1/delivery/supp_12.png",
+      "sha256": "5207e42605e60a1b99a124792c8cf9e5b22c3f34dc8902be8a11cdef9be4c1bd"
+    },
+    {
+      "path": "manuscript_v1/qa_scientific_revision_v1/delivery/supp_13.png",
+      "sha256": "6e4d1da0f4d39e2ba65e627e146216ed0cf7a98747d03a60f757acbdbfc0d6b3"
+    },
+    {
+      "path": "manuscript_v1/qa_scientific_revision_v1/delivery/supp_16.png",
+      "sha256": "e655d50fd44706d817f72bfdd62ba5d192569455c5a19ff67d806252b6b9f347"
+    },
+    {
+      "path": "manuscript_v1/qa_scientific_revision_v1/delivery/supp_18.png",
+      "sha256": "3787638f6f9e47ab2ab3fb6fa38e39936b37d3b8f9bbba3a8a5c3c6d77590d23"
+    },
+    {
+      "path": "manuscript_v1/qa_scientific_revision_v1/delivery/supp_3.png",
+      "sha256": "4db5150f14fc46c0a5fa0d93514237e5edc4ac1f9c00fe6b611f15df6b97cf29"
+    },
+    {
+      "path": "manuscript_v1/qa_scientific_revision_v1/delivery/supp_6.png",
+      "sha256": "316f552d5ea4b7d966f34323c768e7d94d72d5c18d89e6a7cb7f7b2ee960f574"
+    },
+    {
+      "path": "manuscript_v1/qa_scientific_revision_v1/delivery/supp_7.png",
+      "sha256": "0de8b63014f7808e3062443a3356a56d2dc4133e7dbf5e6495479fd96c145314"
+    },
+    {
+      "path": "manuscript_v1/qa_scientific_revision_v1/delivery/supp_8.png",
+      "sha256": "175264f1781014d54150c94e1edd7c86d31300549b83f81ac258bd5fb0f50f31"
+    }
+  ],
+  "visually_inspected_delivery_pages": {
+    "main_fullsize": [
+      19,
+      22,
+      24
+    ],
+    "main_contact_sheet": [
+      1,
+      18,
+      25,
+      26,
+      31,
+      36
+    ],
+    "supplement_fullsize": [
+      12,
+      18
+    ],
+    "supplement_contact_sheet": [
+      3,
+      7,
+      13
+    ]
+  },
+  "additional_visual_checks_on_prior_identical_body_render": [
+    "main Figure1 page6",
+    "main tables1/2 pages18/25",
+    "main synthetic-results page26",
+    "supplement pair equations page13"
+  ],
+  "repairs": [
+    "Supplement terminal provenance shortened to remove two-line orphan page; final18pages",
+    "Fixed DOCX page field; all36main and18supplement page labels verified"
+  ],
+  "still_pending": [
+    "M08 graphic internal titles and Figure3/4 print-size font refinement",
+    "final reference author/et-al style and author-provided declarations",
+    "M04 input/model access route and minimal inference assets"
+  ],
+  "publication_boundary": "PDF/page images are local QA only, not a public archival release; source figures/scientific results unchanged. Git result-storage EOL repair is documented separately."
+}

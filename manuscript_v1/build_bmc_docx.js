@@ -3,12 +3,20 @@ const path = require('path');
 const {
   Document, Packer, Paragraph, TextRun, Table, TableRow, TableCell,
   WidthType, BorderStyle, AlignmentType, HeadingLevel, Footer,
-  PageNumber, LineNumberRestartFormat
+  PageNumber, LineNumberRestartFormat, ImageRun
 } = require('docx');
 
 const root = __dirname;
-const input = path.join(root, 'Manuscript_BMC_Genomics_draft.md');
-const output = path.join(root, 'Manuscript_BMC_Genomics_draft.docx');
+const args = process.argv.slice(2);
+function option(name, fallback) {
+  const index = args.indexOf(name);
+  if (index < 0) return fallback;
+  if (!args[index + 1] || args[index + 1].startsWith('--')) throw new Error(`Missing ${name}`);
+  return args[index + 1];
+}
+const input = path.resolve(root, option('--input', 'Manuscript_BMC_Genomics_draft.md'));
+const output = path.resolve(root, option('--output', 'Manuscript_BMC_Genomics_draft.docx'));
+const embedFigures = args.includes('--embed-figures');
 const markdown = fs.readFileSync(input, 'utf8');
 const lines = markdown.split(/\r?\n/);
 const children = [];
@@ -17,6 +25,36 @@ const PAGE_HEIGHT = 16838;
 const TABLE_WIDTH = PAGE_WIDTH - 2 * 1440;
 let tableIndex = 0;
 let currentSection = '';
+const captions = new Map([...markdown.matchAll(/^Figure ([1-4])\. (.+)$/gm)]
+  .map(match => [Number(match[1]), `Figure ${match[1]}. ${match[2]}`]));
+const figureFiles = [null, 'Figure1_study_design.png', 'Figure2_development_primary.png',
+  'Figure3_representation_and_zero_solutions.png', 'Figure4_loto_and_external.png'];
+const figureAnchors = new Map([
+  [1, 'The cohorts, nested partitions, model arms, and evaluation boundaries are summarized in Figure 1.'],
+  [2, 'The paired drug-wise and equal-drug estimates are shown in Figure 2.'],
+  [3, 'Figure 3B shows the molecular coefficient status of the full-development fits.'],
+  [4, 'Figure 4B displays the external drug-wise and macro contrasts.'],
+]);
+const emittedFigures = new Set();
+function appendFigure(number) {
+  if (!captions.has(number)) throw new Error(`Missing caption for Figure ${number}`);
+  const data = fs.readFileSync(path.join(root, '..', 'figures', 'manuscript_v1', figureFiles[number]));
+  const nativeWidth = data.readUInt32BE(16);
+  const nativeHeight = data.readUInt32BE(20);
+  const width = 590;
+  children.push(new Paragraph({
+    children: [new ImageRun({ type: 'png', data,
+      transformation: { width, height: Math.round(width * nativeHeight / nativeWidth) },
+      altText: { title: `Figure ${number}`, description: captions.get(number), name: figureFiles[number] },
+    })],
+    alignment: AlignmentType.CENTER, spacing: { line: 240, before: 120, after: 80 }, keepNext: true,
+  }));
+  children.push(new Paragraph({
+    children: runsFor(captions.get(number), { font: 'Times New Roman', size: 20 }),
+    spacing: { line: 300, after: 160 }, keepLines: true,
+  }));
+  emittedFigures.add(number);
+}
 
 function runsFor(text, options = {}) {
   const out = [];
@@ -66,7 +104,11 @@ function cell(text, width, header = false) {
 }
 function makeTable(rawRows) {
   tableIndex += 1;
-  const widths = tableIndex === 1 ? [1500, 900, 2050, 900, TABLE_WIDTH - 5350] : [1400, 900, 2750, 1150, TABLE_WIDTH - 6200];
+  const columns = rawRows[0].length;
+  if (rawRows.some(row => row.length !== columns)) throw new Error('Inconsistent table column count');
+  const widths = columns === 5
+    ? (tableIndex === 1 ? [1500, 900, 2050, 900, TABLE_WIDTH - 5350] : [1400, 900, 2750, 1150, TABLE_WIDTH - 6200])
+    : Array.from({length: columns}, (_, index) => Math.floor(TABLE_WIDTH / columns) + (index < TABLE_WIDTH % columns ? 1 : 0));
   if (widths.reduce((a,b)=>a+b,0) !== TABLE_WIDTH) throw new Error('Table widths mismatch');
   const rows = rawRows.map((row, ri) => new TableRow({
     tableHeader: ri === 0,
@@ -91,7 +133,13 @@ children.push(p('DRAFT — AUTHOR INPUT REQUIRED — NOT FOR SUBMISSION', { alig
 for (let i = 0; i < lines.length;) {
   const line = lines[i].trimEnd();
   if (!line.trim()) { i++; continue; }
-  if (line.startsWith('# BMC Genomics Research Article')) { i++; continue; }
+  if (line.startsWith('# ')) {
+    if (!line.startsWith('# BMC ')) children.push(new Paragraph({
+      children: runsFor(line.slice(2), {font: 'Times New Roman', size: 28, bold: true}),
+      spacing: {line: 480, after: 180}, keepNext: true,
+    }));
+    i++; continue;
+  }
   if (line.startsWith('**Draft status:**')) {
     children.push(p(line.replace(/\*\*/g, ''), { align: AlignmentType.CENTER, keepNext: true }));
     i++; continue;
@@ -110,6 +158,7 @@ for (let i = 0; i < lines.length;) {
   if (h1) {
     if (h1[1] === 'Title page') { i++; continue; }
     currentSection = h1[1];
+    if (embedFigures && currentSection === 'Figure legends') { i++; continue; }
     children.push(new Paragraph({
       children: [new TextRun({ text: h1[1], font: 'Times New Roman', size: 26, bold: true, color: '000000' })], heading: HeadingLevel.HEADING_1,
       spacing: { line: 480, before: 260, after: 140 }, keepNext: true,
@@ -127,6 +176,7 @@ for (let i = 0; i < lines.length;) {
     i++; continue;
   }
   const text = line.replace(/\\([*_])/g, '$1').replace(/`/g, '');
+  if (embedFigures && currentSection === 'Figure legends') { i++; continue; }
   let paragraph = p(text, {
     keepNext: /^\*\*(?:Table|Figure) \d+\./.test(text),
     paragraphOptions: /^\d+\. /.test(text) ? { indent: { left: 360, hanging: 360 } } : {},
@@ -163,12 +213,20 @@ for (let i = 0; i < lines.length;) {
   }
   if (text.startsWith('*Note:*')) paragraph = new Paragraph({ children:runsFor(text,{font:'Times New Roman',size:18}), spacing:{line:300,after:220} });
   children.push(paragraph);
+  if (embedFigures) {
+    for (const [number, anchor] of figureAnchors) {
+      if (!emittedFigures.has(number) && text.includes(anchor)) appendFigure(number);
+    }
+  }
   i++;
+}
+if (embedFigures && emittedFigures.size !== 4) {
+  throw new Error(`Expected 4 figure placements, found ${emittedFigures.size}`);
 }
 
 const footer = new Footer({ children: [new Paragraph({
   alignment: AlignmentType.CENTER,
-  children: [new TextRun({ text: 'Page ', font: 'Times New Roman', size: 18 }), PageNumber.CURRENT],
+  children: [new TextRun({ children: ['Page ', PageNumber.CURRENT], font: 'Times New Roman', size: 18 })],
 })] });
 const doc = new Document({
   creator: 'Project manuscript build',
