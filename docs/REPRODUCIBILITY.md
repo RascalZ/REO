@@ -2,7 +2,7 @@
 
 ## Current publication audit status — 2026-10-16
 
-The single maintained plan is `RESEARCH_PLAN.md` v3.34. The historical stage descriptions and example training commands below record earlier phases; they are not instructions to rerun completed analyses in the locked workspace.
+The single maintained plan is `RESEARCH_PLAN.md`; read its current-status section for the latest version and work order. The historical stage descriptions and example training commands below record earlier phases; they are not instructions to rerun completed analyses in the locked workspace.
 
 - Development, 23-tissue LOTO, full-development fitting and the one-time retrospective CTRPv2 evaluation are complete. The final audit covers 64 models / 1,744 fit events; the external evaluation covers 175 independent groups and 1,185 drug–model responses, with 9,480 valid predictions. See stage 13 and stage 14 reports, `config/external_execution_v1_1.lock.json` and `results/p6_external/evaluation_summary.json`.
 - CTRPv2 response values have already been evaluated once. Do not repeat that evaluation, use it for tuning, or treat the historical pending-status sentences as current authorization. Read-only public aggregate checks do not open response values or refit models.
