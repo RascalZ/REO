@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-20",
+  "local_delivery_package": "manuscript_v1/author_review_v1/BMC_Genomics_author_reading_package_2026-10-20.zip",
+  "zip_sha256": "151b9ca06f4ddb024dca84320e5ee530882719f4a1236cb817c6975a65ff6706",
+  "zip_bytes": 4764095,
+  "zip_entries": 31,
+  "author_details_git_ignored": true,
+  "source_authors_migrated": 8,
+  "independent_content_checks_passed": 26,
+  "main_pages": 39,
+  "supplement_pages": 19,
+  "word_pdf_visual_checks_passed": true,
+  "repository_visibility": "private",
+  "new_scientific_evaluation_performed": false,
+  "archival_release_or_doi_created": false
+}

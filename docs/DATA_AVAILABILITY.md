@@ -1,5 +1,15 @@
 # Data availability and provenance
 
+## Current access correction — 2026-10-20
+
+Authenticated GitHub repository metadata confirms that `RascalZ/REO` is **private**; the anonymous repository endpoint is inaccessible. Tracked code, aggregate results, source/provenance documents and invented-input inference examples are maintained in this private repository. Their presence here, prior synchronization and older descriptions as “public” do not establish actual public or anonymous editor/reviewer access. Such descriptions identify the intended release scope unless a specific external public source is named. This correction overrides any older project-public-access implication below without rewriting the historical provenance record.
+
+Publicly accessible GDSC2, CCLE, CTRPv2, DepMap and Cell Model Passports resources are upstream resources with their own terms; their public status does not make the project repository public or authorize redistribution. Complete derived models/mappings remain local and Git-ignored. Public and editor/reviewer access arrangements, permissible redistribution and a real immutable archive identifier remain closing tasks. No repository visibility or local-asset release is changed by this editorial step.
+
+The current complete author-reading package is in the local Git-ignored `manuscript_v1/author_review_v1/`. Source-recorded author/declaration facts were adopted, but absent contact/contribution facts, formal publication permission and approval by all authors of the revised manuscript are not fabricated. See [Stage 26](../reports/阶段26_作者资料迁入与最终通读稿.md) and plan v3.39. User read-through and discussion are the next gate; current-package rendering/check results are recorded only after verification. The original M08 manuscript and scientific files are preserved.
+
+The unique locked CTRPv2 evaluation is already complete. Saved aggregate results may continue to support the manuscript; individual responses, response indices and individual predictions remain sealed during this editorial work. No new label access, fitting, resampling or scoring is performed.
+
 The repository contains newly authored curation, modeling, audit and figure/table code, public aggregate results and manuscript drafts. Large expression/response matrices, raw downloaded metadata, old manuscripts, individual local paths and original-file inventories are not committed. Source terms continue to apply; the repository MIT license does not relicense upstream data.
 
 ## Current publication status — 2026-10-16

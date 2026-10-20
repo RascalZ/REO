@@ -1,0 +1,29 @@
+{
+  "date": "2026-10-20",
+  "status": "local_author_reading_copy_not_submission_approved",
+  "source_sha256": "bdfaa1fee9ad68f5fc47e1c7d109f1fda42721ab1dd333fa6b767f903ed47add",
+  "author_count": 8,
+  "equal_contributors": 2,
+  "corresponding_authors": 2,
+  "funding_sources": 2,
+  "competing_interest_statement_reused": true,
+  "reference_count": 31,
+  "source_missing_fields": [
+    "correspondence_email",
+    "author_specific_contribution_roles",
+    "formal_ethics_applicability_statement",
+    "acknowledgements",
+    "new_version_approval",
+    "data_model_access_permissions",
+    "archive_identifier",
+    "article_license_selection"
+  ],
+  "ai_assistance_disclosure": "current_recorded_work_not_legacy_absence",
+  "outputs_local_git_ignored": true,
+  "scientific_sections_unchanged": true,
+  "repository_visibility": "private",
+  "repository_public_access_available": false,
+  "no_model_fitting_scoring_or_test_response_access": true,
+  "local_main_docx_sha256": "cc63ad7bd9efd345f25c4de4721df25d91ba0f72932a7d46112972bec40d6730",
+  "local_package_manifest_sha256": "4c5c9beb1ff5382b93ab051bd894c7b3e214bb5356b50434281f176f02b127d7"
+}

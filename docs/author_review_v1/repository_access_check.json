@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-20",
+  "repository": "RascalZ/REO",
+  "authenticated_provider": "GitHub connector list_repositories",
+  "visibility": "private",
+  "default_branch": "main",
+  "anonymous_rest_status": 404,
+  "public_access_confirmed": false,
+  "visibility_change_requested_or_performed": false,
+  "scope": "Repository metadata only; no manuscript transmission or individual test-response access"
+}

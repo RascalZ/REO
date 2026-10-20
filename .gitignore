@@ -56,3 +56,7 @@ reproducibility_v1/local_assets/
 !manuscript_v1/Manuscript_BMC_Genomics_M08_v1.docx
 !manuscript_v1/bmc_additional_files_M08_v1/Additional_file_14.docx
 manuscript_v1/qa_m08_v1/
+
+# Author-populated reading copies and extracted prior-submission facts stay local.
+manuscript_v1/author_review_v1/
+docs/author_review_v1/local_private/
