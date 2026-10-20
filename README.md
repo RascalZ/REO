@@ -4,7 +4,9 @@ This repository contains a leakage-controlled comparison of relative expression 
 
 ## Current status
 
-As of 2026-10-20, the single maintained research plan is [RESEARCH_PLAN.md](RESEARCH_PLAN.md), version 3.39. Read its current-status section before using any older stage notes. The current scientific readouts are:
+As of 2026-10-20, the single maintained research plan is [RESEARCH_PLAN.md](RESEARCH_PLAN.md), version 3.40. Read its current-status section before using any older stage notes. The current scientific readouts are:
+
+The [abstract and narrative style discussion](docs/ABSTRACT_STYLE_REVIEW_V1.md) responds to author read-through feedback. It clarifies the official CTRP v2 name and offers literature-grounded writing options; it has not replaced the current author-reading Word/PDF or changed any scientific result.
 
 - Fixed eight-drug nested development evaluation: 626 unique development biological groups, 4,967 drug–model observations, 5 outer folds × 3 repeats and 3 inner folds. The predefined REO-pair minus strong-expression macro ΔSpearman was −0.00588, with family-adjusted conditional interval [−0.01871, +0.00661]. This does not establish REO superiority, equivalence, or non-inferiority.
 - Tissue sensitivity: the strict prespecified leave-one-tissue-out macro was undefined; 34/80 drug–tissue cells had defined correlations.
