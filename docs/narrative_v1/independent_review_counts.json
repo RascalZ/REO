@@ -1,0 +1,245 @@
+{
+  "date": "2026-10-21",
+  "scope": "v1-to-v2 editorial scientific-fidelity and source/package comparison, not data/model replication",
+  "counts": {
+    "total": 54,
+    "passed": 54,
+    "failed": 0,
+    "not_assessed": 1
+  },
+  "all_assessed_checks_passed": true,
+  "checks": [
+    {
+      "id": "source_v1_md_hash_matches_generation_manifest",
+      "passed": true
+    },
+    {
+      "id": "methods_identical_after_display_and_whitespace_normalization",
+      "passed": true
+    },
+    {
+      "id": "declarations_identical_after_display_normalization",
+      "passed": true
+    },
+    {
+      "id": "author_identity_markers_affiliation_unchanged_title_editorial_rewrite",
+      "passed": true
+    },
+    {
+      "id": "references_31_identical",
+      "passed": true
+    },
+    {
+      "id": "additional_file_descriptions_identical_except_display",
+      "passed": true
+    },
+    {
+      "id": "figure_legends_identical_except_display",
+      "passed": true
+    },
+    {
+      "id": "main_table_cells_identical_except_display",
+      "passed": true
+    },
+    {
+      "id": "word_tables_match_v2_markdown",
+      "passed": true
+    },
+    {
+      "id": "word_table_count_two",
+      "passed": true
+    },
+    {
+      "id": "four_embedded_pngs_same_as_v1",
+      "passed": true
+    },
+    {
+      "id": "four_embedded_pngs_exact_M08_asset_bytes",
+      "passed": true
+    },
+    {
+      "id": "all_13_additional_csvs_byte_identical",
+      "passed": true
+    },
+    {
+      "id": "supplementary_md_display_only",
+      "passed": true
+    },
+    {
+      "id": "supplementary_word_text_display_only_except_review_banner",
+      "passed": true
+    },
+    {
+      "id": "supplementary_word_tables_unchanged",
+      "passed": true
+    },
+    {
+      "id": "additional14_exact_current_supplementary_docx",
+      "passed": true
+    },
+    {
+      "id": "bibtex_byte_identical",
+      "passed": true
+    },
+    {
+      "id": "reference_list_1_to_31",
+      "passed": true
+    },
+    {
+      "id": "citations_complete_and_first_appearance_ordered",
+      "passed": true
+    },
+    {
+      "id": "every_main_md_paragraph_represented_in_word",
+      "passed": true
+    },
+    {
+      "id": "word_contains_no_unexpected_content_except_reading_banner",
+      "passed": true
+    },
+    {
+      "id": "development_denominators_retained",
+      "passed": true
+    },
+    {
+      "id": "primary_effects_and_intervals_retained",
+      "passed": true
+    },
+    {
+      "id": "rmse_adverse_result_retained",
+      "passed": true
+    },
+    {
+      "id": "tissue_increment_and_strong_baseline_retained",
+      "passed": true
+    },
+    {
+      "id": "matched_candidate_adverse_MAD_and_response_results_retained",
+      "passed": true
+    },
+    {
+      "id": "zero_solution_denominators_and_semantics_retained",
+      "passed": true
+    },
+    {
+      "id": "loto_strict_NA_retained",
+      "passed": true
+    },
+    {
+      "id": "external_absolute_and_coverage_retained",
+      "passed": true
+    },
+    {
+      "id": "synthetic_all_cohorts_zeros_warnings_retained",
+      "passed": true
+    },
+    {
+      "id": "conditional_and_no_NI_limitations_retained",
+      "passed": true
+    },
+    {
+      "id": "outcome_informed_and_historical_external_exposure_retained",
+      "passed": true
+    },
+    {
+      "id": "external_context_limits_retained",
+      "passed": true
+    },
+    {
+      "id": "order_invariance_uses_common_increasing_transform",
+      "passed": true
+    },
+    {
+      "id": "private_access_and_approval_limits_retained",
+      "passed": true
+    },
+    {
+      "id": "preserved_asset_manifest_all_hashes_match",
+      "passed": true
+    },
+    {
+      "id": "current_v2_document_hashes_match_build_manifest",
+      "passed": true
+    },
+    {
+      "id": "supplementary_md_paragraphs_match_current_word",
+      "passed": true
+    },
+    {
+      "id": "manual_scientific_hierarchy",
+      "passed": true
+    },
+    {
+      "id": "manual_statistical_uncertainty",
+      "passed": true
+    },
+    {
+      "id": "manual_adverse_results_and_scope",
+      "passed": true
+    },
+    {
+      "id": "manual_zero_model_semantics",
+      "passed": true
+    },
+    {
+      "id": "manual_candidate_policy_and_order_information",
+      "passed": true
+    },
+    {
+      "id": "manual_synthetic_limits",
+      "passed": true
+    },
+    {
+      "id": "manual_external_history_and_endpoint",
+      "passed": true
+    },
+    {
+      "id": "manual_external_signal_interpretation",
+      "passed": true
+    },
+    {
+      "id": "manual_loto_definedness",
+      "passed": true
+    },
+    {
+      "id": "manual_mathematical_invariance",
+      "passed": true
+    },
+    {
+      "id": "manual_aivc_connection",
+      "passed": true
+    },
+    {
+      "id": "manual_author_approval_and_release",
+      "passed": true
+    },
+    {
+      "id": "manual_result_streamlining",
+      "passed": true
+    },
+    {
+      "id": "manual_citations_in_rewritten_claims",
+      "passed": true
+    },
+    {
+      "id": "manual_synthetic_narrative_compression_supported_by_unchanged_S11_and_additional14",
+      "passed": true
+    }
+  ],
+  "protected_files": 60,
+  "additional_csvs_byte_identical": 13,
+  "word_images_exact_original_pngs": 4,
+  "references_count": 31,
+  "first_appearance_ordered": true,
+  "author_private_data_included": false,
+  "ctrp_individual_data_or_models_accessed": false,
+  "new_fit_score_or_resampling": false,
+  "pdf_visual_inspection": "not_assessed_parent_render_pending",
+  "submission_approval": false,
+  "final_build_binding": {
+    "results_edits": 18,
+    "abstract_words": 263,
+    "build_summary_sha256": "2cccadc3c8e26ddff62fbb4bd6f2f0971a017e9c4d30f1b2bc14ef9e3526ea88",
+    "package_manifest_sha256": "2cccadc3c8e26ddff62fbb4bd6f2f0971a017e9c4d30f1b2bc14ef9e3526ea88"
+  }
+}

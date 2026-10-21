@@ -1,0 +1,221 @@
+{
+  "date": "2026-10-21",
+  "status": "author_reading_copy_question_led_narrative_revision",
+  "source_md_sha256": "f970804ab2bcea4c2fb2e415b0b15fb1a82f958c50d7df7266aaf0ab5ffc278e",
+  "generator_sha256": "e2d089e218ebf96c8a2aaf0c3232f2d59db066f0bf6f134c4bb058972d1af613",
+  "builder_sha256": "c511f6baca91f5c0aaa4b6af10f3a72d438365dd8eeb03538d00fdad3b52f94d",
+  "draft_inputs": {
+    "abstract_background.md": "840eb1d7958dc1f0ca5e6cae3e5817bee9972e67409ab451031735b53157afe3",
+    "discussion_conclusions.md": "af92d86de3dd6b352929ecf31de7c94811a8b87ec345bc6856f9a605172d8795",
+    "results.md": "2ea7d2c45a01eb5527f6228251dec66b06934fcd57e77c38b88f3cb73b5e2a2e"
+  },
+  "documents": [
+    {
+      "path": "manuscript_v1/author_review_v2/Manuscript_BMC_Genomics_author_review_v2.md",
+      "sha256": "1931488c3b7f56e67f42fb9252a9edf2c1e97f3b47ccc09ea48b302619a4037e"
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Manuscript_BMC_Genomics_author_review_v2.docx",
+      "sha256": "1e91958b51ce0b800fcc5d22cb77745faf7e425f7fb50697f6c6f3ca1c381f54"
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Supplementary_methods_author_review_v2.md",
+      "sha256": "a04fa46f2103d50dbf41bdb6692c7b679a05e1714fe91ea5099e4bc2fae0bbc9"
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Supplementary_methods_author_review_v2.docx",
+      "sha256": "f6892a1b680a081670f285169e1a1b9ee5b7eeb7682077d516098bb8a18a3557"
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/references_author_review_v2.bib",
+      "sha256": "d85b8e49adf5b38b8d887868dd22254eeac6822bdaf1528c9813b251d48b8ffc"
+    }
+  ],
+  "abstract_whitespace_words": 263,
+  "additional_files": [
+    {
+      "number": 1,
+      "sha256": "bbcd0b65e688f05bb42a090f491c8ef29525d3b9b1a77183c93ea1e6404ccf33",
+      "matches_v1_bytes": true,
+      "science_unchanged": true
+    },
+    {
+      "number": 2,
+      "sha256": "7655589f93cd47f357b8c3444f76afb250c316d6de317f5a9948d0f9ebaacc01",
+      "matches_v1_bytes": true,
+      "science_unchanged": true
+    },
+    {
+      "number": 3,
+      "sha256": "9d3768fce57863d6d733ea7792cb9ed69806ef84cc8dcd5187874675dda571e6",
+      "matches_v1_bytes": true,
+      "science_unchanged": true
+    },
+    {
+      "number": 4,
+      "sha256": "512e2212d22c83dfbf9c54f5c5829b02818e19610f710b6a4bad2cc6aa3769b7",
+      "matches_v1_bytes": true,
+      "science_unchanged": true
+    },
+    {
+      "number": 5,
+      "sha256": "03600116a5086d824740256a079cad7534cf80b2236cef5ecd19dee4e8043f8f",
+      "matches_v1_bytes": true,
+      "science_unchanged": true
+    },
+    {
+      "number": 6,
+      "sha256": "d89e01aef179deba12b2e5e6e8bcf991baf207a3076c7cd5e6d3c8f4539422e4",
+      "matches_v1_bytes": true,
+      "science_unchanged": true
+    },
+    {
+      "number": 7,
+      "sha256": "8e00902f736fec22081083435d7a4cb22562f45c5f5db7a1d499af1f4ce676df",
+      "matches_v1_bytes": true,
+      "science_unchanged": true
+    },
+    {
+      "number": 8,
+      "sha256": "a3526e3a339bb535cd37f1255dbe9ab79d0f4c7b279d1454b3e0c13fe988feef",
+      "matches_v1_bytes": true,
+      "science_unchanged": true
+    },
+    {
+      "number": 9,
+      "sha256": "f0ebd23139f5ef05f7516e8f77c202f7e7431e2aa79751d268929348b5c62706",
+      "matches_v1_bytes": true,
+      "science_unchanged": true
+    },
+    {
+      "number": 10,
+      "sha256": "d44a5fd9d86cba79b70a36aaf70b7d9e9095a29fbde78efd8e516ff23d677a0d",
+      "matches_v1_bytes": true,
+      "science_unchanged": true
+    },
+    {
+      "number": 11,
+      "sha256": "0c149e110e72e354705ba9513ae5ad3f52f36a54e80ff54322e64e5963f93e77",
+      "matches_v1_bytes": true,
+      "science_unchanged": true
+    },
+    {
+      "number": 12,
+      "sha256": "49f6d3c609a9ae93895c12e8f8a2c0b7926d612168a18208ef0b5491f9b7bc4f",
+      "matches_v1_bytes": true,
+      "science_unchanged": true
+    },
+    {
+      "number": 13,
+      "sha256": "ad3ca1edc66b46544d15412cbeed7c6277a24d17d5d6d024d36b0b2255547aa8",
+      "matches_v1_bytes": true,
+      "science_unchanged": true
+    },
+    {
+      "number": 14,
+      "sha256": "f6892a1b680a081670f285169e1a1b9ee5b7eeb7682077d516098bb8a18a3557",
+      "matches_v1_bytes": false,
+      "science_unchanged": true
+    }
+  ],
+  "methods_unchanged_except_CTRP_display": true,
+  "declarations_unchanged_except_CTRP_display": true,
+  "table_cells_unchanged_except_CTRP_display": true,
+  "references_unchanged": true,
+  "original_figure_pixels_unchanged": true,
+  "new_scientific_analysis_or_individual_test_access": false,
+  "all_authors_approved_new_copy": false,
+  "repository_visibility_change": false,
+  "results_edits": [
+    {
+      "purpose": "Finding-led heading: Cohort composition and evaluation coverage",
+      "old_text_sha256": "ba0befd0cbc65ce0f4b1e0b0901b97cd277b3e917ba25fa5823a99ade95554c2",
+      "new_text_sha256": "fcfd4622f21ed8b0306654fa187fd02f886633800e8dafc174e180d29502e9b0"
+    },
+    {
+      "purpose": "Finding-led heading: REO-pair versus strong-expression performance in development",
+      "old_text_sha256": "8b329d73e20bc5faeafe46ac45143d7088a8916da79411e47649a623a9fe4334",
+      "new_text_sha256": "feabd09391f44833e7f0c8efec2e8247de8cfca62ec378ad1c823eac461d907d"
+    },
+    {
+      "purpose": "Finding-led heading: Matched-candidate representation comparisons",
+      "old_text_sha256": "297646173400b38d587c0071ed2b34bb1213feb2352f2c6cb8da52dd66bd6fbe",
+      "new_text_sha256": "d3fc6ad084e38b1c21d5e8f047a4f03cdd8ee71906b6700ef44f838daf4ef28b"
+    },
+    {
+      "purpose": "Finding-led heading: Zero molecular solutions and fitted-model status",
+      "old_text_sha256": "5d0f7d17f8a491006cf374cf11cd3d336be26634aed30d9a4020fe16c660ba6b",
+      "new_text_sha256": "01e5cf73955a53ec2396e208b54920ca4acba1533d8679dda6ce8d08141536b8"
+    },
+    {
+      "purpose": "Finding-led heading: Leave-one-tissue-out sensitivity",
+      "old_text_sha256": "7b3fe29e7f4c7d3ee42348a491b60e5a8e3d417f51654f23d91ed25cc30250f6",
+      "new_text_sha256": "c5a26fef9abc8dcb34bdfb05310d4d5f4c372a284971fd231dc1dc7741c0eed3"
+    },
+    {
+      "purpose": "Finding-led heading: Locked CTRPv2 cross-screen evaluation",
+      "old_text_sha256": "b268862ae3a19ae043c235a8a2094fe0bbf110ff9db9a2678a2d221b4f1c3451",
+      "new_text_sha256": "543b5cf232cfd78066a980cbb9dee28be3f025f28648cc56107ff518e80b034c"
+    },
+    {
+      "purpose": "Finding-led heading: Finite synthetic-control results",
+      "old_text_sha256": "fc9ccb1ae88c45a98b50c287abbab8b7018d78ee6d401edb28ce2338b07d9f9d",
+      "new_text_sha256": "0565f2721598f593b4b2413241db0faa54cc40cfecd697370a1307e9c4d2edbd"
+    },
+    {
+      "purpose": "Remove duplicate execution counts already retained in Methods; solver status retained under zero solutions",
+      "old_text_sha256": "2f1eb072873e7f9a55f93d744559bdcc6cc85b74014cf44c1779fc81ab237424",
+      "new_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "purpose": "Lead the primary comparison with the research finding",
+      "old_text_sha256": "8c8a1c5be3973247bb9971b58e1215e56a9a035746a82f8a266d47341302b893",
+      "new_text_sha256": "f98cbf5ae935bbf61f4406ac13136126221f7c20f4ba2eb5e25d4a6fc5580029"
+    },
+    {
+      "purpose": "Remove repeated per-partition point values; retain direction and complete Table S5",
+      "old_text_sha256": "85c4f80ec0eecfd346cd10a68852ffd3fec53b566f19cbda0a3988fd2ccf33e9",
+      "new_text_sha256": "ba577e2c60883247700c79130e10212149b17238551df0654e5b371bffa2904d"
+    },
+    {
+      "purpose": "Separate the molecular increment from the primary representation contrast",
+      "old_text_sha256": "19e53ae866c4157ca5940a556c2eb0ddcadca6bcdf299234b64575673959693d",
+      "new_text_sha256": "f2aa53a1dd08f3a75c18558384811581b59c13c33609753ac27d562459221808"
+    },
+    {
+      "purpose": "Remove duplicate tissue-increment values; preserve training-only outcome-informed candidate policy",
+      "old_text_sha256": "c87fa025713ba6e87c177d3edb737a995ef73d1aa9fdc2996d0f081371c8083c",
+      "new_text_sha256": "9ba738e0e7a28e6cf4986f53a86859819be75302cf6195b1056ae2f130794d30"
+    },
+    {
+      "purpose": "Make the role of the rank arm explicit; retain all values in unchanged Table S10",
+      "old_text_sha256": "cdbc65ae4d948dcd3710ec1ff48539b9d198cd2a4b129be6812963acbaf55c22",
+      "new_text_sha256": "9fec1f46231487ab321a3fe8f1a72996b98204aed5a3c7f8cf85831776cfe885"
+    },
+    {
+      "purpose": "Distinguish external absolute association from representation advantage",
+      "old_text_sha256": "79ea7979a2c361803baae825d2dbd5d786f08c5d496559a253777b4824e166c9",
+      "new_text_sha256": "e6867fd296c6e126acde88c58dedacf2368e85421e7688ba0f74dc1b16eb6dea"
+    },
+    {
+      "purpose": "Avoid duplicating drug-specific point values already displayed in Table 2",
+      "old_text_sha256": "e5a2056bf129b677b9f80d9765a7e9508ed7a3133c3995dd311c54189edbbebc",
+      "new_text_sha256": "fdbb931380e5777308ab14ef14d96aa7bcf3237f5f8b9f61847f25c0817a7b5c"
+    },
+    {
+      "purpose": "Use an explicitly descriptive statement for external absolute point estimates",
+      "old_text_sha256": "c97b546dc381b81a24b555e54097301694133770a3d9bb5241e6459bd4bc8a8d",
+      "new_text_sha256": "60b83899834889bddaa03efd7399bb013708ccce2e31e42bd13280acaa9469e8"
+    },
+    {
+      "purpose": "Introduce the scientific role of the finite controls",
+      "old_text_sha256": "567139a8660208c6c217bd90a18092a376cfe468a5a803e73da58da1fc09a029",
+      "new_text_sha256": "ea7d7687a7b76b2130f4c089c2137b50c37ad52d387208a20c38f7e1011742df"
+    },
+    {
+      "purpose": "Focus synthetic prose on the constructed contrasts; keep all multi-arm metrics in unchanged Table S11 and Supplement",
+      "old_text_sha256": "8184e36afc5cf3df6d57e12c66097f9bd1a118d9742054d33cdfdebebee54a4f",
+      "new_text_sha256": "4b8de2ca24140260916a0352e6e80a006e740075e06161d19860858d6b33cdea"
+    }
+  ]
+}

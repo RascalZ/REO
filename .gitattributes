@@ -29,3 +29,8 @@ scripts/render_m08_word.ps1 -text !eol whitespace=cr-at-eol
 # Keep the author-copy render entry points byte-identical to QA hashes.
 scripts/render_author_review_v1.ps1 -text !eol whitespace=cr-at-eol
 scripts/render_author_review_v1.vbs -text !eol whitespace=cr-at-eol
+# Preserve byte-bound render entry points for the question-led reading copy.
+scripts/render_narrative_v1.ps1 -text !eol whitespace=cr-at-eol
+scripts/render_narrative_v1.vbs -text !eol whitespace=cr-at-eol
+# Keep the byte-bound Results excerpt, including inherited paragraph-end spacing.
+docs/narrative_v1/drafts/results.md whitespace=-blank-at-eol

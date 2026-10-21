@@ -60,3 +60,7 @@ manuscript_v1/qa_m08_v1/
 # Author-populated reading copies and extracted prior-submission facts stay local.
 manuscript_v1/author_review_v1/
 docs/author_review_v1/local_private/
+
+# Question-led narrative revision with inherited author details stays local.
+manuscript_v1/author_review_v2/
+docs/narrative_v1/local_private/

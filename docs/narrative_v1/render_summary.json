@@ -1,0 +1,82 @@
+{
+  "date": "2026-10-21",
+  "scope": "Source preservation and rendered editorial layout, not scientific replication",
+  "original_source_unchanged": true,
+  "protected_source_files": 60,
+  "all_protected_source_files_unchanged": true,
+  "manual_visual_inspection_confirmed": true,
+  "render_script_sha256": "9e46cfb3daf01205293c0e39d960d4a133bf2b2e4d04f83eca3433b6bc6ece33",
+  "word_dispatch_script_sha256": "a6e395a85e78c8fd54953ccda27a1f018afd9a54b2124ab4d35a2351ffe41a02",
+  "audit_script_sha256": "aae12faaa71155536ad42957999f2ab4bc59f60e32406e67dd7cc0d93b252633",
+  "documents": {
+    "main": {
+      "docx_sha256": "1e91958b51ce0b800fcc5d22cb77745faf7e425f7fb50697f6c6f3ca1c381f54",
+      "pdf_sha256": "03f67960a97189b9b7a6ef7534b6d68c6f747058c0698a5c5a5f46b69ccbebd3",
+      "pages": 39,
+      "render_not_older_than_docx": true,
+      "sequential_page_numbers": true,
+      "no_blank_pages": true,
+      "all_used_fonts_embedded": true,
+      "text_outside_page": 0,
+      "figure_locations": [
+        {
+          "page": 6,
+          "width_mm": 156.10416666666666,
+          "combined_height_mm": 197.68512377777776,
+          "within_225mm": true,
+          "image_within_body": true
+        },
+        {
+          "page": 20,
+          "width_mm": 156.10416666666666,
+          "combined_height_mm": 141.0254848888889,
+          "within_225mm": true,
+          "image_within_body": true
+        },
+        {
+          "page": 23,
+          "width_mm": 156.10416666666666,
+          "combined_height_mm": 199.80179044444444,
+          "within_225mm": true,
+          "image_within_body": true
+        },
+        {
+          "page": 25,
+          "width_mm": 156.10416666666666,
+          "combined_height_mm": 219.53829599999997,
+          "within_225mm": true,
+          "image_within_body": true
+        }
+      ],
+      "focus_pages": [
+        1,
+        5,
+        6,
+        18,
+        20,
+        23,
+        25,
+        27,
+        32,
+        33,
+        34
+      ],
+      "current_access_wording_rendered": true
+    },
+    "supplement": {
+      "docx_sha256": "f6892a1b680a081670f285169e1a1b9ee5b7eeb7682077d516098bb8a18a3557",
+      "pdf_sha256": "16a74dce2106dbfbcb5c17d1748127fbe1083241cf1e6f52e80b42e097dc01df",
+      "pages": 19,
+      "render_not_older_than_docx": true,
+      "sequential_page_numbers": true,
+      "no_blank_pages": true,
+      "all_used_fonts_embedded": true,
+      "text_outside_page": 0,
+      "figure_locations": [],
+      "focus_pages": [
+        1
+      ]
+    }
+  },
+  "mechanical_checks_pass": true
+}
