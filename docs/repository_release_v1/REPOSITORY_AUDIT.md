@@ -22,6 +22,8 @@ GitHub连接器实时返回仓库为private，当前账号RascalZ的权限为adm
 
 历史扫描范围和排除项见history_secret_scan.json。该有界扫描不是完整无敏感信息保证；未读取工作区原始CTRP响应、索引或个体预测。新检查不构成原始科学结果独立复现。Git科学源、冻结配置和结果不变。
 
+规范化实现提交`da9d6f3`的[GitHub CI运行40310525383](https://github.com/RascalZ/REO/actions/runs/40310525383)已实际完成：新增`inference-contracts`与保留的`phase-1`两作业均为success。见github_ci_receipt.json；这是代码/合同检查，不是科学重训。
+
 ## 仍待真实完成的发布事项
 
 - 仓库仍私有；提供实际编辑/审稿人或公众访问方式。
