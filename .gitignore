@@ -75,3 +75,8 @@ manuscript_v1/author_review_v3_zh/
 
 # Manuscript-bearing skill review inputs, role reports and isolated utility runtime.
 docs/reviews/skill_panel_v1/local_private/
+
+# Minimal paired manuscript clarification copies retain author details locally.
+manuscript_v1/author_review_v4/
+manuscript_v1/author_review_v4_zh/
+docs/minor_clarification_v1/local_private/

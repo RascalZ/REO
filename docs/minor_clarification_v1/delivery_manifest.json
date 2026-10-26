@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-26",
+  "scope": "New local v4 author-reading files only; no submission approval claimed",
+  "files": {
+    "manuscript_v1/author_review_v4/Manuscript_BMC_Genomics_author_review_v4.md": "1d64b11b8693f0905a2f70cd20b8f82c9772e31dd20cd0a22d0c4959d2014ddb",
+    "manuscript_v1/author_review_v4/Manuscript_BMC_Genomics_author_review_v4.docx": "1041f7a418eceec045321da3f2a67365d8809643c23b710e4f26b7768a21de41",
+    "manuscript_v1/author_review_v4/Manuscript_BMC_Genomics_author_review_v4.pdf": "8fc82e940a2d82104fa0f27331ba41e0c6fc883e44e7eca969db7f04986a5ce7",
+    "manuscript_v1/author_review_v4_zh/Manuscript_BMC_Genomics_author_review_v4_zh.md": "377031b688d19efe6429bf3587207d46f99eccfbbba947eeaf2c63f3a48ea133",
+    "manuscript_v1/author_review_v4_zh/Manuscript_BMC_Genomics_author_review_v4_zh.docx": "421407c7e9293e6ddfc6574447e02484c6adc0d7665afec6a201993289733004",
+    "manuscript_v1/author_review_v4_zh/Manuscript_BMC_Genomics_author_review_v4_zh.pdf": "323530fa01b49f9930674c6ac563b69fddf0e01d1d8652f9a842074209776579"
+  },
+  "prior_files_unchanged_this_operation": 56,
+  "code_files": {
+    "src/build_minor_clarification_v1.py": "e85a7981106d984e23a1a1c2e354b59c18966e08ea25cc914f6357561bdb10ec",
+    "src/audit_minor_clarification_v1.py": "90eb148e3b880fcdbafa2d4a31879433e5073d2b329e851c97f74e5b72499b95",
+    "scripts/render_minor_clarification_v1.vbs": "d12926b2c159462c3fbf3ec446262c0270cb50bd8f858c526f6a4d1e9b1947ab"
+  }
+}

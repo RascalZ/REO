@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-26",
+  "scope": "Two clarifications; no scientific recomputation",
+  "preserved_files": 56,
+  "languages": {
+    "en": {
+      "changed_blocks": 2,
+      "unchanged_nonempty_blocks": 195,
+      "references_abstract_results_discussion_declarations_unchanged": true,
+      "tables_identical": 2,
+      "all_media_identical": 5,
+      "figure_count": 4,
+      "figure_pages": [
+        6,
+        20,
+        23,
+        25
+      ],
+      "pdf_pages": 39,
+      "text_outside_page": 0,
+      "new_text_present_in_Word_and_PDF": true,
+      "pdf_sha256": "8fc82e940a2d82104fa0f27331ba41e0c6fc883e44e7eca969db7f04986a5ce7",
+      "page_pngs": 39
+    },
+    "zh": {
+      "changed_blocks": 2,
+      "unchanged_nonempty_blocks": 195,
+      "references_abstract_results_discussion_declarations_unchanged": true,
+      "tables_identical": 2,
+      "all_media_identical": 5,
+      "figure_count": 4,
+      "figure_pages": [
+        4,
+        11,
+        13,
+        15
+      ],
+      "pdf_pages": 22,
+      "text_outside_page": 0,
+      "new_text_present_in_Word_and_PDF": true,
+      "pdf_sha256": "323530fa01b49f9930674c6ac563b69fddf0e01d1d8652f9a842074209776579",
+      "page_pngs": 22
+    }
+  },
+  "visual_review_status": "pending",
+  "individual_CTRP_access": false,
+  "new_training_resampling_scoring": false,
+  "renderer": "Native Microsoft Word read-only PDF export, bundled Poppler page PNGs",
+  "skill_renderer_attempt": "render_docx.py failed: no LibreOffice soffice.exe; native Word fallback used",
+  "preexisting_historical_differences": [
+    {
+      "file": "manuscript_v1/author_review_v2_zh/Manuscript_BMC_Genomics_author_review_v2_zh.docx",
+      "historical_sha256": "3339cc45c1650cb1c98613da9c26ce27a30a5d90288a24ce2dd5330aa0ae63d4",
+      "pre_edit_sha256": "92051b85786af58f558adce92f9da2aba525d189ea046e069bc8682f6cdcbe0f",
+      "status": "preexisting_difference_preserved_not_restored"
+    }
+  ],
+  "audit_sha256": "90eb148e3b880fcdbafa2d4a31879433e5073d2b329e851c97f74e5b72499b95",
+  "render_helper_sha256": "d12926b2c159462c3fbf3ec446262c0270cb50bd8f858c526f6a4d1e9b1947ab",
+  "paired_numeric_citation_blocks_checked": 197,
+  "mechanical_checks_passed": true
+}

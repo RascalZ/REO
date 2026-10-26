@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-26",
+  "scope": "Two author-approved reporting clarifications only",
+  "protected_files": 56,
+  "languages": {
+    "en": {
+      "source": "manuscript_v1/author_review_v3/Manuscript_BMC_Genomics_author_review_v3.md",
+      "source_sha256": "65490f2d9a51cf8e4594e8db3713c367c83e8e8a8b1aec5f77b4eb67efcdf4be",
+      "output": "manuscript_v1/author_review_v4/Manuscript_BMC_Genomics_author_review_v4.md",
+      "md_sha256": "1d64b11b8693f0905a2f70cd20b8f82c9772e31dd20cd0a22d0c4959d2014ddb",
+      "docx_sha256": "1041f7a418eceec045321da3f2a67365d8809643c23b710e4f26b7768a21de41",
+      "changed_blocks": 2,
+      "unchanged_nonempty_blocks": 195,
+      "changed_ooxml_members": [
+        "word/document.xml"
+      ],
+      "edits": [
+        {
+          "id": "AUC_ENDPOINT",
+          "prefix": "The continuous outcome was",
+          "anchor": "lower in-vitro drug sensitivity [26].",
+          "addition": " External responses used the CTRP v2 post-QC sigmoid-curve field area_under_curve, retained on its released scale without additional normalization. For this viability-curve endpoint, larger AUC values were interpreted as lower sensitivity; cross-screen evaluation compared within-drug rankings rather than absolute AUC values.",
+          "old_block": "The continuous outcome was the source-reported fitted dose-response area under the curve (AUC), analyzed on the source AUC scale without dichotomization or response thresholds. Training-only target standardization was inverted for evaluation. Under the GDSC documentation's viability-curve convention, a larger AUC corresponds to greater residual viability across tested concentrations and thus lower in-vitro drug sensitivity [26]. The analysis unit was a canonical cell-line biological group for one compound. Related or duplicate model identities were grouped before data splitting so that a biological group could not occur in both training and test partitions. Each eligible group contributed at most one response record per compound after the frozen cohort curation rules.",
+          "replacement": "lower in-vitro drug sensitivity [26]. External responses used the CTRP v2 post-QC sigmoid-curve field area_under_curve, retained on its released scale without additional normalization. For this viability-curve endpoint, larger AUC values were interpreted as lower sensitivity; cross-screen evaluation compared within-drug rankings rather than absolute AUC values.",
+          "new_block": "The continuous outcome was the source-reported fitted dose-response area under the curve (AUC), analyzed on the source AUC scale without dichotomization or response thresholds. Training-only target standardization was inverted for evaluation. Under the GDSC documentation's viability-curve convention, a larger AUC corresponds to greater residual viability across tested concentrations and thus lower in-vitro drug sensitivity [26]. External responses used the CTRP v2 post-QC sigmoid-curve field area_under_curve, retained on its released scale without additional normalization. For this viability-curve endpoint, larger AUC values were interpreted as lower sensitivity; cross-screen evaluation compared within-drug rankings rather than absolute AUC values. The analysis unit was a canonical cell-line biological group for one compound. Related or duplicate model identities were grouped before data splitting so that a biological group could not occur in both training and test partitions. Each eligible group contributed at most one response record per compound after the frozen cohort curation rules."
+        },
+        {
+          "id": "LOTO_CAPTION_REASON",
+          "prefix": "Figure 4. Defined leave-one-tissue-out",
+          "anchor": "Only 34 of 80 drug-by-tissue contrasts are defined, so the strict equal-drug macro is undefined.",
+          "addition": " In this 80-cell display grid, all 46 undefined contrasts involved constant held-out predictions from at least one zero-molecular solution.",
+          "old_block": "Figure 4. Defined leave-one-tissue-out contrasts and locked CTRP v2 cross-screen evaluation. (A) For each drug and each of the ten prespecified held-out tissues, teal marks a defined within-tissue Spearman difference between the response-association gene-pair model and the strong-expression model; gray marks an undefined difference. Counts at the left report the number of defined contrasts out of ten. Only 34 of 80 drug-by-tissue contrasts are defined, so the strict equal-drug macro is undefined. (B) Drug-specific and equal-drug macro differences in external Spearman correlation for the full-development response-association gene-pair model versus the strong-expression model; right-side labels give the number of shared external cell-line groups for each drug. Bars are family-9 adjusted conditional bootstrap intervals based on the locked models and external groups. Three drug-specific differences are exactly zero because both models have zero molecular coefficients. CTRP v2 is a retrospective external screen with the same CCLE expression input, not an independent expression-platform or clinical validation.",
+          "replacement": "Only 34 of 80 drug-by-tissue contrasts are defined, so the strict equal-drug macro is undefined. In this 80-cell display grid, all 46 undefined contrasts involved constant held-out predictions from at least one zero-molecular solution.",
+          "new_block": "Figure 4. Defined leave-one-tissue-out contrasts and locked CTRP v2 cross-screen evaluation. (A) For each drug and each of the ten prespecified held-out tissues, teal marks a defined within-tissue Spearman difference between the response-association gene-pair model and the strong-expression model; gray marks an undefined difference. Counts at the left report the number of defined contrasts out of ten. Only 34 of 80 drug-by-tissue contrasts are defined, so the strict equal-drug macro is undefined. In this 80-cell display grid, all 46 undefined contrasts involved constant held-out predictions from at least one zero-molecular solution. (B) Drug-specific and equal-drug macro differences in external Spearman correlation for the full-development response-association gene-pair model versus the strong-expression model; right-side labels give the number of shared external cell-line groups for each drug. Bars are family-9 adjusted conditional bootstrap intervals based on the locked models and external groups. Three drug-specific differences are exactly zero because both models have zero molecular coefficients. CTRP v2 is a retrospective external screen with the same CCLE expression input, not an independent expression-platform or clinical validation."
+        }
+      ]
+    },
+    "zh": {
+      "source": "manuscript_v1/author_review_v3_zh/Manuscript_BMC_Genomics_author_review_v3_zh.md",
+      "source_sha256": "0224625920569c9ebfe25782d0dab054551b8a9e258b5094e7ffeaa923a2d591",
+      "output": "manuscript_v1/author_review_v4_zh/Manuscript_BMC_Genomics_author_review_v4_zh.md",
+      "md_sha256": "377031b688d19efe6429bf3587207d46f99eccfbbba947eeaf2c63f3a48ea133",
+      "docx_sha256": "421407c7e9293e6ddfc6574447e02484c6adc0d7665afec6a201993289733004",
+      "changed_blocks": 2,
+      "unchanged_nonempty_blocks": 195,
+      "changed_ooxml_members": [
+        "word/document.xml",
+        "word/header1.xml"
+      ],
+      "edits": [
+        {
+          "id": "AUC_ENDPOINT",
+          "prefix": "连续结局为来源数据报告的",
+          "anchor": "即体外药物敏感性越低[26]。",
+          "addition": "外部反应使用CTRP v2发布的经质量控制（post-QC）的sigmoid拟合曲线字段area_under_curve，保留发布尺度，不作额外归一化。对于这一细胞活力曲线端点，本研究将较大AUC解释为较低敏感性；跨筛选评价比较药物内排序，而非AUC绝对值。",
+          "old_block": "连续结局为来源数据报告的拟合剂量—反应曲线下面积（AUC），在原始来源AUC尺度上分析，不进行二分或设置反应阈值。仅在训练数据中实施的目标标准化在评价时被逆变换。按GDSC文档的细胞活力曲线约定，AUC越大表示在所测浓度范围内残余活力越高，即体外药物敏感性越低[26]。分析单位是某一化合物对应的规范化细胞系生物组。相关或重复的模型身份在数据划分前归组，确保同一生物组不会同时出现在训练和测试分区中。按冻结队列整理规则，每个合格组对每种化合物最多贡献一条反应记录。",
+          "replacement": "即体外药物敏感性越低[26]。外部反应使用CTRP v2发布的经质量控制（post-QC）的sigmoid拟合曲线字段area_under_curve，保留发布尺度，不作额外归一化。对于这一细胞活力曲线端点，本研究将较大AUC解释为较低敏感性；跨筛选评价比较药物内排序，而非AUC绝对值。",
+          "new_block": "连续结局为来源数据报告的拟合剂量—反应曲线下面积（AUC），在原始来源AUC尺度上分析，不进行二分或设置反应阈值。仅在训练数据中实施的目标标准化在评价时被逆变换。按GDSC文档的细胞活力曲线约定，AUC越大表示在所测浓度范围内残余活力越高，即体外药物敏感性越低[26]。外部反应使用CTRP v2发布的经质量控制（post-QC）的sigmoid拟合曲线字段area_under_curve，保留发布尺度，不作额外归一化。对于这一细胞活力曲线端点，本研究将较大AUC解释为较低敏感性；跨筛选评价比较药物内排序，而非AUC绝对值。分析单位是某一化合物对应的规范化细胞系生物组。相关或重复的模型身份在数据划分前归组，确保同一生物组不会同时出现在训练和测试分区中。按冻结队列整理规则，每个合格组对每种化合物最多贡献一条反应记录。"
+        },
+        {
+          "id": "LOTO_CAPTION_REASON",
+          "prefix": "图4. 有定义的留一组织法",
+          "anchor": "80个药物—组织差值中仅34个有定义，因此严格等权药物宏指标未定义。",
+          "addition": "在这一80格展示网格中，全部46个未定义差值均涉及至少一个零分子解模型，其在留出组织内的预测为常数。",
+          "old_block": "图4. 有定义的留一组织法差值及锁定CTRP v2跨筛选评价。（A）对每种药物和十个预先规定留出组织中的每个组织，青绿色标记反应关联基因对模型减强表达量模型的组织内Spearman差值有定义，灰色标记差值未定义。左侧计数表示十个组织中有定义的差值数量。80个药物—组织差值中仅34个有定义，因此严格等权药物宏指标未定义。（B）全开发集反应关联基因对模型相对于强表达量模型的外部Spearman相关药物特异及等权药物宏差值；右侧标签给出每种药物的共同外部细胞系组数。误差线为基于锁定模型和外部组的family-9校正条件bootstrap区间。三种药物的差值精确为零，因为两个模型的分子系数均为零。CTRP v2是使用同一CCLE表达输入的回顾性外部筛选，而非独立表达平台或临床验证。",
+          "replacement": "80个药物—组织差值中仅34个有定义，因此严格等权药物宏指标未定义。在这一80格展示网格中，全部46个未定义差值均涉及至少一个零分子解模型，其在留出组织内的预测为常数。",
+          "new_block": "图4. 有定义的留一组织法差值及锁定CTRP v2跨筛选评价。（A）对每种药物和十个预先规定留出组织中的每个组织，青绿色标记反应关联基因对模型减强表达量模型的组织内Spearman差值有定义，灰色标记差值未定义。左侧计数表示十个组织中有定义的差值数量。80个药物—组织差值中仅34个有定义，因此严格等权药物宏指标未定义。在这一80格展示网格中，全部46个未定义差值均涉及至少一个零分子解模型，其在留出组织内的预测为常数。（B）全开发集反应关联基因对模型相对于强表达量模型的外部Spearman相关药物特异及等权药物宏差值；右侧标签给出每种药物的共同外部细胞系组数。误差线为基于锁定模型和外部组的family-9校正条件bootstrap区间。三种药物的差值精确为零，因为两个模型的分子系数均为零。CTRP v2是使用同一CCLE表达输入的回顾性外部筛选，而非独立表达平台或临床验证。"
+        }
+      ]
+    }
+  },
+  "new_training_resampling_or_scoring": false,
+  "individual_CTRP_access": false,
+  "reviewer_roadmap_modified": false,
+  "other_review_items_adjudicated": false,
+  "builder_sha256": "e85a7981106d984e23a1a1c2e354b59c18966e08ea25cc914f6357561bdb10ec"
+}

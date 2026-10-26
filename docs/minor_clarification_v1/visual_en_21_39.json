@@ -1,0 +1,41 @@
+{
+  "scope": "English manuscript PNG layout QA only, pages 21 through 39",
+  "source_directory": "rebuild_v2/manuscript_v1/author_review_v4/qa/pages",
+  "method": "Each listed PNG was displayed and visually inspected using tools.view_image with detail original, then image(image_url, original); batches contained at most three pages.",
+  "overall_result": "pass",
+  "issues": [],
+  "viewed_pages": [
+    {"page": 21, "result": "pass", "checks": "Body text, heading, glyphs, margins, line numbers, pagination."},
+    {"page": 22, "result": "pass", "checks": "Body text and heading are clear; lower-page whitespace before the next full figure page is acceptable."},
+    {"page": 23, "result": "pass", "checks": "Figure 3 panels, axes, labels and legend are complete; caption and following heading remain readable without overlap."},
+    {"page": 24, "result": "pass", "checks": "Body text, heading, bottom line and footer remain within the page without clipping or overlap."},
+    {"page": 25, "result": "pass", "checks": "Figure 4 panels, tissue labels, drug labels, axes, legend and caption are complete and readable; added LOTO explanation is fully visible on this page."},
+    {"page": 26, "result": "pass", "checks": "Body text, paragraph spacing, glyphs, margins and footer."},
+    {"page": 27, "result": "pass", "checks": "Table 2 title, header, all rows and cell contents are intact; table notes, following heading and body text do not overlap."},
+    {"page": 28, "result": "pass", "checks": "Body text, section heading, glyphs, margins and footer."},
+    {"page": 29, "result": "pass", "checks": "Body text, paragraph spacing, glyphs, margins and footer."},
+    {"page": 30, "result": "pass", "checks": "Body text, paragraph spacing, glyphs, margins and footer."},
+    {"page": 31, "result": "pass", "checks": "Body text, bottom line and footer are complete and separated."},
+    {"page": 32, "result": "pass", "checks": "Section headings, body text, paragraph spacing, margins and footer."},
+    {"page": 33, "result": "pass", "checks": "Headings, body text, long identifier wrapping, margins and footer."},
+    {"page": 34, "result": "pass", "checks": "Headings and reference entries are readable, with intact wrapping and no clipping."},
+    {"page": 35, "result": "pass", "checks": "Reference entries, special glyphs, URLs, wrapping, margins and footer."},
+    {"page": 36, "result": "pass", "checks": "Reference entries, special glyphs, URLs, wrapping, margins and footer."},
+    {"page": 37, "result": "pass", "checks": "Reference entries, URLs, wrapping, bottom line and footer."},
+    {"page": 38, "result": "pass", "checks": "Reference wrapping, Additional files heading and entries are readable and within the page."},
+    {"page": 39, "result": "pass", "checks": "Additional-file entries and filenames, wrapping, margins and footer are intact."}
+  ],
+  "focus_page_25": {
+    "result": "pass",
+    "added_caption_explanation": "The explanation that all 46 undefined contrasts involved constant held-out predictions from at least one zero-molecular solution is fully visible and readable in Figure 4's caption.",
+    "caption_pagination": "Caption remains complete on page 25.",
+    "clipping_or_overlap": "none observed"
+  },
+  "boundaries": [
+    "Layout QA of the displayed PNG pages only; no expansion into scientific review or numerical verification.",
+    "No external uploads or services used.",
+    "No individual-level data read.",
+    "No manuscript, DOCX, PDF, plan or Git modifications.",
+    "This record contains no copied author information."
+  ]
+}

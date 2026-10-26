@@ -43,3 +43,6 @@ docs/reviews/skill_panel_v1/** -text !eol whitespace=cr-at-eol
 # Frozen source cards retain their original final blank lines as hash inputs.
 docs/reviews/skill_panel_v1/precommitments/*.md whitespace=cr-at-eol,-blank-at-eof
 docs/reviews/skill_panel_v1/review_reports/*.md whitespace=cr-at-eol,-blank-at-eof
+# Keep the bounded clarification audit and native Word helper byte-identical.
+docs/minor_clarification_v1/*.json -text !eol whitespace=cr-at-eol
+scripts/render_minor_clarification_v1.vbs -text !eol whitespace=cr-at-eol

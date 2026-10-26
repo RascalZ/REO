@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-26",
+  "verification_mode": "Direct local metadata and saved aggregate-state inspection by assistant; no new scoring",
+  "human_source_verification_claimed": false,
+  "author_scope_authorization": "User accepted the previously discussed minimal edits to Minor 1 and 2 only. No author choice inferred for other findings.",
+  "sources": {
+    "data_raw/ctrp/v20._COLUMNS.txt": "d26e8f0be5e2a384116d7836a0855ff6296f1ec66ec86907735def493eb0ecae",
+    "data_raw/ctrp/v20._README.txt": "253ce21722f381b5ee6398c7a63a16b8141cef12b52f1fb76cd5bce21c18ee93",
+    "reports/阶段12_P6端点剂量无响应审计.md": "438ad08388f642c8b2e6aca23a340ec437c014d2dd5ac820125ca43428370c03",
+    "results/tissue_loto/metrics_by_drug_tissue_model.csv": "62a5badab8791d1cb6fee05ad0de7ac522c2603209365667685bb7a7eafdadab",
+    "manuscript_v1/author_review_v2/Additional_files/Additional_file_1.csv": "bbcd0b65e688f05bb42a090f491c8ef29525d3b9b1a77183c93ea1e6404ccf33"
+  },
+  "claims": {
+    "AUC_ENDPOINT": [
+      "data_raw/ctrp/v20._COLUMNS.txt:13-17",
+      "data_raw/ctrp/v20._README.txt:19",
+      "reports/阶段12_P6端点剂量无响应审计.md:7-10"
+    ],
+    "LOTO_CAPTION_REASON": [
+      "manuscript_v1/author_review_v2/Additional_files/Additional_file_1.csv",
+      "results/tissue_loto/metrics_by_drug_tissue_model.csv"
+    ]
+  },
+  "scope_fidelity_reviewer": "/root/minor_edit_scope_check",
+  "preexisting_review_roadmap_items": [
+    "REV-005",
+    "REV-002"
+  ],
+  "original_roadmap_unmodified": true,
+  "individual_CTRP_access": false
+}

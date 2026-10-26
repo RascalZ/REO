@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-26",
+  "mechanical_checks": "PASS",
+  "visual_checks": "PASS",
+  "scope_fidelity": "PASS",
+  "rendered_pages": {
+    "en": 39,
+    "zh": 22
+  },
+  "pages_actually_viewed": 61,
+  "protected_files_unchanged_this_operation": 56,
+  "changed_MD_blocks_per_language": 2,
+  "new_training_resampling_scoring": false,
+  "individual_CTRP_access": false,
+  "article_tables_or_figure_pixels_changed": false,
+  "author_declarations_changed": false,
+  "original_review_roadmap_changed": false,
+  "preexisting_historical_differences_preserved": 1,
+  "note": "One older Chinese v2 Word already differed from a historical manifest before this operation. Its current bytes were preserved. Transient Word lock files are excluded from protected scientific deliverables.",
+  "evidence": {
+    "build_manifest.json": "f1fc460a19218c02c07d74d1aff5191af6eeea0fd34b73865598f53fd537eead",
+    "preservation_manifest.json": "88bd47d0af936af8be261b8f66771d5fb3a57989cfe3aef70d92ad5ceb6649fd",
+    "mechanical_audit.json": "7d022e2eefb788ba3457fcde82eb4a6fad1a0ff82991c2adada18a441bdfc5e6",
+    "visual_inspection.json": "3557e80e3d72e419245173ad0468c1ba586d0cda378483ed38460c7fbbeedb5c"
+  }
+}

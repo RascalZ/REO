@@ -1,0 +1,24 @@
+{
+  "date": "2026-10-26",
+  "scope": "仅中文 author_review_v4_zh 渲染页 01–11 的独立窄范围视觉QA",
+  "method": "对每一页调用 view_image(detail=original)，再用 image(detail=original) 展示，实际逐页查看全分辨率图像；未以缩略图或机械检查代替目视。",
+  "directory": "manuscript_v1/author_review_v4_zh/qa/pages",
+  "actual_viewed_pages": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+  "pages": [
+    {"page": 1, "file": "page-01.png", "result": "通过", "observation": "中文正文、标题及页眉页脚完整，未见缺字、裁切或重叠。"},
+    {"page": 2, "file": "page-02.png", "result": "通过", "observation": "中文正文和小标题清晰，段落及页底续文均在边界内。"},
+    {"page": 3, "file": "page-03.png", "result": "通过", "observation": "跨页续文、方法标题及正文完整，未见排版遮挡。"},
+    {"page": 4, "file": "page-04.png", "result": "通过", "observation": "图1全部框、连线和标签完整；中文图注及下方正文清晰，无裁切重叠。"},
+    {"page": 5, "file": "page-05.png", "result": "通过", "observation": "重点实际查看新增AUC文字：发布方post-QC字段、area_under_curve、原尺度、方向解释及药物内排序两句均清晰完整，换行正常，无缺字或溢出。"},
+    {"page": 6, "file": "page-06.png", "result": "通过", "observation": "中文正文、数字及英文字段清晰，标题和段落未见遮挡。"},
+    {"page": 7, "file": "page-07.png", "result": "通过", "observation": "正文、行内公式、英文标识及小标题可读，未见裁切重叠。"},
+    {"page": 8, "file": "page-08.png", "result": "通过", "observation": "正文和统计符号完整可读，页底内容未被页码遮挡。"},
+    {"page": 9, "file": "page-09.png", "result": "通过", "observation": "正文、软件标识及长哈希串完整处于页内，无文字遮挡。"},
+    {"page": 10, "file": "page-10.png", "result": "通过", "observation": "表1列标题、八药行及合计行全部完整，表线、单元格内容和表后说明清晰，未见缺行缺列、裁切或重叠。"},
+    {"page": 11, "file": "page-11.png", "result": "通过", "observation": "页首表注文字完整；图2全部药物标签、误差线、坐标轴和图下注释可读，中文图注及后续正文均完整。"}
+  ],
+  "issues_requiring_change": [],
+  "conclusion": "第01–11页窄范围视觉QA通过，无需修改稿件或设计。第12–22页不在本次查看范围。",
+  "manuscript_or_design_modified": false,
+  "scientific_data_accessed": false
+}
