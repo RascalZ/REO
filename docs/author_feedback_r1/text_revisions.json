@@ -1,0 +1,62 @@
+{
+  "date": "2026-10-26",
+  "scope": "Author feedback on abstract attribution, data provenance, LOTO heading and retrospective-evaluation wording; no new analysis",
+  "edits": [
+    {
+      "id": "status",
+      "prefix_en": "**Draft status:**",
+      "prefix_zh": "**稿件状态：**",
+      "en": "**Draft status:** Author reading copy, 26 October 2026. Revision following author feedback on the abstract, data provenance, tissue-held-out heading, and retrospective-evaluation description; scientific results and author declarations retained. Final author approval and release completion remain pending.",
+      "zh": "**稿件状态：** 作者通读版，2026年10月26日。根据作者对摘要、数据来源、组织留出标题和回顾性评价表述的反馈修订；保留科学结果和作者声明。最终作者批准及发布工作尚待完成。"
+    },
+    {
+      "id": "abstract_background",
+      "prefix_en": "**Background:**",
+      "prefix_zh": "**背景：**",
+      "en": "**Background:** Relative expression ordering (REO) preserves within-sample gene order under common strictly increasing transformations but discards expression magnitude. Its predictive contribution should be distinguished from tissue structure and candidate-gene selection. We compared expression, rank and complete-pair representations of matched 200-gene sets under two training-fold selection rules, with tissue-only and 2,000-gene expression baselines. Repeated nested cross-validation used GDSC2 response AUC and Cancer Cell Line Encyclopedia (CCLE) expression in 626 cell-line biological groups across a fixed eight-compound panel. Frozen models were evaluated retrospectively against Cancer Therapeutics Response Portal, version 2 (CTRP v2), responses in 175 non-overlapping groups using the same CCLE expression source.",
+      "zh": "**背景：** 相对表达顺序（REO）在对样本内基因施加相同严格递增变换时保留基因次序，但会丢弃表达幅度。其预测贡献应与组织结构和候选基因选择区分开来。我们比较两种训练折内筛选规则下匹配的200基因集合的表达量、秩和完整基因对表示，并设置仅组织基线和2,000基因表达量基线。在固定八种化合物面板中，采用GDSC2反应AUC和Cancer Cell Line Encyclopedia（CCLE）表达数据，对626个细胞系生物组进行重复嵌套交叉验证。使用同一CCLE表达来源，将冻结模型与Cancer Therapeutics Response Portal第2版（CTRP v2）175个不重叠组的反应进行回顾性评价。"
+    },
+    {
+      "id": "abstract_results",
+      "prefix_en": "**Results:**",
+      "prefix_zh": "**结果：**",
+      "en": "**Results:** Under a shared tissue-adjustment policy, REO-pair and strong-expression models showed descriptive development increments above the tissue reference (mean Spearman gains of 0.0565 and 0.0624, respectively). Coefficient audits identified 430 of 840 molecular outer fits with zero molecular terms, whose predictions reproduced the tissue reference. Matched 200-gene comparisons showed that representation contrasts varied descriptively with the candidate-selection rule. The primary pair-minus-strong-expression mean Spearman contrast was −0.0059 in development and −0.0004 across screens, with family-adjusted conditional bootstrap intervals of −0.0187 to 0.0066 and −0.0422 to 0.0435. These intervals condition on recorded predictions or fixed fitted models.",
+      "zh": "**结果：** 在相同组织校正政策下，REO基因对和强表达量模型在开发评价中均显示超出组织参照的描述性增量，平均Spearman增益分别为0.0565和0.0624。系数审计识别出840次分子外层拟合中有430次分子项为零，其预测与组织参照相同。匹配200基因比较显示，表示差值在描述性层面随候选筛选规则变化。主要的基因对减强表达量平均Spearman差值，在开发评价中为−0.0059，跨筛选评价中为−0.0004；经推断家族校正的条件bootstrap区间分别为−0.0187至0.0066和−0.0422至0.0435。这些区间以已记录预测或固定已拟合模型为条件。"
+    },
+    {
+      "id": "abstract_conclusions",
+      "prefix_en": "**Conclusions:**",
+      "prefix_zh": "**结论：**",
+      "en": "**Conclusions:** In this eight-compound setting, molecular increments above tissue could be distinguished from representation-specific benefit, but an average pair-encoding advantage was not established. Reporting matched candidate sets, same-policy tissue references and zero molecular solutions clarifies the contribution of order-based predictors within their selection-and-learning procedures.",
+      "zh": "**结论：** 在这八种化合物的研究设定中，能够将超出组织的分子增量与表示特异获益区分开来，但未能确立基因对编码的平均优势。报告匹配候选集合、同政策组织参照和零分子解，有助于明确基于顺序的预测器在其筛选与学习流程中的贡献。"
+    },
+    {
+      "id": "background_study_scope",
+      "prefix_en": "Here, we asked whether REO improved",
+      "prefix_zh": "在此，我们在沿用既往开发阶段确定的",
+      "replace_en": ["in a fixed eight-compound panel carried forward from earlier development.", "in a fixed eight-compound panel."],
+      "replace_zh": ["在此，我们在沿用既往开发阶段确定的固定八种化合物中，", "在此，我们在固定八种化合物面板中，"]
+    },
+    {
+      "id": "methods_study_design",
+      "prefix_en": "The eight-compound panel was carried forward",
+      "prefix_zh": "八种化合物沿用本项目已冻结身份",
+      "en": "The eight-compound panel was fixed before the repeated evaluation using the documented identity, coverage, and dose-metadata rules. Compounds were not excluded or substituted according to the repeated or external evaluation results. Preliminary development analyses within this study informed the candidate-selection and representation hypotheses; the repeated evaluation is therefore a prespecified, outcome-informed development comparison rather than an independent confirmatory study. The external evaluation was retrospective. Model artifacts and response-free predictions were audited and frozen before the evaluation workflow accessed CTRP v2 responses, and the locked evaluation was executed once; this does not constitute prospective blinded validation.",
+      "zh": "八种化合物面板在重复评价之前，依据有记录的身份、覆盖情况和剂量元数据规则固定。未根据重复或外部评价结果排除或替换化合物。本研究内的前期开发分析为候选筛选和表示假设提供了依据；因此，重复评价是预先规定、受开发结局信息启发的开发比较，而非独立验证性研究。外部评价为回顾性评价。在评价流程访问CTRP v2反应之前，对模型产物和不使用反应值的预测进行审计并冻结，锁定评价仅执行一次；这并不构成前瞻性盲法验证。"
+    },
+    {
+      "id": "loto_heading",
+      "prefix_en": "### Tissue-held-out contrasts were frequently not estimable",
+      "prefix_zh": "### 组织留出差值经常无法估计",
+      "en": "### Leave-one-tissue-out contrasts were defined in 34 of 80 prespecified cells",
+      "zh": "### 留一组织评价中34/80项预定差值有定义"
+    },
+    {
+      "id": "discussion_limitations_scope",
+      "prefix_en": "Several limitations define the scope of these conclusions.",
+      "prefix_zh": "若干局限界定了这些结论的范围。",
+      "replace_en": ["The eight-compound panel and comparison hypotheses were informed by earlier project analyses; the frozen evaluation is a development comparison, not an independent confirmatory study. CTRP v2 had also appeared in an earlier project manuscript, so the locked execution does not imply that this resource was wholly unseen throughout the project's history.", "The eight-compound panel was fixed, but the candidate-selection and representation hypotheses were informed by preliminary development analyses within this study; the repeated evaluation is therefore a development comparison rather than an independent confirmatory study. The external comparison was retrospective; freezing models and predictions before the locked scoring run should not be interpreted as prospective blinded validation."],
+      "replace_zh": ["八种化合物面板和比较假设受到项目早期分析的启发；冻结评价是开发比较，而非独立验证性研究。CTRP v2也曾出现在本项目早期稿件中，因此锁定执行并不意味着该资源在项目整个历史中完全未见。", "八种化合物面板已经固定，但候选筛选和表示假设受到本研究内前期开发分析的启发；因此，重复评价是开发比较，而非独立验证性研究。外部比较为回顾性比较；锁定评分之前冻结模型和预测，不应被解释为前瞻性盲法验证。"]
+    }
+  ]
+}

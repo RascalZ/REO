@@ -1,0 +1,126 @@
+{
+  "date": "2026-10-26",
+  "scope": "Focused paired editorial revision; no scientific recomputation",
+  "preserved_prior_files": 32,
+  "languages": {
+    "en": {
+      "source": "manuscript_v1/author_review_v2/Manuscript_BMC_Genomics_author_review_v2.md",
+      "source_sha256": "1931488c3b7f56e67f42fb9252a9edf2c1e97f3b47ccc09ea48b302619a4037e",
+      "output": "manuscript_v1/author_review_v3/Manuscript_BMC_Genomics_author_review_v3.md",
+      "output_md_sha256": "65490f2d9a51cf8e4594e8db3713c367c83e8e8a8b1aec5f77b4eb67efcdf4be",
+      "changed_blocks": [
+        {
+          "id": "status",
+          "line": 3,
+          "old_sha256": "9531f68bbfb82e35ee67b82e44a8669dffb14d2749de9725e1129ee760f7a556",
+          "new_sha256": "1d56498cf550d22769211190d1f38140c0908ef0d280bf85f0b3f1399773f06d"
+        },
+        {
+          "id": "abstract_background",
+          "line": 19,
+          "old_sha256": "eaf5ddee2d1279665e99a0e025891903d17848ed087a45d4be8437af5522cbcd",
+          "new_sha256": "9b1b3f739ac381b80e544b17dbb9159a1b330b9bfea26ac9bfe7da56ed9a14a7"
+        },
+        {
+          "id": "abstract_results",
+          "line": 21,
+          "old_sha256": "401b48445245c066c1455e208750217d68b613c4f6691b7f005c844c5454e320",
+          "new_sha256": "6636bdc420ee8eb2bbc571ce87510d4abb62ae75d78dd24cb4dc858859cfc5d3"
+        },
+        {
+          "id": "abstract_conclusions",
+          "line": 23,
+          "old_sha256": "788b1bbce2854eba373555c14146d830c576779495c553cb11643c4588000559",
+          "new_sha256": "61962195cf2e48d89874eb5fdd8be799f360d9910cc15972c88285807b7687a0"
+        },
+        {
+          "id": "background_study_scope",
+          "line": 39,
+          "old_sha256": "da6e843fdbf7e704021bf74b30fe3eb84414e9b4bec4e9a5d074d1795d1aa7af",
+          "new_sha256": "a6d1a2c0b1cc23e31bad3dccad9d24e3cd31a1023f09e69398f7c18fdc634ffd"
+        },
+        {
+          "id": "methods_study_design",
+          "line": 49,
+          "old_sha256": "dc329f748d11bfc383cc3ae78908500cc907809d7828de81e71f2fc0503ce188",
+          "new_sha256": "8090962b7b21601912f4b0f6370e637d75e99e157f8299b81359a15bd8513109"
+        },
+        {
+          "id": "loto_heading",
+          "line": 175,
+          "old_sha256": "c5a26fef9abc8dcb34bdfb05310d4d5f4c372a284971fd231dc1dc7741c0eed3",
+          "new_sha256": "ea628d709ac28b5e5508a32aae16f3900e5e26c5c7f103cd2c03d96542d37a39"
+        },
+        {
+          "id": "discussion_limitations_scope",
+          "line": 229,
+          "old_sha256": "4cbbdd07c21eee4b661d76e5ee3d89179f89dcff5e21e329acd94a21c488c0b1",
+          "new_sha256": "3984835174e528eba9eee229fc751d60a12d3be72d2b36b4aba9b6a6a13518e4"
+        }
+      ],
+      "docx_sha256": "d3764b9f0d6dc6d66b2b5591fb909f07c7b2fb32cdd500e81f72d64806e88374"
+    },
+    "zh": {
+      "source": "manuscript_v1/author_review_v2_zh/Manuscript_BMC_Genomics_author_review_v2_zh.md",
+      "source_sha256": "ba334e65b26fafbabe660fe148a55e78fbd9a6895eb58aad44c8e58f85db0b03",
+      "output": "manuscript_v1/author_review_v3_zh/Manuscript_BMC_Genomics_author_review_v3_zh.md",
+      "output_md_sha256": "0224625920569c9ebfe25782d0dab054551b8a9e258b5094e7ffeaa923a2d591",
+      "changed_blocks": [
+        {
+          "id": "status",
+          "line": 3,
+          "old_sha256": "e56be11d7ae400f797f48c96e51f5abd85e9a9208932d7754792eea2a6123486",
+          "new_sha256": "970c2f4ed2e14fd376ecd300099b81570e9241cfe1232e03676f1bc7ac377e7e"
+        },
+        {
+          "id": "abstract_background",
+          "line": 19,
+          "old_sha256": "85dc1ad2a5b8642950081250d97429440ae0e1143690d6915d4596f9ac98ef0f",
+          "new_sha256": "c665c0416a87ae2706bd6451930f19dc7fef8446a42252d20325d4a9942dc4e4"
+        },
+        {
+          "id": "abstract_results",
+          "line": 21,
+          "old_sha256": "2fb395fc1c6393701d9876876507759295d64f10148d7c266c8fdeba39ae29d8",
+          "new_sha256": "e2ce5da3e9a12021735076ab0e88b6d5d89276b598516e53d11b3176e0ad4c8e"
+        },
+        {
+          "id": "abstract_conclusions",
+          "line": 23,
+          "old_sha256": "5e942eb15a17338d2dd7eab10eff8c133262bc18e58a08a8cb9484e0e7e3bcd1",
+          "new_sha256": "d64c90a42a5acb5c4dff989bc76fde279204821e6f738756d5570c38ba93c0fa"
+        },
+        {
+          "id": "background_study_scope",
+          "line": 39,
+          "old_sha256": "0c62c3da9def2b8d8cefb3d9d2c475fc3f5bab0274eaefaf5b7ba447dce80470",
+          "new_sha256": "5fe03dfe5316716fd1ecd1a2a418c48337d6786ce5799c4098087c072a016073"
+        },
+        {
+          "id": "methods_study_design",
+          "line": 49,
+          "old_sha256": "442a6cd86a4ad16dd24ccc385eaf6228922bd196856b0733ab997013e1090208",
+          "new_sha256": "cc07864573a328160e239dc53bd8ae671e391962fc77dd414adea298f9b50d5d"
+        },
+        {
+          "id": "loto_heading",
+          "line": 175,
+          "old_sha256": "b0740b5e6f6289b2f03bf76f02bc53b35bd34317d43b3ed080a2cabd451eff5c",
+          "new_sha256": "7be3eed4284b5b41c98fce9c99d29343d78e780ac77d98ad4d9de4d22cc787b9"
+        },
+        {
+          "id": "discussion_limitations_scope",
+          "line": 229,
+          "old_sha256": "66ddd701738e4b4b3299ceb230e7b4ca9416dec6efaeccc211a318472ee700bd",
+          "new_sha256": "946858e95e3b9c2466db38e0d92c33bf6b1c42310343e5a6bf366ea408b1f34d"
+        }
+      ],
+      "docx_sha256": "79fb106cb33b317d341b151f7d3f697955dfeb15ef33883e5e6ba4b47cc0fdf2"
+    }
+  },
+  "abstract_words": 240,
+  "generator_sha256": "3c36f4541a6820f0122b92dc699e6cbf122bbbb5171e04513a7a5e27ae0ffa03",
+  "en_builder_sha256": "97d78e5539ab7272deb761aaf58b4c7c7e15f776a56ec6e81837e08394647e15",
+  "zh_builder_sha256": "1259ddaf3babf6726b90692000cf7ded9b02424286fa37b4fc37a5af9d11fbad",
+  "edits_sha256": "9aef6ea2c5739c7c814883778f88a0c538901eb42fe80653da9e7ebf1e7be855"
+}
