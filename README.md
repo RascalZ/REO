@@ -4,7 +4,9 @@ This repository contains a leakage-controlled comparison of relative expression 
 
 ## Current status
 
-As of 2026-10-21, the single maintained research plan is [RESEARCH_PLAN.md](RESEARCH_PLAN.md), version 3.41. Read its current-status section before using any older stage notes. The current scientific readouts are:
+A direct Chinese reading translation of the current English v2 manuscript is available locally in the Git-ignored `manuscript_v1/author_review_v2_zh/` (Word/PDF, 22 pages). It preserves the science and original English files; feedback should refer to the Chinese PDF page numbers. See [Stage 28](reports/阶段28_英文通读v2中文直译与页码核查.md).
+
+As of 2026-10-26, the single maintained research plan is [RESEARCH_PLAN.md](RESEARCH_PLAN.md), version 3.42. Read its current-status section before using any older stage notes. The current scientific readouts are:
 
 The [abstract and narrative style discussion](docs/ABSTRACT_STYLE_REVIEW_V1.md) responds to author read-through feedback. It records the official CTRP v2 name and literature-grounded writing options. The author selected a question-led evaluation narrative; the new local v2 reading copy implements that choice without changing scientific results. See [Stage 27](reports/阶段27_研究问题导向文字修订与通读v2.md).
 

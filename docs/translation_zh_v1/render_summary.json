@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-26",
+  "pdf_sha256": "f552071828dee619fd48f5835341fa505e74823ccc3341fa0f0be5301944b2a9",
+  "docx_sha256": "3339cc45c1650cb1c98613da9c26ce27a30a5d90288a24ce2dd5330aa0ae63d4",
+  "pages": 22,
+  "consecutive_chinese_page_footers": true,
+  "all_fonts_embedded": true,
+  "text_outside_page": 0,
+  "figures": [
+    {
+      "page": 4,
+      "width_mm": 164.04166666666666,
+      "within_page": true
+    },
+    {
+      "page": 11,
+      "width_mm": 164.04166666666666,
+      "within_page": true
+    },
+    {
+      "page": 13,
+      "width_mm": 164.04166666666666,
+      "within_page": true
+    },
+    {
+      "page": 15,
+      "width_mm": 164.04166666666666,
+      "within_page": true
+    }
+  ],
+  "mechanical_layout_checks_pass": true,
+  "manual_visual_inspection_confirmed": true
+}

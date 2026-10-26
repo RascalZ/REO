@@ -34,3 +34,5 @@ scripts/render_narrative_v1.ps1 -text !eol whitespace=cr-at-eol
 scripts/render_narrative_v1.vbs -text !eol whitespace=cr-at-eol
 # Keep the byte-bound Results excerpt, including inherited paragraph-end spacing.
 docs/narrative_v1/drafts/results.md whitespace=-blank-at-eol
+# Keep Chinese reading-copy export bytes identical to the recorded provenance.
+scripts/render_chinese_reading_v1.vbs -text !eol whitespace=cr-at-eol

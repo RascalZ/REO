@@ -64,3 +64,7 @@ docs/author_review_v1/local_private/
 # Question-led narrative revision with inherited author details stays local.
 manuscript_v1/author_review_v2/
 docs/narrative_v1/local_private/
+
+# Direct Chinese reading translation contains inherited author details.
+manuscript_v1/author_review_v2_zh/
+docs/translation_zh_v1/local_private/
