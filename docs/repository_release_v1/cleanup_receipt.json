@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-26",
+  "status": "completed_except_in_use_or_unavailable_files",
+  "attempted_directories": [
+    "manuscript_v1/author_review_v1",
+    "manuscript_v1/author_review_v2",
+    "manuscript_v1/author_review_v2_zh"
+  ],
+  "deleted_directories": [
+    "manuscript_v1/author_review_v1",
+    "manuscript_v1/author_review_v2_zh"
+  ],
+  "remaining_files": [
+    {
+      "path": "manuscript_v1/author_review_v2/BMC_Genomics_author_reading_package_2026-10-21.zip",
+      "bytes": 4765224
+    }
+  ],
+  "removed_files": 243,
+  "removed_bytes": 38032860,
+  "archived_non_QA_files": 57,
+  "discarded_regenerable_QA_files": 187,
+  "history_archive": "local_archives/author_review_v1_v2_history_2026-10-26.zip",
+  "history_archive_sha256": "ff559958919b66b4e0fbe47c674d6517f33e4960ce62117195691d17387c8449",
+  "submission_package_sha256": "3d25297b7ee20f9b63653d9742c502f98506c622534cdb923130cfaa58543f51",
+  "v3_and_v4_preserved": true,
+  "scientific_data_results_models_configs_or_Git_history_deleted": false
+}

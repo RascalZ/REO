@@ -80,3 +80,7 @@ docs/reviews/skill_panel_v1/local_private/
 manuscript_v1/author_review_v4/
 manuscript_v1/author_review_v4_zh/
 docs/minor_clarification_v1/local_private/
+
+# Recoverable local author-version archives and fresh-checkout audit outputs.
+local_archives/
+docs/repository_release_v1/local_private/

@@ -1,0 +1,25 @@
+{
+  "date": "2026-10-26",
+  "checks": {
+    "active_relative_links": "PASS",
+    "workflow_and_CFF_YAML_syntax": "PASS (not full external schema certification)",
+    "fresh_source_6_commands_and_16_inference_tests": "PASS",
+    "submission_ZIP_CRC_26_member_hashes": "PASS",
+    "all_six_original_v4_deliverables_unchanged": "PASS",
+    "cleanup_backup_57_member_hashes": "PASS"
+  },
+  "audit_only_parser": "PyYAML 6.0.2 in isolated ignored directory; scientific environment unchanged",
+  "cleanup_status": "completed_except_in_use_or_unavailable_files",
+  "remaining_locked_files": [
+    {
+      "path": "manuscript_v1/author_review_v2/BMC_Genomics_author_reading_package_2026-10-21.zip",
+      "bytes": 4765224
+    }
+  ],
+  "repository_visibility": "private",
+  "unpublished_manuscript_modified": false,
+  "individual_CTRP_access": false,
+  "new_training_or_response_scoring": false,
+  "complete_public_reproduction_release": false,
+  "scope_note": "File structure, archive and bounded software checks; not a scientific or licensing certification."
+}

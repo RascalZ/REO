@@ -1,0 +1,165 @@
+{
+  "date": "2026-10-26",
+  "package": "manuscript_v1/author_review_v4/BMC_Genomics_v4_submission_bundle_2026-10-26.zip",
+  "sha256": "3d25297b7ee20f9b63653d9742c502f98506c622534cdb923130cfaa58543f51",
+  "bytes": 4721722,
+  "member_count": 26,
+  "members": [
+    {
+      "name": "00_READ_BEFORE_SUBMISSION.txt",
+      "source": "manuscript_v1/author_review_v4/00_READ_BEFORE_SUBMISSION.txt",
+      "sha256": "c031e5b77d5b71a16d04f950604b6029bef498a44d54f79362115f3f0b9e203e"
+    },
+    {
+      "name": "Additional_files/Additional_file_1.csv",
+      "source": "manuscript_v1/author_review_v4/Additional_files/Additional_file_1.csv",
+      "sha256": "bbcd0b65e688f05bb42a090f491c8ef29525d3b9b1a77183c93ea1e6404ccf33"
+    },
+    {
+      "name": "Additional_files/Additional_file_10.csv",
+      "source": "manuscript_v1/author_review_v4/Additional_files/Additional_file_10.csv",
+      "sha256": "d44a5fd9d86cba79b70a36aaf70b7d9e9095a29fbde78efd8e516ff23d677a0d"
+    },
+    {
+      "name": "Additional_files/Additional_file_11.csv",
+      "source": "manuscript_v1/author_review_v4/Additional_files/Additional_file_11.csv",
+      "sha256": "0c149e110e72e354705ba9513ae5ad3f52f36a54e80ff54322e64e5963f93e77"
+    },
+    {
+      "name": "Additional_files/Additional_file_12.csv",
+      "source": "manuscript_v1/author_review_v4/Additional_files/Additional_file_12.csv",
+      "sha256": "49f6d3c609a9ae93895c12e8f8a2c0b7926d612168a18208ef0b5491f9b7bc4f"
+    },
+    {
+      "name": "Additional_files/Additional_file_13.csv",
+      "source": "manuscript_v1/author_review_v4/Additional_files/Additional_file_13.csv",
+      "sha256": "ad3ca1edc66b46544d15412cbeed7c6277a24d17d5d6d024d36b0b2255547aa8"
+    },
+    {
+      "name": "Additional_files/Additional_file_14.docx",
+      "source": "manuscript_v1/author_review_v4/Additional_files/Additional_file_14.docx",
+      "sha256": "f6892a1b680a081670f285169e1a1b9ee5b7eeb7682077d516098bb8a18a3557"
+    },
+    {
+      "name": "Additional_files/Additional_file_2.csv",
+      "source": "manuscript_v1/author_review_v4/Additional_files/Additional_file_2.csv",
+      "sha256": "7655589f93cd47f357b8c3444f76afb250c316d6de317f5a9948d0f9ebaacc01"
+    },
+    {
+      "name": "Additional_files/Additional_file_3.csv",
+      "source": "manuscript_v1/author_review_v4/Additional_files/Additional_file_3.csv",
+      "sha256": "9d3768fce57863d6d733ea7792cb9ed69806ef84cc8dcd5187874675dda571e6"
+    },
+    {
+      "name": "Additional_files/Additional_file_4.csv",
+      "source": "manuscript_v1/author_review_v4/Additional_files/Additional_file_4.csv",
+      "sha256": "512e2212d22c83dfbf9c54f5c5829b02818e19610f710b6a4bad2cc6aa3769b7"
+    },
+    {
+      "name": "Additional_files/Additional_file_5.csv",
+      "source": "manuscript_v1/author_review_v4/Additional_files/Additional_file_5.csv",
+      "sha256": "03600116a5086d824740256a079cad7534cf80b2236cef5ecd19dee4e8043f8f"
+    },
+    {
+      "name": "Additional_files/Additional_file_6.csv",
+      "source": "manuscript_v1/author_review_v4/Additional_files/Additional_file_6.csv",
+      "sha256": "d89e01aef179deba12b2e5e6e8bcf991baf207a3076c7cd5e6d3c8f4539422e4"
+    },
+    {
+      "name": "Additional_files/Additional_file_7.csv",
+      "source": "manuscript_v1/author_review_v4/Additional_files/Additional_file_7.csv",
+      "sha256": "8e00902f736fec22081083435d7a4cb22562f45c5f5db7a1d499af1f4ce676df"
+    },
+    {
+      "name": "Additional_files/Additional_file_8.csv",
+      "source": "manuscript_v1/author_review_v4/Additional_files/Additional_file_8.csv",
+      "sha256": "a3526e3a339bb535cd37f1255dbe9ab79d0f4c7b279d1454b3e0c13fe988feef"
+    },
+    {
+      "name": "Additional_files/Additional_file_9.csv",
+      "source": "manuscript_v1/author_review_v4/Additional_files/Additional_file_9.csv",
+      "sha256": "f0ebd23139f5ef05f7516e8f77c202f7e7431e2aa79751d268929348b5c62706"
+    },
+    {
+      "name": "Figures/Figure1_study_design.png",
+      "source": "manuscript_v1/author_review_v4/Figures/Figure1_study_design.png",
+      "sha256": "d3984c032bd41d52352e8c8b73953646df99cb1934ee8e1724b600bf7d87cdf3"
+    },
+    {
+      "name": "Figures/Figure2_development_primary.png",
+      "source": "manuscript_v1/author_review_v4/Figures/Figure2_development_primary.png",
+      "sha256": "44c5c30b9c6e2254c29692f238ae5e1ae41f3ad61d19160b5eb51c9e8975f3f0"
+    },
+    {
+      "name": "Figures/Figure3_representation_and_zero_solutions.png",
+      "source": "manuscript_v1/author_review_v4/Figures/Figure3_representation_and_zero_solutions.png",
+      "sha256": "9d08e9eb543ba4a509c41cbca9fe11ca86f18ba690d47ec2b880ba236ac4bd83"
+    },
+    {
+      "name": "Figures/Figure4_loto_and_external.png",
+      "source": "manuscript_v1/author_review_v4/Figures/Figure4_loto_and_external.png",
+      "sha256": "27f115b6d6ffc52fcaa9d7b49db991c433afbb656c319c7bd25b8b77dd5e1a83"
+    },
+    {
+      "name": "Manuscript.docx",
+      "source": "manuscript_v1/author_review_v4/Manuscript_BMC_Genomics_author_review_v4.docx",
+      "sha256": "1041f7a418eceec045321da3f2a67365d8809643c23b710e4f26b7768a21de41"
+    },
+    {
+      "name": "Manuscript.pdf",
+      "source": "manuscript_v1/author_review_v4/Manuscript_BMC_Genomics_author_review_v4.pdf",
+      "sha256": "8fc82e940a2d82104fa0f27331ba41e0c6fc883e44e7eca969db7f04986a5ce7"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "source": "manuscript_v1/author_review_v4/SHA256SUMS.txt",
+      "sha256": "8a79ffc7bb6e9112e7944ebc9243ceee5066cae29a50f255e359db33dcbd466a"
+    },
+    {
+      "name": "Supporting_sources/Manuscript.md",
+      "source": "manuscript_v1/author_review_v4/Manuscript_BMC_Genomics_author_review_v4.md",
+      "sha256": "1d64b11b8693f0905a2f70cd20b8f82c9772e31dd20cd0a22d0c4959d2014ddb"
+    },
+    {
+      "name": "Supporting_sources/Supplementary_methods.md",
+      "source": "manuscript_v1/author_review_v4/Supporting_sources/Supplementary_methods.md",
+      "sha256": "a04fa46f2103d50dbf41bdb6692c7b679a05e1714fe91ea5099e4bc2fae0bbc9"
+    },
+    {
+      "name": "Supporting_sources/Supplementary_methods.pdf",
+      "source": "manuscript_v1/author_review_v4/Supporting_sources/Supplementary_methods.pdf",
+      "sha256": "16a74dce2106dbfbcb5c17d1748127fbe1083241cf1e6f52e80b42e097dc01df"
+    },
+    {
+      "name": "Supporting_sources/references.bib",
+      "source": "manuscript_v1/author_review_v4/Supporting_sources/references.bib",
+      "sha256": "d85b8e49adf5b38b8d887868dd22254eeac6822bdaf1528c9813b251d48b8ffc"
+    }
+  ],
+  "migration_origins": {
+    "manuscript_v1/author_review_v4/Additional_files/Additional_file_1.csv": "manuscript_v1/author_review_v2/Additional_files/Additional_file_1.csv",
+    "manuscript_v1/author_review_v4/Additional_files/Additional_file_2.csv": "manuscript_v1/author_review_v2/Additional_files/Additional_file_2.csv",
+    "manuscript_v1/author_review_v4/Additional_files/Additional_file_3.csv": "manuscript_v1/author_review_v2/Additional_files/Additional_file_3.csv",
+    "manuscript_v1/author_review_v4/Additional_files/Additional_file_4.csv": "manuscript_v1/author_review_v2/Additional_files/Additional_file_4.csv",
+    "manuscript_v1/author_review_v4/Additional_files/Additional_file_5.csv": "manuscript_v1/author_review_v2/Additional_files/Additional_file_5.csv",
+    "manuscript_v1/author_review_v4/Additional_files/Additional_file_6.csv": "manuscript_v1/author_review_v2/Additional_files/Additional_file_6.csv",
+    "manuscript_v1/author_review_v4/Additional_files/Additional_file_7.csv": "manuscript_v1/author_review_v2/Additional_files/Additional_file_7.csv",
+    "manuscript_v1/author_review_v4/Additional_files/Additional_file_8.csv": "manuscript_v1/author_review_v2/Additional_files/Additional_file_8.csv",
+    "manuscript_v1/author_review_v4/Additional_files/Additional_file_9.csv": "manuscript_v1/author_review_v2/Additional_files/Additional_file_9.csv",
+    "manuscript_v1/author_review_v4/Additional_files/Additional_file_10.csv": "manuscript_v1/author_review_v2/Additional_files/Additional_file_10.csv",
+    "manuscript_v1/author_review_v4/Additional_files/Additional_file_11.csv": "manuscript_v1/author_review_v2/Additional_files/Additional_file_11.csv",
+    "manuscript_v1/author_review_v4/Additional_files/Additional_file_12.csv": "manuscript_v1/author_review_v2/Additional_files/Additional_file_12.csv",
+    "manuscript_v1/author_review_v4/Additional_files/Additional_file_13.csv": "manuscript_v1/author_review_v2/Additional_files/Additional_file_13.csv",
+    "manuscript_v1/author_review_v4/Additional_files/Additional_file_14.docx": "manuscript_v1/author_review_v2/Additional_files/Additional_file_14.docx",
+    "manuscript_v1/author_review_v4/Figures/Figure1_study_design.png": "figures/manuscript_m08_v1/Figure1_study_design.png",
+    "manuscript_v1/author_review_v4/Figures/Figure2_development_primary.png": "figures/manuscript_m08_v1/Figure2_development_primary.png",
+    "manuscript_v1/author_review_v4/Figures/Figure3_representation_and_zero_solutions.png": "figures/manuscript_m08_v1/Figure3_representation_and_zero_solutions.png",
+    "manuscript_v1/author_review_v4/Figures/Figure4_loto_and_external.png": "figures/manuscript_m08_v1/Figure4_loto_and_external.png",
+    "manuscript_v1/author_review_v4/Supporting_sources/Supplementary_methods.md": "manuscript_v1/author_review_v2/Supplementary_methods_author_review_v2.md",
+    "manuscript_v1/author_review_v4/Supporting_sources/Supplementary_methods.pdf": "manuscript_v1/author_review_v2/Supplementary_methods_author_review_v2.pdf",
+    "manuscript_v1/author_review_v4/Supporting_sources/references.bib": "manuscript_v1/author_review_v2/references_author_review_v2.bib"
+  },
+  "archive_CRC_and_all_member_hashes_verified": true,
+  "article_and_declarations_modified": false,
+  "submission_approval_claimed": false
+}

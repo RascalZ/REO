@@ -6,5 +6,11 @@ authors:
   - name: "REO research contributors"
 repository-code: "https://github.com/RascalZ/REO"
 version: "0.1.0"
-date-released: "2026-10-10"
 license: MIT
+url: "https://github.com/RascalZ/REO"
+abstract: "Development-version code comparing expression, ranks and relative-expression pairs with tissue references in cancer-cell-line drug-response prediction. No archived release or paper DOI is currently available; cite the exact commit used."
+keywords:
+  - pharmacogenomics
+  - relative expression ordering
+  - drug response prediction
+  - reproducible research

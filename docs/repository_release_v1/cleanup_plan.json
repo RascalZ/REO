@@ -1,0 +1,1251 @@
+{
+  "date": "2026-10-26",
+  "targets": [
+    {
+      "directory": "manuscript_v1/author_review_v1",
+      "files": 106,
+      "bytes": 16915388
+    },
+    {
+      "directory": "manuscript_v1/author_review_v2",
+      "files": 99,
+      "bytes": 15373299
+    },
+    {
+      "directory": "manuscript_v1/author_review_v2_zh",
+      "files": 39,
+      "bytes": 10509397
+    }
+  ],
+  "archive": "local_archives/author_review_v1_v2_history_2026-10-26.zip",
+  "archive_sha256": "ff559958919b66b4e0fbe47c674d6517f33e4960ce62117195691d17387c8449",
+  "archive_bytes": 18353045,
+  "archived_file_count": 57,
+  "discardable_QA_files": 187,
+  "archive_CRC_and_hashes_verified": true,
+  "v4_supplements_migrated_and_verified": true,
+  "deleted": false,
+  "scientific_data_models_configs_code_history_in_scope": false,
+  "all_files_before_cleanup": [
+    {
+      "path": "manuscript_v1/author_review_v1/Additional_files/Additional_file_1.csv",
+      "sha256": "bbcd0b65e688f05bb42a090f491c8ef29525d3b9b1a77183c93ea1e6404ccf33",
+      "bytes": 5490
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/Additional_files/Additional_file_10.csv",
+      "sha256": "d44a5fd9d86cba79b70a36aaf70b7d9e9095a29fbde78efd8e516ff23d677a0d",
+      "bytes": 58288
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/Additional_files/Additional_file_11.csv",
+      "sha256": "0c149e110e72e354705ba9513ae5ad3f52f36a54e80ff54322e64e5963f93e77",
+      "bytes": 50920
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/Additional_files/Additional_file_12.csv",
+      "sha256": "49f6d3c609a9ae93895c12e8f8a2c0b7926d612168a18208ef0b5491f9b7bc4f",
+      "bytes": 12723
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/Additional_files/Additional_file_13.csv",
+      "sha256": "ad3ca1edc66b46544d15412cbeed7c6277a24d17d5d6d024d36b0b2255547aa8",
+      "bytes": 3262
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/Additional_files/Additional_file_14.docx",
+      "sha256": "6140e7e0e9b4936e770bca3f24273a77556daf64e228d61fb81a10a516a8c90b",
+      "bytes": 25906
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/Additional_files/Additional_file_2.csv",
+      "sha256": "7655589f93cd47f357b8c3444f76afb250c316d6de317f5a9948d0f9ebaacc01",
+      "bytes": 7720
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/Additional_files/Additional_file_3.csv",
+      "sha256": "9d3768fce57863d6d733ea7792cb9ed69806ef84cc8dcd5187874675dda571e6",
+      "bytes": 9015
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/Additional_files/Additional_file_4.csv",
+      "sha256": "512e2212d22c83dfbf9c54f5c5829b02818e19610f710b6a4bad2cc6aa3769b7",
+      "bytes": 61408
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/Additional_files/Additional_file_5.csv",
+      "sha256": "03600116a5086d824740256a079cad7534cf80b2236cef5ecd19dee4e8043f8f",
+      "bytes": 310653
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/Additional_files/Additional_file_6.csv",
+      "sha256": "d89e01aef179deba12b2e5e6e8bcf991baf207a3076c7cd5e6d3c8f4539422e4",
+      "bytes": 4142
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/Additional_files/Additional_file_7.csv",
+      "sha256": "8e00902f736fec22081083435d7a4cb22562f45c5f5db7a1d499af1f4ce676df",
+      "bytes": 17297
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/Additional_files/Additional_file_8.csv",
+      "sha256": "a3526e3a339bb535cd37f1255dbe9ab79d0f4c7b279d1454b3e0c13fe988feef",
+      "bytes": 2679
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/Additional_files/Additional_file_9.csv",
+      "sha256": "f0ebd23139f5ef05f7516e8f77c202f7e7431e2aa79751d268929348b5c62706",
+      "bytes": 34519
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/BMC_Genomics_author_reading_package_2026-10-20.zip",
+      "sha256": "151b9ca06f4ddb024dca84320e5ee530882719f4a1236cb817c6975a65ff6706",
+      "bytes": 4764095
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/delivery_manifest.json",
+      "sha256": "7a5aa668a7a662d603dc6cb2ddab1dc02fad75b207dd39d496667454b6f92668",
+      "bytes": 5438
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/Manuscript_BMC_Genomics_author_review_v1.docx",
+      "sha256": "cc63ad7bd9efd345f25c4de4721df25d91ba0f72932a7d46112972bec40d6730",
+      "bytes": 1801277
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/Manuscript_BMC_Genomics_author_review_v1.md",
+      "sha256": "f970804ab2bcea4c2fb2e415b0b15fb1a82f958c50d7df7266aaf0ab5ffc278e",
+      "bytes": 72033
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/Manuscript_BMC_Genomics_author_review_v1.pdf",
+      "sha256": "ccf3ade0a99b8edba0d216e5322173c8312c0d32094a9e877a126f5865cf7f8c",
+      "bytes": 900561
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/package_manifest.json",
+      "sha256": "4c5c9beb1ff5382b93ab051bd894c7b3e214bb5356b50434281f176f02b127d7",
+      "bytes": 8894
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/references_author_review_v1.bib",
+      "sha256": "d85b8e49adf5b38b8d887868dd22254eeac6822bdaf1528c9813b251d48b8ffc",
+      "bytes": 21082
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/render_validation.json",
+      "sha256": "827fe1312b6eff937d3f611455ca4bff280be7970db7ec4a3ffec53252a9cd54",
+      "bytes": 2550
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/Supplementary_methods_author_review_v1.docx",
+      "sha256": "6140e7e0e9b4936e770bca3f24273a77556daf64e228d61fb81a10a516a8c90b",
+      "bytes": 25906
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/Supplementary_methods_author_review_v1.md",
+      "sha256": "a04fa46f2103d50dbf41bdb6692c7b679a05e1714fe91ea5099e4bc2fae0bbc9",
+      "bytes": 33949
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/Supplementary_methods_author_review_v1.pdf",
+      "sha256": "a2ac9e5900b7ece324541d37b8f95498d2d4b43da549990b306eb84588b57300",
+      "bytes": 211212
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/通读说明.md",
+      "sha256": "78a921686678366a69e21ca9679098de685e0a7f425caa424c2e166f774e45ac",
+      "bytes": 2706
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Additional_files/Additional_file_1.csv",
+      "sha256": "bbcd0b65e688f05bb42a090f491c8ef29525d3b9b1a77183c93ea1e6404ccf33",
+      "bytes": 5490
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Additional_files/Additional_file_10.csv",
+      "sha256": "d44a5fd9d86cba79b70a36aaf70b7d9e9095a29fbde78efd8e516ff23d677a0d",
+      "bytes": 58288
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Additional_files/Additional_file_11.csv",
+      "sha256": "0c149e110e72e354705ba9513ae5ad3f52f36a54e80ff54322e64e5963f93e77",
+      "bytes": 50920
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Additional_files/Additional_file_12.csv",
+      "sha256": "49f6d3c609a9ae93895c12e8f8a2c0b7926d612168a18208ef0b5491f9b7bc4f",
+      "bytes": 12723
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Additional_files/Additional_file_13.csv",
+      "sha256": "ad3ca1edc66b46544d15412cbeed7c6277a24d17d5d6d024d36b0b2255547aa8",
+      "bytes": 3262
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Additional_files/Additional_file_14.docx",
+      "sha256": "f6892a1b680a081670f285169e1a1b9ee5b7eeb7682077d516098bb8a18a3557",
+      "bytes": 25916
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Additional_files/Additional_file_2.csv",
+      "sha256": "7655589f93cd47f357b8c3444f76afb250c316d6de317f5a9948d0f9ebaacc01",
+      "bytes": 7720
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Additional_files/Additional_file_3.csv",
+      "sha256": "9d3768fce57863d6d733ea7792cb9ed69806ef84cc8dcd5187874675dda571e6",
+      "bytes": 9015
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Additional_files/Additional_file_4.csv",
+      "sha256": "512e2212d22c83dfbf9c54f5c5829b02818e19610f710b6a4bad2cc6aa3769b7",
+      "bytes": 61408
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Additional_files/Additional_file_5.csv",
+      "sha256": "03600116a5086d824740256a079cad7534cf80b2236cef5ecd19dee4e8043f8f",
+      "bytes": 310653
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Additional_files/Additional_file_6.csv",
+      "sha256": "d89e01aef179deba12b2e5e6e8bcf991baf207a3076c7cd5e6d3c8f4539422e4",
+      "bytes": 4142
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Additional_files/Additional_file_7.csv",
+      "sha256": "8e00902f736fec22081083435d7a4cb22562f45c5f5db7a1d499af1f4ce676df",
+      "bytes": 17297
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Additional_files/Additional_file_8.csv",
+      "sha256": "a3526e3a339bb535cd37f1255dbe9ab79d0f4c7b279d1454b3e0c13fe988feef",
+      "bytes": 2679
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Additional_files/Additional_file_9.csv",
+      "sha256": "f0ebd23139f5ef05f7516e8f77c202f7e7431e2aa79751d268929348b5c62706",
+      "bytes": 34519
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/BMC_Genomics_author_reading_package_2026-10-21.zip",
+      "sha256": "d88eceac5f402d0c2714ac6d5ad50710df97df8a0b7b07d484b49020d76f23db",
+      "bytes": 4765224
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/delivery_manifest.json",
+      "sha256": "e849cf1f1e5f5c09cb1d148b43404c635be973548095f4b7875974edc164d7b8",
+      "bytes": 5553
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Manuscript_BMC_Genomics_author_review_v2.docx",
+      "sha256": "1e91958b51ce0b800fcc5d22cb77745faf7e425f7fb50697f6c6f3ca1c381f54",
+      "bytes": 1801539
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Manuscript_BMC_Genomics_author_review_v2.md",
+      "sha256": "1931488c3b7f56e67f42fb9252a9edf2c1e97f3b47ccc09ea48b302619a4037e",
+      "bytes": 73378
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Manuscript_BMC_Genomics_author_review_v2.pdf",
+      "sha256": "03f67960a97189b9b7a6ef7534b6d68c6f747058c0698a5c5a5f46b69ccbebd3",
+      "bytes": 901506
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/package_manifest.json",
+      "sha256": "2cccadc3c8e26ddff62fbb4bd6f2f0971a017e9c4d30f1b2bc14ef9e3526ea88",
+      "bytes": 9877
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/references_author_review_v2.bib",
+      "sha256": "d85b8e49adf5b38b8d887868dd22254eeac6822bdaf1528c9813b251d48b8ffc",
+      "bytes": 21082
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/render_validation.json",
+      "sha256": "db4a7b16741b9d2b929bc127271bc6fc97174e6e0bfa9f762e2f15f24a1e93f2",
+      "bytes": 2556
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Supplementary_methods_author_review_v2.docx",
+      "sha256": "f6892a1b680a081670f285169e1a1b9ee5b7eeb7682077d516098bb8a18a3557",
+      "bytes": 25916
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Supplementary_methods_author_review_v2.md",
+      "sha256": "a04fa46f2103d50dbf41bdb6692c7b679a05e1714fe91ea5099e4bc2fae0bbc9",
+      "bytes": 33949
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/Supplementary_methods_author_review_v2.pdf",
+      "sha256": "16a74dce2106dbfbcb5c17d1748127fbe1083241cf1e6f52e80b42e097dc01df",
+      "bytes": 211226
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/本版改动说明.md",
+      "sha256": "c7ce9e9a742fc4d55c384f51c17c127185e76a851d6f1186747d0f8aed94d750",
+      "bytes": 2479
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/delivery_manifest.json",
+      "sha256": "6eba435b5f902b32fbb9b2e3135b0b4007c15e3f0d5d8118606c33ad6a7c1d18",
+      "bytes": 944
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/Manuscript_BMC_Genomics_author_review_v2_zh.docx",
+      "sha256": "92051b85786af58f558adce92f9da2aba525d189ea046e069bc8682f6cdcbe0f",
+      "bytes": 2103920
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/Manuscript_BMC_Genomics_author_review_v2_zh.md",
+      "sha256": "ba334e65b26fafbabe660fe148a55e78fbd9a6895eb58aad44c8e58f85db0b03",
+      "bytes": 61006
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/Manuscript_BMC_Genomics_author_review_v2_zh.pdf",
+      "sha256": "f552071828dee619fd48f5835341fa505e74823ccc3341fa0f0be5301944b2a9",
+      "bytes": 1101373
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/中文阅读说明.md",
+      "sha256": "5c1f4732b1227fb04278e4bf6aff25f88659f482d78b941a2d235dd484aa2b1e",
+      "bytes": 1427
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/focus_18_27.png",
+      "sha256": "94af2858231be575e016d2f2d7fcbf03d2f21d3ce867f58ff699d12e660f14c7",
+      "bytes": 467900
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/focus_1_32.png",
+      "sha256": "ac06d83966ea3cc6a3b9f49366248e2fb95ed8679dee1536d590f35307e9a466",
+      "bytes": 370784
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/focus_23_25.png",
+      "sha256": "b89a6bee34503c03d0af9ae8fe6e11a2b5f0e58883782599d43b55066bddf41f",
+      "bytes": 425989
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/focus_33_37.png",
+      "sha256": "17bb0b735dee60da5f497f4af5ce90bfa4faca6d8592018f634cd48cca352791",
+      "bytes": 342806
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/focus_page_1.png",
+      "sha256": "c0e2331ad554dc2e65fc5bf0b26bffa4962e8a32ac8368275fc6c872e44cab34",
+      "bytes": 185996
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/focus_page_18.png",
+      "sha256": "29159726912de5550ce3c3177d488028057babd7f187423e398e2b9a170b8a69",
+      "bytes": 206432
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/focus_page_23.png",
+      "sha256": "5f3bb0f80ceabcb2ce94ff05e0f3c99be3a34fa1d3ffca627a815a79c9bdc4b0",
+      "bytes": 194656
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/focus_page_25.png",
+      "sha256": "330ddda855b9d6ba590e10ceb1b860403c52351a7241665cf9dadbc2f6c52f71",
+      "bytes": 224702
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/focus_page_27.png",
+      "sha256": "56ea4a107625a5b03a8196ee4493bd78ec9b63351e99ae0ce0d36bbb3226074b",
+      "bytes": 251197
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/focus_page_32.png",
+      "sha256": "5587f1c0a7b33571dff426d66976f0e45f06731bb0f0cce0b0db0629eeac27db",
+      "bytes": 183351
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/focus_page_33.png",
+      "sha256": "4ca9cb367cd79a2e46cfdf6fefde4fe70f332473b2a637eff7bc3ebdb3b213aa",
+      "bytes": 163745
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/focus_page_37.png",
+      "sha256": "a6dc91d001d4a4d92110506d9adfb2343d81f3b7067f5e1fd3a54f8431757d96",
+      "bytes": 184456
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main.txt",
+      "sha256": "cc97be5e3cc56c135667c2311c975e05c7ade99f5ac59f39327d4b25a385d604",
+      "bytes": 81861
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_contact_1.png",
+      "sha256": "97c846efbaa0bd4218f8e80761e9284abce46cbcc750c8d2171f45e127be3077",
+      "bytes": 890489
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_contact_2.png",
+      "sha256": "1ce41c4448bef8f6bb5ffbf23abcd9cbf6c9ac29e9a0972a5813394caf54b0cb",
+      "bytes": 838207
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_contact_3.png",
+      "sha256": "5732d8f02c45b11497460a0b5642f5cb1e9b93ec1269d188f603866710997bd3",
+      "bytes": 364113
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-01.png",
+      "sha256": "a189376f4154245d3a6da51c33f0f47df962bd5ab83fe9c051fc787d70622bcd",
+      "bytes": 33400
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-02.png",
+      "sha256": "bfeafbdd1bb1accedad46dc6fcfe56a97f0bddc963ab2a49f9799cc2f71f1a24",
+      "bytes": 32769
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-03.png",
+      "sha256": "8c547420b10ecc713e783a2b7e7d91747b843c29b15ad89129e44f153f93ec3b",
+      "bytes": 36165
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-04.png",
+      "sha256": "23cd1a69937b9d50e6840a7650b3b1bb75ff722a68f718f2f22c98d45ac148a9",
+      "bytes": 33452
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-05.png",
+      "sha256": "644eb2b786ec753e7f31ca0a0efadd8e3b05547769a4015383a1e3edb8d8f9a8",
+      "bytes": 28095
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-06.png",
+      "sha256": "3390c32b7d7b6601270abbc82bd0a69b029e87a81576a71810c261593e59ad39",
+      "bytes": 45429
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-07.png",
+      "sha256": "f5be4cca92493f880ec1ae7c09902563f1de24d41e4acd53d54818127730693e",
+      "bytes": 39377
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-08.png",
+      "sha256": "195591814407df4cdfb52d159816d2338027fc6ec2a7acd9ef36701134e5dab2",
+      "bytes": 37096
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-09.png",
+      "sha256": "f42257a74154d367279c1155ba7a0eb78b8bf6d71e22a58e94a405a4debba9ea",
+      "bytes": 38947
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-10.png",
+      "sha256": "7a247c3661cd2511a41a395d41bde864dd23c639437ac56a13c63b2a8a40a717",
+      "bytes": 36107
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-11.png",
+      "sha256": "5e1d346bbf39133e23db7c2c19043ac3a0c2f2798b6c889393ce940c221ad55f",
+      "bytes": 36960
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-12.png",
+      "sha256": "2da9c5ba33096c7a8e4cd381cec2a1fabd88b9da5cc7bb7cefa943c517704c2d",
+      "bytes": 35943
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-13.png",
+      "sha256": "dcb97eb73b5e0d5b7d51e303bd1b76f37fa9cbf2aa977cce7bef6c55d7897787",
+      "bytes": 38482
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-14.png",
+      "sha256": "046af17c65f3aafa8fb9e99f522d735d4d5a4bc88782482224f8c02ec74fb694",
+      "bytes": 36631
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-15.png",
+      "sha256": "453c33ff8281eb01e77e2f9c1f0d16fa207bec2d26c7f60d77d20bad4295e3da",
+      "bytes": 37648
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-16.png",
+      "sha256": "c488a7fefe17c09f053688c697b15b11d9b5d9ea4b4c3722cdce78726e810231",
+      "bytes": 37412
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-17.png",
+      "sha256": "1aab90f70b05516dd3f214e010f2d09e42c27ba178e99f90b5a304536390d2f9",
+      "bytes": 32812
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-18.png",
+      "sha256": "436484591a4288b57b62d996a291dd3b3fc5c7450d9f40b17cc7d0f6101a23ec",
+      "bytes": 35915
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-19.png",
+      "sha256": "595824515ce1fa0ddf630fb63bf4f06c6a90163a1de06fa3b16195378641f8e6",
+      "bytes": 24066
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-20.png",
+      "sha256": "7a16931571c094828172ed2f3794d8f9bd07b4ddbf488db209242f4cdb1ac706",
+      "bytes": 36626
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-21.png",
+      "sha256": "db6935c69e7de2824648caf8ee5e31f7f927140db84a3a7d81bbf777dcaaa975",
+      "bytes": 35940
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-22.png",
+      "sha256": "8bd285ccb608c47e3415bf22aae2532ec66614ca9ceb462d84e77807156dc9bf",
+      "bytes": 22164
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-23.png",
+      "sha256": "7ae05789eabe162a5f05dfff4a7e80380f34f4d1629ba57dd71fd7451605900d",
+      "bytes": 38048
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-24.png",
+      "sha256": "0593bcab02cb3e29f4914912a22597b43c8a535b939a04bdcb0b810e91e3a9d2",
+      "bytes": 40888
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-25.png",
+      "sha256": "03d89dfbcb1370f093e1a70121bb0bc4d632723b1d83922fc2fcd42d97ce5c14",
+      "bytes": 42522
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-26.png",
+      "sha256": "ac255582a4c5a3f5da81db5fbb13c11981274988300a75bf96d0b33e7b4f51a7",
+      "bytes": 24656
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-27.png",
+      "sha256": "51938a8c9239f44bad73dcf9daf3ef0243cdcdc7623440fed227a56e6a0c96c9",
+      "bytes": 42753
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-28.png",
+      "sha256": "13f116d39e9ea017d943e691d33f386ebd027401bbd43b1904863ffac6304779",
+      "bytes": 38138
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-29.png",
+      "sha256": "49f533a48a1d98322a21063a6248ba43565183b20f53a8dbf9957ede2da4259b",
+      "bytes": 38035
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-30.png",
+      "sha256": "c399dc0708231babe69a944e9de99f19b1ba56900ae2414a7dc04168d6de3313",
+      "bytes": 38112
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-31.png",
+      "sha256": "06724328b65060df3690c21966cb5e5d9ee77b7badd421b1d223641c4d646969",
+      "bytes": 34462
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-32.png",
+      "sha256": "3ac341472256f5223e6406faa2348188324fdba098115c0afe9bbda6a03da5c7",
+      "bytes": 33289
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-33.png",
+      "sha256": "40eac5d35b5c57fd7f8f5cc8231bd0b0139c45866b14ef28336af1f1947fd9b3",
+      "bytes": 29637
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-34.png",
+      "sha256": "f18b14cd75f229073b11ff4defd8d26049eac20993ec57d4acd41859e755f136",
+      "bytes": 37277
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-35.png",
+      "sha256": "d87c1df32b74b1b9c38178822cf645701e328d30a7b5a2264406cfadbbf1ff41",
+      "bytes": 40912
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-36.png",
+      "sha256": "60363c4a4a26af224194b6ae22b23c0aba976e88b0204d3ac4cc6d4b46cf44da",
+      "bytes": 37837
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-37.png",
+      "sha256": "2894bcc533a00566dacc3172fd74b30ec643fe6574e90d8dd8be93891099a070",
+      "bytes": 33484
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-38.png",
+      "sha256": "dfbb7c19833eabaf89fabe62ebe8964bc886b047fa362144bf7c5d808a13eeb7",
+      "bytes": 40808
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/main_thumbs/page-39.png",
+      "sha256": "52e9c50579bff131ee0ff7689e1fabe961a0cd25dd682236c51f635dcc4312d7",
+      "bytes": 33706
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement.txt",
+      "sha256": "c198c19fa766926cd3d853b3313fdb06ae8553a095080c1e8f174f4586eef458",
+      "bytes": 40428
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement_contact_1.png",
+      "sha256": "eeb12b3572617a2fcd42754fe250ac1e5dae9a6449cda4805555008b060762f3",
+      "bytes": 840944
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement_contact_2.png",
+      "sha256": "b3babb6ea6c7f1f9b368fca91aa46d566c41a92bbf51d538cbdf0eb8c717ea24",
+      "bytes": 157002
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement_thumbs/page-01.png",
+      "sha256": "c9424d400df3da1164854540ff5c3c86f95361b14f6169f1701aed3ba690ec00",
+      "bytes": 37022
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement_thumbs/page-02.png",
+      "sha256": "bf0011451290766fa1b86c44483ee042e2dc7bc9ded4da3ca906383fea846089",
+      "bytes": 38775
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement_thumbs/page-03.png",
+      "sha256": "e0924bae652f2ca9bfc62e5cb94687b9b8f837c5b4356c5394f16667bcfd4146",
+      "bytes": 35920
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement_thumbs/page-04.png",
+      "sha256": "ec9c069e625e4dfd4fa9fc18ee26bbea1359f7c91dab6375cf394a955cbc2df7",
+      "bytes": 20500
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement_thumbs/page-05.png",
+      "sha256": "0ecc85774bcd0c21007306b55c7af4384cdfffc2cd39cd3ffad63be024db1176",
+      "bytes": 23581
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement_thumbs/page-06.png",
+      "sha256": "3e908bb9db77d045607de976da082b1de7dc60a7521f085c88fac6a76d729cbf",
+      "bytes": 34506
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement_thumbs/page-07.png",
+      "sha256": "98bda7f47c9af07023eec820bbc48fd5866a79b31eaa198c3aa2032f0c14b46c",
+      "bytes": 34146
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement_thumbs/page-08.png",
+      "sha256": "28f7703c10d234085b38d692f1a715403d7434f40f4b189a4565c22fdd2cff24",
+      "bytes": 37742
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement_thumbs/page-09.png",
+      "sha256": "6dca92d8a314ea6c195c311953c61036e1d7409539cef47fe5e2dacdd8ef0df3",
+      "bytes": 35560
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement_thumbs/page-10.png",
+      "sha256": "92f03f2a7f688c85fad83c5ddcb05ff3a41a7ad0225e8cb1ab1e8a7928171628",
+      "bytes": 37903
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement_thumbs/page-11.png",
+      "sha256": "9a34b85b7acf4db6159bb17deb74bea00df30cdc5680d326ff6a9247d3c46652",
+      "bytes": 30805
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement_thumbs/page-12.png",
+      "sha256": "9b8517ca6ba587e25ae4a207d895ef9bcf3af0b0c5847f5ce02c8eed10bb7b80",
+      "bytes": 37595
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement_thumbs/page-13.png",
+      "sha256": "fdee9a3db4b5818cfdbc83f55a9fe29d15f1bf338b85e469cdddfcb6d62e3a1e",
+      "bytes": 25751
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement_thumbs/page-14.png",
+      "sha256": "2129825670aaa02d6b29ef23b00dbfea3b1c924f75b04d8aba8e366594964bfb",
+      "bytes": 32570
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement_thumbs/page-15.png",
+      "sha256": "e42b511d113df87e8f5ed62ee9397ef4f5ab297a76515818e2bbfebe8e003b29",
+      "bytes": 36026
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement_thumbs/page-16.png",
+      "sha256": "b1480bb8f8d26319ac3d3d9225126dc83f3d29359995e6c7b0eccffc116246f0",
+      "bytes": 35614
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement_thumbs/page-17.png",
+      "sha256": "0f8a31338c939dcc4d90d180f7442befe2880a6bd323dd55a5e4281a6ec4c1b8",
+      "bytes": 37830
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement_thumbs/page-18.png",
+      "sha256": "713d5e2442aff187a8f7ce609ef06fd0c20f1c9c02857be16108948300133c85",
+      "bytes": 37132
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/supplement_thumbs/page-19.png",
+      "sha256": "0c9cacbedf839ed9d5278ef03686bc646401856ca7785c134fd0342a3dc0a81d",
+      "bytes": 18745
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/word_engine_probe.vbs",
+      "sha256": "cd6cb9f35fdc2621edaa951317bf068e141723bc1b55009aa98c4ab2e2fb7551",
+      "bytes": 680
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/word_probe.pdf",
+      "sha256": "6b507a94b90ed6f70cfc3b4748376fe1eaad11553f4f8faa9ad1d83621cf03cc",
+      "bytes": 21518
+    },
+    {
+      "path": "manuscript_v1/author_review_v1/qa/wps_engine_probe.vbs",
+      "sha256": "83526548cc543de774896d16748d1349ae18a41b4af4e0ef9e08a54949c9fbd8",
+      "bytes": 684
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main.txt",
+      "sha256": "95cef6e911ecfb8ab66e7c242e410fa5d24dcf3a5e7b592da9ca000f5c7d3fd0",
+      "bytes": 83270
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_contact_1.png",
+      "sha256": "4e12b4272022cd386493dff5edd564e5030c49c76948c854455ef85f0c0aad9e",
+      "bytes": 894340
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_contact_2.png",
+      "sha256": "a295fc0d82c0015d2f6bef8806d3f47ebe0377eab9fc4f7f18d35359f1119c30",
+      "bytes": 834225
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_contact_3.png",
+      "sha256": "6a9260807773f0c4db5cbe3c7f8b6b0c3e7846c44a027ecc1949419e287c5ed9",
+      "bytes": 392683
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_focus_1.png",
+      "sha256": "6aa1566e465972f2b3046abe274f3404e8bfc56182cc42cfbf765d2ea0530c4e",
+      "bytes": 182826
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_focus_18.png",
+      "sha256": "ee457f586169d3590ff06273beb3977517eb7a4cb65ee9bbf5d73825d4b257be",
+      "bytes": 207288
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_focus_2.png",
+      "sha256": "6d190a15b63a242a2dbb0956de8a1997321975c63de6cbcf0cadba4444e3119d",
+      "bytes": 186075
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_focus_23.png",
+      "sha256": "6e353346be0a2e78b9e8bd53381a7366a1779f234ed4ddb5c5cd91f786b0b1f5",
+      "bytes": 196389
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_focus_25.png",
+      "sha256": "08246ef47309450a578a90d54320792bea56893de874d69942a126308dc9124a",
+      "bytes": 223144
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_focus_27.png",
+      "sha256": "09a667937bd2e716db7c93797181e70b500487756806140f8c896f77a82090f2",
+      "bytes": 252532
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_focus_28.png",
+      "sha256": "e1638c96d51902e68eca777d2c832fc1da6838a533ba46a7e8624a410ca35ca8",
+      "bytes": 212466
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-01.png",
+      "sha256": "b09a14528ce0bfbd973da19ac4ebcf1af8ddf28e30ae08701578bdc01c1df4ab",
+      "bytes": 33491
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-02.png",
+      "sha256": "3bfb1f6f6117e06b33e91714530cf8ff16c55bbc38fbf1add042f59c6e7f8229",
+      "bytes": 33041
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-03.png",
+      "sha256": "a2673cf1301694885b21ad9588f17c2f62c7fb407c06230cab0c4a362fa0317f",
+      "bytes": 36410
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-04.png",
+      "sha256": "9147700e26048dfbf2f9377ba7611b49bd7a04be964269722969f69dc582ddf3",
+      "bytes": 35473
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-05.png",
+      "sha256": "03e5b54f0a682b3eb698a2abd14af9eff23c9a9f33c301e3bc354064401da6f1",
+      "bytes": 32147
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-06.png",
+      "sha256": "702bd23caa82de9bbea89f46ae37180a07251d1f7b57dd66d7e306b38804eda5",
+      "bytes": 45448
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-07.png",
+      "sha256": "1325bb1f75ee3e13f96b33ee8d4b301563d3c4b66c54fb50ee23bf45f58231d4",
+      "bytes": 39063
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-08.png",
+      "sha256": "8a903f0ea072bc24ed9a7c11b72b8c461a8007ae98a3205ef88eb4a4b5890a3e",
+      "bytes": 37178
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-09.png",
+      "sha256": "f42257a74154d367279c1155ba7a0eb78b8bf6d71e22a58e94a405a4debba9ea",
+      "bytes": 38947
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-10.png",
+      "sha256": "7a247c3661cd2511a41a395d41bde864dd23c639437ac56a13c63b2a8a40a717",
+      "bytes": 36107
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-11.png",
+      "sha256": "5e1d346bbf39133e23db7c2c19043ac3a0c2f2798b6c889393ce940c221ad55f",
+      "bytes": 36960
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-12.png",
+      "sha256": "d4e608ea00982b39fe03eddfdd075e1d59519f9788a3c76aea1e7819bd713c0a",
+      "bytes": 35844
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-13.png",
+      "sha256": "6e8f5f5e0f366f56db062d739d15c4fd68d208c0d685b32a7ced37325e26733e",
+      "bytes": 38451
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-14.png",
+      "sha256": "046af17c65f3aafa8fb9e99f522d735d4d5a4bc88782482224f8c02ec74fb694",
+      "bytes": 36631
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-15.png",
+      "sha256": "453c33ff8281eb01e77e2f9c1f0d16fa207bec2d26c7f60d77d20bad4295e3da",
+      "bytes": 37648
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-16.png",
+      "sha256": "c488a7fefe17c09f053688c697b15b11d9b5d9ea4b4c3722cdce78726e810231",
+      "bytes": 37412
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-17.png",
+      "sha256": "6e968fe671e1a6b6cf18e78e72bb1a93988b1bfa27e96039246995d566f91c04",
+      "bytes": 32754
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-18.png",
+      "sha256": "6631a5c26e1eebebab338128b70681b8447025281e0d29a6d1386800bc154abb",
+      "bytes": 36169
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-19.png",
+      "sha256": "f50f9b258b2201313b839a68b71a5765eb809714a60e5f7a94165cddfa243658",
+      "bytes": 22031
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-20.png",
+      "sha256": "72462755ccb5310254c709e6dbbaa1085f30bdabacb1f77247f2bfeaba9199d7",
+      "bytes": 37743
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-21.png",
+      "sha256": "3eb0db982aa957a3f1cac0f3985d374b103d3092d68bac67efd20d0c1ed1f1e5",
+      "bytes": 35505
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-22.png",
+      "sha256": "732ecc70c3ef77aec15f8c238222c16653b7b974c6631736adfa1c329f70cb9f",
+      "bytes": 19668
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-23.png",
+      "sha256": "16fa6c9a014cdb74dc22cb18e335a2956e002a7d570a019d3a32db21c2c59776",
+      "bytes": 38542
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-24.png",
+      "sha256": "e874e19dd737161c2b67e1b9d77dde0c888e36170b3f72a18d2c907d1c3ff5aa",
+      "bytes": 40968
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-25.png",
+      "sha256": "892c5341a6bcf8aee01239bbee7213168edfd777c6a46f64abc3457abf152f55",
+      "bytes": 42803
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-26.png",
+      "sha256": "90a15439fb0144cca1dddccfa7f79d0034c9d7b398e0467c51703f8420e06803",
+      "bytes": 24249
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-27.png",
+      "sha256": "913df59339ce55f38dd95afb541d93fc1b181d18c153e4e7c874a48589467219",
+      "bytes": 43541
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-28.png",
+      "sha256": "dfa830f75da17eec2c2204be9dd6bce929f2bdacd3b1e6885e5dde2bd911233e",
+      "bytes": 36678
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-29.png",
+      "sha256": "079e7b4aa4eacd5670ac8e34eac1d490cd01d9bfdcfffeb73974d91417c89c38",
+      "bytes": 37910
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-30.png",
+      "sha256": "b89977c6c3708c402ac0a4c3b63ba54ca551f5cf792d3af2d0c597a1467fee9b",
+      "bytes": 36979
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-31.png",
+      "sha256": "fa782e3a51286d15d218fa0d6eef935dde2870ef3ed0f757f90f1ab7bf407ab9",
+      "bytes": 38307
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-32.png",
+      "sha256": "9cebec40887d39442637b0c92dcd2ba822d6f3f56ad5cfadb60dece966e4a534",
+      "bytes": 32141
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-33.png",
+      "sha256": "f00e1a1b8bb5b089ee07131330aa01432b2e05530c29e06a8da1840ee4957a28",
+      "bytes": 36462
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-34.png",
+      "sha256": "3627ddc1f17afb75c88a15e7f7d461b46fa1450b19a0abcfe5fd8a7ed432f10a",
+      "bytes": 33371
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-35.png",
+      "sha256": "e69b20fe7d3fe7c244c50711e1e2fcf9c9bf55edaf3fb31a69478711d878c019",
+      "bytes": 41218
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-36.png",
+      "sha256": "fb43d6c67c304dc7d25955cb1848cc8bcdcbb46653d931ebc0576eb3091e04f1",
+      "bytes": 41224
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-37.png",
+      "sha256": "171cdd2a7b13c6b47ab9ce9e089b13cb588c31cfbb0d155ca0ae66a2b69439e0",
+      "bytes": 37936
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-38.png",
+      "sha256": "2895de46902516dbbea6ad1e0179cc5b86be52ba4211a7cd7177e5d707a4b021",
+      "bytes": 38455
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/main_thumbs/page-39.png",
+      "sha256": "bc0d63aee5c1212f1d4974afaa447840328745118b9718e3a6d876517d6b600b",
+      "bytes": 42046
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement.txt",
+      "sha256": "1d68f381da3d73bece3fdc529278c6eee71c0036a4a93495e955c9938ea42343",
+      "bytes": 40432
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_contact_1.png",
+      "sha256": "7f3ccad6938a4bdb5d7d970c6b79f049ed5a31a9f996f9485e5794b1b8b974bb",
+      "bytes": 841122
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_contact_2.png",
+      "sha256": "b3babb6ea6c7f1f9b368fca91aa46d566c41a92bbf51d538cbdf0eb8c717ea24",
+      "bytes": 157002
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_focus_5.png",
+      "sha256": "fd12cc27e0c398495b8b1f4281675637776405d6dc3e33701382b14f04c53951",
+      "bytes": 166410
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_thumbs/page-01.png",
+      "sha256": "074f5580c94a67de27361abb45647f2d8b33e4defe2fb7a5c803563073543a4e",
+      "bytes": 37126
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_thumbs/page-02.png",
+      "sha256": "bf0011451290766fa1b86c44483ee042e2dc7bc9ded4da3ca906383fea846089",
+      "bytes": 38775
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_thumbs/page-03.png",
+      "sha256": "e0924bae652f2ca9bfc62e5cb94687b9b8f837c5b4356c5394f16667bcfd4146",
+      "bytes": 35920
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_thumbs/page-04.png",
+      "sha256": "ec9c069e625e4dfd4fa9fc18ee26bbea1359f7c91dab6375cf394a955cbc2df7",
+      "bytes": 20500
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_thumbs/page-05.png",
+      "sha256": "0ecc85774bcd0c21007306b55c7af4384cdfffc2cd39cd3ffad63be024db1176",
+      "bytes": 23581
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_thumbs/page-06.png",
+      "sha256": "3e908bb9db77d045607de976da082b1de7dc60a7521f085c88fac6a76d729cbf",
+      "bytes": 34506
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_thumbs/page-07.png",
+      "sha256": "98bda7f47c9af07023eec820bbc48fd5866a79b31eaa198c3aa2032f0c14b46c",
+      "bytes": 34146
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_thumbs/page-08.png",
+      "sha256": "28f7703c10d234085b38d692f1a715403d7434f40f4b189a4565c22fdd2cff24",
+      "bytes": 37742
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_thumbs/page-09.png",
+      "sha256": "6dca92d8a314ea6c195c311953c61036e1d7409539cef47fe5e2dacdd8ef0df3",
+      "bytes": 35560
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_thumbs/page-10.png",
+      "sha256": "92f03f2a7f688c85fad83c5ddcb05ff3a41a7ad0225e8cb1ab1e8a7928171628",
+      "bytes": 37903
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_thumbs/page-11.png",
+      "sha256": "9a34b85b7acf4db6159bb17deb74bea00df30cdc5680d326ff6a9247d3c46652",
+      "bytes": 30805
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_thumbs/page-12.png",
+      "sha256": "9b8517ca6ba587e25ae4a207d895ef9bcf3af0b0c5847f5ce02c8eed10bb7b80",
+      "bytes": 37595
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_thumbs/page-13.png",
+      "sha256": "fdee9a3db4b5818cfdbc83f55a9fe29d15f1bf338b85e469cdddfcb6d62e3a1e",
+      "bytes": 25751
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_thumbs/page-14.png",
+      "sha256": "2129825670aaa02d6b29ef23b00dbfea3b1c924f75b04d8aba8e366594964bfb",
+      "bytes": 32570
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_thumbs/page-15.png",
+      "sha256": "e42b511d113df87e8f5ed62ee9397ef4f5ab297a76515818e2bbfebe8e003b29",
+      "bytes": 36026
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_thumbs/page-16.png",
+      "sha256": "b1480bb8f8d26319ac3d3d9225126dc83f3d29359995e6c7b0eccffc116246f0",
+      "bytes": 35614
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_thumbs/page-17.png",
+      "sha256": "0f8a31338c939dcc4d90d180f7442befe2880a6bd323dd55a5e4281a6ec4c1b8",
+      "bytes": 37830
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_thumbs/page-18.png",
+      "sha256": "713d5e2442aff187a8f7ce609ef06fd0c20f1c9c02857be16108948300133c85",
+      "bytes": 37132
+    },
+    {
+      "path": "manuscript_v1/author_review_v2/qa/supplement_thumbs/page-19.png",
+      "sha256": "0c9cacbedf839ed9d5278ef03686bc646401856ca7785c134fd0342a3dc0a81d",
+      "bytes": 18745
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/contact_1.png",
+      "sha256": "9091232a518cae5bde7a04240745c002170f6e98cb291a17272018444d90736c",
+      "bytes": 1102701
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/contact_2.png",
+      "sha256": "0ddf43773758c4f42076406203cd4e1580bdf393cf1dbb4585e7c919c8fcd915",
+      "bytes": 837598
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/focus_1.png",
+      "sha256": "da2c4e3276d8c329239467f283217234ed19e99a1fc99a3067faea3dd8667931",
+      "bytes": 402494
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/focus_10.png",
+      "sha256": "65be2d3102d5fe7ba3b4b8326169b21689b24c8f9043aa86b581b26c9bbcb38d",
+      "bytes": 383114
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/focus_13.png",
+      "sha256": "e52fd9f691592aa35b7b8383db08f7478f1944c04509dc51de194c40d4d79dd9",
+      "bytes": 285099
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/focus_15.png",
+      "sha256": "59db0a00599507fc5eecb6e41091abf485531182e08f8729a65502e2e9697ad8",
+      "bytes": 337347
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/focus_16.png",
+      "sha256": "765b980a8a859f1f550b5e69446f1a37045ff9e4f1db8fd1a17e92b4c5dd37be",
+      "bytes": 437535
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/focus_17.png",
+      "sha256": "52d96b61c9db43f794acc34b6ef95b34dad5f480a13764dfa57bc09ae340946d",
+      "bytes": 519520
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/focus_20.png",
+      "sha256": "2b84f50dac2aaf17c500d0101cb22519841aee6a389dde917efb9aab9aa4fef2",
+      "bytes": 472492
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/focus_22.png",
+      "sha256": "60d55457119663ee74149f9ccafe911a541bc885dfa6f53aa29dc8da5b674407",
+      "bytes": 147774
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/focus_6.png",
+      "sha256": "fa6f0b42984e56f91ff4750b6a71fe39d780fe2954f62669fdb5392785945507",
+      "bytes": 493647
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/main_zh.txt",
+      "sha256": "c151beb6329934914cce6930903cdece68a20c08e24d3af625a43b44d7233dfb",
+      "bytes": 67451
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-01.png",
+      "sha256": "06ecfa665e69dfc5e24a5975627a8adec4e7247c7644bb0a47413ed95b5dcecc",
+      "bytes": 82892
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-02.png",
+      "sha256": "4eb091dbc5940422faa78b42a3636b2a2d41fcbdfbfb53fc5f8587c740f542ca",
+      "bytes": 99383
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-03.png",
+      "sha256": "63bf98a4f2e5082a1a720ff4058d7bc91a5a6ee1cc679cbff8aaa7c6168167b0",
+      "bytes": 48349
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-04.png",
+      "sha256": "cd06fc16ab0efaaa2f5576e2c97eebd04fe98bfb6739fb3632e7da39e89fd8e0",
+      "bytes": 76630
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-05.png",
+      "sha256": "c7d2e5fe11a9784f1987c02aa94fd9fbd23194ebf05bc4c4e43212d59d2aa619",
+      "bytes": 96756
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-06.png",
+      "sha256": "ef087c4548ad449cb444d874316a74bcd74051016f3367954d81cfe3ba62129a",
+      "bytes": 95840
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-07.png",
+      "sha256": "73ea8d70d03814c9c949b0a6c0d0455b5dffe9348bcc3dd37dc2132c0ea7e7b4",
+      "bytes": 102346
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-08.png",
+      "sha256": "507e6b05064e4881ce2d9f2a3e62f78b50cbe01128ecae45551373d72e15ab69",
+      "bytes": 97356
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-09.png",
+      "sha256": "4b8ca8180916092b73ee43e4db9917580f552d037a11ecb43701d78a9087424e",
+      "bytes": 93360
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-10.png",
+      "sha256": "38c2a1b67bd9e957bf21904b58292133a514fd00d2174c35a33d286db52231ae",
+      "bytes": 73588
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-11.png",
+      "sha256": "baab53c63cdc16bccf54955e41609a5e403e0a983f78a2ddce0b3af1477e215c",
+      "bytes": 73439
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-12.png",
+      "sha256": "48a8cb6942927356b71e2f3901a4e50c6e96f101d2c4de02e28ca2ece469f46e",
+      "bytes": 67702
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-13.png",
+      "sha256": "c3a14a637e2a0ad78108814754061d6bf6f8df6012cd2c8ae947bd7018d2df3b",
+      "bytes": 61552
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-14.png",
+      "sha256": "30c5b8c249330be34428b6badbcd7e45e005ebf3e8274cc7910432e7eef51095",
+      "bytes": 45904
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-15.png",
+      "sha256": "eff4494a0bf3c190fa3a7682924559a16bfc5bfa9ee61385edb5b85f44b4a3d1",
+      "bytes": 69928
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-16.png",
+      "sha256": "c5b55bbcb5e7cb97dd0517ad1279c94f44c9540a45431678b2e000d462cc81f3",
+      "bytes": 86033
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-17.png",
+      "sha256": "d6946de87628358a6ccb1141f58324d9512aadbf39ae26497bda096d88abcabe",
+      "bytes": 103141
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-18.png",
+      "sha256": "37977c92f2510aae696692929877b1ad6225846bda658a6c7f3920700022a8f8",
+      "bytes": 98120
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-19.png",
+      "sha256": "712e9f46fb04ca7b52935c34694e3fec7692c719890674a09365df9e099a3ad6",
+      "bytes": 71513
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-20.png",
+      "sha256": "ddff5f0f3aa7c1c740ca331af9db67fe402392bff527e2b74c0c7d8138071d4d",
+      "bytes": 90524
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-21.png",
+      "sha256": "ffe789d84ba5140a572e94744a3fc57d151e8dd4d10f84605e380218465cd917",
+      "bytes": 90129
+    },
+    {
+      "path": "manuscript_v1/author_review_v2_zh/qa/thumbs/page-22.png",
+      "sha256": "7aecba014cebda67c578cce9a5c00e535e2c70655578a66fada33e353fd703e8",
+      "bytes": 29470
+    }
+  ]
+}

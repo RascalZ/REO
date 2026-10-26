@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-26",
+  "repository": "RascalZ/REO",
+  "authenticated_login": "RascalZ",
+  "visibility": "private",
+  "permissions": {
+    "admin": true,
+    "maintain": true,
+    "pull": true,
+    "push": true,
+    "triage": true
+  },
+  "collaborator_permission": "admin",
+  "workflows": {
+    "total": 84,
+    "recent": [
+      {
+        "id": 40301499247,
+        "sha": "595161c093ddabe492a69c8d418d5c2c7c65f22e",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/RascalZ/REO/actions/runs/40301499247"
+      },
+      {
+        "id": 40287875607,
+        "sha": "35cb154ad59fda0d5e3eb67acf761ea22b0c7664",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/RascalZ/REO/actions/runs/40287875607"
+      },
+      {
+        "id": 40268340274,
+        "sha": "a60dc800395330bad51ea4403a5d2b0b03d6e814",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/RascalZ/REO/actions/runs/40268340274"
+      },
+      {
+        "id": 40262895655,
+        "sha": "4f1550f01a9a137d3e5970968006348ec1ceba77",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/RascalZ/REO/actions/runs/40262895655"
+      },
+      {
+        "id": 39574793195,
+        "sha": "f8fe1c43f5db846d0350e3178bf59b8545f4f388",
+        "status": "completed",
+        "conclusion": "success",
+        "url": "https://github.com/RascalZ/REO/actions/runs/39574793195"
+      }
+    ]
+  },
+  "releases": [],
+  "branch": {
+    "name": "main",
+    "sha": "595161c093ddabe492a69c8d418d5c2c7c65f22e",
+    "protected": false
+  },
+  "protection_interface": {
+    "error": "FORBIDDEN",
+    "message": "Resource not accessible by integration"
+  },
+  "repository_visibility_or_collaborators_changed": false,
+  "administration_read_limit": "Branch-protection endpoint returned 403 Resource not accessible by integration; owner/admin metadata does not establish this connector can execute administration calls."
+}

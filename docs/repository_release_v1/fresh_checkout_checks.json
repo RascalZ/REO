@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-26",
+  "scope": "Fresh tracked-source checkout, using existing pinned Python 3.12 environment; not a fresh dependency installation or model retraining",
+  "base_commit": "595161c093ddabe492a69c8d418d5c2c7c65f22e",
+  "python": "3.12.14",
+  "results": [
+    {
+      "command": "python scripts/verify_public_snapshot.py",
+      "exit_code": 0,
+      "output_tail": "PASS: public phase-1 panel/hash/count consistency. Full identity validation requires local inputs.\n"
+    },
+    {
+      "command": "python scripts/verify_public_ordinal.py",
+      "exit_code": 0,
+      "output_tail": "{\"status\": \"passed\", \"files_verified\": 12, \"outer_tasks\": 840, \"successful_pipeline_fits\": 22440, \"observed_paired_intervals\": 300, \"null_contrast_points\": 2700, \"private_data_opened\": false, \"new_statistics_or_fits\": false, \"scope\": \"Public hashes and aggregate identities/counts only; private OOF/rank/bootstrap/checkpoint and scientific validity require separate full validation. Mutable reports, figures and operational-overhead summaries are excluded.\"}\n"
+    },
+    {
+      "command": "python scripts/verify_public_ordinal_repeated.py",
+      "exit_code": 0,
+      "output_tail": "{\"status\": \"passed\", \"files_verified\": 14, \"outer_tasks\": 960, \"successful_pipeline_fits\": 26160, \"paired_effect_intervals\": 900, \"primary_family_effects\": 9, \"representation_family_effects\": 18, \"independent_biological_groups\": 626, \"zero_molecular_outer_fits\": 430, \"nonzero_molecular_outer_fits\": 410, \"private_data_opened\": false, \"new_statistics_or_fits\": false, \"scope\": \"Public hashes, source binding and aggregate algebra/coverage only; not private OOF/bootstrap reproduction, an independent study, algorithmic uncertainty or scientific validity certification.\"}\n"
+    },
+    {
+      "command": "python scripts/verify_repro_assets_v1.py",
+      "exit_code": 0,
+      "output_tail": "{\"status\": \"passed\", \"mode\": \"public_summary_and_fixture_contracts\", \"verified_numeric_model_bundles\": 0, \"verified_local_metadata_outputs\": 0, \"verified_fitted_tables\": 0, \"new_training_or_scoring\": false, \"source_CTRP_responses_indices_or_individual_predictions_read\": false, \"scope\": \"hash/schema/count checks; recorded generated-input agreement is not recomputed efficacy or independent study replication\"}\n"
+    },
+    {
+      "command": "python -m unittest discover -s tests -p test_repro_inference_v1.py -v",
+      "exit_code": 0,
+      "output_tail": "ill_declared_molecular (test_repro_inference_v1.PortableInferenceTests.test_empty_feature_fallback_is_still_declared_molecular) ... ok\ntest_expression_encoding_scale_then_projection (test_repro_inference_v1.PortableInferenceTests.test_expression_encoding_scale_then_projection) ... ok\ntest_hand_calculated_midrank_fwl_and_unseen (test_repro_inference_v1.PortableInferenceTests.test_hand_calculated_midrank_fwl_and_unseen) ... ok\ntest_invalid_bundle_dimensions_and_scales_rejected (test_repro_inference_v1.PortableInferenceTests.test_invalid_bundle_dimensions_and_scales_rejected) ... ok\ntest_invalid_identity_or_tissue_abstains_for_null_too (test_repro_inference_v1.PortableInferenceTests.test_invalid_identity_or_tissue_abstains_for_null_too) ... ok\ntest_json_gzip_and_duplicate_or_nonstandard_json_rejection (test_repro_inference_v1.PortableInferenceTests.test_json_gzip_and_duplicate_or_nonstandard_json_rejection) ... ok\ntest_labels_and_schema_order_are_rejected (test_repro_inference_v1.PortableInferenceTests.test_labels_and_schema_order_are_rejected) ... ok\ntest_mean_fallback_remains_mean_not_tissue_effect (test_repro_inference_v1.PortableInferenceTests.test_mean_fallback_remains_mean_not_tissue_effect) ... ok\ntest_missing_nonnumeric_nonfinite_and_negative_are_retained (test_repro_inference_v1.PortableInferenceTests.test_missing_nonnumeric_nonfinite_and_negative_are_retained) ... ok\ntest_pair_orientation_and_exact_ties (test_repro_inference_v1.PortableInferenceTests.test_pair_orientation_and_exact_ties) ... ok\ntest_rank_needs_inactive_candidates_not_only_active_gene (test_repro_inference_v1.PortableInferenceTests.test_rank_needs_inactive_candidates_not_only_active_gene) ... ok\ntest_sealed_paths_blocked_without_opening (test_repro_inference_v1.PortableInferenceTests.test_sealed_paths_blocked_without_opening) ... ok\ntest_structural_and_duplicate_identity_failures (test_repro_inference_v1.PortableInferenceTests.test_structural_and_duplicate_identity_failures) ... ok\ntest_zero_molecular_and_true_null_have_different_gateway (test_repro_inference_v1.PortableInferenceTests.test_zero_molecular_and_true_null_have_different_gateway) ... ok\ntest_zero_valid_tpm_predicts_tissue_policy (test_repro_inference_v1.PortableInferenceTests.test_zero_valid_tpm_predicts_tissue_policy) ... ok\n\n----------------------------------------------------------------------\nRan 16 tests in 3.362s\n\nOK\n"
+    },
+    {
+      "command": "python scripts/predict_repro_v1.py --model examples/repro_inference_v1/toy_rank_model.json --input examples/repro_inference_v1/toy_input.json --output toy_predictions_new.json",
+      "exit_code": 0,
+      "output_tail": "Response-free predictions written to F:\\2-生信学习积累\\1-基因对\\rebuild_v2\\docs\\repository_release_v1\\local_private\\fresh_checkout_01\\toy_predictions_new.json\n"
+    }
+  ],
+  "toy_expected_values_match": true,
+  "new_training_resampling_or_drug_scoring": false,
+  "individual_CTRP_access": false
+}
