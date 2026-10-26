@@ -1,0 +1,55 @@
+{
+  "protocol": "actual ARS scripts/check_phase_conformance.py",
+  "schema": "13.2",
+  "panel_size": 5,
+  "manuscript_read_only": true,
+  "calibration_status": "NOT_CALIBRATED",
+  "reports": [
+    {
+      "seat": "EIC",
+      "role": "eic",
+      "exit_code": 0,
+      "result": "PASS",
+      "phase1_sha256": "ca6211883c7fd54cfcf6488e70b99dd36578a4132b18b16a0654a8398240b70a",
+      "phase2_sha256": "2d599429a83d57557a5cca6aeec0a8f4cb170fd2e79b8a8d984f04f95af30cbf",
+      "short_trigger_advisory": true
+    },
+    {
+      "seat": "R1",
+      "role": "methodology",
+      "exit_code": 0,
+      "result": "PASS",
+      "phase1_sha256": "025e8349cdae917985f0ad8054bfba1b40df55fdb3c59291e23aa07ab7ba41c0",
+      "phase2_sha256": "54955020f255bfa432b95f177a14e766abc17a3cb1458a5d52444c8dbdc8a489",
+      "short_trigger_advisory": true
+    },
+    {
+      "seat": "R2",
+      "role": "domain",
+      "exit_code": 0,
+      "result": "PASS",
+      "phase1_sha256": "ab6990f92e6db22692715e108794d11e629bd50e60248be802635f6b07881d35",
+      "phase2_sha256": "59b607cc9348412239ac11de11db2de7d80459ab27cedb8ab878b689d52c1605",
+      "short_trigger_advisory": true
+    },
+    {
+      "seat": "R3",
+      "role": "perspective",
+      "exit_code": 0,
+      "result": "PASS",
+      "phase1_sha256": "369474357205ba4477ef3959b8983fbc50fd43382304a99f4f1d917af4840dcd",
+      "phase2_sha256": "147c611d24cc1ecc796d2b323300b0b60a50841581d33d9020d85576b7b9ea4a",
+      "short_trigger_advisory": true
+    },
+    {
+      "seat": "DA",
+      "role": "da",
+      "exit_code": 0,
+      "result": "PASS",
+      "phase1_sha256": "fa3d510ec8d435ce429a71996841484c76b306d0ec575abb5f1d5160d0fea697",
+      "phase2_sha256": "840fecbf5f46e02fe09f83d0d75ed1343714c4729bef579a65185e6232b5415b",
+      "short_trigger_advisory": true
+    }
+  ],
+  "note": "Chinese trigger word-count warnings are advisory; all reports passed. Structure validation is not a scientific replication or correctness guarantee. Methodology arithmetic attestation applicability is declaration-only, not machine-verified."
+}

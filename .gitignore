@@ -72,3 +72,6 @@ docs/translation_zh_v1/local_private/
 # Paired English/Chinese revisions after author feedback; preserve source copies.
 manuscript_v1/author_review_v3/
 manuscript_v1/author_review_v3_zh/
+
+# Manuscript-bearing skill review inputs, role reports and isolated utility runtime.
+docs/reviews/skill_panel_v1/local_private/

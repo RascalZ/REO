@@ -1,10 +1,12 @@
 # 基因对药物反应预测项目重构科研计划
 
-**计划v3.43，更新日期：2026-10-26。唯一维护版本为本文件。工作周期：10月10日至11月8日，11月9日至10日保留投稿检查缓冲。**
+**计划v3.44，更新日期：2026-10-26。唯一维护版本为本文件。工作周期：10月10日至11月8日，11月9日至10日保留投稿检查缓冲。**
 
 本计划以最新投稿稿件、主要分析代码、保存的结果矩阵/模型台账、补充表、图2/图4和公开数据源核查为基础。目标是一个月内完成可审查、可复现、论断与证据相符的新稿并投稿；接收和正式上线还取决于编辑及外审，不能由一个月计划保证。用户已确认Naunyn-Schmiedeberg's Archives of Pharmacology亦已拒稿；按1名主要执行者、与助手协作、现有电脑和公共数据设计，版面费不是主要限制。
 
 ## 0 执行台账与当前版本（每次工作先读此节）
+
+**v3.44：已对英文通读v3完成academic-paper-reviewer五视角只读审查。** 编辑、统计方法、药物基因组学、跨领域及反方论证席位分别预承诺后读稿，五份报告已通过真实Phase1→Phase2 conformance；另由综合席汇总。6条源弱点合并为5类，均为Minor：两屏AUC测量/积分定义、LOTO未定义原因、主文日志层级、材料实际访问、作者声明收尾。未确认Critical或单项Major；后两类继续按原定收尾，不将已披露局限自动升级。冻结技能F3因D1/D2均warn给整体major_revision，这是模拟规则标签，不把单项等级改成Major，也不代表BMC决定或接收概率。详见[排序审稿问题](docs/reviews/skill_panel_v1/REVIEW_REPORT_ZH.md)、[综合意见](docs/reviews/skill_panel_v1/editorial_decision.md)、[来源顺序路线图](docs/reviews/skill_panel_v1/revision_roadmap.md)及[阶段30](reports/阶段30_新版全文五视角审稿与风险分级.md)。本轮不改中英文manuscript、表图、冻结方案或科学结果，不训练/重抽样/评分、不读CTRP个体响应/索引。22件稿件/补充/聚合表/图及5件预承诺hash保持；审查不是原始数据复现或全部题录全文核验。NOT_CALIBRATED，正式期刊criteria未绑定；角色分离不代表独立错误过程。下一gate是作者阅读排序问题、讨论最小文字补充；未生成作者选择sidecar，未执行任何建议修订，作者声明、许可、访问与归档仍在实际投稿前收尾。
 
 **v3.43：已落实首轮中文通读反馈，当前正文为英文通读v3及对应中文修订通读v2。** 新正文分别位于本地Git忽略`manuscript_v1/author_review_v3/`（39页）和`manuscript_v1/author_review_v3_zh/`（22页）；原英文v2和首份中文22页译稿保留。摘要明确GDSC2反应AUC/CCLE表达来源，按同政策组织参照、分子增量、匹配表示比较组织结果；主差值和条件区间保留。八药摘要不再写含糊“沿用既往开发”，Methods仍披露本研究前期开发启发。LOTO标题明确34/80项有定义。删除来自旧投稿审计的“早期稿件”句，避免混为当前研究稿件沿革；保留回顾性、先冻结后一次评分及非前瞻盲法边界。两表、四图、31题录和声明不变；每语种8块修订，189块未改，32件既有交付SHA保持；实际渲染39/22页已查看通过。本轮不重训/评分或读CTRP个体数据。见[阶段29](reports/阶段29_摘要归因与研究边界作者修订.md)及[核查](docs/author_feedback_r1/)。后续使用新版中文PDF页码反馈，补充材料仍沿用英文v2配套。
 
@@ -35,7 +37,7 @@
 |P5d 零解与药物异质性诊断|完成|[阶段7报告](reports/阶段7_零解与药物异质性诊断.md)、[五张聚合表](results/development_diagnostics/)、[诊断方案v1](docs/DEVELOPMENT_DIAGNOSTICS_PROTOCOL_V1.md)；430/840均选择解析零端点，0求解警告/回退；无新模型拟合|
 |P5e 合成机制与组织敏感性/LOTO|完成；v1.3独立验证与描述性分析通过|[阶段8组织诊断](reports/阶段8_组织分层OOF诊断.md)、[阶段8b残差澄清](reports/阶段8b_组织残差增量澄清.md)、[阶段9合成机制](reports/阶段9_合成机制控制.md)、[阶段10结果](reports/阶段10_LOTO组织外推敏感性.md)、[阶段10j恢复/审计](reports/阶段10j_LOTO_v1_3系统重启恢复与结果审计.md)、[P5e协议](docs/TISSUE_SENSITIVITY_LOTO_PROTOCOL_V1.md)、[v1.3执行锁](config/loto_execution_v1_3.lock.json)、[结果清单](results/tissue_loto/loto_analysis_manifest.json)；1,472/40,112/39,736已核验；严格主宏NA（34/80格有定义）；稀有组织警告与零解保留；CTRP禁读|
 |P6 外验/最终模型冻结|完成；64模型/1,744 fit、9,480行无响应预检及一次性CTRP外验均通过独立审计|[阶段13报告](reports/阶段13_P6全开发模型与无响应外验预检.md)、[阶段14报告](reports/阶段14_P6一次性CTRP外验与研究方向判定.md)、[第二锁](config/external_execution_v1_1.lock.json)、[外验聚合汇总](results/p6_external/evaluation_summary.json)；29/56分子臂零解、0弃判、27项估计量各20,000有效抽样|
-|P7 图表/正文/投稿|首轮作者反馈已落实为英文v3/对应中文修订通读v2；39/22页实际渲染核查通过，旧v2与原22页译稿保留；科学结果和补充文件不变，继续按新版中文页码反馈，作者/访问/归档收尾未关闭|[阶段29](reports/阶段29_摘要归因与研究边界作者修订.md)、`manuscript_v1/author_review_v3/`、`manuscript_v1/author_review_v3_zh/`（均本地Git忽略）、[最终核查](docs/author_feedback_r1/final_audit.json)|
+|P7 图表/正文/投稿|英文v3及对应中文39/22页原稿保留；已完成五视角只读审查，5类Minor和核心问询见阶段30；模拟汇总major_revision，未执行改稿；作者/访问/归档仍按既定收尾|[阶段29](reports/阶段29_摘要归因与研究边界作者修订.md)、`manuscript_v1/author_review_v3/`、`manuscript_v1/author_review_v3_zh/`（均本地Git忽略）、[最终核查](docs/author_feedback_r1/final_audit.json)|
 
 ### v3.41 当前文字修订与下一gate
 
@@ -1169,3 +1171,7 @@ BMC Genomics母版采用结构摘要Background/Results/Conclusions，≤350词�
 ### v3.43变更记录
 
 2026-10-26：按作者意见重排240词摘要，明确GDSC2药敏与CCLE表达；LOTO标题量化34/80；将旧投稿审计的稿件历史与本轮重构研究分开，新稿不再写“早期稿件”，保留本研究开发启发和回顾性锁定评价事实。生成英文v3/对应中文修订通读v2，实际Word导出39/22页、全页缩略图及八张重点页查看通过，197块英中数值/引文对应；每语种8块修改，其余189块原样，32件原交付SHA保持。科学和许可/批准状态不变，继续按新版中文PDF通读，见阶段29。
+
+### v3.44变更记录
+
+2026-10-26：按显式调用academic-paper-reviewer完成五视角只读审查及单独综合。6条源弱点合并5类Minor；DA无Critical/Major，机械F3/F5汇总major_revision，分项不升级。提供按用户阅读次序的问题及严重程度、源报告、预承诺、来源顺序路线图和实际checker回执。角色分开不等于独立错误过程，NOT_CALIBRATED，无正式期刊criteria绑定。原22件稿件/补充/图表及5件预承诺hash保持；不改稿、不拟合/重抽样/评分、不读CTRP个体响应或索引。作者声明、真实访问、许可及归档仍按既定收尾；下一步作者审阅最小修订范围，未代作作者选择。见阶段30。

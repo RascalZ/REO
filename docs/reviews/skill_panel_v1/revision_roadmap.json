@@ -1,0 +1,194 @@
+{
+  "schema_version": "revision-roadmap/1.0",
+  "revision_round": 1,
+  "base_draft_sha256": "5761134e6c5e56e434665f4e26d1e3955438c35f88651de97b76ab713eba2c3e",
+  "block_manifest_sha256": "9c145bd72e6d32c9d05f794123028f29b707dc0feb08673ec0628e61434bb815",
+  "items": [
+    {
+      "id": "REV-001",
+      "source_refs": [
+        {"seat": "EIC", "channel": "finding", "ordinal": 1, "subclaim_ordinal": 0}
+      ],
+      "sub_claim_ids": ["SC-1"],
+      "description": "主文执行日志、种子修复与长哈希细节过密，使核心科学流程与执行修复的层级不易迅速区分。",
+      "reviewer": "EIC-W1",
+      "obligation_class": "should_fix",
+      "severity": "minor",
+      "severity_source": "EIC-W1 explicit Severity: Minor",
+      "evidence_anchor": {
+        "anchor_type": "text",
+        "locator": "主文 Methods—Leave-one-tissue-out sensitivity analysis 第 2 段",
+        "quote": "Before fitting, execution amendment v1.1 resolved a prose/config seed conflict in favor of the frozen machine value 2026101401."
+      },
+      "confidence": 5,
+      "competence_basis": "主文与补充 SM3 对读的编辑结构判断。",
+      "confidence_source": "EIC-W1 explicit per-finding Confidence",
+      "cost_scope": {"kind": "section", "locator": "Methods—LOTO 执行说明及 Reproducibility and data governance；现有 SM3、SM6、S13 交叉引用"},
+      "consequence_if_unaddressed": {
+        "code": "interpretive_ambiguity_remains",
+        "target": {"kind": "section", "locator": "Methods 的核心流程与执行修复层级"}
+      },
+      "target_section": "Methods—Leave-one-tissue-out sensitivity analysis；Reproducibility and data governance",
+      "suggested_action": "保留主文有关训练边界、预先冻结、实际科学版本及修复未改变分析选择的一两句概述，将具体修复序列、逐项种子和长哈希集中指向已有补充 SM3、SM6 与 S13。保留影响科学选择的修订披露；无需重跑分析。",
+      "consensus_level": "SINGLE-VERIFIER",
+      "verification_criteria": "主文仍明确训练边界、冻结状态、实际科学版本与修复不改变分析选择；具体种子／修复序列／完整哈希可由明确补充交叉引用查得；未删除影响科学选择的披露，未更改科学结果或执行新拟合。",
+      "proposed_targets": [
+        {"block_id": "B0053", "allowed_operations": ["replace_block"]},
+        {"block_id": "B0063", "allowed_operations": ["replace_block"]}
+      ]
+    },
+    {
+      "id": "REV-002",
+      "source_refs": [
+        {"seat": "EIC", "channel": "finding", "ordinal": 2, "subclaim_ordinal": 0}
+      ],
+      "sub_claim_ids": ["SC-2"],
+      "description": "Figure 4A 将所有未定义 LOTO 差值合并为灰格，读者尚不能辨认实际发生的统计原因；这是需核对状态记录的编辑查询。",
+      "reviewer": "EIC-W2",
+      "obligation_class": "should_fix",
+      "severity": "minor",
+      "severity_source": "EIC-W2 explicit Severity: Minor",
+      "evidence_anchor": {
+        "anchor_type": "figure",
+        "locator": "Figure 4A，标为 Undefined Δρ 的灰色单元、各药的 defined-count 行标与 34/80 注记"
+      },
+      "confidence": 4,
+      "competence_basis": "对现有图注可读性的直接判断，实际原因分布尚需作者核对。",
+      "confidence_source": "EIC-W2 explicit per-finding Confidence",
+      "cost_scope": {"kind": "section", "locator": "Figure 4 图注或 LOTO Results 段；仅核对已有 S1/S7 状态字段并补说明"},
+      "consequence_if_unaddressed": {
+        "code": "interpretive_ambiguity_remains",
+        "target": {"kind": "figure", "locator": "Figure 4A 灰色未定义单元的含义"}
+      },
+      "target_section": "Results—Leave-one-tissue-out contrasts；Figure 4 legend",
+      "suggested_action": "核对现有 S1/S7 状态字段，在图注或结果段用一句话或简表说明十组织网格实际出现的未定义原因及范围。若原因尚未分类，明确写出未分类；保留严格宏值 NA，不把 NA 填零、不用可用格均值替代，也不未经核对将全部灰格归因于零分子解。无需改变敏感性分析或补做完整跨组织验证。",
+      "consensus_level": "SINGLE-VERIFIER",
+      "verification_criteria": "新增解释可逐项追溯至现有 S1/S7 状态记录，且明确其覆盖范围；无法分类者如实标为未分类；正文与图注仍报告 34/80 和严格宏值 NA，未产生新原因假说或替代预定统计量。",
+      "proposed_targets": [
+        {"block_id": "B0084", "allowed_operations": ["replace_block"]},
+        {"block_id": "B0147", "allowed_operations": ["replace_block"]}
+      ]
+    },
+    {
+      "id": "REV-003",
+      "source_refs": [
+        {"seat": "EIC", "channel": "finding", "ordinal": 3, "subclaim_ordinal": 0},
+        {"seat": "R1", "channel": "finding", "ordinal": 1, "subclaim_ordinal": 0}
+      ],
+      "sub_claim_ids": ["SC-3"],
+      "description": "代码、身份／分组衍生材料、原始折定义、64 个固定数值模型、系数和预处理状态的实际获取安排尚未落实；这是已披露的提交前准备项。",
+      "reviewer": "EIC-W3；R1-W1（同一访问安排问题合并）",
+      "obligation_class": "must_fix",
+      "severity": "minor",
+      "severity_source": "EIC-W3 explicit Severity: Minor；R1-W1 independently preserves Minor",
+      "evidence_anchor": {
+        "anchor_type": "text",
+        "locator": "主文 Code availability",
+        "quote": "Public or reviewer access and an archival release remain to be arranged before submission."
+      },
+      "confidence": 5,
+      "competence_basis": "稿件明确披露的当前访问状态。",
+      "confidence_source": "EIC-W3 explicit per-finding Confidence",
+      "corroborating_sources": [
+        {
+          "reviewer": "R1-W1",
+          "severity": "minor",
+          "evidence_anchor": {
+            "anchor_type": "text",
+            "locator": "Declarations—Availability of data and materials 第2段；Code availability 第1段（以下为两处原文片段）",
+            "quote": "They are not currently included in the version-controlled repository；Public or reviewer access and an archival release remain to be arranged before submission"
+          },
+          "confidence": 5,
+          "competence_basis": "数据与代码声明直接确认当前访问状态。",
+          "severity_source": "R1-W1 explicit Severity: Minor",
+          "confidence_source": "R1-W1 explicit per-finding Confidence: 5/5"
+        }
+      ],
+      "cost_scope": {"kind": "other", "surface_id": "access_arrangements", "locator": "提交前的代码与关键派生资产访问／重建说明，以及相应声明同步；不含重新拟合"},
+      "consequence_if_unaddressed": {
+        "code": "method_reproducibility_unresolved",
+        "target": {"kind": "dataset", "locator": "精确代码版本、派生身份／分组规则、折定义、固定模型及预处理状态的实际可获得性"}
+      },
+      "target_section": "Reproducibility and data governance；Declarations—Availability of data and materials；Code availability",
+      "suggested_action": "提交前为支撑主要比较的精确代码版本、身份／分组衍生规则与折定义提供审稿可用入口或确定的重建步骤；分别交代固定模型、系数与预处理状态的许可访问或重建方式、限制、获取条件、责任联系人及版本，并核对声明与可获得内容一致。可按上游条款受控访问，不要求重分发全部上游矩阵、特定平台 DOI 或重拟合。带清单／校验和的持久归档及第三方重建仅为源卡可选增强，当前不宣称已完成。",
+      "consensus_level": "SINGLE-VERIFIER",
+      "verification_criteria": "每类最低必需材料都有可执行的审稿入口或可追踪重建步骤、精确版本、联系人和适用限制；按所声明权限能取得相应材料或完成所列获取步骤；可获得内容与引用版本及声明一致；受限制内容写明替代路径；在实际落实前不写成已经公开或独立复现。",
+      "proposed_targets": [
+        {"block_id": "B0064", "allowed_operations": ["replace_block"]},
+        {"block_id": "B0115", "allowed_operations": ["replace_block"]},
+        {"block_id": "B0117", "allowed_operations": ["replace_block"]}
+      ]
+    },
+    {
+      "id": "REV-004",
+      "source_refs": [
+        {"seat": "EIC", "channel": "finding", "ordinal": 4, "subclaim_ordinal": 0}
+      ],
+      "sub_claim_ids": ["SC-4"],
+      "description": "作者贡献与致谢仍为明确待填的占位声明，需由所列作者完成提交前确认。",
+      "reviewer": "EIC-W4",
+      "obligation_class": "must_fix",
+      "severity": "minor",
+      "severity_source": "EIC-W4 explicit Severity: Minor",
+      "evidence_anchor": {
+        "anchor_type": "text",
+        "locator": "主文 Authors' contributions；Acknowledgements（以下为两处原文片段）",
+        "quote": "Author-specific contribution roles will be completed by the listed authors before submission.；The acknowledgement statement will be finalized by the authors before submission."
+      },
+      "confidence": 5,
+      "competence_basis": "声明中的明确占位表述。",
+      "confidence_source": "EIC-W4 explicit per-finding Confidence",
+      "cost_scope": {"kind": "other", "surface_id": "author_declarations", "locator": "所列作者确认具体贡献、相应责任与致谢内容，并替换两处占位句"},
+      "consequence_if_unaddressed": {
+        "code": "reporting_requirement_unmet",
+        "target": {"kind": "section", "locator": "Declarations—Authors' contributions；Acknowledgements"}
+      },
+      "target_section": "Declarations—Authors' contributions；Acknowledgements",
+      "suggested_action": "由所列作者确认具体贡献、相应责任及致谢内容，再替换两处占位句。审查者不推定个人职责、填写作者事实或代替最终作者批准；本项不构成署名不当的指控。",
+      "consensus_level": "SINGLE-VERIFIER",
+      "verification_criteria": "两处未来完成的占位句均已由作者确认的实际声明替换，并有作者确认可追溯记录；贡献与致谢信息来自作者提供及核实，未由审查者推断。本 core 本身不记录或假定确认已经发生。",
+      "proposed_targets": [
+        {"block_id": "B0123", "allowed_operations": ["replace_block"]},
+        {"block_id": "B0125", "allowed_operations": ["replace_block"]}
+      ]
+    },
+    {
+      "id": "REV-005",
+      "source_refs": [
+        {"seat": "R2", "channel": "finding", "ordinal": 1, "subclaim_ordinal": 0}
+      ],
+      "sub_claim_ids": ["SC-5"],
+      "description": "两屏 AUC 的读出、暴露时长、积分自变量、区间／归一化定义以及 CTRP 方向尚未集中交代；现有证据只确认说明不足。",
+      "reviewer": "R2-W1",
+      "obligation_class": "should_fix",
+      "severity": "minor",
+      "severity_source": "R2-W1 explicit Severity: Minor",
+      "evidence_anchor": {
+        "anchor_type": "absence",
+        "locator": "Methods 的 Data sources、Response outcome 和 Full-development models 小节及 Table S8",
+        "absence_scope": "两屏所用归档终点的读出与暴露时长、AUC 积分自变量和归一化定义，以及 CTRP 方向说明",
+        "check_performed": "完整主文、Additional file 14 的 SM1–SM8、Table S8 全部字段及 Figure 1/4 图注"
+      },
+      "confidence": 5,
+      "competence_basis": "已逐项核查所列终点说明与支持表字段。",
+      "confidence_source": "R2-W1 explicit per-finding Confidence",
+      "cost_scope": {"kind": "section", "locator": "Methods—Response outcome and analysis units 后的简短两屏终点对照；仅来源核对与文字／表格补充"},
+      "consequence_if_unaddressed": {
+        "code": "interpretive_ambiguity_remains",
+        "target": {"kind": "section", "locator": "GDSC2 与 CTRPv2 归档 AUC 的测量及方向定义"}
+      },
+      "target_section": "Methods—Response outcome and analysis units",
+      "suggested_action": "依据实际所用归档及相应原始资源，在方法中加入简短两屏终点对照，列明归档文件及原字段名、读出、暴露时长、积分轴、积分区间／归一化方式及数值方向。CTRP 剂量下限或积分细节无法核验时明确标为未重建，不填入未核对数值。无需训练、评分或重抽样；统一剂量窗／曲线处理只保留为源卡的可选新分析，不属于本项最低修复。",
+      "consensus_level": "SINGLE-VERIFIER",
+      "verification_criteria": "两屏均逐项列出归档文件／字段、读出、暴露时长、积分轴、区间／归一化和方向，并给出支持依据；未能从实际归档核验的字段明确标为未重建；新增说明不声称已经确认方向错误，也不将原有药内排序比较改写成绝对 AUC 校准或筛选条件的因果分析。",
+      "proposed_targets": [
+        {"block_id": "B0032", "allowed_operations": ["insert_after"]}
+      ]
+    }
+  ],
+  "total_items": 5,
+  "obligation_counts": {"must_fix": 2, "should_fix": 3, "consider": 0},
+  "editorial_decision": "Major Revision",
+  "consensus_summary": "冻结合同 F3 与 F5 触发，按 severity 优先选择 F3，机械决定为 Major Revision；原始六条弱点均为 Minor，EIC-W3 与 R1-W1 合并后共五项。访问问题为 EIC 与 R1 两席相互印证（2/4、非 CONSENSUS-3/4）；闭合 schema 没有 2/4 枚举，故由 SINGLE-VERIFIER 保守承载，不表示实际只有一席提出；source_refs/corroborating_sources 保存真实两席支持。其余四项为单席意见。无 SPLIT，DA Critical/Major 表为空。顺序仅按 EIC,R1,R2,R3,DA 再 finding ordinal；不携带作者选择或工作排序。",
+  "dissenting_opinions": []
+}

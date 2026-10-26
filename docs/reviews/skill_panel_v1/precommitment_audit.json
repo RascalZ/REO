@@ -1,0 +1,24 @@
+{
+  "template_raw_sha256": "d3bb7ff98ee0c3034f0067eb39f04d491bd7d4b97cec125540a12dd3a3f987e2",
+  "runtime_contract_sha256": "f7539e99bac3ac1bf479a4aa6c7f8833e44e3329aab4cbb3967cd38d7f21a241",
+  "phase1_files": {
+    "DA.md": "fa3d510ec8d435ce429a71996841484c76b306d0ec575abb5f1d5160d0fea697",
+    "EIC.md": "ca6211883c7fd54cfcf6488e70b99dd36578a4132b18b16a0654a8398240b70a",
+    "R1.md": "025e8349cdae917985f0ad8054bfba1b40df55fdb3c59291e23aa07ab7ba41c0",
+    "R2.md": "ab6990f92e6db22692715e108794d11e629bd50e60248be802635f6b07881d35",
+    "R3.md": "369474357205ba4477ef3959b8983fbc50fd43382304a99f4f1d917af4840dcd"
+  },
+  "phase1_conformance": "all_five_passed",
+  "phase1_advisory": "Chinese unspaced triggers cause the >=8 English-word hint; structural checks passed; no criterion changed",
+  "dispatch_failure_notes": [
+    "R2 Phase1 capacity failure before execution; identical retry completed",
+    "R3 Phase1 capacity failure before execution; identical retry completed",
+    "EIC Phase2 capacity failure before execution; identical retry requested",
+    "R3 Phase2 capacity error after reading payload; same-task resume requested, no peer feedback or criterion changes"
+  ],
+  "cross_model_config": "unset",
+  "model_tiering_config": "unset",
+  "calibration_status": "NOT_CALIBRATED",
+  "provenance_runtime_packaging_note": "Installed full.json CRLF raw SHA differs from checker LF pin; isolated copy replaces CRLF by LF, yielding exact pinned raw SHA. No JSON field or validator changed; installed skill untouched.",
+  "provenance_canonical_lf_sha256": "e9712090d2469fea15a37b8e22d4e137afbcb2bf38d5789939c5df56738ef7af"
+}

@@ -4,11 +4,13 @@ This repository contains a leakage-controlled comparison of relative expression 
 
 ## Current status
 
+The latest five-perspective, read-only pre-submission review is complete. See the [ordered Chinese reviewer questions and severity](docs/reviews/skill_panel_v1/REVIEW_REPORT_ZH.md), [editorial synthesis](docs/reviews/skill_panel_v1/editorial_decision.md), [source-ordered roadmap](docs/reviews/skill_panel_v1/revision_roadmap.md) and [Stage 30](reports/阶段30_新版全文五视角审稿与风险分级.md). Six source findings reduce to five unique Minor items; no Critical or individual Major defect was confirmed within this review scope. The frozen skill aggregate is `major_revision` because two mandatory dimensions are `warn`; it does not upgrade individual severity or imply new fitting is required. No manuscript, frozen analysis or individual CTRP data was changed or rescored. This is an uncalibrated model-assisted review, not independent scientific replication or a journal decision.
+
 The current manuscript is English author-reading v3, with a paired revised Chinese reading copy (39/22 pages), in local Git-ignored `manuscript_v1/author_review_v3/` and `manuscript_v1/author_review_v3_zh/`. Focused author feedback clarified data provenance, reframed abstract results around tissue/molecular/representation comparisons, quantified the LOTO heading and removed manuscript-history wording. Results, tables, figures and supplementary files are unchanged. See [Stage 29](reports/阶段29_摘要归因与研究边界作者修订.md).
 
 The preserved direct Chinese reading translation of the previous English v2 manuscript is available locally in the Git-ignored `manuscript_v1/author_review_v2_zh/` (Word/PDF, 22 pages). It preserves the science and original English files; feedback should refer to the Chinese PDF page numbers. See [Stage 28](reports/阶段28_英文通读v2中文直译与页码核查.md).
 
-As of 2026-10-26, the single maintained research plan is [RESEARCH_PLAN.md](RESEARCH_PLAN.md), version 3.43. Read its current-status section before using any older stage notes. The current scientific readouts are:
+As of 2026-10-26, the single maintained research plan is [RESEARCH_PLAN.md](RESEARCH_PLAN.md), version 3.44. Read its current-status section before using any older stage notes. The current scientific readouts are:
 
 The [abstract and narrative style discussion](docs/ABSTRACT_STYLE_REVIEW_V1.md) responds to author read-through feedback. It records the official CTRP v2 name and literature-grounded writing options. The author selected a question-led evaluation narrative; the new local v2 reading copy implements that choice without changing scientific results. See [Stage 27](reports/阶段27_研究问题导向文字修订与通读v2.md).
 

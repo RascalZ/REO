@@ -38,3 +38,8 @@ docs/narrative_v1/drafts/results.md whitespace=-blank-at-eol
 scripts/render_chinese_reading_v1.vbs -text !eol whitespace=cr-at-eol
 # Preserve the bilingual author-feedback export entry point bound by its audit.
 scripts/render_author_feedback_r1.vbs -text !eol whitespace=cr-at-eol
+# Preserve frozen reviewer commitments, cards and replay-bound JSON bytes.
+docs/reviews/skill_panel_v1/** -text !eol whitespace=cr-at-eol
+# Frozen source cards retain their original final blank lines as hash inputs.
+docs/reviews/skill_panel_v1/precommitments/*.md whitespace=cr-at-eol,-blank-at-eof
+docs/reviews/skill_panel_v1/review_reports/*.md whitespace=cr-at-eol,-blank-at-eof

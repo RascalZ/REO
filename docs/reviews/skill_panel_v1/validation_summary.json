@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-26",
+  "calibration_status": "NOT_CALIBRATED",
+  "criteria_binding_status": "criteria_binding_unavailable",
+  "checks": {
+    "five_phase1_phase2_conformance": {
+      "result": "PASS",
+      "exit_code": 0,
+      "detail_file": "phase_conformance.json"
+    },
+    "panel_synthesis": {
+      "result": "PASS",
+      "exit_code": 0,
+      "stdout": "PANEL-SYNTHESIS: PASS",
+      "checker": "ARS scripts/check_panel_synthesis.py",
+      "attempts": 1
+    },
+    "revision_roadmap": {
+      "result": "PASS",
+      "exit_code": 0,
+      "stdout": "revision roadmap ok",
+      "checker": "ARS scripts/revision_roadmap.py validate-roadmap"
+    },
+    "panel_provenance_replay": {
+      "result": "PASS",
+      "exit_code": 0,
+      "checker": "unchanged ARS scripts/review_panel_provenance.py in isolated LF-pin runtime"
+    },
+    "panel_carrier_replay": {
+      "result": "PASS",
+      "exit_code": 0,
+      "stdout": "review-panel provenance carrier: PASS"
+    },
+    "input_preservation": {
+      "result": "PASS",
+      "files": 22,
+      "precommitments": 5,
+      "detail_file": "preservation_audit.json"
+    }
+  },
+  "editorial_decision": "major_revision",
+  "fired_conditions": [
+    "F3",
+    "F5"
+  ],
+  "unique_findings": {
+    "critical": 0,
+    "major": 0,
+    "minor": 5
+  },
+  "source_findings": 6,
+  "manuscript_modified": false,
+  "new_training_or_scoring": false,
+  "individual_CTRP_access": false,
+  "source_and_deliverable_sha256": {
+    "contract.json": "f7539e99bac3ac1bf479a4aa6c7f8833e44e3329aab4cbb3967cd38d7f21a241",
+    "metadata.json": "150b254d675368705e82032653ce56cf9390c5f2bd1af7a143bac99e0c367992",
+    "panel-input.json": "1eb44824d3b598ff3a5402915876137f82b57462a6eb29a613017d75e30000c6",
+    "panel-provenance.json": "ca79984498fa233b640506b94f71429e710cbc51ff91cf2a509f193fae15ebd6",
+    "panel-carrier.json": "8a5baa9035237b30bc6696700789ff6339a3bc8b4eeb9208ba23a53cf1ec694d",
+    "editorial_decision.md": "0b62a46c44ea516022ccc6be290e7ab05f8ab64c3b275e9e84a07573fd30f6a7",
+    "revision_roadmap.json": "5bf630be085db8ecc704af1f6268a4adb42b1aff6d22f7a686560181d7f09f40",
+    "revision_roadmap.md": "248d58b628e38a25a897e22db61234ac398941723469c70a1b47e3cb924b3608",
+    "REVIEW_REPORT_ZH.md": "d2102506bd3b2af630b73ee503a5a0781a5719301dbb1ef70f8419707a273160",
+    "review_reports/EIC.md": "2d599429a83d57557a5cca6aeec0a8f4cb170fd2e79b8a8d984f04f95af30cbf",
+    "review_reports/R1.md": "54955020f255bfa432b95f177a14e766abc17a3cb1458a5d52444c8dbdc8a489",
+    "review_reports/R2.md": "59b607cc9348412239ac11de11db2de7d80459ab27cedb8ab878b689d52c1605",
+    "review_reports/R3.md": "147c611d24cc1ecc796d2b323300b0b60a50841581d33d9020d85576b7b9ea4a",
+    "review_reports/DA.md": "840fecbf5f46e02fe09f83d0d75ed1343714c4729bef579a65185e6232b5415b",
+    "precommitments/EIC.md": "ca6211883c7fd54cfcf6488e70b99dd36578a4132b18b16a0654a8398240b70a",
+    "precommitments/R1.md": "025e8349cdae917985f0ad8054bfba1b40df55fdb3c59291e23aa07ab7ba41c0",
+    "precommitments/R2.md": "ab6990f92e6db22692715e108794d11e629bd50e60248be802635f6b07881d35",
+    "precommitments/R3.md": "369474357205ba4477ef3959b8983fbc50fd43382304a99f4f1d917af4840dcd",
+    "precommitments/DA.md": "fa3d510ec8d435ce429a71996841484c76b306d0ec575abb5f1d5160d0fea697"
+  },
+  "scope_note": "Structure/provenance and source-consistency checks are bounded and not a scientific replication or journal decision."
+}
