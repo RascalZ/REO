@@ -1,0 +1,115 @@
+{
+  "date": "2026-10-27",
+  "unchanged_scientific_sections": [
+    "Abstract",
+    "Background",
+    "Methods",
+    "Results",
+    "Discussion",
+    "Conclusions",
+    "References"
+  ],
+  "unchanged_main_tables": 2,
+  "unchanged_embedded_figures": 4,
+  "reference_count": 31,
+  "abstract_word_count": 240,
+  "unchanged_body_paragraphs": 172,
+  "changed_ooxml_members": [
+    "word/document.xml"
+  ],
+  "original_v5_files_preserved": 97,
+  "unchanged_support_file_count": 21,
+  "all_author_approval_confirmed": true,
+  "author_only_items_pending": [
+    "first_author_email_and_extra_name_identity_reconciliation"
+  ],
+  "renderer": "Isolated native Microsoft Word read-only PDF export and bundled Poppler PNGs",
+  "skill_render_fallback_reason": "LibreOffice soffice.exe unavailable; native Word used after sandbox CScript registry-settings access failed",
+  "scientific_results_changed": false,
+  "training_or_scoring_performed": false,
+  "individual_CTRP_access": false,
+  "documents": {
+    "Manuscript_BMC_Genomics_submission": {
+      "pdf_pages": 40,
+      "pdf_sha256": "05ff5887072de7da60a8ee49a7eecee35ced6541e85c6957fea26cfbe61b0c2e",
+      "docx_sha256": "954f319f86e7502cb9049760d5347aeb3e2298ac08a2cf4818383d4e542faf48",
+      "text_outside_page": 0,
+      "suspect_missing_glyphs": 0,
+      "figure_pages": [
+        6,
+        20,
+        23,
+        25
+      ],
+      "fonts": {
+        "/BCDEEE+TimesNewRomanPSMT": {
+          "embedded": true,
+          "unicode_map": false,
+          "subtype": "/TrueType"
+        },
+        "/BCDFEE+TimesNewRomanPS-BoldMT": {
+          "embedded": true,
+          "unicode_map": false,
+          "subtype": "/TrueType"
+        },
+        "/BCDGEE+TimesNewRomanPSMT": {
+          "embedded": true,
+          "unicode_map": true,
+          "subtype": "/Type0"
+        },
+        "/BCDHEE+TimesNewRomanPS-ItalicMT": {
+          "embedded": true,
+          "unicode_map": false,
+          "subtype": "/TrueType"
+        },
+        "/BCDIEE+TimesNewRomanPS-BoldMT": {
+          "embedded": true,
+          "unicode_map": true,
+          "subtype": "/Type0"
+        }
+      },
+      "render": {
+        "pages": 40,
+        "page_directory": "manuscript_v1/submission_final_v1/qa/pages",
+        "page_size_max_pixels": 2000,
+        "contact_sheets": [
+          "manuscript_v1/submission_final_v1/qa/contact-01-12.png",
+          "manuscript_v1/submission_final_v1/qa/contact-13-24.png",
+          "manuscript_v1/submission_final_v1/qa/contact-25-36.png",
+          "manuscript_v1/submission_final_v1/qa/contact-37-40.png"
+        ]
+      }
+    },
+    "Cover_letter_BMC_Genomics": {
+      "pdf_pages": 1,
+      "pdf_sha256": "a70918fbbe81d22fc6e23975e7a93964123f134aa54d0f8d0113786dd8862163",
+      "docx_sha256": "320fbb967ce79cb96d69c7f8a09e7be7c73a701fd5f6975d2bbe5c226fad0d9f",
+      "text_outside_page": 0,
+      "suspect_missing_glyphs": 0,
+      "figure_pages": [],
+      "fonts": {
+        "/BCDEEE+TimesNewRomanPSMT": {
+          "embedded": true,
+          "unicode_map": false,
+          "subtype": "/TrueType"
+        },
+        "/BCDFEE+TimesNewRomanPS-BoldMT": {
+          "embedded": true,
+          "unicode_map": false,
+          "subtype": "/TrueType"
+        },
+        "/BCDGEE+TimesNewRomanPSMT": {
+          "embedded": true,
+          "unicode_map": true,
+          "subtype": "/Type0"
+        }
+      },
+      "render": {
+        "pages": 1,
+        "page_directory": "manuscript_v1/submission_final_v1/qa_cover/pages",
+        "page_size_max_pixels": 2000
+      }
+    }
+  },
+  "visual_review": "pending"
+}

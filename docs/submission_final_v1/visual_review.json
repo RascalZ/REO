@@ -1,0 +1,134 @@
+{
+  "date": "2026-10-27",
+  "status": "passed",
+  "scope": "Actual full-page PNG visual inspection; not new scientific analysis",
+  "main_pages_reviewed": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "cover_pages_reviewed": [
+    1
+  ],
+  "main_page_pixel_size": [
+    1414,
+    2000
+  ],
+  "cover_page_pixel_size": [
+    1415,
+    2000
+  ],
+  "review_assignments": [
+    {
+      "reviewer": "final_author_source_audit",
+      "main_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "reviewer": "final_submission_requirements",
+      "main_pages": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39,
+        40
+      ]
+    },
+    {
+      "reviewer": "root",
+      "main_pages": [
+        22,
+        31,
+        37
+      ],
+      "cover_pages": [
+        1
+      ]
+    }
+  ],
+  "findings": {
+    "clipping": 0,
+    "overlap": 0,
+    "missing_glyphs": 0,
+    "blank_page_anomalies": 0,
+    "broken_figures_or_tables": 0,
+    "page_numbering": "continuous"
+  },
+  "numbering_concern_resolution": "An initial batched-image concern about sparse line numbers was not reproduced on exact-file single-image reopening; reviewer withdrew it. Root also visually inspected pages22/31/37 and extracted complete margin-number sequences. No document edit was justified.",
+  "layout_notes": "Existing whitespace precedes whole figures/tables; all four figures and two native tables intact. Main40pages/cover1page.",
+  "scientific_results_changed": false,
+  "training_or_scoring_performed": false,
+  "individual_CTRP_access": false
+}

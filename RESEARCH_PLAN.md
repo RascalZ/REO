@@ -1,10 +1,12 @@
 # 基因对药物反应预测项目重构科研计划
 
-**计划v3.48，更新日期：2026-10-27。唯一维护版本为本文件。工作周期：10月10日至11月8日，11月9日至10日保留投稿检查缓冲。**
+**计划v3.49，更新日期：2026-10-27。唯一维护版本为本文件。工作周期：10月10日至11月8日，11月9日至10日保留投稿检查缓冲。**
 
 本计划以最新投稿稿件、主要分析代码、保存的结果矩阵/模型台账、补充表、图2/图4和公开数据源核查为基础。目标是一个月内完成可审查、可复现、论断与证据相符的新稿并投稿；接收和正式上线还取决于编辑及外审，不能由一个月计划保证。用户已确认Naunyn-Schmiedeberg's Archives of Pharmacology亦已拒稿；按1名主要执行者、与助手协作、现有电脑和公共数据设计，版面费不是主要限制。
 
 ## 0 执行台账与当前版本（每次工作先读此节）
+
+**v3.49：正式英文稿及Cover letter已生成并实际渲染，最终署名/系统信息待明确。** 新目录为本地Git忽略`manuscript_v1/submission_final_v1/`。仅七项块编辑：删除通读抬头/状态，补核实贡献、双通讯邮箱、致谢及作者更新的单位地址/基金；科学七节、两表四图和31题录保持。原v5中英97件及前轮v4的91件哈希不变，21件支持文件原字节复制。隔离Word只读导出主稿40页/Cover letter 1页，全部41页2000px图像已实际检查；无裁切/重叠/缺字，行号疑问经单图重开未复现。新ZIP31白名单成员/4,849,819字节，CRC、逐成员SHA和30条SUMS通过；20件应上传文件与预览/源/作者专用材料分开。作者已确认当前贡献、无额外致谢及当前版本批准/未同时投稿；但一项名单与邮箱身份差异尚待清晰回复，不推断作者增删，若名单改动须核对贡献及全体同意，当前包不标为无条件提交就绪。个人信息仅留本地，不上传公开仓库。未改科学结果，未重训/调参/重抽样/评分或读CTRP个体数据，不改v0.1.0/DOI。见[阶段35](reports/阶段35_正式英文投稿收尾与作者信息核查.md)、[核查目录](docs/submission_final_v1/README.md)及[包清单](docs/submission_final_v1/submission_package_manifest.json)。
 
 **v3.48：正式访问与许可信息已迁入新版中英文v5，并完成实际渲染和英文投稿ZIP。** 原v4全部保留，新正文分别在本地Git忽略`manuscript_v1/author_review_v5/`与`author_review_v5_zh/`。每语种仅改通读状态、Methods当前访问、数据资产、代码/归档/许可和第31条引用五块；每语种192块不变，197个中英数值/引用块一致，前30题录、两表四图和三个科学执行源码快照保持。Word另同步新副本包装日期/中文页眉版本为27日。原91件v4文件及20件新支持文件SHA相同；原投稿ZIP不动。隔离Microsoft Word只读导出39/22页PDF，所有61页2000px PNG已实际查看，连续页码、字体及图文边界通过。新英文ZIP26成员/4,722,463字节，CRC/逐成员SHA及25条SUMS通过，无中文或QA混入。真实Release/软件DOI/发布源提交及分组件许可已在正文和Bib一致说明，最小映射/完整历史重建边界保留。见[阶段34](reports/阶段34_正式公开信息入稿与v5中英投稿包.md)、[最终核查](docs/public_access_revision_v1/final_audit.json)、[包清单](docs/public_access_revision_v1/submission_package_manifest.json)与[交付SHA](docs/public_access_revision_v1/delivery_manifest.json)。未改变科学结果，未重训/调参/评分/重抽样或读CTRP个体数据；不改变v0.1.0标签及Zenodo冻结资产。新包仍供作者通读，尚不能由本轮代替缺失声明事实或全作者最终提交批准。
 
@@ -24,7 +26,7 @@
 
 **v3.40作者通读反馈（历史讨论状态）：** 当前正式通读包仍为v3.39交付的39页主稿与19页补充；本轮仅形成[摘要与叙述风格讨论稿](docs/ABSTRACT_STYLE_REVIEW_V1.md)，不替换Word/PDF或更改任何统计。CTRP v2已核实为发布方正式版本名，需与本项目cohort-v2/rebuild_v2区分。下一项文字修订围绕REO的科学动机、组织参照—分子增量—表示优势三层问题，精简摘要中的并列统计与反复防守，按发现组织Results并重写Background/Discussion的解释顺序；保留所有负面、零解、NA和限制，不扩大到跨平台验证、真实机制识别或通用基准创新。当前提出三种风格及一版英文摘要，待作者讨论后才迁入新正式副本。全文将共同“strictly monotone”不变性收紧为“strictly increasing”；递减变换会翻转次序。原稿、当前通读包与锁定分析均保留，CTRP个体数据继续封存，不重训/评分。
 
-**优先投稿目标继续为BMC Genomics。当前正文作者通读版位于本地Git忽略目录`manuscript_v1/author_review_v5/`（MD/Word/PDF），对应中文在`manuscript_v1/author_review_v5_zh/`；原v4中英及原ZIP完整保留。新目录中的配套补充方法、Additional files与四图原字节复制，Supporting_sources/references.bib仅更新第31条软件引用，供用户通读后讨论；不将其标记为全作者已批准或投稿就绪。旧稿已有作者与声明事实由v1继承，迁入来源见[阶段26](reports/阶段26_作者资料迁入与最终通读稿.md)，本次叙述修订见阶段27。科学R1-M08原件保留：[R1-M08正文](manuscript_v1/Manuscript_BMC_Genomics_M08_v1.md)、[带四图和两张原生表的Word](manuscript_v1/Manuscript_BMC_Genomics_M08_v1.docx)、[四图](figures/manuscript_m08_v1/)，配套[补充方法](manuscript_v1/Supplementary_methods_scientific_revision_v1.md)及[14个Additional files](manuscript_v1/bmc_additional_files_M08_v1/)。作者个人信息只置于本地通读包，不复制到安全计划或仓库公开范围。** 固定八药开发评价仍未建立REO可靠平均优势：主宏Δρ=−0.005882，430/840个分子外层拟合零解。LOTO完成1,472任务/40,112 fits/39,736 OOF，主网格34/80格有定义，严格宏NA。最终64模型/1,744 fits中29/56分子臂零解；两锁后唯一CTRP外验175独立组/1,185药物－组响应，9,480预测、0弃判，主宏Δρ=−0.000372，family-9条件区间[−0.042166,+0.043505]。此差值接近零不等于所有外验信号消失：组织、强表达、关联pair的外验绝对宏ρ为0.2284/0.2602/0.2599，只有描述性点值，不能据此宣称统计上证实外部分子增量。
+**优先投稿目标继续为BMC Genomics。当前英文投稿准备版位于本地Git忽略`manuscript_v1/submission_final_v1/`，在最终署名/系统信息澄清前不递交；原v5中英和原ZIP完整保留，中文仍为`manuscript_v1/author_review_v5_zh/`。新目录中的配套补充方法、Additional files与四图原字节复制，Supporting_sources/references.bib仅更新第31条软件引用，本轮当前版本批准由作者确认，最终名单若变化须核对新贡献及全体同意，不能把未关闭的署名gate标为提交就绪。旧稿已有作者与声明事实由v1继承，迁入来源见[阶段26](reports/阶段26_作者资料迁入与最终通读稿.md)，本次叙述修订见阶段27。科学R1-M08原件保留：[R1-M08正文](manuscript_v1/Manuscript_BMC_Genomics_M08_v1.md)、[带四图和两张原生表的Word](manuscript_v1/Manuscript_BMC_Genomics_M08_v1.docx)、[四图](figures/manuscript_m08_v1/)，配套[补充方法](manuscript_v1/Supplementary_methods_scientific_revision_v1.md)及[14个Additional files](manuscript_v1/bmc_additional_files_M08_v1/)。作者个人信息只置于本地通读包，不复制到安全计划或仓库公开范围。** 固定八药开发评价仍未建立REO可靠平均优势：主宏Δρ=−0.005882，430/840个分子外层拟合零解。LOTO完成1,472任务/40,112 fits/39,736 OOF，主网格34/80格有定义，严格宏NA。最终64模型/1,744 fits中29/56分子臂零解；两锁后唯一CTRP外验175独立组/1,185药物－组响应，9,480预测、0弃判，主宏Δρ=−0.000372，family-9条件区间[−0.042166,+0.043505]。此差值接近零不等于所有外验信号消失：组织、强表达、关联pair的外验绝对宏ρ为0.2284/0.2602/0.2599，只有描述性点值，不能据此宣称统计上证实外部分子增量。
 
 锁定科学结果不变，文字已按本轮选择修订。M01/M02/M03在R1证据范围内完成，M07/M08已有同源副本及图文样式检查；M08四图170mm时最小9.5pt、Word约156.1mm时最小8.72pt，30引用保留身份/顺序，19处作者串已规范，历史验收见阶段25及docs/m08_v1/。此前v1通读包26项内容检查和39/19页Word渲染见阶段26。本轮v2独立验收54/54项通过（39项机械/来源、15项语义边界），主稿39页/补充19页已由Microsoft Word实际导出；60件保留资产与历史作者来源hash不变，页码/字体嵌入/边界等机械检查通过。协调者已实际查看全部5张缩略图（主稿39页/补充19页全覆盖）及8张重点放大页，目视复核通过；见阶段27与docs/narrative_v1/，不沿用旧验收数。M04本地技术准备已完成，完整实际资产继续Git忽略；计数/格式/虚构推理示例和代码已版本控制，但不等于公众可获取。2026-10-20已认证GitHub元数据确认`RascalZ/REO`为private，匿名端点不可访问；此前文档中的“public/公开”资产多数指拟公开范围，不得当作已实现匿名访问的证据。仓库可见性本轮不改，公众及编辑/审稿人实际访问、正式归档和上游许可继续收尾；上游公共数据资源本身的访问状态与本项目私有仓库分开。见[复现包指南](reproducibility_v1/README.md)、[当前访问更正](docs/DATA_AVAILABILITY.md)及阶段26。
 
@@ -45,7 +47,7 @@
 |P5d 零解与药物异质性诊断|完成|[阶段7报告](reports/阶段7_零解与药物异质性诊断.md)、[五张聚合表](results/development_diagnostics/)、[诊断方案v1](docs/DEVELOPMENT_DIAGNOSTICS_PROTOCOL_V1.md)；430/840均选择解析零端点，0求解警告/回退；无新模型拟合|
 |P5e 合成机制与组织敏感性/LOTO|完成；v1.3独立验证与描述性分析通过|[阶段8组织诊断](reports/阶段8_组织分层OOF诊断.md)、[阶段8b残差澄清](reports/阶段8b_组织残差增量澄清.md)、[阶段9合成机制](reports/阶段9_合成机制控制.md)、[阶段10结果](reports/阶段10_LOTO组织外推敏感性.md)、[阶段10j恢复/审计](reports/阶段10j_LOTO_v1_3系统重启恢复与结果审计.md)、[P5e协议](docs/TISSUE_SENSITIVITY_LOTO_PROTOCOL_V1.md)、[v1.3执行锁](config/loto_execution_v1_3.lock.json)、[结果清单](results/tissue_loto/loto_analysis_manifest.json)；1,472/40,112/39,736已核验；严格主宏NA（34/80格有定义）；稀有组织警告与零解保留；CTRP禁读|
 |P6 外验/最终模型冻结|完成；64模型/1,744 fit、9,480行无响应预检及一次性CTRP外验均通过独立审计|[阶段13报告](reports/阶段13_P6全开发模型与无响应外验预检.md)、[阶段14报告](reports/阶段14_P6一次性CTRP外验与研究方向判定.md)、[第二锁](config/external_execution_v1_1.lock.json)、[外验聚合汇总](results/p6_external/evaluation_summary.json)；29/56分子臂零解、0弃判、27项估计量各20,000有效抽样|
-|P7 图表/正文/投稿|v5中英文Word/PDF已更新实际Release/DOI/许可；39/22页实际渲染/61页视觉及26项英文ZIP验收通过。v4原件保留；作者声明/最终批准单独收尾|[阶段32](reports/阶段32_仓库规范投稿打包与旧副本清理.md)、[仓库审计](docs/repository_release_v1/REPOSITORY_AUDIT.md)|
+|P7 图表/正文/投稿|正式英文稿40页/Cover letter 1页已实际渲染，31项ZIP验收；原v5保留。当前作者声明已核实，最终署名及系统邮箱仍待明确，未投稿|[阶段35](reports/阶段35_正式英文投稿收尾与作者信息核查.md)、[核查目录](docs/submission_final_v1/README.md)|
 
 ### v3.41 当前文字修订与下一gate
 
