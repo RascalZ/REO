@@ -41,7 +41,7 @@ BINARY_PACKAGE_SUFFIXES = {
 ROOT_FILE_PATTERN = re.compile(
     r"(?i)^(?:readme(?:[._-].*)?|license(?:[._-].*)?|copying(?:[._-].*)?|"
     r"notice(?:[._-].*)?|citation(?:[._-].*)?|requirements[^/]*\.txt|"
-    r"pyproject\.toml|research_plan\.md|contributing\.md|setup\.(?:py|cfg)|makefile|dockerfile|"
+    r"pyproject\.toml|research_plan\.md|reproducing\.md|contributing\.md|setup\.(?:py|cfg)|makefile|dockerfile|"
     r"environment[^/]*\.ya?ml|\.gitignore|\.gitattributes|\.editorconfig)$")
 OBSERVATION_NAME_PATTERN = re.compile(
     r"(?i)(?:sample_manifest|global_split_manifest|eligibility_decisions|"
