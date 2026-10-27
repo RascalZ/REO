@@ -14,7 +14,7 @@ A leakage-controlled comparison of expression, within-sample ranks and relative-
 
 ![Study design and evaluation boundaries](figures/manuscript_m08_v1/Figure1_study_design.png)
 
-The manuscript is unpublished. The current local reading copy is English v4 with a paired Chinese copy; author packages are Git-ignored. [Stage 31](reports/阶段31_Minor1与2最小补充.md) records the two latest clarifications. The published software DOI is not a paper DOI. The sole maintained plan is [RESEARCH_PLAN.md](RESEARCH_PLAN.md).
+The manuscript is unpublished. The current local reading copy is English v5 with a paired Chinese copy; author packages are Git-ignored and original v4 is preserved. [Stage 34](reports/阶段34_正式公开信息入稿与v5中英投稿包.md) records the public-access and licensing update, actual 39/22-page rendering and English submission package. The published software DOI is not a paper DOI. The sole maintained plan is [RESEARCH_PLAN.md](RESEARCH_PLAN.md).
 
 ## Quick start
 

@@ -1,0 +1,18 @@
+{
+  "date": "2026-10-27",
+  "scope": "v5 bilingual reading copies and English submission materials; original v4 preserved",
+  "files": {
+    "manuscript_v1/author_review_v5/Manuscript_BMC_Genomics_author_review_v5.md": "b1cbeb80d2a4963665577883210b3333aa5e8ab6e27fe6d01ecaa5df96a47356",
+    "manuscript_v1/author_review_v5/Manuscript_BMC_Genomics_author_review_v5.docx": "9450fb7ed02d5e275440d3e45d94be8a48979d946537c10cf942c34c77603ee1",
+    "manuscript_v1/author_review_v5/Manuscript_BMC_Genomics_author_review_v5.pdf": "68e7924b52520e31b9f7f1da1323b3fa0856774c2f7676fba1346b7926361502",
+    "manuscript_v1/author_review_v5_zh/Manuscript_BMC_Genomics_author_review_v5_zh.md": "415fd74c88973435bca0e14448422872a770d90860762cc65581ad5e1cb2a9ff",
+    "manuscript_v1/author_review_v5_zh/Manuscript_BMC_Genomics_author_review_v5_zh.docx": "e291f6443bc24701a948568cf7ceb958cafe5cdff5640e1b142db1e227a55678",
+    "manuscript_v1/author_review_v5_zh/Manuscript_BMC_Genomics_author_review_v5_zh.pdf": "8cdea248914a9c9cffe7f1c418aebcbd3e164c58d4d8d4c72b604be753ba2773",
+    "manuscript_v1/author_review_v5/BMC_Genomics_v5_submission_bundle_2026-10-27.zip": "92d922d652c3fb66023223d1664a344fea12ccb0553b45d8fdd9c8eb5d4d4af3"
+  },
+  "submission_ready": false,
+  "all_author_approval_claimed": false,
+  "scientific_results_changed": false,
+  "training_resampling_scoring_performed": false,
+  "individual_CTRP_access": false
+}

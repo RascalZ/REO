@@ -1,0 +1,268 @@
+{
+  "date": "2026-10-27",
+  "package": "manuscript_v1/author_review_v5/BMC_Genomics_v5_submission_bundle_2026-10-27.zip",
+  "sha256": "92d922d652c3fb66023223d1664a344fea12ccb0553b45d8fdd9c8eb5d4d4af3",
+  "bytes": 4722463,
+  "member_count": 26,
+  "members": [
+    {
+      "name": "00_READ_BEFORE_SUBMISSION.txt",
+      "source": "manuscript_v1/author_review_v5/00_READ_BEFORE_SUBMISSION.txt",
+      "bytes": 2192,
+      "sha256": "11f892ff0503debe5d0fb3a8bbcdf52558eb910b32609c714feeb16c594539b4"
+    },
+    {
+      "name": "Additional_files/Additional_file_1.csv",
+      "source": "manuscript_v1/author_review_v5/Additional_files/Additional_file_1.csv",
+      "bytes": 5490,
+      "sha256": "bbcd0b65e688f05bb42a090f491c8ef29525d3b9b1a77183c93ea1e6404ccf33"
+    },
+    {
+      "name": "Additional_files/Additional_file_10.csv",
+      "source": "manuscript_v1/author_review_v5/Additional_files/Additional_file_10.csv",
+      "bytes": 58288,
+      "sha256": "d44a5fd9d86cba79b70a36aaf70b7d9e9095a29fbde78efd8e516ff23d677a0d"
+    },
+    {
+      "name": "Additional_files/Additional_file_11.csv",
+      "source": "manuscript_v1/author_review_v5/Additional_files/Additional_file_11.csv",
+      "bytes": 50920,
+      "sha256": "0c149e110e72e354705ba9513ae5ad3f52f36a54e80ff54322e64e5963f93e77"
+    },
+    {
+      "name": "Additional_files/Additional_file_12.csv",
+      "source": "manuscript_v1/author_review_v5/Additional_files/Additional_file_12.csv",
+      "bytes": 12723,
+      "sha256": "49f6d3c609a9ae93895c12e8f8a2c0b7926d612168a18208ef0b5491f9b7bc4f"
+    },
+    {
+      "name": "Additional_files/Additional_file_13.csv",
+      "source": "manuscript_v1/author_review_v5/Additional_files/Additional_file_13.csv",
+      "bytes": 3262,
+      "sha256": "ad3ca1edc66b46544d15412cbeed7c6277a24d17d5d6d024d36b0b2255547aa8"
+    },
+    {
+      "name": "Additional_files/Additional_file_14.docx",
+      "source": "manuscript_v1/author_review_v5/Additional_files/Additional_file_14.docx",
+      "bytes": 25916,
+      "sha256": "f6892a1b680a081670f285169e1a1b9ee5b7eeb7682077d516098bb8a18a3557"
+    },
+    {
+      "name": "Additional_files/Additional_file_2.csv",
+      "source": "manuscript_v1/author_review_v5/Additional_files/Additional_file_2.csv",
+      "bytes": 7720,
+      "sha256": "7655589f93cd47f357b8c3444f76afb250c316d6de317f5a9948d0f9ebaacc01"
+    },
+    {
+      "name": "Additional_files/Additional_file_3.csv",
+      "source": "manuscript_v1/author_review_v5/Additional_files/Additional_file_3.csv",
+      "bytes": 9015,
+      "sha256": "9d3768fce57863d6d733ea7792cb9ed69806ef84cc8dcd5187874675dda571e6"
+    },
+    {
+      "name": "Additional_files/Additional_file_4.csv",
+      "source": "manuscript_v1/author_review_v5/Additional_files/Additional_file_4.csv",
+      "bytes": 61408,
+      "sha256": "512e2212d22c83dfbf9c54f5c5829b02818e19610f710b6a4bad2cc6aa3769b7"
+    },
+    {
+      "name": "Additional_files/Additional_file_5.csv",
+      "source": "manuscript_v1/author_review_v5/Additional_files/Additional_file_5.csv",
+      "bytes": 310653,
+      "sha256": "03600116a5086d824740256a079cad7534cf80b2236cef5ecd19dee4e8043f8f"
+    },
+    {
+      "name": "Additional_files/Additional_file_6.csv",
+      "source": "manuscript_v1/author_review_v5/Additional_files/Additional_file_6.csv",
+      "bytes": 4142,
+      "sha256": "d89e01aef179deba12b2e5e6e8bcf991baf207a3076c7cd5e6d3c8f4539422e4"
+    },
+    {
+      "name": "Additional_files/Additional_file_7.csv",
+      "source": "manuscript_v1/author_review_v5/Additional_files/Additional_file_7.csv",
+      "bytes": 17297,
+      "sha256": "8e00902f736fec22081083435d7a4cb22562f45c5f5db7a1d499af1f4ce676df"
+    },
+    {
+      "name": "Additional_files/Additional_file_8.csv",
+      "source": "manuscript_v1/author_review_v5/Additional_files/Additional_file_8.csv",
+      "bytes": 2679,
+      "sha256": "a3526e3a339bb535cd37f1255dbe9ab79d0f4c7b279d1454b3e0c13fe988feef"
+    },
+    {
+      "name": "Additional_files/Additional_file_9.csv",
+      "source": "manuscript_v1/author_review_v5/Additional_files/Additional_file_9.csv",
+      "bytes": 34519,
+      "sha256": "f0ebd23139f5ef05f7516e8f77c202f7e7431e2aa79751d268929348b5c62706"
+    },
+    {
+      "name": "Figures/Figure1_study_design.png",
+      "source": "manuscript_v1/author_review_v5/Figures/Figure1_study_design.png",
+      "bytes": 680053,
+      "sha256": "d3984c032bd41d52352e8c8b73953646df99cb1934ee8e1724b600bf7d87cdf3"
+    },
+    {
+      "name": "Figures/Figure2_development_primary.png",
+      "source": "manuscript_v1/author_review_v5/Figures/Figure2_development_primary.png",
+      "bytes": 218962,
+      "sha256": "44c5c30b9c6e2254c29692f238ae5e1ae41f3ad61d19160b5eb51c9e8975f3f0"
+    },
+    {
+      "name": "Figures/Figure3_representation_and_zero_solutions.png",
+      "source": "manuscript_v1/author_review_v5/Figures/Figure3_representation_and_zero_solutions.png",
+      "bytes": 446875,
+      "sha256": "9d08e9eb543ba4a509c41cbca9fe11ca86f18ba690d47ec2b880ba236ac4bd83"
+    },
+    {
+      "name": "Figures/Figure4_loto_and_external.png",
+      "source": "manuscript_v1/author_review_v5/Figures/Figure4_loto_and_external.png",
+      "bytes": 700128,
+      "sha256": "27f115b6d6ffc52fcaa9d7b49db991c433afbb656c319c7bd25b8b77dd5e1a83"
+    },
+    {
+      "name": "Manuscript.docx",
+      "source": "manuscript_v1/author_review_v5/Manuscript_BMC_Genomics_author_review_v5.docx",
+      "bytes": 1801713,
+      "sha256": "9450fb7ed02d5e275440d3e45d94be8a48979d946537c10cf942c34c77603ee1"
+    },
+    {
+      "name": "Manuscript.pdf",
+      "source": "manuscript_v1/author_review_v5/Manuscript_BMC_Genomics_author_review_v5.pdf",
+      "bytes": 902649,
+      "sha256": "68e7924b52520e31b9f7f1da1323b3fa0856774c2f7676fba1346b7926361502"
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "source": "manuscript_v1/author_review_v5/SHA256SUMS.txt",
+      "bytes": 2584,
+      "sha256": "aa152676eee42298fd8425f20e4980b7b8ee79249236c3ec7118482e6524a03a"
+    },
+    {
+      "name": "Supporting_sources/Manuscript.md",
+      "source": "manuscript_v1/author_review_v5/Manuscript_BMC_Genomics_author_review_v5.md",
+      "bytes": 74018,
+      "sha256": "b1cbeb80d2a4963665577883210b3333aa5e8ab6e27fe6d01ecaa5df96a47356"
+    },
+    {
+      "name": "Supporting_sources/Supplementary_methods.md",
+      "source": "manuscript_v1/author_review_v5/Supporting_sources/Supplementary_methods.md",
+      "bytes": 33949,
+      "sha256": "a04fa46f2103d50dbf41bdb6692c7b679a05e1714fe91ea5099e4bc2fae0bbc9"
+    },
+    {
+      "name": "Supporting_sources/Supplementary_methods.pdf",
+      "source": "manuscript_v1/author_review_v5/Supporting_sources/Supplementary_methods.pdf",
+      "bytes": 211226,
+      "sha256": "16a74dce2106dbfbcb5c17d1748127fbe1083241cf1e6f52e80b42e097dc01df"
+    },
+    {
+      "name": "Supporting_sources/references.bib",
+      "source": "manuscript_v1/author_review_v5/Supporting_sources/references.bib",
+      "bytes": 21449,
+      "sha256": "b95be693e819728d0fdbd61f84d1f8c690fdf229ec7d02d1488d4c7e97c42a06"
+    }
+  ],
+  "preserved_v4_originals": {
+    "manuscript_v1/author_review_v4/Manuscript_BMC_Genomics_author_review_v4.md": "1d64b11b8693f0905a2f70cd20b8f82c9772e31dd20cd0a22d0c4959d2014ddb",
+    "manuscript_v1/author_review_v4/Manuscript_BMC_Genomics_author_review_v4.docx": "1041f7a418eceec045321da3f2a67365d8809643c23b710e4f26b7768a21de41",
+    "manuscript_v1/author_review_v4/Manuscript_BMC_Genomics_author_review_v4.pdf": "8fc82e940a2d82104fa0f27331ba41e0c6fc883e44e7eca969db7f04986a5ce7",
+    "manuscript_v1/author_review_v4_zh/Manuscript_BMC_Genomics_author_review_v4_zh.md": "377031b688d19efe6429bf3587207d46f99eccfbbba947eeaf2c63f3a48ea133",
+    "manuscript_v1/author_review_v4_zh/Manuscript_BMC_Genomics_author_review_v4_zh.docx": "421407c7e9293e6ddfc6574447e02484c6adc0d7665afec6a201993289733004",
+    "manuscript_v1/author_review_v4_zh/Manuscript_BMC_Genomics_author_review_v4_zh.pdf": "323530fa01b49f9930674c6ac563b69fddf0e01d1d8652f9a842074209776579",
+    "manuscript_v1/author_review_v4/BMC_Genomics_v4_submission_bundle_2026-10-26.zip": "3d25297b7ee20f9b63653d9742c502f98506c622534cdb923130cfaa58543f51"
+  },
+  "unchanged_scientific_support_file_count": 20,
+  "unchanged_scientific_support_files": [
+    {
+      "name": "Additional_files/Additional_file_1.csv",
+      "sha256": "bbcd0b65e688f05bb42a090f491c8ef29525d3b9b1a77183c93ea1e6404ccf33"
+    },
+    {
+      "name": "Additional_files/Additional_file_10.csv",
+      "sha256": "d44a5fd9d86cba79b70a36aaf70b7d9e9095a29fbde78efd8e516ff23d677a0d"
+    },
+    {
+      "name": "Additional_files/Additional_file_11.csv",
+      "sha256": "0c149e110e72e354705ba9513ae5ad3f52f36a54e80ff54322e64e5963f93e77"
+    },
+    {
+      "name": "Additional_files/Additional_file_12.csv",
+      "sha256": "49f6d3c609a9ae93895c12e8f8a2c0b7926d612168a18208ef0b5491f9b7bc4f"
+    },
+    {
+      "name": "Additional_files/Additional_file_13.csv",
+      "sha256": "ad3ca1edc66b46544d15412cbeed7c6277a24d17d5d6d024d36b0b2255547aa8"
+    },
+    {
+      "name": "Additional_files/Additional_file_14.docx",
+      "sha256": "f6892a1b680a081670f285169e1a1b9ee5b7eeb7682077d516098bb8a18a3557"
+    },
+    {
+      "name": "Additional_files/Additional_file_2.csv",
+      "sha256": "7655589f93cd47f357b8c3444f76afb250c316d6de317f5a9948d0f9ebaacc01"
+    },
+    {
+      "name": "Additional_files/Additional_file_3.csv",
+      "sha256": "9d3768fce57863d6d733ea7792cb9ed69806ef84cc8dcd5187874675dda571e6"
+    },
+    {
+      "name": "Additional_files/Additional_file_4.csv",
+      "sha256": "512e2212d22c83dfbf9c54f5c5829b02818e19610f710b6a4bad2cc6aa3769b7"
+    },
+    {
+      "name": "Additional_files/Additional_file_5.csv",
+      "sha256": "03600116a5086d824740256a079cad7534cf80b2236cef5ecd19dee4e8043f8f"
+    },
+    {
+      "name": "Additional_files/Additional_file_6.csv",
+      "sha256": "d89e01aef179deba12b2e5e6e8bcf991baf207a3076c7cd5e6d3c8f4539422e4"
+    },
+    {
+      "name": "Additional_files/Additional_file_7.csv",
+      "sha256": "8e00902f736fec22081083435d7a4cb22562f45c5f5db7a1d499af1f4ce676df"
+    },
+    {
+      "name": "Additional_files/Additional_file_8.csv",
+      "sha256": "a3526e3a339bb535cd37f1255dbe9ab79d0f4c7b279d1454b3e0c13fe988feef"
+    },
+    {
+      "name": "Additional_files/Additional_file_9.csv",
+      "sha256": "f0ebd23139f5ef05f7516e8f77c202f7e7431e2aa79751d268929348b5c62706"
+    },
+    {
+      "name": "Figures/Figure1_study_design.png",
+      "sha256": "d3984c032bd41d52352e8c8b73953646df99cb1934ee8e1724b600bf7d87cdf3"
+    },
+    {
+      "name": "Figures/Figure2_development_primary.png",
+      "sha256": "44c5c30b9c6e2254c29692f238ae5e1ae41f3ad61d19160b5eb51c9e8975f3f0"
+    },
+    {
+      "name": "Figures/Figure3_representation_and_zero_solutions.png",
+      "sha256": "9d08e9eb543ba4a509c41cbca9fe11ca86f18ba690d47ec2b880ba236ac4bd83"
+    },
+    {
+      "name": "Figures/Figure4_loto_and_external.png",
+      "sha256": "27f115b6d6ffc52fcaa9d7b49db991c433afbb656c319c7bd25b8b77dd5e1a83"
+    },
+    {
+      "name": "Supporting_sources/Supplementary_methods.md",
+      "sha256": "a04fa46f2103d50dbf41bdb6692c7b679a05e1714fe91ea5099e4bc2fae0bbc9"
+    },
+    {
+      "name": "Supporting_sources/Supplementary_methods.pdf",
+      "sha256": "16a74dce2106dbfbcb5c17d1748127fbe1083241cf1e6f52e80b42e097dc01df"
+    }
+  ],
+  "archive_CRC_and_all_member_hashes_verified": true,
+  "SHA256SUMS_entries_verified": 25,
+  "strict_member_allowlist_verified": true,
+  "Chinese_reading_copies_or_QA_files_included": false,
+  "scientific_results_changed": false,
+  "main_manuscript_scientific_equivalence_scope": "Separate revision audit required; this packager does not edit manuscript content and verifies supporting-file byte preservation only",
+  "rendering_review_performed_by_packager": false,
+  "training_scoring_or_response_access_performed": false,
+  "submission_approval_claimed": false,
+  "submission_ready_claimed": false,
+  "publication_scope": "English author-review submission materials; only access, licensing and software-archive citation text changed"
+}

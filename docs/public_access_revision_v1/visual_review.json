@@ -1,0 +1,119 @@
+{
+  "date": "2026-10-27",
+  "status": "passed",
+  "scope": "AI-assisted local page-image layout inspection; not final author submission approval",
+  "page_coverage": {
+    "en": {
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        39
+      ],
+      "total_pages": 39,
+      "coverage_groups": [
+        [
+          1,
+          20
+        ],
+        [
+          21,
+          39
+        ]
+      ],
+      "key_pages": [
+        1,
+        17,
+        33,
+        38
+      ]
+    },
+    "zh": {
+      "pages_reviewed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "total_pages": 22,
+      "coverage_groups": [
+        [
+          1,
+          22
+        ]
+      ],
+      "key_pages": [
+        1,
+        10,
+        19,
+        21
+      ]
+    }
+  },
+  "page_png_height_pixels": 2000,
+  "all_pages_actually_opened": true,
+  "contact_sheets_also_inspected": true,
+  "new_clipping_missing_glyphs_overlap_or_page_number_issues_observed": false,
+  "publication_links_citation_and_license_layout_passed": true,
+  "unchanged_source_layout_spacing_retained": true,
+  "packaging_dates_unified_to": "2026-10-27",
+  "pdf_sha256": {
+    "en": "68e7924b52520e31b9f7f1da1323b3fa0856774c2f7676fba1346b7926361502",
+    "zh": "8cdea248914a9c9cffe7f1c418aebcbd3e164c58d4d8d4c72b604be753ba2773"
+  },
+  "no_scientific_recomputation": true,
+  "no_individual_CTRP_access": true
+}

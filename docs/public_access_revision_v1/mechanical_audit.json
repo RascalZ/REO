@@ -1,0 +1,194 @@
+{
+  "date": "2026-10-27",
+  "scope": "Bounded bilingual access/licensing/citation revision",
+  "new_training_resampling_scoring": false,
+  "individual_CTRP_access": false,
+  "preserved_original_files": 91,
+  "preserved_support_files": 20,
+  "renderer": "Native Microsoft Word read-only export and bundled Poppler PNG rasterization",
+  "skill_renderer_attempt": "render_docx.py failed because LibreOffice soffice.exe was absent; its temporary-directory cleanup also raised PermissionError. Native Word fallback used.",
+  "languages": {
+    "en": {
+      "pdf_pages": 39,
+      "pdf_sha256": "68e7924b52520e31b9f7f1da1323b3fa0856774c2f7676fba1346b7926361502",
+      "word_sha256": "9450fb7ed02d5e275440d3e45d94be8a48979d946537c10cf942c34c77603ee1",
+      "changed_MD_blocks": 5,
+      "unchanged_MD_blocks": 192,
+      "word_package_reversal_byte_identical": true,
+      "unchanged_tables": 2,
+      "unchanged_media": 4,
+      "unchanged_first_references": 30,
+      "reference_count": 31,
+      "all_scientific_snapshot_hashes_preserved": true,
+      "unchanged_scientific_sections": [
+        "Abstract",
+        "Results",
+        "Discussion",
+        "Conclusions"
+      ],
+      "text_outside_page": 0,
+      "suspect_missing_glyphs": 0,
+      "page_numbers_continuous": true,
+      "fonts": {
+        "/BCDEEE+TimesNewRomanPSMT": {
+          "embedded": true,
+          "unicode_map": false,
+          "subtype": "/TrueType"
+        },
+        "/BCDFEE+TimesNewRomanPSMT": {
+          "embedded": true,
+          "unicode_map": true,
+          "subtype": "/Type0"
+        },
+        "/BCDGEE+TimesNewRomanPS-BoldMT": {
+          "embedded": true,
+          "unicode_map": false,
+          "subtype": "/TrueType"
+        },
+        "/BCDHEE+TimesNewRomanPS-ItalicMT": {
+          "embedded": true,
+          "unicode_map": false,
+          "subtype": "/TrueType"
+        },
+        "/BCDIEE+TimesNewRomanPS-BoldMT": {
+          "embedded": true,
+          "unicode_map": true,
+          "subtype": "/Type0"
+        }
+      },
+      "figure_pages": [
+        6,
+        20,
+        23,
+        25
+      ],
+      "updated_block_start_pages": {
+        "STATUS": [
+          1
+        ],
+        "GOVERNANCE_ACCESS": [
+          17
+        ],
+        "DERIVED_ASSET_ACCESS": [
+          33
+        ],
+        "CODE_ARCHIVE_LICENSE": [
+          33
+        ],
+        "SOFTWARE_REFERENCE_31": [
+          38
+        ]
+      },
+      "new_blocks_present_in_MD_DOCX_PDF": true,
+      "render": {
+        "pages": 39,
+        "page_directory": "manuscript_v1/author_review_v5/qa/pages",
+        "page_size_max_pixels": 2000,
+        "contact_sheets": [
+          "manuscript_v1/author_review_v5/qa/contact-01-12.png",
+          "manuscript_v1/author_review_v5/qa/contact-13-24.png",
+          "manuscript_v1/author_review_v5/qa/contact-25-36.png",
+          "manuscript_v1/author_review_v5/qa/contact-37-39.png"
+        ]
+      }
+    },
+    "zh": {
+      "pdf_pages": 22,
+      "pdf_sha256": "8cdea248914a9c9cffe7f1c418aebcbd3e164c58d4d8d4c72b604be753ba2773",
+      "word_sha256": "e291f6443bc24701a948568cf7ceb958cafe5cdff5640e1b142db1e227a55678",
+      "changed_MD_blocks": 5,
+      "unchanged_MD_blocks": 192,
+      "word_package_reversal_byte_identical": true,
+      "unchanged_tables": 2,
+      "unchanged_media": 4,
+      "unchanged_first_references": 30,
+      "reference_count": 31,
+      "all_scientific_snapshot_hashes_preserved": true,
+      "unchanged_scientific_sections": [
+        "摘要",
+        "结果",
+        "讨论",
+        "结论"
+      ],
+      "text_outside_page": 0,
+      "suspect_missing_glyphs": 0,
+      "page_numbers_continuous": true,
+      "fonts": {
+        "/BCDEEE+SimSun": {
+          "embedded": true,
+          "unicode_map": true,
+          "subtype": "/Type0"
+        },
+        "/BCDFEE+TimesNewRomanPSMT": {
+          "embedded": true,
+          "unicode_map": false,
+          "subtype": "/TrueType"
+        },
+        "/BCDGEE+SimHei": {
+          "embedded": true,
+          "unicode_map": true,
+          "subtype": "/Type0"
+        },
+        "/BCDHEE+TimesNewRomanPS-BoldMT": {
+          "embedded": true,
+          "unicode_map": false,
+          "subtype": "/TrueType"
+        },
+        "/BCDIEE+TimesNewRomanPSMT": {
+          "embedded": true,
+          "unicode_map": true,
+          "subtype": "/Type0"
+        },
+        "/BCDJEE+TimesNewRomanPS-BoldMT": {
+          "embedded": true,
+          "unicode_map": true,
+          "subtype": "/Type0"
+        },
+        "/BCDKEE+TimesNewRomanPS-ItalicMT": {
+          "embedded": true,
+          "unicode_map": false,
+          "subtype": "/TrueType"
+        }
+      },
+      "figure_pages": [
+        4,
+        11,
+        13,
+        15
+      ],
+      "updated_block_start_pages": {
+        "STATUS": [
+          1
+        ],
+        "GOVERNANCE_ACCESS": [
+          10
+        ],
+        "DERIVED_ASSET_ACCESS": [
+          19
+        ],
+        "CODE_ARCHIVE_LICENSE": [
+          19
+        ],
+        "SOFTWARE_REFERENCE_31": [
+          21
+        ]
+      },
+      "new_blocks_present_in_MD_DOCX_PDF": true,
+      "render": {
+        "pages": 22,
+        "page_directory": "manuscript_v1/author_review_v5_zh/qa/pages",
+        "page_size_max_pixels": 2000,
+        "contact_sheets": [
+          "manuscript_v1/author_review_v5_zh/qa/contact-01-12.png",
+          "manuscript_v1/author_review_v5_zh/qa/contact-13-22.png"
+        ]
+      }
+    }
+  },
+  "visual_review_status": "pending",
+  "audit_script_sha256": "8e6f62c488554bb545571abf3196078dca82b95650b168703dc4dfdc2e862f84",
+  "bilingual_numeric_and_citation_blocks_checked": 197,
+  "bibliography_first_30_unchanged": true,
+  "software_reference_authors_version_DOI_match": true,
+  "mechanical_checks_passed": true
+}
