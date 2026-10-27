@@ -1,0 +1,127 @@
+{
+  "all_attachment_downloads_verified": true,
+  "all_attachment_sizes_and_sha256_match_published_local_files": true,
+  "all_server_sha256_digests_match_downloads": true,
+  "anonymous_release_metadata_verified": true,
+  "anonymous_tag_target_verified": true,
+  "attachment_count": 11,
+  "attachments": [
+    {
+      "anonymous_download_verified": true,
+      "bytes": 923,
+      "download_url": "https://github.com/RascalZ/REO/releases/download/v0.1.0/SHA256SUMS",
+      "name": "SHA256SUMS",
+      "published_local_bytes_match": true,
+      "server_digest_matches": true,
+      "sha256": "ebd95f255a8ac3e1f758809157ee645432f1a958d255619908f7a19ec7ecb68b"
+    },
+    {
+      "anonymous_download_verified": true,
+      "bytes": 41450,
+      "download_url": "https://github.com/RascalZ/REO/releases/download/v0.1.0/asset_catalog.json",
+      "name": "asset_catalog.json",
+      "published_local_bytes_match": true,
+      "server_digest_matches": true,
+      "sha256": "582279f4f4e5a6acbe0c22b6453e0b77f821b9f9deb47f59f5de7b085a420286"
+    },
+    {
+      "anonymous_download_verified": true,
+      "bytes": 196728,
+      "download_url": "https://github.com/RascalZ/REO/releases/download/v0.1.0/code_manifest.json",
+      "name": "code_manifest.json",
+      "published_local_bytes_match": true,
+      "server_digest_matches": true,
+      "sha256": "e6bd3cee788d9d07021c42b8b5a4d95002df5f70c265af2c0bf8ddcaf3285826"
+    },
+    {
+      "anonymous_download_verified": true,
+      "bytes": 18253,
+      "download_url": "https://github.com/RascalZ/REO/releases/download/v0.1.0/model_hash_preservation.json",
+      "name": "model_hash_preservation.json",
+      "published_local_bytes_match": true,
+      "server_digest_matches": true,
+      "sha256": "49f8e4f9c9bb44677b7dc9a13e5d0593da419c0ffba0fb6a250defa7e225fd79"
+    },
+    {
+      "anonymous_download_verified": true,
+      "bytes": 17933,
+      "download_url": "https://github.com/RascalZ/REO/releases/download/v0.1.0/projection_membership_audit.json",
+      "name": "projection_membership_audit.json",
+      "published_local_bytes_match": true,
+      "server_digest_matches": true,
+      "sha256": "d5552052991ff241bbadb1bf94c95d23ace9699a25de7d8c62a540197176198d"
+    },
+    {
+      "anonymous_download_verified": true,
+      "bytes": 1688,
+      "download_url": "https://github.com/RascalZ/REO/releases/download/v0.1.0/public_release_summary.json",
+      "name": "public_release_summary.json",
+      "published_local_bytes_match": true,
+      "server_digest_matches": true,
+      "sha256": "abcba4af93b814ee4cc1c06559232926b14dfc4d72347140a0bd4481eee0402d"
+    },
+    {
+      "anonymous_download_verified": true,
+      "bytes": 41407,
+      "download_url": "https://github.com/RascalZ/REO/releases/download/v0.1.0/release_file_manifest.json",
+      "name": "release_file_manifest.json",
+      "published_local_bytes_match": true,
+      "server_digest_matches": true,
+      "sha256": "6790fb9beba019dd42dbbe861319fffe265c3d013301a16ddbb2cbb1058685b5"
+    },
+    {
+      "anonymous_download_verified": true,
+      "bytes": 3645168,
+      "download_url": "https://github.com/RascalZ/REO/releases/download/v0.1.0/reo-code-v0.1.0.zip",
+      "name": "reo-code-v0.1.0.zip",
+      "published_local_bytes_match": true,
+      "server_digest_matches": true,
+      "sha256": "693e46cc8a62f2608715021a3322a9c49a0b94eee9ce038d9c9bd7a2ecef1d40"
+    },
+    {
+      "anonymous_download_verified": true,
+      "bytes": 1077796,
+      "download_url": "https://github.com/RascalZ/REO/releases/download/v0.1.0/reo-metadata-assets-v0.1.0.zip",
+      "name": "reo-metadata-assets-v0.1.0.zip",
+      "published_local_bytes_match": true,
+      "server_digest_matches": true,
+      "sha256": "df5562a5cc9a07ac3ac70563e91b125690e5dc296b340941c5e1c243a1b3a49f"
+    },
+    {
+      "anonymous_download_verified": true,
+      "bytes": 72937103,
+      "download_url": "https://github.com/RascalZ/REO/releases/download/v0.1.0/reo-model-assets-v0.1.0.zip",
+      "name": "reo-model-assets-v0.1.0.zip",
+      "published_local_bytes_match": true,
+      "server_digest_matches": true,
+      "sha256": "85ee348b5632ca20cda6218efb874e034c482deab84484b43eecf4cb5dfe1334"
+    },
+    {
+      "anonymous_download_verified": true,
+      "bytes": 794,
+      "download_url": "https://github.com/RascalZ/REO/releases/download/v0.1.0/sensitive_pattern_audit.json",
+      "name": "sensitive_pattern_audit.json",
+      "published_local_bytes_match": true,
+      "server_digest_matches": true,
+      "sha256": "eeda31f16470954c2953914699b1883cfda0923b56044220e80c12c133643e16"
+    }
+  ],
+  "authorization_headers_sent": false,
+  "cookies_sent": false,
+  "draft": false,
+  "environment_proxy_credentials_used": false,
+  "immutable": true,
+  "no_training_no_scoring_no_response_reads": true,
+  "prerelease": false,
+  "published_at": "2026-10-27T03:49:55Z",
+  "release_id": 425008231,
+  "release_tag": "v0.1.0",
+  "release_url": "https://github.com/RascalZ/REO/releases/tag/v0.1.0",
+  "repository": "https://github.com/RascalZ/REO",
+  "request_authentication": "none",
+  "software_archive_doi": "10.5281/zenodo.23681422",
+  "software_archive_url": "https://zenodo.org/records/23681422",
+  "target_commit": "643e4c9d0bd8b598cb9d9e98a4003bdd6004ec45",
+  "verified_at_utc": "2026-10-27T03:55:06.886490+00:00",
+  "zenodo_status_source": "Separate publication receipt; this audit directly verifies GitHub only"
+}

@@ -1,0 +1,177 @@
+{
+  "SHA256SUMS_entries_verified": 10,
+  "all_11_files_verified": true,
+  "all_asset_catalog_members_verified": true,
+  "anonymous_cookie_free_GET": true,
+  "audited_utc": "2026-10-27T03:52:17.624950+00:00",
+  "downloaded_code_blob_bindings_verified": 555,
+  "downloaded_code_git_commit": "643e4c9d0bd8b598cb9d9e98a4003bdd6004ec45",
+  "downloaded_models_manifest_sha256_verified": 64,
+  "files": [
+    {
+      "bytes": 1077796,
+      "file": "reo-metadata-assets-v0.1.0.zip",
+      "http_status": 200,
+      "local_release_size_and_sha256_match": true,
+      "server_md5": "2889fce4b58135576ae3602c4e1608c5",
+      "server_md5_match": true,
+      "sha256": "df5562a5cc9a07ac3ac70563e91b125690e5dc296b340941c5e1c243a1b3a49f"
+    },
+    {
+      "bytes": 72937103,
+      "file": "reo-model-assets-v0.1.0.zip",
+      "http_status": 200,
+      "local_release_size_and_sha256_match": true,
+      "server_md5": "350529b015eb1d94316dc27afa887a41",
+      "server_md5_match": true,
+      "sha256": "85ee348b5632ca20cda6218efb874e034c482deab84484b43eecf4cb5dfe1334"
+    },
+    {
+      "bytes": 196728,
+      "file": "code_manifest.json",
+      "http_status": 200,
+      "local_release_size_and_sha256_match": true,
+      "server_md5": "3cb18553a7111afe07b653b5bd04e985",
+      "server_md5_match": true,
+      "sha256": "e6bd3cee788d9d07021c42b8b5a4d95002df5f70c265af2c0bf8ddcaf3285826"
+    },
+    {
+      "bytes": 41407,
+      "file": "release_file_manifest.json",
+      "http_status": 200,
+      "local_release_size_and_sha256_match": true,
+      "server_md5": "1e6d65ad5750d69d66dea71e042eec76",
+      "server_md5_match": true,
+      "sha256": "6790fb9beba019dd42dbbe861319fffe265c3d013301a16ddbb2cbb1058685b5"
+    },
+    {
+      "bytes": 923,
+      "file": "SHA256SUMS",
+      "http_status": 200,
+      "local_release_size_and_sha256_match": true,
+      "server_md5": "ca6d15bbdec9392a78796c4e5899e21a",
+      "server_md5_match": true,
+      "sha256": "ebd95f255a8ac3e1f758809157ee645432f1a958d255619908f7a19ec7ecb68b"
+    },
+    {
+      "bytes": 18253,
+      "file": "model_hash_preservation.json",
+      "http_status": 200,
+      "local_release_size_and_sha256_match": true,
+      "server_md5": "084a9edb440cac4b73ddd15ca6a5db0d",
+      "server_md5_match": true,
+      "sha256": "49f8e4f9c9bb44677b7dc9a13e5d0593da419c0ffba0fb6a250defa7e225fd79"
+    },
+    {
+      "bytes": 3645168,
+      "file": "reo-code-v0.1.0.zip",
+      "http_status": 200,
+      "local_release_size_and_sha256_match": true,
+      "server_md5": "e14583e01b0aa48f389a485b11335600",
+      "server_md5_match": true,
+      "sha256": "693e46cc8a62f2608715021a3322a9c49a0b94eee9ce038d9c9bd7a2ecef1d40"
+    },
+    {
+      "bytes": 41450,
+      "file": "asset_catalog.json",
+      "http_status": 200,
+      "local_release_size_and_sha256_match": true,
+      "server_md5": "05ef9fa166f650a9c0c909597fadbd51",
+      "server_md5_match": true,
+      "sha256": "582279f4f4e5a6acbe0c22b6453e0b77f821b9f9deb47f59f5de7b085a420286"
+    },
+    {
+      "bytes": 17933,
+      "file": "projection_membership_audit.json",
+      "http_status": 200,
+      "local_release_size_and_sha256_match": true,
+      "server_md5": "c74e294cdaa1432c84069230cffa512d",
+      "server_md5_match": true,
+      "sha256": "d5552052991ff241bbadb1bf94c95d23ace9699a25de7d8c62a540197176198d"
+    },
+    {
+      "bytes": 1688,
+      "file": "public_release_summary.json",
+      "http_status": 200,
+      "local_release_size_and_sha256_match": true,
+      "server_md5": "3f5d4a1356b6980087d715965cff3c69",
+      "server_md5_match": true,
+      "sha256": "abcba4af93b814ee4cc1c06559232926b14dfc4d72347140a0bd4481eee0402d"
+    },
+    {
+      "bytes": 794,
+      "file": "sensitive_pattern_audit.json",
+      "http_status": 200,
+      "local_release_size_and_sha256_match": true,
+      "server_md5": "03c49e6494ee7cf92928abf525b2e93b",
+      "server_md5_match": true,
+      "sha256": "eeda31f16470954c2953914699b1883cfda0923b56044220e80c12c133643e16"
+    }
+  ],
+  "license_scopes": {
+    "asset_grant_limited_to_author_owned_rights": true,
+    "notices_checked_in_downloaded_archives": true,
+    "record_license_id": "cc-by-4.0",
+    "software": "Original MIT LICENSE preserved",
+    "third_party_identifiers_or_upstream_inputs_relicensed": false
+  },
+  "private_evidence_location": "docs/public_release_v1/local_private/anonymous_zenodo_v0.1.0",
+  "public_api_url": "https://zenodo.org/api/records/23681422",
+  "record_http_status": 200,
+  "record_json_sha256": "094bf2ca9d2ca0148186cdd2d8a8d555102fbb3728cdfdc56353a0e52c0fcdb3",
+  "record_metadata": {
+    "access_right": "open",
+    "creator_count": 8,
+    "creator_names_nonempty": true,
+    "creators_canonical_json_sha256": "e07c4f44840ab3352cb0c6b064af2209de10fe12325763ab9c871ca5458d2e49",
+    "doi": "10.5281/zenodo.23681422",
+    "eight_creators_present": true,
+    "expected_doi_match": true,
+    "record_description_mentions_CC_BY": true,
+    "record_description_mentions_MIT": true,
+    "record_description_mentions_third_party": true,
+    "record_license": {
+      "id": "cc-by-4.0"
+    },
+    "record_state": "done",
+    "submitted": true,
+    "version": "0.1.0",
+    "version_match": true
+  },
+  "record_url": "https://zenodo.org/records/23681422",
+  "safe_extraction": {
+    "code": {
+      "crc_unique_relative_paths_no_symlinks_or_conflicts": true,
+      "members": 557,
+      "uncompressed_bytes": 12494019
+    },
+    "models": {
+      "crc_unique_relative_paths_no_symlinks_or_conflicts": true,
+      "members": 74,
+      "uncompressed_bytes": 76726160
+    }
+  },
+  "schema_version": "reo-zenodo-anonymous-download-audit-1.0",
+  "scientific_performance_or_replication_claim": false,
+  "synthetic_inference": {
+    "abstained_count": 0,
+    "dependency_environment": "existing project virtual environment",
+    "downloaded_source_code_only": true,
+    "exit_code": 0,
+    "generated_input_path_in_downloaded_archive": "synthetic_inputs/full_gene_order.synthetic.json",
+    "input_rows": 6,
+    "input_sha256": "78c8473360e13ce882d10086ecaf36c0626ff99d6437dee63dfa6e66edaf19a6",
+    "isolated_python_mode": true,
+    "model_path_in_downloaded_archive": "models/d1930_response_association_pair_full.json.gz",
+    "model_sha256": "e0946a4fd3a6e4c69682a5e54d80181e4dc910d955adbd46746bb3037adb9115",
+    "new_training_or_scoring": false,
+    "no_response_labels_used": true,
+    "output_sha256": "7335363b3f94fff33068ffd9f72f29e4f215162b99b1d8750cce75bc6603afe1",
+    "predicted_count": 6,
+    "real_expression_or_external_predictions_read": false,
+    "status_counts": {
+      "predicted": 6
+    },
+    "synthetic_output_values_published": false
+  }
+}

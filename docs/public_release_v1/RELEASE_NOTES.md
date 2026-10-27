@@ -1,9 +1,6 @@
 # REO v0.1.0 — release notes
 
-**Prepared release; publication and archive verification are pending.** This
-document is not evidence that a GitHub Release or a Zenodo DOI already exists.
-After publication, cite the verified software version and archive identifier;
-a software archive DOI is not the unpublished manuscript's DOI.
+**Published 27 October 2026.** [GitHub Release](https://github.com/RascalZ/REO/releases/tag/v0.1.0) and [Zenodo software archive](https://doi.org/10.5281/zenodo.23681422). Source commit: `643e4c9d0bd8b598cb9d9e98a4003bdd6004ec45`. The software archive DOI is not the unpublished manuscript's DOI.
 
 This version packages the existing research software and frozen model exports
 for an auditable comparison of expression, within-sample ranks and

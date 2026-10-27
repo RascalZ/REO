@@ -2,7 +2,7 @@
 
 A leakage-controlled comparison of expression, within-sample ranks and relative-expression gene pairs for continuous cancer-cell-line drug-response prediction. The study separates tissue-reference performance, molecular increments and representation differences under matched candidate rules.
 
-**Access — 27 October 2026:** this repository is public. Tracked code, configurations and aggregate results can be read anonymously. Two v0.1.0 packages containing the 64 frozen models and minimal identity/fold assets have been built and hash-checked; their [planned release/download entry](https://github.com/RascalZ/REO/releases/tag/v0.1.0) is **pending publication**. Zenodo has reserved software-archive DOI `10.5281/zenodo.23681422`; it is **not yet registered/published**. See [data and access conditions](docs/DATA_AVAILABILITY.md) and the [asset guide](reproducibility_v1/README.md).
+**Access — 27 October 2026:** this repository is public. [REO v0.1.0](https://github.com/RascalZ/REO/releases/tag/v0.1.0) is a published immutable GitHub Release containing the code snapshot, 64 frozen models, minimal identity/fold assets and audit files. The same 11 files are archived on [Zenodo](https://zenodo.org/records/23681422), with software DOI [10.5281/zenodo.23681422](https://doi.org/10.5281/zenodo.23681422). All 11 GitHub attachments were downloaded anonymously and their bytes/SHA-256 checked against the published local files; see the [release audit](docs/public_release_v1/GITHUB_RELEASE_AUDIT.json), [data conditions](docs/DATA_AVAILABILITY.md) and [asset guide](reproducibility_v1/README.md).
 
 ## Study and results
 
@@ -14,7 +14,7 @@ A leakage-controlled comparison of expression, within-sample ranks and relative-
 
 ![Study design and evaluation boundaries](figures/manuscript_m08_v1/Figure1_study_design.png)
 
-The manuscript is unpublished. The current local reading copy is English v4 with a paired Chinese copy; author packages are Git-ignored. [Stage 31](reports/阶段31_Minor1与2最小补充.md) records the two latest clarifications. No paper DOI is claimed; the reserved software DOI is a separate identifier, pending actual archive publication. The sole maintained plan is [RESEARCH_PLAN.md](RESEARCH_PLAN.md).
+The manuscript is unpublished. The current local reading copy is English v4 with a paired Chinese copy; author packages are Git-ignored. [Stage 31](reports/阶段31_Minor1与2最小补充.md) records the two latest clarifications. The published software DOI is not a paper DOI. The sole maintained plan is [RESEARCH_PLAN.md](RESEARCH_PLAN.md).
 
 ## Quick start
 
@@ -45,8 +45,8 @@ The commands named `verify_public_*` inspect the tracked public aggregates. They
 |---|---|
 | Code, configurations, aggregate tables and figures | Publicly tracked here |
 | Upstream CCLE, GDSC2, CTRP v2 and annotations | Versioned sources and applicable terms in [data availability](docs/DATA_AVAILABILITY.md) |
-| Actual fitted models, preprocessing and coefficients | 64 byte-preserved models and parameter tables packaged; v0.1.0 download pending publication |
-| Minimal derived identities, memberships and four frozen fold files | Packaged with audited projections; v0.1.0 download pending publication; full source pointers are excluded |
+| Actual fitted models, preprocessing and coefficients | 64 byte-preserved models and parameter tables in the published v0.1.0 model package |
+| Minimal derived identities, memberships and four frozen fold files | Published v0.1.0 metadata package with audited projections; full source pointers are excluded |
 | Raw matrices, individual responses/predictions and checkpoints | Not distributed in this repository |
 | Manuscript and submission materials | Local author package; no public release or all-author submission approval claimed |
 
@@ -66,6 +66,6 @@ Start with the [development protocol](docs/ORDINAL_REPEATED_V1_PROTOCOL.md), [ex
 
 ## Citation, contribution and license
 
-Use [CITATION.cff](CITATION.cff), identifying the exact commit used while the first release is pending. The eight release creators follow the author-confirmed v4 order. A DOI reservation is not a published archive; final release/archival metadata will be recorded after publication and download verification.
+Use [CITATION.cff](CITATION.cff) and the published [software DOI](https://doi.org/10.5281/zenodo.23681422), recording version v0.1.0 and the exact commit used. The release tag resolves to `643e4c9d0bd8b598cb9d9e98a4003bdd6004ec45`; later documentation updates on the default branch do not change that frozen code snapshot. The eight release creators follow the author-confirmed v4 order. This citation identifies software and research assets, not a published article.
 
 [CONTRIBUTING.md](CONTRIBUTING.md) describes contribution boundaries. Newly authored reconstruction code and repository documentation use [MIT](LICENSE). Original model and derived assets have a separate [CC BY 4.0 grant](docs/public_release_v1/MODEL_ASSETS_LICENSE.md), limited to rights the authors own; third-party data, identifiers and annotations are not relicensed. Obtain upstream inputs independently under their terms. A public checkout and the minimal asset packages do not by themselves reconstruct every historical curation or evaluation step.

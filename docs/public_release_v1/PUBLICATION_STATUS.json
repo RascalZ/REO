@@ -4,11 +4,38 @@
   "repository_visibility": "public",
   "version": "0.1.0",
   "github_release": "https://github.com/RascalZ/REO/releases/tag/v0.1.0",
-  "github_release_state": "pending",
+  "github_release_state": "published",
   "repository_immutable_releases_enabled": true,
   "zenodo_doi": "10.5281/zenodo.23681422",
-  "zenodo_state": "reserved_draft_not_published",
-  "public_download_verification": "pending",
+  "zenodo_state": "published",
+  "public_download_verification": {
+    "zenodo": "11/11 anonymous GET, sizes, SHA-256 and server MD5 verified",
+    "github": "11/11 anonymous GET, sizes, SHA-256 and server digests verified"
+  },
   "scientific_training_or_scoring_repeated": false,
-  "v4_manuscript_modified": false
+  "v4_manuscript_modified": false,
+  "github_release_id": 425008231,
+  "github_release_immutable": true,
+  "source_commit": "643e4c9d0bd8b598cb9d9e98a4003bdd6004ec45",
+  "zenodo_record": "https://zenodo.org/records/23681422",
+  "release_attachment_count": 11,
+  "downloaded_model_synthetic_inference": {
+    "status": "passed",
+    "predicted": 6,
+    "abstained": 0,
+    "real_response_labels_used": false,
+    "new_drug_response_evaluation": false
+  },
+  "evidence": {
+    "zenodo": "ZENODO_DOWNLOAD_AUDIT.json",
+    "github": "GITHUB_RELEASE_AUDIT.json",
+    "payload": "PAYLOAD_SUMMARY.json",
+    "doi": "DOI_RESOLUTION_AUDIT.json"
+  },
+  "source_ci": {
+    "run_id": 40445154732,
+    "conclusion": "success",
+    "source_commit": "643e4c9d0bd8b598cb9d9e98a4003bdd6004ec45",
+    "url": "https://github.com/RascalZ/REO/actions/runs/40445154732"
+  }
 }

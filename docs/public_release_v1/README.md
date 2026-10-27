@@ -2,9 +2,9 @@
 
 The current machine-readable publication state is
 [PUBLICATION_STATUS.json](PUBLICATION_STATUS.json). The GitHub repository is
-public. Formal asset release and archive registration must be verified
-separately from preparation; the reserved software DOI is
-`10.5281/zenodo.23681422`.
+public. The [GitHub release](https://github.com/RascalZ/REO/releases/tag/v0.1.0) and
+[Zenodo archive](https://doi.org/10.5281/zenodo.23681422) are published.
+Anonymous downloads are verified separately from publication metadata.
 
 - [Payload scope and checksums](PAYLOAD_SUMMARY.json)
 - [Per-file catalog](PAYLOAD_ASSET_CATALOG.json)

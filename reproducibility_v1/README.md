@@ -7,21 +7,26 @@ The existing manuscript and all frozen analyses remain unchanged.
 
 ## Current release access — 27 October 2026
 
-The GitHub repository is public. The two audited v0.1.0 packages below have
-been prepared; the [GitHub Release](https://github.com/RascalZ/REO/releases/tag/v0.1.0)
-and direct file downloads are **pending publication**, not verified available
-downloads. Zenodo has reserved software-archive DOI `10.5281/zenodo.23681422`;
-it is not yet registered/published. This identifier is separate from any
-future paper DOI.
+The public [GitHub Release v0.1.0](https://github.com/RascalZ/REO/releases/tag/v0.1.0)
+is published and immutable. Its tag resolves to
+`643e4c9d0bd8b598cb9d9e98a4003bdd6004ec45`. The same 11 release files are
+published on [Zenodo](https://zenodo.org/records/23681422), with software DOI
+[10.5281/zenodo.23681422](https://doi.org/10.5281/zenodo.23681422).
+This is a software/research-asset identifier, not a paper DOI. All 11 GitHub
+attachments were downloaded without credentials or cookies and checked for
+exact size/SHA-256 equality with the published local files; the
+[release audit](../docs/public_release_v1/GITHUB_RELEASE_AUDIT.json) also records
+the anonymous tag and immutable-state checks.
 
-| Prepared file / planned download | Bytes | SHA-256 |
+| Published file / direct download | Bytes | SHA-256 |
 |---|---:|---|
-| [reo-model-assets-v0.1.0.zip](https://github.com/RascalZ/REO/releases/download/v0.1.0/reo-model-assets-v0.1.0.zip) — pending | 72,937,103 | `85ee348b5632ca20cda6218efb874e034c482deab84484b43eecf4cb5dfe1334` |
-| [reo-metadata-assets-v0.1.0.zip](https://github.com/RascalZ/REO/releases/download/v0.1.0/reo-metadata-assets-v0.1.0.zip) — pending | 1,077,796 | `df5562a5cc9a07ac3ac70563e91b125690e5dc296b340941c5e1c243a1b3a49f` |
+| [reo-code-v0.1.0.zip](https://github.com/RascalZ/REO/releases/download/v0.1.0/reo-code-v0.1.0.zip) | 3,645,168 | `693e46cc8a62f2608715021a3322a9c49a0b94eee9ce038d9c9bd7a2ecef1d40` |
+| [reo-model-assets-v0.1.0.zip](https://github.com/RascalZ/REO/releases/download/v0.1.0/reo-model-assets-v0.1.0.zip) | 72,937,103 | `85ee348b5632ca20cda6218efb874e034c482deab84484b43eecf4cb5dfe1334` |
+| [reo-metadata-assets-v0.1.0.zip](https://github.com/RascalZ/REO/releases/download/v0.1.0/reo-metadata-assets-v0.1.0.zip) | 1,077,796 | `df5562a5cc9a07ac3ac70563e91b125690e5dc296b340941c5e1c243a1b3a49f` |
 
 The [public summary](../docs/public_release_v1/PAYLOAD_SUMMARY.json) and
 [per-file catalog](../docs/public_release_v1/PAYLOAD_ASSET_CATALOG.json) describe
-the actual prepared bytes. All 64 model payloads and four fold CSVs preserve
+the published asset bytes. All 64 model payloads and four fold CSVs preserve
 their original bytes. Four new identity/membership projections preserve every
 row and retained field string while omitting source experiment/curve/response
 pointers, QC records and dose fields. They are not complete inputs for the old
@@ -52,7 +57,7 @@ software demonstration, not a paper model or a drug-efficacy result. See the
 ## Preserved complete local technical exports
 
 `local_assets/` remains Git-ignored as the preserved complete technical export.
-The prepared release above uses an audited subset/projection of this export,
+The published release above uses an audited subset/projection of this export,
 not a wholesale copy of its source-pointer metadata. The local export is not
 an additional public download. Historical summaries below retain their
 pre-release scope; the current release catalog above identifies the new packages.
@@ -72,10 +77,11 @@ the current manuscript-package copy is
 [Additional file 8](../manuscript_v1/bmc_additional_files_scientific_revision_v1/Additional_file_8.csv).
 Do not infer a new chemical match or harmonized dose window from inference.
 
-## Frozen-model inference using the prepared release
+## Frozen-model inference using the published release
 
-After the release is actually published, download the model archive above and
-check its SHA-256 before extraction. This standard-library check must succeed:
+Download the model archive above or from Zenodo and check its SHA-256 before
+extraction. Use the versioned code ZIP or the v0.1.0 checkout. This
+standard-library check must succeed:
 
 ```sh
 python -c "import hashlib,pathlib; p=pathlib.Path('reo-model-assets-v0.1.0.zip'); assert hashlib.sha256(p.read_bytes()).hexdigest() == '85ee348b5632ca20cda6218efb874e034c482deab84484b43eecf4cb5dfe1334'; print('model archive SHA-256 verified')"
@@ -85,8 +91,9 @@ python scripts/predict_repro_v1.py --model release_assets/model/models/d1930_res
 
 This uses a real frozen molecular model with explicitly generated input.
 No metadata CSV or response file is opened, and no scientific performance
-measure is calculated. The output must be new. This command becomes a public
-asset example only after publication and successful download verification.
+measure is calculated. The output must be new. The public download audit
+establishes file access and integrity; it is separate from model inference or
+scientific performance validation.
 
 ## Preserved local inference route
 
@@ -149,9 +156,8 @@ preprocessing state is needed for inference, rather than a feature list alone.
 - The numeric export covers the 64 final models. Historical outer-fold model
   checkpoints, original OOF predictions and bootstrap objects are not newly
   exported or replayed here; original scientific records remain in place.
-- The first public model/metadata download and archive publication are pending
-  verification. The software DOI is reserved, not registered. Author declarations
-  and final manuscript approval are separate closing steps.
+- Software and model/metadata publication is complete; author declarations and
+  final manuscript approval remain separate closing steps.
 - Synthetic numerical agreement is not predictive scoring, an efficacy result,
   a new validation cohort, or a reproduction of the manuscript's correlations.
 

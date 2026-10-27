@@ -7,18 +7,24 @@ aggregate results, source/provenance records and invented-input example are
 accessible anonymously. This supersedes the historical private-repository
 status below; it does not change upstream dataset terms.
 
-Two v0.1.0 packages have been prepared and hash-checked: 64 byte-preserved
-numeric models with parameter/feature tables and generated input, and minimal
-identity/membership projections with four unchanged project fold files. The
-[planned GitHub Release](https://github.com/RascalZ/REO/releases/tag/v0.1.0)
-and actual package downloads are **pending publication and download verification**.
+The immutable [GitHub Release v0.1.0](https://github.com/RascalZ/REO/releases/tag/v0.1.0)
+is published: it supplies a code snapshot, 64 byte-preserved numeric models
+with parameter/feature tables and generated input, minimal identity/membership
+projections with four unchanged project fold files, and audit/checksum files.
+All 11 attachments were downloaded anonymously and their sizes and SHA-256
+values matched the published local files and GitHub server digests. Anonymous
+API checks confirmed `immutable: true`, `draft: false`, and that the tag resolves
+to commit `643e4c9d0bd8b598cb9d9e98a4003bdd6004ec45`.
+See the [GitHub release audit](public_release_v1/GITHUB_RELEASE_AUDIT.json).
 See the [asset guide](../reproducibility_v1/README.md),
-[prepared-byte summary](public_release_v1/PAYLOAD_SUMMARY.json) and
+[asset-byte summary](public_release_v1/PAYLOAD_SUMMARY.json) and
 [per-file catalog](public_release_v1/PAYLOAD_ASSET_CATALOG.json).
-Zenodo has genuinely reserved `10.5281/zenodo.23681422` for the software archive,
-but it is **not yet registered/published**. This is not a paper DOI and does not
-yet establish an accessible archived record. Repository release immutability
-is enabled for future releases; no published immutable release is asserted here.
+The same 11 files are published in the [Zenodo software archive](https://zenodo.org/records/23681422)
+with DOI [10.5281/zenodo.23681422](https://doi.org/10.5281/zenodo.23681422).
+This is a software/research-asset DOI, not a paper DOI. Earlier reservation and
+pending-publication statements in historical snapshots describe that earlier
+state and are superseded by this current access section. Later default-branch
+documentation changes do not modify the immutable v0.1.0 source snapshot.
 
 The metadata projection preserves all 626/175 frozen development/external
 identities and 4,967/1,185 drug memberships but excludes source experiment,

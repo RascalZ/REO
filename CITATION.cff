@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "Cite this software repository and the exact commit used until its first versioned release and archive are actually published. A software archive DOI is not a paper DOI."
+message: "Cite this software and research-asset release using its version and Zenodo DOI. The archive DOI is not a paper DOI."
 type: software
 title: "REO: Auditable drug-response research reconstruction"
 authors:
@@ -30,9 +30,10 @@ authors:
 repository-code: "https://github.com/RascalZ/REO"
 version: "0.1.0"
 doi: "10.5281/zenodo.23681422"
+date-released: "2026-10-27"
 license: MIT
 url: "https://github.com/RascalZ/REO"
-abstract: "Research software comparing expression, within-sample ranks and relative-expression gene pairs with tissue references in cancer-cell-line drug-response prediction. The prepared v0.1.0 assets retain 64 frozen models, zero molecular solutions and minimal identity/fold metadata. The study did not establish an average REO predictive advantage. The software DOI has been reserved; registration and release publication are pending. No paper DOI is claimed. Code uses MIT, while author-owned model and derived assets have a separate CC BY 4.0 grant; third-party data and identifiers are not relicensed."
+abstract: "Research software comparing expression, within-sample ranks and relative-expression gene pairs with tissue references in cancer-cell-line drug-response prediction. Version 0.1.0 retains 64 frozen models, zero molecular solutions and minimal identity/fold metadata. The study did not establish an average REO predictive advantage. The software and research assets are archived on Zenodo. No paper DOI is claimed. Code uses MIT, while author-owned model and derived assets have a separate CC BY 4.0 grant; third-party data and identifiers are not relicensed."
 keywords:
   - pharmacogenomics
   - relative expression ordering
