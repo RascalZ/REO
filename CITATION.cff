@@ -1,14 +1,38 @@
 cff-version: 1.2.0
-message: "Cite the software repository for this reconstruction. A paper citation will be added after publication."
+message: "Cite this software repository and the exact commit used until its first versioned release and archive are actually published. A software archive DOI is not a paper DOI."
 type: software
 title: "REO: Auditable drug-response research reconstruction"
 authors:
-  - name: "REO research contributors"
+  - family-names: "Zhang"
+    given-names: "Nan"
+    affiliation: "College of Bioinformatics Science and Technology, Harbin Medical University, Harbin 150081, China."
+  - family-names: "Zhang"
+    given-names: "Huicheng"
+    affiliation: "College of Bioinformatics Science and Technology, Harbin Medical University, Harbin 150081, China."
+  - family-names: "Huang"
+    given-names: "Wen"
+    affiliation: "College of Bioinformatics Science and Technology, Harbin Medical University, Harbin 150081, China."
+  - family-names: "Yang"
+    given-names: "Siru"
+    affiliation: "College of Bioinformatics Science and Technology, Harbin Medical University, Harbin 150081, China."
+  - family-names: "Zhang"
+    given-names: "Yutong"
+    affiliation: "College of Bioinformatics Science and Technology, Harbin Medical University, Harbin 150081, China."
+  - family-names: "Li"
+    given-names: "Jinglin"
+    affiliation: "College of Bioinformatics Science and Technology, Harbin Medical University, Harbin 150081, China."
+  - family-names: "Liu"
+    given-names: "Hui"
+    affiliation: "College of Bioinformatics Science and Technology, Harbin Medical University, Harbin 150081, China."
+  - family-names: "Wang"
+    given-names: "Shuyuan"
+    affiliation: "College of Bioinformatics Science and Technology, Harbin Medical University, Harbin 150081, China."
 repository-code: "https://github.com/RascalZ/REO"
 version: "0.1.0"
+doi: "10.5281/zenodo.23681422"
 license: MIT
 url: "https://github.com/RascalZ/REO"
-abstract: "Development-version code comparing expression, ranks and relative-expression pairs with tissue references in cancer-cell-line drug-response prediction. No archived release or paper DOI is currently available; cite the exact commit used."
+abstract: "Research software comparing expression, within-sample ranks and relative-expression gene pairs with tissue references in cancer-cell-line drug-response prediction. The prepared v0.1.0 assets retain 64 frozen models, zero molecular solutions and minimal identity/fold metadata. The study did not establish an average REO predictive advantage. The software DOI has been reserved; registration and release publication are pending. No paper DOI is claimed. Code uses MIT, while author-owned model and derived assets have a separate CC BY 4.0 grant; third-party data and identifiers are not relicensed."
 keywords:
   - pharmacogenomics
   - relative expression ordering

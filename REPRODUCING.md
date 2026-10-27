@@ -2,6 +2,16 @@
 
 Use Python 3.12. These commands distinguish software checks from reproducing the scientific analysis. A passing check does not imply a clean dependency installation or end-to-end scientific retraining.
 
+## Current access — 27 October 2026
+
+The repository is public. The two audited v0.1.0 model/metadata packages are
+prepared, but the [release entry](https://github.com/RascalZ/REO/releases/tag/v0.1.0)
+and file downloads are **pending publication**. Reserved software-archive DOI
+`10.5281/zenodo.23681422` is not yet registered/published and is not a paper DOI.
+See the [asset guide](reproducibility_v1/README.md) for filenames, SHA-256 values
+and the response-free frozen-model command to use after download is available.
+The immediately runnable toy below is already tracked in this public repository.
+
 ## Dependency layers
 
 | File | Purpose |
@@ -35,9 +45,27 @@ python scripts/verify_repro_assets_v1.py
 
 The last command defaults to recorded summary/fixture contracts. Its optional `--local` mode needs separately prepared local assets. See [the asset guide](reproducibility_v1/README.md). A summary or inventory hash is not an accessible trained model.
 
+## Frozen-model inference after release publication
+
+Once the model ZIP has actually been published and downloaded, verify its
+SHA-256 against the asset guide, then run from the matching repository checkout:
+
+```sh
+python -m zipfile -e reo-model-assets-v0.1.0.zip release_assets/model
+python scripts/predict_repro_v1.py --model release_assets/model/models/d1930_response_association_pair_full.json.gz --input release_assets/model/synthetic_inputs/full_gene_order.synthetic.json --output released_model_synthetic_predictions_new.json
+```
+
+Use a new output path. This replays an existing fitted model on generated
+numbers; it reads no drug-response labels, fits no parameters and does not
+recompute a scientific performance metric. Metadata CSVs are not required for
+this inference CLI. The metadata package supplies frozen project identities
+and assignments for interpretation, not the full source-pointer inputs needed
+by the historical external runner. Preserve all zero molecular solutions and
+abstention rules.
+
 ## Scientific reconstruction
 
-Full reconstruction needs the precise upstream versions, identity/group mappings, folds, source-access permissions and environments described in [data availability](docs/DATA_AVAILABILITY.md) and [reproduction status](docs/REPRODUCIBILITY.md). Some original inputs and prepared models are not distributed here, so a checkout alone cannot replay all paper results.
+Full reconstruction needs the precise upstream versions, identity/group mappings, folds, source-access permissions and environments described in [data availability](docs/DATA_AVAILABILITY.md) and [reproduction status](docs/REPRODUCIBILITY.md). Obtain upstream expression/response data independently under their own terms. The planned model and minimal metadata packages do not include raw matrices, original external extraction pointers or all legacy curation dependencies, so a checkout plus these packages alone cannot replay every historical audit or all paper results. The model/derived-asset CC BY 4.0 grant covers only rights the authors own; it does not relicense upstream material.
 
 Authoritative designs are the [development protocol](docs/ORDINAL_REPEATED_V1_PROTOCOL.md), [LOTO protocol](docs/TISSUE_SENSITIVITY_LOTO_PROTOCOL_V1.md) and [external protocol](docs/EXTERNAL_VALIDATION_PROTOCOL_V1_1.md). Historical commands remain in the reproduction-status document; use a separate authorized workspace for a new reconstruction. They are not instructions to alter the completed run.
 

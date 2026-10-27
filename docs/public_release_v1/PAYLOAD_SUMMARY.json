@@ -1,0 +1,62 @@
+{
+  "archives": [
+    {
+      "bytes": 1077796,
+      "entries": 13,
+      "file": "reo-metadata-assets-v0.1.0.zip",
+      "sha256": "df5562a5cc9a07ac3ac70563e91b125690e5dc296b340941c5e1c243a1b3a49f"
+    },
+    {
+      "bytes": 72937103,
+      "entries": 74,
+      "file": "reo-model-assets-v0.1.0.zip",
+      "sha256": "85ee348b5632ca20cda6218efb874e034c482deab84484b43eecf4cb5dfe1334"
+    }
+  ],
+  "cohorts": {
+    "development": {
+      "drug_membership_counts": {
+        "1010": 620,
+        "1036": 622,
+        "1091": 620,
+        "1191": 620,
+        "1199": 620,
+        "1922": 620,
+        "1930": 620,
+        "1931": 625
+      },
+      "identities": 626,
+      "memberships": 4967
+    },
+    "external": {
+      "drug_membership_counts": {
+        "1010": 161,
+        "1036": 167,
+        "1091": 165,
+        "1191": 169,
+        "1199": 165,
+        "1922": 82,
+        "1930": 168,
+        "1931": 108
+      },
+      "identities": 175,
+      "memberships": 1185
+    }
+  },
+  "complete_input_for_historical_external_rescoring": false,
+  "frozen_assignment_files": 4,
+  "license_scope": "CC BY 4.0 only to the extent the authors own the relevant rights; upstream terms remain",
+  "model_count": 64,
+  "model_payloads_byte_identical": true,
+  "molecular_models": 56,
+  "nonzero_molecular_models": 27,
+  "original_expression_observations_included": false,
+  "raw_response_values_included": false,
+  "real_individual_predictions_included": false,
+  "release_version": "0.1.0",
+  "source_assets_modified": false,
+  "third_party_identifiers_relicensed": false,
+  "tissue_reference_models": 8,
+  "training_scoring_or_prediction_executed": false,
+  "zero_molecular_models": 29
+}

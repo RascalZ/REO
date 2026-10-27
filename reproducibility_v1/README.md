@@ -5,6 +5,35 @@ and full historical source-data reproduction. It does not retrain or score a
 model, reopen CTRPv2 labels, or establish independent scientific replication.
 The existing manuscript and all frozen analyses remain unchanged.
 
+## Current release access — 27 October 2026
+
+The GitHub repository is public. The two audited v0.1.0 packages below have
+been prepared; the [GitHub Release](https://github.com/RascalZ/REO/releases/tag/v0.1.0)
+and direct file downloads are **pending publication**, not verified available
+downloads. Zenodo has reserved software-archive DOI `10.5281/zenodo.23681422`;
+it is not yet registered/published. This identifier is separate from any
+future paper DOI.
+
+| Prepared file / planned download | Bytes | SHA-256 |
+|---|---:|---|
+| [reo-model-assets-v0.1.0.zip](https://github.com/RascalZ/REO/releases/download/v0.1.0/reo-model-assets-v0.1.0.zip) — pending | 72,937,103 | `85ee348b5632ca20cda6218efb874e034c482deab84484b43eecf4cb5dfe1334` |
+| [reo-metadata-assets-v0.1.0.zip](https://github.com/RascalZ/REO/releases/download/v0.1.0/reo-metadata-assets-v0.1.0.zip) — pending | 1,077,796 | `df5562a5cc9a07ac3ac70563e91b125690e5dc296b340941c5e1c243a1b3a49f` |
+
+The [public summary](../docs/public_release_v1/PAYLOAD_SUMMARY.json) and
+[per-file catalog](../docs/public_release_v1/PAYLOAD_ASSET_CATALOG.json) describe
+the actual prepared bytes. All 64 model payloads and four fold CSVs preserve
+their original bytes. Four new identity/membership projections preserve every
+row and retained field string while omitting source experiment/curve/response
+pointers, QC records and dose fields. They are not complete inputs for the old
+external runner's extraction or rescoring. Original upstream data and wider
+historical curation inputs must be obtained independently.
+
+Newly authored code is MIT. The packages include a scoped CC BY 4.0 grant for
+author-owned model/derived assets, including project assignments and
+author-created identity decisions; third-party data, identifiers and
+annotations are not relicensed. Read the packaged license and attribution
+notices. Public access does not replace upstream access or redistribution terms.
+
 ## Immediately runnable public example
 
 Use Python 3.12 with the two pinned numerical dependencies in
@@ -20,12 +49,13 @@ parameters in this example were invented by hand, with no fitting. It is a
 software demonstration, not a paper model or a drug-efficacy result. See the
 [worked arithmetic](../examples/repro_inference_v1/README.md).
 
-## Complete local technical assets
+## Preserved complete local technical exports
 
-`local_assets/` is deliberately Git-ignored while source access and redistribution
-terms await the planned author-side closing step. Local availability is not a
-claim of public model availability or of permission to relicense upstream data.
-The public summaries contain counts, file hashes and numerical checks only.
+`local_assets/` remains Git-ignored as the preserved complete technical export.
+The prepared release above uses an audited subset/projection of this export,
+not a wholesale copy of its source-pointer metadata. The local export is not
+an additional public download. Historical summaries below retain their
+pre-release scope; the current release catalog above identifies the new packages.
 
 | Asset | Local location | What is preserved |
 |---|---|---|
@@ -42,7 +72,23 @@ the current manuscript-package copy is
 [Additional file 8](../manuscript_v1/bmc_additional_files_scientific_revision_v1/Additional_file_8.csv).
 Do not infer a new chemical match or harmonized dose window from inference.
 
-## Local inference with an actual frozen model
+## Frozen-model inference using the prepared release
+
+After the release is actually published, download the model archive above and
+check its SHA-256 before extraction. This standard-library check must succeed:
+
+```sh
+python -c "import hashlib,pathlib; p=pathlib.Path('reo-model-assets-v0.1.0.zip'); assert hashlib.sha256(p.read_bytes()).hexdigest() == '85ee348b5632ca20cda6218efb874e034c482deab84484b43eecf4cb5dfe1334'; print('model archive SHA-256 verified')"
+python -m zipfile -e reo-model-assets-v0.1.0.zip release_assets/model
+python scripts/predict_repro_v1.py --model release_assets/model/models/d1930_response_association_pair_full.json.gz --input release_assets/model/synthetic_inputs/full_gene_order.synthetic.json --output released_model_synthetic_predictions_new.json
+```
+
+This uses a real frozen molecular model with explicitly generated input.
+No metadata CSV or response file is opened, and no scientific performance
+measure is calculated. The output must be new. This command becomes a public
+asset example only after publication and successful download verification.
+
+## Preserved local inference route
 
 After the one-time local technical export has been prepared, this command uses
 an existing molecular model and the generated input, with no response file:
@@ -103,8 +149,9 @@ preprocessing state is needed for inference, rather than a feature list alone.
 - The numeric export covers the 64 final models. Historical outer-fold model
   checkpoints, original OOF predictions and bootstrap objects are not newly
   exported or replayed here; original scientific records remain in place.
-- Public artifact-access routes, permissible redistribution, author/AI
-  declarations and an immutable archived release are pending closing steps.
+- The first public model/metadata download and archive publication are pending
+  verification. The software DOI is reserved, not registered. Author declarations
+  and final manuscript approval are separate closing steps.
 - Synthetic numerical agreement is not predictive scoring, an efficacy result,
   a new validation cohort, or a reproduction of the manuscript's correlations.
 

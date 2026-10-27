@@ -1,0 +1,14 @@
+{
+  "checked_date": "2026-10-27",
+  "repository": "https://github.com/RascalZ/REO",
+  "repository_visibility": "public",
+  "version": "0.1.0",
+  "github_release": "https://github.com/RascalZ/REO/releases/tag/v0.1.0",
+  "github_release_state": "pending",
+  "repository_immutable_releases_enabled": true,
+  "zenodo_doi": "10.5281/zenodo.23681422",
+  "zenodo_state": "reserved_draft_not_published",
+  "public_download_verification": "pending",
+  "scientific_training_or_scoring_repeated": false,
+  "v4_manuscript_modified": false
+}

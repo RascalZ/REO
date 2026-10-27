@@ -1,0 +1,23 @@
+{
+  "upload_type": "software",
+  "title": "REO: Auditable drug-response research reconstruction",
+  "version": "0.1.0",
+  "creators": [
+    {"name": "Zhang, Nan", "affiliation": "College of Bioinformatics Science and Technology, Harbin Medical University, Harbin 150081, China."},
+    {"name": "Zhang, Huicheng", "affiliation": "College of Bioinformatics Science and Technology, Harbin Medical University, Harbin 150081, China."},
+    {"name": "Huang, Wen", "affiliation": "College of Bioinformatics Science and Technology, Harbin Medical University, Harbin 150081, China."},
+    {"name": "Yang, Siru", "affiliation": "College of Bioinformatics Science and Technology, Harbin Medical University, Harbin 150081, China."},
+    {"name": "Zhang, Yutong", "affiliation": "College of Bioinformatics Science and Technology, Harbin Medical University, Harbin 150081, China."},
+    {"name": "Li, Jinglin", "affiliation": "College of Bioinformatics Science and Technology, Harbin Medical University, Harbin 150081, China."},
+    {"name": "Liu, Hui", "affiliation": "College of Bioinformatics Science and Technology, Harbin Medical University, Harbin 150081, China."},
+    {"name": "Wang, Shuyuan", "affiliation": "College of Bioinformatics Science and Technology, Harbin Medical University, Harbin 150081, China."}
+  ],
+  "description": "Research software and frozen model assets for a leakage-controlled comparison of expression, within-sample ranks and relative-expression gene pairs in cancer-cell-line drug-response prediction. The design separates tissue-reference performance, molecular increments and representation differences under matched candidate rules. The study did not establish an average REO predictive advantage. The release retains 64 existing numeric models, including all 29 zero molecular solutions among 56 molecular models, parameter and feature tables, generated response-free inference input, minimal identity/membership projections and four original fold-assignment files. Original model payloads and fold assignments are unchanged. Individual CTRPv2 responses, response indices and real individual external predictions remain sealed and are not distributed. The minimal metadata is not a complete input for historical external rescoring. No model training or scientific scoring was performed for packaging. Newly authored code is MIT; author-owned model and derived assets have the separate CC BY 4.0 grant included in each package, limited to rights the authors hold. Third-party data, identifiers and annotations are not relicensed, and upstream inputs must be obtained independently under their own terms. This is a software and research-asset archive, not a manuscript publication; its archive DOI must not be represented as a paper DOI.",
+  "access_right": "open",
+  "license": "MIT",
+  "keywords": ["pharmacogenomics", "relative expression ordering", "drug response prediction", "reproducible research", "tissue baseline"],
+  "related_identifiers": [
+    {"identifier": "https://github.com/RascalZ/REO", "relation": "isSupplementTo", "scheme": "url"}
+  ],
+  "notes": "Prepared metadata for the first real software release. No publication date, assigned DOI or completed archive is asserted by this metadata template. The record-level MIT entry describes the code; packaged author-owned model and derived assets carry their separate scoped CC BY 4.0 notice. Confirm the actual published record and download checksums before changing the repository's access statements."
+}
