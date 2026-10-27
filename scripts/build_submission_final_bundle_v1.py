@@ -6,6 +6,7 @@ publication artifacts; it does not evaluate models or open response datasets.
 from __future__ import annotations
 
 import hashlib
+import argparse
 import json
 from pathlib import Path, PurePosixPath
 from zipfile import ZIP_DEFLATED, ZipFile, ZipInfo
@@ -22,6 +23,9 @@ def sha(data):
 
 
 def main():
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--author-confirmed',action='store_true',help='Build a new package after explicit author-list and contact confirmation; preserve the earlier ZIP')
+    args=parser.parse_args()
     mechanical=json.loads((DOCS/'mechanical_audit.json').read_text(encoding='utf-8'))
     visual=json.loads((DOCS/'visual_review.json').read_text(encoding='utf-8'))
     assert visual['status']=='passed'
@@ -29,10 +33,16 @@ def main():
     assert visual['cover_pages_reviewed']==[1]
     preservation=json.loads((DOCS/'local_private/preservation_manifest.json').read_text(encoding='utf-8'))['files']
     assert all(sha((ROOT/path).read_bytes())==value for path,value in preservation.items())
-    readme=FOLDER/'00_UPLOAD_GUIDE.txt'
-    sums=FOLDER/'SHA256SUMS.txt'
-    package=FOLDER/f'BMC_Genomics_formal_submission_{STAMP}.zip'
-    manifest=DOCS/'submission_package_manifest.json'
+    confirmation=json.loads((DOCS/'author_list_confirmation.json').read_text(encoding='utf-8')) if args.author_confirmed else None
+    if confirmation:
+        assert confirmation['final_author_list_reconciliation_complete']
+        assert confirmation['all_author_emails_complete']
+        assert confirmation['author_count']==8 and not confirmation['author_only_items_pending']
+    suffix='_author_confirmed' if args.author_confirmed else ''
+    readme=FOLDER/('00_UPLOAD_GUIDE'+suffix+'.txt')
+    sums=FOLDER/('SHA256SUMS'+suffix+'.txt')
+    package=FOLDER/f'BMC_Genomics_formal_submission{suffix}_{STAMP}.zip'
+    manifest=DOCS/('submission_package'+suffix+'_manifest.json')
     assert not any(p.exists() for p in [readme,sums,package,manifest]),'Preserve earlier package'
     sources={
         'Manuscript.docx':FOLDER/(STEM+'.docx'),
@@ -44,9 +54,12 @@ def main():
         'Supporting_sources/Supplementary_methods.md':FOLDER/'Supporting_sources/Supplementary_methods.md',
         'Supporting_sources/Supplementary_methods.pdf':FOLDER/'Supporting_sources/Supplementary_methods.pdf',
         'Supporting_sources/references.bib':FOLDER/'Supporting_sources/references.bib',
-        'Author_only/AUTHOR_CONFIRMATIONS_REQUIRED.md':FOLDER/'AUTHOR_CONFIRMATIONS_REQUIRED_作者待确认.md',
         'Author_only/Author_details_for_submission.csv':FOLDER/'Author_details_for_submission.csv',
     }
+    if args.author_confirmed:
+        sources['Author_only/AUTHOR_INFORMATION_CHECK.md']=FOLDER/'AUTHOR_INFORMATION_CHECK_作者信息核对.md'
+    else:
+        sources['Author_only/AUTHOR_CONFIRMATIONS_REQUIRED.md']=FOLDER/'AUTHOR_CONFIRMATIONS_REQUIRED_作者待确认.md'
     for n in range(1,15):
         name=f'Additional_file_{n}.'+('docx' if n==14 else 'csv')
         sources['Additional_files/'+name]=FOLDER/'Additional_files'/name
@@ -65,6 +78,19 @@ def main():
         assert sha(payloads[key])==mechanical['documents'][stem]['docx_sha256']
     assert sha(payloads['Previews/Manuscript.pdf'])==mechanical['documents'][STEM]['pdf_sha256']
     assert sha(payloads['Previews/Cover_letter.pdf'])==mechanical['documents']['Cover_letter_BMC_Genomics']['pdf_sha256']
+    author_note=(
+        'AUTHOR INFORMATION COMPLETE: the existing eight-author list and order are\n'
+        'confirmed and all eight submission-system emails are supplied. The unmatched\n'
+        'extra email/name is excluded. Consult Author_only/AUTHOR_INFORMATION_CHECK.md.\n'
+        'Author approval and exclusive/unpublished status were confirmed; recheck only\n'
+        'if circumstances change before actual submission.\n\n'
+    ) if args.author_confirmed else (
+        'CURRENT AUTHOR-ONLY CHECK: consult Author_only/AUTHOR_CONFIRMATIONS_REQUIRED.md.\n'
+        'The eight-author manuscript list is preserved. Any unmatched email/name must be\n'
+        'resolved by the authors before filling the submission system. No author is added\n'
+        'or replaced by inference. Approval and exclusive-submission status were confirmed\n'
+        'in this task; recheck them if circumstances change before actual submission.\n\n'
+    )
     note=(
         'BMC Genomics formal English submission materials\n27 October 2026\n\n'
         'Scientific content, figures, tables, analysis, and references are unchanged from v5.\n'
@@ -78,11 +104,7 @@ def main():
         'DO NOT automatically upload Previews/, Supporting_sources/, Author_only/, this guide\n'
         'or SHA256SUMS as publishable supplementary files. The PDFs are reading previews.\n'
         'The author email CSV contains contact information for submission-system entry only.\n\n'
-        'CURRENT AUTHOR-ONLY CHECK: consult Author_only/AUTHOR_CONFIRMATIONS_REQUIRED.md.\n'
-        'The eight-author manuscript list is preserved. Any unmatched email/name must be\n'
-        'resolved by the authors before filling the submission system. No author is added\n'
-        'or replaced by inference. Approval and exclusive-submission status were confirmed\n'
-        'in this task; recheck them if circumstances change before actual submission.\n\n'
+        +author_note+
         'Published software release: https://github.com/RascalZ/REO/releases/tag/v0.1.0\n'
         'Software archive DOI: https://doi.org/10.5281/zenodo.23681422\n'
         'Code MIT; author-owned derived assets CC BY 4.0 to the extent of applicable rights.\n'
@@ -117,8 +139,10 @@ def main():
         'crc_and_member_hash_checks_passed':True,'SHA256SUMS_entries_verified':30,
         'strict_member_allowlist_verified':True,'upload_file_count':20,
         'all_author_approval_confirmed':mechanical['all_author_approval_confirmed'],
-        'author_only_items_pending':mechanical['author_only_items_pending'],
-        'submission_system_ready':not mechanical['author_only_items_pending'],
+        'author_only_items_pending':confirmation['author_only_items_pending'] if confirmation else mechanical['author_only_items_pending'],
+        'final_author_list_reconciliation_complete':bool(confirmation),
+        'all_author_emails_complete':bool(confirmation),
+        'submission_system_ready':not (confirmation['author_only_items_pending'] if confirmation else mechanical['author_only_items_pending']),
         'manuscript_submitted':False,'original_v5_file_count_preserved':len(preservation),
         'scientific_results_changed':False,'training_or_scoring_performed':False,
         'individual_CTRP_access':False,'author_contact_payload_publicly_uploaded':False}

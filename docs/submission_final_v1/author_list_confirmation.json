@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-27",
+  "final_author_list_reconciliation_complete": true,
+  "author_count": 8,
+  "author_order_changed": false,
+  "first_author_identity_changed": false,
+  "extra_email_table_person_excluded": true,
+  "all_author_emails_complete": true,
+  "email_count": 8,
+  "all_author_approval_confirmed": true,
+  "contribution_roles_confirmed": true,
+  "exclusive_unpublished_status_confirmed": true,
+  "author_only_items_pending": [],
+  "source": "Explicit author replies in this task",
+  "main_and_cover_artifacts_byte_identical_to_previous_delivery": true,
+  "previous_ZIP_preserved": true,
+  "previous_ZIP_sha256": "385a815155f24e540dbfc9c9d7cddb295c80091c32dca9452760d43abe1737ef",
+  "scientific_results_changed": false,
+  "training_or_scoring_performed": false,
+  "individual_CTRP_access": false,
+  "contact_values_publicly_copied": false,
+  "manuscript_submitted": false
+}

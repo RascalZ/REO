@@ -14,7 +14,7 @@ A leakage-controlled comparison of expression, within-sample ranks and relative-
 
 ![Study design and evaluation boundaries](figures/manuscript_m08_v1/Figure1_study_design.png)
 
-The manuscript is unpublished. A formal English submission-preparation copy and cover letter have been generated locally; original bilingual v5 files are preserved. [Stage 35](reports/阶段35_正式英文投稿收尾与作者信息核查.md) records the actual 40/1-page rendering and 31-member package. Final author-list/contact reconciliation remains open, and no manuscript has been submitted. Author manuscripts and contact packages are Git-ignored. The published software DOI is not a paper DOI. The sole maintained plan is [RESEARCH_PLAN.md](RESEARCH_PLAN.md).
+The manuscript is unpublished. A formal English submission-preparation copy and cover letter have been generated locally; original bilingual v5 files are preserved. [Stage 35](reports/阶段35_正式英文投稿收尾与作者信息核查.md) records the actual 40/1-page rendering and 31-member package. The existing eight-author list and all eight emails are confirmed. The current ZIP filename contains `author_confirmed`; see the [final audit](docs/submission_final_v1/final_author_confirmed_audit.json). The materials are ready for an author to enter the journal system; no manuscript has been submitted. Author manuscripts and contact packages are Git-ignored. The published software DOI is not a paper DOI. The sole maintained plan is [RESEARCH_PLAN.md](RESEARCH_PLAN.md).
 
 ## Quick start
 

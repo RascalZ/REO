@@ -10,11 +10,11 @@ Abstract, Background, Methods, Results, Discussion, Conclusions and all 31 refer
 
 `render_docx.py` was attempted but LibreOffice was unavailable. The isolated native Microsoft Word fallback exported the main manuscript and cover letter read-only. All 40 main pages and the one-page cover letter were rendered to 2000-pixel PNGs and visually inspected. The exact-file recheck did not confirm an initial batched-image concern about line numbers; no numbering edit was made.
 
-The ZIP has 31 strictly allowlisted members; CRC, all member hashes and 30 SHA256SUMS entries passed. Only 20 are journal-upload files: main DOCX, cover DOCX, four figures and 14 additional files. Previews, sources, author contact/check files and checksums are explicitly separated from publishable supplements.
+The current ZIP filename contains `author_confirmed`; it has 31 strictly allowlisted members. CRC, all member hashes and 30 SHA256SUMS entries passed. The old ZIP is preserved. All 20 journal-upload files (main DOCX, cover DOCX, four figures and 14 additional files) are byte-identical to the previously rendered package. Previews, sources, author contact/check files and checksums are explicitly separated from publishable supplements.
 
 ## Author gate
 
-Current-version approval and exclusive/unpublished submission status were confirmed by the user for the version under review. An author-list/email discrepancy remains under clarification; the authors must supply an unambiguous final list and any missing system contact information before actual submission. No additional author is inferred from an unmatched email. A changed list requires corresponding contribution and approval confirmation.
+The author gate is closed. The user explicitly confirmed the existing eight-author list/order, excluded the unmatched extra person in the email table, and supplied the missing first-author email. All eight emails, current contributions, final approval and exclusive/unpublished submission status are confirmed. No author identity or order changed. The updated author-only checklist and CSV contain no pending items. Main/cover Word and PDF bytes are unchanged, so their actual 40/1-page render and visual verification remain applicable.
 
 The manuscript was not submitted. Author names, emails, private source text, the manuscript and the ZIP are not uploaded to this public audit folder. Published source/research-asset release v0.1.0 and Zenodo DOI 10.5281/zenodo.23681422 are unchanged.
 
@@ -24,6 +24,9 @@ The manuscript was not submitted. Author names, emails, private source text, the
 - `mechanical_audit.json`: section equality, original preservation, document and render checks.
 - `visual_review.json`: actual page coverage and observed layout findings.
 - `submission_package_manifest.json`: exact ZIP members and hash verification.
+- `author_list_confirmation.json`: explicit identity/order and complete-contact confirmation; no contact values.
+- `submission_package_author_confirmed_manifest.json`: current 31-member ZIP and checksum verification.
+- `final_author_confirmed_audit.json` and `delivery_author_confirmed_manifest.json`: current readiness and artifact hashes. Earlier audit files retain the historical open-gate state.
 - Local-only `local_private/`: source text/configuration, full preservation hashes, author replies and email mapping.
 
 Guidelines checked 27 October 2026: [Research article](https://link.springer.com/journal/12864/submission-guidelines/research-article), [submission preparation](https://link.springer.com/journal/12864/submission-guidelines). The former specifies declaration sections and individual contributions; the latter specifies cover-letter approval/exclusive-submission statements, author emails and upload formats.
