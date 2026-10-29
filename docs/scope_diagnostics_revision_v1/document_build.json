@@ -1,0 +1,15 @@
+{
+  "date": "2026-10-29",
+  "preserved_source_files": 178,
+  "cover_changed_paragraphs": 4,
+  "cover_scope": "Title, date, evaluated-pipeline wording only",
+  "unchanged_additional_files": 14,
+  "unchanged_figures": [
+    1,
+    2,
+    3
+  ],
+  "new_figure4_source_sha256": "0dc193d6109b8703203fb451d63fddf4fc0fdffe8aae34d7e7b0597d6648e31c",
+  "training_or_scoring_performed": false,
+  "individual_CTRP_access": false
+}

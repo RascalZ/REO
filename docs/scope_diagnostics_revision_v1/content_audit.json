@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-29",
+  "passed": true,
+  "semantic_review_checks": 13,
+  "semantic_review_sha256": "e8643afa59ea3d27c4f1f8214ebb1337047bd33254cc984dac7db475edd38f8f",
+  "bilingual_blocks": 146,
+  "bilingual_numeric_citation_mismatches": 0,
+  "unchanged_reference_entries": 31,
+  "unchanged_supplementary_files": 14,
+  "unchanged_figures": [
+    1,
+    2,
+    3
+  ],
+  "figure4_changed_display_only": true,
+  "stage7_correction": {
+    "total_zero_fits_unchanged": 430,
+    "total_molecular_outer_fits_unchanged": 840,
+    "aggregate_counts_checked": 56,
+    "csv_cells_corrected": 40,
+    "report_values_corrected": 6,
+    "source_test_cases_passed": 4
+  },
+  "scientific_estimands_changed": false,
+  "scientific_performance_estimates_changed": false,
+  "new_fitting": false,
+  "new_scoring": false,
+  "new_resampling": false,
+  "individual_CTRP_access": false,
+  "original_source_files_preserved": 178
+}

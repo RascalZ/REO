@@ -1,0 +1,128 @@
+{
+  "review_type": "independent_read_only_semantic_and_aggregate_consistency_review",
+  "created_utc": "2026-10-29T07:12:55.874307+00:00",
+  "status": "pass",
+  "checks": [
+    {
+      "id": "logged_english_change_coverage",
+      "status": "pass",
+      "locators": [
+        "local_private/text_changes.json",
+        "English manuscript, all sections"
+      ],
+      "scope": "Every English change is represented in the local author-visible change receipt; no unlogged replacement."
+    },
+    {
+      "id": "references_and_citation_order",
+      "status": "pass",
+      "locators": [
+        "English References and inline citations"
+      ],
+      "scope": "Reference entries and inline numbered-citation sequence preserved."
+    },
+    {
+      "id": "ai_disclosure",
+      "status": "pass",
+      "locators": [
+        "English Methods/Reproducibility and data governance"
+      ],
+      "scope": "Existing AI-use disclosure preserved exactly."
+    },
+    {
+      "id": "confirmed_english_author_and_declaration_facts",
+      "status": "pass",
+      "locators": [
+        "English Title page and Declarations"
+      ],
+      "scope": "Author identity, affiliation, contact, grants, contribution, acknowledgment and declaration facts are unchanged; public record contains no personal details."
+    },
+    {
+      "id": "scientific_methods_preserved",
+      "status": "pass",
+      "locators": [
+        "English Methods, all sections after Study design and estimands"
+      ],
+      "scope": "Frozen inputs, endpoint, selection rules, nested evaluation, tuning, inference families, uncertainty definition, synthetic design and reproducibility methods unchanged."
+    },
+    {
+      "id": "primary_matched_hierarchy",
+      "status": "pass",
+      "locators": [
+        "English Abstract; Background final paragraph; Methods/Study design and estimands; Table 2 note"
+      ],
+      "scope": "Primary two-pipeline comparison is distinguished from within-policy matched-200-gene representation contrasts, without changing estimands."
+    },
+    {
+      "id": "scope_not_all_reo",
+      "status": "pass",
+      "locators": [
+        "English Title, Discussion and Conclusions"
+      ],
+      "scope": "Scope is limited to evaluated pipelines; no claim of inherent unfairness, universal REO inferiority, causal policy effect, equivalence or noninferiority."
+    },
+    {
+      "id": "zero_solution_and_parameter_counts",
+      "status": "pass",
+      "locators": [
+        "English Results/Zero molecular solutions",
+        "tables/manuscript_v1/TableS6_zero_solution_audit.csv",
+        "results/ordinal_repeated/parameter_boundary_summary.csv"
+      ],
+      "scope": "All added counts verified against existing aggregate records; seven-arm and 120/105/840 denominators retained; no new model analysis."
+    },
+    {
+      "id": "table2_rounding",
+      "status": "pass",
+      "locators": [
+        "English Table 2",
+        "tables/manuscript_v1/Table2_primary_effects.csv"
+      ],
+      "scope": "All nine displayed development/external effect rows agree with saved aggregate values after stated rounding. Exact identical predictions remain numeric zero, distinct from NA; small nonzero macro retained to four decimals."
+    },
+    {
+      "id": "bilingual_numeric_citation_alignment",
+      "status": "pass",
+      "locators": [
+        "local_private/bilingual_block_alignment.json"
+      ],
+      "scope": "All 146 aligned bilingual blocks preserve numeric multisets and citation order; alpha-ratio label hyphen and translated calendar date normalized."
+    },
+    {
+      "id": "bilingual_scope_semantics",
+      "status": "pass",
+      "locators": [
+        "Chinese Abstract, Methods, zero-solution Results, Discussion, Conclusions"
+      ],
+      "scope": "Manual bilingual review found the same hierarchy, implementation scope, zero-count interpretation and inference limits. Confirmed final English author facts replace stale Chinese placeholders without introducing new facts."
+    },
+    {
+      "id": "loto_caption_scope",
+      "status": "pass",
+      "locators": [
+        "English Figure 4 legend and LOTO Results",
+        "tables/manuscript_v1/TableS1_loto_defined_cells.csv"
+      ],
+      "scope": "Heatmap caption retains all defined and undefined cells; no available-cell macro or significance inference is introduced. Rendering is assessed separately by the parent."
+    },
+    {
+      "id": "recorded_input_preservation",
+      "status": "pass",
+      "locators": [
+        "Existing final English source",
+        "local_private/text_changes.json"
+      ],
+      "scope": "Prior final manuscript remains byte-preserved."
+    }
+  ],
+  "input_sha256": {
+    "manuscript_v1/submission_final_v1/Manuscript_BMC_Genomics_submission.md": "acd48b95022f7b27dda241ff3cdb4854e5c65550b3b27d0522a021f3cc71c2ab",
+    "manuscript_v1/submission_final_v2/Manuscript_BMC_Genomics_submission_v2.md": "f0e3109397999e2bed846f3ec4fe6bb9ac0c96e1041f0ede2db413db02fe6289",
+    "manuscript_v1/submission_final_v2_zh/Manuscript_BMC_Genomics_submission_v2_zh.md": "46d8f13c609b8f8eca3c0e7fbfb9e938de51418c87742d85203439df304f88e5",
+    "docs/scope_diagnostics_revision_v1/local_private/text_changes.json": "4971d747b36f0391db5968753e6f39bedde227e496070bcff9aa44d6d4021200",
+    "docs/scope_diagnostics_revision_v1/local_private/bilingual_block_alignment.json": "b61a5795d1b3df9284bf0f281b1a539939cf8042498f70a6a4a89f69b1f2b1f6"
+  },
+  "method": "Local text comparison, manual semantic review and verification against saved aggregate tables only; no training, scoring, new statistical inference or individual response access. No private manuscript prose or personal data is included in this report.",
+  "rendering": "Not assessed here; parent handles Word/PDF rendering and visual inspection.",
+  "blocking_findings": [],
+  "review_implementation_note": "Initial table locator also matched Table 1 drug rows; bounded it to Table 2 and verified all nine rows. No manuscript discrepancy found."
+}

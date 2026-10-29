@@ -92,3 +92,9 @@ manuscript_v1/author_review_v5_zh/
 # Formal submission preparation retains author contact details locally.
 manuscript_v1/submission_final_v1/
 docs/submission_final_v1/local_private/
+
+# Bounded scope/diagnostic revision; author-populated manuscripts remain local.
+manuscript_v1/submission_final_v2/
+manuscript_v1/submission_final_v2_zh/
+docs/scope_diagnostics_revision_v1/local_private/
+!figures/manuscript_scope_diagnostics_v1/Figure4_loto_and_external.pdf

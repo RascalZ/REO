@@ -1,0 +1,123 @@
+{
+  "date": "2026-10-29",
+  "scope": "Editorial and aggregate-display audit; not model replication",
+  "preserved_source_files": 178,
+  "all_protected_sources_unchanged": true,
+  "training_or_scoring_performed": false,
+  "individual_CTRP_access": false,
+  "documents": {
+    "english": {
+      "docx_sha256": "19374764fd202cc13b8b1589830ba0e4b043d923b78b5029ef461f54b3418ae0",
+      "pdf_sha256": "e5e11f8a90d9722fcc3f471774a51399ee39c4b25bec67ac4d62a84ca84ccd7c",
+      "text_outside_page": 0,
+      "suspect_missing_glyphs": 0,
+      "figure_pages": [
+        6,
+        20,
+        23,
+        25
+      ],
+      "font_embedding": {
+        "/BCDEEE+TimesNewRomanPSMT": true,
+        "/BCDFEE+TimesNewRomanPS-BoldMT": true,
+        "/BCDGEE+TimesNewRomanPSMT": true,
+        "/BCDHEE+TimesNewRomanPS-ItalicMT": true,
+        "/BCDIEE+TimesNewRomanPS-BoldMT": true
+      },
+      "markdown_lines_missing_from_docx": [],
+      "native_tables": 2,
+      "embedded_figure_hashes_match_package": true,
+      "pages": 39,
+      "sequential_page_numbers": true,
+      "contact_sheets": [
+        "docs\\scope_diagnostics_revision_v1\\local_private\\render\\english\\contact_1.png",
+        "docs\\scope_diagnostics_revision_v1\\local_private\\render\\english\\contact_2.png",
+        "docs\\scope_diagnostics_revision_v1\\local_private\\render\\english\\contact_3.png",
+        "docs\\scope_diagnostics_revision_v1\\local_private\\render\\english\\contact_4.png"
+      ],
+      "full_page_directory": "docs\\scope_diagnostics_revision_v1\\local_private\\render\\english\\pages",
+      "figure4_dimensions": {
+        "image_width_mm": 156.10416666666666,
+        "image_height_mm": 165.36458333333334,
+        "image_and_caption_height_mm": 216.57637377777775
+      }
+    },
+    "chinese": {
+      "docx_sha256": "11c541469f5d695a4d41b5ff12eb1fa58dc7ce34333df9e6d3ff77d70607aa66",
+      "pdf_sha256": "300a4e68c14a3c462679596f1aec61fed5aa05d79bc78898d13cc506f3e11aeb",
+      "text_outside_page": 0,
+      "suspect_missing_glyphs": 0,
+      "figure_pages": [
+        4,
+        11,
+        13,
+        15
+      ],
+      "font_embedding": {
+        "/BCDEEE+SimSun": true,
+        "/BCDFEE+TimesNewRomanPSMT": true,
+        "/BCDGEE+SimHei": true,
+        "/BCDHEE+TimesNewRomanPS-BoldMT": true,
+        "/BCDIEE+TimesNewRomanPSMT": true,
+        "/BCDJEE+TimesNewRomanPS-BoldMT": true,
+        "/BCDKEE+TimesNewRomanPS-ItalicMT": true
+      },
+      "markdown_lines_missing_from_docx": [],
+      "native_tables": 2,
+      "embedded_figure_hashes_match_package": true,
+      "pages": 22,
+      "sequential_page_numbers": true,
+      "contact_sheets": [
+        "docs\\scope_diagnostics_revision_v1\\local_private\\render\\chinese\\contact_1.png",
+        "docs\\scope_diagnostics_revision_v1\\local_private\\render\\chinese\\contact_2.png"
+      ],
+      "full_page_directory": "docs\\scope_diagnostics_revision_v1\\local_private\\render\\chinese\\pages",
+      "figure4_dimensions": {
+        "image_width_mm": 164.04166666666666,
+        "image_height_mm": 173.56666666666666,
+        "image_and_caption_height_mm": 203.27182555555555
+      }
+    },
+    "cover": {
+      "docx_sha256": "06738ae2e0c229afe19f6acde16c6e6dcbf027c54517de574b668b153507a40b",
+      "pdf_sha256": "6015844a1081532a0305d2db8174d629ea7e1339220b5a599a610fd9c4b7951a",
+      "text_outside_page": 0,
+      "suspect_missing_glyphs": 0,
+      "figure_pages": [],
+      "font_embedding": {
+        "/BCDEEE+TimesNewRomanPSMT": true,
+        "/BCDFEE+TimesNewRomanPS-BoldMT": true,
+        "/BCDGEE+TimesNewRomanPSMT": true
+      },
+      "pages": 1,
+      "sequential_page_numbers": null,
+      "contact_sheets": [
+        "docs\\scope_diagnostics_revision_v1\\local_private\\render\\cover\\contact_1.png"
+      ],
+      "full_page_directory": "docs\\scope_diagnostics_revision_v1\\local_private\\render\\cover\\pages"
+    }
+  },
+  "unchanged_support_files": [
+    "Additional_files\\Additional_file_1.csv",
+    "Additional_files\\Additional_file_10.csv",
+    "Additional_files\\Additional_file_11.csv",
+    "Additional_files\\Additional_file_12.csv",
+    "Additional_files\\Additional_file_13.csv",
+    "Additional_files\\Additional_file_14.docx",
+    "Additional_files\\Additional_file_2.csv",
+    "Additional_files\\Additional_file_3.csv",
+    "Additional_files\\Additional_file_4.csv",
+    "Additional_files\\Additional_file_5.csv",
+    "Additional_files\\Additional_file_6.csv",
+    "Additional_files\\Additional_file_7.csv",
+    "Additional_files\\Additional_file_8.csv",
+    "Additional_files\\Additional_file_9.csv",
+    "Supporting_sources\\references.bib",
+    "Supporting_sources\\Supplementary_methods.md",
+    "Supporting_sources\\Supplementary_methods.pdf"
+  ],
+  "references_byte_identical": true,
+  "abstract_word_count": 269,
+  "author_declaration_facts_unchanged": true,
+  "mechanical_checks_passed": true
+}

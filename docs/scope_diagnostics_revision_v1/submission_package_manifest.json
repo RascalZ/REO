@@ -1,0 +1,174 @@
+{
+  "date": "2026-10-29",
+  "package": "manuscript_v1/submission_final_v2/BMC_Genomics_submission_v2_2026-10-29.zip",
+  "sha256": "f44d9c64c6ae47c65b1ff701ed16f882943b94ce4cd97a57573e26b462ce5abc",
+  "bytes": 5380472,
+  "members": [
+    {
+      "name": "00_UPLOAD_GUIDE.txt",
+      "sha256": "3a06dbcb1243481a698113a15b8d87b4e1cb06486fa7da966bb2c048a193fbf0",
+      "bytes": 1586
+    },
+    {
+      "name": "Additional_files/Additional_file_1.csv",
+      "sha256": "bbcd0b65e688f05bb42a090f491c8ef29525d3b9b1a77183c93ea1e6404ccf33",
+      "bytes": 5490
+    },
+    {
+      "name": "Additional_files/Additional_file_10.csv",
+      "sha256": "d44a5fd9d86cba79b70a36aaf70b7d9e9095a29fbde78efd8e516ff23d677a0d",
+      "bytes": 58288
+    },
+    {
+      "name": "Additional_files/Additional_file_11.csv",
+      "sha256": "0c149e110e72e354705ba9513ae5ad3f52f36a54e80ff54322e64e5963f93e77",
+      "bytes": 50920
+    },
+    {
+      "name": "Additional_files/Additional_file_12.csv",
+      "sha256": "49f6d3c609a9ae93895c12e8f8a2c0b7926d612168a18208ef0b5491f9b7bc4f",
+      "bytes": 12723
+    },
+    {
+      "name": "Additional_files/Additional_file_13.csv",
+      "sha256": "ad3ca1edc66b46544d15412cbeed7c6277a24d17d5d6d024d36b0b2255547aa8",
+      "bytes": 3262
+    },
+    {
+      "name": "Additional_files/Additional_file_14.docx",
+      "sha256": "f6892a1b680a081670f285169e1a1b9ee5b7eeb7682077d516098bb8a18a3557",
+      "bytes": 25916
+    },
+    {
+      "name": "Additional_files/Additional_file_2.csv",
+      "sha256": "7655589f93cd47f357b8c3444f76afb250c316d6de317f5a9948d0f9ebaacc01",
+      "bytes": 7720
+    },
+    {
+      "name": "Additional_files/Additional_file_3.csv",
+      "sha256": "9d3768fce57863d6d733ea7792cb9ed69806ef84cc8dcd5187874675dda571e6",
+      "bytes": 9015
+    },
+    {
+      "name": "Additional_files/Additional_file_4.csv",
+      "sha256": "512e2212d22c83dfbf9c54f5c5829b02818e19610f710b6a4bad2cc6aa3769b7",
+      "bytes": 61408
+    },
+    {
+      "name": "Additional_files/Additional_file_5.csv",
+      "sha256": "03600116a5086d824740256a079cad7534cf80b2236cef5ecd19dee4e8043f8f",
+      "bytes": 310653
+    },
+    {
+      "name": "Additional_files/Additional_file_6.csv",
+      "sha256": "d89e01aef179deba12b2e5e6e8bcf991baf207a3076c7cd5e6d3c8f4539422e4",
+      "bytes": 4142
+    },
+    {
+      "name": "Additional_files/Additional_file_7.csv",
+      "sha256": "8e00902f736fec22081083435d7a4cb22562f45c5f5db7a1d499af1f4ce676df",
+      "bytes": 17297
+    },
+    {
+      "name": "Additional_files/Additional_file_8.csv",
+      "sha256": "a3526e3a339bb535cd37f1255dbe9ab79d0f4c7b279d1454b3e0c13fe988feef",
+      "bytes": 2679
+    },
+    {
+      "name": "Additional_files/Additional_file_9.csv",
+      "sha256": "f0ebd23139f5ef05f7516e8f77c202f7e7431e2aa79751d268929348b5c62706",
+      "bytes": 34519
+    },
+    {
+      "name": "Author_only/AUTHOR_INFORMATION_CHECK.md",
+      "sha256": "65e4ffa5608a6840abbe5562ab0cf62c262313b95d4902ffc452d72ae674b926",
+      "bytes": 1398
+    },
+    {
+      "name": "Author_only/Author_details_for_submission.csv",
+      "sha256": "a8d31d8ae9726d4a8fff016249424a21fd6e34631a27ab5c1246f09fa010804a",
+      "bytes": 1994
+    },
+    {
+      "name": "Cover_letter.docx",
+      "sha256": "06738ae2e0c229afe19f6acde16c6e6dcbf027c54517de574b668b153507a40b",
+      "bytes": 37922
+    },
+    {
+      "name": "Figures/Figure1_study_design.png",
+      "sha256": "d3984c032bd41d52352e8c8b73953646df99cb1934ee8e1724b600bf7d87cdf3",
+      "bytes": 680053
+    },
+    {
+      "name": "Figures/Figure2_development_primary.png",
+      "sha256": "44c5c30b9c6e2254c29692f238ae5e1ae41f3ad61d19160b5eb51c9e8975f3f0",
+      "bytes": 218962
+    },
+    {
+      "name": "Figures/Figure3_representation_and_zero_solutions.png",
+      "sha256": "9d08e9eb543ba4a509c41cbca9fe11ca86f18ba690d47ec2b880ba236ac4bd83",
+      "bytes": 446875
+    },
+    {
+      "name": "Figures/Figure4_loto_and_external.png",
+      "sha256": "0dc193d6109b8703203fb451d63fddf4fc0fdffe8aae34d7e7b0597d6648e31c",
+      "bytes": 925230
+    },
+    {
+      "name": "Manuscript.docx",
+      "sha256": "19374764fd202cc13b8b1589830ba0e4b043d923b78b5029ef461f54b3418ae0",
+      "bytes": 2026898
+    },
+    {
+      "name": "Previews/Cover_letter.pdf",
+      "sha256": "6015844a1081532a0305d2db8174d629ea7e1339220b5a599a610fd9c4b7951a",
+      "bytes": 88909
+    },
+    {
+      "name": "Previews/Manuscript.pdf",
+      "sha256": "e5e11f8a90d9722fcc3f471774a51399ee39c4b25bec67ac4d62a84ca84ccd7c",
+      "bytes": 986924
+    },
+    {
+      "name": "SHA256SUMS.txt",
+      "sha256": "c2fbaa903c5bc02989c3ed354ecff82b2ea433b8156a58b2363c75e133194249",
+      "bytes": 3079
+    },
+    {
+      "name": "Supporting_sources/Cover_letter.txt",
+      "sha256": "45f905fe8b0113c984251464431f3857cd95b295b59edcf3dbd104ed4bad21c2",
+      "bytes": 2595
+    },
+    {
+      "name": "Supporting_sources/Manuscript.md",
+      "sha256": "f0e3109397999e2bed846f3ec4fe6bb9ac0c96e1041f0ede2db413db02fe6289",
+      "bytes": 74557
+    },
+    {
+      "name": "Supporting_sources/Supplementary_methods.md",
+      "sha256": "a04fa46f2103d50dbf41bdb6692c7b679a05e1714fe91ea5099e4bc2fae0bbc9",
+      "bytes": 33949
+    },
+    {
+      "name": "Supporting_sources/Supplementary_methods.pdf",
+      "sha256": "16a74dce2106dbfbcb5c17d1748127fbe1083241cf1e6f52e80b42e097dc01df",
+      "bytes": 211226
+    },
+    {
+      "name": "Supporting_sources/references.bib",
+      "sha256": "b95be693e819728d0fdbd61f84d1f8c690fdf229ec7d02d1488d4c7e97c42a06",
+      "bytes": 21449
+    }
+  ],
+  "member_count": 31,
+  "upload_file_count": 20,
+  "verified_checksum_entries": 30,
+  "crc_and_all_member_hashes_passed": true,
+  "strict_allowlist_passed": true,
+  "prior_sources_preserved": 178,
+  "training_or_scoring_performed": false,
+  "individual_CTRP_access": false,
+  "scientific_estimates_changed": false,
+  "author_contacts_publicly_uploaded": false,
+  "manuscript_submitted": false
+}

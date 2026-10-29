@@ -1,0 +1,175 @@
+{
+  "status": "pass",
+  "created_utc": "2026-10-29T07:15:46.777896+00:00",
+  "source_pdf": "manuscript_v1/submission_final_v2/Manuscript_BMC_Genomics_submission_v2.pdf",
+  "source_pdf_sha256": "e5e11f8a90d9722fcc3f471774a51399ee39c4b25bec67ac4d62a84ca84ccd7c",
+  "review_method": "Actual visual inspection of every whole-page PNG using tools.view_image at high detail, displayed 2-3 pages per call. Native images were 1414x2000 pixels; tool display resized to 1334x1888. This is not a contact-sheet-only or text-extraction-only review.",
+  "scope": "English manuscript pages 1-20 only; later pages reviewed separately.",
+  "pages_seen": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "pages": [
+    {
+      "page": 1,
+      "status": "pass",
+      "image_sha256": "fcf21ae9049cbc835419b8b8fd008740a0137cbc0215a4e0118cb963e0e48637",
+      "observation": "Title, author markers and opening abstract readable; no clipping or overlap.",
+      "issues": []
+    },
+    {
+      "page": 2,
+      "status": "pass",
+      "image_sha256": "591f027766f6fe6d7e70635930ebc812f6e98268b3f2f55e4a3f231b55fb386a",
+      "observation": "Abstract results, conclusions, keywords and start of background readable.",
+      "issues": []
+    },
+    {
+      "page": 3,
+      "status": "pass",
+      "image_sha256": "dfd6e0e2b4c317f92049da313ca055df970f2735bbc66b51ac4a17c118ae27bd",
+      "observation": "Background text and citations readable; ordinary paragraph continuation.",
+      "issues": []
+    },
+    {
+      "page": 4,
+      "status": "pass",
+      "image_sha256": "ae731623a3a9d3bbe3cc1a0c0f0391dc25172f93c92b8bfd69f45db2af200d6a",
+      "observation": "Background and study questions readable; stable margins.",
+      "issues": []
+    },
+    {
+      "page": 5,
+      "status": "pass",
+      "image_sha256": "7634d293aba16efeccea3e0850c0827d0a27653ce9085d8fbda4d12adae346da",
+      "observation": "Methods heading and study-design text readable.",
+      "issues": []
+    },
+    {
+      "page": 6,
+      "status": "pass",
+      "image_sha256": "f23e726f30942ecef0fb50c119043c94ff62cd91de297f14826039688f2803a2",
+      "observation": "Figure 1 workflow boxes, arrows, labels and complete caption readable; no clipping.",
+      "issues": []
+    },
+    {
+      "page": 7,
+      "status": "pass",
+      "image_sha256": "86ebdc566cd3a974f741f00cf19cb668db8e1942ac642f9288d74a88af6426ec",
+      "observation": "Data sources and identifiers readable; continuation at page break is intact.",
+      "issues": []
+    },
+    {
+      "page": 8,
+      "status": "pass",
+      "image_sha256": "ba65cd683e89128466d69bdf46a60bcf7cd4646a7b6d4c1e544cb8e2bb41dd96",
+      "observation": "Outcome definition and cohort headings readable.",
+      "issues": []
+    },
+    {
+      "page": 9,
+      "status": "pass",
+      "image_sha256": "607d9d5daaade46d10dfecb722e54c7fcb7a6b567b7461398b28612b495c2319",
+      "observation": "Cohort and candidate-selection text readable.",
+      "issues": []
+    },
+    {
+      "page": 10,
+      "status": "pass",
+      "image_sha256": "e8522ee8f3f3496a71481036646a69611534d5d59e787f0f663e391352ce53cc",
+      "observation": "Representation definitions, signs and counts readable.",
+      "issues": []
+    },
+    {
+      "page": 11,
+      "status": "pass",
+      "image_sha256": "a91a191028a275da1a817985d65b50f46542883bc59f1591342c5d47af389815",
+      "observation": "Model and tuning text including formula characters readable.",
+      "issues": []
+    },
+    {
+      "page": 12,
+      "status": "pass",
+      "image_sha256": "14da5840c6d6662d9324a8cd7f66268a0124231817bd0e4884dd03f86390818a",
+      "observation": "Nested-validation and final-model text readable.",
+      "issues": []
+    },
+    {
+      "page": 13,
+      "status": "pass",
+      "image_sha256": "fa1abed5906df3bf1aa1f691ddbffcdf36a33e0aa186873795f6438b1a0dec2c",
+      "observation": "External-evaluation and tissue-holdout text readable.",
+      "issues": []
+    },
+    {
+      "page": 14,
+      "status": "pass",
+      "image_sha256": "acd3629d895d3820925ad802007acfb7c0b2921ed549cfcded9e8bc4e2a5d8d2",
+      "observation": "Statistical heading and strict-macro rules readable.",
+      "issues": []
+    },
+    {
+      "page": 15,
+      "status": "pass",
+      "image_sha256": "9e888eb06cb527bb212a1e0a9226d876435d1566a04e244925f82191c43bce4a",
+      "observation": "Bootstrap/inference text and numeric limits readable.",
+      "issues": []
+    },
+    {
+      "page": 16,
+      "status": "pass",
+      "image_sha256": "119839d751ff4829d8eeaf451b5ccf13378f9b8ad2bb3d60647a1ff49c321486",
+      "observation": "Statistical continuation and synthetic-methods heading readable.",
+      "issues": []
+    },
+    {
+      "page": 17,
+      "status": "pass",
+      "image_sha256": "26805afc7bf577cea8998997829a9344bca98d039e6b1de5cd68106b45c4b2a0",
+      "observation": "Reproducibility text, version strings and source hashes readable.",
+      "issues": []
+    },
+    {
+      "page": 18,
+      "status": "pass",
+      "image_sha256": "6e0f83d67dcffb2f5858231140eeef5c5d39a3d88fdff63c5adc53b86e4682c3",
+      "observation": "AI-use disclosure and Results opening readable.",
+      "issues": []
+    },
+    {
+      "page": 19,
+      "status": "pass",
+      "image_sha256": "c570c843e38610573473565efb9bfe7b9cc7b83ea6cf471dde576e2fbe8957de",
+      "observation": "Table 1 fits page width, all rows/columns and notes readable; following result heading not orphaned.",
+      "issues": []
+    },
+    {
+      "page": 20,
+      "status": "pass",
+      "image_sha256": "37cd58cc06a8341dda7fdc80ee67f7f2503fffa2c1684409d8897dd5391a5c2b",
+      "observation": "Figure 2 labels, confidence bars, axis and complete caption readable; following result text intact.",
+      "issues": []
+    }
+  ],
+  "blocking_issues": [],
+  "manuscript_modified": false,
+  "notes": "No visible clipping, text/image overlap, missing-glyph boxes or unreadable table/figure elements identified in the inspected pages. Normal paragraph page breaks retained."
+}

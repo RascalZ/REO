@@ -1,10 +1,12 @@
 # 基因对药物反应预测项目重构科研计划
 
-**计划v3.50，更新日期：2026-10-27。唯一维护版本为本文件。工作周期：10月10日至11月8日，11月9日至10日保留投稿检查缓冲。**
+**计划v3.51，更新日期：2026-10-29。唯一维护版本为本文件。工作周期：10月10日至11月8日，11月9日至10日保留投稿检查缓冲。**
 
 本计划以最新投稿稿件、主要分析代码、保存的结果矩阵/模型台账、补充表、图2/图4和公开数据源核查为基础。目标是一个月内完成可审查、可复现、论断与证据相符的新稿并投稿；接收和正式上线还取决于编辑及外审，不能由一个月计划保证。用户已确认Naunyn-Schmiedeberg's Archives of Pharmacology亦已拒稿；按1名主要执行者、与助手协作、现有电脑和公共数据设计，版面费不是主要限制。
 
 ## 0 执行台账与当前版本（每次工作先读此节）
+
+**v3.51：已完成完整pair管线范围、已有零解诊断及图表展示的有限修订。** 原正式英文v1、原v5中英文及旧投稿包178件来源文件SHA保持。新本地正式英文v2为39页，直接中文译稿22页，Cover letter 1页；62页已由独立Word实例实际导出并逐页查看，字体、边界和图文核查通过。标题/摘要/结论限定于所评价的完整pair＋EN流程，原主比较与匹配200基因次比较层级不变；正文补入七臂430/840零解与已有选参路径，不新增因果或交互推断。Table2以相同预测区分代数零值，图4A用原34个差值及46个NA作热图，严格宏仍NA；图4B估计/区间不变，14补充文件与图1–3原字节保持。阶段7repeat0汇总缺陷已修复，56项计数与S6一致，40个CSV单元格/报告6个显示数值更正，4项聚合回归测试通过；历史执行来源和更正来源分开记录。146个中英对应块数值/引文一致，13项语义复核通过。新ZIP31白名单成员、20件期刊上传文件，CRC/成员SHA/30条SUMS全部通过。源码与安全审计同步GitHub；完整稿件/联系资料保留本地Git忽略。未重训、调参、重抽样、评分或读取CTRP个体数据；不替换v0.1.0与Zenodo冻结资产。见[阶段36](reports/阶段36_管线范围零解诊断与图表修订.md)、[核查目录](docs/scope_diagnostics_revision_v1/README.md)及[包清单](docs/scope_diagnostics_revision_v1/submission_package_manifest.json)。
 
 **v3.50：署名及八位邮箱已全部确认，正式投稿包收尾完成。** 作者明确排除邮箱表中额外人员，保留原八位作者、顺序、共同第一/双通讯及第一作者身份，并补齐第一作者邮箱。当前无待补作者事实，先前批准/贡献/无额外致谢及未发表未同时投稿确认适用于保留的同一名单。仅更新作者专用表、核对清单、上传说明和包校验和；主稿/cover的Word及PDF、原ZIP等六件旧交付哈希不变，20件期刊上传文件逐字节一致，沿用已验收的40+1页实际渲染。新版`author_confirmed` ZIP31成员/4,849,715字节，CRC/逐成员SHA/30条SUMS通过，27成员原字节不变；原包及v5保留。新清单无待确认项，submission_system_ready=true；邮箱只在本地作者专用CSV，不进公开仓库。见[作者确认](docs/submission_final_v1/author_list_confirmation.json)、[最终验收](docs/submission_final_v1/final_author_confirmed_audit.json)、[新版包清单](docs/submission_final_v1/submission_package_author_confirmed_manifest.json)及[交付SHA](docs/submission_final_v1/delivery_author_confirmed_manifest.json)。下一步由论文作者在BMC Genomics系统录入信息、按类别上传并核对系统PDF后提交；本轮未代为投稿，未改科学结果、重训、评分或读CTRP个体数据，不更改公开软件Release或DOI。
 
@@ -28,7 +30,7 @@
 
 **v3.40作者通读反馈（历史讨论状态）：** 当前正式通读包仍为v3.39交付的39页主稿与19页补充；本轮仅形成[摘要与叙述风格讨论稿](docs/ABSTRACT_STYLE_REVIEW_V1.md)，不替换Word/PDF或更改任何统计。CTRP v2已核实为发布方正式版本名，需与本项目cohort-v2/rebuild_v2区分。下一项文字修订围绕REO的科学动机、组织参照—分子增量—表示优势三层问题，精简摘要中的并列统计与反复防守，按发现组织Results并重写Background/Discussion的解释顺序；保留所有负面、零解、NA和限制，不扩大到跨平台验证、真实机制识别或通用基准创新。当前提出三种风格及一版英文摘要，待作者讨论后才迁入新正式副本。全文将共同“strictly monotone”不变性收紧为“strictly increasing”；递减变换会翻转次序。原稿、当前通读包与锁定分析均保留，CTRP个体数据继续封存，不重训/评分。
 
-**优先投稿目标继续为BMC Genomics。当前正式英文投稿版位于本地Git忽略`manuscript_v1/submission_final_v1/`，优先使用`author_confirmed`新版ZIP；原v5中英和原ZIP完整保留，中文仍为`manuscript_v1/author_review_v5_zh/`。新目录中的配套补充方法、Additional files与四图原字节复制，Supporting_sources/references.bib仅更新第31条软件引用，最终八人名单与全部邮箱已明确，当前批准及投稿声明已核实，署名gate关闭；实际提交由论文作者操作。旧稿已有作者与声明事实由v1继承，迁入来源见[阶段26](reports/阶段26_作者资料迁入与最终通读稿.md)，本次叙述修订见阶段27。科学R1-M08原件保留：[R1-M08正文](manuscript_v1/Manuscript_BMC_Genomics_M08_v1.md)、[带四图和两张原生表的Word](manuscript_v1/Manuscript_BMC_Genomics_M08_v1.docx)、[四图](figures/manuscript_m08_v1/)，配套[补充方法](manuscript_v1/Supplementary_methods_scientific_revision_v1.md)及[14个Additional files](manuscript_v1/bmc_additional_files_M08_v1/)。作者个人信息只置于本地通读包，不复制到安全计划或仓库公开范围。** 固定八药开发评价仍未建立REO可靠平均优势：主宏Δρ=−0.005882，430/840个分子外层拟合零解。LOTO完成1,472任务/40,112 fits/39,736 OOF，主网格34/80格有定义，严格宏NA。最终64模型/1,744 fits中29/56分子臂零解；两锁后唯一CTRP外验175独立组/1,185药物－组响应，9,480预测、0弃判，主宏Δρ=−0.000372，family-9条件区间[−0.042166,+0.043505]。此差值接近零不等于所有外验信号消失：组织、强表达、关联pair的外验绝对宏ρ为0.2284/0.2602/0.2599，只有描述性点值，不能据此宣称统计上证实外部分子增量。
+**优先投稿目标继续为BMC Genomics。当前新版正式英文Word/PDF及投稿ZIP在本地Git忽略`manuscript_v1/submission_final_v2/`，对应直接中文译稿在`manuscript_v1/submission_final_v2_zh/`。原正式v1、原v5中英与旧ZIP保留。当前署名、邮箱、贡献、基金与声明事实沿用用户已确认的正式英文版本；中文同步这些现行事实，不沿用旧译稿的待确认占位。请优先通读新中文PDF，再按英文包的上传说明提交；实际提交由论文作者完成。见[阶段36](reports/阶段36_管线范围零解诊断与图表修订.md)与[实际核查](docs/scope_diagnostics_revision_v1/README.md)。** 固定八药开发评价仍未建立REO可靠平均优势：主宏Δρ=−0.005882，430/840个分子外层拟合零解。LOTO完成1,472任务/40,112 fits/39,736 OOF，主网格34/80格有定义，严格宏NA。最终64模型/1,744 fits中29/56分子臂零解；两锁后唯一CTRP外验175独立组/1,185药物－组响应，9,480预测、0弃判，主宏Δρ=−0.000372，family-9条件区间[−0.042166,+0.043505]。此差值接近零不等于所有外验信号消失：组织、强表达、关联pair的外验绝对宏ρ为0.2284/0.2602/0.2599，只有描述性点值，不能据此宣称统计上证实外部分子增量。
 
 锁定科学结果不变，文字已按本轮选择修订。M01/M02/M03在R1证据范围内完成，M07/M08已有同源副本及图文样式检查；M08四图170mm时最小9.5pt、Word约156.1mm时最小8.72pt，30引用保留身份/顺序，19处作者串已规范，历史验收见阶段25及docs/m08_v1/。此前v1通读包26项内容检查和39/19页Word渲染见阶段26。本轮v2独立验收54/54项通过（39项机械/来源、15项语义边界），主稿39页/补充19页已由Microsoft Word实际导出；60件保留资产与历史作者来源hash不变，页码/字体嵌入/边界等机械检查通过。协调者已实际查看全部5张缩略图（主稿39页/补充19页全覆盖）及8张重点放大页，目视复核通过；见阶段27与docs/narrative_v1/，不沿用旧验收数。M04本地技术准备已完成，完整实际资产继续Git忽略；计数/格式/虚构推理示例和代码已版本控制，但不等于公众可获取。2026-10-20已认证GitHub元数据确认`RascalZ/REO`为private，匿名端点不可访问；此前文档中的“public/公开”资产多数指拟公开范围，不得当作已实现匿名访问的证据。仓库可见性本轮不改，公众及编辑/审稿人实际访问、正式归档和上游许可继续收尾；上游公共数据资源本身的访问状态与本项目私有仓库分开。见[复现包指南](reproducibility_v1/README.md)、[当前访问更正](docs/DATA_AVAILABILITY.md)及阶段26。
 
@@ -49,7 +51,7 @@
 |P5d 零解与药物异质性诊断|完成|[阶段7报告](reports/阶段7_零解与药物异质性诊断.md)、[五张聚合表](results/development_diagnostics/)、[诊断方案v1](docs/DEVELOPMENT_DIAGNOSTICS_PROTOCOL_V1.md)；430/840均选择解析零端点，0求解警告/回退；无新模型拟合|
 |P5e 合成机制与组织敏感性/LOTO|完成；v1.3独立验证与描述性分析通过|[阶段8组织诊断](reports/阶段8_组织分层OOF诊断.md)、[阶段8b残差澄清](reports/阶段8b_组织残差增量澄清.md)、[阶段9合成机制](reports/阶段9_合成机制控制.md)、[阶段10结果](reports/阶段10_LOTO组织外推敏感性.md)、[阶段10j恢复/审计](reports/阶段10j_LOTO_v1_3系统重启恢复与结果审计.md)、[P5e协议](docs/TISSUE_SENSITIVITY_LOTO_PROTOCOL_V1.md)、[v1.3执行锁](config/loto_execution_v1_3.lock.json)、[结果清单](results/tissue_loto/loto_analysis_manifest.json)；1,472/40,112/39,736已核验；严格主宏NA（34/80格有定义）；稀有组织警告与零解保留；CTRP禁读|
 |P6 外验/最终模型冻结|完成；64模型/1,744 fit、9,480行无响应预检及一次性CTRP外验均通过独立审计|[阶段13报告](reports/阶段13_P6全开发模型与无响应外验预检.md)、[阶段14报告](reports/阶段14_P6一次性CTRP外验与研究方向判定.md)、[第二锁](config/external_execution_v1_1.lock.json)、[外验聚合汇总](results/p6_external/evaluation_summary.json)；29/56分子臂零解、0弃判、27项估计量各20,000有效抽样|
-|P7 图表/正文/投稿|正式英文稿40页/Cover letter 1页已实际渲染；署名/8邮箱及声明已确认，author_confirmed新版31项ZIP验收，供作者进入系统提交；未代投|[阶段35](reports/阶段35_正式英文投稿收尾与作者信息核查.md)、[最终验收](docs/submission_final_v1/final_author_confirmed_audit.json)|
+|P7 图表/正文/投稿|正式英文v2 39页、中文22页、Cover letter 1页实际渲染逐页通过；31成员英文投稿ZIP验收，原稿保留；未代投|[阶段36](reports/阶段36_管线范围零解诊断与图表修订.md)、[视觉核查](docs/scope_diagnostics_revision_v1/visual_review.json)、[包清单](docs/scope_diagnostics_revision_v1/submission_package_manifest.json)|
 
 ### v3.41 当前文字修订与下一gate
 
@@ -1195,3 +1197,7 @@ BMC Genomics母版采用结构摘要Background/Results/Conclusions，≤350词�
 ### v3.46变更记录
 
 2026-10-26：按作者要求检查并整理科研仓库入口/复现/引用/CI，未改仓库私有状态或科学配置。v4补充材料迁入且26项投稿ZIP逐成员验证；57项旧v1/v2材料精简归档后删除243文件（187项QA），一旧ZIP因占用保留，v3/v4原稿和数据/结果/模型/历史不动。实时权限、扫描及干净源码检查边界均记录，未伪造公开模型、DOI或提交批准。旧审计路径保持历史事实，当前引用指向v4。科学结果和CTRP个体封存边界不变。见阶段32。
+
+### v3.51变更记录
+
+2026-10-29：按作者批准在既有证据范围内收紧完整pair＋EN结论、区分管线与匹配表示比较，补入现有零解诊断，优化摘要/Table2/Figure4A并修正阶段7聚合显示计数；生成独立中英Word/PDF及英文投稿ZIP。62页实际逐页核查、146块中英数字/引文与31成员包校验通过；原178件来源保持。不新增实验/重训/评分/置换，不读CTRP个体数据，原科学统计与锁不变；软件不可变发布保留，展示更正在后续仓库修订记录。见阶段36。

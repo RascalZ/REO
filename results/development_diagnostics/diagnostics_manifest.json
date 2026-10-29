@@ -38,7 +38,7 @@
     "inner_path_competition.csv": "6f58daaa74f49fa7d6a89f5c35d6512671ede249c8743ee87020f82cb5768bb7",
     "zero_solution_by_repeat.csv": "71b8a719f570891eaf6e7cda53d094f96dae5b0fccecf056f21de9006951b352",
     "response_decomposition.csv": "a47ea1f94bc4b5b098f507115493d07c98948e9c8215abacd214df3d18e26e23",
-    "drug_heterogeneity.csv": "9c2a7578047ffd455da52512901c9a728c3c355f704e7c2ec328f11f72e98675"
+    "drug_heterogeneity.csv": "053b2f99fb8f9838ac4909cfb8636e1a284bdffbcfda4dda49643963a3a5477c"
   },
   "output_rows": {
     "zero_solution_diagnostics.csv": 56,
@@ -65,5 +65,27 @@
     "new_model_fits_during_attempts": 0,
     "external_response_accessed": false,
     "final_run_overwrote_all_preliminary_aggregates": true
+  },
+  "original_execution_output_sha256": {
+    "zero_solution_diagnostics.csv": "dd00205230405d84d287772fd2682a259205cd09267d67209e74c0f8ecf74cf7",
+    "inner_path_competition.csv": "6f58daaa74f49fa7d6a89f5c35d6512671ede249c8743ee87020f82cb5768bb7",
+    "zero_solution_by_repeat.csv": "71b8a719f570891eaf6e7cda53d094f96dae5b0fccecf056f21de9006951b352",
+    "response_decomposition.csv": "a47ea1f94bc4b5b098f507115493d07c98948e9c8215abacd214df3d18e26e23",
+    "drug_heterogeneity.csv": "9c2a7578047ffd455da52512901c9a728c3c355f704e7c2ec328f11f72e98675"
+  },
+  "artifact_correction": {
+    "created_utc": "2026-10-29T07:02:20.499339+00:00",
+    "receipt": "docs/scope_diagnostics_revision_v1/stage7_correction_audit.json",
+    "description": "Aggregate-only correction: sum all three repeats in profile zero-fit columns.",
+    "original_manifest_sha256": "63fa1af47f87f19fe237074180716e6b4f3ea2b30159fa0168156872949a9da4",
+    "original_manifest_backup": "docs/scope_diagnostics_revision_v1/local_private/stage7_before/results/development_diagnostics/diagnostics_manifest.json",
+    "original_execution_metadata_unchanged": true,
+    "historical_fields_scope": "analysis_script_sha256, execution_commit, created_utc, runtime and input hashes describe the original 2026-10-14 run, not this correction",
+    "output_hashes_scope": "output_sha256 binds current files; original_execution_output_sha256 preserves the original output bindings",
+    "corrected_analyzer_sha256": "0aeb72567ed4021bace31dcf10bba3914a11ec16697611c76014ee30f9ce19ae",
+    "new_model_fits": 0,
+    "new_scoring": false,
+    "development_label_accessed": false,
+    "external_response_accessed": false
   }
 }

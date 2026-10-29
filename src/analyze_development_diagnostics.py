@@ -120,6 +120,29 @@ def fnum(value: str | float | int | None) -> float | None:
     return float(value)
 
 
+def aggregate_zero_counts(
+    rows: list[dict[str, str]], expected_repeats: int = 3
+) -> dict[tuple[int, str], int]:
+    """Sum saved per-repeat counts, preserving the full repeated-fit denominator."""
+    repeats_by_key: dict[tuple[int, str], set[int]] = defaultdict(set)
+    totals: dict[tuple[int, str], int] = defaultdict(int)
+    for row in rows:
+        key = (int(row["gdsc_drug_id"]), row["model"])
+        repeat = int(row["repeat"])
+        if repeat in repeats_by_key[key]:
+            raise ValueError(f"Duplicate zero-summary repeat for {key}: {repeat}")
+        zero_count = int(row["zero_molecular_fits"])
+        if not 0 <= zero_count <= int(row["outer_fits"]):
+            raise ValueError(f"Invalid zero-summary fit count for {key}/{repeat}")
+        repeats_by_key[key].add(repeat)
+        totals[key] += zero_count
+    expected = set(range(expected_repeats))
+    for key, repeats in repeats_by_key.items():
+        if repeats != expected:
+            raise ValueError(f"Incomplete zero-summary repeats for {key}: {repeats}")
+    return dict(totals)
+
+
 def mean_metric(rows: list[dict[str, str]], drug: int, model: str, metric: str) -> float:
     values = [
         float(row[metric])
@@ -461,7 +484,7 @@ def run() -> dict:
         for row in deviation_source
         if row["gdsc_drug_id"].isdigit()
     }
-    zero_count = {(int(row["gdsc_drug_id"]), row["model"]): int(row["zero_molecular_fits"]) for row in zero_source if int(row["repeat"]) == 0}
+    zero_count = aggregate_zero_counts(zero_source)
     profiles = []
     comparison_specs = [
         ("main_delta_rho", "response_association_pair_full", "expression_strong"),

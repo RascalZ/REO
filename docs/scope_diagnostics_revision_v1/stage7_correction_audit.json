@@ -1,0 +1,281 @@
+{
+  "status": "completed",
+  "created_utc": "2026-10-29T07:02:20.499339+00:00",
+  "scope": "Stage7 zero-count display correction only; historical model results and numerical performance unchanged",
+  "procedure": "docs/scope_diagnostics_revision_v1/correct_stage7_aggregate_counts.py",
+  "procedure_sha256": "bcc23e27a7adeb71ac65d17bdcaf6e05f9bdf575635a8dcfcaccbed2c61a67af",
+  "inputs": {
+    "results/ordinal_repeated/molecular_and_failure_summary.csv": "8ee5a3f49b640e4e7ca868ff918fab17b60a93fe9cf1069ed9cdb81739206512",
+    "tables/manuscript_v1/TableS6_zero_solution_audit.csv": "d89e01aef179deba12b2e5e6e8bcf991baf207a3076c7cd5e6d3c8f4539422e4"
+  },
+  "before_sha256": {
+    "src/analyze_development_diagnostics.py": "02f75a029729f2a6e0fa7e1641e12f7c33406c779b814eacccafc68eeb675d9e",
+    "results/development_diagnostics/drug_heterogeneity.csv": "9c2a7578047ffd455da52512901c9a728c3c355f704e7c2ec328f11f72e98675",
+    "reports/阶段7_零解与药物异质性诊断.md": "ada5f11cf20fb44839b8df1fd3f76cacd97e275fde47ed4f5d3a1d911188ed45",
+    "results/development_diagnostics/diagnostics_manifest.json": "63fa1af47f87f19fe237074180716e6b4f3ea2b30159fa0168156872949a9da4"
+  },
+  "after_sha256": {
+    "src/analyze_development_diagnostics.py": "0aeb72567ed4021bace31dcf10bba3914a11ec16697611c76014ee30f9ce19ae",
+    "results/development_diagnostics/drug_heterogeneity.csv": "053b2f99fb8f9838ac4909cfb8636e1a284bdffbcfda4dda49643963a3a5477c",
+    "reports/阶段7_零解与药物异质性诊断.md": "bc2ad54db5490d1e607cf33b4a7012170223ed98fbaa2b34ced52e58da1d885d",
+    "results/development_diagnostics/diagnostics_manifest.json": "656d1b393744f23a4e6c28d7aebf91a3ab8a27b2c1efa72844be4fd4ffe17144"
+  },
+  "backup_root": "docs/scope_diagnostics_revision_v1/local_private/stage7_before",
+  "changed_count_cells": [
+    {
+      "drug": "MIRA-1",
+      "column": "expression_strong_zero_fits",
+      "before": 4,
+      "after": 11
+    },
+    {
+      "drug": "MIRA-1",
+      "column": "mad_expression_zero_fits",
+      "before": 5,
+      "after": 11
+    },
+    {
+      "drug": "MIRA-1",
+      "column": "mad_rank_zero_fits",
+      "before": 5,
+      "after": 13
+    },
+    {
+      "drug": "MIRA-1",
+      "column": "mad_pair_full_zero_fits",
+      "before": 5,
+      "after": 15
+    },
+    {
+      "drug": "MIRA-1",
+      "column": "response_association_expression_zero_fits",
+      "before": 4,
+      "after": 8
+    },
+    {
+      "drug": "MIRA-1",
+      "column": "response_association_rank_zero_fits",
+      "before": 2,
+      "after": 5
+    },
+    {
+      "drug": "MIRA-1",
+      "column": "response_association_pair_full_zero_fits",
+      "before": 3,
+      "after": 7
+    },
+    {
+      "drug": "PLX-4720",
+      "column": "expression_strong_zero_fits",
+      "before": 4,
+      "after": 14
+    },
+    {
+      "drug": "PLX-4720",
+      "column": "mad_expression_zero_fits",
+      "before": 3,
+      "after": 12
+    },
+    {
+      "drug": "PLX-4720",
+      "column": "mad_rank_zero_fits",
+      "before": 5,
+      "after": 15
+    },
+    {
+      "drug": "PLX-4720",
+      "column": "mad_pair_full_zero_fits",
+      "before": 5,
+      "after": 15
+    },
+    {
+      "drug": "PLX-4720",
+      "column": "response_association_expression_zero_fits",
+      "before": 4,
+      "after": 13
+    },
+    {
+      "drug": "PLX-4720",
+      "column": "response_association_rank_zero_fits",
+      "before": 4,
+      "after": 13
+    },
+    {
+      "drug": "PLX-4720",
+      "column": "response_association_pair_full_zero_fits",
+      "before": 5,
+      "after": 13
+    },
+    {
+      "drug": "Bortezomib",
+      "column": "expression_strong_zero_fits",
+      "before": 4,
+      "after": 9
+    },
+    {
+      "drug": "Bortezomib",
+      "column": "mad_expression_zero_fits",
+      "before": 2,
+      "after": 7
+    },
+    {
+      "drug": "Bortezomib",
+      "column": "mad_rank_zero_fits",
+      "before": 2,
+      "after": 8
+    },
+    {
+      "drug": "Bortezomib",
+      "column": "mad_pair_full_zero_fits",
+      "before": 5,
+      "after": 15
+    },
+    {
+      "drug": "Bortezomib",
+      "column": "response_association_expression_zero_fits",
+      "before": 3,
+      "after": 10
+    },
+    {
+      "drug": "Bortezomib",
+      "column": "response_association_rank_zero_fits",
+      "before": 1,
+      "after": 7
+    },
+    {
+      "drug": "Bortezomib",
+      "column": "response_association_pair_full_zero_fits",
+      "before": 4,
+      "after": 11
+    },
+    {
+      "drug": "Tamoxifen",
+      "column": "expression_strong_zero_fits",
+      "before": 5,
+      "after": 15
+    },
+    {
+      "drug": "Tamoxifen",
+      "column": "mad_expression_zero_fits",
+      "before": 4,
+      "after": 12
+    },
+    {
+      "drug": "Tamoxifen",
+      "column": "mad_rank_zero_fits",
+      "before": 4,
+      "after": 14
+    },
+    {
+      "drug": "Tamoxifen",
+      "column": "mad_pair_full_zero_fits",
+      "before": 5,
+      "after": 15
+    },
+    {
+      "drug": "Tamoxifen",
+      "column": "response_association_expression_zero_fits",
+      "before": 5,
+      "after": 14
+    },
+    {
+      "drug": "Tamoxifen",
+      "column": "response_association_rank_zero_fits",
+      "before": 5,
+      "after": 15
+    },
+    {
+      "drug": "Tamoxifen",
+      "column": "response_association_pair_full_zero_fits",
+      "before": 5,
+      "after": 14
+    },
+    {
+      "drug": "BMS-536924",
+      "column": "mad_rank_zero_fits",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "drug": "BMS-536924",
+      "column": "mad_pair_full_zero_fits",
+      "before": 2,
+      "after": 8
+    },
+    {
+      "drug": "Gefitinib",
+      "column": "mad_pair_full_zero_fits",
+      "before": 0,
+      "after": 3
+    },
+    {
+      "drug": "Gefitinib",
+      "column": "response_association_expression_zero_fits",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "drug": "Gefitinib",
+      "column": "response_association_pair_full_zero_fits",
+      "before": 0,
+      "after": 1
+    },
+    {
+      "drug": "Cediranib",
+      "column": "expression_strong_zero_fits",
+      "before": 3,
+      "after": 11
+    },
+    {
+      "drug": "Cediranib",
+      "column": "mad_expression_zero_fits",
+      "before": 4,
+      "after": 10
+    },
+    {
+      "drug": "Cediranib",
+      "column": "mad_rank_zero_fits",
+      "before": 4,
+      "after": 12
+    },
+    {
+      "drug": "Cediranib",
+      "column": "mad_pair_full_zero_fits",
+      "before": 5,
+      "after": 14
+    },
+    {
+      "drug": "Cediranib",
+      "column": "response_association_expression_zero_fits",
+      "before": 5,
+      "after": 15
+    },
+    {
+      "drug": "Cediranib",
+      "column": "response_association_rank_zero_fits",
+      "before": 5,
+      "after": 15
+    },
+    {
+      "drug": "Cediranib",
+      "column": "response_association_pair_full_zero_fits",
+      "before": 2,
+      "after": 7
+    }
+  ],
+  "count_cells_checked": 56,
+  "corrected_report_rows_checked": 8,
+  "non_count_profile_fields_unchanged": true,
+  "all_counts_match_table_s6": true,
+  "molecular_outer_fits": 840,
+  "zero_molecular_outer_fits": 430,
+  "new_model_fits": 0,
+  "new_scoring": false,
+  "development_label_accessed": false,
+  "external_response_accessed": false,
+  "regression_test": {
+    "command": ".venv/Scripts/python.exe -m unittest discover -s tests -p test_development_zero_count_aggregation.py -v",
+    "passed": 4,
+    "initial_environment_attempt": "Bundled Python lacked psutil; no tests executed there; repository .venv completed all four tests"
+  }
+}

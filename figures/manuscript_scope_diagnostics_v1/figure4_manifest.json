@@ -1,0 +1,62 @@
+{
+  "schema_version": "1.0",
+  "status": "presentation_only_existing_aggregate_values",
+  "generated_utc": "2026-10-29T07:07:31.416510+00:00",
+  "script": "src/plot_scope_diagnostics_figure4_v1.py",
+  "script_sha256": "a523264f4e4a7362661202e93c0622d5e463e8e4729f67ddd6d6460825d830d1",
+  "source_sha256": {
+    "results/tissue_loto/contrasts_by_drug_tissue.csv": "df05a1a90006725c342b32c53212dfb8c61641dd48f1d2c9ebdf92e299c75672",
+    "config/tissue_sensitivity_loto_v1.json": "0dbf941be1d43c9ccd1de9cd8344fd7c85b5afe0eadd9a8c2dbcd3b067eaf28a",
+    "results/p6_external/evaluation_summary.json": "2d3d1803fff9a631643fb0e2abff165d35fa6f88e4c33215f2366d7c7bc11acf",
+    "figures/manuscript_m08_v1/Figure4_loto_and_external.png": "27f115b6d6ffc52fcaa9d7b49db991c433afbb656c319c7bd25b8b77dd5e1a83"
+  },
+  "width_mm": 170.0,
+  "height_mm": 180.0,
+  "figure_only_height_at_170_mm": 180.0,
+  "height_remaining_for_caption_under_225_mm_limit": 45.0,
+  "tissue_sample_counts_location": "source-value audit and manuscript Table S1; omitted from rotated labels to preserve readability",
+  "minimum_font_pt_at_170_mm": 9.5,
+  "minimum_font_pt_at_156_mm": 8.717647058823529,
+  "project_legibility_target_not_journal_requirement": true,
+  "loto_display_cells": 80,
+  "loto_defined_cells": 34,
+  "loto_undefined_cells": 46,
+  "loto_defined_per_drug": {
+    "MIRA-1": 3,
+    "PLX-4720": 0,
+    "Bortezomib": 1,
+    "Telomerase Inhibitor IX": 10,
+    "Tamoxifen": 0,
+    "BMS-536924": 10,
+    "Gefitinib": 8,
+    "Cediranib": 2
+  },
+  "strict_loto_macro": "NA",
+  "undefined_cells_not_replaced_by_zero": true,
+  "heatmap_artist_values_match_source_exactly": true,
+  "external_points_and_intervals_preserved": true,
+  "external_artist_max_absolute_error": 6.938893903907228e-18,
+  "external_exact_zero_compound_ids": [
+    1931,
+    1036,
+    1199
+  ],
+  "visible_text_outside_canvas": [],
+  "individual_response_values_read": false,
+  "sample_level_predictions_read": false,
+  "models_loaded": false,
+  "training_or_scoring_performed": false,
+  "resampling_performed": false,
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "pandas": "3.0.1",
+  "matplotlib": "3.10.7",
+  "output_sha256": {
+    "figure4_external_source_value_audit.csv": "84322b1fc30e917f0a5a8f479e58617dccef8182d3e462ae84fa20214dfcbca4",
+    "Figure4_loto_and_external.pdf": "63380179d8af9195e9874345ac2a2653600ff7b3670a6012a7678734943f343b",
+    "Figure4_loto_and_external.png": "0dc193d6109b8703203fb451d63fddf4fc0fdffe8aae34d7e7b0597d6648e31c",
+    "Figure4_loto_and_external.svg": "0b3ecf0110c6e53636fec4013c7bac216862055e8be3c652b3e6b7f5320beb4b",
+    "Figure4_loto_and_external_proof.png": "bab893516c7513a06dc50d631f39bdc90847b0f808e79fc2b00477a6c93c0e03",
+    "figure4_loto_source_value_audit.csv": "a499151633c991bb4ecbb06e85370c8ae66facd06107e415827dcd44d6af8e5d"
+  }
+}

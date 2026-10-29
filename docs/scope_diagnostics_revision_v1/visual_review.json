@@ -1,0 +1,99 @@
+{
+  "date": "2026-10-29",
+  "status": "passed",
+  "pages_reviewed": {
+    "english": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39
+    ],
+    "chinese": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22
+    ],
+    "cover": [
+      1
+    ]
+  },
+  "total_pages_actually_viewed": 62,
+  "method": "Native Microsoft Word read-only PDF export; all 2000px page PNGs actually opened; role-separated visual review with root recheck of cover and key figure/table pages.",
+  "source_pdf_sha256": {
+    "english": "e5e11f8a90d9722fcc3f471774a51399ee39c4b25bec67ac4d62a84ca84ccd7c",
+    "chinese": "300a4e68c14a3c462679596f1aec61fed5aa05d79bc78898d13cc506f3e11aeb",
+    "cover": "6015844a1081532a0305d2db8174d629ea7e1339220b5a599a610fd9c4b7951a"
+  },
+  "blocking_issues": [],
+  "nonblocking_notes": [
+    "English Table 2 explanatory note continues from p26 to p27; table body remains together.",
+    "Chinese Table 1 separate note continues on the next page; table remains complete."
+  ],
+  "root_focus_pages": {
+    "english": [
+      25,
+      26
+    ],
+    "chinese": [
+      15
+    ],
+    "cover": [
+      1
+    ]
+  },
+  "cover_final_pronoun_edit_visually_checked": true
+}
